@@ -1,0 +1,17 @@
+<router-outlet></router-outlet>
+
+<input [(ngModel)]="chatInput" />
+<button (click)="handleSend(chatInput)">Senden</button>
+
+<table>
+    <thead>
+        <th>Nachrichtenverlauf:</th>
+    </thead>
+    <tbody>
+        <tr *ngFor="let ChatMessages of chatMessages">
+            <td>
+                {{ChatMessages.messageText}}
+            </td>
+        </tr>
+    </tbody>
+</table>
