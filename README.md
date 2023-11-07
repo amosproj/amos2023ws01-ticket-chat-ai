@@ -1,7 +1,5 @@
 # Ticket-Chat-AI Project (AMOS WS 2023)
 
-# Backend
-
 ## Project Structure
 
     amos2023ws01-ticket-chat-ai/
@@ -20,13 +18,12 @@
 
 ## Setup
 
-1. **Clone the Repository**:
+**Clone the Repository**:
 
-   ```bash
-   git clone git@github.com:amosproj/amos2023ws01-ticket-chat-ai.git
-   cd amos2023ws01-ticket-chat-ai/backend
-
-   ```
+```bash
+git clone git@github.com:amosproj/amos2023ws01-ticket-chat-ai.git
+cd amos2023ws01-ticket-chat-ai/backend
+```
 
 ## Backend
 
@@ -34,26 +31,31 @@
 
 - Navigate into `./backend` directory and run the following command.
 
-   - Linux / macOs
-   ```bash
-   python3 -m venv venv
-   source venv/bin/activate
-   ```
-   - Windows
-   ```bash
-   python -m venv venv
-   .\venv\Scripts\activate
-   ```
+  - Linux / macOs
+
+      ```bash
+      python3 -m venv venv
+      source venv/bin/activate
+      ```
+
+  - Windows
+
+      ```bash
+      python -m venv venv
+      .\venv\Scripts\activate
+      ```
 
 **Install the Dependencies:**
-
-```bash
-pip install -r requirements.txt
-```
+   
+   ```bash
+   pip install -r requirements.txt
+   ```
 
 **Run Backend App**
 
-    uvicorn app.main:app --reload
+   ```bash
+   uvicorn app.main:app --reload
+   ```
 
 **Run Test Model**
 
@@ -61,15 +63,18 @@ pip install -r requirements.txt
 
 2. Train the model by running the following command:
 
-   ```
+   ```bash
    python train_t5_model.py
    ```
 
 3. Test the trained model by running the following command:
-   ```
+
+   ```bash
    python use_trained_t5_model.py
    ```
+
 4. Test the untrained T5 model by running the following command:
-   ```
+
+   ```bash
    python train_t5_model.py
    ```
