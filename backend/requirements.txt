@@ -1,3 +1,7 @@
 fastapi==0.74.0 
 uvicorn==0.15.0
-
+torch==2.0.1
+transformers==4.35.0
+protobuf==4.25.0
+sentencepiece==0.1.99
+pandas==2.1.2
