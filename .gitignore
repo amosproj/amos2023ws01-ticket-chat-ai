@@ -37,3 +37,13 @@ bin/
 
 # Obsidian
 .obsidian
+
+# Python venv
+backend/venv
+
+# Trained Model
+backend/app/models/t5/fine_tuned_t5_model
+
+# Test Data
+backend/app/models/t5/text.csv
+backend/app/models/t5/tickets.json
