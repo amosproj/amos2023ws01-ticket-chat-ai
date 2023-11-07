@@ -1,5 +1,5 @@
 from fastapi import FastAPI
-from app.api.v1 import text_endpoint
+from api.v1 import text_endpoint
 
 app = FastAPI()
 

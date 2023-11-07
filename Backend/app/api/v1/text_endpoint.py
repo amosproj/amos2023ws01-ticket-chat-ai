@@ -1,4 +1,4 @@
-from fastapi import APIRouter, HTTPException, Body
+from fastapi import APIRouter, Body
 
 router = APIRouter()
 
@@ -15,5 +15,4 @@ async def receive_text(text: str = Body(...)):
     """
     # This will just print the text to the console for now
     print(text)
-    
     return {"received_text": text}
