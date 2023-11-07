@@ -11,7 +11,15 @@ input_text = "Translate this into Json: Hey, I'm David. I've encountered an issu
 input_ids = tokenizer.encode(input_text, return_tensors="pt")
 
 # Generate response
-output = model.generate(input_ids, max_length=1000, num_return_sequences=1, no_repeat_ngram_size=2, top_k=50, top_p=0.95, temperature=0.7)
+output = model.generate(
+    input_ids,
+    max_length=1000,
+    num_return_sequences=1,
+    no_repeat_ngram_size=2,
+    top_k=50,
+    top_p=0.95,
+    temperature=0.7,
+)
 
 # Decode and print the response
 response = tokenizer.decode(output[0], skip_special_tokens=True)

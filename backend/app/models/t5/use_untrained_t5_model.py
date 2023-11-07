@@ -9,7 +9,9 @@ model = T5ForConditionalGeneration.from_pretrained(model_name)
 input_text = "Translate this into Json: Hey, I'm David. I've encountered an issue with my company laptop's audio. There's no sound, and I've tried adjusting the volume settings, but it hasn't helped. It's affecting my ability to participate in virtual meetings. Can you please assist me in resolving this audio problem?"
 
 # Tokenize the input text
-input_ids = tokenizer.encode(input_text, return_tensors="pt", max_length=512, truncation=True)
+input_ids = tokenizer.encode(
+    input_text, return_tensors="pt", max_length=512, truncation=True
+)
 
 # Generate text
 output = model.generate(input_ids)

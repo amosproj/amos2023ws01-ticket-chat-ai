@@ -5,6 +5,7 @@ from transformers import AdamW, get_linear_schedule_with_warmup
 import pandas as pd
 import json
 
+
 class CustomDataset(Dataset):
     def __init__(self, text_descriptions, target_jsons, tokenizer, max_length=512):
         self.text_descriptions = text_descriptions
@@ -17,16 +18,31 @@ class CustomDataset(Dataset):
 
     def __getitem__(self, idx):
         text_description = self.text_descriptions[idx]
-        target_json = json.dumps(self.target_jsons[idx])  # Convert the dictionary to a JSON string
+        target_json = json.dumps(
+            self.target_jsons[idx]
+        )  # Convert the dictionary to a JSON string
 
-        inputs = self.tokenizer.encode("translate text to JSON: " + text_description, return_tensors="pt", max_length=self.max_length, padding="max_length", truncation=True)
-        targets = self.tokenizer.encode(target_json, return_tensors="pt", max_length=self.max_length, padding="max_length", truncation=True)
+        inputs = self.tokenizer.encode(
+            "translate text to JSON: " + text_description,
+            return_tensors="pt",
+            max_length=self.max_length,
+            padding="max_length",
+            truncation=True,
+        )
+        targets = self.tokenizer.encode(
+            target_json,
+            return_tensors="pt",
+            max_length=self.max_length,
+            padding="max_length",
+            truncation=True,
+        )
 
         return {
             "input_ids": inputs.view(-1),
             "attention_mask": (inputs != 0).view(-1),
             "labels": targets.view(-1),
         }
+
 
 # Load the T5 model and tokenizer
 model_name = "t5-small"
@@ -55,7 +71,9 @@ num_epochs = 3
 
 # Create the optimizer and learning rate scheduler
 optimizer = AdamW(model.parameters(), lr=learning_rate)
-scheduler = get_linear_schedule_with_warmup(optimizer, num_warmup_steps=0, num_training_steps=len(train_loader) * num_epochs)
+scheduler = get_linear_schedule_with_warmup(
+    optimizer, num_warmup_steps=0, num_training_steps=len(train_loader) * num_epochs
+)
 
 print(torch.cuda.is_available())
 
@@ -73,7 +91,9 @@ for epoch in range(num_epochs):
         labels = batch["labels"].to(device)
 
         optimizer.zero_grad()
-        outputs = model(input_ids=input_ids, attention_mask=attention_mask, labels=labels)
+        outputs = model(
+            input_ids=input_ids, attention_mask=attention_mask, labels=labels
+        )
         loss = outputs.loss
         loss.backward()
         optimizer.step()
@@ -87,4 +107,3 @@ for epoch in range(num_epochs):
 # Save the fine-tuned model
 model.save_pretrained("fine_tuned_t5_model")
 tokenizer.save_pretrained("fine_tuned_t5_model")
-
