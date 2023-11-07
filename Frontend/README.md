@@ -2,6 +2,26 @@
 
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 16.2.9.
 
+## Setup
+
+1. **Navigate to Frontend**:
+
+   ```bash
+   cd amos2023ws01-ticket-chat-ai/Frontend
+   ```
+
+2. **Install Angular CLI** (Optional but recommended):
+
+    ```bash
+    npm install -g @angular/cli
+    ```
+
+3. **Install the Dependencies:**
+
+    ```bash
+    npm install
+    ```
+
 ## Development server
 
 Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The application will automatically reload if you change any of the source files.
