@@ -1,8 +1,8 @@
-from fastapi import APIRouter, HTTPException, Body
+from fastapi import APIRouter, Body
 
 router = APIRouter()
 
-@router.post("/text/")
+@router.post("/text")
 async def receive_text(text: str = Body(...)):
     """
     Receive Text from the Frontend
@@ -15,5 +15,4 @@ async def receive_text(text: str = Body(...)):
     """
     # This will just print the text to the console for now
     print(text)
-    
     return {"received_text": text}
