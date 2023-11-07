@@ -8,7 +8,7 @@
     bakcned
     │
     └── app
-        ├── api                     
+        ├── api
         │      └── v1
         │          └── text_endpoint.py
         │
@@ -18,7 +18,6 @@
         │
         └── requirements.txt
 
-
 ## Setup
 
 1. **Clone the Repository**:
@@ -27,17 +26,50 @@
    git clone git@github.com:amosproj/amos2023ws01-ticket-chat-ai.git
    cd amos2023ws01-ticket-chat-ai/backend
 
-2. **Create a Virtual Environment** (Optional but recommended):
+   ```
 
-    ```bash
-    python3 -m venv venv
-    source venv/bin/activate
+## Backend
 
-3. **Install the Dependencies:**
+**Create a Virtual Environment** (Optional but recommended):
 
-    ```bash
-    pip install -r requirements.txt
+- Navigate into `./backend` directory and run the following command.
 
-## Running the Project
+   - Linux / macOs
+   ```bash
+   python3 -m venv venv
+   source venv/bin/activate
+   ```
+   - Windows
+   ```bash
+   python -m venv venv
+   .\venv\Scripts\activate
+   ```
+
+**Install the Dependencies:**
+
+```bash
+pip install -r requirements.txt
+```
+
+**Run Backend App**
 
     uvicorn app.main:app --reload
+
+**Run Test Model**
+
+1. Navigate into `./backend/app/models/t5` directory.
+
+2. Train the model by running the following command:
+
+   ```
+   python train_t5_model.py
+   ```
+
+3. Test the trained model by running the following command:
+   ```
+   python use_trained_t5_model.py
+   ```
+4. Test the untrained T5 model by running the following command:
+   ```
+   python train_t5_model.py
+   ```
