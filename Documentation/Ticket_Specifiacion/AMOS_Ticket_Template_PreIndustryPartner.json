@@ -1,0 +1,69 @@
+{
+    "$schema": "http://json-schema.org/draft-04/schema#",
+    "type": "object",
+    "properties": {
+      "ID": {
+        "type": "integer"
+      },
+      "Subject": {
+        "type": "string"
+      },
+      "Description": {
+        "type": "string"
+      },
+      "Impact": {
+        "type": "string"
+      },
+      "Priority": {
+        "type": "string"
+      },
+      "Affected Person": {
+        "type": "object",
+        "properties": {
+          "Name": {
+            "type": "string"
+          },
+          "Email": {
+            "type": "string"
+          }
+        },
+        "required": [
+          "Name",
+          "Email"
+        ]
+      },
+      "RequestType": {
+        "type": "string"
+      },
+      "Attachments": {
+        "type": "string"
+      },
+      "System Information": {
+        "type": "string"
+      },
+      "Tags": {
+        "type": "array",
+        "items": [
+          {
+            "type": "string"
+          },
+          {
+            "type": "string"
+          }
+        ]
+      },
+      "Resolution": {
+        "type": "string"
+      }
+    },
+    "required": [
+      "ID",
+      "Subject",
+      "Description",
+      "Impact",
+      "Priority",
+      "Affected Person",
+      "RequestType",
+      "Attachments"
+    ]
+  }
