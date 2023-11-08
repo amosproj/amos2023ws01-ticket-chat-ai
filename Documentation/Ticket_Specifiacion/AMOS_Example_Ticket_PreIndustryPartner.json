@@ -1,0 +1,19 @@
+{
+    "ID": 0, // don't fill
+    "Subject": "ABCDEFGHIJKLM",
+    "Description": "ABCDEFGHIJKLMNO",
+    "Impact": "ABCDEFGHIJKLMNOPQRST", // from ['low', 'meduim' 'high', 'very high']
+    "Priority": "ABCDEFGHIJKLMNOPQRSTUV", // from ['low', 'meduim' 'high', 'very high']
+    "Affected Person": { //will be determined by the system (user credentials are used, we don't have so ignore this field)
+      "Name": "ABCDE",
+      "Email": "ABCDEFGHIJ"
+    },
+    "RequestType": "ABCDEF", // ['Service Request', 'Incidents', 'Problem'] this would be nice, but I can't give you a good explaniation what is what, so use this as reference "https://www.bmc.com/blogs/ticket-vs-incident-vs-problem-vs-service-request/"
+    "Attachments": "ABCDEFGHIJKLMNOPQRSTU",// don't fill
+    "System Information": "ABCDEFGHIJKLMNOP",// don't fill
+    "Tags": [// don't fill
+      "ABCDEFGHIJKLMNOPQRST",
+      "ABCDEFGHIJKLMNOP"
+    ],
+    "Resolution": "ABCDE"// don't fill
+  }
