@@ -50,6 +50,12 @@
 2. **Use the endpoints**: go to [SwaggerUI](http://localhost:8000/docs) **OR**
    try [Postman](https://www.postman.com/downloads/) with the base URL `http://localhost:8000/api/v1` + router path
 
+3. **Run the tests**:
+
+    ```bash
+    pytest tests/
+    ```
+
 ## Run Test Model
 
 1. Navigate into `./backend/app/models/t5` directory.
