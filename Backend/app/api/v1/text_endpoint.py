@@ -1,15 +1,8 @@
 from fastapi import APIRouter, HTTPException
-from pydantic import BaseModel
+from app.dto.input_model import TextInput  # Import the TextInput model from the "dto" directory
+from app.dto.response_model import TextResponse  # Import the TextResponse model from the "dto" directory
 
 router = APIRouter()
-
-class TextInput(BaseModel):
-    text: str
-
-class TextResponse(BaseModel):
-    text: str
-    data: str
-    code: int
 
 @router.post("/text")
 async def process_text(text_input: TextInput):
