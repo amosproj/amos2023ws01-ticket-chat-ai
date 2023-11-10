@@ -3,20 +3,21 @@ from pymongo import MongoClient
 from pymongo.collection import Collection
 from pymongo.results import InsertOneResult, UpdateResult, DeleteResult
 
+from app.configs.database_config import MONGODB_URL
 from app.dto.ticket import Ticket
 
 
-class TicketDS:
+class TicketRepository:
     def __init__(self):
-        client = MongoClient("mongodb://localhost:27017/")
+        client = MongoClient(MONGODB_URL)
         db = client.talktix
         self.collection: Collection = db.ticket
 
     def create_ticket(self, ticket: Ticket) -> InsertOneResult:
         return self.collection.insert_one(document=ticket.dict())
 
-    def read_all_tickets(self) -> list[dict]:
-        return list(self.collection.find())
+    def read_tickets(self, ticket_id: ObjectId = None) -> list[dict]:
+        return list(self.collection.find(filter={"_id": ticket_id} if ticket_id else None))
 
     def update_ticket(self, ticket_id: ObjectId, ticket: Ticket) -> UpdateResult:
         return self.collection.replace_one(filter={"_id": ticket_id}, replacement=ticket.dict(), upsert=True)
