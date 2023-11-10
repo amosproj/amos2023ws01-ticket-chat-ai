@@ -1,6 +1,6 @@
 from fastapi import APIRouter, HTTPException
-from app.dto.input_model import TextInput  # Import the TextInput model from the "dto" directory
-from app.dto.response_model import TextResponse  # Import the TextResponse model from the "dto" directory
+from app.dto.text_input import TextInput
+from app.dto.text_response import TextResponse
 
 router = APIRouter()
 
