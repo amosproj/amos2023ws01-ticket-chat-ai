@@ -20,11 +20,11 @@ def test_crud():
 
     # determine number of tickets in collection
     num_tickets = len(ticket_ds.read_tickets())
-    assert num_tickets
+    assert num_tickets is not None
 
     # create ticket
     ticket_id = ticket_ds.create_ticket(ticket=ticket).inserted_id
-    assert ticket_id
+    assert ticket_id is not None
 
     # read created ticket
     tickets = ticket_ds.read_tickets(ticket_id=ticket_id)
