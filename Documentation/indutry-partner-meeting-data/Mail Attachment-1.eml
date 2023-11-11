@@ -1,0 +1,520 @@
+Received: from VI1PR10MB7636.EURPRD10.PROD.OUTLOOK.COM (2603:10a6:800:1c7::5)
+ by AM8PR10MB4643.EURPRD10.PROD.OUTLOOK.COM with HTTPS; Thu, 19 Oct 2023
+ 07:33:43 +0000
+Received: from AM0PR10CA0043.EURPRD10.PROD.OUTLOOK.COM (2603:10a6:20b:150::23)
+ by VI1PR10MB7636.EURPRD10.PROD.OUTLOOK.COM (2603:10a6:800:1c7::5) with
+ Microsoft SMTP Server (version=TLS1_2,
+ cipher=TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384) id 15.20.6886.36; Thu, 19 Oct
+ 2023 07:33:41 +0000
+Received: from AM3PEPF00009B9E.eurprd04.prod.outlook.com
+ (2603:10a6:20b:150:cafe::87) by AM0PR10CA0043.outlook.office365.com
+ (2603:10a6:20b:150::23) with Microsoft SMTP Server (version=TLS1_2,
+ cipher=TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384) id 15.20.6907.21 via Frontend
+ Transport; Thu, 19 Oct 2023 07:33:41 +0000
+Received: from mta-64-226.siemens.flowmailer.net (185.136.64.226) by
+ AM3PEPF00009B9E.mail.protection.outlook.com (10.167.16.23) with Microsoft
+ SMTP Server (version=TLS1_2, cipher=TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384) id
+ 15.20.6907.21 via Frontend Transport; Thu, 19 Oct 2023 07:33:41 +0000
+Received: by mta-64-226.siemens.flowmailer.net with ESMTPSA id 202310190733419d222a02e6f19001e4
+        for <3192d33b-7f91-434c-bb00-4ab6856267d3@siemens.mail.onmicrosoft.com>;
+        Thu, 19 Oct 2023 09:33:41 +0200
+From: "tima.it@siemens.com" <tima.it@siemens.com>
+To: "Arndt, Christoph" <christoph.arndt@evosoft.com>, "Kampa, Holger"
+	<holger.kampa@evosoft.com>, "Samaras, Ioannis" <ioannis.samaras@siemens.com>,
+	"Brtan, Ivica" <Ivica.Brtan@siemens.com>, "Frank, Juergen"
+	<juergen.frank@siemens.com>, "Meier, Michael" <michael.meier@siemens.com>,
+	"Decker, Oliver" <oliver.decker@siemens.com>, "Schwarz, Thomas"
+	<schwarz.thomas@siemens.com>
+Subject:
+ =?iso-8859-1?Q?TIMA_/_New_ticket_/_#Ticket_I-23019758#_/_IKV_ERL_S_SP_1_/?=
+ =?iso-8859-1?Q?_Prio:_Medium_/_St=F6rung__->_LAN_/_WLAN?=
+Thread-Topic:
+ =?iso-8859-1?Q?TIMA_/_New_ticket_/_#Ticket_I-23019758#_/_IKV_ERL_S_SP_1_/?=
+ =?iso-8859-1?Q?_Prio:_Medium_/_St=F6rung__->_LAN_/_WLAN?=
+Thread-Index: AQHaAl6WRWVwYjs2E0CJHjavG6b+ZQ==
+Date: Thu, 19 Oct 2023 07:33:40 +0000
+Message-ID: <0D1700D6-5069-4968-BA60-619CD39FEF9C@siemens.com>
+Content-Language: de-DE
+X-MS-Exchange-Organization-AuthSource:
+ TreatMessagesAsInternal-AM3PEPF00009B9E.eurprd04.prod.outlook.com
+X-MS-Has-Attach:
+X-MS-Exchange-Organization-Network-Message-Id:
+ 77b255a9-b73e-49af-8e81-08dbd075b7d3
+X-MS-TNEF-Correlator:
+X-MS-Exchange-Organization-RecordReviewCfmType: 0
+x-ms-exchange-organization-originalclientipaddress: 185.136.64.226
+x-ms-exchange-organization-originalserveripaddress: 10.167.16.23
+received-spf: Pass (protection.outlook.com: domain of siemens.com designates
+ 185.136.64.226 as permitted sender) receiver=protection.outlook.com;
+ client-ip=185.136.64.226; helo=mta-64-226.siemens.flowmailer.net; pr=C
+authentication-results: spf=pass (sender IP is 185.136.64.226)
+ smtp.mailfrom=siemens.com; dkim=pass (signature was verified)
+ header.d=siemens.com;dmarc=pass action=none header.from=siemens.com;
+dkim-signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed; s=fm1;
+ d=siemens.com; i=tima.it@siemens.com;
+ h=Date:From:Subject:To:Message-ID:MIME-Version:Content-Type:Content-Transfer-Encoding;
+ bh=Br1jmHl+kX5gN+czds0u6gbVvMSgA/h1AuySVrELTvY=;
+ b=Y7+evSFQC9EPp8x6eU7OtzzaCPo0V7SPTsMwWYM6zaGl8V4Y5Sp405Ukdqz6fSh4puryqP
+ L/XiYMICHdlOtsVSah4fya/Z3it098GMuV6gsAoj1NkD/4ZweyMiX5hNXSg3X9XaW9GAO35c
+ z+g4+m5HUEkrfbvN4IaQOM47Vbz4A=;
+x-ms-publictraffictype: Email
+x-originatororg: siemens.onmicrosoft.com
+x-forefront-antispam-report:
+ CIP:185.136.64.226;CTRY:NL;LANG:en;SCL:1;SRV:;IPV:NLI;SFV:NSPM;H:mta-64-226.siemens.flowmailer.net;PTR:mta-64-226.siemens.flowmailer.net;CAT:NONE;SFS:;DIR:INT;
+x-ms-office365-filtering-correlation-id: 77b255a9-b73e-49af-8e81-08dbd075b7d3
+x-ms-traffictypediagnostic:
+ AM3PEPF00009B9E:EE_|VI1PR10MB7636:EE_|AM8PR10MB4643:EE_
+x-microsoft-antispam: BCL:0;
+x-ms-exchange-crosstenant-network-message-id:
+ 77b255a9-b73e-49af-8e81-08dbd075b7d3
+x-ms-exchange-crosstenant-originalarrivaltime: 19 Oct 2023 07:33:41.6903 (UTC)
+x-ms-exchange-crosstenant-fromentityheader: HybridOnPrem
+x-ms-exchange-crosstenant-id: 38ae3bcd-9579-4fd4-adda-b42e1495d55a
+x-ms-exchange-transport-crosstenantheadersstamped: VI1PR10MB7636
+x-ms-exchange-transport-endtoendlatency: 00:00:01.4517431
+x-ms-exchange-atpmessageproperties: SA|SL
+x-ms-exchange-processed-by-bccfoldering: 15.20.6907.018
+x-ms-exchange-crosstenant-authsource:
+ TreatMessagesAsInternal-AM3PEPF00009B9E.eurprd04.prod.outlook.com
+x-ms-exchange-crosstenant-authas: Internal
+x-eopattributedmessage: 0
+x-ms-exchange-crosstenant-originalattributedtenantconnectingip:
+ TenantId=38ae3bcd-9579-4fd4-adda-b42e1495d55a;Ip=[185.136.64.226];Helo=[mta-64-226.siemens.flowmailer.net]
+X-Microsoft-Antispam-Mailbox-Delivery:
+ ucf:1;jmr:0;auth:0;dest:C;OFR:CustomRules;ENG:(910001)(944506478)(944626604)(920097)(425001)(930097)(140003)(1420103);
+X-Microsoft-Antispam-Message-Info:
+ L1pHWJiP2T+MpL2ml0n9k/1ct0MdMKqsoNaDbizeUwagyiTFT+PTJJHIwmeZHDXAEaRUIcLuK4bKW+wg2LydrsnbCCjrmqEOVY2OqsD6USX6M7joH9TbxUKr2JHLT3ueFWEU4xoqkkjR6fSD0jAUPEZpLeu4i0uxGjK64VTFo4tfjHOq4nRCa/156cf3rJMdcGaSXt+EXx/pGSQu4kmF90YpG9jMcumAH8eZzm7HOdpc/40nhVJlsxTV9kPkv8wJX4ccTfxPki32FGnyHOikxbZP7k0x173vtSJMp85DRBs3TxO7oQkx/JV5p4Oe6KADEF7RIwQ6nMsN9GQntDDzRrm0pBh1C/K2C+aMXjx0XXF06vzUqaasGNBoICPFuRuVOxIozNvG6ljWEkLPxgF1I+BBfHSvrCwQeycv9bXYwiblngaGEmxNB3WZ7loCIcc1iGQh+J6wgNySpPKmHIYWflH7JjgcZtkncQ3ghC3S2RBciBxqtNVZgCp9yPo3BuTlwSxQRhzMTxJuXSTtUPoFzm7di+gGa98LqnKwWYR+vtdTnSiY1swMhWHlnHTuVvSf/D5c3F1Nq76KfZAwjn1Frm8K+CSX9dRl59Ta/2U+y0JWEQiP9UPiX9FRXgKh18IDz6zjUbgr3rEfCcyf72IMkQO2iAG5isni0tF8PRyiAqZbD32F6XQKDVnOurWPZhkEq5t4ETtMre9HG2JPJEA6gh9YRS20mwoHUF4lp3zWyvNcOoPFhm5Ez/N4i+YzWmzyy8KNzql/u5sJdnFwiDKUTIn4gU4WW4jspQ0MYazDO1+x6CV30IrVDYy4jyqvJpaEpxjP8h6G91YGQoWOrT+XjlSwiLgiH6KjcwZZbtSTRGM=
+Content-Type: multipart/alternative;
+	boundary="_000_0D1700D650694968BA60619CD39FEF9Csiemenscom_"
+MIME-Version: 1.0
+
+--_000_0D1700D650694968BA60619CD39FEF9Csiemenscom_
+Content-Type: text/plain; charset="iso-8859-1"
+Content-Transfer-Encoding: quoted-printable
+
+Dear IKV-ERLSSP1 Team (SIE global),
+
+Link to ticket (TIMA)<https://tima.siemens.com/otwg20/#/login?singleton=3D3=
+&id=3D4455810>
+
+Ticket No.:      I-23019758<https://tima.siemens.com/otwg20/#/login?singlet=
+on=3D3&id=3D4455810>
+Main Ticket:     C-23077813<https://tima.siemens.com/otwg20/#/login?singlet=
+on=3D3&id=3D4455807>
+Title:   St=F6rung -> LAN / WLAN
+Service:         IKV ERL S SP 1
+Category:        St=F6rung (IKV ERL) -> LAN / WLAN
+Keywords 1-4:    / / /
+State:   New
+Customer priority:       Issue but can work
+Priority:        Medium
+Reporting Person (Org-unit):     Jared Daniel Shipley (DI FA HMI EE PRC2)
+Affected Person (Org-unit):      Jared Daniel Shipley (DI FA HMI EE PRC2)
+Responsible Group:       IKV-ERLSSP1 Team (SIE global)
+Responsible Person:
+Creation date:   10/19/2023 9:33:33 AM
+Last change:     10/19/2023 9:33:34 AM
+Description:     Wir haben ein paar neue Rechner (pizza boxes) in einem Rac=
+k in der WinCC Technik Raum eingerichtet. Bei einem moechten wir dass ein k=
+ollege aus Indien zugang dazu hat. Er meldet, dass er kein Remote Desktop a=
+uf dem Rechner aufmachen kann.
+
+Rechner: 149.212.242.210 (DINM8CN32000MF)
+
+Der Kollege ist Pande, Mandar (DI FA HMI EE PRC4) mandar.pande@siemens.com =
+in Pune.
+
+Ich habe schon Local Admin Rechte fuer ihn auf dem Rechner eingerichtet (ub=
+er MyIT).
+
+Mussen wir irgendwas machen, damit er zugang auf dem Rechner bekommt?
+
+Last Comment:    Solution description:
+
+  _____
+
+This Email has been generated automatically by TIMA (Ticket Management).
+
+Siemens Aktiengesellschaft: Chairman of the Supervisory Board: Jim Hagemann=
+ Snabe; Managing Board: Roland Busch, Chairman, President and Chief Executi=
+ve Officer; Cedrik Neike, Matthias Rebellius, Ralf P. Thomas, Judith Wiese;=
+ Registered offices: Berlin and Munich, Germany; Commercial registries: Ber=
+lin-Charlottenburg, HRB 12300, Munich, HRB 6684; WEEE-Reg.-No. DE 23691322
+
+Important notice: This e-mail and any attachment thereof contain corporate =
+proprietary information. If you have received it by mistake, please notify =
+us immediately by reply e-mail and delete this e-mail and its attachments f=
+rom your system. Thank you.
+
+
+--_000_0D1700D650694968BA60619CD39FEF9Csiemenscom_
+Content-Type: text/html; charset="iso-8859-1"
+Content-ID: <23602310ED2EF24EA0F345248833737F@EURPRD10.PROD.OUTLOOK.COM>
+Content-Transfer-Encoding: quoted-printable
+
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.=
+w3.org/TR/html4/loose.dtd">
+<html>
+<head>
+<meta http-equiv=3D"Content-Type" content=3D"text/html; charset=3Diso-8859-=
+1">
+<style>
+   div {
+    left: 10px;
+    color: #333333;
+    font-family: Arial, Sans-Serif;
+    font-size: 10pt;
+   }
+
+   h1 {
+    font-size: 11pt;
+   }
+
+  </style>
+</head>
+<body>
+<div>
+<p>Dear IKV-ERLSSP1 Team (SIE global), </p>
+<p><a href=3D"https://tima.siemens.com/otwg20/#/login?singleton=3D3&amp;id=
+=3D4455810">Link to ticket (TIMA)</a>
+</p>
+<table style=3D"border-left: 1px none #000000;border-top: 1px none #000000;=
+border-right: 1px none #000000;border-bottom: 1px none #000000;border-colla=
+pse: collapse;table-layout: auto;width: 100%;">
+<tbody>
+<tr>
+<td style=3D"vertical-align: top; width: 20%; font-weight: bold; border-lef=
+t: 1.333333px solid #000000;border-top: 1.333333px solid #000000;border-rig=
+ht: 1.333333px solid #000000;border-bottom: 1.333333px solid #000000;paddin=
+g: 5px 5px 5px 5px;">
+Ticket No.:</td>
+<td style=3D"vertical-align: top; width: 80%; font-weight: normal; border-l=
+eft: 1.333333px solid #000000;border-top: 1.333333px solid #000000;border-r=
+ight: 1.333333px solid #000000;border-bottom: 1.333333px solid #000000;padd=
+ing: 5px 5px 5px 5px;">
+<a href=3D"https://tima.siemens.com/otwg20/#/login?singleton=3D3&amp;id=3D4=
+455810">I-23019758</a></td>
+</tr>
+<tr>
+<td style=3D"vertical-align: top; width: 20%; font-weight: bold; border-lef=
+t: 1.333333px solid #000000;border-top: 1.333333px solid #000000;border-rig=
+ht: 1.333333px solid #000000;border-bottom: 1.333333px solid #000000;paddin=
+g: 5px 5px 5px 5px;">
+Main Ticket:</td>
+<td style=3D"vertical-align: top; width: 80%; font-weight: normal; border-l=
+eft: 1.333333px solid #000000;border-top: 1.333333px solid #000000;border-r=
+ight: 1.333333px solid #000000;border-bottom: 1.333333px solid #000000;padd=
+ing: 5px 5px 5px 5px;">
+<a href=3D"https://tima.siemens.com/otwg20/#/login?singleton=3D3&amp;id=3D4=
+455807">C-23077813</a></td>
+</tr>
+<tr>
+<td style=3D"vertical-align: top; width: 20%; font-weight: bold; border-lef=
+t: 1.333333px solid #000000;border-top: 1.333333px solid #000000;border-rig=
+ht: 1.333333px solid #000000;border-bottom: 1.333333px solid #000000;paddin=
+g: 5px 5px 5px 5px;">
+Title:</td>
+<td style=3D"vertical-align: top; width: 80%; font-weight: normal; border-l=
+eft: 1.333333px solid #000000;border-top: 1.333333px solid #000000;border-r=
+ight: 1.333333px solid #000000;border-bottom: 1.333333px solid #000000;padd=
+ing: 5px 5px 5px 5px;">
+St=F6rung -&gt; LAN / WLAN</td>
+</tr>
+<tr>
+<td style=3D"vertical-align: top; width: 20%; font-weight: bold; border-lef=
+t: 1.333333px solid #000000;border-top: 1.333333px solid #000000;border-rig=
+ht: 1.333333px solid #000000;border-bottom: 1.333333px solid #000000;paddin=
+g: 5px 5px 5px 5px;">
+Service:</td>
+<td style=3D"vertical-align: top; width: 80%; font-weight: normal; border-l=
+eft: 1.333333px solid #000000;border-top: 1.333333px solid #000000;border-r=
+ight: 1.333333px solid #000000;border-bottom: 1.333333px solid #000000;padd=
+ing: 5px 5px 5px 5px;">
+IKV ERL S SP 1</td>
+</tr>
+<tr>
+<td style=3D"vertical-align: top; width: 20%; font-weight: bold; border-lef=
+t: 1.333333px solid #000000;border-top: 1.333333px solid #000000;border-rig=
+ht: 1.333333px solid #000000;border-bottom: 1.333333px solid #000000;paddin=
+g: 5px 5px 5px 5px;">
+Category:</td>
+<td style=3D"vertical-align: top; width: 80%; font-weight: normal; border-l=
+eft: 1.333333px solid #000000;border-top: 1.333333px solid #000000;border-r=
+ight: 1.333333px solid #000000;border-bottom: 1.333333px solid #000000;padd=
+ing: 5px 5px 5px 5px;">
+St=F6rung (IKV ERL) -&gt; LAN / WLAN</td>
+</tr>
+<tr>
+<td style=3D"vertical-align: top; width: 20%; font-weight: bold; border-lef=
+t: 1.333333px solid #000000;border-top: 1.333333px solid #000000;border-rig=
+ht: 1.333333px solid #000000;border-bottom: 1.333333px solid #000000;paddin=
+g: 5px 5px 5px 5px;">
+Keywords 1-4:</td>
+<td style=3D"vertical-align: top; width: 80%; font-weight: normal; border-l=
+eft: 1.333333px solid #000000;border-top: 1.333333px solid #000000;border-r=
+ight: 1.333333px solid #000000;border-bottom: 1.333333px solid #000000;padd=
+ing: 5px 5px 5px 5px;">
+/ / / </td>
+</tr>
+<tr>
+<td style=3D"vertical-align: top; width: 20%; font-weight: bold; border-lef=
+t: 1.333333px solid #000000;border-top: 1.333333px solid #000000;border-rig=
+ht: 1.333333px solid #000000;border-bottom: 1.333333px solid #000000;paddin=
+g: 5px 5px 5px 5px;">
+State:</td>
+<td style=3D"vertical-align: top; width: 80%; font-weight: normal; border-l=
+eft: 1.333333px solid #000000;border-top: 1.333333px solid #000000;border-r=
+ight: 1.333333px solid #000000;border-bottom: 1.333333px solid #000000;padd=
+ing: 5px 5px 5px 5px;">
+New</td>
+</tr>
+<tr>
+<td style=3D"vertical-align: top; width: 20%; font-weight: bold; border-lef=
+t: 1.333333px solid #000000;border-top: 1.333333px solid #000000;border-rig=
+ht: 1.333333px solid #000000;border-bottom: 1.333333px solid #000000;paddin=
+g: 5px 5px 5px 5px;">
+Customer priority:</td>
+<td style=3D"vertical-align: top; width: 80%; font-weight: normal; border-l=
+eft: 1.333333px solid #000000;border-top: 1.333333px solid #000000;border-r=
+ight: 1.333333px solid #000000;border-bottom: 1.333333px solid #000000;padd=
+ing: 5px 5px 5px 5px;">
+Issue but can work</td>
+</tr>
+<tr>
+<td style=3D"vertical-align: top; width: 20%; font-weight: bold; border-lef=
+t: 1.333333px solid #000000;border-top: 1.333333px solid #000000;border-rig=
+ht: 1.333333px solid #000000;border-bottom: 1.333333px solid #000000;paddin=
+g: 5px 5px 5px 5px;">
+Priority:</td>
+<td style=3D"vertical-align: top; width: 80%; font-weight: normal; border-l=
+eft: 1.333333px solid #000000;border-top: 1.333333px solid #000000;border-r=
+ight: 1.333333px solid #000000;border-bottom: 1.333333px solid #000000;padd=
+ing: 5px 5px 5px 5px;">
+Medium</td>
+</tr>
+<tr>
+<td style=3D"vertical-align: top; width: 20%; font-weight: bold; border-lef=
+t: 1.333333px solid #000000;border-top: 1.333333px solid #000000;border-rig=
+ht: 1.333333px solid #000000;border-bottom: 1.333333px solid #000000;paddin=
+g: 5px 5px 5px 5px;">
+Reporting Person (Org-unit):</td>
+<td style=3D"vertical-align: top; width: 80%; font-weight: normal; border-l=
+eft: 1.333333px solid #000000;border-top: 1.333333px solid #000000;border-r=
+ight: 1.333333px solid #000000;border-bottom: 1.333333px solid #000000;padd=
+ing: 5px 5px 5px 5px;">
+Jared Daniel Shipley (DI FA HMI EE PRC2)</td>
+</tr>
+<tr>
+<td style=3D"vertical-align: top; width: 20%; font-weight: bold; border-lef=
+t: 1.333333px solid #000000;border-top: 1.333333px solid #000000;border-rig=
+ht: 1.333333px solid #000000;border-bottom: 1.333333px solid #000000;paddin=
+g: 5px 5px 5px 5px;">
+Affected Person (Org-unit):</td>
+<td style=3D"vertical-align: top; width: 80%; font-weight: normal; border-l=
+eft: 1.333333px solid #000000;border-top: 1.333333px solid #000000;border-r=
+ight: 1.333333px solid #000000;border-bottom: 1.333333px solid #000000;padd=
+ing: 5px 5px 5px 5px;">
+Jared Daniel Shipley (DI FA HMI EE PRC2)</td>
+</tr>
+<tr>
+<td style=3D"vertical-align: top; width: 20%; font-weight: bold; border-lef=
+t: 1.333333px solid #000000;border-top: 1.333333px solid #000000;border-rig=
+ht: 1.333333px solid #000000;border-bottom: 1.333333px solid #000000;paddin=
+g: 5px 5px 5px 5px;">
+Responsible Group:</td>
+<td style=3D"vertical-align: top; width: 80%; font-weight: normal; border-l=
+eft: 1.333333px solid #000000;border-top: 1.333333px solid #000000;border-r=
+ight: 1.333333px solid #000000;border-bottom: 1.333333px solid #000000;padd=
+ing: 5px 5px 5px 5px;">
+IKV-ERLSSP1 Team (SIE global)</td>
+</tr>
+<tr>
+<td style=3D"vertical-align: top; width: 20%; font-weight: bold; border-lef=
+t: 1.333333px solid #000000;border-top: 1.333333px solid #000000;border-rig=
+ht: 1.333333px solid #000000;border-bottom: 1.333333px solid #000000;paddin=
+g: 5px 5px 5px 5px;">
+Responsible Person:</td>
+<td style=3D"vertical-align: top; width: 80%; font-weight: normal; border-l=
+eft: 1.333333px solid #000000;border-top: 1.333333px solid #000000;border-r=
+ight: 1.333333px solid #000000;border-bottom: 1.333333px solid #000000;padd=
+ing: 5px 5px 5px 5px;">
+</td>
+</tr>
+<tr>
+<td style=3D"vertical-align: top; width: 20%; font-weight: bold; border-lef=
+t: 1.333333px solid #000000;border-top: 1.333333px solid #000000;border-rig=
+ht: 1.333333px solid #000000;border-bottom: 1.333333px solid #000000;paddin=
+g: 5px 5px 5px 5px;">
+Creation date:</td>
+<td style=3D"vertical-align: top; width: 80%; font-weight: normal; border-l=
+eft: 1.333333px solid #000000;border-top: 1.333333px solid #000000;border-r=
+ight: 1.333333px solid #000000;border-bottom: 1.333333px solid #000000;padd=
+ing: 5px 5px 5px 5px;">
+10/19/2023 9:33:33 AM</td>
+</tr>
+<tr>
+<td style=3D"vertical-align: top; width: 20%; font-weight: bold; border-lef=
+t: 1.333333px solid #000000;border-top: 1.333333px solid #000000;border-rig=
+ht: 1.333333px solid #000000;border-bottom: 1.333333px solid #000000;paddin=
+g: 5px 5px 5px 5px;">
+Last change:</td>
+<td style=3D"vertical-align: top; width: 80%; font-weight: normal; border-l=
+eft: 1.333333px solid #000000;border-top: 1.333333px solid #000000;border-r=
+ight: 1.333333px solid #000000;border-bottom: 1.333333px solid #000000;padd=
+ing: 5px 5px 5px 5px;">
+10/19/2023 9:33:34 AM</td>
+</tr>
+<tr>
+<td style=3D"vertical-align: top; width: 20%; font-weight: bold; border-lef=
+t: 1.333333px solid #000000;border-top: 1.333333px solid #000000;border-rig=
+ht: 1.333333px solid #000000;border-bottom: 1.333333px solid #000000;paddin=
+g: 5px 5px 5px 5px;">
+Description:</td>
+<td style=3D"vertical-align: top; width: 80%; font-weight: normal; border-l=
+eft: 1.333333px solid #000000;border-top: 1.333333px solid #000000;border-r=
+ight: 1.333333px solid #000000;border-bottom: 1.333333px solid #000000;padd=
+ing: 5px 5px 5px 5px;">
+<p>Wir haben ein paar neue Rechner (pizza boxes) in einem Rack in der WinCC=
+ Technik Raum eingerichtet. Bei einem moechten wir dass ein kollege aus Ind=
+ien zugang dazu hat. Er meldet, dass er kein Remote Desktop auf dem Rechner=
+ aufmachen kann.</p>
+<p></p>
+<p></p>
+<p></p>
+<p>Rechner: 149.212.242.210 (DINM8CN32000MF)</p>
+<p></p>
+<p></p>
+<p></p>
+<p>Der Kollege ist Pande, Mandar (DI FA HMI EE PRC4) mandar.pande@siemens.c=
+om in Pune.
+</p>
+<p></p>
+<p>Ich habe schon Local Admin Rechte fuer ihn auf dem Rechner eingerichtet =
+(uber MyIT).</p>
+<p></p>
+<p></p>
+<p></p>
+<p>Mussen wir irgendwas machen, damit er zugang auf dem Rechner bekommt? </=
+p>
+</td>
+</tr>
+<tr>
+<td style=3D"vertical-align: top; width: 20%; font-weight: bold; border-lef=
+t: 1.333333px solid #000000;border-top: 1.333333px solid #000000;border-rig=
+ht: 1.333333px solid #000000;border-bottom: 1.333333px solid #000000;paddin=
+g: 5px 5px 5px 5px;">
+Last Comment:</td>
+<td style=3D"vertical-align: top; width: 80%; font-weight: normal; border-l=
+eft: 1.333333px solid #000000;border-top: 1.333333px solid #000000;border-r=
+ight: 1.333333px solid #000000;border-bottom: 1.333333px solid #000000;padd=
+ing: 5px 5px 5px 5px;">
+<p></p>
+</td>
+</tr>
+<tr>
+<td style=3D"vertical-align: top; width: 20%; font-weight: bold; border-lef=
+t: 1.333333px solid #000000;border-top: 1.333333px solid #000000;border-rig=
+ht: 1.333333px solid #000000;border-bottom: 1.333333px solid #000000;paddin=
+g: 5px 5px 5px 5px;">
+Solution description:</td>
+<td style=3D"vertical-align: top; width: 80%; font-weight: normal; border-l=
+eft: 1.333333px solid #000000;border-top: 1.333333px solid #000000;border-r=
+ight: 1.333333px solid #000000;border-bottom: 1.333333px solid #000000;padd=
+ing: 5px 5px 5px 5px;">
+<p></p>
+</td>
+</tr>
+</tbody>
+</table>
+<p>&nbsp;</p>
+<hr color=3D"#009999" width=3D"100%" align=3D"left">
+<p>This Email has been generated automatically by TIMA (Ticket Management).=
+</p>
+<p>Siemens Aktiengesellschaft: Chairman of the Supervisory Board: Jim Hagem=
+ann Snabe; Managing Board: Roland Busch, Chairman, President and Chief Exec=
+utive Officer; Cedrik Neike, Matthias Rebellius, Ralf P. Thomas, Judith Wie=
+se; Registered offices: Berlin and
+ Munich, Germany; Commercial registries: Berlin-Charlottenburg, HRB 12300, =
+Munich, HRB 6684; WEEE-Reg.-No. DE 23691322<br>
+<br>
+Important notice: This e-mail and any attachment thereof contain corporate =
+proprietary information. If you have received it by mistake, please notify =
+us immediately by reply e-mail and delete this e-mail and its attachments f=
+rom your system. Thank you.
+</p>
+</div>
+</body>
+</html>
+
+--_000_0D1700D650694968BA60619CD39FEF9Csiemenscom_--
+Dear IKV-ERLSSP1 Team (SIE global),
+
+Link to ticket (TIMA)<https://tima.siemens.com/otwg20/#/login?singleton=3D3=
+&id=3D4455810>
+
+Ticket No.:      I-23019758<https://tima.siemens.com/otwg20/#/login?singlet=
+on=3D3&id=3D4455810>
+Main Ticket:     C-23077813<https://tima.siemens.com/otwg20/#/login?singlet=
+on=3D3&id=3D4455807>
+Title:   St=F6rung -> LAN / WLAN
+Service:         IKV ERL S SP 1
+Category:        St=F6rung (IKV ERL) -> LAN / WLAN
+Keywords 1-4:    / / /
+State:   New
+Customer priority:       Issue but can work
+Priority:        Medium
+Reporting Person (Org-unit):     Jared Daniel Shipley (DI FA HMI EE PRC2)
+Affected Person (Org-unit):      Jared Daniel Shipley (DI FA HMI EE PRC2)
+Responsible Group:       IKV-ERLSSP1 Team (SIE global)
+Responsible Person:
+Creation date:   10/19/2023 9:33:33 AM
+Last change:     10/19/2023 9:33:34 AM
+Description:     Wir haben ein paar neue Rechner (pizza boxes) in einem Rac=
+k in der WinCC Technik Raum eingerichtet. Bei einem moechten wir dass ein k=
+ollege aus Indien zugang dazu hat. Er meldet, dass er kein Remote Desktop a=
+uf dem Rechner aufmachen kann.
+
+Rechner: 149.212.242.210 (DINM8CN32000MF)
+
+Der Kollege ist Pande, Mandar (DI FA HMI EE PRC4) mandar.pande@siemens.com =
+in Pune.
+
+Ich habe schon Local Admin Rechte fuer ihn auf dem Rechner eingerichtet (ub=
+er MyIT).
+
+Mussen wir irgendwas machen, damit er zugang auf dem Rechner bekommt?
+
+Last Comment:    Solution description:
+
+  _____
+
+This Email has been generated automatically by TIMA (Ticket Management).
+
+Siemens Aktiengesellschaft: Chairman of the Supervisory Board: Jim Hagemann=
+ Snabe; Managing Board: Roland Busch, Chairman, President and Chief Executi=
+ve Officer; Cedrik Neike, Matthias Rebellius, Ralf P. Thomas, Judith Wiese;=
+ Registered offices: Berlin and Munich, Germany; Commercial registries: Ber=
+lin-Charlottenburg, HRB 12300, Munich, HRB 6684; WEEE-Reg.-No. DE 23691322
+
+Important notice: This e-mail and any attachment thereof contain corporate =
+proprietary information. If you have received it by mistake, please notify =
+us immediately by reply e-mail and delete this e-mail and its attachments f=
+rom your system. Thank you.
+
+
+--_000_0D1700D650694968BA60619CD39FEF9Csiemenscom_
+X-Apple-Content-Length: 2220
+Content-Type: TEXT/plain;
+	charset=iso-8859-1
+Content-Transfer-Encoding: QUOTED-PRINTABLE
+
+
+--_000_0D1700D650694968BA60619CD39FEF9Csiemenscom_
+Content-Transfer-Encoding: QUOTED-PRINTABLE
+Content-Type: TEXT/html;
+	charset=iso-8859-1
+X-Apple-Content-Length: 12836
+Content-Id: <23602310ED2EF24EA0F345248833737F@EURPRD10.PROD.OUTLOOK.COM>
+
+
+--_000_0D1700D650694968BA60619CD39FEF9Csiemenscom_--
