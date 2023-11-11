@@ -50,6 +50,8 @@
 2. **Use the endpoints**: go to [SwaggerUI](http://localhost:8000/docs) **OR**
    try [Postman](https://www.postman.com/downloads/) with the base URL `http://localhost:8000/api/v1` + router path
 
+   - Example of how to test endpoint with postman (Model is automatically run when we run the endpoint). 
+      ![Example of how to test endpoint with postman](images/endpoint_example.png)
 3. **Run the tests**:
 
     ```bash

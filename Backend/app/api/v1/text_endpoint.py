@@ -1,6 +1,7 @@
 from fastapi import APIRouter, HTTPException
 from app.dto.text_input import TextInput
 from app.dto.text_response import TextResponse
+from app.models.t5.use_trained_t5_model import TrainedT5Model
 
 router = APIRouter()
 
@@ -20,15 +21,16 @@ async def process_text(text_input: TextInput):
     """
     if not text_input.text:
         raise HTTPException(status_code=400, detail="Text is required")  # Return a 400 Bad Request with an error message
-    
-    # You can perform any processing with the received text here if needed.
-    # For example, you could save it to a database or apply some text analysis.
-    
+
+    # run model
+    trained_t5_model = TrainedT5Model()
+    received_text = trained_t5_model.run_model(text_input.text)
+
     # Print the received text for debugging or logging purposes
-    print(f"Received Text: {text_input.text}")
+    print(f"Received Text: {received_text}")
     
     # Respond with a simple message and a status code
     response_data = "Message was received"
     status_code = 200  # You can change this as needed
 
-    return TextResponse(data=response_data, text=text_input.text, code=status_code)
+    return TextResponse(data=response_data, text=received_text, code=status_code)
