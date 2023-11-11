@@ -6,7 +6,7 @@ export class TicketService{
     constructor(private http: HttpClient){
     }
     send(message: string) {
-        const url = 'https://reqres.in/api/posts'; //answer with input
+        const url = 'http://localhost:8000/api/v1/text'; //answer with input
         
         const data= { messageText: message, isUser:true };
 
