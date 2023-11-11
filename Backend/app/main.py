@@ -1,8 +1,21 @@
 from fastapi import FastAPI
 from config import AppConfig  # Import the AppConfig class from the configuration file
 from app.api.v1 import text_endpoint
+from fastapi.middleware.cors import CORSMiddleware
 
 app = FastAPI()
+
+origins = [
+    "http://localhost:4200/",
+]
+
+app.add_middleware(
+    CORSMiddleware,
+    allow_origins=origins,
+    allow_credentials=True,
+    allow_methods=[""],
+    allow_headers=[""],
+)
 
 # Include the router from the text_endpoint module
 app.include_router(text_endpoint.router, prefix="/api/v1")
