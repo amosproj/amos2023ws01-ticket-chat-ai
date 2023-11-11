@@ -1,0 +1,542 @@
+Received: from VE1PR10MB3869.EURPRD10.PROD.OUTLOOK.COM (2603:10a6:800:164::8)
+ by AM8PR10MB4643.EURPRD10.PROD.OUTLOOK.COM with HTTPS; Tue, 17 Oct 2023
+ 11:23:41 +0000
+Received: from AM9P250CA0029.EURP250.PROD.OUTLOOK.COM (2603:10a6:20b:21c::34)
+ by VE1PR10MB3869.EURPRD10.PROD.OUTLOOK.COM (2603:10a6:800:164::8) with
+ Microsoft SMTP Server (version=TLS1_2,
+ cipher=TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384) id 15.20.6886.35; Tue, 17 Oct
+ 2023 11:23:40 +0000
+Received: from AM4PEPF00025F99.EURPRD83.prod.outlook.com
+ (2603:10a6:20b:21c:cafe::a1) by AM9P250CA0029.outlook.office365.com
+ (2603:10a6:20b:21c::34) with Microsoft SMTP Server (version=TLS1_2,
+ cipher=TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384) id 15.20.6907.21 via Frontend
+ Transport; Tue, 17 Oct 2023 11:23:40 +0000
+Received: from mta-65-227.siemens.flowmailer.net (185.136.65.227) by
+ AM4PEPF00025F99.mail.protection.outlook.com (10.167.16.8) with Microsoft SMTP
+ Server (version=TLS1_2, cipher=TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384) id
+ 15.20.6933.4 via Frontend Transport; Tue, 17 Oct 2023 11:23:40 +0000
+Received: by mta-65-227.siemens.flowmailer.net with ESMTPSA id 202310171123390c63506efa08ec5632
+        for <3192d33b-7f91-434c-bb00-4ab6856267d3@siemens.mail.onmicrosoft.com>;
+        Tue, 17 Oct 2023 13:23:40 +0200
+From: "tima.it@siemens.com" <tima.it@siemens.com>
+To: "Arndt, Christoph" <christoph.arndt@evosoft.com>, "Kampa, Holger"
+	<holger.kampa@evosoft.com>, "Samaras, Ioannis" <ioannis.samaras@siemens.com>,
+	"Brtan, Ivica" <Ivica.Brtan@siemens.com>, "Frank, Juergen"
+	<juergen.frank@siemens.com>, "Meier, Michael" <michael.meier@siemens.com>,
+	"Decker, Oliver" <oliver.decker@siemens.com>, "Schwarz, Thomas"
+	<schwarz.thomas@siemens.com>
+Subject: TIMA / New ticket / #Ticket I-23019592# / IKV ERL S SP 1 / Prio:
+ Medium / Rack PC md6205bc ist nicht mehr erreichbar.
+Thread-Topic: TIMA / New ticket / #Ticket I-23019592# / IKV ERL S SP 1 / Prio:
+ Medium / Rack PC md6205bc ist nicht mehr erreichbar.
+Thread-Index: AQHaAOxhuJIyz787GEGH+/WuiVl+FQ==
+Date: Tue, 17 Oct 2023 11:23:39 +0000
+Message-ID: <3159CD8A-DD06-4EB0-A693-EB3CABDD0D0A@siemens.com>
+Content-Language: de-DE
+X-MS-Exchange-Organization-AuthSource:
+ TreatMessagesAsInternal-AM4PEPF00025F99.EURPRD83.prod.outlook.com
+X-MS-Has-Attach:
+X-MS-Exchange-Organization-Network-Message-Id:
+ cd76d6b7-745b-4a29-1f46-08dbcf03839a
+X-MS-TNEF-Correlator:
+X-MS-Exchange-Organization-RecordReviewCfmType: 0
+x-ms-exchange-organization-originalclientipaddress: 185.136.65.227
+x-ms-exchange-organization-originalserveripaddress: 10.167.16.8
+received-spf: Pass (protection.outlook.com: domain of siemens.com designates
+ 185.136.65.227 as permitted sender) receiver=protection.outlook.com;
+ client-ip=185.136.65.227; helo=mta-65-227.siemens.flowmailer.net; pr=C
+authentication-results: spf=pass (sender IP is 185.136.65.227)
+ smtp.mailfrom=siemens.com; dkim=pass (signature was verified)
+ header.d=siemens.com;dmarc=pass action=none header.from=siemens.com;
+dkim-signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed; s=fm1;
+ d=siemens.com; i=tima.it@siemens.com;
+ h=Date:From:Subject:To:Message-ID:MIME-Version:Content-Type:Content-Transfer-Encoding;
+ bh=UEixBPQHJYmDHr9kuIrb3jOHTotuYTUj0QbDey/6Rsw=;
+ b=RhRFNMTMTtbjqXQYNxNO+HKsPU8L6/5sJCU3RzNModSsI/A2bziRIsqiGyKOCDCpZD7OBm
+ PYDzlajRy8i/UtXK85Hctmzim4bLxb6wtgjAUuEDZ+eO9xeJ2INNE34PHAj/ju/mYp4GmpVb
+ Jag+GweRHDJLG/74LUf0VwSKEwpWY=;
+x-ms-publictraffictype: Email
+x-originatororg: siemens.onmicrosoft.com
+x-forefront-antispam-report:
+ CIP:185.136.65.227;CTRY:NL;LANG:en;SCL:1;SRV:;IPV:NLI;SFV:NSPM;H:mta-65-227.siemens.flowmailer.net;PTR:mta-65-227.siemens.flowmailer.net;CAT:NONE;SFS:;DIR:INT;
+x-ms-office365-filtering-correlation-id: cd76d6b7-745b-4a29-1f46-08dbcf03839a
+x-ms-traffictypediagnostic:
+ AM4PEPF00025F99:EE_|VE1PR10MB3869:EE_|AM8PR10MB4643:EE_
+x-microsoft-antispam: BCL:0;
+x-ms-exchange-crosstenant-network-message-id:
+ cd76d6b7-745b-4a29-1f46-08dbcf03839a
+x-ms-exchange-crosstenant-originalarrivaltime: 17 Oct 2023 11:23:40.2824 (UTC)
+x-ms-exchange-crosstenant-fromentityheader: HybridOnPrem
+x-ms-exchange-crosstenant-id: 38ae3bcd-9579-4fd4-adda-b42e1495d55a
+x-ms-exchange-transport-crosstenantheadersstamped: VE1PR10MB3869
+x-ms-exchange-transport-endtoendlatency: 00:00:01.0218485
+x-ms-exchange-atpmessageproperties: SA|SL
+x-ms-exchange-processed-by-bccfoldering: 15.20.6886.034
+x-ms-exchange-crosstenant-authsource:
+ TreatMessagesAsInternal-AM4PEPF00025F99.EURPRD83.prod.outlook.com
+x-ms-exchange-crosstenant-authas: Internal
+x-eopattributedmessage: 0
+x-ms-exchange-crosstenant-originalattributedtenantconnectingip:
+ TenantId=38ae3bcd-9579-4fd4-adda-b42e1495d55a;Ip=[185.136.65.227];Helo=[mta-65-227.siemens.flowmailer.net]
+X-Microsoft-Antispam-Mailbox-Delivery:
+ ucf:1;jmr:0;auth:0;dest:C;OFR:CustomRules;ENG:(910001)(944506478)(944626604)(920097)(425001)(930097)(140003)(1420103);
+X-Microsoft-Antispam-Message-Info:
+ GcuVo9yDTgEADJAM1AGRV+BCzPs/fIzzDm/y2HjHazaPwCSbMMzhydOhyBUsuCMx4EC5t695R/bi7snuWS7/b80sBsF2ngYPkoZnk/2WYIT56XBgq81/K1NHDRdEzjR0LAkcLRrVoT9hOKftPl4kpMjVgvXbbaelIlR/cwIvCDocLvUfW8ND1BhR/7NDZn0PoM7mUTkBTp+ruIFaemdvYdKmzlZq8As2FWobcnKpu1+M0OYpErSv2S3vEIbPZZQ8KhqlkO44Xio7TReikU/TTFii8yV5Q0XJl/y6rN+tjTFPupR4sApWP+WrgERtDQytzfmOkiru8NAQEpCYQJd4cKhLbMqDoTcKwujZwj7gkxtO0RPASvxJCh7G0LLf9HMf+SkH5Karuc1bwcGB/KVj0YfC1AJNszJhugKi/Pd1h3jmFluGkk8Ra4/0+5g6CJxVJeOLdMdJdIAF0bWEo2wBJO3dyLIC3iHQSq4+HjA0HbA/ADLjbmHi1X3CL9jqtCmwzRSNIRMWJ/gTZTmZjHhTsWIatXJ74H3n7pex7o5+EcWzXsg5pQCGudl0AvKo/4nd4GleZyzA7AZq9m6Pi1BO3o3u5xytd+Kj8yqrfjA42VRegaN4KEsTu4IToxkdD4bMVctVhBpmXHlvE4LU245EdUa9BeoWnorSxlnQhfTTGtW2ohNOyBpoKfBdLGqsg/0etkhgrh/iwnUVS1Aj0LdGTwTxz2PNPfw3mnTy2RvCzfLZ0BKz0n/gxDEeIg9RItPYxWOOwq9Dwa+JTE8ecUKvd/yBp71c589A/Rkx/Y6B5jVlob2//0wqsDyINz5ba6ZVjMn0/fnU7NVW6CCevlgAkBhaHTwdcATrDD3xMStp0Ok=
+Content-Type: multipart/alternative;
+	boundary="_000_3159CD8ADD064EB0A693EB3CABDD0D0Asiemenscom_"
+MIME-Version: 1.0
+
+--_000_3159CD8ADD064EB0A693EB3CABDD0D0Asiemenscom_
+Content-Type: text/plain; charset="iso-8859-1"
+Content-Transfer-Encoding: quoted-printable
+
+Dear IKV-ERLSSP1 Team (SIE global),
+
+Link to ticket (TIMA)<https://tima.siemens.com/otwg20/#/login?singleton=3D3=
+&id=3D4445010>
+
+Ticket No.:      I-23019592<https://tima.siemens.com/otwg20/#/login?singlet=
+on=3D3&id=3D4445010>
+Main Ticket:     C-23077188<https://tima.siemens.com/otwg20/#/login?singlet=
+on=3D3&id=3D4445006>
+Title:   Rack PC md6205bc ist nicht mehr erreichbar.
+Service:         IKV ERL S SP 1
+Category:        Auftrag (IKV ERL) -> Administration Rack-PCs
+Keywords 1-4:    / / /
+State:   New
+Customer priority:       I can't work
+Priority:        Medium
+Reporting Person (Org-unit):     Andreas Richter (DI FA CTR EE CLT)
+Affected Person (Org-unit):      Andreas Richter (DI FA CTR EE CLT)
+Responsible Group:       IKV-ERLSSP1 Team (SIE global)
+Responsible Person:
+Creation date:   17.10.2023 13:23:32
+Last change:     17.10.2023 13:23:34
+Description:     Der Auftraggeber best=E4tigt, dass er alle notwendigen Gen=
+ehmigungen eingeholt (m=FCndlich / schriftlich) hat und dass die Freigabe h=
+ierzu vorliegt!
+
+Es k=F6nnen nur vollst=E4ndig ausgef=FCllte Vorg=E4nge bearbeitet werden!
+
+Administration Rack-PCs
+
+Schrank Raum 2.202: () Fenster () Mitte () T=FCr
+
+Schrank Raum 5.065: ()
+
+Clientname: md6205bc
+
+Ansprechpartner: Andreas Richter
+
+Bitte beschreiben Sie Ihre Anforderung: Rack PC md6205bc ist nicht mehr err=
+eichbar.
+
+----------
+
+Last Comment:    Solution description:
+
+  _____
+
+This Email has been generated automatically by TIMA (Ticket Management).
+
+Siemens Aktiengesellschaft: Chairman of the Supervisory Board: Jim Hagemann=
+ Snabe; Managing Board: Roland Busch, Chairman, President and Chief Executi=
+ve Officer; Cedrik Neike, Matthias Rebellius, Ralf P. Thomas, Judith Wiese;=
+ Registered offices: Berlin and Munich, Germany; Commercial registries: Ber=
+lin-Charlottenburg, HRB 12300, Munich, HRB 6684; WEEE-Reg.-No. DE 23691322
+
+Important notice: This e-mail and any attachment thereof contain corporate =
+proprietary information. If you have received it by mistake, please notify =
+us immediately by reply e-mail and delete this e-mail and its attachments f=
+rom your system. Thank you.
+
+
+--_000_3159CD8ADD064EB0A693EB3CABDD0D0Asiemenscom_
+Content-Type: text/html; charset="iso-8859-1"
+Content-ID: <F3AE36B34EA66042B8CB30A3AFF1C6D9@EURPRD10.PROD.OUTLOOK.COM>
+Content-Transfer-Encoding: quoted-printable
+
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.=
+w3.org/TR/html4/loose.dtd">
+<html>
+<head>
+<meta http-equiv=3D"Content-Type" content=3D"text/html; charset=3Diso-8859-=
+1">
+<style>
+   div {
+    left: 10px;
+    color: #333333;
+    font-family: Arial, Sans-Serif;
+    font-size: 10pt;
+   }
+
+   h1 {
+    font-size: 11pt;
+   }
+
+  </style>
+</head>
+<body>
+<div>
+<p>Dear IKV-ERLSSP1 Team (SIE global), </p>
+<p><a href=3D"https://tima.siemens.com/otwg20/#/login?singleton=3D3&amp;id=
+=3D4445010">Link to ticket (TIMA)</a>
+</p>
+<table style=3D"border-left: 1px none #000000;border-top: 1px none #000000;=
+border-right: 1px none #000000;border-bottom: 1px none #000000;border-colla=
+pse: collapse;table-layout: auto;width: 100%;">
+<tbody>
+<tr>
+<td style=3D"vertical-align: top; width: 20%; font-weight: bold; border-lef=
+t: 1.333333px solid #000000;border-top: 1.333333px solid #000000;border-rig=
+ht: 1.333333px solid #000000;border-bottom: 1.333333px solid #000000;paddin=
+g: 5px 5px 5px 5px;">
+Ticket No.:</td>
+<td style=3D"vertical-align: top; width: 80%; font-weight: normal; border-l=
+eft: 1.333333px solid #000000;border-top: 1.333333px solid #000000;border-r=
+ight: 1.333333px solid #000000;border-bottom: 1.333333px solid #000000;padd=
+ing: 5px 5px 5px 5px;">
+<a href=3D"https://tima.siemens.com/otwg20/#/login?singleton=3D3&amp;id=3D4=
+445010">I-23019592</a></td>
+</tr>
+<tr>
+<td style=3D"vertical-align: top; width: 20%; font-weight: bold; border-lef=
+t: 1.333333px solid #000000;border-top: 1.333333px solid #000000;border-rig=
+ht: 1.333333px solid #000000;border-bottom: 1.333333px solid #000000;paddin=
+g: 5px 5px 5px 5px;">
+Main Ticket:</td>
+<td style=3D"vertical-align: top; width: 80%; font-weight: normal; border-l=
+eft: 1.333333px solid #000000;border-top: 1.333333px solid #000000;border-r=
+ight: 1.333333px solid #000000;border-bottom: 1.333333px solid #000000;padd=
+ing: 5px 5px 5px 5px;">
+<a href=3D"https://tima.siemens.com/otwg20/#/login?singleton=3D3&amp;id=3D4=
+445006">C-23077188</a></td>
+</tr>
+<tr>
+<td style=3D"vertical-align: top; width: 20%; font-weight: bold; border-lef=
+t: 1.333333px solid #000000;border-top: 1.333333px solid #000000;border-rig=
+ht: 1.333333px solid #000000;border-bottom: 1.333333px solid #000000;paddin=
+g: 5px 5px 5px 5px;">
+Title:</td>
+<td style=3D"vertical-align: top; width: 80%; font-weight: normal; border-l=
+eft: 1.333333px solid #000000;border-top: 1.333333px solid #000000;border-r=
+ight: 1.333333px solid #000000;border-bottom: 1.333333px solid #000000;padd=
+ing: 5px 5px 5px 5px;">
+Rack PC md6205bc ist nicht mehr erreichbar.</td>
+</tr>
+<tr>
+<td style=3D"vertical-align: top; width: 20%; font-weight: bold; border-lef=
+t: 1.333333px solid #000000;border-top: 1.333333px solid #000000;border-rig=
+ht: 1.333333px solid #000000;border-bottom: 1.333333px solid #000000;paddin=
+g: 5px 5px 5px 5px;">
+Service:</td>
+<td style=3D"vertical-align: top; width: 80%; font-weight: normal; border-l=
+eft: 1.333333px solid #000000;border-top: 1.333333px solid #000000;border-r=
+ight: 1.333333px solid #000000;border-bottom: 1.333333px solid #000000;padd=
+ing: 5px 5px 5px 5px;">
+IKV ERL S SP 1</td>
+</tr>
+<tr>
+<td style=3D"vertical-align: top; width: 20%; font-weight: bold; border-lef=
+t: 1.333333px solid #000000;border-top: 1.333333px solid #000000;border-rig=
+ht: 1.333333px solid #000000;border-bottom: 1.333333px solid #000000;paddin=
+g: 5px 5px 5px 5px;">
+Category:</td>
+<td style=3D"vertical-align: top; width: 80%; font-weight: normal; border-l=
+eft: 1.333333px solid #000000;border-top: 1.333333px solid #000000;border-r=
+ight: 1.333333px solid #000000;border-bottom: 1.333333px solid #000000;padd=
+ing: 5px 5px 5px 5px;">
+Auftrag (IKV ERL) -&gt; Administration Rack-PCs</td>
+</tr>
+<tr>
+<td style=3D"vertical-align: top; width: 20%; font-weight: bold; border-lef=
+t: 1.333333px solid #000000;border-top: 1.333333px solid #000000;border-rig=
+ht: 1.333333px solid #000000;border-bottom: 1.333333px solid #000000;paddin=
+g: 5px 5px 5px 5px;">
+Keywords 1-4:</td>
+<td style=3D"vertical-align: top; width: 80%; font-weight: normal; border-l=
+eft: 1.333333px solid #000000;border-top: 1.333333px solid #000000;border-r=
+ight: 1.333333px solid #000000;border-bottom: 1.333333px solid #000000;padd=
+ing: 5px 5px 5px 5px;">
+/ / / </td>
+</tr>
+<tr>
+<td style=3D"vertical-align: top; width: 20%; font-weight: bold; border-lef=
+t: 1.333333px solid #000000;border-top: 1.333333px solid #000000;border-rig=
+ht: 1.333333px solid #000000;border-bottom: 1.333333px solid #000000;paddin=
+g: 5px 5px 5px 5px;">
+State:</td>
+<td style=3D"vertical-align: top; width: 80%; font-weight: normal; border-l=
+eft: 1.333333px solid #000000;border-top: 1.333333px solid #000000;border-r=
+ight: 1.333333px solid #000000;border-bottom: 1.333333px solid #000000;padd=
+ing: 5px 5px 5px 5px;">
+New</td>
+</tr>
+<tr>
+<td style=3D"vertical-align: top; width: 20%; font-weight: bold; border-lef=
+t: 1.333333px solid #000000;border-top: 1.333333px solid #000000;border-rig=
+ht: 1.333333px solid #000000;border-bottom: 1.333333px solid #000000;paddin=
+g: 5px 5px 5px 5px;">
+Customer priority:</td>
+<td style=3D"vertical-align: top; width: 80%; font-weight: normal; border-l=
+eft: 1.333333px solid #000000;border-top: 1.333333px solid #000000;border-r=
+ight: 1.333333px solid #000000;border-bottom: 1.333333px solid #000000;padd=
+ing: 5px 5px 5px 5px;">
+I can't work</td>
+</tr>
+<tr>
+<td style=3D"vertical-align: top; width: 20%; font-weight: bold; border-lef=
+t: 1.333333px solid #000000;border-top: 1.333333px solid #000000;border-rig=
+ht: 1.333333px solid #000000;border-bottom: 1.333333px solid #000000;paddin=
+g: 5px 5px 5px 5px;">
+Priority:</td>
+<td style=3D"vertical-align: top; width: 80%; font-weight: normal; border-l=
+eft: 1.333333px solid #000000;border-top: 1.333333px solid #000000;border-r=
+ight: 1.333333px solid #000000;border-bottom: 1.333333px solid #000000;padd=
+ing: 5px 5px 5px 5px;">
+Medium</td>
+</tr>
+<tr>
+<td style=3D"vertical-align: top; width: 20%; font-weight: bold; border-lef=
+t: 1.333333px solid #000000;border-top: 1.333333px solid #000000;border-rig=
+ht: 1.333333px solid #000000;border-bottom: 1.333333px solid #000000;paddin=
+g: 5px 5px 5px 5px;">
+Reporting Person (Org-unit):</td>
+<td style=3D"vertical-align: top; width: 80%; font-weight: normal; border-l=
+eft: 1.333333px solid #000000;border-top: 1.333333px solid #000000;border-r=
+ight: 1.333333px solid #000000;border-bottom: 1.333333px solid #000000;padd=
+ing: 5px 5px 5px 5px;">
+Andreas Richter (DI FA CTR EE CLT)</td>
+</tr>
+<tr>
+<td style=3D"vertical-align: top; width: 20%; font-weight: bold; border-lef=
+t: 1.333333px solid #000000;border-top: 1.333333px solid #000000;border-rig=
+ht: 1.333333px solid #000000;border-bottom: 1.333333px solid #000000;paddin=
+g: 5px 5px 5px 5px;">
+Affected Person (Org-unit):</td>
+<td style=3D"vertical-align: top; width: 80%; font-weight: normal; border-l=
+eft: 1.333333px solid #000000;border-top: 1.333333px solid #000000;border-r=
+ight: 1.333333px solid #000000;border-bottom: 1.333333px solid #000000;padd=
+ing: 5px 5px 5px 5px;">
+Andreas Richter (DI FA CTR EE CLT)</td>
+</tr>
+<tr>
+<td style=3D"vertical-align: top; width: 20%; font-weight: bold; border-lef=
+t: 1.333333px solid #000000;border-top: 1.333333px solid #000000;border-rig=
+ht: 1.333333px solid #000000;border-bottom: 1.333333px solid #000000;paddin=
+g: 5px 5px 5px 5px;">
+Responsible Group:</td>
+<td style=3D"vertical-align: top; width: 80%; font-weight: normal; border-l=
+eft: 1.333333px solid #000000;border-top: 1.333333px solid #000000;border-r=
+ight: 1.333333px solid #000000;border-bottom: 1.333333px solid #000000;padd=
+ing: 5px 5px 5px 5px;">
+IKV-ERLSSP1 Team (SIE global)</td>
+</tr>
+<tr>
+<td style=3D"vertical-align: top; width: 20%; font-weight: bold; border-lef=
+t: 1.333333px solid #000000;border-top: 1.333333px solid #000000;border-rig=
+ht: 1.333333px solid #000000;border-bottom: 1.333333px solid #000000;paddin=
+g: 5px 5px 5px 5px;">
+Responsible Person:</td>
+<td style=3D"vertical-align: top; width: 80%; font-weight: normal; border-l=
+eft: 1.333333px solid #000000;border-top: 1.333333px solid #000000;border-r=
+ight: 1.333333px solid #000000;border-bottom: 1.333333px solid #000000;padd=
+ing: 5px 5px 5px 5px;">
+</td>
+</tr>
+<tr>
+<td style=3D"vertical-align: top; width: 20%; font-weight: bold; border-lef=
+t: 1.333333px solid #000000;border-top: 1.333333px solid #000000;border-rig=
+ht: 1.333333px solid #000000;border-bottom: 1.333333px solid #000000;paddin=
+g: 5px 5px 5px 5px;">
+Creation date:</td>
+<td style=3D"vertical-align: top; width: 80%; font-weight: normal; border-l=
+eft: 1.333333px solid #000000;border-top: 1.333333px solid #000000;border-r=
+ight: 1.333333px solid #000000;border-bottom: 1.333333px solid #000000;padd=
+ing: 5px 5px 5px 5px;">
+17.10.2023 13:23:32</td>
+</tr>
+<tr>
+<td style=3D"vertical-align: top; width: 20%; font-weight: bold; border-lef=
+t: 1.333333px solid #000000;border-top: 1.333333px solid #000000;border-rig=
+ht: 1.333333px solid #000000;border-bottom: 1.333333px solid #000000;paddin=
+g: 5px 5px 5px 5px;">
+Last change:</td>
+<td style=3D"vertical-align: top; width: 80%; font-weight: normal; border-l=
+eft: 1.333333px solid #000000;border-top: 1.333333px solid #000000;border-r=
+ight: 1.333333px solid #000000;border-bottom: 1.333333px solid #000000;padd=
+ing: 5px 5px 5px 5px;">
+17.10.2023 13:23:34</td>
+</tr>
+<tr>
+<td style=3D"vertical-align: top; width: 20%; font-weight: bold; border-lef=
+t: 1.333333px solid #000000;border-top: 1.333333px solid #000000;border-rig=
+ht: 1.333333px solid #000000;border-bottom: 1.333333px solid #000000;paddin=
+g: 5px 5px 5px 5px;">
+Description:</td>
+<td style=3D"vertical-align: top; width: 80%; font-weight: normal; border-l=
+eft: 1.333333px solid #000000;border-top: 1.333333px solid #000000;border-r=
+ight: 1.333333px solid #000000;border-bottom: 1.333333px solid #000000;padd=
+ing: 5px 5px 5px 5px;">
+<p>Der Auftraggeber best=E4tigt, dass er alle notwendigen Genehmigungen ein=
+geholt (m=FCndlich / schriftlich) hat und dass die Freigabe hierzu vorliegt=
+!
+</p>
+<p></p>
+<p>Es k=F6nnen nur vollst=E4ndig ausgef=FCllte Vorg=E4nge bearbeitet werden=
+! </p>
+<p></p>
+<p></p>
+<p></p>
+<p>Administration Rack-PCs</p>
+<p></p>
+<p></p>
+<p></p>
+<p>Schrank Raum 2.202: () Fenster () Mitte () T=FCr</p>
+<p></p>
+<p>Schrank Raum 5.065: ()</p>
+<p></p>
+<p></p>
+<p></p>
+<p>Clientname: md6205bc </p>
+<p></p>
+<p>Ansprechpartner: Andreas Richter</p>
+<p></p>
+<p></p>
+<p></p>
+<p>Bitte beschreiben Sie Ihre Anforderung: Rack PC md6205bc ist nicht mehr =
+erreichbar.</p>
+<p></p>
+<p></p>
+<p></p>
+<p></p>
+<p></p>
+<p>----------</p>
+</td>
+</tr>
+<tr>
+<td style=3D"vertical-align: top; width: 20%; font-weight: bold; border-lef=
+t: 1.333333px solid #000000;border-top: 1.333333px solid #000000;border-rig=
+ht: 1.333333px solid #000000;border-bottom: 1.333333px solid #000000;paddin=
+g: 5px 5px 5px 5px;">
+Last Comment:</td>
+<td style=3D"vertical-align: top; width: 80%; font-weight: normal; border-l=
+eft: 1.333333px solid #000000;border-top: 1.333333px solid #000000;border-r=
+ight: 1.333333px solid #000000;border-bottom: 1.333333px solid #000000;padd=
+ing: 5px 5px 5px 5px;">
+<p></p>
+</td>
+</tr>
+<tr>
+<td style=3D"vertical-align: top; width: 20%; font-weight: bold; border-lef=
+t: 1.333333px solid #000000;border-top: 1.333333px solid #000000;border-rig=
+ht: 1.333333px solid #000000;border-bottom: 1.333333px solid #000000;paddin=
+g: 5px 5px 5px 5px;">
+Solution description:</td>
+<td style=3D"vertical-align: top; width: 80%; font-weight: normal; border-l=
+eft: 1.333333px solid #000000;border-top: 1.333333px solid #000000;border-r=
+ight: 1.333333px solid #000000;border-bottom: 1.333333px solid #000000;padd=
+ing: 5px 5px 5px 5px;">
+<p></p>
+</td>
+</tr>
+</tbody>
+</table>
+<p>&nbsp;</p>
+<hr color=3D"#009999" width=3D"100%" align=3D"left">
+<p>This Email has been generated automatically by TIMA (Ticket Management).=
+</p>
+<p>Siemens Aktiengesellschaft: Chairman of the Supervisory Board: Jim Hagem=
+ann Snabe; Managing Board: Roland Busch, Chairman, President and Chief Exec=
+utive Officer; Cedrik Neike, Matthias Rebellius, Ralf P. Thomas, Judith Wie=
+se; Registered offices: Berlin and
+ Munich, Germany; Commercial registries: Berlin-Charlottenburg, HRB 12300, =
+Munich, HRB 6684; WEEE-Reg.-No. DE 23691322<br>
+<br>
+Important notice: This e-mail and any attachment thereof contain corporate =
+proprietary information. If you have received it by mistake, please notify =
+us immediately by reply e-mail and delete this e-mail and its attachments f=
+rom your system. Thank you.
+</p>
+</div>
+</body>
+</html>
+
+--_000_3159CD8ADD064EB0A693EB3CABDD0D0Asiemenscom_--
+Dear IKV-ERLSSP1 Team (SIE global),
+
+Link to ticket (TIMA)<https://tima.siemens.com/otwg20/#/login?singleton=3D3=
+&id=3D4445010>
+
+Ticket No.:      I-23019592<https://tima.siemens.com/otwg20/#/login?singlet=
+on=3D3&id=3D4445010>
+Main Ticket:     C-23077188<https://tima.siemens.com/otwg20/#/login?singlet=
+on=3D3&id=3D4445006>
+Title:   Rack PC md6205bc ist nicht mehr erreichbar.
+Service:         IKV ERL S SP 1
+Category:        Auftrag (IKV ERL) -> Administration Rack-PCs
+Keywords 1-4:    / / /
+State:   New
+Customer priority:       I can't work
+Priority:        Medium
+Reporting Person (Org-unit):     Andreas Richter (DI FA CTR EE CLT)
+Affected Person (Org-unit):      Andreas Richter (DI FA CTR EE CLT)
+Responsible Group:       IKV-ERLSSP1 Team (SIE global)
+Responsible Person:
+Creation date:   17.10.2023 13:23:32
+Last change:     17.10.2023 13:23:34
+Description:     Der Auftraggeber best=E4tigt, dass er alle notwendigen Gen=
+ehmigungen eingeholt (m=FCndlich / schriftlich) hat und dass die Freigabe h=
+ierzu vorliegt!
+
+Es k=F6nnen nur vollst=E4ndig ausgef=FCllte Vorg=E4nge bearbeitet werden!
+
+Administration Rack-PCs
+
+Schrank Raum 2.202: () Fenster () Mitte () T=FCr
+
+Schrank Raum 5.065: ()
+
+Clientname: md6205bc
+
+Ansprechpartner: Andreas Richter
+
+Bitte beschreiben Sie Ihre Anforderung: Rack PC md6205bc ist nicht mehr err=
+eichbar.
+
+----------
+
+Last Comment:    Solution description:
+
+  _____
+
+This Email has been generated automatically by TIMA (Ticket Management).
+
+Siemens Aktiengesellschaft: Chairman of the Supervisory Board: Jim Hagemann=
+ Snabe; Managing Board: Roland Busch, Chairman, President and Chief Executi=
+ve Officer; Cedrik Neike, Matthias Rebellius, Ralf P. Thomas, Judith Wiese;=
+ Registered offices: Berlin and Munich, Germany; Commercial registries: Ber=
+lin-Charlottenburg, HRB 12300, Munich, HRB 6684; WEEE-Reg.-No. DE 23691322
+
+Important notice: This e-mail and any attachment thereof contain corporate =
+proprietary information. If you have received it by mistake, please notify =
+us immediately by reply e-mail and delete this e-mail and its attachments f=
+rom your system. Thank you.
+
+
+--_000_3159CD8ADD064EB0A693EB3CABDD0D0Asiemenscom_
+X-Apple-Content-Length: 2183
+Content-Type: TEXT/plain;
+	charset=iso-8859-1
+Content-Transfer-Encoding: QUOTED-PRINTABLE
+
+
+--_000_3159CD8ADD064EB0A693EB3CABDD0D0Asiemenscom_
+Content-Transfer-Encoding: QUOTED-PRINTABLE
+Content-Type: TEXT/html;
+	charset=iso-8859-1
+X-Apple-Content-Length: 12907
+Content-Id: <F3AE36B34EA66042B8CB30A3AFF1C6D9@EURPRD10.PROD.OUTLOOK.COM>
+
+
+--_000_3159CD8ADD064EB0A693EB3CABDD0D0Asiemenscom_--
