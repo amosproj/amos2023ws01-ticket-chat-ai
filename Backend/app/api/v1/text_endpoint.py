@@ -1,7 +1,8 @@
 from fastapi import APIRouter, HTTPException
+
 from app.dto.text_input import TextInput
 from app.dto.text_response import TextResponse
-from app.models.t5.use_trained_t5_model import TrainedT5Model
+from app.model.t5.use_trained_t5_model import TrainedT5Model
 
 router = APIRouter()
 
