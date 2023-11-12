@@ -23,6 +23,7 @@ class EmailProxy:
 
         self.imap.select("Inbox")
         print("connection established")
+        return True
 
     def spin(self):
         """
@@ -36,32 +37,32 @@ class EmailProxy:
 
             message = email.message_from_bytes(data[0][1])
 
-            print(f"Message Number: {msgNum}")
-            print(f"From: {message.get('From')}")
-            print(f"Subject: {message.get('Subject')}")
-
-            print("Content:")
-            for part in message.walk():
-                if part.get_content_type() == "text/plain":
-                    print(part.as_string())
+            if self.can_be_processed(message):
+                print(f"Message Number: {msgNum}")
+                self.process_mail(message)
+        return True
 
     def can_be_processed(self, email):
         """
-        should return false if the email was automatically generated or is from blocked user,
-        will be implemented in later sprint
+        should return false if the email was automatically generated or is from blocked user, will be implemented in later sprint
         :param email:
-        :return: boolean:
+        :return boolean:
         """
         return True
 
-    def process_mail(self, email):
+    def process_mail(self, message):
         """
-        #communicates with backend
-        #answers to email
-        #for now it just prints the content of the email
+        communicates with backend, answers to email, for now it just prints the content of the email
         :param email:
         :return:
         """
+        print(f"From: {message.get('From')}")
+        print(f"Subject: {message.get('Subject')}")
+
+        print("Content:")
+        for part in message.walk():
+            if part.get_content_type() == "text/plain":
+                print(part.as_string())
         return True
 
     def __exit__(self, exc_type, exc_val, exc_tb):
@@ -73,4 +74,6 @@ class EmailProxy:
         :return:
         """
         self.imap.close()
+        self.imap.logout()
         print("connection closed")
+        return True
