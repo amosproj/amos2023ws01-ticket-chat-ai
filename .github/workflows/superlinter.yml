@@ -51,3 +51,4 @@ jobs:
           VALIDATE_JAVASCRIPT_ES: true
           VALIDATE_PYTHON_BLACK: true
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          LINTER_RULES_PATH: "../../Frontend/src/app/.eslintrc.json"
