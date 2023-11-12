@@ -29,6 +29,7 @@ export class AppComponent {
       
       this.ticketService.send(value).subscribe((response: any) => {
         const messageText = response.messageText;
+
         this.chatMessages.push({ messageText, isUser: false }); // Assuming it's a response from the server
         console.log(response);
       },

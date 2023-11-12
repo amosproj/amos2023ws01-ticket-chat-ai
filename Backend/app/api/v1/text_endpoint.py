@@ -1,8 +1,27 @@
-from fastapi import APIRouter, HTTPException
+from fastapi import FastAPI, HTTPException
+from fastapi.middleware.cors import CORSMiddleware
 from app.dto.text_input import TextInput
 from app.dto.text_response import TextResponse
 from app.models.t5.use_trained_t5_model import TrainedT5Model
+from fastapi import APIRouter
+"""
+app = FastAPI()
 
+origins = [
+    "https://ljfwqmhz-4200.euw.devtunnels.ms",
+    "http://localhost:4200",
+    "http://localhost:4200/",    # Erlauben Sie CORS für diese Domain
+    # Fügen Sie hier weitere Domains hinzu, wenn nötig
+]
+
+app.add_middleware(
+    CORSMiddleware,
+    allow_origins=origins,
+    allow_credentials=True,
+    allow_methods=[""],
+    allow_headers=[""],
+)
+"""
 router = APIRouter()
 
 @router.post("/text")
@@ -34,3 +53,5 @@ async def process_text(text_input: TextInput):
     status_code = 200  # You can change this as needed
 
     return TextResponse(data=response_data, text=received_text, code=status_code)
+
+#app.include_router(router)
