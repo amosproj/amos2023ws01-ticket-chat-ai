@@ -14,8 +14,6 @@ Superlinter is configured to check the code standards for:
 
 - JavaScript
 - Python
-- HTML
-- CSS
 
 ### Using Linters Locally
 
@@ -27,13 +25,11 @@ Install the following extensions in VSCode and follow the instructions on the in
 
 - Open the file you want to format.
 - For Python, use the Black extension (Alt+Shift+F).
-- For CSS, use the Stylelint extension (Alt+Shift+F).
 - For JavaScript, use the ESLint extension (Alt+Shift+F).
-- For HTML, use the HTMLHint extension (Alt+Shift+F).
 
 #### Use Shell Commands
 
-Before running the commands, ensure that the required packages are installed by checking and installing from the `requirements.txt` file.
+Before running the commands, ensure that the required packages are installed by checking and installing from the `requirements.txt` and the `package.json` file.
 
 ##### Python - Black Formatter
 
@@ -67,38 +63,4 @@ Before running the commands, ensure that the required packages are installed by 
 
    ```bash
    npx eslint .
-   ```
-
-##### CSS - Stylelint
-
-[Stylelint](https://stylelint.io/) is a linting tool for CSS.
-
-- **Usage:**
-   Lint a CSS file:
-
-   ```bash
-   stylelint your_style.css
-   ```
-
-   For linting an entire directory, use the --syntax option:
-
-   ```bash
-   stylelint "**/*.css" --syntax scss
-   ```
-
-##### HTML - HTMLHint
-
-[HTMLHint](https://htmlhint.com/) is a linting tool for HTML.
-
-- **Usage:**
-   Lint an HTML file:
-
-   ```bash
-   npx htmlhint your_page.html
-   ```
-
-   For linting an entire directory:
-
-   ```bash
-   npx htmlhint .
    ```
