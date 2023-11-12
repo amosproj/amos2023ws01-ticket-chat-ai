@@ -1,0 +1,794 @@
+[
+  {
+    "text": [
+      "Hallo Support-Team,",
+      "ich habe ein Problem mit meinem Laptop. Er fährt nicht mehr hoch, sondern zeigt nur noch einen blauen Bildschirm an. Ich habe schon versucht, ihn neu zu starten, aber das hat nichts gebracht.",
+      "Können Sie mir bitte helfen, das Problem zu beheben?",
+      "Vielen Dank im Voraus,",
+      "Max Mustermann"
+    ],
+    "ticket": {
+      "subject": "Laptop zeigt blauen Bildschirm an",
+      "description": "Der Laptop fährt nicht mehr hoch, sondern zeigt nur noch einen blauen Bildschirm an. Der Benutzer hat schon versucht, ihn neu zu starten, aber das hat nichts gebracht.",
+      "impact": "medium",
+      "priority": "high",
+      "request_type": "Incident"
+    }
+  },
+  {
+    "text": [
+      "Sehr geehrte Damen und Herren,",
+      "ich möchte gerne einen neuen Drucker für mein Büro bestellen. Der alte Drucker ist kaputt und lässt sich nicht mehr reparieren.",
+      "Welche Modelle haben Sie im Angebot und wie lange dauert die Lieferung?",
+      "Mit freundlichen Grüßen,",
+      "Anna Müller"
+    ],
+    "ticket": {
+      "subject": "Neuer Drucker für Büro",
+      "description": "Der alte Drucker ist kaputt und lässt sich nicht mehr reparieren. Der Benutzer möchte gerne einen neuen Drucker für sein Büro bestellen.",
+      "impact": "low",
+      "priority": "low",
+      "request_type": "Service Request"
+    }
+  },
+  {
+    "text": [
+      "Guten Tag,",
+      "ich habe eine Frage zu der Software, die Sie uns geliefert haben. Wie kann ich die Einstellungen ändern, um die Sprache auf Englisch umzustellen?",
+      "Ich finde die Option nicht im Menü.",
+      "Bitte um schnelle Antwort,",
+      "Lisa Schmidt"
+    ],
+    "ticket": {
+      "subject": "Spracheinstellung der Software ändern",
+      "description": "Der Benutzer möchte die Sprache der Software auf Englisch umstellen, findet aber die Option nicht im Menü.",
+      "impact": "low",
+      "priority": "medium",
+      "request_type": "Problem"
+    }
+  },
+  {
+    "text": [
+      "Hallo,",
+      "ich habe ein Problem mit dem Internetzugang in meinem Zimmer. Ich kann keine Verbindung zum WLAN herstellen, obwohl ich das richtige Passwort eingegeben habe.",
+      "Können Sie mir bitte sagen, woran das liegt und wie ich es beheben kann?",
+      "Danke für Ihre Hilfe,",
+      "Peter Meier"
+    ],
+    "ticket": {
+      "subject": "Kein Internetzugang im Zimmer",
+      "description": "Der Benutzer kann keine Verbindung zum WLAN herstellen, obwohl er das richtige Passwort eingegeben hat. Er möchte wissen, woran das liegt und wie er es beheben kann.",
+      "impact": "medium",
+      "priority": "medium",
+      "request_type": "Problem"
+    }
+  },
+  {
+    "text": [
+      "Guten Morgen,",
+      "ich bin neu in der Firma und brauche einen Zugang zu dem internen Netzwerk. Ich habe schon einen Benutzernamen und ein Passwort erhalten, aber ich weiß nicht, wie ich mich einloggen soll.",
+      "Können Sie mir bitte eine Anleitung schicken, wie ich das machen kann?",
+      "Vielen Dank,",
+      "Julia Weber"
+    ],
+    "ticket": {
+      "subject": "Zugang zum internen Netzwerk",
+      "description": "Der Benutzer ist neu in der Firma und braucht einen Zugang zu dem internen Netzwerk. Er hat schon einen Benutzernamen und ein Passwort erhalten, aber er weiß nicht, wie er sich einloggen soll. Er möchte eine Anleitung erhalten, wie er das machen kann.",
+      "impact": "low",
+      "priority": "low",
+      "request_type": "Service Request"
+    }
+  },
+  {
+    "text": [
+      "Liebes Support-Team,",
+      "ich habe eine Beschwerde über die Qualität der Produkte, die Sie mir geliefert haben. Die Hälfte der Produkte war beschädigt oder defekt und unbrauchbar. Das ist sehr ärgerlich und unprofessionell.",
+      "Ich verlange eine sofortige Erstattung oder einen Ersatz für die mangelhaften Produkte.",
+      "Mit unfreundlichen Grüßen,",
+      "Klaus Schneider"
+    ],
+    "ticket": {
+      "subject": "Beschwerde über mangelhafte Produkte",
+      "description": "Der Benutzer hat eine Beschwerde über die Qualität der Produkte, die er geliefert bekommen hat. Die Hälfte der Produkte war beschädigt oder defekt und unbrauchbar. Er verlangt eine sofortige Erstattung oder einen Ersatz für die mangelhaften Produkte.",
+      "impact": "high",
+      "priority": "high",
+      "request_type": "Incident"
+    }
+  },
+  {
+    "text": [
+      "Hallo,",
+      "ich habe ein Problem mit dem Internetzugang in meinem Zimmer. Ich kann keine Verbindung zum WLAN herstellen, obwohl ich das richtige Passwort eingegeben habe.",
+      "Können Sie mir bitte sagen, woran das liegt und wie ich es beheben kann?",
+      "Danke für Ihre Hilfe,",
+      "Peter Meier"
+    ],
+    "ticket": {
+      "subject": "Kein Internetzugang im Zimmer",
+      "description": "Der Benutzer kann keine Verbindung zum WLAN herstellen, obwohl er das richtige Passwort eingegeben hat. Er möchte wissen, woran das liegt und wie er es beheben kann.",
+      "impact": "medium",
+      "priority": "medium",
+      "request_type": "Problem"
+    }
+  },
+  {
+    "text": [
+      "Guten Morgen,",
+      "ich bin neu in der Firma und brauche einen Zugang zu dem internen Netzwerk. Ich habe schon einen Benutzernamen und ein Passwort erhalten, aber ich weiß nicht, wie ich mich einloggen soll.",
+      "Können Sie mir bitte eine Anleitung schicken, wie ich das machen kann?",
+      "Vielen Dank,",
+      "Julia Weber"
+    ],
+    "ticket": {
+      "subject": "Zugang zum internen Netzwerk",
+      "description": "Der Benutzer ist neu in der Firma und braucht einen Zugang zu dem internen Netzwerk. Er hat schon einen Benutzernamen und ein Passwort erhalten, aber er weiß nicht, wie er sich einloggen soll. Er möchte eine Anleitung erhalten, wie er das machen kann.",
+      "impact": "low",
+      "priority": "low",
+      "request_type": "Service Request"
+    }
+  },
+  {
+    "text": [
+      "Liebes Support-Team,",
+      "ich habe eine Beschwerde über die Qualität der Produkte, die Sie mir geliefert haben. Die Hälfte der Produkte war beschädigt oder defekt und unbrauchbar. Das ist sehr ärgerlich und unprofessionell.",
+      "Ich verlange eine sofortige Erstattung oder einen Ersatz für die mangelhaften Produkte.",
+      "Mit unfreundlichen Grüßen,",
+      "Klaus Schneider"
+    ],
+    "ticket": {
+      "subject": "Beschwerde über mangelhafte Produkte",
+      "description": "Der Benutzer hat eine Beschwerde über die Qualität der Produkte, die er geliefert bekommen hat. Die Hälfte der Produkte war beschädigt oder defekt und unbrauchbar. Er verlangt eine sofortige Erstattung oder einen Ersatz für die mangelhaften Produkte.",
+      "impact": "high",
+      "priority": "high",
+      "request_type": "Incident"
+    }
+  },
+  {
+    "text": [
+      "Hallo Support-Team,",
+      "ich habe ein Problem mit meinem Laptop. Er fährt nicht mehr hoch und zeigt nur noch einen blauen Bildschirm an. Ich habe schon versucht, ihn neu zu starten, aber es hat nichts gebracht. Was kann ich tun, um das Problem zu beheben?",
+      "Vielen Dank im Voraus für Ihre Hilfe.",
+      "Mit freundlichen Grüßen,",
+      "Max Mustermann"
+    ],
+    "ticket": {
+      "subject": "Laptop zeigt blauen Bildschirm an",
+      "description": "Der Laptop des Kunden fährt nicht mehr hoch und zeigt nur noch einen blauen Bildschirm an. Der Kunde hat schon versucht, ihn neu zu starten, aber es hat nichts gebracht.",
+      "impact": "medium",
+      "priority": "high",
+      "request_type": "Incidents"
+    }
+  },
+  {
+    "text": [
+      "Sehr geehrte Damen und Herren,",
+      "ich möchte gerne meinen Internet-Tarif ändern. Ich bin momentan mit dem Tarif ABC angemeldet, aber ich brauche mehr Datenvolumen pro Monat. Welche Tarife bieten Sie an, die meinen Bedürfnissen entsprechen?",
+      "Bitte senden Sie mir eine Übersicht über die verfügbaren Tarife und die entsprechenden Preise zu.",
+      "Vielen Dank für Ihre Mühe.",
+      "Mit freundlichen Grüßen,",
+      "Anna Schmidt"
+    ],
+    "ticket": {
+      "subject": "Internet-Tarif ändern",
+      "description": "Die Kundin möchte gerne ihren Internet-Tarif ändern. Sie ist momentan mit dem Tarif ABC angemeldet, aber sie braucht mehr Datenvolumen pro Monat. Sie möchte eine Übersicht über die verfügbaren Tarife und die entsprechenden Preise erhalten.",
+      "impact": "low",
+      "priority": "low",
+      "request_type": "Service Request"
+    }
+  },
+  {
+    "text": [
+      "Guten Tag,",
+      "ich habe eine Frage zu Ihrer Software XYZ. Ich habe die Software auf meinem PC installiert, aber ich kann sie nicht starten. Es erscheint immer eine Fehlermeldung, die besagt, dass eine Datei fehlt oder beschädigt ist. Wie kann ich das Problem lösen?",
+      "Ich habe die Software von Ihrer Website heruntergeladen und die Installationsanleitung befolgt. Mein Betriebssystem ist Windows 10.",
+      "Ich wäre Ihnen sehr dankbar, wenn Sie mir weiterhelfen könnten.",
+      "Mit freundlichen Grüßen,",
+      "Peter Müller"
+    ],
+    "ticket": {
+      "subject": "Software XYZ startet nicht",
+      "description": "Der Kunde hat eine Frage zu unserer Software XYZ. Er hat die Software auf seinem PC installiert, aber er kann sie nicht starten. Es erscheint immer eine Fehlermeldung, die besagt, dass eine Datei fehlt oder beschädigt ist. Er hat die Software von unserer Website heruntergeladen und die Installationsanleitung befolgt. Sein Betriebssystem ist Windows 10.",
+      "impact": "medium",
+      "priority": "medium",
+      "request_type": "Problem"
+    }
+  },
+  {
+    "text": [
+      "Hallo,",
+      "ich bin mit Ihrem Service sehr unzufrieden. Ich habe vor zwei Wochen eine Bestellung aufgegeben, aber ich habe meine Ware immer noch nicht erhalten. Laut Ihrer Sendungsverfolgung ist das Paket seit einer Woche im Zoll festgehalten. Warum dauert das so lange? Wann kann ich mit meiner Lieferung rechnen?",
+      "Ich erwarte eine schnelle und zufriedenstellende Antwort von Ihnen. Andernfalls werde ich meine Bestellung stornieren und mein Geld zurückverlangen.",
+      "Mit verärgerten Grüßen,",
+      "Lisa Weber"
+    ],
+    "ticket": {
+      "subject": "Verspätete Lieferung",
+      "description": "Die Kundin ist mit unserem Service sehr unzufrieden. Sie hat vor zwei Wochen eine Bestellung aufgegeben, aber sie hat ihre Ware immer noch nicht erhalten. Laut unserer Sendungsverfolgung ist das Paket seit einer Woche im Zoll festgehalten. Sie möchte wissen, warum das so lange dauert und wann sie mit ihrer Lieferung rechnen kann. Sie droht, ihre Bestellung zu stornieren und ihr Geld zurückzuverlangen.",
+      "impact": "high",
+      "priority": "high",
+      "request_type": "Incidents"
+    }
+  },
+  {
+    "text": [
+      "Guten Tag,",
+      "ich bin ein langjähriger Kunde von Ihnen und bin sehr zufrieden mit Ihrem Service. Ich habe jedoch eine Anregung, wie Sie Ihren Service noch verbessern könnten. Ich würde es sehr begrüßen, wenn Sie eine App für Ihr Online-Banking anbieten würden. Das würde mir das Überweisen von Geld und das Überprüfen meines Kontostands erleichtern. Gibt es Pläne, eine solche App zu entwickeln?",
+      "Ich freue mich auf Ihre Antwort und bedanke mich für Ihre Aufmerksamkeit.",
+      "Mit freundlichen Grüßen,",
+      "Thomas Schneider"
+    ],
+    "ticket": {
+      "subject": "Anregung für eine App",
+      "description": "Der Kunde ist ein langjähriger Kunde von uns und ist sehr zufrieden mit unserem Service. Er hat jedoch eine Anregung, wie wir unseren Service noch verbessern könnten. Er würde es sehr begrüßen, wenn wir eine App für unser Online-Banking anbieten würden. Das würde ihm das Überweisen von Geld und das Überprüfen seines Kontostands erleichtern. Er möchte wissen, ob es Pläne gibt, eine solche App zu entwickeln.",
+      "impact": "low",
+      "priority": "low",
+      "request_type": "Service Request"
+    }
+  },
+  {
+    "text": [
+      "Sehr geehrte Damen und Herren,",
+      "ich habe vor kurzem einen Flug von Berlin nach New York bei Ihnen gebucht. Die Buchungsnummer lautet 123456789. Leider muss ich den Flug aus persönlichen Gründen stornieren. Wie kann ich das machen und welche Kosten fallen dabei an?",
+      "Bitte informieren Sie mich über die Stornierungsbedingungen und das weitere Vorgehen.",
+      "Vielen Dank für Ihre Unterstützung.",
+      "Mit freundlichen Grüßen,",
+      "Julia Fischer"
+    ],
+    "ticket": {
+      "subject": "Flug stornieren",
+      "description": "Die Kundin hat vor kurzem einen Flug von Berlin nach New York bei uns gebucht. Die Buchungsnummer lautet 123456789. Sie muss den Flug aus persönlichen Gründen stornieren. Sie möchte wissen, wie sie das machen kann und welche Kosten dabei anfallen. Sie bittet um Informationen über die Stornierungsbedingungen und das weitere Vorgehen.",
+      "impact": "medium",
+      "priority": "medium",
+      "request_type": "Service Request"
+    }
+  },
+  {
+    "text": [
+      "Hallo,",
+      "ich habe ein Problem mit meinem Drucker. Er druckt nur noch leere Seiten aus, obwohl die Tintenpatronen voll sind. Ich habe schon versucht, den Drucker zu reinigen und die Patronen auszutauschen, aber es hat nichts geholfen. Was kann ich noch tun, um das Problem zu beheben?",
+      "Ich brauche den Drucker dringend für meine Arbeit, daher bitte ich um eine schnelle Lösung.",
+      "Mit freundlichen Grüßen,",
+      "Markus Wagner"
+    ],
+    "ticket": {
+      "subject": "Drucker druckt leere Seiten",
+      "description": "Der Kunde hat ein Problem mit seinem Drucker. Er druckt nur noch leere Seiten aus, obwohl die Tintenpatronen voll sind. Er hat schon versucht, den Drucker zu reinigen und die Patronen auszutauschen, aber es hat nichts geholfen. Er braucht den Drucker dringend für seine Arbeit, daher bittet er um eine schnelle Lösung.",
+      "impact": "high",
+      "priority": "high",
+      "request_type": "Problem"
+    }
+  },
+  {
+    "text": [
+      "Hallo Support-Team,",
+      "ich habe ein Problem mit meinem Laptop. Er fährt nicht mehr hoch und zeigt nur noch einen blauen Bildschirm an. Ich habe schon versucht, ihn neu zu starten, aber es hat nichts gebracht. Was kann ich tun, um das Problem zu beheben?",
+      "Vielen Dank im Voraus für Ihre Hilfe.",
+      "Mit freundlichen Grüßen,",
+      "Max Mustermann"
+    ],
+    "ticket": {
+      "subject": "Laptop zeigt blauen Bildschirm an",
+      "description": "Der Laptop des Kunden fährt nicht mehr hoch und zeigt nur noch einen blauen Bildschirm an. Der Kunde hat schon versucht, ihn neu zu starten, aber es hat nichts gebracht.",
+      "impact": "medium",
+      "priority": "high",
+      "request_type": "Incidents"
+    }
+  },
+  {
+    "text": [
+      "Sehr geehrte Damen und Herren,",
+      "ich möchte gerne meinen Internet-Tarif ändern. Ich bin momentan mit dem Tarif ABC angemeldet, aber ich brauche mehr Datenvolumen pro Monat. Welche Tarife bieten Sie an, die meinen Bedürfnissen entsprechen?",
+      "Bitte senden Sie mir eine Übersicht über die verfügbaren Tarife und die entsprechenden Preise zu.",
+      "Vielen Dank für Ihre Mühe.",
+      "Mit freundlichen Grüßen,",
+      "Anna Schmidt"
+    ],
+    "ticket": {
+      "subject": "Internet-Tarif ändern",
+      "description": "Die Kundin möchte gerne ihren Internet-Tarif ändern. Sie ist momentan mit dem Tarif ABC angemeldet, aber sie braucht mehr Datenvolumen pro Monat. Sie möchte eine Übersicht über die verfügbaren Tarife und die entsprechenden Preise erhalten.",
+      "impact": "low",
+      "priority": "low",
+      "request_type": "Service Request"
+    }
+  },
+  {
+    "text": [
+      "Guten Tag,",
+      "ich habe eine Frage zu Ihrer Software XYZ. Ich habe die Software auf meinem PC installiert, aber ich kann sie nicht starten. Es erscheint immer eine Fehlermeldung, die besagt, dass eine Datei fehlt oder beschädigt ist. Wie kann ich das Problem lösen?",
+      "Ich habe die Software von Ihrer Website heruntergeladen und die Installationsanleitung befolgt. Mein Betriebssystem ist Windows 10.",
+      "Ich wäre Ihnen sehr dankbar, wenn Sie mir weiterhelfen könnten.",
+      "Mit freundlichen Grüßen,",
+      "Peter Müller"
+    ],
+    "ticket": {
+      "subject": "Software XYZ startet nicht",
+      "description": "Der Kunde hat eine Frage zu unserer Software XYZ. Er hat die Software auf seinem PC installiert, aber er kann sie nicht starten. Es erscheint immer eine Fehlermeldung, die besagt, dass eine Datei fehlt oder beschädigt ist. Er hat die Software von unserer Website heruntergeladen und die Installationsanleitung befolgt. Sein Betriebssystem ist Windows 10.",
+      "impact": "medium",
+      "priority": "medium",
+      "request_type": "Problem"
+    }
+  },
+  {
+    "text": [
+      "Hallo,",
+      "ich bin mit Ihrem Service sehr unzufrieden. Ich habe vor zwei Wochen eine Bestellung aufgegeben, aber ich habe meine Ware immer noch nicht erhalten. Laut Ihrer Sendungsverfolgung ist das Paket seit einer Woche im Zoll festgehalten. Warum dauert das so lange? Wann kann ich mit meiner Lieferung rechnen?",
+      "Ich erwarte eine schnelle und zufriedenstellende Antwort von Ihnen. Andernfalls werde ich meine Bestellung stornieren und mein Geld zurückverlangen.",
+      "Mit verärgerten Grüßen,",
+      "Lisa Weber"
+    ],
+    "ticket": {
+      "subject": "Verspätete Lieferung",
+      "description": "Die Kundin ist mit unserem Service sehr unzufrieden. Sie hat vor zwei Wochen eine Bestellung aufgegeben, aber sie hat ihre Ware immer noch nicht erhalten. Laut unserer Sendungsverfolgung ist das Paket seit einer Woche im Zoll festgehalten. Sie möchte wissen, warum das so lange dauert und wann sie mit ihrer Lieferung rechnen kann. Sie droht, ihre Bestellung zu stornieren und ihr Geld zurückzuverlangen.",
+      "impact": "high",
+      "priority": "high",
+      "request_type": "Incidents"
+    }
+  },
+  {
+    "text": [
+      "Guten Tag,",
+      "ich bin ein langjähriger Kunde von Ihnen und bin sehr zufrieden mit Ihrem Service. Ich habe jedoch eine Anregung, wie Sie Ihren Service noch verbessern könnten. Ich würde es sehr begrüßen, wenn Sie eine App für Ihr Online-Banking anbieten würden. Das würde mir das Überweisen von Geld und das Überprüfen meines Kontostands erleichtern. Gibt es Pläne, eine solche App zu entwickeln?",
+      "Ich freue mich auf Ihre Antwort und bedanke mich für Ihre Aufmerksamkeit.",
+      "Mit freundlichen Grüßen,",
+      "Thomas Schneider"
+    ],
+    "ticket": {
+      "subject": "Anregung für eine App",
+      "description": "Der Kunde ist ein langjähriger Kunde von uns und ist sehr zufrieden mit unserem Service. Er hat jedoch eine Anregung, wie wir unseren Service noch verbessern könnten. Er würde es sehr begrüßen, wenn wir eine App für unser Online-Banking anbieten würden. Das würde ihm das Überweisen von Geld und das Überprüfen seines Kontostands erleichtern. Er möchte wissen, ob es Pläne gibt, eine solche App zu entwickeln.",
+      "impact": "low",
+      "priority": "low",
+      "request_type": "Service Request"
+    }
+  },
+  {
+    "text": [
+      "Sehr geehrte Damen und Herren,",
+      "ich habe vor kurzem einen Flug von Berlin nach New York bei Ihnen gebucht. Die Buchungsnummer lautet 123456789. Leider muss ich den Flug aus persönlichen Gründen stornieren. Wie kann ich das machen und welche Kosten fallen dabei an?",
+      "Bitte informieren Sie mich über die Stornierungsbedingungen und das weitere Vorgehen.",
+      "Vielen Dank für Ihre Unterstützung.",
+      "Mit freundlichen Grüßen,",
+      "Julia Fischer"
+    ],
+    "ticket": {
+      "subject": "Flug stornieren",
+      "description": "Die Kundin hat vor kurzem einen Flug von Berlin nach New York bei uns gebucht. Die Buchungsnummer lautet 123456789. Sie muss den Flug aus persönlichen Gründen stornieren. Sie möchte wissen, wie sie das machen kann und welche Kosten dabei anfallen. Sie bittet um Informationen über die Stornierungsbedingungen und das weitere Vorgehen.",
+      "impact": "medium",
+      "priority": "medium",
+      "request_type": "Service Request"
+    }
+  },
+  {
+    "text": [
+      "Hallo,",
+      "ich habe ein Problem mit meinem Drucker. Er druckt nur noch leere Seiten aus, obwohl die Tintenpatronen voll sind. Ich habe schon versucht, den Drucker zu reinigen und die Patronen auszutauschen, aber es hat nichts geholfen. Was kann ich noch tun, um das Problem zu beheben?",
+      "Ich brauche den Drucker dringend für meine Arbeit, daher bitte ich um eine schnelle Lösung.",
+      "Mit freundlichen Grüßen,",
+      "Markus Wagner"
+    ],
+    "ticket": {
+      "subject": "Drucker druckt leere Seiten",
+      "description": "Der Kunde hat ein Problem mit seinem Drucker. Er druckt nur noch leere Seiten aus, obwohl die Tintenpatronen voll sind. Er hat schon versucht, den Drucker zu reinigen und die Patronen auszutauschen, aber es hat nichts geholfen. Er braucht den Drucker dringend für seine Arbeit, daher bittet er um eine schnelle Lösung.",
+      "impact": "high",
+      "priority": "high",
+      "request_type": "Problem"
+    }
+  },
+  {
+    "text": [
+      "Guten Tag,",
+      "ich bin ein neuer Kunde von Ihnen und habe eine Frage zu Ihrem Produkt ABC. Ich habe das Produkt online bestellt und erhalten, aber ich bin mir nicht sicher, wie ich es richtig anwenden soll. Können Sie mir bitte eine Gebrauchsanweisung zusenden oder mir einen Link zu einem Video schicken, das die Anwendung zeigt?",
+      "Ich möchte das Produkt gerne ausprobieren, aber ich möchte nichts falsch machen.",
+      "Vielen Dank für Ihre Hilfe.",
+      "Mit freundlichen Grüßen,",
+      "Laura Klein"
+    ],
+    "ticket": {
+      "subject": "Frage zur Anwendung von Produkt ABC",
+      "description": "Die Kundin ist eine neue Kundin von uns und hat eine Frage zu unserem Produkt ABC. Sie hat das Produkt online bestellt und erhalten, aber sie ist sich nicht sicher, wie sie es richtig anwenden soll. Sie möchte eine Gebrauchsanweisung oder einen Link zu einem Video erhalten, das die Anwendung zeigt.",
+      "impact": "low",
+      "priority": "low",
+      "request_type": "Service Request"
+    }
+  },
+  {
+    "text": [
+      "Hallo Support-Team,",
+      "ich habe ein Problem mit meinem Smartphone. Es lässt sich nicht mehr einschalten und reagiert auf keine Tasten oder Ladekabel. Ich habe es vor zwei Monaten bei Ihnen gekauft und es hat bis gestern einwandfrei funktioniert. Gibt es eine Möglichkeit, das Problem zu beheben oder das Gerät umzutauschen?",
+      "Bitte kontaktieren Sie mich so schnell wie möglich, da ich auf mein Smartphone angewiesen bin.",
+      "Mit freundlichen Grüßen,",
+      "Michael Braun"
+    ],
+    "ticket": {
+      "subject": "Smartphone lässt sich nicht einschalten",
+      "description": "Der Kunde hat ein Problem mit seinem Smartphone. Es lässt sich nicht mehr einschalten und reagiert auf keine Tasten oder Ladekabel. Er hat es vor zwei Monaten bei uns gekauft und es hat bis gestern einwandfrei funktioniert. Er möchte wissen, ob es eine Möglichkeit gibt, das Problem zu beheben oder das Gerät umzutauschen. Er ist auf sein Smartphone angewiesen.",
+      "impact": "high",
+      "priority": "high",
+      "request_type": "Problem"
+    }
+  },
+  {
+    "text": [
+      "Sehr geehrte Damen und Herren,",
+      "ich bin ein treuer Kunde von Ihrem Online-Shop und bestelle regelmäßig bei Ihnen. Ich bin immer sehr zufrieden mit der Qualität und dem Service Ihrer Produkte. Ich möchte Ihnen daher ein großes Lob aussprechen und mich für Ihre gute Arbeit bedanken.",
+      "Ich habe jedoch eine kleine Bitte an Sie. Könnten Sie bitte die Verpackung Ihrer Produkte etwas reduzieren? Ich finde es schade, dass so viel Plastik und Papier verschwendet wird, wenn die Produkte auch in kleineren Kartons oder Tüten verschickt werden könnten. Das wäre nicht nur umweltfreundlicher, sondern auch platzsparender für mich als Kunden.",
+      "Ich hoffe, Sie nehmen meine Anregung ernst und überdenken Ihre Verpackungspolitik.",
+      "Mit freundlichen Grüßen,",
+      "Sarah Meier"
+    ],
+    "ticket": {
+      "subject": "Anregung zur Verpackung",
+      "description": "Die Kundin ist eine treue Kundin von unserem Online-Shop und bestellt regelmäßig bei uns. Sie ist immer sehr zufrieden mit der Qualität und dem Service unserer Produkte. Sie möchte uns ein großes Lob aussprechen und sich für unsere gute Arbeit bedanken. Sie hat jedoch eine kleine Bitte an uns. Sie möchte, dass wir die Verpackung unserer Produkte etwas reduzieren. Sie findet es schade, dass so viel Plastik und Papier verschwendet wird, wenn die Produkte auch in kleineren Kartons oder Tüten verschickt werden könnten. Das wäre nicht nur umweltfreundlicher, sondern auch platzsparender für sie als Kundin. Sie hofft, dass wir ihre Anregung ernst nehmen und unsere Verpackungspolitik überdenken.",
+      "impact": "low",
+      "priority": "low",
+      "request_type": "Service Request"
+    }
+  },
+  {
+    "text": [
+      "Hallo Support-Team,",
+      "ich habe ein Problem mit meiner CNC-Fräsmaschine. Sie macht seit gestern komische Geräusche und fräst nicht mehr präzise. Ich habe schon versucht, die Spindel und die Werkzeuge zu überprüfen, aber ich finde keinen Fehler. Was kann ich tun, um das Problem zu beheben?",
+      "Ich brauche die Maschine dringend für meine Produktion, daher bitte ich um eine schnelle Hilfe.",
+      "Mit freundlichen Grüßen,",
+      "Martin Müller"
+    ],
+    "ticket": {
+      "subject": "CNC-Fräsmaschine macht Geräusche und fräst ungenau",
+      "description": "Der Kunde hat ein Problem mit seiner CNC-Fräsmaschine. Sie macht seit gestern komische Geräusche und fräst nicht mehr präzise. Er hat schon versucht, die Spindel und die Werkzeuge zu überprüfen, aber er findet keinen Fehler. Er braucht die Maschine dringend für seine Produktion, daher bittet er um eine schnelle Hilfe.",
+      "impact": "high",
+      "priority": "high",
+      "request_type": "Problem"
+    }
+  },
+  {
+    "text": [
+      "Sehr geehrte Damen und Herren,",
+      "ich möchte gerne eine Wartung für meine Hydraulikpresse anfordern. Die letzte Wartung ist schon ein Jahr her und ich möchte sicherstellen, dass die Maschine in einem guten Zustand ist. Wie kann ich einen Termin für die Wartung vereinbaren und welche Kosten fallen dabei an?",
+      "Bitte senden Sie mir eine Bestätigung und eine Rechnung zu.",
+      "Vielen Dank für Ihren Service.",
+      "Mit freundlichen Grüßen,",
+      "Anna Schmidt"
+    ],
+    "ticket": {
+      "subject": "Wartung für Hydraulikpresse anfordern",
+      "description": "Die Kundin möchte gerne eine Wartung für ihre Hydraulikpresse anfordern. Die letzte Wartung ist schon ein Jahr her und sie möchte sicherstellen, dass die Maschine in einem guten Zustand ist. Sie möchte wissen, wie sie einen Termin für die Wartung vereinbaren und welche Kosten dabei anfallen können. Sie bittet um eine Bestätigung und eine Rechnung.",
+      "impact": "low",
+      "priority": "low",
+      "request_type": "Service Request"
+    }
+  },
+  {
+    "text": [
+      "Guten Tag,",
+      "ich habe eine Frage zu Ihrem Produkt ABC. Es handelt sich um einen Industrieroboter, der verschiedene Aufgaben ausführen kann. Ich bin sehr interessiert an diesem Produkt, aber ich bin mir nicht sicher, ob es für meine Anwendung geeignet ist. Ich möchte den Roboter für die Montage von elektronischen Bauteilen verwenden. Kann der Roboter das machen und welche Anforderungen muss ich dafür erfüllen?",
+      "Bitte senden Sie mir eine technische Beschreibung und ein Angebot für das Produkt zu.",
+      "Ich freue mich auf Ihre Antwort und bedanke mich für Ihre Beratung.",
+      "Mit freundlichen Grüßen,",
+      "Peter Müller"
+    ],
+    "ticket": {
+      "subject": "Frage zu Industrieroboter ABC",
+      "description": "Der Kunde hat eine Frage zu unserem Produkt ABC. Es handelt sich um einen Industrieroboter, der verschiedene Aufgaben ausführen kann. Er ist sehr interessiert an diesem Produkt, aber er ist sich nicht sicher, ob es für seine Anwendung geeignet ist. Er möchte den Roboter für die Montage von elektronischen Bauteilen verwenden. Er möchte wissen, ob der Roboter das machen kann und welche Anforderungen er dafür erfüllen muss. Er bittet um eine technische Beschreibung und ein Angebot für das Produkt.",
+      "impact": "low",
+      "priority": "low",
+      "request_type": "Service Request"
+    }
+  },
+  {
+    "text": [
+      "Hallo,",
+      "ich habe ein Problem mit meinem Schweißgerät. Es schaltet sich immer wieder von selbst aus und zeigt eine Fehlermeldung an. Ich habe schon versucht, die Stromversorgung und die Kabel zu überprüfen, aber ich finde keine Ursache für den Fehler. Was kann ich tun, um das Problem zu beheben?",
+      "Ich brauche das Schweißgerät für meine Arbeit, daher bitte ich um eine schnelle Lösung.",
+      "Mit freundlichen Grüßen,",
+      "Markus Wagner"
+    ],
+    "ticket": {
+      "subject": "Schweißgerät schaltet sich aus und zeigt Fehlermeldung",
+      "description": "Der Kunde hat ein Problem mit seinem Schweißgerät. Es schaltet sich immer wieder von selbst aus und zeigt eine Fehlermeldung an. Er hat schon versucht, die Stromversorgung und die Kabel zu überprüfen, aber er findet keine Ursache für den Fehler. Er braucht das Schweißgerät für seine Arbeit, daher bittet er um eine schnelle Lösung.",
+      "impact": "high",
+      "priority": "high",
+      "request_type": "Problem"
+    }
+  },
+  {
+    "text": [
+      "Guten Tag,",
+      "ich bin ein zufriedener Kunde von Ihnen und nutze Ihre Produkte seit mehreren Jahren. Ich habe jedoch eine Frage zu Ihrem Produkt XYZ. Es handelt sich um eine CNC-Drehmaschine, die ich für die Herstellung von Metallteilen verwende. Ich möchte gerne wissen, ob es möglich ist, die Drehzahl und die Vorschubgeschwindigkeit der Maschine individuell anzupassen. Gibt es dafür eine Software oder eine Bedienungsanleitung, die mir das erklärt?",
+      "Bitte senden Sie mir die entsprechenden Informationen zu.",
+      "Vielen Dank für Ihre Hilfe.",
+      "Mit freundlichen Grüßen,",
+      "Laura Klein"
+    ],
+    "ticket": {
+      "subject": "Frage zur Anpassung von CNC-Drehmaschine XYZ",
+      "description": "Die Kundin ist eine zufriedene Kundin von uns und nutzt unsere Produkte seit mehreren Jahren. Sie hat jedoch eine Frage zu unserem Produkt XYZ. Es handelt sich um eine CNC-Drehmaschine, die sie für die Herstellung von Metallteilen verwendet. Sie möchte gerne wissen, ob es möglich ist, die Drehzahl und die Vorschubgeschwindigkeit der Maschine individuell anzupassen. Sie bittet um eine Software oder eine Bedienungsanleitung, die ihr das erklärt.",
+      "impact": "low",
+      "priority": "low",
+      "request_type": "Service Request"
+    }
+  },
+  {
+    "text": [
+      "Sehr geehrter technischer Support,",
+      "ich habe ein Problem mit der Maschine M1 in der Halle 3. Die Maschine zeigt einen Fehlercode 404 an und stoppt die Produktion. Ich habe versucht, die Maschine neu zu starten, aber der Fehler bleibt bestehen. Können Sie mir bitte helfen, das Problem zu beheben?",
+      "Vielen Dank im Voraus,",
+      "Hans Müller"
+    ],
+    "ticket": {
+      "subject": "Fehlercode 404 bei Maschine M1",
+      "description": "Die Maschine M1 in der Halle 3 zeigt einen Fehlercode 404 an und stoppt die Produktion. Der Kunde hat die Maschine neu gestartet, aber der Fehler bleibt bestehen.",
+      "impact": "high",
+      "priority": "high",
+      "request_type": "Incident"
+    }
+  },
+  {
+    "text": [
+      "Hallo,",
+      "ich bin der Betreiber der Maschine M2 in der Halle 4. Ich möchte eine Wartung der Maschine anfordern, da sie in letzter Zeit ungewöhnliche Geräusche macht und langsamer arbeitet. Ich habe die Maschine vor zwei Wochen gereinigt, aber das hat nicht geholfen. Wie kann ich einen Wartungstermin vereinbaren?",
+      "Mit freundlichen Grüßen,",
+      "Anna Schmidt"
+    ],
+    "ticket": {
+      "subject": "Wartung der Maschine M2",
+      "description": "Die Maschine M2 in der Halle 4 macht ungewöhnliche Geräusche und arbeitet langsamer. Der Kunde hat die Maschine vor zwei Wochen gereinigt, aber das hat nicht geholfen. Der Kunde möchte eine Wartung der Maschine anfordern.",
+      "impact": "medium",
+      "priority": "medium",
+      "request_type": "Service Request"
+    }
+  },
+  {
+    "text": [
+      "Guten Tag,",
+      "ich habe eine Frage zu der Maschine M3 in der Halle 5. Die Maschine hat gestern eine Warnmeldung angezeigt, dass der Ölstand niedrig ist. Ich habe das Öl nachgefüllt, aber die Warnmeldung ist immer noch da. Ist das normal oder gibt es ein Problem mit der Maschine? Soll ich die Maschine weiter benutzen oder lieber ausschalten?",
+      "Danke für Ihre Antwort,",
+      "Peter Weber"
+    ],
+    "ticket": {
+      "subject": "Warnmeldung bei Maschine M3",
+      "description": "Die Maschine M3 in der Halle 5 hat eine Warnmeldung angezeigt, dass der Ölstand niedrig ist. Der Kunde hat das Öl nachgefüllt, aber die Warnmeldung ist immer noch da. Der Kunde fragt, ob das normal ist oder ob es ein Problem mit der Maschine gibt. Der Kunde fragt auch, ob er die Maschine weiter benutzen oder lieber ausschalten soll.",
+      "impact": "low",
+      "priority": "low",
+      "request_type": "Problem"
+    }
+  },
+  {
+    "text": [
+      "Guten Abend,",
+      "ich bin der Leiter der Halle 6, in der die Maschine M4 steht. Die Maschine ist heute morgen ausgefallen und hat einen Kurzschluss verursacht. Das hat einen Brand in der Halle ausgelöst, der glücklicherweise schnell gelöscht werden konnte. Niemand wurde verletzt, aber die Maschine ist stark beschädigt. Ich möchte wissen, wie es zu dem Ausfall kam und wer für den Schaden haftet. Bitte kontaktieren Sie mich so schnell wie möglich.",
+      "Mit besten Grüßen,",
+      "Martin Keller"
+    ],
+    "ticket": {
+      "subject": "Ausfall und Brand bei Maschine M4",
+      "description": "Die Maschine M4 in der Halle 6 ist heute morgen ausgefallen und hat einen Kurzschluss verursacht. Das hat einen Brand in der Halle ausgelöst, der glücklicherweise schnell gelöscht werden konnte. Niemand wurde verletzt, aber die Maschine ist stark beschädigt. Der Kunde möchte wissen, wie es zu dem Ausfall kam und wer für den Schaden haftet.",
+      "impact": "very high",
+      "priority": "very high",
+      "request_type": "Incident"
+    }
+  },
+  {
+    "text": [
+      "Guten Morgen,",
+      "ich bin der neue Mitarbeiter in der Halle 7, wo die Maschine M5 steht. Ich habe eine Schulung für die Bedienung der Maschine erhalten, aber ich bin mir noch unsicher, wie ich einige Funktionen nutzen kann. Zum Beispiel, wie kann ich die Geschwindigkeit und die Temperatur der Maschine einstellen? Gibt es ein Handbuch oder eine Anleitung, die ich konsultieren kann?",
+      "Vielen Dank für Ihre Hilfe,",
+      "Lisa Wagner"
+    ],
+    "ticket": {
+      "subject": "Bedienung der Maschine M5",
+      "description": "Der Kunde ist der neue Mitarbeiter in der Halle 7, wo die Maschine M5 steht. Er hat eine Schulung für die Bedienung der Maschine erhalten, aber er ist sich noch unsicher, wie er einige Funktionen nutzen kann. Zum Beispiel, wie er die Geschwindigkeit und die Temperatur der Maschine einstellen kann. Er fragt, ob es ein Handbuch oder eine Anleitung gibt, die er konsultieren kann.",
+      "impact": "low",
+      "priority": "low",
+      "request_type": "Service Request"
+    }
+  },
+  {
+    "text": [
+      "Liebes Support-Team,",
+      "ich habe ein dringendes Anliegen bezüglich der Maschine M6 in der Halle 8. Die Maschine hat heute Nachmittag plötzlich angefangen zu rauchen und zu stinken. Ich habe sofort die Notabschaltung betätigt, aber der Rauch hat sich nicht verzogen. Ich befürchte, dass die Maschine einen schweren Schaden hat. Was soll ich tun?",
+      "Bitte um schnelle Rückmeldung,",
+      "Markus Braun"
+    ],
+    "ticket": {
+      "subject": "Rauchentwicklung bei Maschine M6",
+      "description": "Die Maschine M6 in der Halle 8 hat heute Nachmittag plötzlich angefangen zu rauchen und zu stinken. Der Kunde hat sofort die Notabschaltung betätigt, aber der Rauch hat sich nicht verzogen. Der Kunde befürchtet, dass die Maschine einen schweren Schaden hat. Der Kunde fragt, was er tun soll.",
+      "impact": "high",
+      "priority": "high",
+      "request_type": "Incident"
+    }
+  },
+  {
+    "text": [
+      "Guten Tag,",
+      "ich bin der Verantwortliche für die Maschine M7 in der Halle 9. Ich habe festgestellt, dass die Maschine falsche Messwerte anzeigt, die nicht mit den tatsächlichen Werten übereinstimmen. Zum Beispiel zeigt die Maschine eine Temperatur von 50°C an, obwohl die tatsächliche Temperatur 40°C ist. Das führt zu Qualitätsproblemen bei den Produkten, die die Maschine herstellt. Woran liegt das und wie kann ich es beheben?",
+      "Vielen Dank für Ihre Unterstützung,",
+      "Thomas Meyer"
+    ],
+    "ticket": {
+      "subject": "Falsche Messwerte bei Maschine M7",
+      "description": "Die Maschine M7 in der Halle 9 zeigt falsche Messwerte an, die nicht mit den tatsächlichen Werten übereinstimmen. Zum Beispiel zeigt die Maschine eine Temperatur von 50°C an, obwohl die tatsächliche Temperatur 40°C ist. Das führt zu Qualitätsproblemen bei den Produkten, die die Maschine herstellt. Der Kunde möchte wissen, woran das liegt und wie er es beheben kann.",
+      "impact": "medium",
+      "priority": "medium",
+      "request_type": "Problem"
+    }
+  },
+  {
+    "text": [
+      "Hallo,",
+      "ich bin der Techniker, der die Maschine M8 in der Halle 10 installiert hat. Ich habe die Maschine erfolgreich in Betrieb genommen, aber ich habe vergessen, die Seriennummer und die Garantiezeit der Maschine zu notieren. Könnten Sie mir diese Informationen bitte zukommen lassen? Ich brauche sie für die Dokumentation.",
+      "Mit freundlichen Grüßen,",
+      "Michael Schneider"
+    ],
+    "ticket": {
+      "subject": "Seriennummer und Garantiezeit der Maschine M8",
+      "description": "Der Kunde ist der Techniker, der die Maschine M8 in der Halle 10 installiert hat. Er hat die Maschine erfolgreich in Betrieb genommen, aber er hat vergessen, die Seriennummer und die Garantiezeit der Maschine zu notieren. Er bittet um diese Informationen für die Dokumentation.",
+      "impact": "low",
+      "priority": "low",
+      "request_type": "Service Request"
+    }
+  },
+  {
+    "text": [
+      "Sehr geehrte Damen und Herren,",
+      "ich bin der Geschäftsführer der Firma XYZ, die die Maschine M9 in der Halle 11 gekauft hat. Ich bin sehr zufrieden mit der Leistung und der Qualität der Maschine, aber ich habe eine Frage zu der Rechnung, die Sie mir geschickt haben. Die Rechnung enthält einen Posten für eine Zusatzleistung, die ich nicht bestellt habe. Es handelt sich um eine Schulung für die Bedienung der Maschine, die 500 Euro kostet. Ich habe bereits eine Schulung von einem anderen Anbieter erhalten, die nur 300 Euro gekostet hat. Können Sie mir bitte erklären, warum Sie mir diese Zusatzleistung berechnet haben und wie ich sie stornieren kann?",
+      "Ich bitte um eine rasche Klärung,",
+      "Jens Fischer"
+    ],
+    "ticket": {
+      "subject": "Rechnungsfrage zu Maschine M9",
+      "description": "Der Kunde ist der Geschäftsführer der Firma XYZ, die die Maschine M9 in der Halle 11 gekauft hat. Er ist sehr zufrieden mit der Leistung und der Qualität der Maschine, aber er hat eine Frage zu der Rechnung, die er erhalten hat. Die Rechnung enthält einen Posten für eine Zusatzleistung, die er nicht bestellt hat. Es handelt sich um eine Schulung für die Bedienung der Maschine, die 500 Euro kostet. Er hat bereits eine Schulung von einem anderen Anbieter erhalten, die nur 300 Euro gekostet hat. Er möchte wissen, warum er diese Zusatzleistung berechnet bekommen hat und wie er sie stornieren kann.",
+      "impact": "low",
+      "priority": "low",
+      "request_type": "Service Request"
+    }
+  },
+  {
+    "text": [
+      "Guten Abend,",
+      "ich bin der Sicherheitsbeauftragte der Halle 12, in der die Maschine M10 steht. Ich habe heute eine Routinekontrolle der Maschine durchgeführt und dabei festgestellt, dass die Maschine nicht den Sicherheitsvorschriften entspricht. Die Maschine hat keine ausreichende Abschirmung, um die Mitarbeiter vor möglichen Verletzungen zu schützen. Außerdem hat die Maschine keine Notfalltaste, um die Maschine im Falle eines Unfalls sofort zu stoppen. Ich halte diese Mängel für sehr gefährlich und fordere Sie auf, sie umgehend zu beheben. Andernfalls muss ich die Maschine stilllegen.",
+      "Ich erwarte Ihre Antwort,",
+      "Klaus Becker"
+    ],
+    "ticket": {
+      "subject": "Sicherheitsmängel bei Maschine M10",
+      "description": "Der Kunde ist der Sicherheitsbeauftragte der Halle 12, in der die Maschine M10 steht. Er hat heute eine Routinekontrolle der Maschine durchgeführt und dabei festgestellt, dass die Maschine nicht den Sicherheitsvorschriften entspricht. Die Maschine hat keine ausreichende Abschirmung, um die Mitarbeiter vor möglichen Verletzungen zu schützen. Außerdem hat die Maschine keine Notfalltaste, um die Maschine im Falle eines Unfalls sofort zu stoppen. Er hält diese Mängel für sehr gefährlich und fordert die Behebung der Mängel. Andernfalls droht er, die Maschine stillzulegen.",
+      "impact": "very high",
+      "priority": "very high",
+      "request_type": "Problem"
+    }
+  },
+  {
+    "text": [
+      "Hallo,",
+      "ich bin der Mitarbeiter, der die Maschine M11 in der Halle 13 bedient. Ich habe ein Problem mit der Maschine, das ich nicht lösen kann. Die Maschine soll verschiedene Teile zusammensetzen, aber sie macht das nicht richtig. Die Teile sind entweder zu locker oder zu fest verbunden. Das führt zu Ausschuss und Verschwendung. Ich habe die Einstellungen der Maschine überprüft, aber sie scheinen in Ordnung zu sein. Was kann ich tun, um das Problem zu beheben?",
+      "Vielen Dank für Ihre Hilfe,",
+      "Stefan Müller"
+    ],
+    "ticket": {
+      "subject": "Zusammensetzungsproblem bei Maschine M11",
+      "description": "Die Maschine M11 in der Halle 13 soll verschiedene Teile zusammensetzen, aber sie macht das nicht richtig. Die Teile sind entweder zu locker oder zu fest verbunden. Das führt zu Ausschuss und Verschwendung. Der Kunde hat die Einstellungen der Maschine überprüft, aber sie scheinen in Ordnung zu sein. Der Kunde fragt, was er tun kann, um das Problem zu beheben.",
+      "impact": "medium",
+      "priority": "medium",
+      "request_type": "Problem"
+    }
+  },
+  {
+    "text": [
+      "Sehr geehrter technischer Support,",
+      "ich bin der Schichtleiter der Halle 14, in der die Maschine M12 steht. Die Maschine ist gestern Abend während der Produktion stehen geblieben und hat einen lauten Knall gemacht. Ich habe die Maschine sofort ausgeschaltet und nachgesehen, was passiert ist. Ich habe festgestellt, dass ein Teil der Maschine gebrochen ist und ein anderes Teil verbrannt ist. Ich weiß nicht, wie das passieren konnte, da die Maschine regelmäßig gewartet wird. Ich brauche dringend einen Techniker, der die Maschine repariert, da wir sonst die Liefertermine nicht einhalten können.",
+      "Bitte um schnelle Antwort,",
+      "Andreas Schmidt"
+    ],
+    "ticket": {
+      "subject": "Maschinenausfall und Schaden bei Maschine M12",
+      "description": "Die Maschine M12 in der Halle 14 ist gestern Abend während der Produktion stehen geblieben und hat einen lauten Knall gemacht. Der Kunde hat die Maschine sofort ausgeschaltet und nachgesehen, was passiert ist. Er hat festgestellt, dass ein Teil der Maschine gebrochen ist und ein anderes Teil verbrannt ist. Er weiß nicht, wie das passieren konnte, da die Maschine regelmäßig gewartet wird. Er braucht dringend einen Techniker, der die Maschine repariert, da er sonst die Liefertermine nicht einhalten kann.",
+      "impact": "high",
+      "priority": "high",
+      "request_type": "Incident"
+    }
+  },
+  {
+    "text": [
+      "Guten Tag,",
+      "ich bin der Qualitätsmanager der Halle 15, in der die Maschine M13 steht. Die Maschine soll die Qualität der Produkte überprüfen, die von anderen Maschinen hergestellt werden. Ich habe jedoch bemerkt, dass die Maschine einige Fehler nicht erkennt, die offensichtlich sind. Zum Beispiel hat die Maschine einige Produkte akzeptiert, die Risse oder Kratzer hatten. Das ist nicht akzeptabel, da wir hohe Qualitätsstandards haben. Wie kann ich die Genauigkeit der Maschine verbessern?",
+      "Vielen Dank für Ihre Beratung,",
+      "Katrin Weber"
+    ],
+    "ticket": {
+      "subject": "Qualitätsprüfungsproblem bei Maschine M13",
+      "description": "Die Maschine M13 in der Halle 15 soll die Qualität der Produkte überprüfen, die von anderen Maschinen hergestellt werden. Der Kunde hat jedoch bemerkt, dass die Maschine einige Fehler nicht erkennt, die offensichtlich sind. Zum Beispiel hat die Maschine einige Produkte akzeptiert, die Risse oder Kratzer hatten. Das ist nicht akzeptabel, da der Kunde hohe Qualitätsstandards hat. Der Kunde möchte wissen, wie er die Genauigkeit der Maschine verbessern kann.",
+      "impact": "medium",
+      "priority": "medium",
+      "request_type": "Problem"
+    }
+  },
+  {
+    "text": [
+      "Hallo,",
+      "ich bin der Inhaber der Firma ABC, die die Maschine M14 in der Halle 16 gekauft hat. Ich bin sehr zufrieden mit der Maschine, aber ich habe eine Frage zu der Software, die die Maschine steuert. Die Software ist sehr kompliziert und hat viele Funktionen, die ich nicht verstehe. Gibt es eine Möglichkeit, die Software zu vereinfachen oder zu personalisieren, damit sie besser zu meinen Bedürfnissen passt? Gibt es eine Schulung oder einen Support, die Sie mir anbieten können?",
+      "Mit freundlichen Grüßen,",
+      "Peter Müller"
+    ],
+    "ticket": {
+      "subject": "Softwarefrage zu Maschine M14",
+      "description": "Der Kunde ist der Inhaber der Firma ABC, die die Maschine M14 in der Halle 16 gekauft hat. Er ist sehr zufrieden mit der Maschine, aber er hat eine Frage zu der Software, die die Maschine steuert. Die Software ist sehr kompliziert und hat viele Funktionen, die er nicht versteht. Er fragt, ob es eine Möglichkeit gibt, die Software zu vereinfachen oder zu personalisieren, damit sie besser zu seinen Bedürfnissen passt. Er fragt auch, ob es eine Schulung oder einen Support gibt, die er nutzen kann.",
+      "impact": "low",
+      "priority": "low",
+      "request_type": "Service Request"
+    }
+  },
+  {
+    "text": [
+      "Guten Morgen,",
+      "ich bin der Ingenieur, der die Maschine M15 in der Halle 17 entwickelt hat. Ich habe eine neue Funktion für die Maschine programmiert, die die Effizienz und die Sicherheit der Maschine erhöhen soll. Ich möchte diese Funktion testen, bevor ich sie auf die Maschine aufspiele. Können Sie mir bitte sagen, wie ich das machen kann? Gibt es eine Testumgebung oder ein Simulationstool, das ich verwenden kann?",
+      "Vielen Dank für Ihre Hilfe,",
+      "Martin Schneider"
+    ],
+    "ticket": {
+      "subject": "Testanfrage für Maschine M15",
+      "description": "Der Kunde ist der Ingenieur, der die Maschine M15 in der Halle 17 entwickelt hat. Er hat eine neue Funktion für die Maschine programmiert, die die Effizienz und die Sicherheit der Maschine erhöhen soll. Er möchte diese Funktion testen, bevor er sie auf die Maschine aufspiele. Er fragt, wie er das machen kann. Er fragt auch, ob es eine Testumgebung oder ein Simulationstool gibt, das er verwenden kann.",
+      "impact": "low",
+      "priority": "low",
+      "request_type": "Service Request"
+    }
+  },
+  {
+    "text": [
+      "Hallo,",
+      "ich bin der Programmierer, der die Software für die Maschine M16 in der Halle 18 geschrieben hat. Die Software soll die Maschine automatisch steuern und optimieren, aber ich habe ein Problem mit der Software, das ich nicht lösen kann. Die Software stürzt manchmal ab und gibt eine Fehlermeldung aus, die ich nicht verstehe. Die Fehlermeldung lautet: \"Ungültiger Parameter: x = -1.0\". Ich habe keine Ahnung, was das bedeutet oder wie ich es beheben kann. Können Sie mir bitte helfen, das Problem zu finden und zu lösen?",
+      "Vielen Dank für Ihre Hilfe,",
+      "Lukas Müller"
+    ],
+    "ticket": {
+      "subject": "Softwareabsturz bei Maschine M16",
+      "description": "Die Software für die Maschine M16 in der Halle 18 soll die Maschine automatisch steuern und optimieren, aber der Kunde hat ein Problem mit der Software, das er nicht lösen kann. Die Software stürzt manchmal ab und gibt eine Fehlermeldung aus, die er nicht versteht. Die Fehlermeldung lautet: \"Ungültiger Parameter: x = -1.0\". Der Kunde hat keine Ahnung, was das bedeutet oder wie er es beheben kann. Der Kunde bittet um Hilfe, das Problem zu finden und zu lösen.",
+      "impact": "high",
+      "priority": "high",
+      "request_type": "Problem"
+    }
+  },
+  {
+    "text": [
+      "Sehr geehrter technischer Support,",
+      "ich bin der Bediener der Maschine M17 in der Halle 19. Die Maschine soll verschiedene Materialien schneiden und stanzen, aber sie macht das nicht richtig. Die Maschine schneidet und stanzt die Materialien entweder zu groß oder zu klein. Das führt zu unbrauchbaren Produkten, die entsorgt werden müssen. Ich habe versucht, die Software der Maschine zu aktualisieren, aber das hat nicht geholfen. Was kann ich tun, um das Problem zu beheben?",
+      "Bitte um schnelle Antwort,",
+      "Anna Schmidt"
+    ],
+    "ticket": {
+      "subject": "Schneid- und Stanzproblem bei Maschine M17",
+      "description": "Die Maschine M17 in der Halle 19 soll verschiedene Materialien schneiden und stanzen, aber sie macht das nicht richtig. Die Maschine schneidet und stanzt die Materialien entweder zu groß oder zu klein. Das führt zu unbrauchbaren Produkten, die entsorgt werden müssen. Der Kunde hat versucht, die Software der Maschine zu aktualisieren, aber das hat nicht geholfen. Der Kunde fragt, was er tun kann, um das Problem zu beheben.",
+      "impact": "medium",
+      "priority": "medium",
+      "request_type": "Problem"
+    }
+  },
+  {
+    "text": [
+      "Guten Tag,",
+      "ich bin der Manager der Halle 20, in der die Maschine M18 steht. Die Maschine soll die Produkte, die von anderen Maschinen hergestellt werden, verpacken und etikettieren, aber sie macht das nicht richtig. Die Maschine verpackt und etikettiert die Produkte entweder falsch oder gar nicht. Das führt zu Verwirrung und Beschwerden bei den Kunden, die die Produkte erhalten. Ich habe die Software der Maschine überprüft, aber sie scheint in Ordnung zu sein. Wie kann ich die Genauigkeit der Maschine verbessern?",
+      "Vielen Dank für Ihre Unterstützung,",
+      "Markus Weber"
+    ],
+    "ticket": {
+      "subject": "Verpackungs- und Etikettierungsproblem bei Maschine M18",
+      "description": "Die Maschine M18 in der Halle 20 soll die Produkte, die von anderen Maschinen hergestellt werden, verpacken und etikettieren, aber sie macht das nicht richtig. Die Maschine verpackt und etikettiert die Produkte entweder falsch oder gar nicht. Das führt zu Verwirrung und Beschwerden bei den Kunden, die die Produkte erhalten. Der Kunde hat die Software der Maschine überprüft, aber sie scheint in Ordnung zu sein. Der Kunde möchte wissen, wie er die Genauigkeit der Maschine verbessern kann.",
+      "impact": "medium",
+      "priority": "medium",
+      "request_type": "Problem"
+    }
+  },
+  {
+    "text": [
+      "Hallo,",
+      "ich bin der Techniker, der die Maschine M19 in der Halle 21 installiert und gewartet hat. Die Maschine soll die Produkte, die von anderen Maschinen hergestellt werden, sortieren und lagern, aber sie macht das nicht richtig. Die Maschine sortiert und lagert die Produkte entweder an der falschen Stelle oder gar nicht. Das führt zu Platzmangel und Verlust von Produkten, die nicht gefunden werden können. Ich habe die Software der Maschine neu installiert, aber das hat nicht geholfen. Was kann ich tun, um das Problem zu beheben?",
+      "Mit freundlichen Grüßen,",
+      "Michael Schneider"
+    ],
+    "ticket": {
+      "subject": "Sortier- und Lagerproblem bei Maschine M19",
+      "description": "Die Maschine M19 in der Halle 21 soll die Produkte, die von anderen Maschinen hergestellt werden, sortieren und lagern, aber sie macht das nicht richtig. Die Maschine sortiert und lagert die Produkte entweder an der falschen Stelle oder gar nicht. Das führt zu Platzmangel und Verlust von Produkten, die nicht gefunden werden können. Der Kunde hat die Software der Maschine neu installiert, aber das hat nicht geholfen. Der Kunde fragt, was er tun kann, um das Problem zu beheben.",
+      "impact": "high",
+      "priority": "high",
+      "request_type": "Problem"
+    }
+  }
+]
