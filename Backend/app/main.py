@@ -21,6 +21,8 @@ app.add_middleware(
 app.include_router(text_endpoint.router, prefix="/api/v1")
 
 if __name__ == "__main__":
-   import uvicorn
+    import uvicorn
 
-   uvicorn.run(app, host="0.0.0.0", port=AppConfig.app_port)  # Use the configured port from the AppConfig class
+    uvicorn.run(
+        app, host="0.0.0.0", port=AppConfig.app_port
+    )  # Use the configured port from the AppConfig class
