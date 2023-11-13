@@ -1,5 +1,4 @@
 import { Component } from '@angular/core';
-import { FormsModule } from '@angular/forms';
 import { TicketService } from './service/ticket.service';
 
 interface ChatMessages {
