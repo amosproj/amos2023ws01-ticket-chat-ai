@@ -1,11 +1,10 @@
 from transformers import T5ForConditionalGeneration, T5Tokenizer
 
-class TrainedT5Model:
 
+class TrainedT5Model:
     def run_model(self, text):
         # Load the fine-tuned model and tokenizer
-        model = T5ForConditionalGeneration.from_pretrained(
-            "TalkTix/t5-ticket-creator")
+        model = T5ForConditionalGeneration.from_pretrained("TalkTix/t5-ticket-creator")
         tokenizer = T5Tokenizer.from_pretrained("TalkTix/t5-ticket-creator")
 
         #  input text
