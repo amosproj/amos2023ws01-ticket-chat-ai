@@ -1,17 +1,22 @@
 <router-outlet></router-outlet>
-
-<input [(ngModel)]="chatInput" />
-<button (click)="handleSend(chatInput)">Senden</button>
-
-<table>
+<div class="text-field-div">
+  <mat-form-field>
+    <mat-label>Problem beschreiben</mat-label>
+    <textarea matInput [(ngModel)]="chatInput"></textarea>
+  </mat-form-field>
+  <button mat-raised-button color="primary" (click)="handleSend(chatInput)">Senden</button>
+</div>
+<div class="history-div">
+  <table>
     <thead>
-        <th>Nachrichtenverlauf:</th>
+    <th>Nachrichtenverlauf:</th>
     </thead>
     <tbody>
-        <tr *ngFor="let ChatMessages of chatMessages">
-            <td>
-                {{ChatMessages.messageText}}
-            </td>
-        </tr>
+    <tr *ngFor="let ChatMessages of chatMessages">
+      <td>
+        {{ChatMessages.messageText}}
+      </td>
+    </tr>
     </tbody>
-</table>
+  </table>
+</div>

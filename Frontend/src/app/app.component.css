@@ -1,0 +1,14 @@
+.text-field-div {
+  margin: auto;
+  width: 50%;
+  padding: 10px;
+  display: flex;
+  flex-direction: column;
+}
+
+.history-div {
+  text-align: center;
+  margin: auto;
+  width: 50%;
+  padding: 10px;
+}
