@@ -1,1 +1,17 @@
-/* No styles yet */
+.text-field-div {
+  margin: auto;
+  width: 50%;
+  padding: 10px;
+  display: flex;
+  flex-direction: column;
+}
+
+.history-div {
+  background-color: #000; 
+  text-align: center;
+  margin: auto;
+  width: 50%;
+  padding: 10px;
+  color: #fff;
+}
+
