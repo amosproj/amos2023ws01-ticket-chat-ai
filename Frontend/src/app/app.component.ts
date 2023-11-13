@@ -19,23 +19,28 @@ export class AppComponent {
   constructor(private ticketService: TicketService) {}
 
   handleSend(value: string) {
-    /**
-     * Gets called when send button is pressed
-     * @param {string} value - Text from the Input
-     */
-    if (value){   //we dont want to send empty messages to backend
-      this.chatMessages.push({messageText: value, isUser: true});
+    if (value) {
+      // push user message to chat
+      this.chatMessages.push({ messageText: value, isUser: true });
       
-      this.ticketService.send(value).subscribe((response: any) => {
-        const messageText = response.messageText;
-        this.chatMessages.push({ messageText, isUser: false }); // Assuming it's a response from the server
-        console.log(response);
-      },
-      (error) => {
-        console.error('Error sending message:', error);
-      });
+      // send message to server and handle response
+      this.ticketService.send(value).subscribe(
+        (response: any) => {
+          const messageText = response.text; // use "text" as per the backend API
+          this.chatMessages.push({ messageText, isUser: false }); // push server message to chat
+
+          console.log(response);
+        },
+        // push error message to chat
+        (error) => {
+          console.error('Error sending message:', error);
+          this.chatMessages.push({ messageText: 'Error sending message.....', isUser: false });
+        }
+      );
+  
       console.log(value);
-      this.chatInput = "";
-    }  
-  }
+      // clear the chat input
+      this.chatInput = ""; 
+    }
+  }  
 }
