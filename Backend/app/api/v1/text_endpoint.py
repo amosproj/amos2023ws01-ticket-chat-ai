@@ -27,10 +27,10 @@ async def process_text(text_input: TextInput):
     trained_t5_model = TrainedT5Model()
     received_text = trained_t5_model.run_model(text_input.text)
 
-    # Print the received text for debugging or logging purposes
+    # print the received text for debugging or logging purposes
     print(f"Received Text: {received_text}")
     
-    # Respond with a simple message and a status code
+    # respond with a simple message and a status code
     response_data = "Message was received"
     status_code = 200  # You can change this as needed
 

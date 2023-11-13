@@ -15,11 +15,13 @@ export class TicketService {
   send(message: string): Observable<any> {
     const data = { text: message };
 
+    // define headers
     const headers = new HttpHeaders({
       'Accept': 'application/json',
       'Content-Type': 'application/json',
     });
 
+    // send post request and handle error
     return this.http.post(this.apiUrl, data, { headers }).pipe(
       catchError((error) => {
         console.error('Error sending message:', error);
