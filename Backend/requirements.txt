@@ -6,4 +6,5 @@ protobuf==4.25.0
 sentencepiece==0.1.99
 pandas==2.1.2
 pytest==7.4.3
+black==23.11.0
 pymongo==4.6.0
