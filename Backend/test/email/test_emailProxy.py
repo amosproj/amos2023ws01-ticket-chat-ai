@@ -15,7 +15,6 @@ email_address = config["DEFAULT"]["EMAIL_ADDRESS"]
 
 
 def test_email():
-
     with EmailProxy(imap_server, email_address, password) as proxy:
         # check if the class has been constructed
         assert isinstance(proxy, EmailProxy)
