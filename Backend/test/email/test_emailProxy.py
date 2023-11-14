@@ -1,17 +1,19 @@
 from app.email.emailProxy import EmailProxy
-from dotenv import load_dotenv
+from dotenv import load_dotenv, find_dotenv
 import os
 import pytest
+import configparser
+import imaplib
 
 load_dotenv()
 
-imap_server = os.getenv('IMAP_SERVER')
-email_address = os.getenv('EMAIL_ADDRESS')
 password = os.getenv('PASSWORD')
+config = configparser.ConfigParser()
+config.read('config.ini')
+imap_server = config['DEFAULT']['IMAP_SERVER']
+email_address = config['DEFAULT']['EMAIL_ADDRESS']
 
 def test_email():
-    #check, if .env file is set correctly in the test, if not copy the .env file from app/email into test/email
-    assert imap_server=="outlook.office365.com"
 
     with EmailProxy(imap_server, email_address, password) as proxy:
         #check if the class has been constructed
@@ -20,6 +22,6 @@ def test_email():
         assert proxy.spin()
 
     #check if the connection got closed
-    with pytest.raises(OSError):
-        proxy.imap.socket().recv(10)
+    with pytest.raises(imaplib.IMAP4.error):
+        proxy.imap.check()
     
