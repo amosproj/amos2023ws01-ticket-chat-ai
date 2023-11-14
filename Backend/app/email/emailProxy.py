@@ -1,6 +1,7 @@
 import imaplib
 import email
 
+
 class EmailProxy:
     imap = None
 
