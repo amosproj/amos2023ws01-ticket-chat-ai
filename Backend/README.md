@@ -34,15 +34,25 @@
     ```bash
     python3 -m venv venv
     ```
+   In a Unix-based System run:
     ```bash
     source venv/bin/activate
     ```
+   In Windows run:
+   ```bash
+   venv\Scripts\activate
+   ```
 
 5. **Install the Dependencies:**
 
     ```bash
     pip install -r requirements.txt
     ```
+
+4. **Set environment Variables for the EmailProxy:**
+
+    Navigate into `./backend` directory.
+    Rename .env_example to .env and set your Email Password inside the .env
 
 ## Running and Testing the Project
 
@@ -83,6 +93,16 @@
 
    ```bash
    python train_t5_model.py
+   ```
+
+## Run the Email Proxy
+
+1. Navigate into `./Backend/app/email` directory.
+
+2. Run main.py
+
+   ```bash
+   python main.py
    ```
 
 ## Useful Tools
