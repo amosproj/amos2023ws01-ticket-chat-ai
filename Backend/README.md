@@ -18,13 +18,18 @@
 
 ## Setup
 
-1. **Navigate to Backend**:
+1. **Install Python**: go to [python.org](https://wiki.python.org/moin/BeginnersGuide/Download)
+
+2. **Install MongoDB Community Server**: go
+   to [mongodb.com](https://www.mongodb.com/docs/manual/administration/install-community/)
+
+3. **Navigate to Backend**:
 
     ```bash
     cd amos2023ws01-ticket-chat-ai/Backend
     ```
 
-2. **Create and Activate a Virtual Environment** (Optional but recommended):
+4. **Create and Activate a Virtual Environment** (Optional but recommended):
 
     ```bash
     python3 -m venv venv
@@ -33,7 +38,7 @@
     source venv/bin/activate
     ```
 
-3. **Install the Dependencies:**
+5. **Install the Dependencies:**
 
     ```bash
     pip install -r requirements.txt
@@ -60,7 +65,7 @@
 3. **Run the tests**:
 
     ```bash
-    pytest tests/
+    pytest test/
     ```
 
 ## Run Test Model
@@ -84,3 +89,8 @@
    ```bash
    python train_t5_model.py
    ```
+
+## Useful Tools
+
+- IDE: VS Code, PyCharm
+- MongoDB: MongoDB Compass
