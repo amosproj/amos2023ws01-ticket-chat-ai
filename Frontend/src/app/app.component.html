@@ -1,17 +1,24 @@
 <router-outlet></router-outlet>
-
-<input [(ngModel)]="chatInput" />
-<button (click)="handleSend(chatInput)">Senden</button>
-
-<table>
-    <thead>
+<div class="app-container" style="background-color: #000; color: #fff;">
+  <div class="text-field-div">
+    <mat-form-field>
+      <mat-label>Problem beschreiben</mat-label>
+      <textarea matInput [(ngModel)]="chatInput"></textarea>
+    </mat-form-field>
+    <button mat-raised-button color="primary" (click)="handleSend(chatInput)">Senden</button>
+  </div>
+  <div class="history-div">
+    <table>
+      <thead>
         <th>Nachrichtenverlauf:</th>
-    </thead>
-    <tbody>
-        <tr *ngFor="let ChatMessages of chatMessages">
-            <td>
-                {{ChatMessages.messageText}}
-            </td>
+      </thead>
+      <tbody>
+        <tr *ngFor="let chatMessage of chatMessages" [ngStyle]="{'background-color': chatMessage.isUser ? '#008028' : '#383a3b', 'color': '#fff', 'text-align': chatMessage.isUser ? 'right' : 'left', 'padding': '10px', 'margin-bottom': '5px'}">
+          <td>
+            {{ chatMessage.messageText }}
+          </td>
         </tr>
-    </tbody>
-</table>
+      </tbody>
+    </table>
+  </div>
+</div>
