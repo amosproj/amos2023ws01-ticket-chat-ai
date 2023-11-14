@@ -1,15 +1,32 @@
 import { Injectable } from "@angular/core";
-import { HttpClient, HttpClientModule } from "@angular/common/http"
+import { HttpClient, HttpHeaders } from "@angular/common/http";
+import { catchError } from "rxjs/operators";
+import { Observable } from "rxjs";
+import {environment} from "../../environments/environment";
 
-@Injectable({providedIn: "root"})
-export class TicketService{
-    constructor(private http: HttpClient){
-    }
-    send(message: string) {
-        const url = 'https://reqres.in/api/posts'; //answer with input
-        
-        const data= { messageText: message, isUser:true };
+@Injectable({
+  providedIn: "root"
+})
+export class TicketService {
+  private apiUrl = environment.apiUrl + 'api/v1/text';
 
-        return this.http.post(url, data,);
-    }
+  constructor(private http: HttpClient) {}
+
+  send(message: string): Observable<any> {
+    const data = { text: message };
+
+    // define headers
+    const headers = new HttpHeaders({
+      'Accept': 'application/json',
+      'Content-Type': 'application/json',
+    });
+
+    // send post request and handle error
+    return this.http.post(this.apiUrl, data, { headers }).pipe(
+      catchError((error) => {
+        console.error('Error sending message:', error);
+        throw error;
+      })
+    );
+  }
 }
