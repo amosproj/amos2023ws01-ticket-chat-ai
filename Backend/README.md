@@ -34,9 +34,14 @@
     ```bash
     python3 -m venv venv
     ```
+   In a Unix-based System run:
     ```bash
     source venv/bin/activate
     ```
+   In Windows run:
+   ```bash
+   venv\Scripts\activate
+   ```
 
 5. **Install the Dependencies:**
 
