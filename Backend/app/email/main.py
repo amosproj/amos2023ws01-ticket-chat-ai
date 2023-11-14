@@ -1,19 +1,23 @@
 import emailProxy as Proxy
 import os
 from dotenv import load_dotenv
-import sched, time
+import time
+import configparser
 
 
 def run_proxy():
     load_dotenv()
-
-    imap_server = os.getenv('IMAP_SERVER')
-    email_address = os.getenv('EMAIL_ADDRESS')
     password = os.getenv('PASSWORD')
-    print(imap_server)
+
+    config = configparser.ConfigParser()
+    config.read('config.ini')
+    imap_server = config['DEFAULT']['IMAP_SERVER']
+    email_address = config['DEFAULT']['EMAIL_ADDRESS']
+    sleep_timer = int(config['DEFAULT']['SLEEP_TIMER'])
+
     with Proxy.EmailProxy(imap_server, email_address, password) as proxy:
         while True:
-            time.sleep(60)
+            time.sleep(sleep_timer)
             proxy.spin()
 
 

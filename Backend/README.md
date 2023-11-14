@@ -39,6 +39,11 @@
     pip install -r requirements.txt
     ```
 
+4. **Set environment Variables for the EmailProxy:**
+
+    Navigate into `./backend` directory.
+    Rename .env_example to .env and set your Email Password inside the .env
+
 ## Running and Testing the Project
 
 1. **Start the backend**:
