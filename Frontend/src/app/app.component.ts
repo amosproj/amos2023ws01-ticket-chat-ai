@@ -12,7 +12,7 @@ interface ChatMessages {
   styleUrls: ['./app.component.css']
 })
 export class AppComponent {
-  title: string = "Talktix";
+  title = 'TalkTix';
   chatInput: string = "";
   chatMessages: ChatMessages[] = [];
 

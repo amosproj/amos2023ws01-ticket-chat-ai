@@ -6,7 +6,8 @@ from fastapi.middleware.cors import CORSMiddleware
 app = FastAPI()
 
 origins = [
-    "http://localhost:4200",  # Remove the trailing slash
+    "http://localhost:4200", # frontend
+    "http://localhost:9876"  # testfrontend port
 ]
 
 app.add_middleware(
