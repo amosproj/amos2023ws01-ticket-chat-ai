@@ -63,3 +63,5 @@ describe('AppComponent', () => {
     // check if server response is displayed correctly
     expect(app.chatMessages[app.chatMessages.length - 1]).toEqual({ messageText: serverResponse, isUser: false });
   });
+});
+
