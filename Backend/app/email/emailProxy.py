@@ -1,5 +1,6 @@
 import imaplib
 import email
+#import handle_mail as hm
 
 
 class EmailProxy:
@@ -38,17 +39,9 @@ class EmailProxy:
 
             message = email.message_from_bytes(data[0][1])
 
-            if self.can_be_processed(message):
-                print(f"Message Number: {msgNum}")
-                self.process_mail(message)
-        return True
-
-    def can_be_processed(self, email):
-        """
-        should return false if the email was automatically generated or is from blocked user, will be implemented in later sprint
-        :param email:
-        :return boolean:
-        """
+#            if hm.can_be_processed(message):
+            print(f"Message Number: {msgNum}")
+            self.process_mail(message)
         return True
 
     def process_mail(self, message):
