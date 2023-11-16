@@ -42,5 +42,5 @@ def test_process_text_empty_input():
     # Check if the response status code is 400 (Bad Request)
     assert response.status_code == 400
 
-    # Check if the response contains the expected error message
+    # Check if the response contains the expected error message.
     assert response.json() == {"detail": "Text is required"}
