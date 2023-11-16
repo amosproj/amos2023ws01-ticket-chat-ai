@@ -9,6 +9,7 @@ from app.dto.ticket import Ticket
 router = APIRouter()
 ticket_ds = TicketRepository()
 
+
 @router.post("/text")
 async def process_text(text_input: TextInput):
     """
@@ -31,7 +32,9 @@ async def process_text(text_input: TextInput):
     received_text = trained_t5_model.run_model(text_input.text)
 
     # save the ticket to the database
-    created_ticket_id = 1 # ticket_ds.create_ticket(ticket=Ticket(**text_input.dict())).inserted_id
+    created_ticket_id = (
+        1  # ticket_ds.create_ticket(ticket=Ticket(**text_input.dict())).inserted_id
+    )
 
     # print the received text for debugging or logging purposes
     print(f"Received Text: {received_text}")
@@ -40,4 +43,9 @@ async def process_text(text_input: TextInput):
     response_data = "Message was received"
     status_code = 200
 
-    return TextResponse(data=response_data, text=received_text, code=status_code, ticket_id=str(created_ticket_id))
+    return TextResponse(
+        data=response_data,
+        text=received_text,
+        code=status_code,
+        ticket_id=str(created_ticket_id),
+    )
