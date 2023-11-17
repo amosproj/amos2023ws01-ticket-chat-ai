@@ -1,0 +1,252 @@
+[
+  {
+    "text": [
+      "Betreff: Maschinenstillstand in Halle 3",
+      "Hallo Support Team,",
+      "unsere Produktionsmaschine in Halle 3 steht still.",
+      "Das Bedienfeld zeigt eine Fehlermeldung 'Verbindungsfehler zum Steuerungssystem'.",
+      "Wir benötigen dringend Unterstützung, um die Maschine wieder in Betrieb zu nehmen.",
+      "Mit freundlichen Grüßen,",
+      "Thomas Meier"
+    ],
+    "ticket": {
+      "title": "Maschinenstillstand",
+      "location": "Halle 3",
+      "category": "Steuerungssystem",
+      "keywords": [
+        "Maschinenstillstand",
+        "Fehlermeldung",
+        "Steuerungssystem"
+      ],
+      "customerPriority": "Störung kann nicht arbeiten",
+      "affectedPerson": "Meier, Thomas",
+      "description": "Unsere Produktionsmaschine in Halle 3 steht still. Das Bedienfeld zeigt eine Fehlermeldung 'Verbindungsfehler zum Steuerungssystem'. Wir benötigen dringend Unterstützung, um die Maschine wieder in Betrieb zu nehmen.",
+      "priority": "Hoch"
+    }
+  },
+  {
+    "text": [
+      "Betreff: Dringend: Fehler in Temperaturregelung",
+      "Hallo Support Team,",
+      "wir haben ein Problem mit der Temperaturregelung in unserem Produktionsprozess.",
+      "Die Temperatur in einem Ofen schwankt unkontrolliert, was die Qualität unserer Produkte beeinträchtigt.",
+      "Bitte helfen Sie uns, dieses Problem so schnell wie möglich zu lösen.",
+      "Viele Grüße,",
+      "Sabine Fischer"
+    ],
+    "ticket": {
+      "title": "Fehler Temperaturregelung",
+      "location": "",
+      "category": "Temperaturregelung",
+      "keywords": [
+        "Fehler",
+        "Temperaturregelung",
+        "Produktionsprozess"
+      ],
+      "customerPriority": "Störung kann nicht arbeiten",
+      "affectedPerson": "Fischer, Sabine",
+      "description": "Wir haben ein Problem mit der Temperaturregelung in unserem Produktionsprozess. Die Temperatur in einem Ofen schwankt unkontrolliert, was die Qualität unserer Produkte beeinträchtigt. Bitte helfen Sie uns, dieses Problem so schnell wie möglich zu lösen.",
+      "priority": "Hoch"
+    }
+  },
+  {
+    "text": [
+      "Betreff: Fehler in der CNC-Steuerung",
+      "Hallo Support Team,",
+      "wir haben Schwierigkeiten mit unserer CNC-Maschine.",
+      "Die Steuerung reagiert nicht wie erwartet, und wir können keine präzisen Bearbeitungen durchführen.",
+      "Bitte prüfen Sie das Problem und helfen Sie uns, die CNC-Steuerung wieder ordnungsgemäß zu betreiben.",
+      "Mit freundlichen Grüßen,",
+      "Andreas Schneider"
+    ],
+    "ticket": {
+      "title": "Fehler CNC-Steuerung",
+      "location": "",
+      "category": "CNC-Maschine",
+      "keywords": [
+        "Fehler",
+        "CNC-Steuerung",
+        "Bearbeitung"
+      ],
+      "customerPriority": "Störung kann nicht arbeiten",
+      "affectedPerson": "Schneider, Andreas",
+      "description": "Wir haben Schwierigkeiten mit unserer CNC-Maschine. Die Steuerung reagiert nicht wie erwartet, und wir können keine präzisen Bearbeitungen durchführen. Bitte prüfen Sie das Problem und helfen Sie uns, die CNC-Steuerung wieder ordnungsgemäß zu betreiben.",
+      "priority": "Hoch"
+    }
+  },
+  {
+    "text": [
+      "Betreff: Fehler bei der Robotersteuerung",
+      "Hallo Support Team,",
+      "wir haben ein Problem mit der Steuerung unseres Roboters in der Montageabteilung.",
+      "Der Roboter führt unerklärliche Bewegungen aus und gefährdet die Sicherheit der Mitarbeiter.",
+      "Bitte überprüfen Sie die Steuerung und unterstützen Sie uns bei der Behebung des Problems.",
+      "Viele Grüße,",
+      "Klaus Müller"
+    ],
+    "ticket": {
+      "title": "Fehler Robotersteuerung",
+      "location": "Montageabteilung",
+      "category": "Roboter",
+      "keywords": [
+        "Fehler",
+        "Robotersteuerung",
+        "Sicherheit"
+      ],
+      "customerPriority": "Störung kann nicht arbeiten",
+      "affectedPerson": "Müller, Klaus",
+      "description": "Wir haben ein Problem mit der Steuerung unseres Roboters in der Montageabteilung. Der Roboter führt unerklärliche Bewegungen aus und gefährdet die Sicherheit der Mitarbeiter. Bitte überprüfen Sie die Steuerung und unterstützen Sie uns bei der Behebung des Problems.",
+      "priority": "Hoch"
+    }
+  },
+  {
+    "text": [
+      "Betreff: Dringend: Ausfall der Produktionslinie",
+      "Hallo Support Team,",
+      "unsere gesamte Produktionslinie ist ausgefallen, und wir können keine Aufträge bearbeiten.",
+      "Der Fehler scheint in der Steuerung der Förderbänder zu liegen.",
+      "Bitte senden Sie einen Techniker, um das Problem zu untersuchen und zu beheben.",
+      "Mit freundlichen Grüßen,",
+      "Peter Wagner"
+    ],
+    "ticket": {
+      "title": "Ausfall Produktionslinie",
+      "location": "",
+      "category": "Förderbänder",
+      "keywords": [
+        "Ausfall",
+        "Produktionslinie",
+        "Förderbänder"
+      ],
+      "customerPriority": "Störung kann nicht arbeiten",
+      "affectedPerson": "Wagner, Peter",
+      "description": "Unsere gesamte Produktionslinie ist ausgefallen, und wir können keine Aufträge bearbeiten. Der Fehler scheint in der Steuerung der Förderbänder zu liegen. Bitte senden Sie einen Techniker, um das Problem zu untersuchen und zu beheben.",
+      "priority": "Sehr Hoch"
+    }
+  },
+  {
+    "text": [
+      "Betreff: Problem mit der Druckmaschine",
+      "Hallo Support Team,",
+      "unsere Druckmaschine in der Druckerei funktioniert nicht ordnungsgemäß.",
+      "Die Druckqualität ist stark beeinträchtigt, und wir müssen dringend Aufträge erledigen.",
+      "Bitte prüfen Sie die Druckmaschine und helfen Sie uns bei der Behebung des Problems.",
+      "Viele Grüße,",
+      "Anna Lehmann"
+    ],
+    "ticket": {
+      "title": "Fehler Druckmaschine",
+      "location": "Druckerei",
+      "category": "Druckmaschine",
+      "keywords": [
+        "Fehler",
+        "Druckqualität",
+        "Aufträge"
+      ],
+      "customerPriority": "Störung kann nicht arbeiten",
+      "affectedPerson": "Lehmann, Anna",
+      "description": "Unsere Druckmaschine in der Druckerei funktioniert nicht ordnungsgemäß. Die Druckqualität ist stark beeinträchtigt, und wir müssen dringend Aufträge erledigen. Bitte prüfen Sie die Druckmaschine und helfen Sie uns bei der Behebung des Problems.",
+      "priority": "Hoch"
+    }
+  },
+  {
+    "text": [
+      "Betreff: Fehler in der Produktionssoftware",
+      "Hallo Support Team,",
+      "wir haben Schwierigkeiten mit unserer Produktionssoftware.",
+      "Es treten unerklärliche Fehler auf, die die Effizienz unserer Fertigungsprozesse beeinträchtigen.",
+      "Bitte unterstützen Sie uns bei der Analyse und Behebung dieser Softwareprobleme.",
+      "Mit freundlichen Grüßen,",
+      "Julia Becker"
+    ],
+    "ticket": {
+      "title": "Fehler Produktionssoftware",
+      "location": "",
+      "category": "Produktionssoftware",
+      "keywords": [
+        "Fehler",
+        "Effizienz",
+        "Fertigungsprozesse"
+      ],
+      "customerPriority": "Störung kann nicht arbeiten",
+      "affectedPerson": "Becker, Julia",
+      "description": "Wir haben Schwierigkeiten mit unserer Produktionssoftware. Es treten unerklärliche Fehler auf, die die Effizienz unserer Fertigungsprozesse beeinträchtigen. Bitte unterstützen Sie uns bei der Analyse und Behebung dieser Softwareprobleme.",
+      "priority": "Hoch"
+    }
+  },
+  {
+    "text": [
+      "Betreff: Störung in der Qualitätskontrolle",
+      "Hallo Support Team,",
+      "wir haben ein Problem in der Qualitätskontrollabteilung.",
+      "Die Prüfgeräte zeigen falsche Messwerte, und wir können die Qualität unserer Produkte nicht sicherstellen.",
+      "Bitte senden Sie einen Techniker, um die Geräte zu überprüfen und das Problem zu beheben.",
+      "Viele Grüße,",
+      "Markus Schulz"
+    ],
+    "ticket": {
+      "title": "Störung Qualitätskontrolle",
+      "location": "Qualitätskontrollabteilung",
+      "category": "Prüfgeräte",
+      "keywords": [
+        "Störung",
+        "Qualitätskontrolle",
+        "Messwerte"
+      ],
+      "customerPriority": "Störung kann nicht arbeiten",
+      "affectedPerson": "Schulz, Markus",
+      "description": "Wir haben ein Problem in der Qualitätskontrollabteilung. Die Prüfgeräte zeigen falsche Messwerte, und wir können die Qualität unserer Produkte nicht sicherstellen. Bitte senden Sie einen Techniker, um die Geräte zu überprüfen und das Problem zu beheben.",
+      "priority": "Sehr Hoch"
+    }
+  },
+  {
+    "text": [
+      "Betreff: Ausfall der industriellen Klimaanlage",
+      "Hallo Support Team,",
+      "in unserer Produktionshalle ist die Klimaanlage ausgefallen.",
+      "Die Temperaturen steigen rapide an, was die Arbeit der Mitarbeiter beeinträchtigt.",
+      "Bitte kümmern Sie sich um eine schnelle Reparatur der Klimaanlage.",
+      "Mit freundlichen Grüßen,",
+      "Sabrina Hartmann"
+    ],
+    "ticket": {
+      "title": "Ausfall Klimaanlage",
+      "location": "Produktionshalle",
+      "category": "Klimaanlage",
+      "keywords": [
+        "Ausfall",
+        "Temperaturen",
+        "Reparatur"
+      ],
+      "customerPriority": "Störung kann nicht arbeiten",
+      "affectedPerson": "Hartmann, Sabrina",
+      "description": "In unserer Produktionshalle ist die Klimaanlage ausgefallen. Die Temperaturen steigen rapide an, was die Arbeit der Mitarbeiter beeinträchtigt. Bitte kümmern Sie sich um eine schnelle Reparatur der Klimaanlage.",
+      "priority": "Hoch"
+    }
+  },
+  {
+    "text": [
+      "Betreff: Störung in der Schweißroboter-Anlage",
+      "Hallo Support Team,",
+      "wir haben ein Problem mit unserer Schweißroboter-Anlage.",
+      "Die Schweißnähte sind nicht mehr präzise, und wir befürchten Produktionsausfälle.",
+      "Bitte schicken Sie einen Techniker, um die Anlage zu überprüfen und zu reparieren.",
+      "Viele Grüße,",
+      "Dominik Weber"
+    ],
+    "ticket": {
+      "title": "Störung Schweißroboter-Anlage",
+      "location": "",
+      "category": "Schweißroboter",
+      "keywords": [
+        "Störung",
+        "Schweißnähte",
+        "Präzision"
+      ],
+      "customerPriority": "Störung kann nicht arbeiten",
+      "affectedPerson": "Weber, Dominik",
+      "description": "Wir haben ein Problem mit unserer Schweißroboter-Anlage. Die Schweißnähte sind nicht mehr präzise, und wir befürchten Produktionsausfälle. Bitte schicken Sie einen Techniker, um die Anlage zu überprüfen und zu reparieren.",
+      "priority": "Hoch"
+    }
+  }
+]
