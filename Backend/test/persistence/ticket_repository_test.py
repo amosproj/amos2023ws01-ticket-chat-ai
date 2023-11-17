@@ -10,7 +10,7 @@ ticket = Ticket(
     description="Test the test ticket",
     impact=Prio.low,
     priority=Prio.low,
-    request_type="Problem"
+    request_type="Problem",
 )
 
 
