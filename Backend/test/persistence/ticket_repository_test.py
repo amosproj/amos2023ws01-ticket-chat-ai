@@ -2,6 +2,7 @@ from app.dto.enum.prio import Prio
 from app.dto.ticket import Ticket
 from app.persistence.database_routine import start_server, stop_server
 from app.persistence.ticket_repository import TicketRepository
+import pytest
 
 ticket_ds = TicketRepository()
 ticket = Ticket(
@@ -9,10 +10,11 @@ ticket = Ticket(
     description="Test the test ticket",
     impact=Prio.low,
     priority=Prio.low,
-    request_type="Problem"
+    request_type="Problem",
 )
 
 
+@pytest.mark.skip(reason="Database Mock is missing")
 def test_crud():
     # start db server
     system_status = start_server()

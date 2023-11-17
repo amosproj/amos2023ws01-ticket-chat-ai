@@ -12,7 +12,7 @@ interface ChatMessages {
   styleUrls: ['./app.component.css']
 })
 export class AppComponent {
-  title: string = "Talktix";
+  title: string = "TalkTix";
   chatInput: string = "";
   chatMessages: ChatMessages[] = [];
 
@@ -22,7 +22,7 @@ export class AppComponent {
     if (value) {
       // push user message to chat
       this.chatMessages.push({ messageText: value, isUser: true });
-      
+
       // send message to server and handle response
       this.ticketService.send(value).subscribe(
         (response: any) => {
@@ -37,10 +37,10 @@ export class AppComponent {
           this.chatMessages.push({ messageText: 'Error sending message.....', isUser: false });
         }
       );
-  
+
       console.log(value);
       // clear the chat input
-      this.chatInput = ""; 
+      this.chatInput = "";
     }
-  }  
+  }
 }
