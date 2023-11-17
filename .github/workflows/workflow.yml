@@ -122,6 +122,6 @@ jobs:
       ################################
       - name: Run Frontend Tests
         working-directory: "./Frontend"
-        run: sudo npm test
+        run: sudo npm run test:prod
 
 
