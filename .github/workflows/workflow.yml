@@ -116,12 +116,12 @@ jobs:
           cache: "npm"
       - name: Install Node Dependencies
         working-directory: "./Frontend"
-        run: npm install
+        run: sudo npm install
       ################################
       # Run Frontend tests #
       ################################
       - name: Run Frontend Tests
         working-directory: "./Frontend"
-        run: npm test
+        run: sudo npm test
 
 
