@@ -1,10 +1,10 @@
 ---
 #################################
 #################################
-## Super Linter GitHub Actions ##
+## GitHub Actions ##
 #################################
 #################################
-name: Lint Code Base
+name: General Workflow
 
 #
 # Documentation:
@@ -12,14 +12,41 @@ name: Lint Code Base
 #
 
 #############################
-# Start the job on all push #
+# Start the job on all push and pull request #
 #############################
-on: push
+on: [push, pull_request]
 
 ###############
 # Set the Job #
 ###############
 jobs:
+  license:
+    name: License check
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout the code
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+      - name: Set up Python
+        uses: actions/setup-python@v4
+        with:
+          python-version: "3.11"
+      - name: Install Python Dependencies
+        uses: py-actions/py-dependency-install@v4
+        with:
+          path: "../../Backend/requirements.txt"
+      - name: Check copyright
+        id: license_check_report
+        uses: pilosus/action-pip-license-checker@v2
+        with:
+          requirements: "../../Backend/requirements.txt"
+          fail: "StrongCopyleft"
+          totals: true
+          headers: true
+      - name: Print copyright report
+        if: always()
+        run: echo "${{ steps.license_check_report.outputs.report }}"
   build:
     # Name the Job
     name: Lint Code Base
