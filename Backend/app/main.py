@@ -22,5 +22,8 @@ app.include_router(text_endpoint.router, prefix="/api/v1")
 
 if __name__ == "__main__":
     import uvicorn
+    from app.email import main as email_proxy
 
+    email_proxy.run_proxy()
     uvicorn.run(app, host="0.0.0.0", port=AppConfig.app_port)
+

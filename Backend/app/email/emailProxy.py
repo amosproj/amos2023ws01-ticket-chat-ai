@@ -1,6 +1,8 @@
 import imaplib
 import email
-#import handle_mail as hm
+
+
+# import handle_mail as hm
 
 
 class EmailProxy:
@@ -32,17 +34,20 @@ class EmailProxy:
         fetches emails, calls process_mail if email can be processed
         :return:
         """
-        _, msgNums = self.imap.search(None, "UNSEEN")
+        _, msg_nums = self.imap.search(None, "UNSEEN")
 
-        for msgNum in msgNums[0].split():
+        new_emails = ""
+        for msgNum in msg_nums[0].split():
             _, data = self.imap.fetch(msgNum, "(RFC822)")
 
             message = email.message_from_bytes(data[0][1])
 
-#            if hm.can_be_processed(message):
-            print(f"Message Number: {msgNum}")
-            self.process_mail(message)
-        return True
+            #            if hm.can_be_processed(message):
+            #             print(f"Message Number: {msgNum}")
+            new_emails += (f"Message Number: {msgNum}\n"
+                           f"{self.process_mail(message)}")
+
+        return new_emails
 
     def process_mail(self, message):
         """
@@ -50,14 +55,21 @@ class EmailProxy:
         :param email:
         :return:
         """
-        print(f"From: {message.get('From')}")
-        print(f"Subject: {message.get('Subject')}")
-
-        print("Content:")
+        sender = message.get('From')
+        subject = message.get('Subject')
+        content = ""
+        # print(f"From: {sender}")
+        # print(f"Subject: {subject}")
+        #
+        # print("Content:")
         for part in message.walk():
             if part.get_content_type() == "text/plain":
-                print(part.as_string())
-        return True
+                content += part.as_string()
+                content += "\n"
+                # print(part.as_string())
+        return (f"From: {sender}\n"
+                f"Subject: {subject}\n"
+                f"Content: {content}")
 
     def __exit__(self, exc_type, exc_val, exc_tb):
         """
