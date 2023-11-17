@@ -49,7 +49,7 @@ jobs:
         run: echo "${{ steps.license_check_report.outputs.report }}"
   build:
     # Name the Job
-    name: Lint Code Base
+    name: Lint Code Base and Test Backend
     # Set the agent to run on
     runs-on: ubuntu-latest
 
@@ -66,7 +66,18 @@ jobs:
           # Full git history is needed to get a proper
           # list of changed files within `super-linter`
           fetch-depth: 0
-
+      - name: Set up Python
+        uses: actions/setup-python@v4
+        with:
+          python-version: "3.11"
+      - name: Install Python Dependencies
+        uses: py-actions/py-dependency-install@v4
+        with:
+          path: "./Backend/requirements.txt"
+      - name: Start MongoDB
+        uses: supercharge/mongodb-github-action@1.10.0
+        with:
+          mongodb-version: "7.0.2"
       ################################
       # Run Linter against code base #
       ################################
@@ -79,3 +90,9 @@ jobs:
           VALIDATE_PYTHON_BLACK: true
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
           LINTER_RULES_PATH: "../../Frontend/src/app/.eslintrc.json"
+      - name: Run Backend Tests
+        working-directory: "./Backend"
+        run: pytest test
+        env:
+          PASSWORD: ${{ secrets.EMAIL_PASSWORD }}
+
