@@ -34,9 +34,8 @@ jobs:
           python-version: "3.11"
           cache: 'pip' # caching pip dependencies
       - name: Install Python Dependencies
-        uses: py-actions/py-dependency-install@v4
-        with:
-          path: "./Backend/requirements.txt"
+        working-directory: "./Backend"
+        run: pip install -r requirements.txt
       - name: Check copyright
         id: license_check_report
         uses: pilosus/action-pip-license-checker@v2
@@ -73,9 +72,8 @@ jobs:
           python-version: "3.11"
           cache: 'pip' # caching pip dependencies
       - name: Install Python Dependencies
-        uses: py-actions/py-dependency-install@v4
-        with:
-          path: "./Backend/requirements.txt"
+        working-directory: "./Backend"
+        run: pip install -r requirements.txt
       - name: Start MongoDB
         uses: supercharge/mongodb-github-action@1.10.0
         with:
