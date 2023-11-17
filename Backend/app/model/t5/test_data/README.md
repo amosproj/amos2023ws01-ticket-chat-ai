@@ -4,36 +4,36 @@
 
 ```json
 {
-    "text": [
-      "Betreff: Dringend: Netzwerk-Problem",
-      "Hallo Support Team,",
-      "ich habe Probleme mit der Netzwerk-Verbindung",
-      "Wir haben ein paar neue Rechner in einem Rack im Technik Raum eingerichtet.",
-      "Bei einem möchten wir, dass ein Kollege aus Ungarn Zugang dazu hat.",
-      "Der Kollege ist Mustermann, Max max.mustermann@talktix.com in Erlangen. ",
-      "Ich habe schon Admin Rechte fuer ihn auf dem Rechner eingerichtet.",
-      "Er meldet, dass er kein Remote Desktop auf dem Rechner aufmachen kann.",
-      "Ich kann arbeiten, aber der Kollege aus Ungarn braucht es dringend.",
-      "Mit freundlichen Grüßen,",
-      "Michael Müller"
+  "text": [
+    "Betreff: Dringend: Netzwerk-Problem",
+    "Hallo Support Team,",
+    "ich habe Probleme mit der Netzwerk-Verbindung",
+    "Wir haben ein paar neue Rechner in einem Rack im Technik Raum eingerichtet.",
+    "Bei einem möchten wir, dass ein Kollege aus Ungarn Zugang dazu hat.",
+    "Der Kollege ist Mustermann, Max max.mustermann@talktix.com in Erlangen. ",
+    "Ich habe schon Admin Rechte fuer ihn auf dem Rechner eingerichtet.",
+    "Er meldet, dass er kein Remote Desktop auf dem Rechner aufmachen kann.",
+    "Ich kann arbeiten, aber der Kollege aus Ungarn braucht es dringend.",
+    "Mit freundlichen Grüßen,",
+    "Michael Müller"
+  ],
+  "ticket": {
+    "title": "Störung -> Netzwerk",
+    "location": "",
+    "category": "Störung -> Netzwerk",
+    "keywords": [
+      "Remote Desktop",
+      "Netzwerk"
     ],
-    "ticket": {
-      "title": "Störung -> Netzwerk",
-      "location": "",
-      "category": "Störung -> Netzwerk",
-      "keywords": [
-        "Remote Desktop",
-        "Netzwerk"
-      ],
-      // 1 - 4 
-      "customerPriority": "Störung aber kann arbeiten",
-      // Störung aber kann arbeiten, Störung kann nicht arbeiten, Störung mehrere können nicht arbeiten, Störung Abteilung kann nicht arbeiten
-      "affectedPerson": "Mustermann, Max",
-      "description": "Wir haben ein paar neue Rechner in einem Rack im Technik Raum eingerichtet. Bei einem möchten wir, dass ein Kollege aus Ungarn Zugang dazu hat. Er meldet, dass er kein Remote Desktop auf dem Rechner öffnen kann.",
-      "priority": "Mittel"
-      // Niedrig, Mittel, Hoch, Sehr Hoch,
-    }
+    // 1 - 4 
+    "customerPriority": "Störung aber kann arbeiten",
+    // Störung aber kann arbeiten, Störung kann nicht arbeiten, Störung mehrere können nicht arbeiten, Störung Abteilung kann nicht arbeiten
+    "affectedPerson": "Mustermann, Max",
+    "description": "Wir haben ein paar neue Rechner in einem Rack im Technik Raum eingerichtet. Bei einem möchten wir, dass ein Kollege aus Ungarn Zugang dazu hat. Er meldet, dass er kein Remote Desktop auf dem Rechner öffnen kann.",
+    "priority": "Mittel"
+    // Niedrig, Mittel, Hoch, Sehr Hoch,
   }
+}
 ```
 
 ## Making Use of ChatGPT
