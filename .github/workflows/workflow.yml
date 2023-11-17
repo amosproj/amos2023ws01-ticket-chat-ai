@@ -35,12 +35,12 @@ jobs:
       - name: Install Python Dependencies
         uses: py-actions/py-dependency-install@v4
         with:
-          path: "../../Backend/requirements.txt"
+          path: "./Backend/requirements.txt"
       - name: Check copyright
         id: license_check_report
         uses: pilosus/action-pip-license-checker@v2
         with:
-          requirements: "../../Backend/requirements.txt"
+          requirements: "./Backend/requirements.txt"
           fail: "StrongCopyleft"
           totals: true
           headers: true
