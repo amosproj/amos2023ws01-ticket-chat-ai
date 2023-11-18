@@ -17,10 +17,14 @@ class TicketRepository:
         return self.collection.insert_one(document=ticket.dict())
 
     def read_tickets(self, ticket_id: ObjectId = None) -> list[dict]:
-        return list(self.collection.find(filter={"_id": ticket_id} if ticket_id else None))
+        return list(
+            self.collection.find(filter={"_id": ticket_id} if ticket_id else None)
+        )
 
     def update_ticket(self, ticket_id: ObjectId, ticket: Ticket) -> UpdateResult:
-        return self.collection.replace_one(filter={"_id": ticket_id}, replacement=ticket.dict(), upsert=True)
+        return self.collection.replace_one(
+            filter={"_id": ticket_id}, replacement=ticket.dict(), upsert=True
+        )
 
     def delete_ticket(self, ticket_id: ObjectId) -> DeleteResult:
         return self.collection.delete_one(filter={"_id": ticket_id})
