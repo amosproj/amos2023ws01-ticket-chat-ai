@@ -3,6 +3,7 @@ from fastapi import APIRouter, HTTPException
 from app.dto.text_input import TextInput
 from app.dto.text_response import TextResponse
 from app.model.t5.use_trained_t5_model import TrainedT5Model
+import json
 
 router = APIRouter()
 
@@ -28,14 +29,16 @@ async def process_text(text_input: TextInput):
 
     # run model
     trained_t5_model = TrainedT5Model()
-    received_text = trained_t5_model.run_model(text_input.text)
+    received_dict = trained_t5_model.run_model(text_input.text)
 
     # print the received text for debugging or logging purposes
-    print(f"Received Text: {received_text}")
+    print(f"Received Text: {json.dumps(received_dict)}")
 
     # respond with a simple message and a status code
 
     response_data = "Message was received"
     status_code = 200  # You can change this as needed
 
-    return TextResponse(data=response_data, text=received_text, code=status_code)
+    return TextResponse(
+        data=response_data, text=json.dumps(received_dict), code=status_code
+    )
