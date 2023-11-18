@@ -1,4 +1,5 @@
 from app.dto.enum.prio import Prio
+from app.dto.enum.customer_prio import CustomerPrio
 from app.dto.ticket import Ticket
 from app.persistence.database_routine import start_server, stop_server
 from app.persistence.ticket_repository import TicketRepository
@@ -6,11 +7,14 @@ import pytest
 
 ticket_ds = TicketRepository()
 ticket = Ticket(
-    subject="Test Ticket",
-    description="Test the test ticket",
-    impact=Prio.low,
+    title="Test Ticket",
+    location="Test the test ticket",
+    category="",
+    keywords=[],
+    customerPriority=CustomerPrio.can_work,
+    affectedPerson="",
+    description="",
     priority=Prio.low,
-    request_type="Problem",
 )
 
 
