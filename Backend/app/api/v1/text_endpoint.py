@@ -9,6 +9,7 @@ import json
 router = APIRouter()
 ticket_ds = TicketRepository()
 
+
 @router.post("/text")
 async def process_text(text_input: TextInput):
     """
