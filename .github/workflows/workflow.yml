@@ -141,6 +141,7 @@ jobs:
         working-directory: "./Backend"
         run: pytest test
         env:
+          TEST_STAGE: "ci"
           PASSWORD: ${{ secrets.EMAIL_PASSWORD }}
       ################################
       # Install Node and its Dependencies #
