@@ -11,6 +11,14 @@ def can_be_processed(message):
 
 
 def make_email(from_address, to_address, subject, message):
+    """
+    creates email type with specified data
+    :param from_address:
+    :param to_address:
+    :param subject:
+    :param message:
+    :return email:
+    """
     msg = email.message.EmailMessage()
     msg["from"] = from_address
     msg["to"] = to_address

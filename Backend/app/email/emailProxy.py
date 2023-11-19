@@ -1,20 +1,23 @@
 import imaplib
 import email
-
-
-# import handle_mail as hm
+import app.email.handle_mail as hm
+import app.email.smtp_conn as sm
 
 
 class EmailProxy:
     imap = None
+    smtp = None
 
-    def __init__(self, imap_server, email_address, email_password):
+    def __init__(self, imap_server, smtp_server, email_address, email_password):
         self.imap_server = imap_server
         self.email_address = email_address
         self.email_password = email_password
+        self.smtp_server = smtp_server
 
     def __enter__(self):
         self.start_connection()
+        self.smtp = sm.SmtpConnection(self.smtp_server, self.email_address, self.email_password)
+        self.smtp.start_connection()
         return self
 
     def start_connection(self):
@@ -31,45 +34,32 @@ class EmailProxy:
 
     def spin(self):
         """
-        fetches emails, calls process_mail if email can be processed
-        :return:
+        searches for new messages
+        :return: List of message numbers.
         """
         _, msg_nums = self.imap.search(None, "UNSEEN")
+        return msg_nums
 
-        new_emails = ""
-        for msgNum in msg_nums[0].split():
-            _, data = self.imap.fetch(msgNum, "(RFC822)")
-
-            message = email.message_from_bytes(data[0][1])
-
-            #            if hm.can_be_processed(message):
-            #             print(f"Message Number: {msgNum}")
-            new_emails += (f"Message Number: {msgNum}\n"
-                           f"{self.process_mail(message)}")
-
-        return new_emails
-
-    def process_mail(self, message):
+    def process_mail(self, msgNum):
         """
-        communicates with backend, answers to email, for now it just prints the content of the email
-        :param email:
-        :return:
+        Fetches Email and processes it.
+        :param msgNum: The number of the message to be processed.
+        :return: Tuple with sender, subject, and content of the message
         """
+        _, data = self.imap.fetch(msgNum, "(RFC822)")
+
+        message = email.message_from_bytes(data[0][1])
+        # specifc processing
         sender = message.get('From')
         subject = message.get('Subject')
         content = ""
-        # print(f"From: {sender}")
-        # print(f"Subject: {subject}")
-        #
-        # print("Content:")
+
         for part in message.walk():
             if part.get_content_type() == "text/plain":
                 content += part.as_string()
                 content += "\n"
-                # print(part.as_string())
-        return (f"From: {sender}\n"
-                f"Subject: {subject}\n"
-                f"Content: {content}")
+
+        return (sender, subject, content)
 
     def __exit__(self, exc_type, exc_val, exc_tb):
         """
@@ -81,5 +71,6 @@ class EmailProxy:
         """
         self.imap.close()
         self.imap.logout()
+        self.smtp.smtp.quit()
         print("connection closed")
         return True
