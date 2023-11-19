@@ -42,7 +42,7 @@ class TrainedT5Model:
             "customerPriority": CustomerPrio.can_work,
             "affectedPerson": "",
             "description": "",
-            "priority": "",
+            "priority": Prio.low,
         }
 
         response["title"] = self.extract_value(text, "title")
@@ -99,4 +99,6 @@ class TrainedT5Model:
         if key_index is not None and key_index + 1 < len(text_list):
             return text_list[key_index + 1]
         else:
-            return None
+            if key == "keywords":
+                return []
+            return ""
