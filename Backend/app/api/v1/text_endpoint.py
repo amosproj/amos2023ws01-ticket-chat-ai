@@ -28,7 +28,7 @@ async def process_text(text_input: TextInput):
     if not text_input.text:
         raise HTTPException(status_code=400, detail="Text is required")
 
-    # Run the model to process the input text
+    # run model
     trained_t5_model = TrainedT5Model()
     received_dict = trained_t5_model.run_model(text_input.text)
 
