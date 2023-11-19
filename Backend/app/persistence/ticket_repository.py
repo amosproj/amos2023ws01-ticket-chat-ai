@@ -1,17 +1,13 @@
 from bson import ObjectId
-from pymongo import MongoClient
 from pymongo.collection import Collection
 from pymongo.results import InsertOneResult, UpdateResult, DeleteResult
 
-from app.config.database_config import MONGODB_URL
 from app.dto.ticket import Ticket
 
 
 class TicketRepository:
-    def __init__(self):
-        client = MongoClient(MONGODB_URL)
-        db = client.talktix
-        self.collection: Collection = db.ticket
+    def __init__(self, collection: Collection):
+        self.collection = collection
 
     def create_ticket(self, ticket: Ticket) -> InsertOneResult:
         return self.collection.insert_one(document=ticket.dict())
