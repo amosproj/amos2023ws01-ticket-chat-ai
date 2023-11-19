@@ -39,14 +39,18 @@ class TicketRepositoryUnitTest(unittest.TestCase):
         self.collection_mock.insert_one.return_value = result_exp
         result_act = self.ticket_repository.create_ticket(ticket=self.ticket)
         self.assertEqual(result_act, result_exp, "wrong result of create_ticket()")
-        self.collection_mock.insert_one.assert_called_once_with(document=self.ticket.dict())
+        self.collection_mock.insert_one.assert_called_once_with(
+            document=self.ticket.dict()
+        )
 
     def test_read_one_ticket(self):
         result_exp = [self.saved_ticket]
         self.collection_mock.find.return_value = result_exp
         result_act = self.ticket_repository.read_tickets(ticket_id=self.ticket_id)
         self.assertEqual(result_act, result_exp, "wrong result of read_tickets()")
-        self.collection_mock.find.assert_called_once_with(filter={"_id": self.ticket_id})
+        self.collection_mock.find.assert_called_once_with(
+            filter={"_id": self.ticket_id}
+        )
 
     def test_read_all_tickets(self):
         result_exp = [self.saved_ticket, self.saved_ticket]
@@ -58,18 +62,22 @@ class TicketRepositoryUnitTest(unittest.TestCase):
     def test_update_ticket(self):
         result_exp = UpdateResult(raw_result=self.saved_ticket, acknowledged=True)
         self.collection_mock.replace_one.return_value = result_exp
-        result_act = self.ticket_repository.update_ticket(ticket_id=self.ticket_id, ticket=self.ticket)
+        result_act = self.ticket_repository.update_ticket(
+            ticket_id=self.ticket_id, ticket=self.ticket
+        )
         self.assertEqual(result_act, result_exp, "wrong result of update_ticket()")
-        self.collection_mock.replace_one.assert_called_once_with(filter={"_id": self.ticket_id},
-                                                                 replacement=self.ticket.dict(),
-                                                                 upsert=True)
+        self.collection_mock.replace_one.assert_called_once_with(
+            filter={"_id": self.ticket_id}, replacement=self.ticket.dict(), upsert=True
+        )
 
     def test_delete_ticket(self):
         result_exp = DeleteResult(raw_result=self.saved_ticket, acknowledged=True)
         self.collection_mock.delete_one.return_value = result_exp
         result_act = self.ticket_repository.delete_ticket(ticket_id=self.ticket_id)
         self.assertEqual(result_act, result_exp, "wrong result of delete_ticket()")
-        self.collection_mock.delete_one.assert_called_once_with(filter={"_id": self.ticket_id})
+        self.collection_mock.delete_one.assert_called_once_with(
+            filter={"_id": self.ticket_id}
+        )
 
 
 @pytest.mark.skipif(condition=SKIP_TEST, reason="Database is missing")
@@ -113,7 +121,9 @@ class TicketRepositoryIntegrationTest(unittest.TestCase):
         # update ticket
         updated_ticket: Ticket = self.ticket.copy()
         updated_ticket.priority = Prio.medium
-        update_result = self.ticket_repository.update_ticket(ticket_id=ticket_id, ticket=updated_ticket)
+        update_result = self.ticket_repository.update_ticket(
+            ticket_id=ticket_id, ticket=updated_ticket
+        )
         assert update_result.modified_count == 1
 
         # read updated ticket
