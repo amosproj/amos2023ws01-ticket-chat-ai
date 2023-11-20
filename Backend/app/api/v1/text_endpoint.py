@@ -3,11 +3,10 @@ from app.dto.text_input import TextInput
 from app.dto.text_response import TextResponse
 from app.model.t5.use_trained_t5_model import TrainedT5Model
 from app.dto.ticket import Ticket
-from app.persistence.ticket_repository import TicketRepository
+from app.persistence.ticket_db_service import TicketDBService
 import json
 
 router = APIRouter()
-ticket_ds = TicketRepository()
 
 
 @router.post("/text")
@@ -32,12 +31,9 @@ async def process_text(text_input: TextInput):
     trained_t5_model = TrainedT5Model()
     received_dict = trained_t5_model.run_model(text_input.text)
 
-    # Create a Ticket object from the received JSON
-    print(received_dict)
-    ticket = Ticket.parse_obj(received_dict)
-
-    # Save the ticket to the database using the TicketRepository
-    created_ticket = ticket_ds.create_ticket(ticket)
+    # Save the ticket to the database using the TicketDBService
+    ticket_db_service = TicketDBService()
+    created_ticket = ticket_db_service.save_ticket(received_dict)
 
     if created_ticket:
         response_data = "Message was received and ticket created"
