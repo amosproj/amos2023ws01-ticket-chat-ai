@@ -4,10 +4,16 @@ from app.dto.text_response import TextResponse
 from app.model.t5.use_trained_t5_model import TrainedT5Model
 from app.dto.ticket import Ticket
 from app.persistence.ticket_repository import TicketRepository
+from pymongo import MongoClient
 import json
 
 router = APIRouter()
-ticket_ds = TicketRepository()
+
+client = MongoClient("mongodb://localhost:27017/")  # Use your actual MongoDB connection string
+db = client["talktix"]  # Use the 'talktix' database
+ticket_collection = db["ticket"]
+
+ticket_ds = TicketRepository(ticket_collection)
 
 
 @router.post("/text")
