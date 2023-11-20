@@ -1,11 +1,21 @@
 from fastapi import APIRouter, HTTPException
-
 from app.dto.text_input import TextInput
 from app.dto.text_response import TextResponse
 from app.model.t5.use_trained_t5_model import TrainedT5Model
+from app.dto.ticket import Ticket
+from app.persistence.ticket_repository import TicketRepository
+from pymongo import MongoClient
 import json
 
 router = APIRouter()
+
+client = MongoClient(
+    "mongodb://localhost:27017/"
+)  # Use your actual MongoDB connection string
+db = client["talktix"]  # Use the 'talktix' database
+ticket_collection = db["ticket"]
+
+ticket_ds = TicketRepository(ticket_collection)
 
 
 @router.post("/text")
@@ -22,22 +32,27 @@ async def process_text(text_input: TextInput):
     Raises:
     - HTTPException: If 'text' field is empty, returns a 400 Bad Request with an error message.
     """
+    # Check if the 'text' field is empty
     if not text_input.text:
-        raise HTTPException(
-            status_code=400, detail="Text is required"
-        )  # Return a 400 Bad Request with an error message
+        raise HTTPException(status_code=400, detail="Text is required")
 
-    # run model
+    # Run the model to process the input text
     trained_t5_model = TrainedT5Model()
     received_dict = trained_t5_model.run_model(text_input.text)
 
-    # print the received text for debugging or logging purposes
-    print(f"Received Text: {json.dumps(received_dict)}")
+    # Create a Ticket object from the received JSON
+    print(received_dict)
+    ticket = Ticket.parse_obj(received_dict)
 
-    # respond with a simple message and a status code
+    # Save the ticket to the database using the TicketRepository
+    created_ticket = ticket_ds.create_ticket(ticket)
 
-    response_data = "Message was received"
-    status_code = 200  # You can change this as needed
+    if created_ticket:
+        response_data = "Message was received and ticket created"
+        status_code = 200
+    else:
+        response_data = "Ticket creation failed"
+        status_code = 500
 
     return TextResponse(
         data=response_data, text=json.dumps(received_dict), code=status_code
