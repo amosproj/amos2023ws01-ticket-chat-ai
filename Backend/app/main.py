@@ -1,4 +1,6 @@
 from fastapi import FastAPI
+
+from app.persistence.database_routine import start_server
 from config import AppConfig
 from app.api.v1 import text_endpoint
 from fastapi.middleware.cors import CORSMiddleware

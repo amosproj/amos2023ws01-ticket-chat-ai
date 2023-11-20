@@ -1,12 +1,11 @@
-import configparser
 import unittest
 from unittest.mock import patch
 
 import pytest
 from bson import ObjectId
-from pymongo import MongoClient
 from pymongo.results import InsertOneResult, UpdateResult, DeleteResult
 
+from app.config.collection_config import get_ticket_collection
 from app.dto.enum.customer_prio import CustomerPrio
 from app.dto.enum.prio import Prio
 from app.dto.ticket import Ticket
@@ -83,12 +82,7 @@ class TicketRepositoryUnitTest(unittest.TestCase):
 @pytest.mark.skipif(condition=SKIP_TEST, reason="Database is missing")
 class TicketRepositoryIntegrationTest(unittest.TestCase):
     def setUp(self):
-        config = configparser.ConfigParser()
-        config.read("config.ini")
-        mongodb_url = config["DEFAULT"]["MONGODB_URL"]
-        client = MongoClient(mongodb_url)
-        db = client.talktix
-        collection = db.ticket
+        collection = get_ticket_collection()
         self.ticket_repository = TicketRepository(collection=collection)
         self.ticket = Ticket(
             title="Test Ticket",

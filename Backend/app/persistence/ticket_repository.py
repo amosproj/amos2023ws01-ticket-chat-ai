@@ -1,12 +1,14 @@
 from bson import ObjectId
+from fastapi import Depends
 from pymongo.collection import Collection
 from pymongo.results import InsertOneResult, UpdateResult, DeleteResult
 
+from app.config.collection_config import get_ticket_collection
 from app.dto.ticket import Ticket
 
 
 class TicketRepository:
-    def __init__(self, collection: Collection):
+    def __init__(self, collection: Collection = Depends(get_ticket_collection)):
         self.collection = collection
 
     def create_ticket(self, ticket: Ticket) -> InsertOneResult:
