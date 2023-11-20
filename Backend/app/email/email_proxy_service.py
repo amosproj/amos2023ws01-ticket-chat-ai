@@ -6,6 +6,7 @@ import time
 import configparser
 from app.model.t5.use_trained_t5_model import TrainedT5Model
 
+
 def run_proxy():
     load_dotenv()
     password = os.getenv("PASSWORD")
@@ -25,13 +26,14 @@ def run_proxy():
             for msgNum in msg_nums[0].split():
                 (sender, subject, content) = proxy.process_mail(msgNum)
 
-                #send message to backend
-                email = "Von: "+sender+"\nBetreff: "+subject+"\n"+content
+                # send message to backend
+                email = "Von: " + sender + "\nBetreff: " + subject + "\n" + content
                 received_text = trained_t5_model.run_model(email)
                 print(email)
                 print(received_text)
 
-                #send response
-                new_email = hm.make_email(email_address, sender, "RE:"+subject, received_text)
+                # send response
+                new_email = hm.make_email(
+                    email_address, sender, "RE:" + subject, received_text
+                )
                 proxy.smtp.send_mail(new_email)
-

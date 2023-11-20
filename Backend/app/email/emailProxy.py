@@ -16,7 +16,9 @@ class EmailProxy:
 
     def __enter__(self):
         self.start_connection()
-        self.smtp = sm.SmtpConnection(self.smtp_server, self.email_address, self.email_password)
+        self.smtp = sm.SmtpConnection(
+            self.smtp_server, self.email_address, self.email_password
+        )
         self.smtp.start_connection()
         return self
 
@@ -49,9 +51,9 @@ class EmailProxy:
         _, data = self.imap.fetch(msgNum, "(RFC822)")
 
         message = email.message_from_bytes(data[0][1])
-        # specifc processing
-        sender = message.get('From')
-        subject = message.get('Subject')
+        # specific processing
+        sender = message.get("From")
+        subject = message.get("Subject")
         content = ""
 
         for part in message.walk():

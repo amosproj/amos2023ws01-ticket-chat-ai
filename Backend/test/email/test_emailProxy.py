@@ -19,27 +19,27 @@ email_address = config["DEFAULT"]["EMAIL_ADDRESS"]
 
 
 def test_email():
-
-    #test sending emails
+    # test sending emails
     with SmtpConnection(smtp_server, email_address, password) as smtp_service:
-        assert isinstance(smtp_service,SmtpConnection)
+        assert isinstance(smtp_service, SmtpConnection)
 
         test_subject = "Test Subject"
         test_content = "Test Content"
-        test_mail = hm.make_email(email_address, email_address,  test_subject, test_content)
+        test_mail = hm.make_email(
+            email_address, email_address,  test_subject, test_content
+        )
         assert smtp_service.send_mail(test_mail)
-
 
     with EmailProxy(imap_server, smtp_server, email_address, password) as proxy:
         # check if the class has been constructed
         assert isinstance(proxy, EmailProxy)
 
-        #check if we got a message
+        # check if we got a message
         time.sleep(10)
         msg_nums = proxy.spin()
         assert msg_nums[-1]
 
-        #check if the message we received was the same as the one we send
+        # check if the message we received was the same as the one we send
         msg_num = msg_nums[-1]
         sender, subject, content = proxy.process_mail(msg_num)
         assert sender == email_address
@@ -49,5 +49,3 @@ def test_email():
     # check if the connection got closed
     with pytest.raises(imaplib.IMAP4.error):
         proxy.imap.check()
-
-
