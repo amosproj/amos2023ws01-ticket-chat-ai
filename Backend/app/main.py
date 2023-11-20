@@ -21,6 +21,7 @@ app.add_middleware(
 # Include the router from the text_endpoint module
 app.include_router(text_endpoint.router, prefix="/api/v1")
 
+
 @app.on_event("startup")
 def start_email_proxy():
     email_proxy_service.run_proxy()

@@ -26,7 +26,7 @@ def test_email():
         test_subject = "Test Subject"
         test_content = "Test Content"
         test_mail = hm.make_email(
-            email_address, email_address,  test_subject, test_content
+            email_address, email_address, test_subject, test_content
         )
         assert smtp_service.send_mail(test_mail)
 
