@@ -12,6 +12,7 @@ def run_proxy():
     config = configparser.ConfigParser()
     config.read("../../config.ini")
     imap_server = config["DEFAULT"]["IMAP_SERVER"]
+    smtp_server = config["DEFAULT"]["SMTP_SERVER"]
     email_address = config["DEFAULT"]["EMAIL_ADDRESS"]
     sleep_timer = int(config["DEFAULT"]["SLEEP_TIMER"])
 

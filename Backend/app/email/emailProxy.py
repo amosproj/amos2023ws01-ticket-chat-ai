@@ -1,17 +1,25 @@
 import imaplib
 import email
+import app.email.handle_mail as hm
+import app.email.smtp_conn as sm
 
 
 class EmailProxy:
     imap = None
+    smtp = None
 
-    def __init__(self, imap_server, email_address, email_password):
+    def __init__(self, imap_server, smtp_server, email_address, email_password):
         self.imap_server = imap_server
         self.email_address = email_address
         self.email_password = email_password
+        self.smtp_server = smtp_server
 
     def __enter__(self):
         self.start_connection()
+        self.smtp = sm.SmtpConnection(
+            self.smtp_server, self.email_address, self.email_password
+        )
+        self.smtp.start_connection()
         return self
 
     def start_connection(self):
@@ -28,43 +36,32 @@ class EmailProxy:
 
     def spin(self):
         """
-        fetches emails, calls process_mail if email can be processed
-        :return:
+        searches for new messages
+        :return: List of message numbers.
         """
-        _, msgNums = self.imap.search(None, "UNSEEN")
+        _, msg_nums = self.imap.search(None, "UNSEEN")
+        return msg_nums
 
-        for msgNum in msgNums[0].split():
-            _, data = self.imap.fetch(msgNum, "(RFC822)")
-
-            message = email.message_from_bytes(data[0][1])
-
-            if self.can_be_processed(message):
-                print(f"Message Number: {msgNum}")
-                self.process_mail(message)
-        return True
-
-    def can_be_processed(self, email):
+    def process_mail(self, msgNum):
         """
-        should return false if the email was automatically generated or is from blocked user, will be implemented in later sprint
-        :param email:
-        :return boolean:
+        Fetches Email and processes it.
+        :param msgNum: The number of the message to be processed.
+        :return: Tuple with sender, subject, and content of the message
         """
-        return True
+        _, data = self.imap.fetch(msgNum, "(RFC822)")
 
-    def process_mail(self, message):
-        """
-        communicates with backend, answers to email, for now it just prints the content of the email
-        :param email:
-        :return:
-        """
-        print(f"From: {message.get('From')}")
-        print(f"Subject: {message.get('Subject')}")
+        message = email.message_from_bytes(data[0][1])
+        # specific processing
+        sender = message.get("From")
+        subject = message.get("Subject")
+        content = ""
 
-        print("Content:")
         for part in message.walk():
             if part.get_content_type() == "text/plain":
-                print(part.as_string())
-        return True
+                content += part.as_string()
+                content += "\n"
+
+        return (sender, subject, content)
 
     def __exit__(self, exc_type, exc_val, exc_tb):
         """
@@ -76,5 +73,6 @@ class EmailProxy:
         """
         self.imap.close()
         self.imap.logout()
+        self.smtp.smtp.quit()
         print("connection closed")
         return True
