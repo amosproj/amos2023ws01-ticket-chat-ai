@@ -1,3 +1,4 @@
+from app.persistence.ticket_db_service import TicketDBService
 import app.email.emailProxy as Proxy
 import app.email.handle_mail as hm
 import os
@@ -28,12 +29,16 @@ def run_proxy():
 
                 # send message to backend
                 email = "Von: " + sender + "\nBetreff: " + subject + "\n" + content
-                received_text = trained_t5_model.run_model(email)
+                received_dict = trained_t5_model.run_model(email)
                 print(email)
-                print(received_text)
+                print(received_dict)
+
+                # Save the ticket to the database using the TicketDBService
+                ticket_db_service = TicketDBService()
+                ticket_db_service.save_ticket(received_dict)
 
                 # send response
                 new_email = hm.make_email(
-                    email_address, sender, "RE:" + subject, received_text
+                    email_address, sender, "RE:" + subject, received_dict
                 )
                 proxy.smtp.send_mail(new_email)
