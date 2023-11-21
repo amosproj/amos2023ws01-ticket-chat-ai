@@ -21,24 +21,23 @@ def run_proxy():
     trained_t5_model = TrainedT5Model()
 
     with Proxy.EmailProxy(imap_server, smtp_server, email_address, password) as proxy:
-        while True:
+        msg_nums = proxy.spin()
+        for msgNum in msg_nums[0].split():
+            (sender, subject, content) = proxy.process_mail(msgNum)
+
+            # send message to backend
+            email = "Von: " + sender + "\nBetreff: " + subject + "\n" + content
+            received_dict = trained_t5_model.run_model(email)
+            print(email)
+            print(received_dict)
+
+            # Save the ticket to the database using the TicketDBService
+            ticket_db_service = TicketDBService()
+            ticket_db_service.save_ticket(received_dict)
+
+            # send response
+            new_email = hm.make_email(
+                email_address, sender, "RE:" + subject, received_dict
+            )
+            proxy.smtp.send_mail(new_email)
             time.sleep(sleep_timer)
-            msg_nums = proxy.spin()
-            for msgNum in msg_nums[0].split():
-                (sender, subject, content) = proxy.process_mail(msgNum)
-
-                # send message to backend
-                email = "Von: " + sender + "\nBetreff: " + subject + "\n" + content
-                received_dict = trained_t5_model.run_model(email)
-                print(email)
-                print(received_dict)
-
-                # Save the ticket to the database using the TicketDBService
-                ticket_db_service = TicketDBService()
-                ticket_db_service.save_ticket(received_dict)
-
-                # send response
-                new_email = hm.make_email(
-                    email_address, sender, "RE:" + subject, received_dict
-                )
-                proxy.smtp.send_mail(new_email)
