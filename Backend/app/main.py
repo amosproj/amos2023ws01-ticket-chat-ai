@@ -1,8 +1,9 @@
 from fastapi import FastAPI
-from config import AppConfig
-from app.api.v1 import text_endpoint
 from fastapi.middleware.cors import CORSMiddleware
+from fastapi_utils.tasks import repeat_every
 from app.email import email_proxy_service
+from app.api.v1 import text_endpoint
+from config import AppConfig
 
 app = FastAPI()
 
@@ -23,6 +24,7 @@ app.include_router(text_endpoint.router, prefix="/api/v1")
 
 
 @app.on_event("startup")
+@repeat_every(seconds=60, wait_first=False)
 def start_email_proxy():
     email_proxy_service.run_proxy()
 

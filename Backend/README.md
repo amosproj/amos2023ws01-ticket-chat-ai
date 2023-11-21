@@ -95,17 +95,7 @@
    python train_t5_model.py
    ```
 
-## Run the Email Proxy 
-
-1. Navigate into `./Backend/app/email` directory.
-
-2. Run main.py
-
-   ```bash
-   python main.py
-   ```
-   
-### OR
+## Run the Email Proxy
 
 1. The Email Proxy runs when starting the backend
 
