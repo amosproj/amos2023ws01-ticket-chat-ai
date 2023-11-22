@@ -3,3 +3,5 @@
 __pycache__/
 venv
 app/email/.env
+.env
+backend.log
