@@ -64,7 +64,7 @@ class EmailProxy:
             print(f"IMAP error: {e}")
             self.try_reconnect()
             msg_nums = self.spin()
-        
+
         return msg_nums
 
     def process_mail(self, msgNum):
