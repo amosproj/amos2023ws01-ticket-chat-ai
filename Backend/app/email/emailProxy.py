@@ -1,7 +1,7 @@
 import imaplib
 import email
-import app.email.handle_mail as hm
-import app.email.smtp_conn as sm
+import handle_mail as hm
+import smtp_conn as sm
 
 
 class EmailProxy:
