@@ -8,7 +8,7 @@ import smtp_conn as sm
 class EmailProxy:
     imap = None
     smtp = None
-    
+
     def __init__(self, imap_server, smtp_server, email_address, email_password):
         self.imap_server = imap_server
         self.email_address = email_address
@@ -18,11 +18,11 @@ class EmailProxy:
     def __enter__(self):
         self.start_connection()
         self.smtp = sm.SmtpConnection(
-                self.smtp_server, self.email_address, self.email_password
-            )
+            self.smtp_server, self.email_address, self.email_password
+        )
         self.smtp.start_connection()
         return self
-        
+
     def start_connection(self):
         """
         connects to the imap server
@@ -38,7 +38,7 @@ class EmailProxy:
 
         except imaplib.IMAP4.abort as e:
             raise Exception("Could not establish IMAP connection. Pls restart process.")
-        
+
     def try_reconnect(self):
         print("trying to reconnect IMAP in 5s")
         while True:
@@ -51,7 +51,7 @@ class EmailProxy:
             except:
                 print("trying to reconnect IMAP in 5s")
                 time.sleep(5)
-            
+
     def spin(self):
         """
         searches for new messages
@@ -59,7 +59,7 @@ class EmailProxy:
         """
         try:
             _, msg_nums = self.imap.search(None, "UNSEEN")
-            
+
         except imaplib.IMAP4.abort as e:
             print(f"IMAP error: {e}")
             self.try_reconnect()
@@ -86,10 +86,10 @@ class EmailProxy:
                 if part.get_content_type() == "text/plain":
                     content += part.as_string()
                     content += "\n"
-            return (sender, subject, content)        
+            return (sender, subject, content)
         except:
             self.try_reconnect()
-            return (self.process_mail(self, msgNum))
+            return self.process_mail(self, msgNum)
 
     def __exit__(self, exc_type, exc_val, exc_tb):
         """

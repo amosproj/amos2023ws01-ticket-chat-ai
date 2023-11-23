@@ -26,7 +26,7 @@ class SmtpConnection:
             return True
         except smtplib.SMTPConnectError as e:
             raise Exception("Could not establish SMTP connection. Pls restart process.")
-        
+
     def try_reconnect(self):
         print("trying to reconnect SMTP in 5s")
         while True:
@@ -41,7 +41,7 @@ class SmtpConnection:
             except:
                 print("trying to reconnect SMTP in 5s")
                 time.sleep(5)
-        
+
     def send_mail(self, message):
         try:
             self.smtp.send_message(message)

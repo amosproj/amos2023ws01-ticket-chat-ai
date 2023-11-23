@@ -21,7 +21,9 @@ def run_proxy():
     sleep_timer = int(config["DEFAULT"]["SLEEP_TIMER"])
 
     try:
-        with Proxy.EmailProxy(imap_server, smtp_server, email_address, password) as proxy:
+        with Proxy.EmailProxy(
+            imap_server, smtp_server, email_address, password
+        ) as proxy:
             while True:
                 msg_nums = proxy.spin()
                 for msgNum in msg_nums[0].split():
@@ -47,6 +49,7 @@ def run_proxy():
                     time.sleep(sleep_timer)
     except Exception as e:
         print(f"Error: {e}")
+
 
 if __name__ == "__main__":
     run_proxy()

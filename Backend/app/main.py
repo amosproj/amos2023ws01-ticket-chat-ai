@@ -7,7 +7,7 @@ app = FastAPI()
 
 origins = [
     "http://localhost:4200",
-    "http://localhost:9876", # frontend test port
+    "http://localhost:9876",  # frontend test port
 ]
 
 app.add_middleware(
