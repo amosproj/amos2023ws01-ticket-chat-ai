@@ -6,7 +6,8 @@ from config import AppConfig
 app = FastAPI()
 
 origins = [
-    "http://localhost:4200",  # Remove the trailing slash
+    "http://localhost:4200",
+    "http://localhost:9876", # frontend test port
 ]
 
 app.add_middleware(
