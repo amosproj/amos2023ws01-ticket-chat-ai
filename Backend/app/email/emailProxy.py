@@ -3,7 +3,7 @@ import time
 import email
 import handle_mail as hm
 import smtp_conn as sm
-from app.logger import logger  # Import your logger
+
 
 class EmailProxy:
     imap = None
@@ -24,44 +24,56 @@ class EmailProxy:
         return self
 
     def start_connection(self):
+        """
+        connects to the imap server
+        :return:
+        """
         try:
             self.imap = imaplib.IMAP4_SSL(self.imap_server, port=993)
             self.imap.login(self.email_address, self.email_password)
 
             self.imap.select("Inbox")
-            logger.info("IMAP connection established")
+            print("IMAP connection established")
             return True
 
         except imaplib.IMAP4.abort as e:
-            logger.exception("Could not establish IMAP connection. Please restart the process.")
-            raise Exception("Could not establish IMAP connection. Please restart the process.")
+            raise Exception("Could not establish IMAP connection. Pls restart process.")
 
     def try_reconnect(self):
-        logger.warning("Lost connection to the IMAP server")
-        logger.warning("Trying to reconnect IMAP in 5s")
+        print("lost connection to the IMAP server")
+        print("trying to reconnect IMAP in 5s")
         while True:
             try:
                 self.imap = imaplib.IMAP4_SSL(self.imap_server, port=993)
                 self.imap.login(self.email_address, self.email_password)
                 self.imap.select("Inbox")
-                logger.info("IMAP reconnection successful")
+                print("IMAP reconnection successful")
                 return True
             except:
-                logger.warning("Trying to reconnect IMAP in 5s")
+                print("trying to reconnect IMAP in 5s")
                 time.sleep(5)
 
     def spin(self):
+        """
+        searches for new messages
+        :return: List of message numbers.
+        """
         try:
             _, msg_nums = self.imap.search(None, "UNSEEN")
 
         except imaplib.IMAP4.abort as e:
-            logger.error(f"IMAP error: {e}")
+            print(f"IMAP error: {e}")
             self.try_reconnect()
             msg_nums = self.spin()
 
         return msg_nums
 
     def process_mail(self, msgNum):
+        """
+        Fetches Email and processes it.
+        :param msgNum: The number of the message to be processed.
+        :return: Tuple with sender, subject, and content of the message
+        """
         try:
             _, data = self.imap.fetch(msgNum, "(RFC822)")
 
@@ -77,13 +89,19 @@ class EmailProxy:
                     content += "\n"
             return (sender, subject, content)
         except:
-            logger.exception("Error while processing mail. Attempting reconnection.")
             self.try_reconnect()
             return self.process_mail(self, msgNum)
 
     def __exit__(self, exc_type, exc_val, exc_tb):
+        """
+        close the connection to the imap server
+        :param exc_type:
+        :param exc_val:
+        :param exc_tb:
+        :return:
+        """
         self.imap.close()
         self.imap.logout()
         self.smtp.smtp.quit()
-        logger.info("Connection closed")
+        print("connection closed")
         return True
