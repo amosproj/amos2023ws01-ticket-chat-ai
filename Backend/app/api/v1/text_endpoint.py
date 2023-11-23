@@ -31,11 +31,13 @@ async def process_text(text_input: TextInput):
         logger.error("Received empty text!")
         raise HTTPException(status_code=400, detail="Text is required")
 
+    logger.info(f"Received text: {text_input.text}")
+
     logger.info("Running the model...")
     # Run the model to process the input text
     trained_t5_model = TrainedT5Model()
     received_dict = trained_t5_model.run_model(text_input.text)
-    logger.info("Model execution complete.")
+    logger.info("Model execution complete. Result: %s", received_dict)
 
     logger.info("Saving ticket to the database...")
     # Save the ticket to the database using the TicketDBService
@@ -43,7 +45,8 @@ async def process_text(text_input: TextInput):
     created_ticket = ticket_db_service.save_ticket(received_dict)
 
     if created_ticket:
-        logger.info("Ticket created and saved successfully.")
+        ticket_id = created_ticket.inserted_id
+        logger.info(f"Ticket created and saved successfully. Ticket ID: {ticket_id}")
         response_data = "Message was received and ticket created"
         status_code = 200
     else:
@@ -51,6 +54,6 @@ async def process_text(text_input: TextInput):
         response_data = "Ticket creation failed"
         status_code = 500
 
-    return TextResponse(
-        data=response_data, text=json.dumps(received_dict), code=status_code
-    )
+    logger.info("Preparing response...")
+    response_json = json.dumps(received_dict)
+    return TextResponse(data=response_data, text=response_json, code=status_code)

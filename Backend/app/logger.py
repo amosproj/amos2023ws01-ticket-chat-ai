@@ -6,7 +6,7 @@ def setup_logger():
     logger.setLevel(logging.DEBUG)
 
     # Create a file handler
-    file_handler = logging.FileHandler("app.log")
+    file_handler = logging.FileHandler("backend.log")
     file_handler.setLevel(logging.DEBUG)
 
     # Create a console handler
