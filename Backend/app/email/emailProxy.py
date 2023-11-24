@@ -40,6 +40,7 @@ class EmailProxy:
             raise Exception("Could not establish IMAP connection. Pls restart process.")
 
     def try_reconnect(self):
+        print("lost connection to the IMAP server")
         print("trying to reconnect IMAP in 5s")
         while True:
             try:

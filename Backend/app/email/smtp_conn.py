@@ -28,6 +28,7 @@ class SmtpConnection:
             raise Exception("Could not establish SMTP connection. Pls restart process.")
 
     def try_reconnect(self):
+        print("lost connection to the SMTP server")
         print("trying to reconnect SMTP in 5s")
         while True:
             try:
