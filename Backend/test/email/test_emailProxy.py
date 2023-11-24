@@ -2,10 +2,10 @@ import sys
 import os
 
 # determine the absolute path to the 'backend' directory
-backend_path = os.path.abspath(os.path.join(os.path.dirname(__file__), '../../'))
+backend_path = os.path.abspath(os.path.join(os.path.dirname(__file__), "../../"))
 
 # add the directory 'backend/app/email/' to sys.path
-sys.path.append(os.path.join(backend_path, 'app', 'email'))
+sys.path.append(os.path.join(backend_path, "app", "email"))
 
 from app.email.emailProxy import EmailProxy
 from app.email.smtp_conn import SmtpConnection
@@ -61,6 +61,7 @@ def test_email():
     with pytest.raises(imaplib.IMAP4.error):
         proxy.imap.check()
 
+
 def test_imap_reconnect():
     # mocking the EmailProxy and SmtpConnection classes
     with patch("app.email.emailProxy.EmailProxy") as mock_email_proxy:
@@ -82,15 +83,18 @@ def test_imap_reconnect():
         else:
             assert not mock_imap.try_reconnect.called
 
+
 def test_smtp_reconnect():
     # mocking the EmailProxy and SmtpConnection classes
     with patch("app.email.smtp_conn.SmtpConnection") as mock_smtp_conn:
         # mocking the SMTP connection to raise an exception on the first attempt
         mock_smtp = MagicMock()
-        mock_smtp.send_mail.side_effect = smtplib.SMTPServerDisconnected("Connection lost")
+        mock_smtp.send_mail.side_effect = smtplib.SMTPServerDisconnected(
+            "Connection lost"
+        )
         mock_smtp_conn.return_value = mock_smtp
 
-         # running the run_proxy function
+        # running the run_proxy function
         with pytest.raises(Exception) as e:
             run_proxy()
 
@@ -102,3 +106,4 @@ def test_smtp_reconnect():
             assert mock_smtp.try_reconnect.return_value
         else:
             assert not mock_smtp.try_reconnect.called
+            
