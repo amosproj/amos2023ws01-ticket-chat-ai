@@ -106,4 +106,3 @@ def test_smtp_reconnect():
             assert mock_smtp.try_reconnect.return_value
         else:
             assert not mock_smtp.try_reconnect.called
-            
