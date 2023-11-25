@@ -1,12 +1,12 @@
+import json
+
 import emailProxy as Proxy
 import handle_mail as hm
 import os
 from dotenv import load_dotenv
 import time
 import configparser
-
-# import requests
-# import email_input as input
+import requests
 
 
 def run_proxy():
@@ -30,20 +30,16 @@ def run_proxy():
                     (sender, subject, content) = proxy.process_mail(msgNum)
 
                     # send message to backend
-                    email = f"Von: {sender}\nBetreff: {subject}\n {content}"
-                    print(email)
-                    # try:
-                    #     email_input = input.EmailInput()
-                    #     email_input.text = email
-                    # except Exception as e:
-                    #     print('Error:', e)
+                    email = f'"text":"Von: {sender}\nBetreff: {subject}\n {content}"'
+                    json_input = {'text': email}
+                    print(json_input)
                     if content != "":
-                        # response = requests.post("http://localhost:8000/api/v1/text", json=email_input)
-                        # print(response.text)
+                        response = requests.post("http://localhost:8000/api/v1/text", data=json.dumps(json_input))
+                        print(response.text)
 
                         # send response
                         new_email = hm.make_email(
-                            email_address, sender, "RE:" + subject, email
+                            email_address, sender, "RE:" + subject, response.text
                         )
                         proxy.smtp.send_mail(new_email)
                     time.sleep(sleep_timer)
