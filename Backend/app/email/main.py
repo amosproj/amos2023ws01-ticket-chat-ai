@@ -31,10 +31,13 @@ def run_proxy():
 
                     # send message to backend
                     email = f'"text":"Von: {sender}\nBetreff: {subject}\n {content}"'
-                    json_input = {'text': email}
+                    json_input = {"text": email}
                     print(json_input)
                     if content != "":
-                        response = requests.post("http://localhost:8000/api/v1/text", data=json.dumps(json_input))
+                        response = requests.post(
+                            "http://localhost:8000/api/v1/text",
+                            data=json.dumps(json_input),
+                        )
                         print(response.text)
 
                         # send response
