@@ -30,6 +30,7 @@ imap_server = config["DEFAULT"]["IMAP_SERVER"]
 smtp_server = config["DEFAULT"]["SMTP_SERVER"]
 email_address = config["DEFAULT"]["EMAIL_ADDRESS"]
 
+
 @pytest.mark.skipif(condition=SKIP_TEST, reason="Github cant connect, works local")
 class EmailProxyTest(unittest.TestCase):
     def test_email(self):
