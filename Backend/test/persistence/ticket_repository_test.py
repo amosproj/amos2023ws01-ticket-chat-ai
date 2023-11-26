@@ -16,7 +16,7 @@ from test.config.pytest import SKIP_TEST
 
 
 class TicketRepositoryUnitTest(unittest.TestCase):
-    @patch("pymongo.collection.Collection")
+    @patch("app.persistence.ticket_repository.Collection")
     def setUp(self, collection_mock):
         self.collection_mock = collection_mock
         self.ticket_repository = TicketRepository(collection=collection_mock)

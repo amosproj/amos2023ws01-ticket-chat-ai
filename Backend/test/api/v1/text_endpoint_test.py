@@ -35,7 +35,6 @@ def test_process_text(ticket_service_mock, trained_t5_model_mock):
 
     trained_t5_model_mock.return_value.run_model.return_value = mock_return_value.dict()
 
-    ticket_service_mock = MagicMock()
     ticket_id = ObjectId("6554b34d82161e93bff08df6")
     result_exp = InsertOneResult(inserted_id=ticket_id, acknowledged=True)
     ticket_service_mock.save_ticket.return_value = result_exp
