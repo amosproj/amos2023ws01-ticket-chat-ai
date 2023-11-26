@@ -1,5 +1,6 @@
 import { Component } from '@angular/core';
 import { TicketService } from './service/ticket.service';
+import { LogService } from './service/logging.service';
 
 interface ChatMessages {
   messageText: string;
@@ -16,12 +17,13 @@ export class AppComponent {
   chatInput: string = "";
   chatMessages: ChatMessages[] = [];
 
-  constructor(private ticketService: TicketService) {}
+  constructor(private ticketService: TicketService, private logger: LogService) {}
 
   handleSend(value: string) {
     if (value) {
       // push user message to chat
       this.chatMessages.push({ messageText: value, isUser: true });
+      this.logger.log('Trying to send message to backend server: ' + value)
 
       // send message to server and handle response
       this.ticketService.send(value).subscribe(
@@ -29,16 +31,15 @@ export class AppComponent {
           const messageText = response.text; // use "text" as per the backend API
           this.chatMessages.push({ messageText, isUser: false }); // push server message to chat
 
-          console.log(response);
+          this.logger.log('Received response from backend server: ' + response);
         },
         // push error message to chat
         (error) => {
-          console.error('Error sending message:', error);
+          this.logger.log('Error sending message:' + error);
           this.chatMessages.push({ messageText: 'Error sending message.....', isUser: false });
         }
       );
 
-      console.log(value);
       // clear the chat input
       this.chatInput = "";
     }
