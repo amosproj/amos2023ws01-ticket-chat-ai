@@ -5,5 +5,7 @@ from app.persistence.ticket_db_service import TicketDBService
 from app.persistence.ticket_repository import TicketRepository
 
 
-def get_ticket_db_service(ticket_repository: TicketRepository = Depends(get_ticket_repository)):
+def get_ticket_db_service(
+    ticket_repository: TicketRepository = Depends(get_ticket_repository),
+):
     return TicketDBService(ticket_repository=ticket_repository)

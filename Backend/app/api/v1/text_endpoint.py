@@ -14,8 +14,11 @@ router = APIRouter()
 
 
 @router.post("/text")
-async def process_text(text_input: TextInput, trained_t5_model: TrainedT5Model = Depends(get_trained_t5_model),
-                       ticket_db_service: TicketDBService = Depends(get_ticket_db_service)):
+async def process_text(
+    text_input: TextInput,
+    trained_t5_model: TrainedT5Model = Depends(get_trained_t5_model),
+    ticket_db_service: TicketDBService = Depends(get_ticket_db_service),
+):
     """
     Receive Text from the Frontend
 
