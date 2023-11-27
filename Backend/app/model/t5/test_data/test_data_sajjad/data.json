@@ -1,0 +1,323 @@
+[
+    {
+      "text": [
+        "Verbindungsprobleme mit dem Netzwerk",
+        "Sehr geehrte Damen und Herren, ich habe seit gestern Probleme, mich mit dem Unternehmensnetzwerk zu verbinden. Ich erhalte eine Fehlermeldung 'Verbindung fehlgeschlagen'. Könnten Sie bitte überprüfen, was das Problem sein könnte? Vielen Dank."
+      ],
+      "ticket": {
+        "title": "Netzwerkverbindungsproblem",
+        "location": "Büro 305",
+        "category": "Netzwerk",
+        "keywords": ["Verbindung", "Fehlermeldung"],
+        "customerPriority": "Störung kann nicht arbeiten",
+        "affectedPerson": "Müller, Anna",
+        "description": "Die Mitarbeiterin kann sich nicht mit dem Unternehmensnetzwerk verbinden und erhält eine 'Verbindung fehlgeschlagen'-Fehlermeldung. Das Problem besteht seit gestern.",
+        "priority": "Hoch"
+      }
+    },
+    {
+      "text": [
+        "Drucker funktioniert nicht mehr",
+        "Hallo Support-Team, unser Drucker im 2. Stock funktioniert plötzlich nicht mehr. Er druckt keine Dokumente mehr aus, obwohl er eingeschaltet ist. Könnten Sie das bitte überprüfen?"
+      ],
+      "ticket": {
+        "title": "Druckerfunktionsstörung",
+        "location": "Büro 202",
+        "category": "Drucker",
+        "keywords": ["Drucker", "Funktionsstörung"],
+        "customerPriority": "Störung kann nicht arbeiten",
+        "affectedPerson": "Schmidt, Tobias",
+        "description": "Der Drucker im 2. Stock funktioniert plötzlich nicht mehr und druckt keine Dokumente aus, obwohl er eingeschaltet ist.",
+        "priority": "Hoch"
+      }
+    },
+    {
+      "text": [
+        "Passwort zurücksetzen",
+        "Guten Tag, ich habe mein Passwort vergessen und benötige dringend Zugang zu meinem Konto. Könnten Sie mir bitte helfen, mein Passwort zurückzusetzen?"
+      ],
+      "ticket": {
+        "title": "Passwort zurücksetzen",
+        "location": "Benutzerkonto von Mayer, Julia",
+        "category": "Zugang",
+        "keywords": ["Passwort", "Zugang"],
+        "customerPriority": "Störung aber kann arbeiten",
+        "affectedPerson": "Mayer, Julia",
+        "description": "Julia Mayer hat ihr Passwort vergessen und benötigt dringend Zugang zu ihrem Konto. Ein Passwort-Reset ist erforderlich.",
+        "priority": "Mittel"
+      }
+    },
+    {
+      "text": [
+        "Software-Update benötigt",
+        "Sehr geehrte Damen und Herren, ich habe bemerkt, dass meine Software-Version veraltet ist. Könnten Sie bitte ein Update für die Software durchführen?"
+      ],
+      "ticket": {
+        "title": "Software-Update erforderlich",
+        "location": "Arbeitsplatz von Keller, Max",
+        "category": "Software",
+        "keywords": ["Software", "Update"],
+        "customerPriority": "Störung aber kann arbeiten",
+        "affectedPerson": "Keller, Max",
+        "description": "Max Keller benötigt ein Software-Update, da die aktuelle Version veraltet ist und er bestimmte Funktionen benötigt, die in der neuen Version verfügbar sind.",
+        "priority": "Mittel"
+      }
+    },
+    {
+      "text": [
+        "Server nicht erreichbar",
+        "Hallo, seit heute Morgen kann ich nicht auf den Server zugreifen. Es kommt eine Fehlermeldung 'Server nicht erreichbar'. Können Sie das bitte überprüfen?"
+      ],
+      "ticket": {
+        "title": "Serverzugriffsproblem",
+        "location": "Arbeitsplatz von Wagner, Lisa",
+        "category": "Server",
+        "keywords": ["Server", "Zugriff", "Fehlermeldung"],
+        "customerPriority": "Störung kann nicht arbeiten",
+        "affectedPerson": "Wagner, Lisa",
+        "description": "Lisa Wagner kann seit heute Morgen nicht auf den Server zugreifen und erhält die Fehlermeldung 'Server nicht erreichbar'. Das Problem besteht seitdem.",
+        "priority": "Hoch"
+      }
+    },
+    {
+      "text": [
+        "Internetverbindung unterbrochen",
+        "Sehr geehrte Damen und Herren,\nich habe seit gestern Probleme mit meiner Internetverbindung. Die Verbindung bricht in unregelmäßigen Abständen ab, und ich kann keine stabilen Verbindungen herstellen. Bitte um Unterstützung."
+      ],
+      "ticket": {
+        "title": "Internetverbindung unterbrochen",
+        "location": "Zuhause",
+        "category": "Netzwerk",
+        "keywords": ["Internet", "Verbindung", "Abbruch"],
+        "customerPriority": "Störung kann nicht arbeiten",
+        "affectedPerson": "Müller, Lisa",
+        "description": "Die Internetverbindung bricht in unregelmäßigen Abständen ab, wodurch keine stabilen Verbindungen möglich sind. Dies beeinträchtigt meine Arbeit erheblich.",
+        "priority": "Hoch"
+      }
+    },
+    {
+      "text": [
+        "Drucker druckt keine Farben mehr",
+        "Sehr geehrte Damen und Herren,\nmein Drucker (Modell XYZ) druckt plötzlich keine Farben mehr. Sowohl beim Kopieren als auch beim Drucken über den Computer kommen nur noch Schwarz-Weiß-Ausdrucke heraus. Bitte um Hilfe."
+      ],
+      "ticket": {
+        "title": "Drucker druckt keine Farben mehr",
+        "location": "Büro",
+        "category": "Drucker",
+        "keywords": ["Drucker", "Farben", "Ausdruck"],
+        "customerPriority": "Störung aber kann arbeiten",
+        "affectedPerson": "Schulz, Max",
+        "description": "Der Drucker druckt plötzlich keine Farben mehr. Sowohl beim Kopieren als auch beim Drucken über den Computer erscheinen nur Schwarz-Weiß-Ausdrucke, obwohl die Farbpatronen ausreichend gefüllt sind.",
+        "priority": "Mittel"
+      }
+    },
+    {
+      "text": [
+        "Softwareabsturz beim Öffnen von Dateien",
+        "Hallo Support-Team,\nseit dem letzten Software-Update stürzt die Anwendung (Name der Anwendung) immer ab, wenn ich versuche, bestimmte Dateien zu öffnen. Bitte um Lösung dieses Problems."
+      ],
+      "ticket": {
+        "title": "Softwareabsturz beim Öffnen von Dateien",
+        "location": "Arbeitsplatz",
+        "category": "Software",
+        "keywords": ["Software", "Absturz", "Dateien"],
+        "customerPriority": "Störung kann nicht arbeiten",
+        "affectedPerson": "Schmidt, Anna",
+        "description": "Seit dem letzten Software-Update stürzt die Anwendung (Name der Anwendung) jedes Mal ab, wenn ich bestimmte Dateien öffnen möchte. Das verhindert meine Arbeit.",
+        "priority": "Hoch"
+      }
+    },
+    {
+      "text": [
+        "E-Mail-Konto Passwort vergessen",
+        "Guten Tag,\nich habe mein Passwort für mein E-Mail-Konto vergessen und kann daher nicht mehr auf meine E-Mails zugreifen. Bitte um Unterstützung bei der Wiederherstellung meines Zugangs."
+      ],
+      "ticket": {
+        "title": "E-Mail-Konto Passwort vergessen",
+        "location": "Online",
+        "category": "E-Mail",
+        "keywords": ["E-Mail", "Passwort", "Zugang"],
+        "customerPriority": "Störung aber kann arbeiten",
+        "affectedPerson": "Weber, Tobias",
+        "description": "Ich habe mein Passwort für mein E-Mail-Konto vergessen und kann daher nicht mehr auf meine E-Mails zugreifen. Bitte um Unterstützung bei der Wiederherstellung meines Zugangs.",
+        "priority": "Mittel"
+      }
+    },
+    {
+      "text": [
+        "Probleme mit Software-Installation",
+        "Sehr geehrte Damen und Herren,\nich habe Schwierigkeiten bei der Installation der Software 'ABC'. Trotz mehrerer Versuche erhalte ich immer wieder Fehlermeldungen. Bitte um Hilfe."
+      ],
+      "ticket": {
+        "title": "Probleme mit Software-Installation",
+        "location": "Arbeitsplatz",
+        "category": "Software",
+        "keywords": ["Software", "Installation", "Fehlermeldung"],
+        "customerPriority": "Störung aber kann arbeiten",
+        "affectedPerson": "Fischer, Julia",
+        "description": "Bei der Installation der Software 'ABC' erhalte ich trotz mehrerer Versuche immer wieder Fehlermeldungen. Es ist mir nicht möglich, die Software korrekt zu installieren.",
+        "priority": "Hoch"
+      }
+    },
+    {
+      "text": [
+        "Verbindungsprobleme mit dem WLAN",
+        "Sehr geehrtes Support-Team,\n\nich habe seit gestern Probleme, mich mit dem WLAN zu verbinden. Ich habe bereits meinen Router neu gestartet, jedoch besteht das Problem weiterhin. Könnten Sie bitte helfen?\n\nMit freundlichen Grüßen,\nMax Mustermann"
+      ],
+      "ticket": {
+        "title": "WLAN-Verbindungsprobleme",
+        "location": "Zuhause",
+        "category": "Netzwerk",
+        "keywords": ["WLAN", "Verbindung", "Router"],
+        "customerPriority": "Störung kann nicht arbeiten",
+        "affectedPerson": "Mustermann, Max",
+        "description": "Der Kunde hat Schwierigkeiten, sich mit dem WLAN zu verbinden, trotz Neustart des Routers. Das Problem besteht seit gestern und beeinträchtigt die Arbeitsfähigkeit.",
+        "priority": "Hoch"
+      }
+    },
+    {
+      "text": [
+        "Software-Fehler beim Starten der Anwendung",
+        "Liebes Support-Team,\n\nbeim Starten der Anwendungssoftware erhalte ich eine Fehlermeldung 'Anwendung konnte nicht geladen werden'. Können Sie bitte unterstützen?\n\nViele Grüße,\nAnna Schmidt"
+      ],
+      "ticket": {
+        "title": "Fehler beim Anwendungsstart",
+        "location": "Büro-PC",
+        "category": "Software",
+        "keywords": ["Fehlermeldung", "Anwendungsstart"],
+        "customerPriority": "Störung aber kann arbeiten",
+        "affectedPerson": "Schmidt, Anna",
+        "description": "Beim Starten der Anwendung erscheint eine Fehlermeldung, die das Laden der Anwendung verhindert. Der Kunde kann zwar arbeiten, benötigt aber Unterstützung, um das Problem zu lösen.",
+        "priority": "Mittel"
+      }
+    },
+    {
+      "text": [
+        "Drucker druckt keine Farben mehr",
+        "Sehr geehrtes Support-Team,\n\nmein Drucker druckt plötzlich keine Farben mehr. Sowohl Schwarz-Weiß- als auch Farbdrucke sind betroffen. Können Sie mir weiterhelfen?\n\nMit freundlichen Grüßen,\nLaura Müller"
+      ],
+      "ticket": {
+        "title": "Drucker druckt keine Farben",
+        "location": "Büro",
+        "category": "Drucker",
+        "keywords": ["Drucker", "Farbdruck", "Problem"],
+        "customerPriority": "Störung aber kann arbeiten",
+        "affectedPerson": "Müller, Laura",
+        "description": "Der Drucker druckt plötzlich keine Farben mehr, sowohl Schwarz-Weiß- als auch Farbdrucke sind betroffen. Obwohl der Kunde weiterarbeiten kann, ist diese Einschränkung ärgerlich und benötigt eine Lösung.",
+        "priority": "Hoch"
+      }
+    },
+    {
+      "text": [
+        "Server-Verbindungsprobleme in unserem Büro",
+        "Guten Tag,\n\nwir haben seit heute Morgen Schwierigkeiten, uns mit unserem Server zu verbinden. Andere Bürostandorte sind nicht betroffen. Bitte um dringende Unterstützung.\n\nBeste Grüße,\nMarkus Schulz"
+      ],
+      "ticket": {
+        "title": "Server-Verbindungsprobleme im Büro",
+        "location": "Büro",
+        "category": "Server",
+        "keywords": ["Server", "Verbindungsprobleme"],
+        "customerPriority": "Störung mehrere können nicht arbeiten",
+        "affectedPerson": "Schulz, Markus",
+        "description": "Im Büro besteht seit dem Morgen eine Verbindungsstörung zum Server. Dies beeinträchtigt mehrere Mitarbeiter, da sie nicht auf die benötigten Daten zugreifen können.",
+        "priority": "Hoch"
+      }
+    },
+    {
+      "text": [
+        "Probleme mit E-Mail-Abruf auf dem Smartphone",
+        "Sehr geehrtes Support-Team,\n\nich habe Schwierigkeiten, meine E-Mails auf dem Smartphone abzurufen. Weder empfange noch sende ich E-Mails erfolgreich. Können Sie mir helfen?\n\nMit freundlichen Grüßen,\nJulia Becker"
+      ],
+      "ticket": {
+        "title": "E-Mail-Abruf auf Smartphone",
+        "location": "Unterwegs",
+        "category": "E-Mail",
+        "keywords": ["E-Mail", "Smartphone", "Abruf"],
+        "customerPriority": "Störung aber kann arbeiten",
+        "affectedPerson": "Becker, Julia",
+        "description": "Die betroffene Person kann keine E-Mails auf dem Smartphone empfangen oder senden. Obwohl sie arbeiten kann, ist der mobile E-Mail-Zugriff für sie wichtig und dringend benötigt.",
+        "priority": "Mittel"
+      }
+    },
+    {
+      "text": [
+        "Drucker funktioniert nicht mehr.",
+        "Sehr geehrtes Support-Team, seit gestern kann ich keine Dokumente mehr ausdrucken."
+      ],
+      "ticket": {
+        "title": "Druckerprobleme",
+        "location": "Büro 301",
+        "category": "Hardware",
+        "keywords": ["Drucker", "Fehler", "Ausdrucken"],
+        "customerPriority": "Störung kann nicht arbeiten",
+        "affectedPerson": "Müller, Lisa",
+        "description": "Der Drucker in Büro 301 druckt seit gestern keine Dokumente mehr aus. Es erscheint eine Fehlermeldung auf dem Bildschirm. Wir benötigen dringend eine Lösung, da dies unsere Arbeitsfähigkeit stark beeinträchtigt.",
+        "priority": "Hoch"
+      }
+    },
+    {
+      "text": [
+        "Zugangsprobleme zum Firmennetzwerk.",
+        "Sehr geehrtes Support-Team, ich kann mich seit heute Morgen nicht mehr ins Firmennetzwerk einloggen."
+      ],
+      "ticket": {
+        "title": "Netzwerk-Zugangsproblem",
+        "location": "Homeoffice",
+        "category": "Netzwerk",
+        "keywords": ["Login", "Verbindung", "Fehlermeldung"],
+        "customerPriority": "Störung kann nicht arbeiten",
+        "affectedPerson": "Schulz, Peter",
+        "description": "Seit heute Morgen kann ich mich nicht mehr ins Firmennetzwerk einloggen. Ich erhalte eine Fehlermeldung, die besagt, dass die Verbindung fehlgeschlagen ist. Bitte helfen Sie mir schnellstmöglich, da ich dringend auf die Firmendaten zugreifen muss.",
+        "priority": "Sehr Hoch"
+      }
+    },
+    {
+      "text": [
+        "Software stürzt wiederholt ab.",
+        "Sehr geehrtes Support-Team, die Software, die ich täglich nutze, stürzt ständig ab."
+      ],
+      "ticket": {
+        "title": "Software-Abstürze",
+        "location": "Entwicklungsabteilung",
+        "category": "Software",
+        "keywords": ["Absturz", "Fehler", "Anwendung"],
+        "customerPriority": "Störung kann arbeiten",
+        "affectedPerson": "Hoffmann, Michael",
+        "description": "Die Anwendungssoftware in der Entwicklungsabteilung stürzt in letzter Zeit häufig ab. Dies beeinträchtigt zwar nicht sofort die Arbeitsfähigkeit, ist jedoch äußerst störend. Wir benötigen dringend eine Lösung, um reibungslos arbeiten zu können.",
+        "priority": "Hoch"
+      }
+    },
+    {
+      "text": [
+        "E-Mail-Versandprobleme.",
+        "Sehr geehrtes Support-Team, meine E-Mails werden nicht gesendet."
+      ],
+      "ticket": {
+        "title": "E-Mail-Versandprobleme",
+        "location": "Vertriebsabteilung",
+        "category": "E-Mail",
+        "keywords": ["Versand", "Postausgangsserver", "Fehlermeldung"],
+        "customerPriority": "Störung kann nicht arbeiten",
+        "affectedPerson": "Lehmann, Julia",
+        "description": "Seit heute Vormittag kann ich keine E-Mails mehr versenden. Die Meldung besagt, dass der Postausgangsserver nicht erreichbar ist. Da der E-Mail-Versand für unsere Vertriebstätigkeiten unerlässlich ist, benötigen wir dringend Hilfe.",
+        "priority": "Sehr Hoch"
+      }
+    },
+    {
+      "text": [
+        "Passwort zurücksetzen.",
+        "Sehr geehrtes Support-Team, ich habe mein Passwort vergessen und benötige Hilfe beim Zurücksetzen."
+      ],
+      "ticket": {
+        "title": "Passwort zurücksetzen",
+        "location": "Benutzeraccount",
+        "category": "Account",
+        "keywords": ["Passwort", "Zugang", "Vergessen"],
+        "customerPriority": "Störung kann nicht arbeiten",
+        "affectedPerson": "Wagner, Thomas",
+        "description": "Ich habe mein Passwort für den Benutzeraccount vergessen und benötige dringend Hilfe beim Zurücksetzen. Ohne den Zugang zu meinem Account kann ich nicht auf wichtige Daten zugreifen. Bitte helfen Sie mir schnellstmöglich.",
+        "priority": "Hoch"
+      }
+    }
+]
+  
