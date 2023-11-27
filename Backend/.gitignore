@@ -2,4 +2,4 @@
 *.pyc
 __pycache__/
 venv
-.env
+app/email/.env

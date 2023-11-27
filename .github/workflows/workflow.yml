@@ -142,7 +142,7 @@ jobs:
         run: pytest test
         env:
           TEST_STAGE: "ci"
-          PASSWORD: ${{ secrets.EMAIL_PASSWORD }}
+          PASSWORD: ${{ secrets.PASSWORD }}
       ################################
       # Install Node and its Dependencies #
       ################################
