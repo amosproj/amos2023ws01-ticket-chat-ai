@@ -3,6 +3,7 @@ import time
 import email
 import handle_mail as hm
 import smtp_conn as sm
+from app.logger import logger
 
 
 class EmailProxy:
@@ -33,24 +34,27 @@ class EmailProxy:
             self.imap.login(self.email_address, self.email_password)
 
             self.imap.select("Inbox")
-            print("IMAP connection established")
+            logger.info("IMAP connection established")
             return True
 
         except imaplib.IMAP4.abort as e:
+            logger.exception(
+                "Could not establish IMAP connection. Pls restart process."
+            )
             raise Exception("Could not establish IMAP connection. Pls restart process.")
 
     def try_reconnect(self):
-        print("lost connection to the IMAP server")
-        print("trying to reconnect IMAP in 5s")
+        logger.warning("Lost connection to the IMAP server")
+        logger.warning("Trying to reconnect IMAP in 5s")
         while True:
             try:
                 self.imap = imaplib.IMAP4_SSL(self.imap_server, port=993)
                 self.imap.login(self.email_address, self.email_password)
                 self.imap.select("Inbox")
-                print("IMAP reconnection successful")
+                logger.info("IMAP reconnection successful")
                 return True
             except:
-                print("trying to reconnect IMAP in 5s")
+                logger.warning("Trying to reconnect IMAP in 5s")
                 time.sleep(5)
 
     def spin(self):
@@ -62,7 +66,7 @@ class EmailProxy:
             _, msg_nums = self.imap.search(None, "UNSEEN")
 
         except imaplib.IMAP4.abort as e:
-            print(f"IMAP error: {e}")
+            logger.exception(f"IMAP error: {e}")
             self.try_reconnect()
             msg_nums = self.spin()
 
@@ -103,5 +107,5 @@ class EmailProxy:
         self.imap.close()
         self.imap.logout()
         self.smtp.smtp.quit()
-        print("connection closed")
+        logger.info("Connection closed")
         return True
