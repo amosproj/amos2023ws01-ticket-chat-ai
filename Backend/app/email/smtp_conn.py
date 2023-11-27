@@ -1,7 +1,8 @@
 import smtplib
 import ssl
 import time
-from app.logger import logger  # Import your logger
+from app.logger import logger
+
 
 class SmtpConnection:
     smtp = None
@@ -25,8 +26,12 @@ class SmtpConnection:
             logger.info("SMTP connection established")
             return True
         except smtplib.SMTPConnectError as e:
-            logger.exception("Could not establish SMTP connection. Please restart the process.")
-            raise Exception("Could not establish SMTP connection. Please restart the process.")
+            logger.exception(
+                "Could not establish SMTP connection. Please restart the process."
+            )
+            raise Exception(
+                "Could not establish SMTP connection. Please restart the process."
+            )
 
     def try_reconnect(self):
         logger.warning("Lost connection to the SMTP server")

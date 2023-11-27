@@ -5,6 +5,7 @@ import handle_mail as hm
 import smtp_conn as sm
 from app.logger import logger
 
+
 class EmailProxy:
     imap = None
     smtp = None
@@ -37,7 +38,9 @@ class EmailProxy:
             return True
 
         except imaplib.IMAP4.abort as e:
-            logger.exception("Could not establish IMAP connection. Pls restart process.")
+            logger.exception(
+                "Could not establish IMAP connection. Pls restart process."
+            )
             raise Exception("Could not establish IMAP connection. Pls restart process.")
 
     def try_reconnect(self):
