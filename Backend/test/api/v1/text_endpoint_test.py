@@ -1,70 +1,115 @@
-from fastapi.testclient import TestClient
 import json
-
-from unittest.mock import MagicMock, patch
+import unittest
+from unittest.mock import MagicMock
 
 from bson import ObjectId
+from fastapi.testclient import TestClient
 from pymongo.results import InsertOneResult
+
+from app.api.v1.text_endpoint import process_text
+from app.dependency.collection import get_ticket_collection
 from app.dto.enum.customer_prio import CustomerPrio
 from app.dto.enum.prio import Prio
+from app.dto.text_input import TextInput
 from app.dto.ticket import Ticket
-from app.persistence.ticket_db_service import TicketDBService
-
 from app.main import app
 
-client = TestClient(app)
+
+class TextEndpointUnitTest(unittest.TestCase):
+    def setUp(self):
+        self.ticket_db_service_mock = MagicMock()
+        self.trained_t5_model_mock = MagicMock()
+
+    async def test_process_text(self):
+        # Arrange
+        # Define your test data with "text" as a string
+        text_input = TextInput(text="Hello from the test!")
+
+        ticket = Ticket(
+            title="Test Ticket",
+            location="Test the test ticket",
+            category="",
+            keywords=[],
+            customerPriority=CustomerPrio.can_work,
+            affectedPerson="",
+            description="",
+            priority=Prio.low,
+        )
+
+        ticket_id = ObjectId("6554b34d82161e93bff08df6")
+        result_exp = InsertOneResult(inserted_id=ticket_id, acknowledged=True)
+
+        # Define mock behavior
+        self.trained_t5_model_mock.return_value.run_model.return_value = ticket.dict()
+        self.ticket_db_service_mock.save_ticket.return_value = result_exp
+
+        # Act
+        response = await process_text(
+            text_input=text_input,
+            ticket_db_service=self.ticket_db_service_mock,
+            trained_t5_model=self.trained_t5_model_mock,
+        )
+
+        # Assert
+        # Mocks
+        self.trained_t5_model_mock.return_value.run_model.assert_called_once_with(
+            text_input.text
+        )
+        self.ticket_db_service_mock.save_ticket.assert_called_once_with(ticket.dict())
+        # Response
+        assert response.code == 200
+        assert response.data == "Message was received and ticket created"
 
 
-@patch("app.api.v1.text_endpoint.TrainedT5Model")
-@patch("app.api.v1.text_endpoint.TicketDBService")
-def test_process_text(ticket_service_mock, trained_t5_model_mock):
-    # Arrange
-    # Define your test data with "text" as a string
-    data = {"text": "Hello from the test!"}
+class TextEndpointIntegrationTest(unittest.TestCase):
+    def override_get_ticket_collection(self):
+        return self.collection_mock
 
-    mock_return_value = Ticket(
-        title="Test Ticket",
-        location="Test the test ticket",
-        category="",
-        keywords=[],
-        customerPriority=CustomerPrio.can_work,
-        affectedPerson="",
-        description="",
-        priority=Prio.low,
-    )
+    def setUp(self):
+        self.client = TestClient(app)
+        self.collection_mock = MagicMock()
+        app.dependency_overrides = {
+            get_ticket_collection: self.override_get_ticket_collection
+        }
 
-    trained_t5_model_mock.return_value.run_model.return_value = mock_return_value.dict()
+    def test_process_text(self):
+        # Arrange
+        # Define your test data with "text" as a string
+        data = {"text": "Hello from the test!"}
 
-    ticket_service_mock = MagicMock()
-    ticket_id = ObjectId("6554b34d82161e93bff08df6")
-    result_exp = InsertOneResult(inserted_id=ticket_id, acknowledged=True)
-    ticket_service_mock.save_ticket.return_value = result_exp
+        ticket_id = ObjectId("6554b34d82161e93bff08df6")
+        result_exp = InsertOneResult(inserted_id=ticket_id, acknowledged=True)
 
-    # Act
-    response = client.post(
-        "/api/v1/text",
-        data=json.dumps(data),
-        headers={"Content-Type": "application/json"},
-    )
+        # Define mock behavior
+        self.collection_mock.insert_one.return_value = result_exp
 
-    # Assert
-    assert response.status_code == 200
-    assert response.json().get("data") == "Message was received and ticket created"
+        # Act
+        response = self.client.post(
+            "/api/v1/text",
+            data=json.dumps(data),
+            headers={"Content-Type": "application/json"},
+        )
 
+        # Assert
+        # Mocks
+        self.collection_mock.insert_one.assert_called_once()
+        # Response
+        assert response.status_code == 200
+        assert response.json().get("data") == "Message was received and ticket created"
 
-def test_process_text_empty_input():
-    # Define your test data with an empty "text" field
-    data = {"text": ""}
+    def test_process_text_empty_input(self):
+        # Define your test data with an empty "text" field
+        data = {"text": ""}
 
-    # Send a POST request to the "/text" endpoint with the correct content type header
-    response = client.post(
-        "/api/v1/text",
-        data=json.dumps(data),
-        headers={"Content-Type": "application/json"},
-    )
+        # Send a POST request to the "/text" endpoint with the correct content type header
+        response = self.client.post(
+            "/api/v1/text",
+            data=json.dumps(data),
+            headers={"Content-Type": "application/json"},
+        )
 
-    # Check if the response status code is 400 (Bad Request)
-    assert response.status_code == 400
+        # Check if the response status code is 400 (Bad Request)
+        assert response.status_code == 400
 
-    # Check if the response contains the expected error message
-    assert response.json() == {"detail": "Text is required"}
+        # Check if the response contains the expected error message
+        assert response.json() == {"detail": "Text is required"}

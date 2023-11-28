@@ -1,13 +1,19 @@
+import torch
 from transformers import T5ForConditionalGeneration, T5Tokenizer
-from app.dto.enum.prio import Prio
+
 from app.dto.enum.customer_prio import CustomerPrio
+from app.dto.enum.prio import Prio
 
 
 class TrainedT5Model:
+    def __init__(self, model: T5ForConditionalGeneration, tokenizer: T5Tokenizer):
+        self.model = model
+        self.tokenizer = tokenizer
+
     def run_model(self, text):
         # Load the fine-tuned model and tokenizer
-        model = T5ForConditionalGeneration.from_pretrained("TalkTix/t5-ticket-creator")
-        tokenizer = T5Tokenizer.from_pretrained("TalkTix/t5-ticket-creator")
+        model = self.model
+        tokenizer = self.tokenizer
 
         #  input text
         # input_text = "Translate this into Json: Hey, I'm David. I've encountered an issue with my company laptop's audio. There's no sound, and I've tried adjusting the volume settings, but it hasn't helped. It's affecting my ability to participate in virtual meetings. Can you please assist me in resolving this audio problem?"
@@ -18,7 +24,7 @@ class TrainedT5Model:
 
         # Generate response
         output = model.generate(
-            input_ids,
+            torch.Tensor(input_ids),
             max_length=1000,
             num_return_sequences=1,
             no_repeat_ngram_size=2,
