@@ -1,5 +1,7 @@
 import smtplib
 import ssl
+import time
+from app.logger import logger
 
 
 class SmtpConnection:
@@ -15,25 +17,49 @@ class SmtpConnection:
         return self
 
     def start_connection(self):
-        context = ssl.SSLContext(ssl.PROTOCOL_TLS)
-        self.smtp = smtplib.SMTP(self.smtp_server, 587)
-        self.smtp.starttls(context=context)
+        try:
+            context = ssl.SSLContext(ssl.PROTOCOL_TLS)
+            self.smtp = smtplib.SMTP(self.smtp_server, 587)
+            self.smtp.starttls(context=context)
 
-        self.smtp.login(self.email_address, self.email_password)
-        return True
+            self.smtp.login(self.email_address, self.email_password)
+            logger.info("SMTP connection established")
+            return True
+        except smtplib.SMTPConnectError as e:
+            logger.exception(
+                "Could not establish SMTP connection. Please restart the process."
+            )
+            raise Exception(
+                "Could not establish SMTP connection. Please restart the process."
+            )
+
+    def try_reconnect(self):
+        logger.warning("Lost connection to the SMTP server")
+        logger.warning("Trying to reconnect SMTP in 5s")
+        while True:
+            try:
+                context = ssl.SSLContext(ssl.PROTOCOL_TLS)
+                self.smtp = smtplib.SMTP(self.smtp_server, 587)
+                self.smtp.starttls(context=context)
+
+                self.smtp.login(self.email_address, self.email_password)
+                logger.info("SMTP reconnection successful")
+                return True
+            except:
+                logger.warning("Trying to reconnect SMTP in 5s")
+                time.sleep(5)
 
     def send_mail(self, message):
-        self.smtp.send_message(message)
+        try:
+            self.smtp.send_message(message)
+        except smtplib.SMTPServerDisconnected as e:
+            logger.exception(f"SMTP error: {e}")
+            self.try_reconnect()
+            self.send_mail(message)
+
         return True
 
     def __exit__(self, exc_type, exc_val, exc_tb):
-        """
-        close the connection to the imap server
-        :param exc_type:
-        :param exc_val:
-        :param exc_tb:
-        :return:
-        """
         self.smtp.quit()
-        print("SMTP connection closed")
+        logger.info("SMTP connection closed")
         return True

@@ -51,23 +51,36 @@
 
 4. **Set environment Variables for the EmailProxy:**
 
-    Navigate into `./backend` directory.
-    Rename .env_example to .env and set your Email Password inside the .env
+   Navigate into `./backend` directory. Rename .env_example to .env and set your Email Password inside the .env
 
 ## Running and Testing the Project
 
-1. **Start the backend**:
+1. **Start Database**:
+    - Mac:
+       ```bash
+       brew services start mongodb-community@7.0
+       ```
+    - Windows:
+      ```bash
+      elevate -w net start MongoDB
+      ```
+    - Linux:
+      ```bash
+      sudo systemctl start mongod
+      ```
+
+2. **Start the Backend API**:
 
     ```bash
     uvicorn app.main:app --reload
     ```
 
-2. **Use the endpoints**: go to [SwaggerUI](http://localhost:8000/docs) **OR**
+3. **Use the endpoints**: go to [SwaggerUI](http://localhost:8000/docs) **OR**
    try [Postman](https://www.postman.com/downloads/) with the base URL `http://localhost:8000/api/v1` + router path
 
-   - Example of how to test endpoint with postman (Model is automatically run when we run the endpoint). 
+    - Example of how to test endpoint with postman (Model is automatically run when we run the endpoint).
       ![Example of how to test endpoint with postman](images/endpoint_example.png)
-3. **Run the tests**:
+4. **Run the tests**:
 
     ```bash
     pytest test/
@@ -97,7 +110,11 @@
 
 ## Run the Email Proxy
 
-1. The Email Proxy runs when starting the backend
+1. Start Backend API
+2. Navigate to `app/email` and run:
+   ```bash
+    python main.py
+   ```
 
 ## Useful Tools
 

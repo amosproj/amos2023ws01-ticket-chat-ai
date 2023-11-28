@@ -1,4 +1,5 @@
 import email
+from app.logger import logger
 
 
 def can_be_processed(message):
@@ -7,6 +8,7 @@ def can_be_processed(message):
     :param message:
     :return boolean:
     """
+    logger.info("Checking if email can be processed...")
     return True
 
 
@@ -19,6 +21,7 @@ def make_email(from_address, to_address, subject, message):
     :param message:
     :return email:
     """
+    logger.info("Creating email message...")
     msg = email.message.EmailMessage()
     msg["from"] = from_address
     msg["to"] = to_address
