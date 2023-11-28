@@ -1,5 +1,5 @@
 import email
-from app.logger import logger
+from logger import logger
 
 
 def can_be_processed(message):

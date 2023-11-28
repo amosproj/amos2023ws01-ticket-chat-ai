@@ -1,7 +1,7 @@
 import smtplib
 import ssl
 import time
-from app.logger import logger
+from logger import logger
 
 
 class SmtpConnection:

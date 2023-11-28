@@ -3,7 +3,7 @@ import time
 import email
 import handle_mail as hm
 import smtp_conn as sm
-from app.logger import logger
+from logger import logger
 
 
 class EmailProxy:
