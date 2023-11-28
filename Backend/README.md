@@ -97,13 +97,7 @@
 
 ## Run the Email Proxy
 
-1. Navigate into `./Backend/app/email` directory.
-
-2. Run main.py
-
-   ```bash
-   python main.py
-   ```
+1. The Email Proxy runs when starting the backend
 
 ## Useful Tools
 

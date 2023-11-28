@@ -1,17 +1,27 @@
 import imaplib
+import time
 import email
+import handle_mail as hm
+import smtp_conn as sm
+from app.logger import logger
 
 
 class EmailProxy:
     imap = None
+    smtp = None
 
-    def __init__(self, imap_server, email_address, email_password):
+    def __init__(self, imap_server, smtp_server, email_address, email_password):
         self.imap_server = imap_server
         self.email_address = email_address
         self.email_password = email_password
+        self.smtp_server = smtp_server
 
     def __enter__(self):
         self.start_connection()
+        self.smtp = sm.SmtpConnection(
+            self.smtp_server, self.email_address, self.email_password
+        )
+        self.smtp.start_connection()
         return self
 
     def start_connection(self):
@@ -19,52 +29,72 @@ class EmailProxy:
         connects to the imap server
         :return:
         """
-        self.imap = imaplib.IMAP4_SSL(self.imap_server, port=993)
-        self.imap.login(self.email_address, self.email_password)
+        try:
+            self.imap = imaplib.IMAP4_SSL(self.imap_server, port=993)
+            self.imap.login(self.email_address, self.email_password)
 
-        self.imap.select("Inbox")
-        print("connection established")
-        return True
+            self.imap.select("Inbox")
+            logger.info("IMAP connection established")
+            return True
+
+        except imaplib.IMAP4.abort as e:
+            logger.exception(
+                "Could not establish IMAP connection. Pls restart process."
+            )
+            raise Exception("Could not establish IMAP connection. Pls restart process.")
+
+    def try_reconnect(self):
+        logger.warning("Lost connection to the IMAP server")
+        logger.warning("Trying to reconnect IMAP in 5s")
+        while True:
+            try:
+                self.imap = imaplib.IMAP4_SSL(self.imap_server, port=993)
+                self.imap.login(self.email_address, self.email_password)
+                self.imap.select("Inbox")
+                logger.info("IMAP reconnection successful")
+                return True
+            except:
+                logger.warning("Trying to reconnect IMAP in 5s")
+                time.sleep(5)
 
     def spin(self):
         """
-        fetches emails, calls process_mail if email can be processed
-        :return:
+        searches for new messages
+        :return: List of message numbers.
         """
-        _, msgNums = self.imap.search(None, "UNSEEN")
+        try:
+            _, msg_nums = self.imap.search(None, "UNSEEN")
 
-        for msgNum in msgNums[0].split():
+        except imaplib.IMAP4.abort as e:
+            logger.exception(f"IMAP error: {e}")
+            self.try_reconnect()
+            msg_nums = self.spin()
+
+        return msg_nums
+
+    def process_mail(self, msgNum):
+        """
+        Fetches Email and processes it.
+        :param msgNum: The number of the message to be processed.
+        :return: Tuple with sender, subject, and content of the message
+        """
+        try:
             _, data = self.imap.fetch(msgNum, "(RFC822)")
 
             message = email.message_from_bytes(data[0][1])
+            # specific processing
+            sender = message.get("From")
+            subject = message.get("Subject")
+            content = ""
 
-            if self.can_be_processed(message):
-                print(f"Message Number: {msgNum}")
-                self.process_mail(message)
-        return True
-
-    def can_be_processed(self, email):
-        """
-        should return false if the email was automatically generated or is from blocked user, will be implemented in later sprint
-        :param email:
-        :return boolean:
-        """
-        return True
-
-    def process_mail(self, message):
-        """
-        communicates with backend, answers to email, for now it just prints the content of the email
-        :param email:
-        :return:
-        """
-        print(f"From: {message.get('From')}")
-        print(f"Subject: {message.get('Subject')}")
-
-        print("Content:")
-        for part in message.walk():
-            if part.get_content_type() == "text/plain":
-                print(part.as_string())
-        return True
+            for part in message.walk():
+                if part.get_content_type() == "text/plain":
+                    content += part.as_string()
+                    content += "\n"
+            return (sender, subject, content)
+        except:
+            self.try_reconnect()
+            return self.process_mail(self, msgNum)
 
     def __exit__(self, exc_type, exc_val, exc_tb):
         """
@@ -76,5 +106,6 @@ class EmailProxy:
         """
         self.imap.close()
         self.imap.logout()
-        print("connection closed")
+        self.smtp.smtp.quit()
+        logger.info("Connection closed")
         return True

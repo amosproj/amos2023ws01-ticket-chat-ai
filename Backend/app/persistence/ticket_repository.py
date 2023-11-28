@@ -1,26 +1,30 @@
 from bson import ObjectId
-from pymongo import MongoClient
 from pymongo.collection import Collection
 from pymongo.results import InsertOneResult, UpdateResult, DeleteResult
-
-from app.config.database_config import MONGODB_URL
 from app.dto.ticket import Ticket
+from app.logger import logger
 
 
 class TicketRepository:
-    def __init__(self):
-        client = MongoClient(MONGODB_URL)
-        db = client.talktix
-        self.collection: Collection = db.ticket
+    def __init__(self, collection: Collection):
+        self.collection = collection
 
     def create_ticket(self, ticket: Ticket) -> InsertOneResult:
+        logger.info("Creating ticket in the database...")
         return self.collection.insert_one(document=ticket.dict())
 
     def read_tickets(self, ticket_id: ObjectId = None) -> list[dict]:
-        return list(self.collection.find(filter={"_id": ticket_id} if ticket_id else None))
+        logger.info("Reading ticket(s) from the database...")
+        return list(
+            self.collection.find(filter={"_id": ticket_id} if ticket_id else None)
+        )
 
     def update_ticket(self, ticket_id: ObjectId, ticket: Ticket) -> UpdateResult:
-        return self.collection.replace_one(filter={"_id": ticket_id}, replacement=ticket.dict(), upsert=True)
+        logger.info(f"Updating ticket {ticket_id} in the database...")
+        return self.collection.replace_one(
+            filter={"_id": ticket_id}, replacement=ticket.dict(), upsert=True
+        )
 
     def delete_ticket(self, ticket_id: ObjectId) -> DeleteResult:
+        logger.info(f"Deleting ticket {ticket_id} from the database...")
         return self.collection.delete_one(filter={"_id": ticket_id})

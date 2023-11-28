@@ -4,19 +4,31 @@ This project was generated with [Angular CLI](https://github.com/angular/angular
 
 ## Setup
 
-1. **Navigate to Frontend**:
+1. **Install newest Version of Node.js (on Linux)**:
+
+   ```bash
+   sudo apt install npm
+   ```
+   ```bash
+   nmp install -g n
+   ```
+   ```bash
+   n lts
+   ```
+
+2. **Navigate to Frontend**:
 
    ```bash
    cd amos2023ws01-ticket-chat-ai/Frontend
    ```
 
-2. **Install Angular CLI** (Optional but recommended):
+3. **Install Angular CLI** (Optional but recommended):
 
     ```bash
     npm install -g @angular/cli
     ```
 
-3. **Install the Dependencies:**
+4. **Install the Dependencies:**
 
     ```bash
     npm install
