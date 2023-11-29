@@ -18,9 +18,12 @@ assignees: ''
 * ...
 
 ## Definition of done (DoD)
-* Added only after week 5
-* The same for all features
-* Here goes the project specific part
+- Work products are uploaded to the Github repository and merged to the main branch
+- If necessary, the bill of materials section of the planning documents is updated
+- Code/feature passes suited tests
+- Code is peer-reviewed
+- Help documentation (README) is updated
+- Fits into our architecture, where possible
 
 ## DoD general criteria
 * Feature has been fully implemented
