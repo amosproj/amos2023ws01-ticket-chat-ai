@@ -16,9 +16,9 @@ router = APIRouter()
 
 @router.post("/ticket/text", status_code=status.HTTP_201_CREATED, response_model=Ticket)
 async def process_text(
-        text_input: TextInput = Body(default=TextInput(text="")),
-        trained_t5_model: TrainedT5Model = Depends(get_trained_t5_model),
-        ticket_db_service: TicketDBService = Depends(get_ticket_db_service)
+    text_input: TextInput = Body(default=TextInput(text="")),
+    trained_t5_model: TrainedT5Model = Depends(get_trained_t5_model),
+    ticket_db_service: TicketDBService = Depends(get_ticket_db_service),
 ):
     """
     Receive Text from the Frontend
@@ -37,7 +37,9 @@ async def process_text(
     # Check if the 'text' field is empty
     if not text_input.text:
         logger.error("Received empty text!")
-        raise HTTPException(status_code=status.HTTP_400_BAD_REQUEST, detail="Text is required")
+        raise HTTPException(
+            status_code=status.HTTP_400_BAD_REQUEST, detail="Text is required"
+        )
     logger.info(f"Received text: {text_input.text}")
 
     # Run the model to process the input text
@@ -52,19 +54,28 @@ async def process_text(
     # Prepare response
     logger.info("Preparing response...")
     if created_ticket:
-        logger.info(f"Ticket created and saved successfully. Ticket ID: {created_ticket.id}")
+        logger.info(
+            f"Ticket created and saved successfully. Ticket ID: {created_ticket.id}"
+        )
     else:
         logger.error("Ticket creation failed.")
-        raise HTTPException(status_code=status.HTTP_500_INTERNAL_SERVER_ERROR, detail="Ticket creation failed.")
+        raise HTTPException(
+            status_code=status.HTTP_500_INTERNAL_SERVER_ERROR,
+            detail="Ticket creation failed.",
+        )
 
     return created_ticket
 
 
-@router.put("/ticket/{ticket_id}/attachments", status_code=status.HTTP_200_OK, response_model=Ticket)
+@router.put(
+    "/ticket/{ticket_id}/attachments",
+    status_code=status.HTTP_200_OK,
+    response_model=Ticket,
+)
 async def update_ticket_attachments(
-        ticket_id: str = Path(default=""),
-        files: list[UploadFile] = File(default=[]),
-        ticket_db_service: TicketDBService = Depends(get_ticket_db_service)
+    ticket_id: str = Path(default=""),
+    files: list[UploadFile] = File(default=[]),
+    ticket_db_service: TicketDBService = Depends(get_ticket_db_service),
 ):
     """
     Receive Attachments from the Frontend
@@ -84,8 +95,10 @@ async def update_ticket_attachments(
     # Check if the 'ticket_id' field is empty or invalid
     if not ticket_id or not ObjectId.is_valid(ticket_id):
         logger.error("Received empty or invalid ticket id of type ObjectId!")
-        raise HTTPException(status_code=status.HTTP_400_BAD_REQUEST,
-                            detail="Received empty or invalid ticket id of type ObjectId!")
+        raise HTTPException(
+            status_code=status.HTTP_400_BAD_REQUEST,
+            detail="Received empty or invalid ticket id of type ObjectId!",
+        )
     logger.info(f"Received ticket_id: {ticket_id}")
 
     # Update the ticket attachments in the database using the TicketDBService
@@ -95,10 +108,14 @@ async def update_ticket_attachments(
     # Prepare response
     logger.info("Preparing response...")
     if updated_ticket:
-        logger.info(f"Ticket attachments updated and saved successfully. Ticket ID: {updated_ticket.id}")
+        logger.info(
+            f"Ticket attachments updated and saved successfully. Ticket ID: {updated_ticket.id}"
+        )
     else:
         logger.error("Ticket attachments update failed.")
-        raise HTTPException(status_code=status.HTTP_500_INTERNAL_SERVER_ERROR,
-                            detail="Ticket attachments update failed.")
+        raise HTTPException(
+            status_code=status.HTTP_500_INTERNAL_SERVER_ERROR,
+            detail="Ticket attachments update failed.",
+        )
 
     return updated_ticket

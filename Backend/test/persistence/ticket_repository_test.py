@@ -30,7 +30,7 @@ class TicketRepositoryUnitTest(unittest.TestCase):
             affectedPerson="",
             description="",
             priority=Prio.low,
-            attachments=[]
+            attachments=[],
         )
 
     def test_create_ticket(self):
@@ -38,9 +38,7 @@ class TicketRepositoryUnitTest(unittest.TestCase):
         self.collection_mock.insert_one.return_value = result_exp
         result_act = self.ticket_repository.create_ticket(ticket=self.ticket)
         self.assertEqual(result_act, result_exp, "wrong result of create_ticket()")
-        self.collection_mock.insert_one.assert_called_once_with(
-            document=self.ticket
-        )
+        self.collection_mock.insert_one.assert_called_once_with(document=self.ticket)
 
     def test_read_one_ticket(self):
         result_exp = [self.ticket]

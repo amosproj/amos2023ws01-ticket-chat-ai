@@ -25,7 +25,9 @@ class TicketDBService:
         ticket_entity = found_tickets[0]
         return self._map_ticket(ticket_entity)
 
-    def update_ticket_attachments(self, ticket_id: str, files: list[UploadFile]) -> Ticket:
+    def update_ticket_attachments(
+        self, ticket_id: str, files: list[UploadFile]
+    ) -> Ticket:
         logger.info("Updating ticket via adding attachments...")
         ticket_id = ObjectId(ticket_id)
         found_tickets = self.ticket_repository.read_tickets(ticket_id)
@@ -34,8 +36,11 @@ class TicketDBService:
         ticket_entity = found_tickets[0]
         attachment_entities = []
         for file in files:
-            attachment_entity = AttachmentEntity(name=file.filename, type=file.content_type,
-                                                 data=base64.b64encode(file.file.read()))
+            attachment_entity = AttachmentEntity(
+                name=file.filename,
+                type=file.content_type,
+                data=base64.b64encode(file.file.read()),
+            )
             attachment_entities.append(attachment_entity)
         ticket_entity["attachments"] = attachment_entities
         update_result = self.ticket_repository.update_ticket(ticket_id, ticket_entity)
