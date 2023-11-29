@@ -1,12 +1,14 @@
-from bson import ObjectId
-from pydantic import BaseModel
+from typing import TypedDict
 
+from bson import ObjectId
+
+from app.entity.attachment_entity import AttachmentEntity
 from app.enum.customer_prio import CustomerPrio
 from app.enum.prio import Prio
 
 
-class Ticket(BaseModel):
-    id: str = ""
+class TicketEntity(TypedDict):
+    _id: ObjectId
     title: str
     location: str
     category: str
@@ -15,4 +17,4 @@ class Ticket(BaseModel):
     affectedPerson: str
     description: str
     priority: Prio
-    attachmentNames: list[str] = []
+    attachments: list[AttachmentEntity]

@@ -7,9 +7,9 @@ from bson import ObjectId
 from pymongo import MongoClient
 from pymongo.results import InsertOneResult, UpdateResult, DeleteResult
 
-from app.dto.enum.customer_prio import CustomerPrio
-from app.dto.enum.prio import Prio
-from app.dto.ticket import Ticket
+from app.enum import CustomerPrio
+from app.enum.prio import Prio
+from app.entity.ticket_entity import TicketEntity
 from app.persistence.database_routine import start_server, stop_server
 from app.persistence.ticket_repository import TicketRepository
 from test.config.pytest import SKIP_TEST
@@ -20,7 +20,7 @@ class TicketRepositoryUnitTest(unittest.TestCase):
     def setUp(self, collection_mock):
         self.collection_mock = collection_mock
         self.ticket_repository = TicketRepository(collection=collection_mock)
-        self.ticket = Ticket(
+        self.ticket = TicketEntity(
             title="Test Ticket",
             location="Test the test ticket",
             category="",
@@ -90,7 +90,7 @@ class TicketRepositoryIntegrationTest(unittest.TestCase):
         db = client.talktix
         collection = db.ticket
         self.ticket_repository = TicketRepository(collection=collection)
-        self.ticket = Ticket(
+        self.ticket = TicketEntity(
             title="Test Ticket",
             location="Test the test ticket",
             category="",
@@ -119,7 +119,7 @@ class TicketRepositoryIntegrationTest(unittest.TestCase):
         assert len(tickets) == 1 and tickets[0]["_id"] == ticket_id
 
         # update ticket
-        updated_ticket: Ticket = self.ticket.copy()
+        updated_ticket: TicketEntity = self.ticket.copy()
         updated_ticket.priority = Prio.medium
         update_result = self.ticket_repository.update_ticket(
             ticket_id=ticket_id, ticket=updated_ticket

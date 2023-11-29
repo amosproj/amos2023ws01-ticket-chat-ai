@@ -6,12 +6,12 @@ from bson import ObjectId
 from fastapi.testclient import TestClient
 from pymongo.results import InsertOneResult
 
-from app.api.v1.text_endpoint import process_text
+from app.api.v1.ticket_api import process_text
 from app.dependency.collection import get_ticket_collection
-from app.dto.enum.customer_prio import CustomerPrio
-from app.dto.enum.prio import Prio
+from app.enum import CustomerPrio
+from app.enum.prio import Prio
 from app.dto.text_input import TextInput
-from app.dto.ticket import Ticket
+from app.entity.ticket_entity import TicketEntity
 from app.main import app
 
 
@@ -25,7 +25,7 @@ class TextEndpointUnitTest(unittest.TestCase):
         # Define your test data with "text" as a string
         text_input = TextInput(text="Hello from the test!")
 
-        ticket = Ticket(
+        ticket = TicketEntity(
             title="Test Ticket",
             location="Test the test ticket",
             category="",

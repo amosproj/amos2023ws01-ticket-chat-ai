@@ -1,5 +1,8 @@
-from fastapi import APIRouter, HTTPException
-from fastapi.params import Depends
+from typing import Annotated
+
+from bson import ObjectId
+from fastapi import APIRouter, HTTPException, UploadFile
+from fastapi.params import Depends, File, Form, Body, Path
 
 from app.dependency.ticket_db_service import get_ticket_db_service
 from app.dependency.trained_t5_model import get_trained_t5_model
@@ -13,11 +16,11 @@ from app.logger import logger
 router = APIRouter()
 
 
-@router.post("/text")
+@router.post("/ticket/text")
 async def process_text(
     text_input: TextInput,
     trained_t5_model: TrainedT5Model = Depends(get_trained_t5_model),
-    ticket_db_service: TicketDBService = Depends(get_ticket_db_service),
+    ticket_db_service: TicketDBService = Depends(get_ticket_db_service)
 ):
     """
     Receive Text from the Frontend
@@ -47,7 +50,7 @@ async def process_text(
 
     logger.info("Saving ticket to the database...")
     # Save the ticket to the database using the TicketDBService
-    created_ticket = ticket_db_service.save_ticket(received_dict)
+    created_ticket = ticket_db_service.create_ticket(received_dict)
 
     if created_ticket:
         ticket_id = created_ticket.inserted_id
@@ -62,3 +65,25 @@ async def process_text(
     logger.info("Preparing response...")
     response_json = json.dumps(received_dict)
     return TextResponse(data=response_data, text=response_json, code=status_code)
+
+
+@router.put("/ticket/{ticket_id}/attachments")
+async def update_ticket_attachments(
+    ticket_id: str = Path(default=""),
+    files: list[UploadFile] = File(default=[]),
+    ticket_db_service: TicketDBService = Depends(get_ticket_db_service)
+):
+    """
+    Receive Text from the Frontend
+
+    Args:
+    - text_input (TextInput): A Pydantic model defining the expected input format containing the 'text' field.
+
+    Returns:
+    - TextResponse: A response containing the received text and a status code.
+
+    Raises:
+    - HTTPException: If 'text' field is empty, returns a 400 Bad Request with an error message.
+    """
+    updated_ticket = ticket_db_service.update_ticket_attachments(ticket_id, files)
+    return updated_ticket
