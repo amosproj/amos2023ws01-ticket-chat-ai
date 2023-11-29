@@ -30,8 +30,11 @@
     // Störung aber kann arbeiten, Störung kann nicht arbeiten, Störung mehrere können nicht arbeiten, Störung Abteilung kann nicht arbeiten
     "affectedPerson": "Mustermann, Max",
     "description": "Wir haben ein paar neue Rechner in einem Rack im Technik Raum eingerichtet. Bei einem möchten wir, dass ein Kollege aus Ungarn Zugang dazu hat. Er meldet, dass er kein Remote Desktop auf dem Rechner öffnen kann.",
-    "priority": "Mittel"
+    "priority": "Mittel",
     // Niedrig, Mittel, Hoch, Sehr Hoch,
+
+  "requestType": "Incident" // Service Request, Incident
+
   }
 }
 ```
@@ -57,6 +60,7 @@ Das Attribut "customerPriority" beschreibt die Auswirkung des Problems auf den K
 Das Attribut "affectedPerson" ist der Name der betroffenen Person, d.h. oftmals der Verfasser der Email, im Format "Nachname, Vorname(n)".
 Das Attribut "description" beinhaltet eine detaillierte Beschreibung des Problems, auf das sich das Ticket bezieht.
 Das Attribut "priority" klassifiziert die Relevanz des Tickets mit den Werten "Niedrig", "Mittel", "Hoch" und "Sehr Hoch".
+Das Attribut "requestType" klassifiziert den Typ des Tickets mit den Werten "Incident" oder “Service Request”. Incident beschreibt ein Ticket Falls der user ein Problem oder ähnliches hat und Service Request beschreibt ein Ticket mit dem der User Service bestellt.
 
 Bitte gib mir 5 Beispiele mit Fokus auf <insert a varying focus for the 5 examples>.
 ```
