@@ -9,9 +9,9 @@ from pymongo.results import InsertOneResult, UpdateResult, DeleteResult
 
 from app.enum import CustomerPrio
 from app.enum.prio import Prio
-from app.entity.ticket_entity import TicketEntity
-from app.persistence.database_routine import start_server, stop_server
-from app.persistence.ticket_repository import TicketRepository
+from app.repository.entity import TicketEntity
+from app.repository.util import start_server, stop_server
+from app.repository.ticket_repository import TicketRepository
 from test.config.pytest import SKIP_TEST
 
 

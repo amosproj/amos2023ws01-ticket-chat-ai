@@ -10,8 +10,8 @@ from app.api.v1.ticket_api import process_text
 from app.dependency.collection import get_ticket_collection
 from app.enum import CustomerPrio
 from app.enum.prio import Prio
-from app.dto.text_input import TextInput
-from app.entity.ticket_entity import TicketEntity
+from app.api.dto.text_input import TextInput
+from app.repository.entity import TicketEntity
 from app.main import app
 
 

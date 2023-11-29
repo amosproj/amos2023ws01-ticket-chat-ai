@@ -1,7 +1,7 @@
 from bson import ObjectId
 from pymongo.collection import Collection
 from pymongo.results import InsertOneResult, UpdateResult, DeleteResult
-from app.entity.ticket_entity import TicketEntity
+from app.repository.entity.ticket_entity import TicketEntity
 from app.logger import logger
 
 

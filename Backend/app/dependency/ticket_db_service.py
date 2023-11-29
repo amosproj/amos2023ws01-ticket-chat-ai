@@ -1,8 +1,8 @@
 from fastapi.params import Depends
 
 from app.dependency.ticket_repository import get_ticket_repository
-from app.persistence.ticket_db_service import TicketDBService
-from app.persistence.ticket_repository import TicketRepository
+from app.service.ticket_db_service import TicketDBService
+from app.repository.ticket_repository import TicketRepository
 
 
 def get_ticket_db_service(

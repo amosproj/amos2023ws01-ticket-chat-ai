@@ -2,7 +2,7 @@ from typing import TypedDict
 
 from bson import ObjectId
 
-from app.entity.attachment_entity import AttachmentEntity
+from app.repository.entity.attachment_entity import AttachmentEntity
 from app.enum.customer_prio import CustomerPrio
 from app.enum.prio import Prio
 

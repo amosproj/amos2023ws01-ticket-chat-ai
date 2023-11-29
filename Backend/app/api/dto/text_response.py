@@ -2,6 +2,5 @@ from pydantic import BaseModel
 
 
 class TextResponse(BaseModel):
-    text: str
+    message: str
     data: str
-    code: int
