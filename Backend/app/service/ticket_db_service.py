@@ -4,7 +4,7 @@ from bson import ObjectId
 from fastapi import UploadFile
 
 from app.api.dto.ticket import Ticket
-from app.logger import logger
+from app.util.logger import logger
 from app.repository.entity.attachment_entity import AttachmentEntity
 from app.repository.entity.ticket_entity import TicketEntity
 from app.repository.ticket_repository import TicketRepository

@@ -2,14 +2,14 @@ from bson import ObjectId
 from pymongo.collection import Collection
 from pymongo.results import InsertOneResult, UpdateResult, DeleteResult
 from app.repository.entity.ticket_entity import TicketEntity
-from app.logger import logger
+from app.util.logger import logger
 
 
 class TicketRepository:
     def __init__(self, collection: Collection):
         self.collection = collection
 
-    def create_ticket(self, ticket: TicketEntity) -> InsertOneResult:
+    def create_ticket(self, ticket: TicketEntity | dict) -> InsertOneResult:
         logger.info("Creating ticket in the database...")
         return self.collection.insert_one(document=ticket)
 
@@ -19,7 +19,7 @@ class TicketRepository:
             self.collection.find(filter={"_id": ticket_id} if ticket_id else None)
         )
 
-    def update_ticket(self, ticket_id: ObjectId, ticket: TicketEntity) -> UpdateResult:
+    def update_ticket(self, ticket_id: ObjectId, ticket: TicketEntity | dict) -> UpdateResult:
         logger.info(f"Updating ticket {ticket_id} in the database...")
         return self.collection.replace_one(
             filter={"_id": ticket_id}, replacement=ticket, upsert=True

@@ -8,10 +8,10 @@ from pymongo.results import InsertOneResult
 
 from app.api.v1.ticket_api import process_text
 from app.dependency.collection import get_ticket_collection
-from app.enum import CustomerPrio
+from app.enum.customer_prio import CustomerPrio
 from app.enum.prio import Prio
 from app.api.dto.text_input import TextInput
-from app.repository.entity import TicketEntity
+from app.repository.entity.ticket_entity import TicketEntity
 from app.main import app
 
 
@@ -26,6 +26,7 @@ class TextEndpointUnitTest(unittest.TestCase):
         text_input = TextInput(text="Hello from the test!")
 
         ticket = TicketEntity(
+            _id=ObjectId(),
             title="Test Ticket",
             location="Test the test ticket",
             category="",
@@ -34,6 +35,7 @@ class TextEndpointUnitTest(unittest.TestCase):
             affectedPerson="",
             description="",
             priority=Prio.low,
+            attachments=[],
         )
 
         ticket_id = ObjectId("6554b34d82161e93bff08df6")
@@ -80,12 +82,26 @@ class TextEndpointIntegrationTest(unittest.TestCase):
         ticket_id = ObjectId("6554b34d82161e93bff08df6")
         result_exp = InsertOneResult(inserted_id=ticket_id, acknowledged=True)
 
+        ticket_exp = TicketEntity(
+            _id=ticket_id,
+            title="Test Ticket",
+            location="Test the test ticket",
+            category="",
+            keywords=[],
+            customerPriority=CustomerPrio.can_work,
+            affectedPerson="",
+            description="",
+            priority=Prio.low,
+            attachments=[],
+        )
+
         # Define mock behavior
         self.collection_mock.insert_one.return_value = result_exp
+        self.collection_mock.find.return_value = [ticket_exp]
 
         # Act
         response = self.client.post(
-            "/api/v1/text",
+            "/api/v1/ticket/text",
             data=json.dumps(data),
             headers={"Content-Type": "application/json"},
         )
@@ -93,9 +109,10 @@ class TextEndpointIntegrationTest(unittest.TestCase):
         # Assert
         # Mocks
         self.collection_mock.insert_one.assert_called_once()
+        self.collection_mock.find.assert_called_once_with(filter={"_id": ticket_id})
         # Response
-        assert response.status_code == 200
-        assert response.json().get("data") == "Message was received and ticket created"
+        assert response.status_code == 201
+        assert response.json().get("id") == str(ticket_id)
 
     def test_process_text_empty_input(self):
         # Define your test data with an empty "text" field
@@ -103,7 +120,7 @@ class TextEndpointIntegrationTest(unittest.TestCase):
 
         # Send a POST request to the "/text" endpoint with the correct content type header
         response = self.client.post(
-            "/api/v1/text",
+            "/api/v1/ticket/text",
             data=json.dumps(data),
             headers={"Content-Type": "application/json"},
         )
