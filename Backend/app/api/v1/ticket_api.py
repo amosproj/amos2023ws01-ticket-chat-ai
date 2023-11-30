@@ -7,9 +7,9 @@ from app.api.dto.text_input import TextInput
 from app.api.dto.ticket import Ticket
 from app.dependency.ticket_db_service import get_ticket_db_service
 from app.dependency.trained_t5_model import get_trained_t5_model
-from app.util.logger import logger
 from app.model.t5.use_trained_t5_model import TrainedT5Model
 from app.service.ticket_db_service import TicketDBService
+from app.util.logger import logger
 
 router = APIRouter()
 
@@ -50,19 +50,9 @@ async def process_text(
     # Save the ticket to the database using the TicketDBService
     logger.info("Saving ticket to the database...")
     created_ticket = ticket_db_service.create_ticket(received_dict)
-
-    # Prepare response
-    logger.info("Preparing response...")
-    if created_ticket:
-        logger.info(
-            f"Ticket created and saved successfully. Ticket ID: {created_ticket.id}"
-        )
-    else:
-        logger.error("Ticket creation failed.")
-        raise HTTPException(
-            status_code=status.HTTP_500_INTERNAL_SERVER_ERROR,
-            detail="Ticket creation failed.",
-        )
+    logger.info(
+        f"Ticket created and saved successfully. Ticket ID: {created_ticket.id}"
+    )
 
     return created_ticket
 
