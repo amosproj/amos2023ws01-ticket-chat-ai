@@ -1,27 +1,22 @@
 <router-outlet></router-outlet>
 <body style="background-color: #000;">
-<div class="app-container" style="color: #fff">
-  <div class="text-field-div">
-    <h1 style="font-family: 'Impact', sans-serif; color: #10ddd3; text-align: center; font-size: 5em; margin-top: 45px; margin-bottom: 45px; size: 45px;">{{ title }}</h1>
-    <mat-form-field>
-      <mat-label>Problem beschreiben</mat-label>
-      <textarea matInput [(ngModel)]="chatInput"></textarea>
-    </mat-form-field>
-    <button mat-raised-button color="primary" (click)="handleSend(chatInput)">Senden</button>
+  <div class="app-container" style="color: #fff">
+    <div class="text-field-div">
+      <h1 style="font-family: 'Impact', sans-serif; color: #10ddd3; text-align: center; font-size: 5em; margin-top: 45px; margin-bottom: 45px; size: 45px;">{{ title }}</h1>
+      <mat-form-field>
+        <mat-label>Problem beschreiben</mat-label>
+        <textarea matInput [(ngModel)]="chatInput"></textarea>
+      </mat-form-field>
+      <button class="speech-button" (click)="startSpeechRecognition()">
+        <i class="fas fa-microphone"></i> Speak
+      </button>
+      <button mat-raised-button color="primary" (click)="handleSend(chatInput)">Senden</button>
+    </div>
+    <div class="history-div">
+      <h2>Nachrichtenverlauf:</h2>
+      <div *ngFor="let chatMessage of chatMessages" [ngClass]="{'user-message': chatMessage.isUser, 'server-message': !chatMessage.isUser}">
+        {{ chatMessage.messageText }}
+      </div>
+    </div>
   </div>
-  <div class="history-div">
-    <table>
-      <thead>
-        <th>Nachrichtenverlauf:</th>
-      </thead>
-      <tbody>
-        <tr *ngFor="let chatMessage of chatMessages" [ngStyle]="{'background-color': chatMessage.isUser ? '#008028' : '#383a3b', 'color': '#fff', 'text-align': chatMessage.isUser ? 'right' : 'left', 'padding': '10px', 'margin-bottom': '5px'}">
-          <td>
-            {{ chatMessage.messageText }}
-          </td>
-        </tr>
-      </tbody>
-    </table>
-  </div>
-</div>
 </body>
