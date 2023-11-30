@@ -80,23 +80,20 @@ class TicketDBServiceUnitTest(TestCase):
         insert_one_result = InsertOneResult(
             inserted_id=self.ticket_id, acknowledged=False
         )
-        exp_exception = HTTPException(
-            status_code=status.HTTP_500_INTERNAL_SERVER_ERROR,
-            detail="Ticket creation failed.",
-        )
+        exp_status_code = status.HTTP_500_INTERNAL_SERVER_ERROR
+        exp_detail = "Ticket creation failed."
 
         # Mock
         self.ticket_repository_mock.create_ticket.return_value = insert_one_result
 
-        # Act and Expect
-        try:
-            self.assertRaises(
-                HTTPException,
-                self.ticket_db_service.create_ticket,
-                ticket_entity=self.ticket_dict,
-            )
-        except HTTPException as act_exception:
-            self.assertEqual(act_exception, exp_exception)
+        # Act
+        with self.assertRaises(HTTPException) as cm:
+            self.ticket_db_service.create_ticket(ticket_entity=self.ticket_dict)
+        act_exception = cm.exception
+
+        # Expect
+        self.assertEqual(act_exception.status_code, exp_status_code)
+        self.assertEqual(act_exception.detail, exp_detail)
         self.ticket_repository_mock.create_ticket.assert_called_once()
 
     def test_create_ticket_not_found(self):
@@ -104,23 +101,20 @@ class TicketDBServiceUnitTest(TestCase):
         insert_one_result = InsertOneResult(
             inserted_id=self.ticket_id, acknowledged=True
         )
-        exp_exception = HTTPException(
-            status_code=status.HTTP_500_INTERNAL_SERVER_ERROR,
-            detail=f"Ticket with id {str(self.ticket_id)} not found.",
-        )
+        exp_status_code = status.HTTP_500_INTERNAL_SERVER_ERROR
+        exp_detail = f"Ticket with id {str(self.ticket_id)} not found."
 
         # Mock
         self.ticket_repository_mock.create_ticket.return_value = insert_one_result
         self.ticket_repository_mock.read_tickets.return_value = []
 
-        # Act and Expect
-        try:
-            self.assertRaises(
-                HTTPException,
-                self.ticket_db_service.create_ticket,
-                ticket_entity=self.ticket_dict,
-            )
-        except HTTPException as act_exception:
-            self.assertEqual(act_exception, exp_exception)
+        # Act
+        with self.assertRaises(HTTPException) as cm:
+            self.ticket_db_service.create_ticket(ticket_entity=self.ticket_dict)
+        act_exception = cm.exception
+
+        # Expect
+        self.assertEqual(act_exception.status_code, exp_status_code)
+        self.assertEqual(act_exception.detail, exp_detail)
         self.ticket_repository_mock.create_ticket.assert_called_once()
         self.ticket_repository_mock.read_tickets.assert_called_once()
