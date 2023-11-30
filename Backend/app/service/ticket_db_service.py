@@ -51,7 +51,7 @@ class TicketDBService:
             attachment_entities.append(attachment_entity)
         ticket_entity["attachments"] = attachment_entities
         update_result = self.ticket_repository.update_ticket(ticket_id, ticket_entity)
-        if update_result.modified_count != 1:
+        if not update_result.acknowledged:
             self._throw_internal_server_error(
                 f"Ticket with id {str(ticket_id)} not updated."
             )
