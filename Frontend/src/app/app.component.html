@@ -1,16 +1,32 @@
 <router-outlet></router-outlet>
-<body style="background-color: #000;">
+<body style="background-color: #000; overflow-y: auto;">
 <div class="app-container" style="color: #fff">
   <div class="text-field-div">
+    
     <h1 style="font-family: 'Impact', sans-serif; color: #10ddd3; text-align: center; font-size: 5em; margin-top: 45px; margin-bottom: 45px; size: 45px;">{{ title }}</h1>
+    
+    <mat-form-field>
+      <mat-label>E-Mail</mat-label>
+      <input matInput type="email" [(ngModel)]="emailInput">
+    </mat-form-field>
+    
     <mat-form-field>
       <mat-label>Problem beschreiben</mat-label>
       <textarea matInput [(ngModel)]="chatInput"></textarea>
     </mat-form-field>
     <button mat-raised-button color="primary" (click)="handleSend(chatInput)">Senden</button>
   </div>
+
+  <div id="drop-area" (drop)="handleDrop($event)">
+    <form class="my-form">
+      <input type="file" id="fileElem" multiple accept="image/*" onchange="handleFiles(this.files)">
+      <label class="button" for="fileElem">Dateien hochladen</label>
+      <p>oder Dateien ablegen</p>
+    </form>
+  </div>
+
   <div class="history-div">
-    <table>
+    <table style="width: 100%;">
       <thead>
         <th>Nachrichtenverlauf:</th>
       </thead>

@@ -13,8 +13,8 @@ export class TicketService {
 
   constructor(private http: HttpClient, private logger: LogService) {}
 
-  send(message: string): Observable<any> {
-    const data = { text: message };
+  send(message: string, email: string): Observable<any> {
+    const data = { text: message, email: email };
 
     // define headers
     const headers = new HttpHeaders({
