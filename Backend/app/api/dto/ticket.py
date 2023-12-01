@@ -1,10 +1,12 @@
+from bson import ObjectId
 from pydantic import BaseModel
 
-from app.dto.enum.prio import Prio
-from app.dto.enum.customer_prio import CustomerPrio
+from app.enum.customer_prio import CustomerPrio
+from app.enum.prio import Prio
 
 
 class Ticket(BaseModel):
+    id: str = ""
     title: str
     location: str
     category: str
@@ -13,3 +15,4 @@ class Ticket(BaseModel):
     affectedPerson: str
     description: str
     priority: Prio
+    attachmentNames: list[str] = []

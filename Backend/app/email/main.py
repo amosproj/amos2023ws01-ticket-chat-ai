@@ -35,7 +35,7 @@ def run_proxy():
                     print(json_input)
                     if content != "":
                         response = requests.post(
-                            "http://localhost:8000/api/v1/text",
+                            "http://localhost:8000/api/v1/ticket/text",
                             data=json.dumps(json_input),
                         )
                         print(response.text)
