@@ -17,13 +17,8 @@
     <button mat-raised-button color="primary" (click)="handleSend(chatInput)">Senden</button>
   </div>
 
-  <div id="drop-area" (drop)="handleDrop($event)">
-    <form class="my-form">
-      <input type="file" id="fileElem" multiple accept="image/*" onchange="handleFiles(this.files)">
-      <label class="button" for="fileElem">Dateien hochladen</label>
-      <p>oder Dateien ablegen</p>
-    </form>
-  </div>
+  <app-drag-and-drop></app-drag-and-drop>
+
 
   <div class="history-div">
     <table style="width: 100%;">
