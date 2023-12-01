@@ -77,7 +77,7 @@ class TicketDBServiceUnitTest(TestCase):
         )
 
         # Expect
-        self.assertEqual(act_ticket, exp_ticket)
+        self.assertEqual(exp_ticket, act_ticket)
         self.ticket_repository_mock.create_ticket.assert_called_once()
         self.ticket_repository_mock.read_tickets.assert_called_once()
 
@@ -96,8 +96,8 @@ class TicketDBServiceUnitTest(TestCase):
         act_exception = self._run_create_ticket_failed()
 
         # Expect
-        self.assertEqual(act_exception.status_code, exp_status_code)
-        self.assertEqual(act_exception.detail, exp_detail)
+        self.assertEqual(exp_status_code, act_exception.status_code)
+        self.assertEqual(exp_detail, act_exception.detail)
         self.ticket_repository_mock.create_ticket.assert_called_once()
 
     def test_create_ticket_not_found(self):
@@ -116,8 +116,8 @@ class TicketDBServiceUnitTest(TestCase):
         act_exception = self._run_create_ticket_failed()
 
         # Expect
-        self.assertEqual(act_exception.status_code, exp_status_code)
-        self.assertEqual(act_exception.detail, exp_detail)
+        self.assertEqual(exp_status_code, act_exception.status_code)
+        self.assertEqual(exp_detail, act_exception.detail)
         self.ticket_repository_mock.create_ticket.assert_called_once()
         self.ticket_repository_mock.read_tickets.assert_called_once()
 
@@ -153,7 +153,7 @@ class TicketDBServiceUnitTest(TestCase):
         )
 
         # Expect
-        self.assertEqual(act_ticket, exp_ticket)
+        self.assertEqual(exp_ticket, act_ticket)
         self.ticket_repository_mock.read_tickets.assert_called_once()
         self.ticket_repository_mock.update_ticket.assert_called_once()
 
@@ -176,8 +176,8 @@ class TicketDBServiceUnitTest(TestCase):
         act_exception = cm.exception
 
         # Expect
-        self.assertEqual(act_exception.status_code, exp_status_code)
-        self.assertEqual(act_exception.detail, exp_detail)
+        self.assertEqual(exp_status_code, act_exception.status_code)
+        self.assertEqual(exp_detail, act_exception.detail)
         self.ticket_repository_mock.read_tickets.assert_called_once()
 
     def test_update_ticket_attachments_not_updated(self):
@@ -198,8 +198,8 @@ class TicketDBServiceUnitTest(TestCase):
         act_exception = self._run_update_ticket_attachments_failed()
 
         # Expect
-        self.assertEqual(act_exception.status_code, exp_status_code)
-        self.assertEqual(act_exception.detail, exp_detail)
+        self.assertEqual(exp_status_code, act_exception.status_code)
+        self.assertEqual(exp_detail, act_exception.detail)
         self.ticket_repository_mock.read_tickets.assert_called_once()
         self.ticket_repository_mock.update_ticket.assert_called_once()
 

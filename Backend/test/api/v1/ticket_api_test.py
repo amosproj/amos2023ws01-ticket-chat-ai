@@ -73,8 +73,8 @@ class TicketAPIIntegrationTest(TestCase):
         self.collection_mock.insert_one.assert_called_once()
         self.collection_mock.find.assert_called_once()
         # Response
-        self.assertEqual(response.status_code, status.HTTP_201_CREATED)
-        self.assertEqual(Ticket.parse_obj(response.json()), exp_ticket)
+        self.assertEqual(status.HTTP_201_CREATED, response.status_code)
+        self.assertEqual(exp_ticket, Ticket.parse_obj(response.json()))
 
     def test_process_text_empty_input(self):
         # Define your test data with an empty "text" field
@@ -85,10 +85,10 @@ class TicketAPIIntegrationTest(TestCase):
         response = self._run_process_text_endpoint(text_input)
 
         # Check if the response status code is 400 (Bad Request)
-        self.assertEqual(response.status_code, status.HTTP_400_BAD_REQUEST)
+        self.assertEqual(status.HTTP_400_BAD_REQUEST, response.status_code)
 
         # Check if the response contains the expected error message
-        self.assertEqual(response.json(), exp_json)
+        self.assertEqual(exp_json, response.json())
 
     def test_update_ticket_attachments_success(self):
         # Define
@@ -138,8 +138,8 @@ class TicketAPIIntegrationTest(TestCase):
 
         response = self._run_update_ticket_attachments(ticket_id="-")
 
-        self.assertEqual(response.status_code, status.HTTP_400_BAD_REQUEST)
-        self.assertEqual(response.json(), exp_json)
+        self.assertEqual(status.HTTP_400_BAD_REQUEST, response.status_code)
+        self.assertEqual(exp_json, response.json())
 
     def _run_process_text_endpoint(self, text_input: dict):
         return self.client.post(

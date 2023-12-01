@@ -37,14 +37,14 @@ class TicketRepositoryUnitTest(unittest.TestCase):
         result_exp = InsertOneResult(inserted_id=self.ticket_id, acknowledged=True)
         self.collection_mock.insert_one.return_value = result_exp
         result_act = self.ticket_repository.create_ticket(ticket=self.ticket)
-        self.assertEqual(result_act, result_exp, "wrong result of create_ticket()")
+        self.assertEqual(result_exp, result_act, "wrong result of create_ticket()")
         self.collection_mock.insert_one.assert_called_once_with(document=self.ticket)
 
     def test_read_one_ticket(self):
         result_exp = [self.ticket]
         self.collection_mock.find.return_value = result_exp
         result_act = self.ticket_repository.read_tickets(ticket_id=self.ticket_id)
-        self.assertEqual(result_act, result_exp, "wrong result of read_tickets()")
+        self.assertEqual(result_exp, result_act, "wrong result of read_tickets()")
         self.collection_mock.find.assert_called_once_with(
             filter={"_id": self.ticket_id}
         )
@@ -53,7 +53,7 @@ class TicketRepositoryUnitTest(unittest.TestCase):
         result_exp = [self.ticket, self.ticket]
         self.collection_mock.find.return_value = result_exp
         result_act = self.ticket_repository.read_tickets()
-        self.assertEqual(result_act, result_exp, "wrong result of read_tickets()")
+        self.assertEqual(result_exp, result_act, "wrong result of read_tickets()")
         self.collection_mock.find.assert_called_once_with(filter=None)
 
     def test_update_ticket(self):
@@ -62,7 +62,7 @@ class TicketRepositoryUnitTest(unittest.TestCase):
         result_act = self.ticket_repository.update_ticket(
             ticket_id=self.ticket_id, ticket=self.ticket
         )
-        self.assertEqual(result_act, result_exp, "wrong result of update_ticket()")
+        self.assertEqual(result_exp, result_act, "wrong result of update_ticket()")
         self.collection_mock.replace_one.assert_called_once_with(
             filter={"_id": self.ticket_id}, replacement=self.ticket, upsert=True
         )
@@ -71,7 +71,7 @@ class TicketRepositoryUnitTest(unittest.TestCase):
         result_exp = DeleteResult(raw_result=self.ticket, acknowledged=True)
         self.collection_mock.delete_one.return_value = result_exp
         result_act = self.ticket_repository.delete_ticket(ticket_id=self.ticket_id)
-        self.assertEqual(result_act, result_exp, "wrong result of delete_ticket()")
+        self.assertEqual(result_exp, result_act, "wrong result of delete_ticket()")
         self.collection_mock.delete_one.assert_called_once_with(
             filter={"_id": self.ticket_id}
         )

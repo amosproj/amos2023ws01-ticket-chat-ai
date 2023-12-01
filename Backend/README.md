@@ -69,7 +69,7 @@
       2. Create a storage directory at any location, for example, `...\data\db`, if you have not already done so.
       3. Run `mongod` with path to storage location for example:
          ```bash
-         mongod --dbpath E:\workspace\Uni\ws23-24\AMOS\data\db`
+         mongod --dbpath E:\workspace\Uni\ws23-24\AMOS\data\db
          ```
     - Linux:
       ```bash
