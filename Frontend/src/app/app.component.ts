@@ -28,7 +28,7 @@ export class AppComponent {
       // send message to server and handle response
       this.ticketService.send(value).subscribe(
         (response: any) => {
-          const messageText = response.text; // use "text" as per the backend API
+          const messageText = JSON.stringify(response) // use "text" as per the backend API
           this.chatMessages.push({ messageText, isUser: false }); // push server message to chat
 
           this.logger.log('Received response from backend server: ' + response);

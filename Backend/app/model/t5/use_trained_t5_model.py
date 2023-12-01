@@ -1,8 +1,8 @@
 import torch
 from transformers import T5ForConditionalGeneration, T5Tokenizer
 
-from app.dto.enum.customer_prio import CustomerPrio
-from app.dto.enum.prio import Prio
+from app.enum.customer_prio import CustomerPrio
+from app.enum.prio import Prio
 
 
 class TrainedT5Model:

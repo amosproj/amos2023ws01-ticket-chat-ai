@@ -57,9 +57,9 @@ class EmailProxyTest(unittest.TestCase):
             # Check if the message we received was the same as the one we sent
             msg_num = msg_nums[-1]
             sender, subject, content = proxy.process_mail(msg_num)
-            self.assertEqual(sender, email_address)
-            self.assertEqual(subject, test_subject)
-            self.assertEqual(content, test_content)
+            self.assertEqual(email_address, sender)
+            self.assertEqual(test_subject, subject)
+            self.assertEqual(test_content, content)
 
         # Check if the connection got closed
         with self.assertRaises(imaplib.IMAP4.error):

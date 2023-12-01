@@ -11,3 +11,4 @@ black==23.11.0
 pymongo==4.6.0
 fastapi-utils==0.2.1
 requests==2.31.0
+python-multipart==0.0.6
