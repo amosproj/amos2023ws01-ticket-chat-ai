@@ -11,6 +11,12 @@ import { DndDirective } from './directive/dnd.directive';
     DndDirective,
     ProgressComponent
   ],
+
+  exports: [
+    DragAndDropComponent,
+    DndDirective,
+    ProgressComponent
+  ],
   imports: [
     BrowserModule
   ]

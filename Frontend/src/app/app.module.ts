@@ -7,8 +7,8 @@ import { HttpClientModule } from '@angular/common/http';
 import { NoopAnimationsModule } from '@angular/platform-browser/animations';
 import {MatButtonModule} from "@angular/material/button";
 import {MatInputModule} from "@angular/material/input";
-import { ProgressComponent } from './drag-and-drop/components/progress/progress.component';
 import { DragAndDropModule } from './drag-and-drop/drag-and-drop.module';
+import { MatCardModule } from '@angular/material/card';
 
 
 @NgModule({
@@ -23,7 +23,8 @@ import { DragAndDropModule } from './drag-and-drop/drag-and-drop.module';
     NoopAnimationsModule,
     MatButtonModule,
     MatInputModule,
-    DragAndDropModule
+    DragAndDropModule,
+    MatCardModule,
   ],
   providers: [],
   bootstrap: [AppComponent]

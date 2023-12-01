@@ -9,8 +9,8 @@ export class DragAndDropComponent {
   @ViewChild("fileDropRef", { static: true }) fileDropEl!: ElementRef;
   files: any[] = [];
 
-  
-  constructor( ){
+
+  constructor() {
 
   }
 
@@ -24,8 +24,11 @@ export class DragAndDropComponent {
   /**
    * handle file from browsing
    */
-  fileBrowseHandler(files: any) {
-    this.prepareFilesList(files);
+  fileBrowseHandler(event: Event) {
+    const input = event.target as HTMLInputElement;
+    if (!input.files) return;
+    const filesArray = Array.from(input.files); // Convert FileList to Array
+    this.prepareFilesList(filesArray);
   }
 
   /**

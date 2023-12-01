@@ -1,4 +1,4 @@
-import { Component, OnInit, ViewChild, ElementRef } from '@angular/core';
+import { Component, OnInit, ViewChild, ElementRef, AfterViewChecked } from '@angular/core';
 import { TicketService } from './service/ticket.service';
 import { LogService } from './service/logging.service';
 
@@ -37,7 +37,7 @@ export class AppComponent implements OnInit {
   }
 
   ngOnInit() {
-    
+
   }
 
   handleSend(value: string) {

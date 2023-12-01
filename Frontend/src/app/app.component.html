@@ -1,38 +1,64 @@
 <router-outlet></router-outlet>
-<body style="background-color: #000; overflow-y: auto;">
-<div class="app-container" style="color: #fff">
-  <div class="text-field-div">
-    
-    <h1 style="font-family: 'Impact', sans-serif; color: #10ddd3; text-align: center; font-size: 5em; margin-top: 45px; margin-bottom: 45px; size: 45px;">{{ title }}</h1>
-    
-    <mat-form-field>
-      <mat-label>E-Mail</mat-label>
-      <input matInput type="email" [(ngModel)]="emailInput">
-    </mat-form-field>
-    
-    <mat-form-field>
-      <mat-label>Problem beschreiben</mat-label>
-      <textarea matInput [(ngModel)]="chatInput"></textarea>
-    </mat-form-field>
-    <button mat-raised-button color="primary" (click)="handleSend(chatInput)">Senden</button>
+<body style="background-color: #313131; overflow-y: auto">
+  <h1
+    style="
+      font-family: 'Impact', sans-serif;
+      color: #10ddd3;
+      text-align: center;
+      font-size: 5em;
+      margin-top: 30px;
+      margin-bottom: 30px;
+      margin-right: 80px;
+      size: 45px;
+    "
+  >
+    {{ title }}
+  </h1>
+
+  <div class="cards-container">
+    <mat-card class="history-div">
+      <div class="text-field-div">
+        <mat-form-field>
+          <mat-label>E-Mail</mat-label>
+          <input matInput type="email" [(ngModel)]="emailInput" />
+        </mat-form-field>
+
+        <mat-form-field>
+          <mat-label>Problem beschreiben</mat-label>
+          <textarea matInput [(ngModel)]="chatInput"></textarea>
+        </mat-form-field>
+        <button
+          mat-raised-button
+          color="primary"
+          (click)="handleSend(chatInput)"
+        >
+          Senden
+        </button>
+      </div>
+
+      <app-drag-and-drop></app-drag-and-drop>
+    </mat-card>
+
+    <mat-card class="history-div">
+      <h2>Nachrichtenverlauf</h2>
+      <!-- Check if there are any chat messages -->
+      <div *ngIf="chatMessages.length === 0" class="default-message">
+        <p>Keine Nachrichten vorhanden</p>
+      </div>
+
+      <!-- Display messages if there are any -->
+      <div
+        *ngFor="let chatMessage of chatMessages"
+        class="message"
+        [ngClass]="{
+          'user-message': chatMessage.isUser,
+          'other-message': !chatMessage.isUser
+        }"
+      >
+        <div class="message-content">
+          {{ chatMessage.messageText }}
+        </div>
+      </div>
+    </mat-card>
   </div>
-
-  <app-drag-and-drop></app-drag-and-drop>
-
-
-  <div class="history-div">
-    <table style="width: 100%;">
-      <thead>
-        <th>Nachrichtenverlauf:</th>
-      </thead>
-      <tbody>
-        <tr *ngFor="let chatMessage of chatMessages" [ngStyle]="{'background-color': chatMessage.isUser ? '#008028' : '#383a3b', 'color': '#fff', 'text-align': chatMessage.isUser ? 'right' : 'left', 'padding': '10px', 'margin-bottom': '5px'}">
-          <td>
-            {{ chatMessage.messageText }}
-          </td>
-        </tr>
-      </tbody>
-    </table>
-  </div>
-</div>
 </body>

@@ -1,17 +1,73 @@
+.cards-container {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  height: 100vh; /* Height of the container */
+}
+
+.history-div {
+  background-color: #000;
+  text-align: center;
+  margin: 10px;
+  height: 85vh; /* Fixed height */
+  overflow-y: auto; /* Enables vertical scrolling */
+  padding: 5px;
+  color: #fff;
+}
+
+.title-card {
+  background-color: #000;
+  text-align: center;
+
+}
+
+/* Left Card - Make this smaller */
+.history-div:first-child {
+  width: 45%; /* Smaller width for the left card */
+}
+
+/* Right Card - Make this larger */
+.history-div:last-child {
+  width: 55%; /* Larger width for the right card */
+}
+
 .text-field-div {
   margin: auto;
-  width: 50%;
+  width: 80%;
   padding: 10px;
   display: flex;
   flex-direction: column;
 }
 
-.history-div {
-  background-color: #000; 
-  text-align: center;
-  margin: auto;
-  width: 50%;
+.message {
+  max-width: 80%;
+  margin: 5px;
   padding: 10px;
-  color: #fff;
+  border-radius: 15px;
+  position: relative;
 }
 
+.user-message {
+  background-color: #008028;
+  align-self: flex-end;
+}
+
+.other-message {
+  background-color: #383a3b;
+  align-self: flex-start;
+}
+
+.message-content {
+  word-wrap: break-word;
+}
+
+.default-message {
+  color: #fff;
+  text-align: center;
+  padding: 20px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  height: 100%;
+}
