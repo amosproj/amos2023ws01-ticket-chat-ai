@@ -32,24 +32,22 @@ export class AppComponent {
     if ('SpeechRecognition' in window || 'webkitSpeechRecognition' in window) {
       this.recognition = new ((window as any).SpeechRecognition || (window as any).webkitSpeechRecognition)();
       
-      this.recognition.lang = 'en-US';
+      this.recognition.lang = 'de-DE';
       this.recognition.interimResults = false;
       this.recognition.maxAlternatives = 1;
 
       this.recognition.onresult = (event: any) => {
-        const transcript = event.results[0][0].transcript;
-        this.chatMessages.push({ messageText: transcript, isUser: true });
-        this.sendMessageToBackend(transcript);
+        this.chatInput = event.results[0][0].transcript;
         this.changeDetector.detectChanges();
       };
 
       this.recognition.onerror = (event: any) => {
-        console.error('Recognition Error:', event.error);
+        this.logger.error('Recognition Error:' + event.error);
       };
 
       this.recognition.start();
     } else {
-      console.error('Speech Recognition API is not supported in this browser.');
+      this.logger.error('Speech Recognition API is not supported in this browser.');
     }
   }
 
@@ -62,7 +60,7 @@ export class AppComponent {
         this.changeDetector.detectChanges();
       },
       (error) => {
-        this.logger.log('Error sending message:' + error);
+        this.logger.error('Error sending message:' + error);
         this.chatMessages.push({ messageText: 'Error sending message.....', isUser: false });
       }
     );
