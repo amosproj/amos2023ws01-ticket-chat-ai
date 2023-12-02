@@ -1,4 +1,4 @@
-import { Component, ViewChild, ElementRef } from "@angular/core";
+import { Component, ViewChild, ElementRef, EventEmitter, Output } from "@angular/core";
 
 @Component({
   selector: "app-drag-and-drop",
@@ -9,6 +9,7 @@ export class DragAndDropComponent {
   @ViewChild("fileDropRef", { static: true }) fileDropEl!: ElementRef;
   files: any[] = [];
 
+  @Output() filesEvent = new EventEmitter <any[]> ();
 
   constructor() {
 
@@ -72,8 +73,10 @@ export class DragAndDropComponent {
       item.progress = 0;
       this.files.push(item);
     }
+    console.log(this.files);
     this.fileDropEl.nativeElement.value = "";
     this.uploadFilesSimulator(0);
+    this.filesEvent.emit(this.files);
   }
 
   /**

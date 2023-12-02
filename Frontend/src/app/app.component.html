@@ -30,13 +30,13 @@
         <button
           mat-raised-button
           color="primary"
-          (click)="handleSend(chatInput)"
+          (click)="handleSend(chatInput,emailInput)"
         >
           Senden
         </button>
       </div>
 
-      <app-drag-and-drop></app-drag-and-drop>
+      <app-drag-and-drop (filesEvent)="getFiles($event)"></app-drag-and-drop>
     </mat-card>
 
     <mat-card class="history-div">

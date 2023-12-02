@@ -29,7 +29,7 @@ class TicketDBService:
             )
         ticket_entity = found_tickets[0]
         return self._map_ticket(ticket_entity)
-
+        
     def update_ticket_attachments(
         self, ticket_id: str, files: list[UploadFile]
     ) -> Ticket:
@@ -65,6 +65,7 @@ class TicketDBService:
             ticket_entity["attachments"] = []
         for attachment_entity in ticket_entity["attachments"]:
             ticket.attachmentNames.append(attachment_entity["name"])
+        logger.info("Json file:", ticket)
         return ticket
 
     @staticmethod

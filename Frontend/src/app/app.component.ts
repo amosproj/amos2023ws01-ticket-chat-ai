@@ -29,6 +29,7 @@ export class AppComponent implements OnInit {
   emailInput: string = "";
   chatMessages: ChatMessages[] = [];
   droppedFiles: FileWithProgress[] | null;
+  files!: any[];
 
   @ViewChild("fileDropRef", { static: true }) fileDropEl!: ElementRef;
 
@@ -40,12 +41,11 @@ export class AppComponent implements OnInit {
 
   }
 
-  handleSend(value: string) {
-    // Upload dropped files
-    // if (this.droppedFiles) {
-    //  this.droppedFiles.forEach(fileWithProgress => this.uploadFile(fileWithProgress.file));
-    //  this.droppedFiles = null; // Clear the files after uploading
-    // }
+  getFiles(event: any){
+    this.files = event;
+  }
+
+  handleSend(value: string, emailInput: string) {
 
     if (value) {
       // push user message to chat
@@ -57,6 +57,11 @@ export class AppComponent implements OnInit {
         (response: any) => {
           const messageText = JSON.stringify(response) // use "text" as per the backend API
           this.chatMessages.push({ messageText, isUser: false }); // push server message to chat
+
+          if(this.files){
+            this.ticketService.sendFiles(this.files, response.id);
+            // clear files
+          }
 
           this.logger.log('Received response from backend server: ' + response);
         },
