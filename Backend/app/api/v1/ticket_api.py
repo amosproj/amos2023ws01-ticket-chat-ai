@@ -54,8 +54,6 @@ async def process_text(
         f"Ticket created and saved successfully. Ticket ID: {created_ticket.id}"
     )
 
-    print(input.email)
-
     return created_ticket
 
 

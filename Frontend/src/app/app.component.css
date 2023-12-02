@@ -39,6 +39,8 @@
   flex-direction: column;
 }
 
+/* styles for messages */
+
 .message {
   max-width: 80%;
   margin: 5px;
@@ -71,3 +73,76 @@
   align-items: center;
   height: 100%;
 }
+
+/* styles for uploaded files */
+
+.single-file {
+  display: flex;
+  align-items: center; /* Align items vertically in the center */
+  justify-content: space-between; /* Space out items */
+  padding: 0.2rem;
+  border: dashed 1px #979797;
+  margin-bottom: 1rem;
+
+
+  /* Styling for the file name and size */
+  .info {
+    flex-grow: 1; /* Allow the info section to take up available space */
+    padding-left: 1rem; /* Add some space between the file icon and the text */
+    display: flex;
+    flex-direction: column; /* Align name and size in a column */
+    justify-content: center; /* Center the content vertically */
+  }
+
+  .name, .size {
+    margin: 0; /* Remove default margins */
+    color: #fff;
+  }
+
+  .name {
+    font-size: 14px;
+    font-weight: 500;
+  }
+
+  .size {
+    font-size: 12px;
+    font-weight: 500;
+  }
+}
+
+
+/* Waiting server response animation*/
+
+.loading-dots {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.loading-dots span {
+  background-color: #10ddd3; /* Change color as needed */
+  height: 8px;
+  width: 8px;
+  margin: 0 5px;
+  border-radius: 50%;
+  display: inline-block;
+  animation: loadingDots 1.4s infinite ease-in-out both;
+}
+
+.loading-dots span:nth-child(1) {
+  animation-delay: -0.32s;
+}
+
+.loading-dots span:nth-child(2) {
+  animation-delay: -0.16s;
+}
+
+@keyframes loadingDots {
+  0%, 80%, 100% {
+    transform: scale(0);
+  }
+  40% {
+    transform: scale(1.0);
+  }
+}
+

@@ -2,7 +2,7 @@ import { Injectable } from "@angular/core";
 import { HttpClient, HttpHeaders } from "@angular/common/http";
 import { catchError } from "rxjs/operators";
 import { Observable } from "rxjs";
-import {environment} from "../../environments/environment";
+import { environment } from "../../environments/environment";
 import { LogService } from './logging.service';
 
 @Injectable({
@@ -11,7 +11,7 @@ import { LogService } from './logging.service';
 export class TicketService {
   private apiUrl = environment.apiUrl + 'api/v1/ticket/text';
 
-  constructor(private http: HttpClient, private logger: LogService) {}
+  constructor(private http: HttpClient, private logger: LogService) { }
 
   send(message: string, email: string): Observable<any> {
     const data = { text: message, email: email };
@@ -46,13 +46,7 @@ export class TicketService {
       // 'Content-Type': 'multipart/form-data' is not needed, Angular sets it automatically with boundary
     });
 
-    // Construct the URL with the ticket_id ${ticket_id}
-    // const url = `${this.apiUrl}/ticket/${ticket_id}/attachments`;
-    // environment.apiUrl + 'api/v1/ticket/text'
-    const url = `${environment.apiUrl}api/v1/ticket/${ticket_id}/attachments`;
-
-    console.log("sending files");
-    console.log(formData);
+    const url = environment.apiUrl + 'api/v1/ticket/' + ticket_id + '/attachments';
 
     // Send POST request with formData and handle error
     return this.http.put(url, formData, { headers }).pipe(
