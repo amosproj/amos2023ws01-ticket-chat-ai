@@ -34,24 +34,26 @@ export class TicketService {
   sendFiles(files: File[], ticket_id: string): Observable<any> {
     // Create a FormData object
     const formData = new FormData();
-  
+
     // Append each file to the FormData object
     files.forEach(file => {
       formData.append('files', file, file.name);
     });
-  
+
     // Define headers for multipart/form-data
     const headers = new HttpHeaders({
       'Accept': 'application/json',
       // 'Content-Type': 'multipart/form-data' is not needed, Angular sets it automatically with boundary
     });
-  
-    // Construct the URL with the ticket_id
-    const url = `${this.apiUrl}/ticket/${ticket_id}/attachments`;
+
+    // Construct the URL with the ticket_id ${ticket_id}
+    // const url = `${this.apiUrl}/ticket/${ticket_id}/attachments`;
+    // environment.apiUrl + 'api/v1/ticket/text'
+    const url = `${environment.apiUrl}api/v1/ticket/${ticket_id}/attachments`;
 
     console.log("sending files");
     console.log(formData);
-  
+
     // Send POST request with formData and handle error
     return this.http.put(url, formData, { headers }).pipe(
       catchError((error) => {

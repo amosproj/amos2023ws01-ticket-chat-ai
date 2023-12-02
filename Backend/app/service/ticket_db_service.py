@@ -65,7 +65,6 @@ class TicketDBService:
             ticket_entity["attachments"] = []
         for attachment_entity in ticket_entity["attachments"]:
             ticket.attachmentNames.append(attachment_entity["name"])
-        logger.info("Json file:", ticket)
         return ticket
 
     @staticmethod
