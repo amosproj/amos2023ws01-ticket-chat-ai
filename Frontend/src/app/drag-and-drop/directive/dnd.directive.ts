@@ -11,7 +11,7 @@ import {
     selector: '[appDnd]'
   })
   export class DndDirective {
-    @HostBinding('class.fileover') fileOver: boolean | undefined;
+    @HostBinding('class.fileOver') fileOver: boolean | undefined;
     @Output() fileDropped = new EventEmitter<any>();
   
     // Dragover listener
@@ -21,11 +21,12 @@ import {
       this.fileOver = true;
     }
   
-    // Dragleave listener
     @HostListener('dragleave', ['$event']) public onDragLeave(evt: any) {
       evt.preventDefault();
       evt.stopPropagation();
+      console.log('Drag leave event triggered');
       this.fileOver = false;
+      console.log('fileOver:', this.fileOver);
     }
   
     // Drop listener
