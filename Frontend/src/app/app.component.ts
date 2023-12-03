@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, ChangeDetectorRef } from '@angular/core';
 import { TicketService } from './service/ticket.service';
 import { LogService } from './service/logging.service';
 
@@ -16,32 +16,54 @@ export class AppComponent {
   title: string = "TalkTix";
   chatInput: string = "";
   chatMessages: ChatMessages[] = [];
+  recognition: any;
 
-  constructor(private ticketService: TicketService, private logger: LogService) {}
+  constructor(private ticketService: TicketService, private logger: LogService, private changeDetector: ChangeDetectorRef) {}
 
   handleSend(value: string) {
     if (value) {
-      // push user message to chat
       this.chatMessages.push({ messageText: value, isUser: true });
-      this.logger.log('Trying to send message to backend server: ' + value)
+      this.sendMessageToBackend(value);
 
-      // send message to server and handle response
-      this.ticketService.send(value).subscribe(
-        (response: any) => {
-          const messageText = JSON.stringify(response) // use "text" as per the backend API
-          this.chatMessages.push({ messageText, isUser: false }); // push server message to chat
-
-          this.logger.log('Received response from backend server: ' + response);
-        },
-        // push error message to chat
-        (error) => {
-          this.logger.log('Error sending message:' + error);
-          this.chatMessages.push({ messageText: 'Error sending message.....', isUser: false });
-        }
-      );
-
-      // clear the chat input
       this.chatInput = "";
     }
+  }
+
+  startSpeechRecognition() {
+    if ('SpeechRecognition' in window || 'webkitSpeechRecognition' in window) {
+      this.recognition = new ((window as any).SpeechRecognition || (window as any).webkitSpeechRecognition)();
+      
+      this.recognition.lang = 'de-DE';
+      this.recognition.interimResults = false;
+      this.recognition.maxAlternatives = 1;
+
+      this.recognition.onresult = (event: any) => {
+        this.chatInput = event.results[0][0].transcript;
+        this.changeDetector.detectChanges();
+      };
+
+      this.recognition.onerror = (event: any) => {
+        this.logger.error('Recognition Error:' + event.error);
+      };
+
+      this.recognition.start();
+    } else {
+      this.logger.error('Speech Recognition API is not supported in this browser.');
+    }
+  }
+
+  sendMessageToBackend(message: string) {
+    this.ticketService.send(message).subscribe(
+      (response: any) => {
+        const messageText = response.text;
+        this.chatMessages.push({ messageText, isUser: false });
+        this.logger.log('Received response from backend server: ' + response);
+        this.changeDetector.detectChanges();
+      },
+      (error) => {
+        this.logger.error('Error sending message:' + error);
+        this.chatMessages.push({ messageText: 'Error sending message.....', isUser: false });
+      }
+    );
   }
 }
