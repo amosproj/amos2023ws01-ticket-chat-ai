@@ -9,7 +9,7 @@ import { LogService } from './logging.service';
   providedIn: "root"
 })
 export class TicketService {
-  private apiUrl = environment.apiUrl + 'api/v1/text';
+  private apiUrl = environment.apiUrl + 'api/v1/ticket/text';
 
   constructor(private http: HttpClient, private logger: LogService) {}
 

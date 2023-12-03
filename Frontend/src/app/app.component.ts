@@ -24,6 +24,7 @@ export class AppComponent {
     if (value) {
       this.chatMessages.push({ messageText: value, isUser: true });
       this.sendMessageToBackend(value);
+
       this.chatInput = "";
     }
   }

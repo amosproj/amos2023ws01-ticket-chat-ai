@@ -1,6 +1,6 @@
 from fastapi import FastAPI
 from fastapi.middleware.cors import CORSMiddleware
-from app.api.v1 import text_endpoint
+from app.api.v1 import ticket_api
 from config import AppConfig
 
 app = FastAPI()
@@ -19,7 +19,7 @@ app.add_middleware(
 )
 
 # Include the router from the text_endpoint module
-app.include_router(text_endpoint.router, prefix="/api/v1")
+app.include_router(ticket_api.router, prefix="/api/v1")
 
 
 if __name__ == "__main__":
