@@ -31,6 +31,17 @@
   width: 55%; /* Larger width for the right card */
 }
 
+/* Styles for the speech button */
+.speech-button {
+  background: none;
+  border: none;
+  cursor: pointer;
+  font-size: 18px;
+  color: #10ddd3;
+  margin-bottom: 20px; /* Adjust spacing as needed */
+}
+/* Existing styles for text-field-div and history-div */
+
 .text-field-div {
   margin: auto;
   width: 80%;
@@ -146,3 +157,22 @@
   }
 }
 
+.user-message {
+  background-color: #008028;
+  color: #fff;
+  text-align: right;
+  padding: 10px;
+  margin-bottom: 5px;
+}
+
+.server-message {
+  background-color: #383a3b;
+  color: #fff;
+  text-align: left;
+  padding: 10px;
+  margin-bottom: 5px;
+}
+
+.hide-label {
+  display: none;
+}

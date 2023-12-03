@@ -1,4 +1,4 @@
-import { Component, OnInit, ViewChild, ElementRef, AfterViewChecked } from '@angular/core';
+import { Component, OnInit, ViewChild, ElementRef, AfterViewChecked, ChangeDetectorRef } from '@angular/core';
 import { TicketService } from './service/ticket.service';
 import { LogService } from './service/logging.service';
 import { DragAndDropComponent } from './drag-and-drop/drag-and-drop.component';
@@ -30,15 +30,17 @@ export class AppComponent implements OnInit {
   chatInput: string = "";
   emailInput: string = "";
   chatMessages: ChatMessages[] = [];
+
   droppedFiles: FileWithProgress[] | null;
   files: any[] = [];
   waitingServerResponse: boolean = false;
-
+  recognition: any;
+  
   @ViewChild("fileDropRef", { static: true }) fileDropEl!: ElementRef;
 
   @ViewChild(DragAndDropComponent) dragAndDropComponent!: DragAndDropComponent;
 
-  constructor(private ticketService: TicketService, private logger: LogService) {
+  constructor(private ticketService: TicketService, private logger: LogService, private changeDetector: ChangeDetectorRef) {
     this.droppedFiles = [];
   }
 
@@ -95,8 +97,18 @@ export class AppComponent implements OnInit {
       // send message to server and handle response
       this.ticketService.send(value, emailInput).subscribe(
         (response: any) => {
-          const messageText = JSON.stringify(response)
+          let messageText = '';
+
+          if (typeof response === 'object') {
+            messageText = JSON.stringify(response); // Convert object to string
+          } else {
+            messageText = response; // Use response as is
+          }
+          
           this.chatMessages.push({ messageText, isUser: false, files: [] });
+
+           // Update the view after receiving the server response
+          this.changeDetector.detectChanges();
 
           // if attachments was inputed in UI, send them to backend
           if (this.files.length != 0) {
@@ -116,12 +128,33 @@ export class AppComponent implements OnInit {
 
       // clear the chat input
       this.chatInput = "";
-
       // display waiting for server response animation
       this.waitingServerResponse = true;
     }
   }
 
+  startSpeechRecognition() {
+    if ('SpeechRecognition' in window || 'webkitSpeechRecognition' in window) {
+      this.recognition = new ((window as any).SpeechRecognition || (window as any).webkitSpeechRecognition)();
+      
+      this.recognition.lang = 'de-DE';
+      this.recognition.interimResults = false;
+      this.recognition.maxAlternatives = 1;
+
+      this.recognition.onresult = (event: any) => {
+        this.chatInput = event.results[0][0].transcript;
+        this.changeDetector.detectChanges();
+      };
+
+      this.recognition.onerror = (event: any) => {
+        this.logger.error('Recognition Error:' + event.error);
+      };
+
+      this.recognition.start();
+    } else {
+      this.logger.error('Speech Recognition API is not supported in this browser.');
+    }
+  }
 }
 
 

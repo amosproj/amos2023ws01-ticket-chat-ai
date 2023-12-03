@@ -5,7 +5,7 @@ import { Injectable } from "@angular/core";
   })
 export class LogService {
     error(msg: any){
-        console.error(new Date() + ": " + JSON.stringify(msg), 'color: #DC143C');
+        console.error(new Date() + ": " + JSON.stringify(msg));
     }
 
     log(msg: any){

@@ -27,6 +27,11 @@
           <mat-label>Problem beschreiben</mat-label>
           <textarea matInput [(ngModel)]="chatInput"></textarea>
         </mat-form-field>
+        
+        <button mat-raised-button color="warn" (click)="startSpeechRecognition()">
+          <i class="fas fa-microphone"></i> Speak
+        </button><br>
+
         <button
           mat-raised-button
           color="primary"
