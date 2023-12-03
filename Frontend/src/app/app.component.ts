@@ -55,14 +55,26 @@ export class AppComponent {
   sendMessageToBackend(message: string) {
     this.ticketService.send(message).subscribe(
       (response: any) => {
-        const messageText = response.text;
+        let messageText = '';
+
+        if (typeof response === 'object') {
+          messageText = JSON.stringify(response); // Convert object to string
+        } else {
+          messageText = response; // Use response as is
+        }
+
         this.chatMessages.push({ messageText, isUser: false });
-        this.logger.log('Received response from backend server: ' + response);
+        this.logger.log('Received response from backend server: ' + messageText);
+
+        // Update the view after receiving the server response
         this.changeDetector.detectChanges();
       },
       (error) => {
-        this.logger.error('Error sending message:' + error);
-        this.chatMessages.push({ messageText: 'Error sending message.....', isUser: false });
+        this.logger.error('Error sending message: ' + error);
+        this.chatMessages.push({ messageText: 'Error sending message...', isUser: false });
+
+        // Update the view when an error occurs
+        this.changeDetector.detectChanges();
       }
     );
   }

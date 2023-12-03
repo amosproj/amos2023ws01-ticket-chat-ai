@@ -4,7 +4,7 @@
     <div class="text-field-div">
       <h1 style="font-family: 'Impact', sans-serif; color: #10ddd3; text-align: center; font-size: 5em; margin-top: 45px; margin-bottom: 45px; size: 45px;">{{ title }}</h1>
       <mat-form-field>
-        <mat-label>Problem beschreiben</mat-label>
+        <mat-label [class.hide-label]="chatInput !== ''">Problem beschreiben</mat-label>
         <textarea matInput [(ngModel)]="chatInput"></textarea>
       </mat-form-field>
       <button mat-raised-button color="warn" (click)="startSpeechRecognition()">
