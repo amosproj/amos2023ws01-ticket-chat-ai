@@ -16,7 +16,7 @@ router = APIRouter()
 
 @router.post("/ticket/text", status_code=status.HTTP_201_CREATED, response_model=Ticket)
 async def process_text(
-    text_input: TextInput = Body(default=TextInput(text="")),
+    input: TextInput = Body(default=TextInput()),
     trained_t5_model: TrainedT5Model = Depends(get_trained_t5_model),
     ticket_db_service: TicketDBService = Depends(get_ticket_db_service),
 ):
@@ -35,16 +35,16 @@ async def process_text(
     logger.info("Processing text...")
 
     # Check if the 'text' field is empty
-    if not text_input.text:
+    if not input.text:
         logger.error("Received empty text!")
         raise HTTPException(
             status_code=status.HTTP_400_BAD_REQUEST, detail="Text is required"
         )
-    logger.info(f"Received text: {text_input.text}")
+    logger.info(f"Received text: {input.text}")
 
     # Run the model to process the input text
     logger.info("Running the model...")
-    received_dict = trained_t5_model.run_model(text_input.text)
+    received_dict = trained_t5_model.run_model(input.text)
     logger.info("Model execution complete. Result: %s", received_dict)
 
     # Save the ticket to the database using the TicketDBService

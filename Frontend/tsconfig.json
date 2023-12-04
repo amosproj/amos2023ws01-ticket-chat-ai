@@ -22,9 +22,6 @@
       "ES2022",
       "dom"
     ],
-    "types": [
-      "web-speech-api"
-    ]
   },
   "angularCompilerOptions": {
     "enableI18nLegacyMessageIdFormat": false,
