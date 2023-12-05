@@ -7,6 +7,7 @@ from dotenv import load_dotenv
 import time
 import configparser
 import requests
+from logger import logger
 
 
 def run_proxy():
@@ -25,20 +26,32 @@ def run_proxy():
             imap_server, smtp_server, email_address, password
         ) as proxy:
             while True:
+                # tmp_dir = "./tmp"
+                # os.makedirs(tmp_dir, exist_ok=True)
                 msg_nums = proxy.spin()
                 for msgNum in msg_nums[0].split():
-                    (sender, subject, content) = proxy.process_mail(msgNum)
+                    (sender, subject, content, attachments) = proxy.process_mail(msgNum)
 
                     # send message to backend
-                    email = f'"text":"Von: {sender}\nBetreff: {subject}\n {content}"'
+                    email = f"Von: {sender}\nBetreff: {subject}\n {content}"
                     json_input = {"text": email}
-                    print(json_input)
                     if content != "":
                         response = requests.post(
                             "http://localhost:8000/api/v1/ticket/text",
                             data=json.dumps(json_input),
                         )
-                        print(response.text)
+                        ticket = json.loads(response.text)
+                        logger.info("Received ticket: " + ticket["id"])
+                        time.sleep(10)
+                        if attachments:
+                            files = {f"file{i}": (file_path, open(file_path, 'rb'), "image/png") for i, file_path in enumerate(attachments)}
+                            print("BEFORE: ", files)
+                            attachments_response = requests.put(
+                                "http://localhost:8000/api/v1/ticket/" + ticket["id"] + "/attachments",
+                                files=files,
+                            )
+                            print("attach: ", attachments_response)
+                            logger.info("Attachments for ticket: " + ticket["id"] + " are sent to the API")
 
                         # send response
                         new_email = hm.make_email(
@@ -46,6 +59,7 @@ def run_proxy():
                         )
                         proxy.smtp.send_mail(new_email)
                     time.sleep(sleep_timer)
+
     except Exception as e:
         print(f"Error: {e}")
 
