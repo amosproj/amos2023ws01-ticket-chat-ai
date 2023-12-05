@@ -104,9 +104,6 @@ export class AppComponent implements OnInit {
             messageText = response; // Use response as is
           }
 
-
-          this.chatMessages.push({ messageText, isUser: false, files: [] });
-
           // Update the view after receiving the server response
           this.changeDetector.detectChanges();
 
