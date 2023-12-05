@@ -105,6 +105,8 @@ export class AppComponent implements OnInit {
           }
 
 
+          this.chatMessages.push({ messageText, isUser: false, files: [] });
+
           // Update the view after receiving the server response
           this.changeDetector.detectChanges();
 
@@ -153,6 +155,7 @@ export class AppComponent implements OnInit {
       this.recognition.start();
     } else {
       this.logger.error('Speech Recognition API is not supported in this browser.');
+      window.alert('Speech Recognition API is not supported in this browser. Try using Chrome or Edge');
     }
   }
 }
