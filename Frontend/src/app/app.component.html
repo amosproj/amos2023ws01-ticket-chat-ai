@@ -24,7 +24,7 @@
         </mat-form-field>
 
         <mat-form-field>
-          <mat-label>Problem beschreiben</mat-label>
+          <mat-label [class.hide-label]="chatInput !== ''">Problem beschreiben</mat-label>
           <textarea matInput [(ngModel)]="chatInput"></textarea>
         </mat-form-field>
         
