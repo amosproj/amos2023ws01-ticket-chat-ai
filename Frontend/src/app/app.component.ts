@@ -35,7 +35,7 @@ export class AppComponent implements OnInit {
   files: any[] = [];
   waitingServerResponse: boolean = false;
   recognition: any;
-  
+
   @ViewChild("fileDropRef", { static: true }) fileDropEl!: ElementRef;
 
   @ViewChild(DragAndDropComponent) dragAndDropComponent!: DragAndDropComponent;
@@ -104,7 +104,7 @@ export class AppComponent implements OnInit {
           } else {
             messageText = response; // Use response as is
           }
-          
+
           this.chatMessages.push({ messageText, isUser: false, files: [] });
 
            // Update the view after receiving the server response
@@ -136,7 +136,7 @@ export class AppComponent implements OnInit {
   startSpeechRecognition() {
     if ('SpeechRecognition' in window || 'webkitSpeechRecognition' in window) {
       this.recognition = new ((window as any).SpeechRecognition || (window as any).webkitSpeechRecognition)();
-      
+
       this.recognition.lang = 'de-DE';
       this.recognition.interimResults = false;
       this.recognition.maxAlternatives = 1;
@@ -153,6 +153,7 @@ export class AppComponent implements OnInit {
       this.recognition.start();
     } else {
       this.logger.error('Speech Recognition API is not supported in this browser.');
+      window.alert('Speech Recognition API is not supported in this browser. Try using Chrome or Edge');
     }
   }
 }
