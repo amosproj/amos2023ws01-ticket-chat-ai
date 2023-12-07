@@ -49,7 +49,7 @@ class TrainedT5Model:
             "affectedPerson": "",
             "description": "",
             "priority": Prio.low,
-            "attachments": []
+            "attachments": [],
         }
 
         response["title"] = self.extract_value(text, "title")

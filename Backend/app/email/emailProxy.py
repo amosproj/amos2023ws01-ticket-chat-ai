@@ -5,6 +5,7 @@ import handle_mail as hm
 import smtp_conn as sm
 from logger import logger
 
+
 class EmailProxy:
     imap = None
     smtp = None
