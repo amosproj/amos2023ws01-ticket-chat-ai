@@ -101,14 +101,12 @@ class EmailProxy:
                     continue
                 filename = part.get_filename()
                 if filename:
-                    att_path = os.path.join(".\\tmp", filename)
-                    print("att_path", att_path)
-                    fp = open(att_path, 'wb')
-                    fp.write(part.get_payload(decode=True))
-                    print("hello")
-                    fp.close()
-                # attachments.append((filename, part.get_payload(decode=True), part.get_content_type()))
-                    attachments.append(att_path)
+                    # att_path = os.path.join(".\\tmp", filename)
+                    # fp = open(att_path, 'wb')
+                    # fp.write(part.get_payload(decode=True))
+                    # fp.close()
+                    attachments.append((filename, part.get_payload(decode=False), part.get_content_type()))
+                    # attachments.append(att_path)
 
             return (sender, subject, content, attachments)
         except imaplib.IMAP4.abort:

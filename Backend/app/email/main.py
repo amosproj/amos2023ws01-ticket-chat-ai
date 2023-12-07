@@ -48,13 +48,13 @@ def run_proxy():
                         logger.info("Received ticket: " + ticket["id"])
                         time.sleep(10)
                         if attachments:
-                            files = {f"file{i}": (file_path, open(file_path, 'rb'), "image/png") for i, file_path in enumerate(attachments)}
+                            files = {f"files": (file[0], file[1], file[2]) for i, file in enumerate(attachments)}
                             print("BEFORE: ", files)
                             attachments_response = requests.put(
                                 "http://localhost:8000/api/v1/ticket/" + ticket["id"] + "/attachments",
                                 files=files,
                             )
-                            print("attach: ", attachments_response)
+                            print("attach: ", attachments_response.text)
                             logger.info("Attachments for ticket: " + ticket["id"] + " are sent to the API")
 
                         # send response
