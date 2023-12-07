@@ -4,8 +4,6 @@ import email
 import handle_mail as hm
 import smtp_conn as sm
 from logger import logger
-from email.header import decode_header
-import os
 
 class EmailProxy:
     imap = None
@@ -105,7 +103,7 @@ class EmailProxy:
                         (
                             filename,
                             part.get_payload(decode=False),
-                            part.get_content_type()
+                            part.get_content_type(),
                         )
                     )
 

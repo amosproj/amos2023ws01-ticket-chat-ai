@@ -93,7 +93,6 @@ async def update_ticket_attachments(
 
     # Update the ticket attachments in the database using the TicketDBService
     logger.info("Updating ticket attachments in the database...")
-    print("FILES: ", files)
     updated_ticket = ticket_db_service.update_ticket_attachments(ticket_id, files)
 
     # Prepare response

@@ -26,8 +26,6 @@ def run_proxy():
             imap_server, smtp_server, email_address, password
         ) as proxy:
             while True:
-                # tmp_dir = "./tmp"
-                # os.makedirs(tmp_dir, exist_ok=True)
                 msg_nums = proxy.spin()
                 for msgNum in msg_nums[0].split():
                     (sender, subject, content, attachments) = proxy.process_mail(msgNum)
@@ -46,19 +44,15 @@ def run_proxy():
                         )
                         ticket = json.loads(response.text)
                         logger.info("Received ticket: " + ticket["id"])
-                        time.sleep(10)
                         if attachments:
-                            files = {
-                                f"files": (file[0], file[1], file[2])
-                                for i, file in enumerate(attachments)
-                            }
-                            attachments_response = requests.put(
-                                "http://localhost:8000/api/v1/ticket/"
-                                + ticket["id"]
-                                + "/attachments",
-                                files=files,
-                            )
-                            print("Created Ticket: ", attachments_response.text)
+                            for i, file in enumerate(attachments):
+                                files = {"files": (file[0], file[1], file[2])}
+                                response = requests.put(
+                                    "http://localhost:8000/api/v1/ticket/"
+                                    + ticket["id"]
+                                    + "/attachments",
+                                    files=files,
+                                )
                             logger.info(
                                 "Attachments for ticket: "
                                 + ticket["id"]
