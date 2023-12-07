@@ -111,9 +111,12 @@ class EmailProxy:
                     attachments.append(att_path)
 
             return (sender, subject, content, attachments)
-        except:
+        except imaplib.IMAP4.abort:
             self.try_reconnect()
             return self.process_mail(self, msgNum)
+        except Exception as e:
+            logger.exception(f"Unexpected error: {e}")
+
 
     def __exit__(self, exc_type, exc_val, exc_tb):
         """
