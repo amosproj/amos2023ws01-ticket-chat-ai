@@ -101,20 +101,20 @@ class EmailProxy:
                     continue
                 filename = part.get_filename()
                 if filename:
-                    # att_path = os.path.join(".\\tmp", filename)
-                    # fp = open(att_path, 'wb')
-                    # fp.write(part.get_payload(decode=True))
-                    # fp.close()
-                    attachments.append((filename, part.get_payload(decode=False), part.get_content_type()))
-                    # attachments.append(att_path)
+                    attachments.append(
+                        (
+                            filename,
+                            part.get_payload(decode=False),
+                            part.get_content_type()
+                        )
+                    )
 
-            return (sender, subject, content, attachments)
+            return sender, subject, content, attachments
         except imaplib.IMAP4.abort:
             self.try_reconnect()
             return self.process_mail(self, msgNum)
         except Exception as e:
             logger.exception(f"Unexpected error: {e}")
-
 
     def __exit__(self, exc_type, exc_val, exc_tb):
         """

@@ -48,14 +48,22 @@ def run_proxy():
                         logger.info("Received ticket: " + ticket["id"])
                         time.sleep(10)
                         if attachments:
-                            files = {f"files": (file[0], file[1], file[2]) for i, file in enumerate(attachments)}
-                            print("BEFORE: ", files)
+                            files = {
+                                f"files": (file[0], file[1], file[2])
+                                for i, file in enumerate(attachments)
+                            }
                             attachments_response = requests.put(
-                                "http://localhost:8000/api/v1/ticket/" + ticket["id"] + "/attachments",
+                                "http://localhost:8000/api/v1/ticket/"
+                                + ticket["id"]
+                                + "/attachments",
                                 files=files,
                             )
-                            print("attach: ", attachments_response.text)
-                            logger.info("Attachments for ticket: " + ticket["id"] + " are sent to the API")
+                            print("Created Ticket: ", attachments_response.text)
+                            logger.info(
+                                "Attachments for ticket: "
+                                + ticket["id"]
+                                + " are sent to the API"
+                            )
 
                         # send response
                         new_email = hm.make_email(
