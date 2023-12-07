@@ -31,17 +31,16 @@ export class AppComponent implements OnInit {
   emailInput: string = "";
   chatMessages: ChatMessages[] = [];
 
-  droppedFiles: FileWithProgress[] | null;
   files: any[] = [];
   waitingServerResponse: boolean = false;
   recognition: any;
-  
+
   @ViewChild("fileDropRef", { static: true }) fileDropEl!: ElementRef;
 
   @ViewChild(DragAndDropComponent) dragAndDropComponent!: DragAndDropComponent;
 
   constructor(private ticketService: TicketService, private logger: LogService, private changeDetector: ChangeDetectorRef) {
-    this.droppedFiles = [];
+
   }
 
   ngOnInit() {
@@ -65,18 +64,18 @@ export class AppComponent implements OnInit {
 
   clearFiles() {
     this.dragAndDropComponent.clearFiles();
-    this.droppedFiles = [];
+    this.files = [];
   }
 
   sendAttachmentsToServer(response: any) {
     // send attachments to server and handle response
     this.ticketService.sendFiles(this.files, response.id).subscribe(
       (attachmentsResponse: any) => {
-
+        const messageText = JSON.stringify(attachmentsResponse);
+        this.chatMessages.push({ messageText, isUser: false, files: [] });
         this.clearFiles();
 
         this.logger.log('Attachments was send successfully: ' + attachmentsResponse);
-        console.log('Success:', response);
         this.waitingServerResponse = false;
       },
       (error: any) => {
@@ -104,15 +103,15 @@ export class AppComponent implements OnInit {
           } else {
             messageText = response; // Use response as is
           }
-          
-          this.chatMessages.push({ messageText, isUser: false, files: [] });
 
-           // Update the view after receiving the server response
+          // Update the view after receiving the server response
           this.changeDetector.detectChanges();
 
           // if attachments was inputed in UI, send them to backend
           if (this.files.length != 0) {
             this.sendAttachmentsToServer(response);
+          } else {
+            this.chatMessages.push({ messageText, isUser: false, files: [] });
           }
 
           this.logger.log('Received response from backend server: ' + response);
@@ -136,7 +135,7 @@ export class AppComponent implements OnInit {
   startSpeechRecognition() {
     if ('SpeechRecognition' in window || 'webkitSpeechRecognition' in window) {
       this.recognition = new ((window as any).SpeechRecognition || (window as any).webkitSpeechRecognition)();
-      
+
       this.recognition.lang = 'de-DE';
       this.recognition.interimResults = false;
       this.recognition.maxAlternatives = 1;
@@ -153,6 +152,7 @@ export class AppComponent implements OnInit {
       this.recognition.start();
     } else {
       this.logger.error('Speech Recognition API is not supported in this browser.');
+      window.alert('Speech Recognition API is not supported in this browser. Try using Chrome or Edge');
     }
   }
 }
