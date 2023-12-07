@@ -31,6 +31,10 @@ def run_proxy():
                 msg_nums = proxy.spin()
                 for msgNum in msg_nums[0].split():
                     (sender, subject, content, attachments) = proxy.process_mail(msgNum)
+                    print(sender)
+                    print(subject)
+                    print(content)
+                    print(attachments)
 
                     # send message to backend
                     email = f"Von: {sender}\nBetreff: {subject}\n {content}"
@@ -58,7 +62,7 @@ def run_proxy():
                             email_address, sender, "RE:" + subject, response.text
                         )
                         proxy.smtp.send_mail(new_email)
-                    time.sleep(sleep_timer)
+                time.sleep(sleep_timer)
 
     except Exception as e:
         print(f"Error: {e}")
