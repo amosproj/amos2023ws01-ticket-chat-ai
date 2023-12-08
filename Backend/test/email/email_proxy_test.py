@@ -1,6 +1,7 @@
-import sys
 import os
-import pickle
+import sys
+
+from app.email.main import run_proxy
 
 # determine the absolute path to the 'backend' directory
 backend_path = os.path.abspath(os.path.join(os.path.dirname(__file__), "../../"))
@@ -10,9 +11,8 @@ sys.path.append(os.path.join(backend_path, "app", "email"))
 
 from app.email.emailProxy import EmailProxy
 from app.email.smtp_conn import SmtpConnection
-from app.email.main import run_proxy
 import app.email.handle_mail as hm
-from dotenv import load_dotenv, find_dotenv
+from dotenv import load_dotenv
 
 import pytest
 import configparser
@@ -109,12 +109,3 @@ class EmailProxyTest(unittest.TestCase):
                 self.assertTrue(mock_smtp.try_reconnect.return_value)
             else:
                 self.assertFalse(mock_smtp.try_reconnect.called)
-
-
-"""
-@pytest.mark.skipif(condition=SKIP_TEST, reason="Github cant connect, works local")
-class EmailTestMails(unittest.TestCase):
-    def mail_no_attachment(self):
-        with open("test/email/test_mails/b'263'_no_attachment.pkl") as inp:
-            message = pickle.load(inp)
-"""

@@ -1,6 +1,7 @@
+import email
 import imaplib
 import time
-import email
+
 import handle_mail as hm
 import smtp_conn as sm
 from logger import logger
@@ -64,6 +65,7 @@ class EmailProxy:
         """
         try:
             _, msg_nums = self.imap.search(None, "UNSEEN")
+            print("msg_nums: " + str(msg_nums))
 
         except imaplib.IMAP4.abort as e:
             logger.exception(f"IMAP error: {e}")
@@ -83,32 +85,7 @@ class EmailProxy:
 
             message = email.message_from_bytes(data[0][1])
             # specific processing
-            sender = message.get("From")
-            subject = message.get("Subject")
-            content = ""
-            attachments = []
-
-            for part in message.walk():
-                if part.get_content_type() == "text/plain":
-                    content += part.as_string()
-                    content += "\n"
-                # Check if the content type is multipart
-                if part.get_content_maintype() == "multipart":
-                    continue
-                # Check if there's an attachment
-                if part.get("Content-Disposition") is None:
-                    continue
-                filename = part.get_filename()
-                if filename:
-                    attachments.append(
-                        (
-                            filename,
-                            part.get_payload(decode=False),
-                            part.get_content_type(),
-                        )
-                    )
-
-            return sender, subject, content, attachments
+            return hm.process(message)
         except imaplib.IMAP4.abort:
             self.try_reconnect()
             return self.process_mail(self, msgNum)

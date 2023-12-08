@@ -19,8 +19,8 @@ def save_mail():
     smtp_server = config["DEFAULT"]["SMTP_SERVER"]
     try:
         with Proxy.EmailProxy(
-                imap_server, smtp_server, email_address, password
-            ) as proxy:
+            imap_server, smtp_server, email_address, password
+        ) as proxy:
             msg_nums = proxy.spin()
             print("spun")
             for msgNum in msg_nums[0].split():
@@ -29,7 +29,12 @@ def save_mail():
                 message = email.message_from_bytes(data[0][1])
                 print("received")
 
-                with open(os.path.join(os.path.dirname(__file__), str(msgNum) + "_example.pkl"), "wb") as outp:
+                with open(
+                    os.path.join(
+                        os.path.dirname(__file__), str(msgNum) + "_example.pkl"
+                    ),
+                    "wb",
+                ) as outp:
                     pickle.dump(message, outp, pickle.HIGHEST_PROTOCOL)
                     print("dumped")
     except Exception as e:
