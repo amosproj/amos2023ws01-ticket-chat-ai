@@ -50,6 +50,6 @@ class HandleMailTest(TestCase):
             sender, subject, content, attachments = process(message)
             # Expect
             self.assertEqual('"Fabian Weber" <webef98@zedat.fu-berlin.de>', sender)
-            self.assertEqual("Test mit mehreren Anhängen", subject)
+            self.assertEqual("=?utf-8?B?VGVzdCBtaXQgbWVocmVyZW4gQW5ow6RuZ2Vu?=", subject)
             self.assertFalse(not content)
             self.assertEqual(2, len(attachments))
