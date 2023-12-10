@@ -32,7 +32,7 @@ def run_proxy():
                     print(f"Sender={sender}")
                     print(f"Subject={subject}")
                     print(f"Content={content}")
-                    #print(attachments)
+                    # print(attachments)
 
                     # send message to backend
                     email = f"Von: {sender}\nBetreff: {subject}\n {content}"
@@ -49,7 +49,9 @@ def run_proxy():
                                 "http://localhost:8000/api/v1/ticket/"
                                 + ticket["id"]
                                 + "/attachments",
-                                files=[("files", attachment) for attachment in attachments],
+                                files=[
+                                    ("files", attachment) for attachment in attachments
+                                ],
                             )
                             logger.info(
                                 "Attachments for ticket: "
