@@ -19,7 +19,7 @@ class TestSmtpConnection:
     def test_send_mail(self, mock_smtp):
         smtp_connection = SmtpConnection(
             "mock_smtp_server", "mock_email_address", "mock_email_password"
-            )
+        )
 
         smtp_connection.start_connection()
 
@@ -57,13 +57,13 @@ class TestEmailService:
         # Apply the mock to SmtpConnection in the module
         monkeypatch.setattr(
             "app.email_router.email_service.SmtpConnection", MockSmtpConnection
-            )
+        )
 
         # Return an instance of the mock
         return MockSmtpConnection(
             "mock_smtp_server", "mock_email_address", "mock_email_password"
-            )
-    
+        )
+
     def test_smtp_connection(self, monkeypatch):
         smtp_connection = self.smtp_connection(monkeypatch)
 
