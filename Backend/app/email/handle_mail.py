@@ -1,4 +1,5 @@
 import email
+from email.message import Message
 
 from logger import logger
 
@@ -31,29 +32,26 @@ def make_email(from_address, to_address, subject, message):
     return msg
 
 
-def process(message):
+def process(message: Message):
     sender = message.get("From")
     subject = message.get("Subject")
     content = ""
     attachments = []
 
     for part in message.walk():
+        print(f"Message-Part Contenttype={part.get_content_type()}")
         if part.get_content_type() == "text/plain":
             content += part.as_string()
             content += "\n"
-        # Check if the content type is multipart
-        if part.get_content_maintype() == "multipart":
-            continue
-        # Check if there's an attachment
-        if part.get("Content-Disposition") is None:
-            continue
-        filename = part.get_filename()
-        if filename:
-            attachments.append(
-                (
-                    filename,
-                    part.get_payload(decode=False),
-                    part.get_content_type(),
+        elif part.get_content_maintype() in ["image", "application"]:
+            filename = part.get_filename()
+            if filename:
+                attachments.append(
+                    (
+                        filename,
+                        part.get_payload(decode=False),
+                        part.get_content_type(),
+                    )
                 )
-            )
+
     return sender, subject, content, attachments

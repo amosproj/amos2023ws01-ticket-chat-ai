@@ -29,10 +29,10 @@ def run_proxy():
                 msg_nums = proxy.spin()
                 for msgNum in msg_nums[0].split():
                     (sender, subject, content, attachments) = proxy.process_mail(msgNum)
-                    print(sender)
-                    print(subject)
-                    print(content)
-                    print(attachments)
+                    print(f"Sender={sender}")
+                    print(f"Subject={subject}")
+                    print(f"Content={content}")
+                    #print(attachments)
 
                     # send message to backend
                     email = f"Von: {sender}\nBetreff: {subject}\n {content}"
@@ -45,14 +45,12 @@ def run_proxy():
                         ticket = json.loads(response.text)
                         logger.info("Received ticket: " + ticket["id"])
                         if attachments:
-                            for i, file in enumerate(attachments):
-                                files = {"files": (file[0], file[1], file[2])}
-                                response = requests.put(
-                                    "http://localhost:8000/api/v1/ticket/"
-                                    + ticket["id"]
-                                    + "/attachments",
-                                    files=files,
-                                )
+                            response = requests.put(
+                                "http://localhost:8000/api/v1/ticket/"
+                                + ticket["id"]
+                                + "/attachments",
+                                files=[("files", attachment) for attachment in attachments],
+                            )
                             logger.info(
                                 "Attachments for ticket: "
                                 + ticket["id"]
