@@ -17,6 +17,10 @@
 
   <div class="cards-container">
     <mat-card class="history-div">
+      <div *ngIf="errorMessage" class="error-message">
+        {{ errorMessage }}
+      </div>
+      
       <div class="text-field-div">
         <mat-form-field>
           <mat-label>E-Mail</mat-label>
