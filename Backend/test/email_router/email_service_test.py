@@ -17,15 +17,18 @@ from app.email_router.email_service import EmailService
 class TestSmtpConnection:
     @patch("smtplib.SMTP")
     def test_send_mail(self, mock_smtp):
-        smtp_connection = SmtpConnection("mock_smtp_server", "mock_email_address", "mock_email_password")
+        smtp_connection = SmtpConnection(
+            "mock_smtp_server", "mock_email_address", "mock_email_password"
+            )
 
-        smtp_connection.start_connection() 
+        smtp_connection.start_connection()
 
         message = "Test Message"
         smtp_connection.send_mail(message)
 
         # Check whether the send_message method of the mocked SMTP object has been called
         mock_smtp.return_value.send_message.assert_called_once_with(message)
+
 
 class TestEmailService:
     def smtp_connection(self, monkeypatch):
@@ -52,10 +55,14 @@ class TestEmailService:
                 pass
 
         # Apply the mock to SmtpConnection in the module
-        monkeypatch.setattr("app.email_router.email_service.SmtpConnection", MockSmtpConnection)
+        monkeypatch.setattr(
+            "app.email_router.email_service.SmtpConnection", MockSmtpConnection
+            )
 
         # Return an instance of the mock
-        return MockSmtpConnection("mock_smtp_server", "mock_email_address", "mock_email_password")
+        return MockSmtpConnection(
+            "mock_smtp_server", "mock_email_address", "mock_email_password"
+            )
     
     def test_smtp_connection(self, monkeypatch):
         smtp_connection = self.smtp_connection(monkeypatch)
@@ -89,4 +96,4 @@ class TestEmailService:
         assert email_message["from"] == smtp_connection.email_address
         assert email_message["to"] == to_address
         assert email_message["Subject"] == subject
-        assert email_message.get_content().replace('\r\n', '\n') == message + '\n'
+        assert email_message.get_content().replace("\r\n", "\n") == message + "\n"
