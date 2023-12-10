@@ -42,6 +42,8 @@ class TicketDBService:
             )
         ticket_entity = found_tickets[0]
         attachment_entities = []
+        if ticket_entity["attachments"]:
+            attachment_entities = ticket_entity["attachments"]
         for file in files:
             attachment_entity = AttachmentEntity(
                 name=file.filename,

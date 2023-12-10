@@ -1,18 +1,6 @@
-import sys
 import os
-
-# determine the absolute path to the 'backend' directory
-backend_path = os.path.abspath(os.path.join(os.path.dirname(__file__), "../../"))
-
-# add the directory 'backend/app/email/' to sys.path
-sys.path.append(os.path.join(backend_path, "app", "email"))
-
-from app.email.emailProxy import EmailProxy
-from app.email.smtp_conn import SmtpConnection
-from app.email.main import run_proxy
-import app.email.handle_mail as hm
-from dotenv import load_dotenv, find_dotenv
-
+import sys
+from dotenv import load_dotenv
 import pytest
 import configparser
 import imaplib
@@ -21,6 +9,17 @@ import time
 import unittest
 from unittest.mock import patch, MagicMock
 from test.config.pytest import SKIP_TEST
+
+# determine the absolute path to the 'backend' directory
+backend_path = os.path.abspath(os.path.join(os.path.dirname(__file__), "../../"))
+
+# add the directory 'backend/app/email/' to sys.path
+sys.path.append(os.path.join(backend_path, "app", "email"))
+
+from app.email.main import run_proxy
+from app.email.emailProxy import EmailProxy
+from app.email.smtp_conn import SmtpConnection
+import app.email.handle_mail as hm
 
 load_dotenv()
 password = os.getenv("PASSWORD")
