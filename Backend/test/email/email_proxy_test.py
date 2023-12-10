@@ -43,7 +43,7 @@ class TestEmailProxy:
 
         # Return an instance of the mock
         return MockEmailProxy(
-            "mock_imap_server"
+            "mock_imap_server",
             "mock_smtp_server",
             "mock_email_address",
             "mock_password",
