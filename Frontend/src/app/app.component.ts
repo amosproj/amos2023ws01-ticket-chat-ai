@@ -85,7 +85,7 @@ export class AppComponent implements OnInit {
 
   handleSend(value: string, emailInput: string) {
     this.errorMessage = "";
-    if (!value && !emailInput) {
+    if (!value) {
       this.errorMessage = 'Bitte verfasse eine Nachricht oder hinterlasse eine Sprachnachricht.';
       return; // Stop further execution if no input message is provided
     }
