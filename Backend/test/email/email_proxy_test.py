@@ -39,13 +39,14 @@ class TestEmailProxy:
                 pass
 
         # Apply the mock to EmailProxy in the module
-        monkeypatch.setattr(
-            "app.email.emailProxy.EmailProxy", MockEmailProxy
-        )
+        monkeypatch.setattr("app.email.emailProxy.EmailProxy", MockEmailProxy)
 
         # Return an instance of the mock
         return MockEmailProxy(
-            "mock_imap_server", "mock_smtp_server", "mock_email_address", "mock_password"
+            "mock_imap_server"
+            "mock_smtp_server",
+            "mock_email_address",
+            "mock_password",
         )
 
     def test_email_proxy(self, monkeypatch):
