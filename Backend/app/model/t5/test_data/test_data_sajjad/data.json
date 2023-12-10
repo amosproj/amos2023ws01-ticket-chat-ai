@@ -17,8 +17,7 @@
        "description": "Die Mitarbeiterin kann sich nicht mit dem Unternehmensnetzwerk verbinden und erhält eine 'Verbindung fehlgeschlagen'-Fehlermeldung. Das Problem besteht seit gestern.",
        "priority": "Hoch",
        "requestType": "Incident"
-     },
-     "requestType": "Incident"
+     }
    },
    {
      "text": [
@@ -38,8 +37,7 @@
        "description": "Der Drucker im 2. Stock funktioniert plötzlich nicht mehr und druckt keine Dokumente aus, obwohl er eingeschaltet ist.",
        "priority": "Hoch",
        "requestType": "Incident"
-     },
-     "requestType": "Incident"
+     }
    },
    {
      "text": [
@@ -59,8 +57,7 @@
        "description": "Julia Mayer hat ihr Passwort vergessen und benötigt dringend Zugang zu ihrem Konto. Ein Passwort-Reset ist erforderlich.",
        "priority": "Mittel",
        "requestType": "Service Request"
-     },
-     "requestType": "Incident"
+     }
    },
    {
      "text": [
@@ -80,8 +77,7 @@
        "description": "Max Keller benötigt ein Software-Update, da die aktuelle Version veraltet ist und er bestimmte Funktionen benötigt, die in der neuen Version verfügbar sind.",
        "priority": "Mittel",
        "requestType": "Service Request"
-     },
-     "requestType": "Incident"
+     }
    },
    {
      "text": [
@@ -102,8 +98,7 @@
        "description": "Lisa Wagner kann seit heute Morgen nicht auf den Server zugreifen und erhält die Fehlermeldung 'Server nicht erreichbar'. Das Problem besteht seitdem.",
        "priority": "Hoch",
        "requestType": "Incident"
-     },
-     "requestType": "Service Request"
+     }
    },
    {
      "text": [
@@ -124,8 +119,7 @@
        "description": "Die Internetverbindung bricht in unregelmäßigen Abständen ab, wodurch keine stabilen Verbindungen möglich sind. Dies beeinträchtigt meine Arbeit erheblich.",
        "priority": "Hoch",
        "requestType": "Incident"
-     },
-     "requestType": "Service Request"
+     }
    },
    {
      "text": [
@@ -146,8 +140,7 @@
        "description": "Der Drucker druckt plötzlich keine Farben mehr. Sowohl beim Kopieren als auch beim Drucken über den Computer erscheinen nur Schwarz-Weiß-Ausdrucke, obwohl die Farbpatronen ausreichend gefüllt sind.",
        "priority": "Mittel",
        "requestType": "Service Request"
-     },
-     "requestType": "Service Request"
+     }
    },
    {
      "text": [
@@ -168,8 +161,7 @@
        "description": "Seit dem letzten Software-Update stürzt die Anwendung (Name der Anwendung) jedes Mal ab, wenn ich bestimmte Dateien öffnen möchte. Das verhindert meine Arbeit.",
        "priority": "Hoch",
        "requestType": "Service Request"
-     },
-     "requestType": "Service Request"
+     }
    },
    {
      "text": [
@@ -190,8 +182,7 @@
        "description": "Ich habe mein Passwort für mein E-Mail-Konto vergessen und kann daher nicht mehr auf meine E-Mails zugreifen. Bitte um Unterstützung bei der Wiederherstellung meines Zugangs.",
        "priority": "Mittel",
        "requestType": "Incident"
-     },
-     "requestType": "Incident"
+     }
    },
    {
      "text": [
@@ -212,8 +203,7 @@
        "description": "Bei der Installation der Software 'ABC' erhalte ich trotz mehrerer Versuche immer wieder Fehlermeldungen. Es ist mir nicht möglich, die Software korrekt zu installieren.",
        "priority": "Hoch",
        "requestType": "Service Request"
-     },
-     "requestType": "Service Request"
+     }
    },
    {
      "text": [
@@ -234,8 +224,7 @@
        "description": "Der Kunde hat Schwierigkeiten, sich mit dem WLAN zu verbinden, trotz Neustart des Routers. Das Problem besteht seit gestern und beeinträchtigt die Arbeitsfähigkeit.",
        "priority": "Hoch",
        "requestType": "Service Request"
-     },
-     "requestType": "Incident"
+     }
    },
    {
      "text": [
@@ -255,8 +244,7 @@
        "description": "Beim Starten der Anwendung erscheint eine Fehlermeldung, die das Laden der Anwendung verhindert. Der Kunde kann zwar arbeiten, benötigt aber Unterstützung, um das Problem zu lösen.",
        "priority": "Mittel",
        "requestType": "Incident"
-     },
-     "requestType": "Service Request"
+     }
    },
    {
      "text": [
@@ -277,8 +265,7 @@
        "description": "Der Drucker druckt plötzlich keine Farben mehr, sowohl Schwarz-Weiß- als auch Farbdrucke sind betroffen. Obwohl der Kunde weiterarbeiten kann, ist diese Einschränkung ärgerlich und benötigt eine Lösung.",
        "priority": "Hoch",
        "requestType": "Incident"
-     },
-     "requestType": "Service Request"
+     }
    },
    {
      "text": [
@@ -298,8 +285,7 @@
        "description": "Im Büro besteht seit dem Morgen eine Verbindungsstörung zum Server. Dies beeinträchtigt mehrere Mitarbeiter, da sie nicht auf die benötigten Daten zugreifen können.",
        "priority": "Hoch",
        "requestType": "Service Request"
-     },
-     "requestType": "Incident"
+     }
    },
    {
      "text": [
@@ -320,8 +306,7 @@
        "description": "Die betroffene Person kann keine E-Mails auf dem Smartphone empfangen oder senden. Obwohl sie arbeiten kann, ist der mobile E-Mail-Zugriff für sie wichtig und dringend benötigt.",
        "priority": "Mittel",
        "requestType": "Incident"
-     },
-     "requestType": "Service Request"
+     }
    },
    {
      "text": [
@@ -342,8 +327,7 @@
        "description": "Der Drucker in Büro 301 druckt seit gestern keine Dokumente mehr aus. Es erscheint eine Fehlermeldung auf dem Bildschirm. Wir benötigen dringend eine Lösung, da dies unsere Arbeitsfähigkeit stark beeinträchtigt.",
        "priority": "Hoch",
        "requestType": "Service Request"
-     },
-     "requestType": "Incident"
+     }
    },
    {
      "text": [
@@ -364,8 +348,7 @@
        "description": "Seit heute Morgen kann ich mich nicht mehr ins Firmennetzwerk einloggen. Ich erhalte eine Fehlermeldung, die besagt, dass die Verbindung fehlgeschlagen ist. Bitte helfen Sie mir schnellstmöglich, da ich dringend auf die Firmendaten zugreifen muss.",
        "priority": "Sehr Hoch",
        "requestType": "Service Request"
-     },
-     "requestType": "Service Request"
+     }
    },
    {
      "text": [
@@ -386,8 +369,7 @@
        "description": "Die Anwendungssoftware in der Entwicklungsabteilung stürzt in letzter Zeit häufig ab. Dies beeinträchtigt zwar nicht sofort die Arbeitsfähigkeit, ist jedoch äußerst störend. Wir benötigen dringend eine Lösung, um reibungslos arbeiten zu können.",
        "priority": "Hoch",
        "requestType": "Service Request"
-     },
-     "requestType": "Service Request"
+     }
    },
    {
      "text": [
@@ -408,8 +390,7 @@
        "description": "Seit heute Vormittag kann ich keine E-Mails mehr versenden. Die Meldung besagt, dass der Postausgangsserver nicht erreichbar ist. Da der E-Mail-Versand für unsere Vertriebstätigkeiten unerlässlich ist, benötigen wir dringend Hilfe.",
        "priority": "Sehr Hoch",
        "requestType": "Service Request"
-     },
-     "requestType": "Service Request"
+     }
    },
    {
      "text": [
@@ -430,8 +411,7 @@
        "description": "Ich habe mein Passwort für den Benutzeraccount vergessen und benötige dringend Hilfe beim Zurücksetzen. Ohne den Zugang zu meinem Account kann ich nicht auf wichtige Daten zugreifen. Bitte helfen Sie mir schnellstmöglich.",
        "priority": "Hoch",
        "requestType": "Incident"
-     },
-     "requestType": "Service Request"
+     }
    },
    {
      "text": [
@@ -452,8 +432,7 @@
        "description": "Die Mitarbeiterin hat Schwierigkeiten, sich mit dem WLAN zu verbinden. Trotz mehrerer Versuche erhält sie eine Fehlermeldung und kann nicht auf das Netzwerk zugreifen.",
        "priority": "Hoch",
        "requestType": "Incident"
-     },
-     "requestType": "Service Request"
+     }
    },
    {
      "text": [
@@ -474,8 +453,7 @@
        "description": "Der Drucker im Büro funktioniert seit gestern nicht mehr. Trotz eingeschaltetem Zustand druckt er keine Dokumente aus. Dies führt zu Produktivitätsverlusten.",
        "priority": "Hoch",
        "requestType": "Incident"
-     },
-     "requestType": "Service Request"
+     }
    },
    {
      "text": [
@@ -496,8 +474,7 @@
        "description": "Die Mitarbeiterin hat ihr Passwort vergessen und kann sich nicht mehr in ihr Konto einloggen. Sie benötigt dringend Hilfe, um das Passwort zurückzusetzen.",
        "priority": "Mittel",
        "requestType": "Service Request"
-     },
-     "requestType": "Incident"
+     }
    },
    {
      "text": [
@@ -518,8 +495,7 @@
        "description": "Der Mitarbeiter erhält ständig eine Benachrichtigung zur Durchführung eines Software-Updates, ist sich jedoch unsicher, wie es durchgeführt werden soll. Er benötigt Unterstützung bei diesem Vorgang.",
        "priority": "Mittel",
        "requestType": "Service Request"
-     },
-     "requestType": "Incident"
+     }
    },
    {
      "text": [
@@ -540,8 +516,7 @@
        "description": "Die Mitarbeiterin kann keine E-Mails senden oder empfangen, da ihr E-Mail-Account gesperrt zu sein scheint. Sie benötigt dringend Unterstützung, um das Problem zu lösen.",
        "priority": "Hoch",
        "requestType": "Incident"
-     },
-     "requestType": "Service Request"
+     }
    },
    {
      "text": [
@@ -563,8 +538,7 @@
        "description": "Der Mitarbeiter kann seit dem Morgen nicht mehr auf das interne Netzwerk zugreifen. Weder Server noch geteilte Laufwerke sind erreichbar.",
        "priority": "Hoch",
        "requestType": "Service Request"
-     },
-     "requestType": "Service Request"
+     }
    },
    {
      "text": [
@@ -585,8 +559,7 @@
        "description": "Die Druckaufträge resultieren in leeren Seiten, selbst nach Aktualisierung des Druckertreibers.",
        "priority": "Mittel",
        "requestType": "Incident"
-     },
-     "requestType": "Service Request"
+     }
    },
    {
      "text": [
@@ -608,8 +581,7 @@
        "description": "Trotz korrekter Verkabelung und Einstellungen gibt es keinen Ton aus den Lautsprechern.",
        "priority": "Mittel",
        "requestType": "Service Request"
-     },
-     "requestType": "Incident"
+     }
    },
    {
      "text": [
@@ -631,8 +603,7 @@
        "description": "Trotz Löschens alter E-Mails kann die betroffene Person weder senden noch empfangen. Es wird eine Postfach-Voll-Meldung angezeigt.",
        "priority": "Hoch",
        "requestType": "Service Request"
-     },
-     "requestType": "Service Request"
+     }
    },
    {
      "text": [
@@ -654,8 +625,7 @@
        "description": "Das Programm 'AnwendungXY' stürzt beim Öffnen sofort ab, selbst nach einem Neustart des Computers.",
        "priority": "Hoch",
        "requestType": "Incident"
-     },
-     "requestType": "Service Request"
+     }
    },
    {
      "text": [
@@ -676,8 +646,7 @@
        "description": "Der Benutzer hat Schwierigkeiten, sich mit dem WLAN zu verbinden. Es treten regelmäßig Verbindungsabbrüche auf, die die Arbeit beeinträchtigen.",
        "priority": "Hoch",
        "requestType": "Service Request"
-     },
-     "requestType": "Incident"
+     }
    },
    {
      "text": [
@@ -698,8 +667,7 @@
        "description": "Der Drucker gibt nur noch Schwarz-Weiß-Ausdrucke aus, obwohl Farbpatronen vorhanden und intakt sind. Dies beeinträchtigt die Qualität der Ausdrucke erheblich.",
        "priority": "Hoch",
        "requestType": "Incident"
-     },
-     "requestType": "Service Request"
+     }
    },
    {
      "text": [
@@ -720,8 +688,7 @@
        "description": "Nach dem fehlgeschlagenen Software-Update funktioniert die Anwendung nicht mehr richtig. Der Benutzer kann nicht mehr auf wichtige Funktionen zugreifen, was die Arbeit beeinträchtigt.",
        "priority": "Sehr Hoch",
        "requestType": "Service Request"
-     },
-     "requestType": "Service Request"
+     }
    },
    {
      "text": [
@@ -742,8 +709,7 @@
        "description": "Der Benutzer kann nicht auf seine E-Mails zugreifen, da die Anmeldung fehlschlägt. Eine Fehlermeldung wird angezeigt, die den Zugriff auf die E-Mail verhindert.",
        "priority": "Hoch",
        "requestType": "Service Request"
-     },
-     "requestType": "Service Request"
+     }
    },
    {
      "text": [
@@ -764,8 +730,7 @@
        "description": "Der Zugriff auf das Netzlaufwerk ist nicht möglich. Beim Versuch, Dateien zu öffnen, wird eine Fehlermeldung angezeigt, die den Zugriff blockiert.",
        "priority": "Mittel",
        "requestType": "Incident"
-     },
-     "requestType": "Incident"
+     }
    }
  ]
  
