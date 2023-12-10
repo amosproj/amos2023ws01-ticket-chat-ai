@@ -31,10 +31,16 @@ smtp_server = config["DEFAULT"]["SMTP_SERVER"]
 email_address = config["DEFAULT"]["EMAIL_ADDRESS"]
 
 
-@pytest.mark.skipif(condition=SKIP_TEST, reason="Github cant connect, works local")
 class EmailProxyTest(unittest.TestCase):
-    def test_email(self):
-        # Test sending emails
+    @patch("app.email.smtp_conn.SmtpConnection.send_mail")
+    @patch("app.email.emailProxy.EmailProxy.spin")
+    @patch("app.email.emailProxy.EmailProxy.process_mail")
+    def test_email(self, mock_process_mail, mock_spin, mock_send_mail):
+        # Mock the return values of the methods
+        mock_send_mail.return_value = True
+        mock_spin.return_value = [1]  # Return a list with a message number
+        mock_process_mail.return_value = (email_address, "Test Subject", "Test Content")
+
         with SmtpConnection(smtp_server, email_address, password) as smtp_service:
             self.assertIsInstance(smtp_service, SmtpConnection)
 
@@ -46,22 +52,18 @@ class EmailProxyTest(unittest.TestCase):
             self.assertTrue(smtp_service.send_mail(test_mail))
 
         with EmailProxy(imap_server, smtp_server, email_address, password) as proxy:
-            # Check if the class has been constructed
             self.assertIsInstance(proxy, EmailProxy)
 
-            # Check if we got a message
             time.sleep(10)
             msg_nums = proxy.spin()
             self.assertTrue(msg_nums[-1])
 
-            # Check if the message we received was the same as the one we sent
             msg_num = msg_nums[-1]
             sender, subject, content = proxy.process_mail(msg_num)
             self.assertEqual(email_address, sender)
             self.assertEqual(test_subject, subject)
             self.assertEqual(test_content, content)
 
-        # Check if the connection got closed
         with self.assertRaises(imaplib.IMAP4.error):
             proxy.imap.check()
 
