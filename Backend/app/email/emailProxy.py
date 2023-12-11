@@ -19,7 +19,7 @@ class EmailProxy:
     def __enter__(self):
         self.start_connection()
         self.smtp = sm.SmtpConnection(
-            self.smtp_server, self.email_address, self.email_password
+            self.smtp_server, self.email_address, self.email_password, logger
         )
         self.smtp.start_connection()
         return self

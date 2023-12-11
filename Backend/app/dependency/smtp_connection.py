@@ -1,8 +1,8 @@
 import configparser
 import os
-
 from dotenv import load_dotenv
-from app.email_router.smtp_conn import SmtpConnection
+from app.email.smtp_conn import SmtpConnection
+from app.util.logger import logger
 
 
 def get_smtp_connection():
@@ -14,4 +14,4 @@ def get_smtp_connection():
     smtp_server = config["DEFAULT"]["SMTP_SERVER"]
     email_address = config["DEFAULT"]["EMAIL_ADDRESS"]
 
-    return SmtpConnection(smtp_server, email_address, password)
+    return SmtpConnection(smtp_server, email_address, password, logger)

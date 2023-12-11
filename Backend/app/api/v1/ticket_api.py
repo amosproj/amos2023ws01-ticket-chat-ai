@@ -2,8 +2,8 @@ from bson import ObjectId
 from fastapi import APIRouter, HTTPException, UploadFile
 from fastapi.params import Depends, File, Path, Body
 from starlette import status
+from app.service.email_service import EmailService
 from app.dependency.email_service import get_email_service
-from app.email_router.email_service import EmailService
 
 from app.api.dto.text_input import TextInput
 from app.api.dto.ticket import Ticket
@@ -59,11 +59,14 @@ async def process_text(
 
     # send email with ticket as content
     if input.email:
-        subject_text = ""
-        print(created_ticket.id)
-        email_service.send_email(
-            input.email, subject_text + created_ticket.id, str(created_ticket)
+        subject_text = (
+            "Support Ticket Created - "
+            + created_ticket.title
+            + ". TicketID: "
+            + created_ticket.id
         )
+        print(created_ticket.id)
+        email_service.send_email(input.email, subject_text, str(created_ticket))
 
     return created_ticket
 

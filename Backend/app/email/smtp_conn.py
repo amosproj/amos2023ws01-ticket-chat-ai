@@ -1,16 +1,16 @@
 import smtplib
 import ssl
 import time
-from logger import logger
 
 
 class SmtpConnection:
     smtp = None
 
-    def __init__(self, smtp_server, email_address, email_password):
+    def __init__(self, smtp_server, email_address, email_password, logger):
         self.smtp_server = smtp_server
         self.email_address = email_address
         self.email_password = email_password
+        self.logger = logger
 
     def __enter__(self):
         self.start_connection()
@@ -23,10 +23,10 @@ class SmtpConnection:
             self.smtp.starttls(context=context)
 
             self.smtp.login(self.email_address, self.email_password)
-            logger.info("SMTP connection established")
+            self.logger.info("SMTP connection established")
             return True
         except smtplib.SMTPConnectError as e:
-            logger.exception(
+            self.logger.exception(
                 "Could not establish SMTP connection. Please restart the process."
             )
             raise Exception(
@@ -34,8 +34,8 @@ class SmtpConnection:
             )
 
     def try_reconnect(self):
-        logger.warning("Lost connection to the SMTP server")
-        logger.warning("Trying to reconnect SMTP in 5s")
+        self.logger.warning("Lost connection to the SMTP server")
+        self.logger.warning("Trying to reconnect SMTP in 5s")
         while True:
             try:
                 context = ssl.SSLContext(ssl.PROTOCOL_TLS)
@@ -43,17 +43,17 @@ class SmtpConnection:
                 self.smtp.starttls(context=context)
 
                 self.smtp.login(self.email_address, self.email_password)
-                logger.info("SMTP reconnection successful")
+                self.logger.info("SMTP reconnection successful")
                 return True
             except:
-                logger.warning("Trying to reconnect SMTP in 5s")
+                self.logger.warning("Trying to reconnect SMTP in 5s")
                 time.sleep(5)
 
     def send_mail(self, message):
         try:
             self.smtp.send_message(message)
         except smtplib.SMTPServerDisconnected as e:
-            logger.exception(f"SMTP error: {e}")
+            self.logger.exception(f"SMTP error: {e}")
             self.try_reconnect()
             self.send_mail(message)
 
@@ -61,5 +61,5 @@ class SmtpConnection:
 
     def __exit__(self, exc_type, exc_val, exc_tb):
         self.smtp.quit()
-        logger.info("SMTP connection closed")
+        self.logger.info("SMTP connection closed")
         return True
