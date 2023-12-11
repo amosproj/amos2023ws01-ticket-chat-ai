@@ -7,18 +7,17 @@ backend_path = os.path.abspath(os.path.join(os.path.dirname(__file__), "../../")
 # add the directory 'backend/app/email/' to sys.path
 sys.path.append(os.path.join(backend_path, "app", "email_router"))
 
-import pytest
+from app.email.smtp_conn import SmtpConnection
+from app.service.email_service import EmailService
 from unittest.mock import patch
-from app.email_router.smtp_conn import SmtpConnection
-from test.config.pytest import SKIP_TEST
-from app.email_router.email_service import EmailService
+from app.util.logger import logger
 
 
 class TestSmtpConnection:
     @patch("smtplib.SMTP")
     def test_send_mail(self, mock_smtp):
         smtp_connection = SmtpConnection(
-            "mock_smtp_server", "mock_email_address", "mock_email_password"
+            "mock_smtp_server", "mock_email_address", "mock_email_password", logger
         )
 
         smtp_connection.start_connection()
@@ -34,10 +33,11 @@ class TestEmailService:
     def smtp_connection(self, monkeypatch):
         # Mocking SmtpConnection
         class MockSmtpConnection:
-            def __init__(self, smtp_server, email_address, email_password):
+            def __init__(self, smtp_server, email_address, email_password, logger):
                 self.smtp_server = smtp_server
                 self.email_address = email_address
                 self.email_password = email_password
+                self.logger = logger
 
             def __enter__(self):
                 return self
@@ -56,12 +56,12 @@ class TestEmailService:
 
         # Apply the mock to SmtpConnection in the module
         monkeypatch.setattr(
-            "app.email_router.email_service.SmtpConnection", MockSmtpConnection
+            "app.service.email_service.SmtpConnection", MockSmtpConnection
         )
 
         # Return an instance of the mock
         return MockSmtpConnection(
-            "mock_smtp_server", "mock_email_address", "mock_email_password"
+            "mock_smtp_server", "mock_email_address", "mock_email_password", logger
         )
 
     def test_smtp_connection(self, monkeypatch):

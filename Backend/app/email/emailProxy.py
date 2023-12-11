@@ -1,6 +1,7 @@
+import email
 import imaplib
 import time
-import email
+
 import handle_mail as hm
 import smtp_conn as sm
 from logger import logger
@@ -64,6 +65,7 @@ class EmailProxy:
         """
         try:
             _, msg_nums = self.imap.search(None, "UNSEEN")
+            print("msg_nums: " + str(msg_nums))
 
         except imaplib.IMAP4.abort as e:
             logger.exception(f"IMAP error: {e}")
@@ -83,18 +85,12 @@ class EmailProxy:
 
             message = email.message_from_bytes(data[0][1])
             # specific processing
-            sender = message.get("From")
-            subject = message.get("Subject")
-            content = ""
-
-            for part in message.walk():
-                if part.get_content_type() == "text/plain":
-                    content += part.as_string()
-                    content += "\n"
-            return (sender, subject, content)
-        except:
+            return hm.process(message)
+        except imaplib.IMAP4.abort:
             self.try_reconnect()
             return self.process_mail(self, msgNum)
+        except Exception as e:
+            logger.exception(f"Unexpected error: {e}")
 
     def __exit__(self, exc_type, exc_val, exc_tb):
         """

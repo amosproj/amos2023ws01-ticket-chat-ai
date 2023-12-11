@@ -1,5 +1,5 @@
-import sys
 import os
+import sys
 
 # determine the absolute path to the 'backend' directory
 backend_path = os.path.abspath(os.path.join(os.path.dirname(__file__), "../../"))
@@ -9,6 +9,7 @@ sys.path.append(os.path.join(backend_path, "app", "email"))
 
 from app.email.main import run_proxy
 import app.email.handle_mail as hm
+
 import pytest
 import imaplib
 import smtplib
