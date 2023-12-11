@@ -1038,5 +1038,1063 @@
       "priority": "Hoch",
       "requestType": "Incident"
     }
+  },
+  {
+    "text": [
+      "Betreff: Probleme mit Software-Abo Kauf",
+      "Sehr geehrtes Support-Team,",
+      "ich habe Schwierigkeiten beim Abschluss eines Software-Abonnements.",
+      "Beim Versuch, die Lizenz für das Produkt 'TechSuite Pro' zu erwerben, erhalte ich eine Fehlermeldung.",
+      "Bitte helfen Sie mir dabei, das Abo erfolgreich abzuschließen.",
+      "Mit freundlichen Grüßen,",
+      "Anna Schmidt"
+    ],
+    "ticket": {
+      "title": "Fehler beim Software-Abo-Kauf",
+      "service": "",
+      "category": "Software-Abo-Kauf",
+      "keywords": [
+        "TechSuite Pro",
+        "Fehlermeldung",
+        "Abo",
+        "Kauf"
+      ],
+      "customerPriority": "Störung kann nicht arbeiten",
+      "affectedPerson": "Schmidt, Anna",
+      "description": "Beim Versuch, die Lizenz für das Produkt 'TechSuite Pro' zu erwerben, erhalte ich eine Fehlermeldung. Bitte helfen Sie mir dabei, das Abo erfolgreich abzuschließen.",
+      "priority": "Hoch",
+      "requestType": "Incident"
+    }
+  },
+  {
+    "text": [
+      "Betreff: Hilfe bei Software-Abo-Verlängerung",
+      "Hallo Support-Team,",
+      "ich benötige Unterstützung bei der Verlängerung meines Software-Abonnements.",
+      "Meine Lizenz für 'DesignMaster 2023' läuft in drei Tagen ab, und ich finde keine Option zur Verlängerung.",
+      "Können Sie mir bitte Anweisungen dazu geben?",
+      "Viele Grüße,",
+      "Markus Weber"
+    ],
+    "ticket": {
+      "title": "Unterstützung bei Abo-Verlängerung",
+      "service": "",
+      "category": "Software-Abo-Verlängerung",
+      "keywords": [
+        "DesignMaster 2023",
+        "Verlängerung",
+        "Abo",
+        "Unterstützung"
+      ],
+      "customerPriority": "Störung kann nicht arbeiten",
+      "affectedPerson": "Weber, Markus",
+      "description": "Meine Lizenz für 'DesignMaster 2023' läuft in drei Tagen ab, und ich finde keine Option zur Verlängerung. Können Sie mir bitte Anweisungen dazu geben?",
+      "priority": "Hoch",
+      "requestType": "Incident"
+    }
+  },
+  {
+    "text": [
+      "Betreff: Unklarheiten beim Software-Abo-Kauf",
+      "Sehr geehrtes Support-Team,",
+      "ich habe einige Fragen bezüglich des Kaufs eines Software-Abonnements.",
+      "Bevor ich mich für 'DataGuard Plus' entscheide, würde ich gerne mehr über die Funktionen und Preise erfahren.",
+      "Können Sie mir bitte weitere Informationen zukommen lassen?",
+      "Mit freundlichen Grüßen,",
+      "Julia Müller"
+    ],
+    "ticket": {
+      "title": "Anfrage zu Software-Abo-Details",
+      "service": "",
+      "category": "Software-Abo-Kauf",
+      "keywords": [
+        "DataGuard Plus",
+        "Fragen",
+        "Informationen",
+        "Preise"
+      ],
+      "customerPriority": "Störung aber kann arbeiten",
+      "affectedPerson": "Müller, Julia",
+      "description": "Bevor ich mich für 'DataGuard Plus' entscheide, würde ich gerne mehr über die Funktionen und Preise erfahren. Können Sie mir bitte weitere Informationen zukommen lassen?",
+      "priority": "Mittel",
+      "requestType": "Service Request"
+    }
+  },
+  {
+    "text": [
+      "Betreff: Software-Abo-Kauf abgeschlossen - Lizenz fehlt",
+      "Hallo Support-Team,",
+      "ich habe erfolgreich ein Software-Abonnement für 'CodeMaster Pro' abgeschlossen,",
+      "aber ich habe noch keine Lizenz erhalten. Ohne Lizenz kann ich die Software nicht nutzen.",
+      "Bitte senden Sie mir die Lizenzinformationen so schnell wie möglich.",
+      "Freundliche Grüße,",
+      "Thomas Fischer"
+    ],
+    "ticket": {
+      "title": "Fehlende Lizenz nach Abo-Kauf",
+      "service": "",
+      "category": "Software-Abo-Kauf",
+      "keywords": [
+        "CodeMaster Pro",
+        "Lizenz",
+        "Abonnement",
+        "Fehlend"
+      ],
+      "customerPriority": "Störung kann nicht arbeiten",
+      "affectedPerson": "Fischer, Thomas",
+      "description": "Ich habe erfolgreich ein Software-Abonnement für 'CodeMaster Pro' abgeschlossen, aber ich habe noch keine Lizenz erhalten. Ohne Lizenz kann ich die Software nicht nutzen. Bitte senden Sie mir die Lizenzinformationen so schnell wie möglich.",
+      "priority": "Hoch",
+      "requestType": "Incident"
+    }
+  },
+  {
+    "text": [
+      "Betreff: Software-Abo-Kauf fehlgeschlagen - Zahlungsproblem",
+      "Sehr geehrtes Support-Team,",
+      "ich habe versucht, ein Software-Abonnement für 'OfficeSuite 2023' zu kaufen,",
+      "aber die Zahlung wurde abgelehnt. Ich bin mir nicht sicher, was das Problem ist.",
+      "Können Sie mir bei der Lösung dieses Zahlungsproblems helfen?",
+      "Mit freundlichen Grüßen,",
+      "Sophie Wagner"
+    ],
+    "ticket": {
+      "title": "Zahlungsproblem beim Abo-Kauf",
+      "service": "",
+      "category": "Software-Abo-Kauf",
+      "keywords": [
+        "OfficeSuite 2023",
+        "Zahlungsproblem",
+        "Abo",
+        "Fehlgeschlagen"
+      ],
+      "customerPriority": "Störung kann nicht arbeiten",
+      "affectedPerson": "Wagner, Sophie",
+      "description": "Ich habe versucht, ein Software-Abonnement für 'OfficeSuite 2023' zu kaufen, aber die Zahlung wurde abgelehnt. Ich bin mir nicht sicher, was das Problem ist. Können Sie mir bei der Lösung dieses Zahlungsproblems helfen?",
+      "priority": "Hoch",
+      "requestType": "Incident"
+    }
+  },
+  {
+    "text": [
+      "Betreff: Defekter Laptop-Ladekabel",
+      "Sehr geehrtes Support-Team,",
+      "mein Laptop-Ladekabel funktioniert nicht mehr einwandfrei.",
+      "Es gibt einen Wackelkontakt, und der Laptop lädt nicht mehr auf.",
+      "Können Sie mir bitte ein Ersatzkabel zusenden?",
+      "Vielen Dank im Voraus.",
+      "Mit freundlichen Grüßen,",
+      "Dominik Becker"
+    ],
+    "ticket": {
+      "title": "Ersatz für defektes Laptop-Ladekabel",
+      "service": "",
+      "category": "Zubehör-Ersatz",
+      "keywords": [
+        "Laptop-Ladekabel",
+        "Defekt",
+        "Ersatz",
+        "Zusenden"
+      ],
+      "customerPriority": "Störung kann nicht arbeiten",
+      "affectedPerson": "Becker, Dominik",
+      "description": "Mein Laptop-Ladekabel funktioniert nicht mehr einwandfrei. Es gibt einen Wackelkontakt, und der Laptop lädt nicht mehr auf. Können Sie mir bitte ein Ersatzkabel zusenden?",
+      "priority": "Hoch",
+      "requestType": "Incident"
+    }
+  },
+  {
+    "text": [
+      "Betreff: Anfrage zu Ersatzteilen für mechanische Tastatur",
+      "Hallo Support-Team,",
+      "ich besitze die 'MechMaster 5000' mechanische Tastatur,",
+      "und leider ist eine Taste abgebrochen. Gibt es die Möglichkeit, Ersatzteile zu erhalten?",
+      "Bitte teilen Sie mir die Verfügbarkeit und den Bestellprozess mit.",
+      "Vielen Dank und beste Grüße,",
+      "Carina Schulz"
+    ],
+    "ticket": {
+      "title": "Anfrage zu Ersatzteilen für 'MechMaster 5000'",
+      "service": "",
+      "category": "Zubehör-Ersatz",
+      "keywords": [
+        "MechMaster 5000",
+        "Tastatur",
+        "Ersatzteile",
+        "Bestellprozess"
+      ],
+      "customerPriority": "Störung aber kann arbeiten",
+      "affectedPerson": "Schulz, Carina",
+      "description": "Ich besitze die 'MechMaster 5000' mechanische Tastatur, und leider ist eine Taste abgebrochen. Gibt es die Möglichkeit, Ersatzteile zu erhalten? Bitte teilen Sie mir die Verfügbarkeit und den Bestellprozess mit.",
+      "priority": "Mittel",
+      "requestType": "Service Request"
+    }
+  },
+  {
+    "text": [
+      "Betreff: Ersatz für defekte Maus - Modell 'SpeedClick 300'",
+      "Sehr geehrtes Support-Team,",
+      "meine 'SpeedClick 300' Maus ist defekt, und ich benötige dringend Ersatz.",
+      "Die rechte Maustaste reagiert nicht mehr.",
+      "Können Sie mir bitte helfen, eine Ersatzmaus zu erhalten?",
+      "Mit freundlichen Grüßen,",
+      "Tom Schäfer"
+    ],
+    "ticket": {
+      "title": "Ersatz für defekte 'SpeedClick 300' Maus",
+      "service": "",
+      "category": "Zubehör-Ersatz",
+      "keywords": [
+        "SpeedClick 300",
+        "Maus",
+        "Defekt",
+        "Ersatz"
+      ],
+      "customerPriority": "Störung kann nicht arbeiten",
+      "affectedPerson": "Schäfer, Tom",
+      "description": "Meine 'SpeedClick 300' Maus ist defekt, und ich benötige dringend Ersatz. Die rechte Maustaste reagiert nicht mehr. Können Sie mir bitte helfen, eine Ersatzmaus zu erhalten?",
+      "priority": "Hoch",
+      "requestType": "Incident"
+    }
+  },
+  {
+    "text": [
+      "Betreff: Ersatz für beschädigtes USB-Kabel",
+      "Hallo Support-Team,",
+      "das mitgelieferte USB-Kabel meines 'UltraDrive 2000' externe Festplattengehäuses ist beschädigt.",
+      "Ich benötige dringend ein Ersatzkabel, um auf meine Daten zugreifen zu können.",
+      "Können Sie mir bitte ein neues USB-Kabel zusenden?",
+      "Vielen Dank und beste Grüße,",
+      "Lena Mayer"
+    ],
+    "ticket": {
+      "title": "Ersatz für beschädigtes USB-Kabel ('UltraDrive 2000')",
+      "service": "",
+      "category": "Zubehör-Ersatz",
+      "keywords": [
+        "UltraDrive 2000",
+        "USB-Kabel",
+        "Beschädigt",
+        "Ersatz"
+      ],
+      "customerPriority": "Störung kann nicht arbeiten",
+      "affectedPerson": "Mayer, Lena",
+      "description": "Das mitgelieferte USB-Kabel meines 'UltraDrive 2000' externen Festplattengehäuses ist beschädigt. Ich benötige dringend ein Ersatzkabel, um auf meine Daten zugreifen zu können. Können Sie mir bitte ein neues USB-Kabel zusenden?",
+      "priority": "Hoch",
+      "requestType": "Incident"
+    }
+  },
+  {
+    "text": [
+      "Betreff: Ersatzakku für 'PowerBoost 5000' Powerbank",
+      "Sehr geehrtes Support-Team,",
+      "der Akku meiner 'PowerBoost 5000' Powerbank hält nicht mehr ausreichend.",
+      "Ich vermute, dass es an einem nachlassenden Akku liegt.",
+      "Könnten Sie mir bitte Informationen zur Bestellung eines Ersatzakkus zukommen lassen?",
+      "Mit freundlichen Grüßen,",
+      "Jan Meier"
+    ],
+    "ticket": {
+      "title": "Bestellung Ersatzakku für 'PowerBoost 5000' Powerbank",
+      "service": "",
+      "category": "Zubehör-Ersatz",
+      "keywords": [
+        "PowerBoost 5000",
+        "Akku",
+        "Ersatz",
+        "Bestellung"
+      ],
+      "customerPriority": "Störung aber kann arbeiten",
+      "affectedPerson": "Meier, Jan",
+      "description": "Der Akku meiner 'PowerBoost 5000' Powerbank hält nicht mehr ausreichend. Ich vermute, dass es an einem nachlassenden Akku liegt. Könnten Sie mir bitte Informationen zur Bestellung eines Ersatzakkus zukommen lassen?",
+      "priority": "Mittel",
+      "requestType": "Service Request"
+    }
+  },
+  {
+    "text": [
+      "Betreff: Defekte Ohrmuschel am 'AudioPro 300' Kopfhörer",
+      "Hallo Support-Team,",
+      "ich habe festgestellt, dass die linke Ohrmuschel meines 'AudioPro 300' Kopfhörers nicht mehr funktioniert.",
+      "Es kommt kein Ton mehr aus dieser Seite. Können Sie mir bitte bei der Lösung dieses Problems helfen?",
+      "Vielen Dank und beste Grüße,",
+      "Nina Schneider"
+    ],
+    "ticket": {
+      "title": "Defekte Ohrmuschel am 'AudioPro 300' Kopfhörer",
+      "service": "",
+      "category": "Kopfhörer-Probleme",
+      "keywords": [
+        "AudioPro 300",
+        "Ohrmuschel",
+        "Defekt",
+        "Tonprobleme"
+      ],
+      "customerPriority": "Störung kann nicht arbeiten",
+      "affectedPerson": "Schneider, Nina",
+      "description": "Ich habe festgestellt, dass die linke Ohrmuschel meines 'AudioPro 300' Kopfhörers nicht mehr funktioniert. Es kommt kein Ton mehr aus dieser Seite. Können Sie mir bitte bei der Lösung dieses Problems helfen?",
+      "priority": "Hoch",
+      "requestType": "Incident"
+    }
+  },
+  {
+    "text": [
+      "Betreff: Rauschen bei Verwendung der 'SoundIsolate 500' Kopfhörer",
+      "Sehr geehrtes Support-Team,",
+      "ich habe festgestellt, dass meine 'SoundIsolate 500' Kopfhörer beim Abspielen von Musik ein störendes Rauschen erzeugen.",
+      "Können Sie mir bitte Anweisungen zur Behebung dieses Problems geben?",
+      "Vielen Dank und freundliche Grüße,",
+      "Maximilian Wagner"
+    ],
+    "ticket": {
+      "title": "Rauschen bei 'SoundIsolate 500' Kopfhörern",
+      "service": "",
+      "category": "Kopfhörer-Probleme",
+      "keywords": [
+        "SoundIsolate 500",
+        "Rauschen",
+        "Musik",
+        "Tonprobleme"
+      ],
+      "customerPriority": "Störung aber kann arbeiten",
+      "affectedPerson": "Wagner, Maximilian",
+      "description": "Ich habe festgestellt, dass meine 'SoundIsolate 500' Kopfhörer beim Abspielen von Musik ein störendes Rauschen erzeugen. Können Sie mir bitte Anweisungen zur Behebung dieses Problems geben?",
+      "priority": "Mittel",
+      "requestType": "Service Request"
+    }
+  },
+  {
+    "text": [
+      "Betreff: 'BassBoom 700' Kopfhörer - Verbindungsprobleme",
+      "Hallo Support-Team,",
+      "meine 'BassBoom 700' Kopfhörer haben Schwierigkeiten, sich mit meinem Smartphone zu verbinden.",
+      "Trotz mehrerer Versuche bleibt die Verbindung instabil. Können Sie mir bitte bei der Fehlerbehebung helfen?",
+      "Danke im Voraus und Grüße,",
+      "Isabella Richter"
+    ],
+    "ticket": {
+      "title": "Verbindungsprobleme mit 'BassBoom 700' Kopfhörern",
+      "service": "",
+      "category": "Kopfhörer-Probleme",
+      "keywords": [
+        "BassBoom 700",
+        "Verbindungsprobleme",
+        "Bluetooth",
+        "Fehlerbehebung"
+      ],
+      "customerPriority": "Störung kann nicht arbeiten",
+      "affectedPerson": "Richter, Isabella",
+      "description": "Meine 'BassBoom 700' Kopfhörer haben Schwierigkeiten, sich mit meinem Smartphone zu verbinden. Trotz mehrerer Versuche bleibt die Verbindung instabil. Können Sie mir bitte bei der Fehlerbehebung helfen?",
+      "priority": "Hoch",
+      "requestType": "Incident"
+    }
+  },
+  {
+    "text": [
+      "Betreff: 'WireFree 9000' Kopfhörer - Akku entlädt sich schnell",
+      "Sehr geehrtes Support-Team,",
+      "ich habe festgestellt, dass der Akku meiner 'WireFree 9000' Kopfhörer sich ungewöhnlich schnell entlädt.",
+      "Selbst nach vollständiger Aufladung sind die Kopfhörer nach kurzer Zeit wieder leer. Können Sie mir dabei helfen?",
+      "Mit freundlichen Grüßen,",
+      "Julian Becker"
+    ],
+    "ticket": {
+      "title": "Schnelle Entladung des Akkus bei 'WireFree 9000' Kopfhörern",
+      "service": "",
+      "category": "Kopfhörer-Probleme",
+      "keywords": [
+        "WireFree 9000",
+        "Akku",
+        "Entladung",
+        "Aufladung"
+      ],
+      "customerPriority": "Störung kann nicht arbeiten",
+      "affectedPerson": "Becker, Julian",
+      "description": "Ich habe festgestellt, dass der Akku meiner 'WireFree 9000' Kopfhörer sich ungewöhnlich schnell entlädt. Selbst nach vollständiger Aufladung sind die Kopfhörer nach kurzer Zeit wieder leer. Können Sie mir dabei helfen?",
+      "priority": "Hoch",
+      "requestType": "Incident"
+    }
+  },
+  {
+    "text": [
+      "Betreff: 'NoiseBlocker 600' Kopfhörer - Stummschaltung funktioniert nicht",
+      "Hallo Support-Team,",
+      "bei meinen 'NoiseBlocker 600' Kopfhörern funktioniert die Stummschaltung nicht mehr.",
+      "Selbst wenn ich den Schalter betätige, bleibt der Ton aktiv. Können Sie mir bei der Lösung dieses Problems helfen?",
+      "Vielen Dank im Voraus und Grüße,",
+      "Sophie Müller"
+    ],
+    "ticket": {
+      "title": "Stummschaltung bei 'NoiseBlocker 600' Kopfhörern funktioniert nicht",
+      "service": "",
+      "category": "Kopfhörer-Probleme",
+      "keywords": [
+        "NoiseBlocker 600",
+        "Stummschaltung",
+        "Tonprobleme",
+        "Fehlerbehebung"
+      ],
+      "customerPriority": "Störung aber kann arbeiten",
+      "affectedPerson": "Müller, Sophie",
+      "description": "Bei meinen 'NoiseBlocker 600' Kopfhörern funktioniert die Stummschaltung nicht mehr. Selbst wenn ich den Schalter betätige, bleibt der Ton aktiv. Können Sie mir bei der Lösung dieses Problems helfen?",
+      "priority": "Mittel",
+      "requestType": "Service Request"
+    }
+  },
+  {
+    "text": [
+      "Betreff: Startprobleme nach Windows Update",
+      "Hallo Support-Team,",
+      "nach einem kürzlichen Windows Update habe ich Schwierigkeiten beim Start meines Computers.",
+      "Der Bildschirm bleibt schwarz, und es dauert sehr lange, bis sich etwas tut.",
+      "Können Sie mir bitte bei der Lösung dieses Startproblems helfen?",
+      "Vielen Dank und freundliche Grüße,",
+      "David Klein"
+    ],
+    "ticket": {
+      "title": "Startprobleme nach Windows Update",
+      "service": "",
+      "category": "Windows-Betriebssystem",
+      "keywords": [
+        "Startprobleme",
+        "Windows Update",
+        "Schwarzer Bildschirm",
+        "Lösung"
+      ],
+      "customerPriority": "Störung kann nicht arbeiten",
+      "affectedPerson": "Klein, David",
+      "description": "Nach einem kürzlichen Windows Update habe ich Schwierigkeiten beim Start meines Computers. Der Bildschirm bleibt schwarz, und es dauert sehr lange, bis sich etwas tut. Können Sie mir bitte bei der Lösung dieses Startproblems helfen?",
+      "priority": "Hoch",
+      "requestType": "Incident"
+    }
+  },
+  {
+    "text": [
+      "Betreff: Fehlermeldung 'Bluescreen' nach Windows Start",
+      "Sehr geehrtes Support-Team,",
+      "nach dem Hochfahren meines PCs erhalte ich regelmäßig einen 'Bluescreen' mit einer Fehlermeldung.",
+      "Die genaue Fehlermeldung lautet 'PAGE_FAULT_IN_NONPAGED_AREA'.",
+      "Können Sie mir bitte erklären, wie ich dieses Problem beheben kann?",
+      "Mit freundlichen Grüßen,",
+      "Anna Mayer"
+    ],
+    "ticket": {
+      "title": "Bluescreen mit Fehlermeldung 'PAGE_FAULT_IN_NONPAGED_AREA'",
+      "service": "",
+      "category": "Windows-Betriebssystem",
+      "keywords": [
+        "Bluescreen",
+        "Fehlermeldung",
+        "PAGE_FAULT_IN_NONPAGED_AREA",
+        "Fehlerbehebung"
+      ],
+      "customerPriority": "Störung kann nicht arbeiten",
+      "affectedPerson": "Mayer, Anna",
+      "description": "Nach dem Hochfahren meines PCs erhalte ich regelmäßig einen 'Bluescreen' mit einer Fehlermeldung. Die genaue Fehlermeldung lautet 'PAGE_FAULT_IN_NONPAGED_AREA'. Können Sie mir bitte erklären, wie ich dieses Problem beheben kann?",
+      "priority": "Hoch",
+      "requestType": "Incident"
+    }
+  },
+  {
+    "text": [
+      "Betreff: Probleme mit Windows-Update Installation",
+      "Hallo Support-Team,",
+      "ich habe Schwierigkeiten beim Installieren von Windows-Updates auf meinem Computer.",
+      "Die Installation bleibt bei einem bestimmten Update immer hängen.",
+      "Können Sie mir bitte Anweisungen zur Lösung dieses Update-Problems geben?",
+      "Vielen Dank im Voraus und beste Grüße,",
+      "Thomas Schuster"
+    ],
+    "ticket": {
+      "title": "Probleme mit Windows-Update Installation",
+      "service": "",
+      "category": "Windows-Betriebssystem",
+      "keywords": [
+        "Windows-Update",
+        "Installation",
+        "Update-Probleme",
+        "Lösung"
+      ],
+      "customerPriority": "Störung aber kann arbeiten",
+      "affectedPerson": "Schuster, Thomas",
+      "description": "Ich habe Schwierigkeiten beim Installieren von Windows-Updates auf meinem Computer. Die Installation bleibt bei einem bestimmten Update immer hängen. Können Sie mir bitte Anweisungen zur Lösung dieses Update-Problems geben?",
+      "priority": "Mittel",
+      "requestType": "Service Request"
+    }
+  },
+  {
+    "text": [
+      "Betreff: 'Windows Explorer' reagiert nicht",
+      "Sehr geehrtes Support-Team,",
+      "ich habe das Problem, dass der 'Windows Explorer' nicht mehr reagiert.",
+      "Nach dem Start dauert es nur wenige Minuten, bis er abstürzt.",
+      "Können Sie mir bitte bei der Fehlerbehebung dieses Problems helfen?",
+      "Mit freundlichen Grüßen,",
+      "Sophie Becker"
+    ],
+    "ticket": {
+      "title": " 'Windows Explorer' reagiert nicht",
+      "service": "",
+      "category": "Windows-Betriebssystem",
+      "keywords": [
+        "Windows Explorer",
+        "Absturz",
+        "Fehlerbehebung",
+        "Nicht reagieren"
+      ],
+      "customerPriority": "Störung kann nicht arbeiten",
+      "affectedPerson": "Becker, Sophie",
+      "description": "Ich habe das Problem, dass der 'Windows Explorer' nicht mehr reagiert. Nach dem Start dauert es nur wenige Minuten, bis er abstürzt. Können Sie mir bitte bei der Fehlerbehebung dieses Problems helfen?",
+      "priority": "Hoch",
+      "requestType": "Incident"
+    }
+  },
+  {
+    "text": [
+      "Betreff: 'Windows 10' Aktivierungsschlüssel ungültig",
+      "Hallo Support-Team,",
+      "ich erhalte eine Meldung, dass mein 'Windows 10' Aktivierungsschlüssel ungültig ist.",
+      "Ich habe mein Betriebssystem legal erworben und aktiviert. Können Sie mir bitte helfen, diesen Schlüssel zu überprüfen und das Problem zu beheben?",
+      "Vielen Dank und beste Grüße,",
+      "Dominik Schulz"
+    ],
+    "ticket": {
+      "title": "Aktivierungsschlüssel-Probleme bei 'Windows 10'",
+      "service": "",
+      "category": "Windows-Betriebssystem",
+      "keywords": [
+        "Windows 10",
+        "Aktivierungsschlüssel",
+        "Ungültig",
+        "Überprüfung"
+      ],
+      "customerPriority": "Störung kann nicht arbeiten",
+      "affectedPerson": "Schulz, Dominik",
+      "description": "Ich erhalte eine Meldung, dass mein 'Windows 10' Aktivierungsschlüssel ungültig ist. Ich habe mein Betriebssystem legal erworben und aktiviert. Können Sie mir bitte helfen, diesen Schlüssel zu überprüfen und das Problem zu beheben?",
+      "priority": "Hoch",
+      "requestType": "Incident"
+    }
+  },
+  {
+    "text": [
+      "Betreff: 'macOS Monterey' Update schlägt fehl",
+      "Hallo Support-Team,",
+      "ich habe versucht, mein MacBook auf 'macOS Monterey' zu aktualisieren,",
+      "doch das Update schlägt ständig fehl. Es erscheint eine Fehlermeldung.",
+      "Können Sie mir bitte bei der Behebung dieses Update-Problems helfen?",
+      "Vielen Dank und freundliche Grüße,",
+      "Laura Schneider"
+    ],
+    "ticket": {
+      "title": "'macOS Monterey' Update schlägt fehl",
+      "service": "",
+      "category": "macOS-Betriebssystem",
+      "keywords": [
+        "macOS Monterey",
+        "Update-Fehler",
+        "Fehlermeldung",
+        "Behebung"
+      ],
+      "customerPriority": "Störung kann nicht arbeiten",
+      "affectedPerson": "Schneider, Laura",
+      "description": "Ich habe versucht, mein MacBook auf 'macOS Monterey' zu aktualisieren, doch das Update schlägt ständig fehl. Es erscheint eine Fehlermeldung. Können Sie mir bitte bei der Behebung dieses Update-Problems helfen?",
+      "priority": "Hoch",
+      "requestType": "Incident"
+    }
+  },
+  {
+    "text": [
+      "Betreff: 'Finder' reagiert nicht mehr",
+      "Sehr geehrtes Support-Team,",
+      "seit kurzem habe ich das Problem, dass der 'Finder' auf meinem Mac nicht mehr reagiert.",
+      "Ich kann keine Dateien öffnen oder verschieben. Können Sie mir bei der Fehlerbehebung helfen?",
+      "Danke im Voraus und Grüße,",
+      "Benjamin Meier"
+    ],
+    "ticket": {
+      "title": "'Finder' reagiert nicht mehr",
+      "service": "",
+      "category": "macOS-Betriebssystem",
+      "keywords": [
+        "Finder",
+        "Nicht reagieren",
+        "Fehlerbehebung",
+        "Dateiverwaltung"
+      ],
+      "customerPriority": "Störung kann nicht arbeiten",
+      "affectedPerson": "Meier, Benjamin",
+      "description": "Seit kurzem habe ich das Problem, dass der 'Finder' auf meinem Mac nicht mehr reagiert. Ich kann keine Dateien öffnen oder verschieben. Können Sie mir bei der Fehlerbehebung helfen?",
+      "priority": "Hoch",
+      "requestType": "Incident"
+    }
+  },
+  {
+    "text": [
+      "Betreff: WLAN-Verbindungsprobleme nach 'macOS Big Sur' Update",
+      "Hallo Support-Team,",
+      "nach dem Update auf 'macOS Big Sur' habe ich Probleme mit meiner WLAN-Verbindung.",
+      "Die Verbindung ist instabil und bricht oft ab. Können Sie mir bei der Lösung dieses Problems helfen?",
+      "Vielen Dank und beste Grüße,",
+      "Sophie Richter"
+    ],
+    "ticket": {
+      "title": "WLAN-Verbindungsprobleme nach 'macOS Big Sur' Update",
+      "service": "",
+      "category": "macOS-Betriebssystem",
+      "keywords": [
+        "WLAN",
+        "Verbindungsprobleme",
+        "macOS Big Sur",
+        "Fehlerbehebung"
+      ],
+      "customerPriority": "Störung kann nicht arbeiten",
+      "affectedPerson": "Richter, Sophie",
+      "description": "Nach dem Update auf 'macOS Big Sur' habe ich Probleme mit meiner WLAN-Verbindung. Die Verbindung ist instabil und bricht oft ab. Können Sie mir bei der Lösung dieses Problems helfen?",
+      "priority": "Hoch",
+      "requestType": "Incident"
+    }
+  },
+  {
+    "text": [
+      "Betreff: 'Time Machine' Backup schlägt fehl",
+      "Sehr geehrtes Support-Team,",
+      "mein 'Time Machine' Backup schlägt seit Kurzem fehl. Es wird die Meldung 'Backup konnte nicht abgeschlossen werden' angezeigt.",
+      "Können Sie mir bitte dabei helfen, das Problem zu identifizieren und zu beheben?",
+      "Mit freundlichen Grüßen,",
+      "Lukas Fischer"
+    ],
+    "ticket": {
+      "title": "'Time Machine' Backup schlägt fehl",
+      "service": "",
+      "category": "macOS-Betriebssystem",
+      "keywords": [
+        "Time Machine",
+        "Backup-Fehler",
+        "Fehlermeldung",
+        "Behebung"
+      ],
+      "customerPriority": "Störung aber kann arbeiten",
+      "affectedPerson": "Fischer, Lukas",
+      "description": "Mein 'Time Machine' Backup schlägt seit Kurzem fehl. Es wird die Meldung 'Backup konnte nicht abgeschlossen werden' angezeigt. Können Sie mir bitte dabei helfen, das Problem zu identifizieren und zu beheben?",
+      "priority": "Mittel",
+      "requestType": "Service Request"
+    }
+  },
+  {
+    "text": [
+      "Betreff: 'macOS Catalina' Startprobleme nach Softwareinstallation",
+      "Hallo Support-Team,",
+      "nach der Installation einer neuen Software auf meinem MacBook startet 'macOS Catalina' nicht mehr korrekt.",
+      "Es bleibt beim Apple-Logo hängen. Können Sie mir bei der Fehlerbehebung helfen?",
+      "Vielen Dank im Voraus und freundliche Grüße,",
+      "Marta Schmitt"
+    ],
+    "ticket": {
+      "title": "'macOS Catalina' Startprobleme nach Softwareinstallation",
+      "service": "",
+      "category": "macOS-Betriebssystem",
+      "keywords": [
+        "macOS Catalina",
+        "Startprobleme",
+        "Softwareinstallation",
+        "Fehlerbehebung"
+      ],
+      "customerPriority": "Störung kann nicht arbeiten",
+      "affectedPerson": "Schmitt, Marta",
+      "description": "Nach der Installation einer neuen Software auf meinem MacBook startet 'macOS Catalina' nicht mehr korrekt. Es bleibt beim Apple-Logo hängen. Können Sie mir bei der Fehlerbehebung helfen?",
+      "priority": "Hoch",
+      "requestType": "Incident"
+    }
+  },
+  {
+    "text": [
+      "Betreff: 'Ubuntu 20.04' Startprobleme nach Kernel-Update",
+      "Hallo Support-Team,",
+      "nach dem letzten Kernel-Update auf 'Ubuntu 20.04' startet mein System nicht mehr richtig.",
+      "Es erscheint eine Fehlermeldung während des Bootvorgangs. Können Sie mir bitte bei der Behebung dieses Startproblems helfen?",
+      "Vielen Dank und freundliche Grüße,",
+      "Daniel Weber"
+    ],
+    "ticket": {
+      "title": "'Ubuntu 20.04' Startprobleme nach Kernel-Update",
+      "service": "",
+      "category": "Ubuntu-Betriebssystem",
+      "keywords": [
+        "Ubuntu 20.04",
+        "Startprobleme",
+        "Kernel-Update",
+        "Fehlerbehebung"
+      ],
+      "customerPriority": "Störung kann nicht arbeiten",
+      "affectedPerson": "Weber, Daniel",
+      "description": "Nach dem letzten Kernel-Update auf 'Ubuntu 20.04' startet mein System nicht mehr richtig. Es erscheint eine Fehlermeldung während des Bootvorgangs. Können Sie mir bitte bei der Behebung dieses Startproblems helfen?",
+      "priority": "Hoch",
+      "requestType": "Incident"
+    }
+  },
+  {
+    "text": [
+      "Betreff: 'Ubuntu 22.04' WLAN-Verbindungsprobleme nach Installation",
+      "Sehr geehrtes Support-Team,",
+      "nach der Installation von 'Ubuntu 22.04' habe ich Schwierigkeiten mit meiner WLAN-Verbindung.",
+      "Die Verbindung ist instabil und bricht häufig ab. Können Sie mir bei der Fehlerbehebung helfen?",
+      "Danke im Voraus und Grüße,",
+      "Lena Fischer"
+    ],
+    "ticket": {
+      "title": "'Ubuntu 22.04' WLAN-Verbindungsprobleme nach Installation",
+      "service": "",
+      "category": "Ubuntu-Betriebssystem",
+      "keywords": [
+        "Ubuntu 22.04",
+        "WLAN",
+        "Verbindungsprobleme",
+        "Fehlerbehebung"
+      ],
+      "customerPriority": "Störung kann nicht arbeiten",
+      "affectedPerson": "Fischer, Lena",
+      "description": "Nach der Installation von 'Ubuntu 22.04' habe ich Schwierigkeiten mit meiner WLAN-Verbindung. Die Verbindung ist instabil und bricht häufig ab. Können Sie mir bei der Fehlerbehebung helfen?",
+      "priority": "Hoch",
+      "requestType": "Incident"
+    }
+  },
+  {
+    "text": [
+      "Betreff: 'Ubuntu 21.10' Grafiktreiber-Probleme nach Update",
+      "Hallo Support-Team,",
+      "nach einem kürzlichen Systemupdate auf 'Ubuntu 21.10' funktioniert mein Grafiktreiber nicht mehr korrekt.",
+      "Der Bildschirm zeigt Artefakte, und die Auflösung ist falsch eingestellt. Können Sie mir bei der Lösung dieses Grafiktreiber-Problems helfen?",
+      "Vielen Dank und beste Grüße,",
+      "Michaela Richter"
+    ],
+    "ticket": {
+      "title": "'Ubuntu 21.10' Grafiktreiber-Probleme nach Update",
+      "service": "",
+      "category": "Ubuntu-Betriebssystem",
+      "keywords": [
+        "Ubuntu 21.10",
+        "Grafiktreiber",
+        "Artefakte",
+        "Auflösung"
+      ],
+      "customerPriority": "Störung kann nicht arbeiten",
+      "affectedPerson": "Richter, Michaela",
+      "description": "Nach einem kürzlichen Systemupdate auf 'Ubuntu 21.10' funktioniert mein Grafiktreiber nicht mehr korrekt. Der Bildschirm zeigt Artefakte, und die Auflösung ist falsch eingestellt. Können Sie mir bei der Lösung dieses Grafiktreiber-Problems helfen?",
+      "priority": "Hoch",
+      "requestType": "Incident"
+    }
+  },
+  {
+    "text": [
+      "Betreff: 'Ubuntu 18.04' Soundprobleme nach Softwareinstallation",
+      "Sehr geehrtes Support-Team,",
+      "nach der Installation einer neuen Software auf meinem 'Ubuntu 18.04'-System funktioniert der Sound nicht mehr richtig.",
+      "Es gibt Störungen und Aussetzer. Können Sie mir bei der Fehlerbehebung dieses Soundproblems helfen?",
+      "Mit freundlichen Grüßen,",
+      "Jan Schneider"
+    ],
+    "ticket": {
+      "title": "'Ubuntu 18.04' Soundprobleme nach Softwareinstallation",
+      "service": "",
+      "category": "Ubuntu-Betriebssystem",
+      "keywords": [
+        "Ubuntu 18.04",
+        "Soundprobleme",
+        "Softwareinstallation",
+        "Fehlerbehebung"
+      ],
+      "customerPriority": "Störung aber kann arbeiten",
+      "affectedPerson": "Schneider, Jan",
+      "description": "Nach der Installation einer neuen Software auf meinem 'Ubuntu 18.04'-System funktioniert der Sound nicht mehr richtig. Es gibt Störungen und Aussetzer. Können Sie mir bei der Fehlerbehebung dieses Soundproblems helfen?",
+      "priority": "Mittel",
+      "requestType": "Service Request"
+    }
+  },
+  {
+    "text": [
+      "Betreff: 'Ubuntu Server 20.04' Netzwerkprobleme nach Update",
+      "Hallo Support-Team,",
+      "nach einem kürzlichen Update meines 'Ubuntu Server 20.04' habe ich Probleme mit der Netzwerkverbindung.",
+      "Der Server ist nicht mehr erreichbar. Können Sie mir bei der Fehlerbehebung dieses Netzwerkproblems helfen?",
+      "Vielen Dank und beste Grüße,",
+      "Philipp Becker"
+    ],
+    "ticket": {
+      "title": "'Ubuntu Server 20.04' Netzwerkprobleme nach Update",
+      "service": "",
+      "category": "Ubuntu-Betriebssystem",
+      "keywords": [
+        "Ubuntu Server 20.04",
+        "Netzwerkprobleme",
+        "Update",
+        "Fehlerbehebung"
+      ],
+      "customerPriority": "Störung kann nicht arbeiten",
+      "affectedPerson": "Becker, Philipp",
+      "description": "Nach einem kürzlichen Update meines 'Ubuntu Server 20.04' habe ich Probleme mit der Netzwerkverbindung. Der Server ist nicht mehr erreichbar. Können Sie mir bei der Fehlerbehebung dieses Netzwerkproblems helfen?",
+      "priority": "Hoch",
+      "requestType": "Incident"
+    }
+  },
+  {
+    "text": [
+      "Betreff: 'Android' Update führt zu App-Abstürzen",
+      "Hallo Support-Team,",
+      "nach dem neuesten 'Android'-Update stürzen mehrere Apps auf meinem Smartphone ständig ab.",
+      "Können Sie mir bitte bei der Lösung dieses Problems helfen?",
+      "Vielen Dank und freundliche Grüße,",
+      "Laura Müller"
+    ],
+    "ticket": {
+      "title": "'Android' Update führt zu App-Abstürzen",
+      "service": "",
+      "category": "Handy-Software",
+      "keywords": [
+        "Android",
+        "Update",
+        "App-Abstürze",
+        "Fehlerbehebung"
+      ],
+      "customerPriority": "Störung kann nicht arbeiten",
+      "affectedPerson": "Müller, Laura",
+      "description": "Nach dem neuesten 'Android'-Update stürzen mehrere Apps auf meinem Smartphone ständig ab. Können Sie mir bitte bei der Lösung dieses Problems helfen?",
+      "priority": "Hoch",
+      "requestType": "Incident"
+    }
+  },
+  {
+    "text": [
+      "Betreff: 'iOS' Update verursacht Performance-Probleme",
+      "Sehr geehrtes Support-Team,",
+      "nach dem letzten 'iOS'-Update ist die Leistung meines iPhones spürbar gesunken.",
+      "Apps öffnen sich langsamer, und die Reaktionszeit ist schlechter geworden.",
+      "Können Sie mir bitte bei der Optimierung der Leistung helfen?",
+      "Mit freundlichen Grüßen,",
+      "Tom Becker"
+    ],
+    "ticket": {
+      "title": "'iOS' Update verursacht Performance-Probleme",
+      "service": "",
+      "category": "Handy-Software",
+      "keywords": [
+        "iOS",
+        "Update",
+        "Performance-Probleme",
+        "Optimierung"
+      ],
+      "customerPriority": "Störung kann nicht arbeiten",
+      "affectedPerson": "Becker, Tom",
+      "description": "Nach dem letzten 'iOS'-Update ist die Leistung meines iPhones spürbar gesunken. Apps öffnen sich langsamer, und die Reaktionszeit ist schlechter geworden. Können Sie mir bitte bei der Optimierung der Leistung helfen?",
+      "priority": "Hoch",
+      "requestType": "Incident"
+    }
+  },
+  {
+    "text": [
+      "Betreff: 'Samsung Galaxy' Überhitzungsproblem",
+      "Hallo Support-Team,",
+      "mein 'Samsung Galaxy' wird ungewöhnlich heiß, besonders während der Nutzung von bestimmten Apps.",
+      "Können Sie mir bitte Tipps zur Behebung dieses Überhitzungsproblems geben?",
+      "Vielen Dank im Voraus und beste Grüße,",
+      "Hannah Schmidt"
+    ],
+    "ticket": {
+      "title": "'Samsung Galaxy' Überhitzungsproblem",
+      "service": "",
+      "category": "Handy-Software",
+      "keywords": [
+        "Samsung Galaxy",
+        "Überhitzungsproblem",
+        "App-Nutzung",
+        "Tipps"
+      ],
+      "customerPriority": "Störung kann nicht arbeiten",
+      "affectedPerson": "Schmidt, Hannah",
+      "description": "Mein 'Samsung Galaxy' wird ungewöhnlich heiß, besonders während der Nutzung von bestimmten Apps. Können Sie mir bitte Tipps zur Behebung dieses Überhitzungsproblems geben?",
+      "priority": "Hoch",
+      "requestType": "Incident"
+    }
+  },
+  {
+    "text": [
+      "Betreff: 'Huawei' GPS-Funktionsstörung",
+      "Sehr geehrtes Support-Team,",
+      "die GPS-Funktion meines 'Huawei'-Smartphones funktioniert nicht mehr ordnungsgemäß.",
+      "Die Standortbestimmung dauert sehr lange, und die Genauigkeit ist schlecht.",
+      "Können Sie mir bei der Behebung dieses GPS-Problems helfen?",
+      "Mit freundlichen Grüßen,",
+      "Maximilian Weber"
+    ],
+    "ticket": {
+      "title": "'Huawei' GPS-Funktionsstörung",
+      "service": "",
+      "category": "Handy-Software",
+      "keywords": [
+        "Huawei",
+        "GPS",
+        "Funktionsstörung",
+        "Fehlerbehebung"
+      ],
+      "customerPriority": "Störung kann nicht arbeiten",
+      "affectedPerson": "Weber, Maximilian",
+      "description": "Die GPS-Funktion meines 'Huawei'-Smartphones funktioniert nicht mehr ordnungsgemäß. Die Standortbestimmung dauert sehr lange, und die Genauigkeit ist schlecht. Können Sie mir bei der Behebung dieses GPS-Problems helfen?",
+      "priority": "Hoch",
+      "requestType": "Incident"
+    }
+  },
+  {
+    "text": [
+      "Betreff: 'OnePlus' Systemabsturz nach App-Installation",
+      "Hallo Support-Team,",
+      "nach der Installation einer neuen App auf meinem 'OnePlus'-Smartphone stürzt das System regelmäßig ab.",
+      "Ich erhalte eine Fehlermeldung und das Telefon startet neu. Können Sie mir bei der Fehlerbehebung helfen?",
+      "Vielen Dank und beste Grüße,",
+      "Sabrina Fischer"
+    ],
+    "ticket": {
+      "title": "'OnePlus' Systemabsturz nach App-Installation",
+      "service": "",
+      "category": "Handy-Software",
+      "keywords": [
+        "OnePlus",
+        "Systemabsturz",
+        "App-Installation",
+        "Fehlerbehebung"
+      ],
+      "customerPriority": "Störung kann nicht arbeiten",
+      "affectedPerson": "Fischer, Sabrina",
+      "description": "Nach der Installation einer neuen App auf meinem 'OnePlus'-Smartphone stürzt das System regelmäßig ab. Ich erhalte eine Fehlermeldung, und das Telefon startet neu. Können Sie mir bei der Fehlerbehebung helfen?",
+      "priority": "Hoch",
+      "requestType": "Incident"
+    }
+  },
+  {
+    "text": [
+      "Betreff: 'iPhone' Bildschirm zeigt keine Reaktion",
+      "Hallo Support-Team,",
+      "mein 'iPhone'-Bildschirm zeigt plötzlich keine Reaktion mehr. Der Touch funktioniert nicht, obwohl das Gerät eingeschaltet ist.",
+      "Können Sie mir bitte bei der Behebung dieses Bildschirmproblems helfen?",
+      "Vielen Dank und freundliche Grüße,",
+      "Markus Schneider"
+    ],
+    "ticket": {
+      "title": "'iPhone' Bildschirm zeigt keine Reaktion",
+      "service": "",
+      "category": "Handy-Hardware",
+      "keywords": [
+        "iPhone",
+        "Bildschirm",
+        "Touch-Funktion",
+        "Fehlerbehebung"
+      ],
+      "customerPriority": "Störung kann nicht arbeiten",
+      "affectedPerson": "Schneider, Markus",
+      "description": "Mein 'iPhone'-Bildschirm zeigt plötzlich keine Reaktion mehr. Der Touch funktioniert nicht, obwohl das Gerät eingeschaltet ist. Können Sie mir bitte bei der Behebung dieses Bildschirmproblems helfen?",
+      "priority": "Hoch",
+      "requestType": "Incident"
+    }
+  },
+  {
+    "text": [
+      "Betreff: 'Samsung Galaxy' Ladebuchse defekt",
+      "Sehr geehrtes Support-Team,",
+      "die Ladebuchse meines 'Samsung Galaxy' Smartphones ist defekt. Das Aufladen des Geräts ist nicht mehr möglich.",
+      "Können Sie mir bitte dabei helfen, die Ladebuchse zu reparieren oder auszutauschen?",
+      "Mit freundlichen Grüßen,",
+      "Lisa Müller"
+    ],
+    "ticket": {
+      "title": "'Samsung Galaxy' Ladebuchse defekt",
+      "service": "",
+      "category": "Handy-Hardware",
+      "keywords": [
+        "Samsung Galaxy",
+        "Ladebuchse",
+        "Defekt",
+        "Reparatur"
+      ],
+      "customerPriority": "Störung kann nicht arbeiten",
+      "affectedPerson": "Müller, Lisa",
+      "description": "Die Ladebuchse meines 'Samsung Galaxy' Smartphones ist defekt. Das Aufladen des Geräts ist nicht mehr möglich. Können Sie mir bitte dabei helfen, die Ladebuchse zu reparieren oder auszutauschen?",
+      "priority": "Hoch",
+      "requestType": "Incident"
+    }
+  },
+  {
+    "text": [
+      "Betreff: 'OnePlus' Kamera zeigt schwarzen Bildschirm",
+      "Hallo Support-Team,",
+      "die Kamera meines 'OnePlus'-Smartphones zeigt nur einen schwarzen Bildschirm, wenn ich sie öffne.",
+      "Ich habe bereits Neustarts durchgeführt, aber das Problem besteht weiterhin. Können Sie mir bei der Behebung dieses Kameraproblems helfen?",
+      "Vielen Dank im Voraus und beste Grüße,",
+      "Robert Fischer"
+    ],
+    "ticket": {
+      "title": "'OnePlus' Kamera zeigt schwarzen Bildschirm",
+      "service": "",
+      "category": "Handy-Hardware",
+      "keywords": [
+        "OnePlus",
+        "Kamera",
+        "Schwarzer Bildschirm",
+        "Fehlerbehebung"
+      ],
+      "customerPriority": "Störung kann nicht arbeiten",
+      "affectedPerson": "Fischer, Robert",
+      "description": "Die Kamera meines 'OnePlus'-Smartphones zeigt nur einen schwarzen Bildschirm, wenn ich sie öffne. Ich habe bereits Neustarts durchgeführt, aber das Problem besteht weiterhin. Können Sie mir bei der Behebung dieses Kameraproblems helfen?",
+      "priority": "Hoch",
+      "requestType": "Incident"
+    }
+  },
+  {
+    "text": [
+      "Betreff: 'Huawei' Lautsprecher gibt keinen Ton mehr wieder",
+      "Sehr geehrtes Support-Team,",
+      "der Lautsprecher meines 'Huawei'-Smartphones gibt plötzlich keinen Ton mehr wieder.",
+      "Weder bei Anrufen noch bei der Medienwiedergabe ist Ton zu hören. Können Sie mir bei der Behebung dieses Lautsprecherproblems helfen?",
+      "Danke im Voraus und Grüße,",
+      "Sophie Richter"
+    ],
+    "ticket": {
+      "title": "'Huawei' Lautsprecher gibt keinen Ton mehr wieder",
+      "service": "",
+      "category": "Handy-Hardware",
+      "keywords": [
+        "Huawei",
+        "Lautsprecher",
+        "Tonprobleme",
+        "Fehlerbehebung"
+      ],
+      "customerPriority": "Störung kann nicht arbeiten",
+      "affectedPerson": "Richter, Sophie",
+      "description": "Der Lautsprecher meines 'Huawei'-Smartphones gibt plötzlich keinen Ton mehr wieder. Weder bei Anrufen noch bei der Medienwiedergabe ist Ton zu hören. Können Sie mir bei der Behebung dieses Lautsprecherproblems helfen?",
+      "priority": "Hoch",
+      "requestType": "Incident"
+    }
+  },
+  {
+    "text": [
+      "Betreff: 'Google Pixel' Akku entlädt sich schnell",
+      "Hallo Support-Team,",
+      "der Akku meines 'Google Pixel'-Smartphones entlädt sich ungewöhnlich schnell, selbst bei geringer Nutzung.",
+      "Können Sie mir bitte Ratschläge zur Verbesserung der Akkulaufzeit geben oder das Problem identifizieren?",
+      "Vielen Dank und freundliche Grüße,",
+      "Anna Schmidt"
+    ],
+    "ticket": {
+      "title": "'Google Pixel' Akku entlädt sich schnell",
+      "service": "",
+      "category": "Handy-Hardware",
+      "keywords": [
+        "Google Pixel",
+        "Akku",
+        "Schnelle Entladung",
+        "Fehlerbehebung"
+      ],
+      "customerPriority": "Störung kann nicht arbeiten",
+      "affectedPerson": "Schmidt, Anna",
+      "description": "Der Akku meines 'Google Pixel'-Smartphones entlädt sich ungewöhnlich schnell, selbst bei geringer Nutzung. Können Sie mir bitte Ratschläge zur Verbesserung der Akkulaufzeit geben oder das Problem identifizieren?",
+      "priority": "Hoch",
+      "requestType": "Incident"
+    }
   }
 ]
