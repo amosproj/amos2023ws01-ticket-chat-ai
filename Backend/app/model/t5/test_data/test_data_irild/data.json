@@ -22,7 +22,8 @@
       "customerPriority": "Störung kann nicht arbeiten",
       "affectedPerson": "Schmidt, Sophie",
       "description": "Nach der Aktualisierung meines Passworts kann ich mich nicht mehr in mein Email-Konto einloggen. Es erscheint die Meldung 'Autorisierung fehlgeschlagen'.",
-      "priority": "Hoch"
+      "priority": "Hoch",
+      "requestType": "Incident"
     }
   },
   {
@@ -48,7 +49,8 @@
       "customerPriority": "Störung mehrere können nicht arbeiten",
       "affectedPerson": "Müller, Peter",
       "description": "Unser Mitarbeiter Müller, Peter, kann auf seine Emails nicht zugreifen. Es scheint ein Problem mit der Autorisierung zu geben.",
-      "priority": "Sehr Hoch"
+      "priority": "Sehr Hoch",
+      "requestType": "Incident"
     }
   },
   {
@@ -73,7 +75,8 @@
       "customerPriority": "Störung kann nicht arbeiten",
       "affectedPerson": "Becker, Markus",
       "description": "Trotz Eingabe des korrekten Passworts erhalte ich die Meldung 'Falsche Autorisierung'. Bitte überprüfen Sie, was das Problem sein könnte.",
-      "priority": "Hoch"
+      "priority": "Hoch",
+      "requestType": "Incident"
     }
   },
   {
@@ -98,7 +101,8 @@
       "customerPriority": "Störung kann nicht arbeiten",
       "affectedPerson": "Wagner, Thomas",
       "description": "Nach dem letzten Update kann ich mich nicht mehr in mein Email-Konto einloggen. Die Autorisierung scheint nicht mehr zu funktionieren.",
-      "priority": "Mittel"
+      "priority": "Mittel",
+      "requestType": "Incident"
     }
   },
   {
@@ -123,7 +127,8 @@
       "customerPriority": "Störung mehrere können nicht arbeiten",
       "affectedPerson": "Müller, Lisa",
       "description": "Wir haben einen neuen Mitarbeiter, Müller, Lisa, der dringend Email-Autorisierung benötigt. Bitte richten Sie den Zugriff für sie ein, damit sie ihre Arbeit aufnehmen kann.",
-      "priority": "Sehr Hoch"
+      "priority": "Sehr Hoch",
+      "requestType": "Service Request"
     }
   },
   {
@@ -148,7 +153,8 @@
       "customerPriority": "Störung kann nicht arbeiten",
       "affectedPerson": "Meyer, Julia",
       "description": "Mein Laptop lässt sich plötzlich nicht mehr starten. Trotz aller Versuche bleibt er ohne Reaktion. Bitte helfen Sie mir so schnell wie möglich bei diesem Hardwareproblem.",
-      "priority": "Hoch"
+      "priority": "Hoch",
+      "requestType": "Incident"
     }
   },
   {
@@ -173,7 +179,8 @@
       "customerPriority": "Störung kann arbeiten",
       "affectedPerson": "Braun, Michael",
       "description": "Mein Laptop überhitzt in letzter Zeit sehr schnell und schaltet sich dann automatisch ab. Ich vermute, dass es ein Hardwareproblem ist. Können Sie das bitte überprüfen und mir eine Lösung vorschlagen?",
-      "priority": "Mittel"
+      "priority": "Mittel",
+      "requestType": "Incident"
     }
   },
   {
@@ -198,7 +205,8 @@
       "customerPriority": "Störung kann nicht arbeiten",
       "affectedPerson": "Zimmermann, Andreas",
       "description": "Ich habe einen defekten Bildschirm an meinem Laptop festgestellt. Es sind merkwürdige Linien und Flecken darauf sichtbar. Können Sie mir bitte sagen, wie ich das beheben kann?",
-      "priority": "Hoch"
+      "priority": "Hoch",
+      "requestType": "Incident"
     }
   },
   {
@@ -223,7 +231,8 @@
       "customerPriority": "Störung kann nicht arbeiten",
       "affectedPerson": "Fischer, Sarah",
       "description": "Seit gestern reagiert die Tastatur meines Laptops nicht mehr. Ich habe versucht, sie neu zu starten, aber das hat nicht geholfen. Können Sie mir bitte mit diesem Hardwareproblem weiterhelfen?",
-      "priority": "Hoch"
+      "priority": "Hoch",
+      "requestType": "Incident"
     }
   },
   {
@@ -249,7 +258,8 @@
       "customerPriority": "Störung kann nicht arbeiten",
       "affectedPerson": "Richter, Stefan",
       "description": "Ich habe Schwierigkeiten mit den Anschlüssen meines Laptops. Weder USB- noch HDMI-Anschlüsse funktionieren richtig. Können Sie mir bitte Anweisungen zur Behebung dieses Hardwareproblems geben?",
-      "priority": "Mittel"
+      "priority": "Mittel",
+      "requestType": "Incident"
     }
   },
   {
@@ -274,7 +284,8 @@
       "customerPriority": "Störung kann nicht arbeiten",
       "affectedPerson": "Schneider, Paula",
       "description": "Ich erhalte eine Fehlermeldung, wenn ich versuche, das neueste Softwareupdate durchzuführen. Die Meldung lautet: 'Update konnte nicht abgeschlossen werden. Fehlercode: 0x800F081F'. Können Sie mir bitte bei der Lösung dieses Softwareupdate-Problems helfen?",
-      "priority": "Hoch"
+      "priority": "Hoch",
+      "requestType": "Incident"
     }
   },
   {
@@ -299,7 +310,8 @@
       "customerPriority": "Störung kann nicht arbeiten",
       "affectedPerson": "Müller, Sebastian",
       "description": "Mein System hängt seit Stunden bei einem Softwareupdate fest. Der Fortschrittsbalken bewegt sich nicht und es gibt keine sichtbaren Veränderungen. Wie kann ich dieses Softwareupdate-Problem beheben?",
-      "priority": "Hoch"
+      "priority": "Hoch",
+      "requestType": "Incident"
     }
   },
   {
@@ -325,7 +337,8 @@
       "customerPriority": "Störung kann nicht arbeiten",
       "affectedPerson": "Fischer, Laura",
       "description": "Nach dem letzten Softwareupdate funktionieren einige Anwendungen nicht mehr richtig. Ich erhalte Fehlermeldungen wie 'Anwendung konnte nicht gestartet werden' und 'DLL-Fehler'. Können Sie mir bitte bei der Behebung dieser Softwareupdate-Fehler helfen?",
-      "priority": "Hoch"
+      "priority": "Hoch",
+      "requestType": "Incident"
     }
   },
   {
@@ -350,7 +363,8 @@
       "customerPriority": "Störung kann arbeiten",
       "affectedPerson": "Schmidt, Maximilian",
       "description": "Nach dem neuesten Softwareupdate habe ich festgestellt, dass mein Laptop langsamer geworden ist. Anwendungen reagieren verzögert, und der gesamte Systemstart dauert länger. Können Sie mir bitte Ratschläge geben, wie ich diese Leistungsprobleme nach dem Softwareupdate beheben kann?",
-      "priority": "Mittel"
+      "priority": "Mittel",
+      "requestType": "Incident"
     }
   },
   {
@@ -373,7 +387,8 @@
       "customerPriority": "Störung kann arbeiten",
       "affectedPerson": "Wagner, Nina",
       "description": "Ich erhalte die Meldung, dass mein System auf dem neuesten Stand ist, obwohl ich weiß, dass ein Softwareupdate verfügbar sein sollte. Können Sie mir bitte helfen, das Problem zu beheben und das ausstehende Softwareupdate zu installieren?",
-      "priority": "Mittel"
+      "priority": "Mittel",
+      "requestType": "Service Request"
     }
   },
   {
@@ -398,7 +413,8 @@
       "customerPriority": "Störung kann nicht arbeiten",
       "affectedPerson": "Müller, Lisa",
       "description": "Mein Drucker druckt seit gestern nur leere Seiten, obwohl genügend Tinte vorhanden ist. Ich habe bereits die Düsen gereinigt, aber das Problem besteht weiterhin. Können Sie mir bitte bei der Behebung dieses Druckerproblems helfen?",
-      "priority": "Hoch"
+      "priority": "Hoch",
+      "requestType": "Service Request"
     }
   },
   {
@@ -422,7 +438,8 @@
       "customerPriority": "Störung kann nicht arbeiten",
       "affectedPerson": "Schmidt, Maximilian",
       "description": "Ich habe einen Papierstau in meinem Drucker, und ich kann das Papier nicht entfernen. Es gibt keine sichtbaren Hindernisse, aber der Drucker zeigt weiterhin 'Papierstau' an. Können Sie mir bitte Anweisungen zur Beseitigung dieses Druckerproblems geben?",
-      "priority": "Hoch"
+      "priority": "Hoch",
+      "requestType": "Incident"
     }
   },
   {
@@ -447,7 +464,8 @@
       "customerPriority": "Störung kann nicht arbeiten",
       "affectedPerson": "Wagner, Anna",
       "description": "Mein Drucker verbindet sich plötzlich nicht mehr mit dem Netzwerk. Ich habe alle Verbindungen überprüft, aber der Drucker bleibt offline. Können Sie mir bitte bei der Wiederherstellung der Netzwerkverbindung meines Druckers helfen?",
-      "priority": "Hoch"
+      "priority": "Hoch",
+      "requestType": "Incident"
     }
   },
   {
@@ -472,7 +490,8 @@
       "customerPriority": "Störung kann nicht arbeiten",
       "affectedPerson": "Becker, Markus",
       "description": "Seit dem letzten Druckvorgang werden alle Seiten meines Druckers verschwommen gedruckt. Ich habe die Druckereinstellungen überprüft, aber das Problem besteht weiterhin. Können Sie mir bitte bei der Lösung dieses Qualitätsproblems mit dem Drucker helfen?",
-      "priority": "Hoch"
+      "priority": "Hoch",
+      "requestType": "Incident"
     }
   },
   {
@@ -497,7 +516,8 @@
       "customerPriority": "Störung kann arbeiten",
       "affectedPerson": "Zimmermann, Sophie",
       "description": "Ich habe Probleme mit der Farbqualität beim Drucken. Die Ausdrucke erscheinen in ungewöhnlichen Farben und sind nicht so, wie sie sein sollten. Können Sie mir bitte Anweisungen zur Behebung dieses Farbproblems mit meinem Drucker geben?",
-      "priority": "Mittel"
+      "priority": "Mittel",
+      "requestType": "Service Request"
     }
   },
   {
@@ -522,7 +542,8 @@
       "customerPriority": "Störung kann nicht arbeiten",
       "affectedPerson": "Müller, Julian",
       "description": "Ich habe Schwierigkeiten bei der Installation von Software X auf meinem Computer. Während des Installationsvorgangs erhalte ich die Fehlermeldung 'Fehlercode: 0x80070643'. Können Sie mir bitte bei der Lösung dieses Problems mit der Softwareinstallation helfen?",
-      "priority": "Hoch"
+      "priority": "Hoch",
+      "requestType": "Incident"
     }
   },
   {
@@ -547,7 +568,8 @@
       "customerPriority": "Störung kann nicht arbeiten",
       "affectedPerson": "Fischer, Laura",
       "description": "Ich kann Software Y nicht erfolgreich installieren. Der Installationsvorgang bricht immer wieder ab. Es gibt keine spezifische Fehlermeldung, der Fortschrittsbalken stoppt einfach. Können Sie mir bitte bei der Behebung dieses Installationsproblems mit Software Y behilflich sein?",
-      "priority": "Hoch"
+      "priority": "Hoch",
+      "requestType": "Service Request"
     }
   },
   {
@@ -572,7 +594,8 @@
       "customerPriority": "Störung kann nicht arbeiten",
       "affectedPerson": "Richter, Stefan",
       "description": "Nach der Installation von Software Z fehlen bestimmte Dateien, und die Anwendung lässt sich nicht starten. Ich habe die Installation mehrmals wiederholt, aber das Problem besteht weiterhin. Können Sie mir bitte dabei helfen, die fehlenden Dateien zu identifizieren und zu beheben?",
-      "priority": "Hoch"
+      "priority": "Hoch",
+      "requestType": "Service Request"
     }
   },
   {
@@ -597,7 +620,8 @@
       "customerPriority": "Störung kann nicht arbeiten",
       "affectedPerson": "Schneider, Sophie",
       "description": "Ich erhalte eine Fehlermeldung, wenn ich versuche, Programm A zu installieren. Die Meldung lautet: 'Installationsfehler - Datei konnte nicht kopiert werden'. Können Sie mir bitte bei der Lösung dieses Installationsproblems mit Programm A helfen?",
-      "priority": "Hoch"
+      "priority": "Hoch",
+      "requestType": "Service Request"
     }
   },
   {
@@ -621,7 +645,8 @@
       "customerPriority": "Störung kann nicht arbeiten",
       "affectedPerson": "Wagner, Nina",
       "description": "Ich habe Schwierigkeiten bei der Installation von Anwendung B. Der Installer startet, aber der Vorgang bricht ohne Warnung ab. Können Sie mir bitte Schritte zur Verfügung stellen, um dieses Installationsproblem mit Anwendung B zu lösen?",
-      "priority": "Hoch"
+      "priority": "Hoch",
+      "requestType": "Service Request"
     }
   },
   {
@@ -646,7 +671,8 @@
       "customerPriority": "Störung kann nicht arbeiten",
       "affectedPerson": "Fischer, Maximilian",
       "description": "Seit heute Morgen funktioniert meine Tastatur plötzlich nicht mehr. Ich habe versucht, sie neu zu starten, aber das hat nicht geholfen. Können Sie mir bitte bei der Behebung dieses Problems mit meiner Tastatur helfen?",
-      "priority": "Hoch"
+      "priority": "Hoch",
+      "requestType": "Incident"
     }
   },
   {
@@ -671,7 +697,8 @@
       "customerPriority": "Störung kann nicht arbeiten",
       "affectedPerson": "Müller, Anna",
       "description": "Ich habe ein Problem mit meiner Maus. Der Mauszeiger springt unkontrolliert über den Bildschirm, was die Bedienung sehr schwierig macht. Ich habe die Maus gereinigt, aber das Problem besteht weiterhin. Können Sie mir bitte bei der Lösung dieses Mausproblems helfen?",
-      "priority": "Hoch"
+      "priority": "Hoch",
+      "requestType": "Incident"
     }
   },
   {
@@ -696,7 +723,8 @@
       "customerPriority": "Störung kann nicht arbeiten",
       "affectedPerson": "Wagner, Sophie",
       "description": "Ich habe festgestellt, dass einige Tasten auf meiner Tastatur nicht mehr reagieren. Es betrifft insbesondere die Buchstaben 'A', 'S', und 'E'. Können Sie mir bitte sagen, wie ich dieses Tastaturproblem beheben kann?",
-      "priority": "Hoch"
+      "priority": "Hoch",
+      "requestType": "Incident"
     }
   },
   {
@@ -721,7 +749,8 @@
       "customerPriority": "Störung kann nicht arbeiten",
       "affectedPerson": "Zimmermann, Nina",
       "description": "Seit gestern werden die Mausklicks meiner Maus nicht mehr erkannt. Ich habe die Verbindung überprüft, aber das hat nichts geändert. Können Sie mir bitte bei der Lösung dieses Mausproblems helfen?",
-      "priority": "Hoch"
+      "priority": "Hoch",
+      "requestType": "Incident"
     }
   },
   {
@@ -746,7 +775,8 @@
       "customerPriority": "Störung kann arbeiten",
       "affectedPerson": "Becker, Markus",
       "description": "Die Beleuchtung meiner Tastatur funktioniert seit einigen Tagen nicht mehr. Ich habe die Treiber aktualisiert, aber das hat das Problem nicht behoben.",
-      "priority": "Niedrig"
+      "priority": "Niedrig",
+      "requestType": "Service Request"
     }
   },
   {
@@ -771,7 +801,8 @@
       "customerPriority": "Störung kann nicht arbeiten",
       "affectedPerson": "Schneider, Julia",
       "description": "Seit heute Morgen habe ich keine Internetverbindung mehr auf meinem Computer. Ich habe meinen Router neu gestartet, aber das hat das Problem nicht behoben. Können Sie mir bitte bei der Wiederherstellung meiner Internetverbindung helfen?",
-      "priority": "Hoch"
+      "priority": "Hoch",
+      "requestType": "Incident"
     }
   },
   {
@@ -796,7 +827,8 @@
       "customerPriority": "Störung kann arbeiten",
       "affectedPerson": "Meier, David",
       "description": "Obwohl ich einen Internetvertrag mit hoher Geschwindigkeit habe, ist meine Internetverbindung extrem langsam. Ich habe bereits alle Geräte neu gestartet, aber das hat keine Verbesserung gebracht. Können Sie mir bitte bei der Lösung dieses Problems mit der Internetgeschwindigkeit helfen?",
-      "priority": "Mittel"
+      "priority": "Mittel",
+      "requestType": "Incident"
     }
   },
   {
@@ -821,7 +853,8 @@
       "customerPriority": "Störung kann nicht arbeiten",
       "affectedPerson": "Becker, Laura",
       "description": "Ich habe in letzter Zeit häufige Verbindungsabbrüche in meinem WLAN. Die Verbindung wird sporadisch getrennt und dann wiederhergestellt. Können Sie mir bitte helfen, diese ständigen Verbindungsabbrüche in meinem WLAN zu beheben?",
-      "priority": "Hoch"
+      "priority": "Hoch",
+      "requestType": "Incident"
     }
   },
   {
@@ -846,7 +879,8 @@
       "customerPriority": "Störung kann nicht arbeiten",
       "affectedPerson": "Zimmermann, Marius",
       "description": "Ich erhalte die Fehlermeldung 'Eingeschränkte Konnektivität - Probleme mit der IP-Konfiguration'. Ich habe bereits versucht, die IP-Adresse manuell zuzuweisen, aber das hat nicht geholfen. Können Sie mir bitte bei der Lösung dieses Problems mit der IP-Konfiguration helfen?",
-      "priority": "Hoch"
+      "priority": "Hoch",
+      "requestType": "Service Request"
     }
   },
   {
@@ -871,7 +905,8 @@
       "customerPriority": "Störung kann arbeiten",
       "affectedPerson": "Müller, Sophie",
       "description": "Ich kann bestimmte Websites nicht erreichen, und es wird die Meldung 'DNS-Problem' angezeigt. Andere Websites funktionieren normal. Ich habe meinen DNS-Server bereits geändert, aber das hat nicht geholfen. Können Sie mir bitte bei der Lösung dieses DNS-Problems helfen?",
-      "priority": "Mittel"
+      "priority": "Mittel",
+      "requestType": "Service Request"
     }
   },
   {
@@ -896,7 +931,8 @@
       "customerPriority": "Störung kann nicht arbeiten",
       "affectedPerson": "Schmidt, Michael",
       "description": "Unser Roboterarm bewegt sich plötzlich unkontrolliert und führt unvorhergesehene Bewegungen durch. Wir haben bereits die Programmierung überprüft, aber das Problem besteht weiterhin. Können Sie uns bitte bei der Identifizierung und Behebung dieses Problems mit dem Roboterarm unterstützen?",
-      "priority": "Hoch"
+      "priority": "Hoch",
+      "requestType": "Incident"
     }
   },
   {
@@ -921,7 +957,8 @@
       "customerPriority": "Störung kann nicht arbeiten",
       "affectedPerson": "Müller, Carolin",
       "description": "Die Sensoren unseres Roboters scheinen nicht mehr korrekt zu funktionieren. Er erkennt Hindernisse nicht mehr und führt Aufgaben ungenau aus. Können Sie uns bitte bei der Diagnose und Behebung dieses Problems mit den Robotersensoren unterstützen?",
-      "priority": "Hoch"
+      "priority": "Hoch",
+      "requestType": "Incident"
     }
   },
   {
@@ -946,7 +983,8 @@
       "customerPriority": "Störung kann nicht arbeiten",
       "affectedPerson": "Wagner, Sebastian",
       "description": "Unser Roboter reagiert nicht mehr auf Befehle, weder manuell noch automatisch. Wir haben die Verbindung überprüft und die Batterien ausgetauscht, aber das Problem besteht weiterhin. Können Sie uns bitte bei der Lösung dieses Kommunikationsproblems mit dem Roboter helfen?",
-      "priority": "Hoch"
+      "priority": "Hoch",
+      "requestType": "Incident"
     }
   },
   {
@@ -971,7 +1009,8 @@
       "customerPriority": "Störung mehrere können nicht arbeiten",
       "affectedPerson": "Fischer, Anna",
       "description": "Wir haben mehrere Roboterarme in unserer Produktionslinie, und sie blockieren sich gegenseitig. Es kommt zu Kollisionen und Stillstand in der Produktion. Können Sie uns bitte bei der Koordination der Roboterarme und der Vermeidung von Kollisionen helfen?",
-      "priority": "Hoch"
+      "priority": "Hoch",
+      "requestType": "Incident"
     }
   },
   {
@@ -996,7 +1035,8 @@
       "customerPriority": "Störung kann nicht arbeiten",
       "affectedPerson": "Weber, Markus",
       "description": "Die Steuerungseinheit unseres Roboters zeigt Fehlermeldungen, und der Roboter kann nicht gesteuert werden. Wir haben bereits die Verkabelung überprüft, aber das hat keine Verbesserung gebracht. Können Sie uns bitte bei der Identifizierung und Behebung dieses Problems mit der Robotersteuerung unterstützen?",
-      "priority": "Hoch"
+      "priority": "Hoch",
+      "requestType": "Incident"
     }
   }
 ]
