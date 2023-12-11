@@ -13,7 +13,7 @@
         ],
         "ticket": {
           "title": "Software-Installationsproblem",
-          "location": "Buchhaltungsabteilung",
+          "service": "",
           "category": "Software-Installation",
           "keywords": [
             "Software",
@@ -40,7 +40,7 @@
         ],
         "ticket": {
           "title": "Drucker Totalausfall",
-          "location": "Büroetage 3",
+          "service": "",
           "category": "Hardware",
           "keywords": [
             "Drucker",
@@ -66,7 +66,7 @@
         ],
         "ticket": {
           "title": "E-Mail-Server Störung",
-          "location": "Vertriebsabteilung",
+          "service": "",
           "category": "E-Mail",
           "keywords": [
             "E-Mail",
@@ -92,7 +92,7 @@
         ],
         "ticket": {
           "title": "VPN-Zugriffsproblem",
-          "location": "Remote/Home Office",
+          "service": "",
           "category": "Netzwerk",
           "keywords": [
             "VPN",
@@ -118,7 +118,7 @@
         ],
         "ticket": {
           "title": "CRM-Software Absturz",
-          "location": "Vertrieb",
+          "service": "",
           "category": "Software",
           "keywords": [
             "CRM",
@@ -144,7 +144,7 @@
         ],
         "ticket": {
           "title": "Produktionslinien-Ausfall",
-          "location": "Produktionshalle 2",
+          "service": "",
           "category": "Produktionsanlage",
           "keywords": [
             "Produktionslinie",
@@ -170,7 +170,7 @@
         ],
         "ticket": {
           "title": "Roboterarm Funktionsstörung",
-          "location": "Montageabteilung",
+          "service": "",
           "category": "Roboterarm",
           "keywords": [
             "Roboterarm",
@@ -196,7 +196,7 @@
         ],
         "ticket": {
           "title": "Kritischer Kühlsystem-Alarm",
-          "location": "Anlage A5",
+          "service": "",
           "category": "Kühlsystem",
           "keywords": [
             "Kühlsystem",
@@ -222,7 +222,7 @@
         ],
         "ticket": {
           "title": "Verpackungsmaschinen-Fehlfunktion",
-          "location": "Verpackungsabteilung",
+          "service": "",
           "category": "Verpackungsmaschine",
           "keywords": [
             "Verpackungsmaschine",
@@ -248,7 +248,7 @@
         ],
         "ticket": {
           "title": "Förderbandausfall",
-          "location": "Fertigungsstraße",
+          "service": "",
           "category": "Förderband",
           "keywords": [
             "Förderband",
@@ -274,7 +274,7 @@
         ],
         "ticket": {
           "title": "Datenimport Fehler",
-          "location": "Buchhaltungsabteilung",
+          "service": "",
           "category": "Software",
           "keywords": [
             "Datenimport",
@@ -299,7 +299,7 @@
         ],
         "ticket": {
           "title": "Software Leistungsproblem",
-          "location": "Steuerberatungsteam",
+          "service": "",
           "category": "Performance",
           "keywords": [
             "Software",
@@ -325,7 +325,7 @@
         ],
         "ticket": {
           "title": "Software Lizenzierungsproblem",
-          "location": "IT-Abteilung",
+          "service": "",
           "category": "Lizenzierung",
           "keywords": [
             "Software",
@@ -350,7 +350,7 @@
         ],
         "ticket": {
           "title": "Update-bezogene Softwareprobleme",
-          "location": "Steuerberatung",
+          "service": "",
           "category": "Software-Update",
           "keywords": [
             "Update",
@@ -376,7 +376,7 @@
         ],
         "ticket": {
           "title": "Schnittstellenprobleme",
-          "location": "Datenverarbeitungsteam",
+          "service": "",
           "category": "Schnittstelle",
           "keywords": [
             "Schnittstelle",
@@ -401,7 +401,7 @@
         ],
         "ticket": {
           "title": "Kritischer Serverausfall",
-          "location": "Rechenzentrum 1",
+          "service": "",
           "category": "Server",
           "keywords": [
             "Serverausfall",
@@ -426,7 +426,7 @@
         ],
         "ticket": {
           "title": "Mögliche Netzwerksicherheitsverletzung",
-          "location": "IT-Sicherheitsabteilung",
+          "service": "",
           "category": "Netzwerksicherheit",
           "keywords": [
             "Sicherheitsverletzung",
@@ -452,7 +452,7 @@
         ],
         "ticket": {
           "title": "Fehler in Software-Entwicklung",
-          "location": "Entwicklungsabteilung",
+          "service": "",
           "category": "Softwareentwicklung",
           "keywords": [
             "Software",
@@ -477,7 +477,7 @@
         ],
         "ticket": {
           "title": "Ausfall des Cloud-Dienstes",
-          "location": "Cloud-Infrastruktur",
+          "service": "",
           "category": "Cloud-Dienste",
           "keywords": [
             "Cloud",
@@ -503,7 +503,7 @@
         ],
         "ticket": {
           "title": "UI-Fehler in Anwendung",
-          "location": "Produktentwicklung",
+          "service": "",
           "category": "Benutzeroberfläche",
           "keywords": [
             "UI",
@@ -528,7 +528,7 @@
         ],
         "ticket": {
           "title": "Netzlaufwerk Zugriffsproblem",
-          "location": "Buchhaltung",
+          "service": "",
           "category": "Netzwerk",
           "keywords": [
             "Netzlaufwerk",
@@ -553,7 +553,7 @@
         ],
         "ticket": {
           "title": "Datenbankanwendung Ladeproblem",
-          "location": "IT-Abteilung",
+          "service": "",
           "category": "Software",
           "keywords": [
             "Datenbank",
@@ -578,7 +578,7 @@
         ],
         "ticket": {
           "title": "Videokonferenz Videoausfall",
-          "location": "Marketing",
+          "service": "",
           "category": "Kommunikation",
           "keywords": [
             "Videokonferenz",
@@ -603,7 +603,7 @@
         ],
         "ticket": {
           "title": "VPN Verbindungsabbrüche",
-          "location": "Remote/Home Office",
+          "service": "",
           "category": "Netzwerk",
           "keywords": [
             "VPN",
@@ -629,7 +629,7 @@
         ],
         "ticket": {
           "title": "Telefonanlagen-Ausfall",
-          "location": "Kundenservice",
+          "service": "",
           "category": "Kommunikation",
           "keywords": [
             "Telefonanlage",
@@ -654,7 +654,7 @@
         ],
         "ticket": {
           "title": "Serverraum Überhitzung",
-          "location": "Rechenzentrum",
+          "service": "",
           "category": "Hardware",
           "keywords": [
             "Server",
@@ -679,7 +679,7 @@
         ],
         "ticket": {
           "title": "Cloud-Speicher Datenverlust",
-          "location": "Entwicklungsabteilung",
+          "service": "",
           "category": "Datensicherheit",
           "keywords": [
             "Cloud",
@@ -704,7 +704,7 @@
         ],
         "ticket": {
           "title": "Cloud-Speicher Datenverlust",
-          "location": "Entwicklungsabteilung",
+          "service": "",
           "category": "Datensicherheit",
           "keywords": [
             "Cloud",
@@ -730,7 +730,7 @@
         ],
         "ticket": {
           "title": "Netzwerkausfall",
-          "location": "Hauptbüro",
+          "service": "",
           "category": "Netzwerk",
           "keywords": [
             "Netzwerkausfall",
@@ -756,7 +756,7 @@
         ],
         "ticket": {
           "title": "Fehler in Sicherheitssoftware",
-          "location": "IT-Sicherheitsabteilung",
+          "service": "",
           "category": "Software",
           "keywords": [
             "Sicherheitssoftware",
@@ -781,7 +781,7 @@
         ],
         "ticket": {
           "title": "Langsames Netzwerk",
-          "location": "Gesamtes Unternehmen",
+          "service": "",
           "category": "Netzwerk",
           "keywords": [
             "Netzwerk",
@@ -806,7 +806,7 @@
         ],
         "ticket": {
           "title": "Abstürze bei CAD-Software",
-          "location": "Konstruktionsabteilung",
+          "service": "",
           "category": "Software",
           "keywords": [
             "CAD",
@@ -831,7 +831,7 @@
         ],
         "ticket": {
           "title": "Steuerungsproblem bei CNC-Software",
-          "location": "Fertigungshalle",
+          "service": "",
           "category": "Hardware/Software",
           "keywords": [
             "CNC",
@@ -857,7 +857,7 @@
         ],
         "ticket": {
           "title": "Ausfall Lagerverwaltungssystem",
-          "location": "Lager",
+          "service": "",
           "category": "Software",
           "keywords": [
             "Lagerverwaltung",
@@ -883,7 +883,7 @@
         ],
         "ticket": {
           "title": "Netzwerkprobleme in Produktion",
-          "location": "Produktionshalle",
+          "service": "",
           "category": "Netzwerk",
           "keywords": [
             "Netzwerk",
@@ -908,7 +908,7 @@
         ],
         "ticket": {
           "title": "Sicherheitsprobleme bei Remote-Zugriff",
-          "location": "Unternehmensweit",
+          "service": "",
           "category": "IT-Sicherheit",
           "keywords": [
             "Remote-Zugriff",
@@ -934,7 +934,7 @@
         ],
         "ticket": {
           "title": "E-Mail-Konto gesperrt",
-          "location": "Berlin",
+          "service": "",
           "category": "E-Mail",
           "keywords": ["Konto gesperrt", "E-Mail", "Entsperren"],
           "customerPriority": "Störung kann nicht arbeiten",
@@ -956,7 +956,7 @@
         ],
         "ticket": {
           "title": "Software-Update Probleme",
-          "location": "München",
+          "service": "",
           "category": "Software",
           "keywords": ["Software-Update", "Installation", "Hilfe"],
           "customerPriority": "Störung kann arbeiten",
@@ -978,7 +978,7 @@
         ],
         "ticket": {
           "title": "Druckerprobleme",
-          "location": "Frankfurt",
+          "service": "",
           "category": "Drucker",
           "keywords": ["Drucker funktioniert nicht", "Dokumente ausdrucken", "Techniker"],
           "customerPriority": "Störung Abteilung kann nicht arbeiten",
@@ -1000,7 +1000,7 @@
         ],
         "ticket": {
           "title": "Passwort zurücksetzen",
-          "location": "Hamburg",
+          "service": "",
           "category": "Passwort",
           "keywords": ["Passwort vergessen", "Anmeldung", "Zugriff"],
           "customerPriority": "Störung kann nicht arbeiten",
@@ -1022,7 +1022,7 @@
         ],
         "ticket": {
           "title": "Server-Ausfall",
-          "location": "Stuttgart",
+          "service": "",
           "category": "Server",
           "keywords": ["Server-Ausfall", "Datenzugriff", "Wiederherstellung"],
           "customerPriority": "Störung Abteilung kann nicht arbeiten",
@@ -1043,7 +1043,7 @@
         ],
         "ticket": {
           "title": "WLAN-Verbindungsprobleme",
-          "location": "Köln",
+          "service": "",
           "category": "WLAN",
           "keywords": ["WLAN-Verbindung", "Büro", "Hilfe"],
           "customerPriority": "Störung kann nicht arbeiten",
@@ -1064,7 +1064,7 @@
         ],
         "ticket": {
           "title": "Software-Absturz",
-          "location": "Frankfurt",
+          "service": "",
           "category": "Software",
           "keywords": ["Software-Absturz", "Datei öffnen", "Hilfe"],
           "customerPriority": "Störung kann nicht arbeiten",
@@ -1085,7 +1085,7 @@
         ],
         "ticket": {
           "title": "Druckqualitätsprobleme",
-          "location": "Hamburg",
+          "service": "",
           "category": "Drucker",
           "keywords": ["Druckqualität", "Techniker", "Problem"],
           "customerPriority": "Störung Abteilung kann nicht arbeiten",
@@ -1106,7 +1106,7 @@
         ],
         "ticket": {
           "title": "Zugriffsproblem auf Laufwerk",
-          "location": "Berlin",
+          "service": "",
           "category": "Laufwerk",
           "keywords": ["Zugriff", "gemeinsames Laufwerk", "Problem"],
           "customerPriority": "Störung kann nicht arbeiten",
@@ -1127,7 +1127,7 @@
         ],
         "ticket": {
           "title": "Softwareinstallationsfehler",
-          "location": "München",
+          "service": "",
           "category": "Software",
           "keywords": ["Softwareinstallation", "Fehlermeldung", "Hilfe"],
           "customerPriority": "Störung kann nicht arbeiten",
@@ -1148,7 +1148,7 @@
         ],
         "ticket": {
           "title": "Softwareabsturz im Designstudio",
-          "location": "Berlin",
+          "service": "",
           "category": "Grafikdesign-Software",
           "keywords": ["Softwareabsturz", "Designstudio", "Hilfe"],
           "customerPriority": "Störung Abteilung kann nicht arbeiten",
@@ -1169,7 +1169,7 @@
         ],
         "ticket": {
           "title": "Druckerprobleme im Designbüro",
-          "location": "Hamburg",
+          "service": "",
           "category": "Drucker",
           "keywords": ["Druckerprobleme", "Designbüro", "Techniker"],
           "customerPriority": "Störung Abteilung kann nicht arbeiten",
@@ -1190,7 +1190,7 @@
         ],
         "ticket": {
           "title": "Probleme mit Grafiktabletts",
-          "location": "München",
+          "service": "",
           "category": "Grafiktabletts",
           "keywords": ["Grafiktabletts", "Ungenauigkeit", "Hilfe"],
           "customerPriority": "Störung Abteilung kann nicht arbeiten",
@@ -1211,7 +1211,7 @@
         ],
         "ticket": {
           "title": "Designsoftware-Update erforderlich",
-          "location": "Düsseldorf",
+          "service": "",
           "category": "Designsoftware",
           "keywords": ["Designsoftware", "Update", "Funktionen"],
           "customerPriority": "Störung Abteilung kann nicht arbeiten",
@@ -1232,7 +1232,7 @@
         ],
         "ticket": {
           "title": "Farbkalibrierung erforderlich",
-          "location": "Stuttgart",
+          "service": "",
           "category": "Monitore",
           "keywords": ["Farbkalibrierung", "Monitore", "Techniker"],
           "customerPriority": "Störung Abteilung kann nicht arbeiten",
@@ -1253,7 +1253,7 @@
         ],
         "ticket": {
           "title": "Lizenzproblem mit Design-Software",
-          "location": "München",
+          "service": "",
           "category": "Design-Software",
           "keywords": ["Lizenzproblem", "Designer", "Hilfe"],
           "customerPriority": "Störung Abteilung kann nicht arbeiten",
@@ -1274,7 +1274,7 @@
         ],
         "ticket": {
           "title": "Grafikdateikonvertierungsprobleme",
-          "location": "Frankfurt",
+          "service": "",
           "category": "Grafikdateikonvertierung",
           "keywords": ["Dateikonvertierung", "Grafikdateien", "Unterstützung"],
           "customerPriority": "Störung Abteilung kann nicht arbeiten",
@@ -1295,7 +1295,7 @@
         ],
         "ticket": {
           "title": "Website-Design-Anpassungen",
-          "location": "Hamburg",
+          "service": "",
           "category": "Webdesign",
           "keywords": ["Website-Design", "Anpassungen", "Verbesserungen"],
           "customerPriority": "Störung Abteilung kann nicht arbeiten",
@@ -1316,7 +1316,7 @@
         ],
         "ticket": {
           "title": "Design-Serverprobleme",
-          "location": "Köln",
+          "service": "",
           "category": "Server",
           "keywords": ["Design-Server", "offline", "Techniker"],
           "customerPriority": "Störung Abteilung kann nicht arbeiten",
@@ -1337,7 +1337,7 @@
         ],
         "ticket": {
           "title": "Farbmanagement-Problem in der Design-Software",
-          "location": "Stuttgart",
+          "service": "",
           "category": "Design-Software",
           "keywords": ["Farbmanagement", "Design-Software", "Optimierung"],
           "customerPriority": "Störung Abteilung kann nicht arbeiten",

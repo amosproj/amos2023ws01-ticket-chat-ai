@@ -12,7 +12,7 @@
     ],
     "ticket": {
       "title": "Autorisierungsproblem",
-      "location": "",
+      "service": "",
       "category": "Autorisierung -> Email",
       "keywords": [
         "Passwort",
@@ -38,7 +38,7 @@
     ],
     "ticket": {
       "title": "Dringend: Email Autorisierung",
-      "location": "",
+      "service": "",
       "category": "Autorisierung -> Email",
       "keywords": [
         "Email",
@@ -63,7 +63,7 @@
     ],
     "ticket": {
       "title": "Email Autorisierungsfehler",
-      "location": "",
+      "service": "",
       "category": "Autorisierung -> Email",
       "keywords": [
         "Passwort",
@@ -88,7 +88,7 @@
     ],
     "ticket": {
       "title": "Email Autorisierungsproblem nach Update",
-      "location": "",
+      "service": "",
       "category": "Autorisierung -> Email",
       "keywords": [
         "Update",
@@ -113,7 +113,7 @@
     ],
     "ticket": {
       "title": "Dringend: Email Autorisierung für neuen Mitarbeiter",
-      "location": "",
+      "service": "",
       "category": "Autorisierung -> Email",
       "keywords": [
         "Email",
@@ -138,7 +138,7 @@
     ],
     "ticket": {
       "title": "Laptop Startprobleme",
-      "location": "",
+      "service": "",
       "category": "Hardware -> Laptop",
       "keywords": [
         "Startprobleme",
@@ -163,7 +163,7 @@
     ],
     "ticket": {
       "title": "Laptop Überhitzungsproblem",
-      "location": "",
+      "service": "",
       "category": "Hardware -> Laptop",
       "keywords": [
         "Überhitzung",
@@ -188,7 +188,7 @@
     ],
     "ticket": {
       "title": "Defekter Laptop-Bildschirm",
-      "location": "",
+      "service": "",
       "category": "Hardware -> Laptop",
       "keywords": [
         "Bildschirm",
@@ -213,7 +213,7 @@
     ],
     "ticket": {
       "title": "Nicht reagierende Laptop-Tastatur",
-      "location": "",
+      "service": "",
       "category": "Hardware -> Laptop",
       "keywords": [
         "Tastatur",
@@ -238,7 +238,7 @@
     ],
     "ticket": {
       "title": "Probleme mit Laptop-Anschlüssen",
-      "location": "",
+      "service": "",
       "category": "Hardware -> Laptop",
       "keywords": [
         "Anschlüsse",
@@ -264,7 +264,7 @@
     ],
     "ticket": {
       "title": "Fehler bei Softwareupdate",
-      "location": "",
+      "service": "",
       "category": "Softwareupdate",
       "keywords": [
         "Fehler",
@@ -289,7 +289,7 @@
     ],
     "ticket": {
       "title": "Softwareupdate hängt fest",
-      "location": "",
+      "service": "",
       "category": "Softwareupdate",
       "keywords": [
         "Festhängen",
@@ -314,7 +314,7 @@
     ],
     "ticket": {
       "title": "Fehler nach Softwareupdate",
-      "location": "",
+      "service": "",
       "category": "Softwareupdate",
       "keywords": [
         "Fehler",
@@ -340,7 +340,7 @@
     ],
     "ticket": {
       "title": "Leistungsprobleme nach Softwareupdate",
-      "location": "",
+      "service": "",
       "category": "Softwareupdate",
       "keywords": [
         "Langsam",
@@ -364,7 +364,7 @@
     ],
     "ticket": {
       "title": "Softwareupdate nicht verfügbar",
-      "location": "",
+      "service": "",
       "category": "Softwareupdate",
       "keywords": [
         "Nicht verfügbar",
@@ -388,7 +388,7 @@
     ],
     "ticket": {
       "title": "Drucker druckt leere Seiten",
-      "location": "",
+      "service": "",
       "category": "Drucker",
       "keywords": [
         "Leer",
@@ -413,7 +413,7 @@
     ],
     "ticket": {
       "title": "Papierstau im Drucker",
-      "location": "",
+      "service": "",
       "category": "Drucker",
       "keywords": [
         "Papierstau",
@@ -437,7 +437,7 @@
     ],
     "ticket": {
       "title": "Drucker offline",
-      "location": "",
+      "service": "",
       "category": "Drucker",
       "keywords": [
         "Netzwerk",
@@ -462,7 +462,7 @@
     ],
     "ticket": {
       "title": "Verschwommener Druck",
-      "location": "",
+      "service": "",
       "category": "Drucker",
       "keywords": [
         "Verschwommen",
@@ -487,7 +487,7 @@
     ],
     "ticket": {
       "title": "Farbprobleme beim Drucken",
-      "location": "",
+      "service": "",
       "category": "Drucker",
       "keywords": [
         "Farbqualität",
@@ -512,7 +512,7 @@
     ],
     "ticket": {
       "title": "Installationsfehler Software X",
-      "location": "",
+      "service": "",
       "category": "Softwareinstallation",
       "keywords": [
         "Installation",
@@ -537,7 +537,7 @@
     ],
     "ticket": {
       "title": "Installationsabbruch Software Y",
-      "location": "",
+      "service": "",
       "category": "Softwareinstallation",
       "keywords": [
         "Installation",
@@ -562,7 +562,7 @@
     ],
     "ticket": {
       "title": "Fehlende Dateien nach Installation Software Z",
-      "location": "",
+      "service": "",
       "category": "Softwareinstallation",
       "keywords": [
         "Installation",
@@ -587,7 +587,7 @@
     ],
     "ticket": {
       "title": "Installationsfehler Programm A",
-      "location": "",
+      "service": "",
       "category": "Softwareinstallation",
       "keywords": [
         "Installation",
@@ -611,7 +611,7 @@
     ],
     "ticket": {
       "title": "Installationsabbruch Anwendung B",
-      "location": "",
+      "service": "",
       "category": "Softwareinstallation",
       "keywords": [
         "Installation",
@@ -636,7 +636,7 @@
     ],
     "ticket": {
       "title": "Nicht funktionierende Tastatur",
-      "location": "",
+      "service": "",
       "category": "Tastatur",
       "keywords": [
         "Tastatur",
@@ -661,7 +661,7 @@
     ],
     "ticket": {
       "title": "Unkontrollierter Mauszeiger",
-      "location": "",
+      "service": "",
       "category": "Maus",
       "keywords": [
         "Mauszeiger",
@@ -686,7 +686,7 @@
     ],
     "ticket": {
       "title": "Tasten reagieren nicht",
-      "location": "",
+      "service": "",
       "category": "Tastatur",
       "keywords": [
         "Tasten",
@@ -711,7 +711,7 @@
     ],
     "ticket": {
       "title": "Mausklicks werden nicht erkannt",
-      "location": "",
+      "service": "",
       "category": "Maus",
       "keywords": [
         "Mausklicks",
@@ -736,7 +736,7 @@
     ],
     "ticket": {
       "title": "Tastaturbeleuchtung defekt",
-      "location": "",
+      "service": "",
       "category": "Tastatur",
       "keywords": [
         "Tastaturbeleuchtung",
@@ -761,7 +761,7 @@
     ],
     "ticket": {
       "title": "Keine Internetverbindung",
-      "location": "",
+      "service": "",
       "category": "Internet",
       "keywords": [
         "Internetverbindung",
@@ -786,7 +786,7 @@
     ],
     "ticket": {
       "title": "Langsames Internet",
-      "location": "",
+      "service": "",
       "category": "Internet",
       "keywords": [
         "Langsam",
@@ -811,7 +811,7 @@
     ],
     "ticket": {
       "title": "Verbindungsabbrüche im WLAN",
-      "location": "",
+      "service": "",
       "category": "Internet",
       "keywords": [
         "Verbindungsabbrüche",
@@ -836,7 +836,7 @@
     ],
     "ticket": {
       "title": "IP-Konfigurationsprobleme",
-      "location": "",
+      "service": "",
       "category": "Internet",
       "keywords": [
         "IP-Konfiguration",
@@ -861,7 +861,7 @@
     ],
     "ticket": {
       "title": "DNS-Problem - Website nicht erreichbar",
-      "location": "",
+      "service": "",
       "category": "Internet",
       "keywords": [
         "DNS-Problem",
@@ -886,7 +886,7 @@
     ],
     "ticket": {
       "title": "Unkontrollierte Bewegungen Roboterarm",
-      "location": "",
+      "service": "",
       "category": "Hardware-Robotik",
       "keywords": [
         "Roboterarm",
@@ -911,7 +911,7 @@
     ],
     "ticket": {
       "title": "Fehlerhafte Sensoren des Roboters",
-      "location": "",
+      "service": "",
       "category": "Hardware-Robotik",
       "keywords": [
         "Roboter",
@@ -936,7 +936,7 @@
     ],
     "ticket": {
       "title": "Roboter reagiert nicht auf Befehle",
-      "location": "",
+      "service": "",
       "category": "Hardware-Robotik",
       "keywords": [
         "Roboter",
@@ -961,7 +961,7 @@
     ],
     "ticket": {
       "title": "Kollision der Roboterarme",
-      "location": "",
+      "service": "",
       "category": "Hardware-Robotik",
       "keywords": [
         "Roboterarme",
@@ -986,7 +986,7 @@
     ],
     "ticket": {
       "title": "Fehlerhafte Robotersteuerungseinheit",
-      "location": "",
+      "service": "",
       "category": "Hardware-Robotik",
       "keywords": [
         "Robotersteuerungseinheit",

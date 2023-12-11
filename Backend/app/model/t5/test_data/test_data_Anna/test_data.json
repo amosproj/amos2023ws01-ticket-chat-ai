@@ -1,4 +1,5 @@
-{
+[
+  {
     "text": [
       "Betreff: Excel-Fehler beim Öffnen von Dateien",
       "Hallo Support Team,",
@@ -12,7 +13,7 @@
     ],
     "ticket": {
       "title": "Fehler beim Öffnen von Excel-Dateien",
-      "location": "",
+      "service": "",
       "category": "Fehler -> Microsoft Office",
       "keywords": [
         "Excel",
@@ -24,9 +25,7 @@
       "description": "Seit gestern erhalte ich eine Fehlermeldung 'Datei kann nicht geöffnet werden', wenn ich versuche, Excel-Dateien zu öffnen. Ich arbeite mit Microsoft Office 365 und habe alle Updates installiert.",
       "priority": "Mittel"
     }
-  }
-  
-  
+  },
   {
     "text": [
       "Betreff: Outlook stürzt beim Senden von E-Mails ab",
@@ -41,7 +40,7 @@
     ],
     "ticket": {
       "title": "Outlook-Absturz beim Senden von E-Mails",
-      "location": "",
+      "service": "",
       "category": "Absturz -> Microsoft Office",
       "keywords": [
         "Outlook",
@@ -53,9 +52,7 @@
       "description": "Immer wenn ich versuche, eine E-Mail zu senden, stürzt Outlook ab. Ich verwende Outlook 2019 auf einem Windows 10-PC.",
       "priority": "Hoch"
     }
-  }
-  
-  
+  },
   {
     "text": [
       "Betreff: Word-Dokument lässt sich nicht speichern",
@@ -70,7 +67,7 @@
     ],
     "ticket": {
       "title": "Fehler beim Speichern von Word-Dokument",
-      "location": "",
+      "service": "",
       "category": "Fehler -> Microsoft Office",
       "keywords": [
         "Word",
@@ -82,9 +79,7 @@
       "description": "Jedes Mal, wenn ich versuche, ein Word-Dokument zu speichern, erhalte ich eine Fehlermeldung 'Speichern fehlgeschlagen'. Ich arbeite mit Microsoft Office 2016 auf einem Mac.",
       "priority": "Mittel"
     }
-  }
-  
-  
+  },
   {
     "text": [
       "Betreff: PowerPoint startet nicht mehr",
@@ -99,7 +94,7 @@
     ],
     "ticket": {
       "title": "PowerPoint startet nicht nach Update",
-      "location": "",
+      "service": "",
       "category": "Startprobleme -> Microsoft Office",
       "keywords": [
         "PowerPoint",
@@ -111,9 +106,7 @@
       "description": "Seit dem letzten Update startet PowerPoint nicht mehr. Ich erhalte eine Fehlermeldung beim Versuch, das Programm zu öffnen. Ich benutze Microsoft Office 365 auf einem Windows 11-PC.",
       "priority": "Hoch"
     }
-  }
-  
-  
+  },
   {
     "text": [
       "Betreff: OneNote synchronisiert nicht mehr",
@@ -128,7 +121,7 @@
     ],
     "ticket": {
       "title": "Synchronisationsproblem in OneNote",
-      "location": "",
+      "service": "",
       "category": "Synchronisation -> Microsoft Office",
       "keywords": [
         "OneNote",
@@ -140,10 +133,7 @@
       "description": "Neue Notizen werden nicht auf anderen Geräten angezeigt, und ich habe Probleme mit der Synchronisation in OneNote. Ich benutze OneNote 2019 auf einem Windows 10-PC und einem Android-Tablet.",
       "priority": "Mittel"
     }
-  }
-  
-  
-  
+  },
   {
     "text": [
       "Betreff: Wiederholte Unterbrechungen der Internetverbindung",
@@ -157,7 +147,7 @@
     ],
     "ticket": {
       "title": "Unterbrechungen der Internetverbindung",
-      "location": "",
+      "service": "",
       "category": "Störung -> Netzwerk",
       "keywords": [
         "Internetverbindung",
@@ -169,9 +159,7 @@
       "description": "Seit einigen Tagen habe ich ständige Unterbrechungen meiner Internetverbindung. Die Verbindung fällt sporadisch aus, sowohl auf meinem Computer als auch auf anderen Geräten im Netzwerk.",
       "priority": "Hoch"
     }
-  }
-  
-  
+  },
   {
     "text": [
       "Betreff: Probleme mit der WLAN-Verbindung",
@@ -186,7 +174,7 @@
     ],
     "ticket": {
       "title": "WLAN-Verbindungsprobleme",
-      "location": "",
+      "service": "",
       "category": "Störung -> Netzwerk",
       "keywords": [
         "WLAN",
@@ -198,9 +186,7 @@
       "description": "Die WLAN-Verbindung bricht häufig ab, besonders wenn mehrere Geräte gleichzeitig verbunden sind. Ich nutze einen WLAN-Router von XYZ und arbeite mit Windows 10.",
       "priority": "Mittel"
     }
-  }
-  
-  
+  },
   {
     "text": [
       "Betreff: VPN-Verbindung ständig unterbrochen",
@@ -215,7 +201,7 @@
     ],
     "ticket": {
       "title": "Ständige Unterbrechungen der VPN-Verbindung",
-      "location": "",
+      "service": "",
       "category": "Störung -> Netzwerk",
       "keywords": [
         "VPN",
@@ -227,10 +213,7 @@
       "description": "Die VPN-Verbindung wird ständig unterbrochen, und ich kann nicht stabil arbeiten. Ich nutze die offizielle VPN-Software auf einem Windows 11-PC.",
       "priority": "Hoch"
     }
-  }
-  
-  
-  
+  },
   {
     "text": [
       "Betreff: Verbindungsprobleme in unserer Filiale",
@@ -245,7 +228,7 @@
     ],
     "ticket": {
       "title": "Verbindungsprobleme in Filiale Berlin",
-      "location": "Berlin",
+      "service": "Berlin",
       "category": "Störung -> Netzwerk",
       "keywords": [
         "Internetverbindung",
@@ -257,9 +240,7 @@
       "description": "Seit gestern hat unsere Filiale in Berlin mit Verbindungsproblemen zu kämpfen. Die Internetverbindung fällt regelmäßig aus, und unsere Mitarbeiter können nicht effizient arbeiten. Wir nutzen einen lokalen Internetanbieter.",
       "priority": "Sehr Hoch"
     }
-  }
-  
-  
+  },
   {
     "text": [
       "Betreff: Passwort zurücksetzen",
@@ -273,7 +254,7 @@
     ],
     "ticket": {
       "title": "Passwort zurücksetzen",
-      "location": "",
+      "service": "",
       "category": "Passwortprobleme",
       "keywords": [
         "Passwort",
@@ -285,9 +266,7 @@
       "description": "Ich habe mein Passwort vergessen und kann mich nicht mehr am System anmelden. Mein Benutzername ist 'user123' und ich arbeite auf einem Windows 10-PC.",
       "priority": "Hoch"
     }
-  }
-  
-  
+  },
   {
     "text": [
       "Betreff: Hilfe bei der Passwort-Wiederherstellung",
@@ -301,7 +280,7 @@
     ],
     "ticket": {
       "title": "Passwort-Wiederherstellung unterstützen",
-      "location": "",
+      "service": "",
       "category": "Passwortprobleme",
       "keywords": [
         "Passwort",
@@ -313,9 +292,7 @@
       "description": "Ich benötige Unterstützung bei der Wiederherstellung meines Passworts. Mein Benutzerkonto ist auf 'john.doe' registriert, und ich arbeite auf einem MacBook mit macOS.",
       "priority": "Mittel"
     }
-  }
-  
-  
+  },
   {
     "text": [
       "Betreff: Passwortänderung erforderlich",
@@ -329,7 +306,7 @@
     ],
     "ticket": {
       "title": "Passwortänderung anfordern",
-      "location": "",
+      "service": "",
       "category": "Passwortprobleme",
       "keywords": [
         "Passwort",
@@ -341,9 +318,7 @@
       "description": "Ich habe mein aktuelles Passwort vergessen und möchte es ändern. Mein Benutzername ist 'user456' und ich arbeite auf einem Windows 7-PC.",
       "priority": "Mittel"
     }
-  }
-  
-  
+  },
   {
     "text": [
       "Betreff: Anfrage für temporäres Passwort",
@@ -357,7 +332,7 @@
     ],
     "ticket": {
       "title": "Temporäres Passwort anfordern",
-      "location": "",
+      "service": "",
       "category": "Passwortprobleme",
       "keywords": [
         "Passwort",
@@ -369,9 +344,7 @@
       "description": "Ich stehe vor einem dringenden Meeting, habe aber mein Passwort vergessen. Kann ich ein temporäres Passwort erhalten, um mich sofort anmelden zu können? Mein Benutzername lautet 'jane.doe' und ich arbeite auf einem Laptop mit Ubuntu.",
       "priority": "Hoch"
     }
-  }
-  
-  
+  },
   {
     "text": [
       "Betreff: Frage zu Passwortrichtlinien",
@@ -385,7 +358,7 @@
     ],
     "ticket": {
       "title": "Fragen zu Passwortrichtlinien",
-      "location": "",
+      "service": "",
       "category": "Passwortprobleme",
       "keywords": [
         "Passwort",
@@ -397,9 +370,7 @@
       "description": "Ich habe Schwierigkeiten, ein neues Passwort gemäß den Unternehmensrichtlinien zu erstellen. Können Sie mir bitte klare Anweisungen zu den Passwortanforderungen geben? Mein Benutzername ist 'user789', und ich arbeite auf einem Mac mit macOS.",
       "priority": "Mittel"
     }
-  }
-  
-  
+  },
   {
     "text": [
       "Betreff: Verdacht auf Malware-Infektion",
@@ -413,7 +384,7 @@
     ],
     "ticket": {
       "title": "Malware-Infektion überprüfen",
-      "location": "",
+      "service": "",
       "category": "Sicherheit -> Virenschutz",
       "keywords": [
         "Malware",
@@ -425,9 +396,7 @@
       "description": "Ich erhalte verdächtige Pop-ups, und mein Computer verhält sich ungewöhnlich langsam. Ich vermute, dass mein Rechner von Malware betroffen sein könnte. Können Sie bitte eine Überprüfung durchführen und das Problem beheben?",
       "priority": "Hoch"
     }
-  }
-  
-  
+  },
   {
     "text": [
       "Betreff: Verdächtige E-Mail erhalten",
@@ -441,7 +410,7 @@
     ],
     "ticket": {
       "title": "Verdächtige E-Mail überprüfen",
-      "location": "",
+      "service": "",
       "category": "Sicherheit -> Virenschutz",
       "keywords": [
         "E-Mail",
@@ -453,9 +422,7 @@
       "description": "Ich habe eine E-Mail mit einem verdächtigen Anhang erhalten und geöffnet. Nun mache ich mir Sorgen um die Sicherheit meines Computers. Können Sie bitte prüfen, ob mein System gefährdet ist und entsprechende Maßnahmen ergreifen?",
       "priority": "Hoch"
     }
-  }
-  
-  
+  },
   {
     "text": [
       "Betreff: Fehlende Sicherheitsupdates",
@@ -469,7 +436,7 @@
     ],
     "ticket": {
       "title": "Sicherheitsupdates überprüfen",
-      "location": "",
+      "service": "",
       "category": "Sicherheit -> Virenschutz",
       "keywords": [
         "Sicherheitsupdates",
@@ -481,10 +448,7 @@
       "description": "Ich habe festgestellt, dass einige meiner Softwareanwendungen veraltete Sicherheitsupdates haben. Das bereitet mir Sorgen bezüglich der IT-Sicherheit. Können Sie bitte sicherstellen, dass alle erforderlichen Updates installiert sind?",
       "priority": "Mittel"
     }
-  }
-  
-  
-  
+  },
   {
     "text": [
       "Betreff: Verdacht auf unbefugten Zugriff",
@@ -497,7 +461,7 @@
     ],
     "ticket": {
       "title": "Unbefugten Zugriff überprüfen",
-      "location": "",
+      "service": "",
       "category": "Sicherheit -> Virenschutz",
       "keywords": [
         "Unbefugter Zugriff",
@@ -509,10 +473,7 @@
       "description": "Ich habe verdächtige Aktivitäten in meinem Benutzerkonto festgestellt, die auf einen unbefugten Zugriff hindeuten könnten. Bitte überprüfen Sie mein Konto auf mögliche Sicherheitsverletzungen und ergreifen Sie entsprechende Maßnahmen.",
       "priority": "Hoch"
     }
-  }
-  
-  
-  
+  },
   {
     "text": [
       "Betreff: Firewall-Probleme und Sicherheitsbedenken",
@@ -526,7 +487,7 @@
     ],
     "ticket": {
       "title": "Firewall-Einstellungen überprüfen",
-      "location": "",
+      "service": "",
       "category": "Sicherheit -> Virenschutz",
       "keywords": [
         "Firewall",
@@ -539,6 +500,7 @@
       "priority": "Mittel"
     }
   }
+]
   
   
   

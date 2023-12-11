@@ -11,7 +11,7 @@
     ],
     "ticket": {
       "title": "Maschinenstillstand",
-      "location": "Halle 3",
+      "service": "",
       "category": "Steuerungssystem",
       "keywords": [
         "Maschinenstillstand",
@@ -36,7 +36,7 @@
     ],
     "ticket": {
       "title": "Fehler Temperaturregelung",
-      "location": "",
+      "service": "",
       "category": "Temperaturregelung",
       "keywords": [
         "Fehler",
@@ -61,7 +61,7 @@
     ],
     "ticket": {
       "title": "Fehler CNC-Steuerung",
-      "location": "",
+      "service": "",
       "category": "CNC-Maschine",
       "keywords": [
         "Fehler",
@@ -86,7 +86,7 @@
     ],
     "ticket": {
       "title": "Fehler Robotersteuerung",
-      "location": "Montageabteilung",
+      "service": "",
       "category": "Roboter",
       "keywords": [
         "Fehler",
@@ -111,7 +111,7 @@
     ],
     "ticket": {
       "title": "Ausfall Produktionslinie",
-      "location": "",
+      "service": "",
       "category": "Förderbänder",
       "keywords": [
         "Ausfall",
@@ -136,7 +136,7 @@
     ],
     "ticket": {
       "title": "Fehler Druckmaschine",
-      "location": "Druckerei",
+      "service": "",
       "category": "Druckmaschine",
       "keywords": [
         "Fehler",
@@ -161,7 +161,7 @@
     ],
     "ticket": {
       "title": "Fehler Produktionssoftware",
-      "location": "",
+      "service": "",
       "category": "Produktionssoftware",
       "keywords": [
         "Fehler",
@@ -186,7 +186,7 @@
     ],
     "ticket": {
       "title": "Störung Qualitätskontrolle",
-      "location": "Qualitätskontrollabteilung",
+      "service": "",
       "category": "Prüfgeräte",
       "keywords": [
         "Störung",
@@ -211,7 +211,7 @@
     ],
     "ticket": {
       "title": "Ausfall Klimaanlage",
-      "location": "Produktionshalle",
+      "service": "",
       "category": "Klimaanlage",
       "keywords": [
         "Ausfall",
@@ -236,7 +236,7 @@
     ],
     "ticket": {
       "title": "Störung Schweißroboter-Anlage",
-      "location": "",
+      "service": "",
       "category": "Schweißroboter",
       "keywords": [
         "Störung",
@@ -261,7 +261,7 @@
     ],
     "ticket": {
       "title": "Druckerprobleme",
-      "location": "Verwaltungsbereich",
+      "service": "",
       "category": "Drucker",
       "keywords": [
         "Druckerprobleme",
@@ -286,7 +286,7 @@
     ],
     "ticket": {
       "title": "Synchronisationsprobleme Outlook-Kalender",
-      "location": "",
+      "service": "",
       "category": "Outlook",
       "keywords": [
         "Synchronisation",
@@ -311,7 +311,7 @@
     ],
     "ticket": {
       "title": "WLAN-Verbindungsprobleme",
-      "location": "Büro",
+      "service": "",
       "category": "WLAN",
       "keywords": [
         "WLAN-Verbindungsprobleme",
@@ -336,7 +336,7 @@
     ],
     "ticket": {
       "title": "Videokonferenzprobleme",
-      "location": "",
+      "service": "",
       "category": "Videokonferenzsystem",
       "keywords": [
         "Videokonferenzprobleme",
@@ -361,7 +361,7 @@
     ],
     "ticket": {
       "title": "Langsame Rechnerleistung",
-      "location": "",
+      "service": "",
       "category": "Arbeitsrechner",
       "keywords": [
         "Langsame Performance",
@@ -386,7 +386,7 @@
     ],
     "ticket": {
       "title": "Fehler Zeiterfassungssoftware",
-      "location": "",
+      "service": "",
       "category": "Zeiterfassung",
       "keywords": [
         "Fehler",
@@ -411,7 +411,7 @@
     ],
     "ticket": {
       "title": "Intranet-Zugangsprobleme",
-      "location": "",
+      "service": "",
       "category": "Intranet",
       "keywords": [
         "Zugangsprobleme",
@@ -436,7 +436,7 @@
     ],
     "ticket": {
       "title": "Fehler Buchhaltungssystem",
-      "location": "",
+      "service": "",
       "category": "Buchhaltung",
       "keywords": [
         "Fehler",
@@ -461,7 +461,7 @@
     ],
     "ticket": {
       "title": "Fehler Projektmanagementsoftware",
-      "location": "",
+      "service": "",
       "category": "Projektmanagement",
       "keywords": [
         "Fehler",
@@ -486,7 +486,7 @@
     ],
     "ticket": {
       "title": "Belegungsprobleme Konferenzraum",
-      "location": "Konferenzraum",
+      "service": "",
       "category": "Belegungssystem",
       "keywords": [
         "Belegungsprobleme",
@@ -511,7 +511,7 @@
     ],
     "ticket": {
       "title": "Fehler SPS-Steuerung Fertigungsstraße",
-      "location": "Fertigungsstraße",
+      "service": "",
       "category": "SPS-Steuerung",
       "keywords": [
         "Fehler",
@@ -536,7 +536,7 @@
     ],
     "ticket": {
       "title": "Ausfall Verpackungsroboter",
-      "location": "Verpackungsanlage",
+      "service": "",
       "category": "Roboter",
       "keywords": [
         "Ausfall",
@@ -561,7 +561,7 @@
     ],
     "ticket": {
       "title": "Störung Prozessleittechnik chemische Anlage",
-      "location": "Chemische Anlage",
+      "service": "",
       "category": "Prozessleittechnik",
       "keywords": [
         "Störung",
@@ -586,7 +586,7 @@
     ],
     "ticket": {
       "title": "Kommunikationsprobleme Produktionsroboter",
-      "location": "Produktionshalle",
+      "service": "",
       "category": "Produktionsroboter",
       "keywords": [
         "Kommunikationsprobleme",
@@ -611,7 +611,7 @@
     ],
     "ticket": {
       "title": "Fehler CNC-Steuerung Fräsmaschine",
-      "location": "Produktionshalle",
+      "service": "",
       "category": "CNC-Steuerung",
       "keywords": [
         "Fehler",
@@ -636,7 +636,7 @@
     ],
     "ticket": {
       "title": "Probleme Lagerverwaltungssystem automatisches Lager",
-      "location": "Automatisches Lager",
+      "service": "",
       "category": "Lagerverwaltungssystem",
       "keywords": [
         "Probleme",
@@ -661,7 +661,7 @@
     ],
     "ticket": {
       "title": "Temperaturabweichungen Industrieofen",
-      "location": "Industrieofen",
+      "service": "",
       "category": "Ofensteuerungssystem",
       "keywords": [
         "Temperaturabweichungen",
@@ -686,7 +686,7 @@
     ],
     "ticket": {
       "title": "Kommunikationsprobleme Förderbänder",
-      "location": "Produktion",
+      "service": "",
       "category": "Förderbänder",
       "keywords": [
         "Kommunikationsprobleme",
@@ -711,7 +711,7 @@
     ],
     "ticket": {
       "title": "Fehler Steuerung Industrieroboter",
-      "location": "Produktion",
+      "service": "",
       "category": "Industrieroboter",
       "keywords": [
         "Fehler",
@@ -735,7 +735,7 @@
     ],
     "ticket": {
       "title": "Passwort zurücksetzen",
-      "location": "",
+      "service": "",
       "category": "Passwort",
       "keywords": [
         "Passwort",
@@ -757,7 +757,7 @@
     ],
     "ticket": {
       "title": "Freigabe Dateizugriff - Finanzbericht",
-      "location": "",
+      "service": "",
       "category": "Dateizugriff",
       "keywords": [
         "Freigabe",
@@ -781,7 +781,7 @@
     ],
     "ticket": {
       "title": "Neue Mitarbeiter anlegen",
-      "location": "",
+      "service": "",
       "category": "Benutzerverwaltung",
       "keywords": [
         "Neue Mitarbeiter",
@@ -803,7 +803,7 @@
     ],
     "ticket": {
       "title": "Druckerprobleme - Verwaltungsbüro",
-      "location": "Verwaltungsbüro",
+      "service": "",
       "category": "Drucker",
       "keywords": [
         "Drucker",
@@ -827,7 +827,7 @@
     ],
     "ticket": {
       "title": "Fehler Gehaltsabrechnung",
-      "location": "",
+      "service": "",
       "category": "Gehaltsabrechnung",
       "keywords": [
         "Fehler",
@@ -849,7 +849,7 @@
     ],
     "ticket": {
       "title": "Zugriffsrechte Projektordner - Neues Produkt",
-      "location": "",
+      "service": "",
       "category": "Zugriffsrechte",
       "keywords": [
         "Zugriffsrechte",
@@ -872,7 +872,7 @@
     ],
     "ticket": {
       "title": "Software-Update - Buchhaltungssystem",
-      "location": "",
+      "service": "",
       "category": "Software",
       "keywords": [
         "Software-Update",
@@ -894,7 +894,7 @@
     ],
     "ticket": {
       "title": "Genehmigung Dienstreise - München",
-      "location": "",
+      "service": "",
       "category": "Dienstreise",
       "keywords": [
         "Genehmigung",
@@ -917,7 +917,7 @@
     ],
     "ticket": {
       "title": "Schulungstermine - Mitarbeiter",
-      "location": "",
+      "service": "",
       "category": "Schulung",
       "keywords": [
         "Schulungstermine",
@@ -940,7 +940,7 @@
     ],
     "ticket": {
       "title": "Fehlerhafte Kalibrierung - Produktionsstraße",
-      "location": "",
+      "service": "",
       "category": "Kalibrierung",
       "keywords": [
         "Fehlerhafte Kalibrierung",
@@ -964,7 +964,7 @@
     ],
     "ticket": {
       "title": "Problem Produktionsroboter",
-      "location": "",
+      "service": "",
       "category": "Produktionsroboter",
       "keywords": [
         "Produktionsroboter",
@@ -987,7 +987,7 @@
     ],
     "ticket": {
       "title": "Qualitätsprüfungsproblem - Produktion",
-      "location": "",
+      "service": "",
       "category": "Qualitätsprüfung",
       "keywords": [
         "Qualitätsprüfung",
@@ -1010,7 +1010,7 @@
     ],
     "ticket": {
       "title": "Datenübertragungsproblem - Produktion",
-      "location": "",
+      "service": "",
       "category": "Datenübertragung",
       "keywords": [
         "Datenübertragung",
@@ -1034,7 +1034,7 @@
     ],
     "ticket": {
       "title": "Langsame Produktionsgeschwindigkeit",
-      "location": "",
+      "service": "",
       "category": "Produktionsgeschwindigkeit",
       "keywords": [
         "Langsam",
@@ -1058,7 +1058,7 @@
     ],
     "ticket": {
       "title": "Fehler Produktkennzeichnung",
-      "location": "",
+      "service": "",
       "category": "Produktkennzeichnung",
       "keywords": [
         "Fehler",
@@ -1082,7 +1082,7 @@
     ],
     "ticket": {
       "title": "Maschinenstopp - Produktionsstraße",
-      "location": "",
+      "service": "",
       "category": "Maschinenstopp",
       "keywords": [
         "Maschinenstopp",
@@ -1106,7 +1106,7 @@
     ],
     "ticket": {
       "title": "Faxversandproblem",
-      "location": "",
+      "service": "",
       "category": "Fax",
       "keywords": [
         "Faxversand",
@@ -1129,7 +1129,7 @@
     ],
     "ticket": {
       "title": "Chatplattformausfall",
-      "location": "",
+      "service": "",
       "category": "Chatplattform",
       "keywords": [
         "Chatplattform",
@@ -1152,7 +1152,7 @@
     ],
     "ticket": {
       "title": "E-Mail-Serverausfall",
-      "location": "",
+      "service": "",
       "category": "E-Mail",
       "keywords": [
         "E-Mail-Server",
@@ -1176,7 +1176,7 @@
     ],
     "ticket": {
       "title": "Probleme Videokonferenzsystem",
-      "location": "",
+      "service": "",
       "category": "Videokonferenz",
       "keywords": [
         "Videokonferenzsystem",
@@ -1200,7 +1200,7 @@
     ],
     "ticket": {
       "title": "Telefonanlagenausfall",
-      "location": "",
+      "service": "",
       "category": "Telefonanlage",
       "keywords": [
         "Telefonanlage",
