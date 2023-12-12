@@ -6,7 +6,7 @@
      ],
      "ticket": {
        "title": "Netzwerkverbindungsproblem",
-       "location": "Büro 305",
+       "service": "",
        "category": "Netzwerk",
        "keywords": [
          "Verbindung",
@@ -26,7 +26,7 @@
      ],
      "ticket": {
        "title": "Druckerfunktionsstörung",
-       "location": "Büro 202",
+       "service": "",
        "category": "Drucker",
        "keywords": [
          "Drucker",
@@ -46,7 +46,7 @@
      ],
      "ticket": {
        "title": "Passwort zurücksetzen",
-       "location": "Benutzerkonto von Mayer, Julia",
+       "service": "",
        "category": "Zugang",
        "keywords": [
          "Passwort",
@@ -66,7 +66,7 @@
      ],
      "ticket": {
        "title": "Software-Update erforderlich",
-       "location": "Arbeitsplatz von Keller, Max",
+       "service": "",
        "category": "Software",
        "keywords": [
          "Software",
@@ -86,7 +86,7 @@
      ],
      "ticket": {
        "title": "Serverzugriffsproblem",
-       "location": "Arbeitsplatz von Wagner, Lisa",
+       "service": "",
        "category": "Server",
        "keywords": [
          "Server",
@@ -107,7 +107,7 @@
      ],
      "ticket": {
        "title": "Internetverbindung unterbrochen",
-       "location": "Zuhause",
+       "service": "",
        "category": "Netzwerk",
        "keywords": [
          "Internet",
@@ -128,7 +128,7 @@
      ],
      "ticket": {
        "title": "Drucker druckt keine Farben mehr",
-       "location": "Büro",
+       "service": "",
        "category": "Drucker",
        "keywords": [
          "Drucker",
@@ -149,7 +149,7 @@
      ],
      "ticket": {
        "title": "Softwareabsturz beim Öffnen von Dateien",
-       "location": "Arbeitsplatz",
+       "service": "",
        "category": "Software",
        "keywords": [
          "Software",
@@ -170,7 +170,7 @@
      ],
      "ticket": {
        "title": "E-Mail-Konto Passwort vergessen",
-       "location": "Online",
+       "service": "",
        "category": "E-Mail",
        "keywords": [
          "E-Mail",
@@ -191,7 +191,7 @@
      ],
      "ticket": {
        "title": "Probleme mit Software-Installation",
-       "location": "Arbeitsplatz",
+       "service": "",
        "category": "Software",
        "keywords": [
          "Software",
@@ -212,7 +212,7 @@
      ],
      "ticket": {
        "title": "WLAN-Verbindungsprobleme",
-       "location": "Zuhause",
+       "service": "",
        "category": "Netzwerk",
        "keywords": [
          "WLAN",
@@ -233,7 +233,7 @@
      ],
      "ticket": {
        "title": "Fehler beim Anwendungsstart",
-       "location": "Büro-PC",
+       "service": "",
        "category": "Software",
        "keywords": [
          "Fehlermeldung",
@@ -253,7 +253,7 @@
      ],
      "ticket": {
        "title": "Drucker druckt keine Farben",
-       "location": "Büro",
+       "service": "",
        "category": "Drucker",
        "keywords": [
          "Drucker",
@@ -274,7 +274,7 @@
      ],
      "ticket": {
        "title": "Server-Verbindungsprobleme im Büro",
-       "location": "Büro",
+       "service": "",
        "category": "Server",
        "keywords": [
          "Server",
@@ -294,7 +294,7 @@
      ],
      "ticket": {
        "title": "E-Mail-Abruf auf Smartphone",
-       "location": "Unterwegs",
+       "service": "",
        "category": "E-Mail",
        "keywords": [
          "E-Mail",
@@ -315,7 +315,7 @@
      ],
      "ticket": {
        "title": "Druckerprobleme",
-       "location": "Büro 301",
+       "service": "",
        "category": "Hardware",
        "keywords": [
          "Drucker",
@@ -336,7 +336,7 @@
      ],
      "ticket": {
        "title": "Netzwerk-Zugangsproblem",
-       "location": "Homeoffice",
+       "service": "",
        "category": "Netzwerk",
        "keywords": [
          "Login",
@@ -357,7 +357,7 @@
      ],
      "ticket": {
        "title": "Software-Abstürze",
-       "location": "Entwicklungsabteilung",
+       "service": "",
        "category": "Software",
        "keywords": [
          "Absturz",
@@ -378,7 +378,7 @@
      ],
      "ticket": {
        "title": "E-Mail-Versandprobleme",
-       "location": "Vertriebsabteilung",
+       "service": "",
        "category": "E-Mail",
        "keywords": [
          "Versand",
@@ -399,7 +399,7 @@
      ],
      "ticket": {
        "title": "Passwort zurücksetzen",
-       "location": "Benutzeraccount",
+       "service": "",
        "category": "Account",
        "keywords": [
          "Passwort",
@@ -420,7 +420,7 @@
      ],
      "ticket": {
        "title": "WLAN-Verbindungsprobleme",
-       "location": "Bürogebäude, Stockwerk 3",
+       "service": "",
        "category": "Netzwerk",
        "keywords": [
          "WLAN",
@@ -441,7 +441,7 @@
      ],
      "ticket": {
        "title": "Druckerprobleme",
-       "location": "Bürogebäude, Stockwerk 2",
+       "service": "",
        "category": "Drucker",
        "keywords": [
          "Drucker",
@@ -462,7 +462,7 @@
      ],
      "ticket": {
        "title": "Passwort zurücksetzen",
-       "location": "Remote",
+       "service": "",
        "category": "Konto-Zugang",
        "keywords": [
          "Passwort",
@@ -483,7 +483,7 @@
      ],
      "ticket": {
        "title": "Hilfe bei Software-Update",
-       "location": "Home Office",
+       "service": "",
        "category": "Software",
        "keywords": [
          "Software-Update",
@@ -504,7 +504,7 @@
      ],
      "ticket": {
        "title": "Gesperrter E-Mail-Account",
-       "location": "Bürogebäude, Stockwerk 4",
+       "service": "",
        "category": "E-Mail",
        "keywords": [
          "E-Mail",
@@ -525,7 +525,7 @@
      ],
      "ticket": {
        "title": "Netzwerkzugriffsfehler",
-       "location": "Büro 305",
+       "service": "",
        "category": "Netzwerkprobleme",
        "keywords": [
          "Netzwerk",
@@ -547,7 +547,7 @@
      ],
      "ticket": {
        "title": "Druckprobleme",
-       "location": "Büro 201",
+       "service": "",
        "category": "Drucker",
        "keywords": [
          "Drucker",
@@ -568,7 +568,7 @@
      ],
      "ticket": {
        "title": "Tonprobleme",
-       "location": "Home Office",
+       "service": "",
        "category": "Audio",
        "keywords": [
          "Ton",
@@ -590,7 +590,7 @@
      ],
      "ticket": {
        "title": "E-Mail-Zugangsproblem",
-       "location": "Büro 102",
+       "service": "",
        "category": "E-Mail",
        "keywords": [
          "E-Mail",
@@ -612,7 +612,7 @@
      ],
      "ticket": {
        "title": "Programmabsturz",
-       "location": "Büro 401",
+       "service": "",
        "category": "Anwendungen",
        "keywords": [
          "Programm",
@@ -634,7 +634,7 @@
      ],
      "ticket": {
        "title": "WLAN-Verbindungsproblem",
-       "location": "Bürogebäude EG",
+       "service": "",
        "category": "Netzwerk",
        "keywords": [
          "WLAN",
@@ -655,7 +655,7 @@
      ],
      "ticket": {
        "title": "Drucker druckt keine Farben",
-       "location": "Büro 203",
+       "service": "",
        "category": "Drucker",
        "keywords": [
          "Drucker",
@@ -676,7 +676,7 @@
      ],
      "ticket": {
        "title": "Fehlgeschlagenes Software-Update",
-       "location": "Home Office",
+       "service": "",
        "category": "Software",
        "keywords": [
          "Software",
@@ -697,7 +697,7 @@
      ],
      "ticket": {
        "title": "Problem mit E-Mail-Abruf",
-       "location": "Büro 305",
+       "service": "",
        "category": "E-Mail",
        "keywords": [
          "E-Mail",
@@ -718,7 +718,7 @@
      ],
      "ticket": {
        "title": "Probleme mit Netzlaufwerk-Zugriff",
-       "location": "Home Office",
+       "service": "",
        "category": "Netzwerk",
        "keywords": [
          "Netzlaufwerk",

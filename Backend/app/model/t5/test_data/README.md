@@ -19,7 +19,7 @@
   ],
   "ticket": {
     "title": "Störung -> Netzwerk",
-    "location": "",
+    "service": "",
     "category": "Störung -> Netzwerk",
     "keywords": [
       "Remote Desktop",
@@ -30,11 +30,10 @@
     // Störung aber kann arbeiten, Störung kann nicht arbeiten, Störung mehrere können nicht arbeiten, Störung Abteilung kann nicht arbeiten
     "affectedPerson": "Mustermann, Max",
     "description": "Wir haben ein paar neue Rechner in einem Rack im Technik Raum eingerichtet. Bei einem möchten wir, dass ein Kollege aus Ungarn Zugang dazu hat. Er meldet, dass er kein Remote Desktop auf dem Rechner öffnen kann.",
-    "priority": "Mittel",
+    "priority": "Mittel", 
     // Niedrig, Mittel, Hoch, Sehr Hoch,
-
-  "requestType": "Incident" // Service Request, Incident
-
+    "requestType": "Incident"
+    // Service Request, Incident
   }
 }
 ```
@@ -53,7 +52,7 @@ Bitte erstelle mir einen Datensatz für Support-Anfragen und -Tickets in deutsch
 Dabei soll unter "text" der Betreff und der Inhalt einer Email-Anfrage an einen Kunden-Support für technische Belange als Zeilen in einem Array aufgelistet sein.
 Außerdem soll unter "ticket" ein zur Email passendes Support-Ticket mit den folgenden Attributen vorhanden sein.
 Das Attribut "title" beinhaltet den Titel des Tickets, welcher möglichst kurz und im Nominalstil verfasst sein soll.
-Das Attribut "location" spezifiziert die betroffene Stelle beim Kunden.
+Das Attribut "service" ist immer ein leerer String.
 Das Attribut "category" klassifiziert das Problem möglichst knapp.
 Das Attribut "keywords" ist ein Array mit 1 bis 4 verschiedenen Schlagworten, die den Inhalt des Tickets betreffen.
 Das Attribut "customerPriority" beschreibt die Auswirkung des Problems auf den Kunden und kann die Werte "Störung aber kann arbeiten", "Störung kann nicht arbeiten", "Störung mehrere können nicht arbeiten" und "Störung Abteilung kann nicht arbeiten" annehmen.

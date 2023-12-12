@@ -9,7 +9,7 @@
     ],
     "ticket": {
       "title": "Stromkabel kaputt",
-      "location": "",
+      "service": "",
       "category": "Störung -> Notebook ",
       "keywords": [
         "Laptop",
@@ -33,7 +33,7 @@
     ],
     "ticket": {
       "title": "Keine Wlan Verbindung",
-      "location": "",
+      "service": "",
       "category": "Störung -> LAN / WLAN",
       "keywords": [
         "WLAN"
@@ -55,7 +55,7 @@
     ],
     "ticket": {
       "title": "Brauche Linux USB stick",
-      "location": "",
+      "service": "",
       "category": "Beschaffung -> Zubehör",
       "keywords": [
         "USB-Stick",
@@ -79,7 +79,7 @@
     ],
     "ticket": {
       "title": "Merkwürdige Popups",
-      "location": "",
+      "service": "",
       "category": "Störung -> PC / Notebook / Handy",
       "keywords": [
         "PopUps",
@@ -103,7 +103,7 @@
     ],
     "ticket": {
       "title": "Spam Emails",
-      "location": "",
+      "service": "",
       "category": "Störung -> IT-Betrieb",
       "keywords": [
         "Spam",
@@ -123,7 +123,7 @@
     ],
     "ticket": {
       "title": "Zoom öffnet sich nicht",
-      "location": "",
+      "service": "",
       "category": "Störung -> IT-Betrieb",
       "keywords": [
         "Zoom"
@@ -145,7 +145,7 @@
     ],
     "ticket": {
       "title": "Abstürze wegen überhitzung",
-      "location": "",
+      "service": "",
       "category": "Störung -> PC / Notebook / Handy",
       "keywords": [
         "Laptop"
@@ -167,7 +167,7 @@
     ],
     "ticket": {
       "title": "Übrige Urlaubstage",
-      "location": "",
+      "service": "",
       "category": "Auftrag -> Zeitkonto",
       "keywords": [
         "Urlaubstage",
@@ -189,7 +189,7 @@
     ],
     "ticket": {
       "title": "Abgabe Workstation",
-      "location": "",
+      "service": "",
       "category": "Auftrag -> Außerbetriebnahme",
       "keywords": [
         "Workstation"
@@ -211,7 +211,7 @@
     ],
     "ticket": {
       "title": "Benötige neues Headset",
-      "location": "",
+      "service": "",
       "category": "Beschaffung -> Zubehör",
       "keywords": [
         "Headset"
@@ -233,7 +233,7 @@
     ],
     "ticket": {
       "title": "Abgabe Rasberry Pie",
-      "location": "",
+      "service": "",
       "category": "Auftrag -> Außerbetriebnahme",
       "keywords": [
         "Rasberry Pie"
@@ -255,7 +255,7 @@
     ],
     "ticket": {
       "title": "Installation von DüsentriebPad",
-      "location": "",
+      "service": "",
       "category": "Auftrag -> Virenscanner Ausnahme",
       "keywords": [
         "Software",
@@ -278,7 +278,7 @@
     ],
     "ticket": {
       "title": "Benötige Admin Account",
-      "location": "",
+      "service": "",
       "category": "Auftrag -> Administration Rack-PCs",
       "keywords": [
         "Admin",
@@ -301,7 +301,7 @@
     ],
     "ticket": {
       "title": "Rack PC down",
-      "location": "",
+      "service": "",
       "category": "Störung -> PC / Notebook / Handy",
       "keywords": [
         "Rack",
@@ -327,7 +327,7 @@
     ],
     "ticket": {
       "title": "Arbeitshandy kaputt",
-      "location": "",
+      "service": "",
       "category": "Störung -> Handy",
       "keywords": [
         "Handy",
@@ -350,7 +350,7 @@
     ],
     "ticket": {
       "title": "Drucker spinnt",
-      "location": "",
+      "service": "",
       "category": "Störung -> Drucker",
       "keywords": [
         "Drucker"
@@ -372,7 +372,7 @@
     ],
     "ticket": {
       "title": "Sharepoint Ordner gelöscht",
-      "location": "",
+      "service": "",
       "category": "Störung -> Sharepoint",
       "keywords": [
         "Sharepoint",
@@ -395,7 +395,7 @@
     ],
     "ticket": {
       "title": "Passwort abgelaufen",
-      "location": "",
+      "service": "",
       "category": "Auftrag -> Administration",
       "keywords": [
         "Passwort",
@@ -418,7 +418,7 @@
     ],
     "ticket": {
       "title": "Neuer Mittarbeiter braucht Zugriff",
-      "location": "",
+      "service": "",
       "category": "Auftrag -> Administration",
       "keywords": [
         "IT System",
@@ -441,7 +441,7 @@
     ],
     "ticket": {
       "title": "Brauche AR-Brille",
-      "location": "",
+      "service": "",
       "category": "Beschaffung -> AR-Brille",
       "keywords": [
         "AR-Brille"
@@ -462,7 +462,7 @@
     ],
     "ticket": {
       "title": "Monitor Kapput",
-      "location": "",
+      "service": "",
       "category": "Störung -> Monitor",
       "keywords": [
         "Monitor"
@@ -484,7 +484,7 @@
     ],
     "ticket": {
       "title": "Photoshop Lizenz",
-      "location": "",
+      "service": "",
       "category": "Auftrag -> Photoshop",
       "keywords": [
         "Photoshop",
@@ -508,7 +508,7 @@
     ],
     "ticket": {
       "title": "VPN externe Mitarbeiter",
-      "location": "",
+      "service": "",
       "category": "Auftrag -> VPN",
       "keywords": [
         "VPN",
@@ -534,7 +534,7 @@
     ],
     "ticket": {
       "title": "Uprade alter Systeme",
-      "location": "",
+      "service": "",
       "category": "Störung -> Notebook",
       "keywords": [
         "iFruit Pro4",
@@ -558,7 +558,7 @@
     ],
     "ticket": {
       "title": "Kein Audio",
-      "location": "",
+      "service": "",
       "category": "Störung -> Notebook",
       "keywords": [
         "Audio",
@@ -582,7 +582,7 @@
     ],
     "ticket": {
       "title": "Brauchen mehr Power",
-      "location": "",
+      "service": "",
       "category": "Beschaffung -> Server",
       "keywords": [
         "Server",
@@ -606,7 +606,7 @@
     ],
     "ticket": {
       "title": "Irisscanner konfiguration",
-      "location": "",
+      "service": "",
       "category": "Auftrag -> Iris-Scanner",
       "keywords": [
         "Iris-Scanner",
@@ -630,7 +630,7 @@
     ],
     "ticket": {
       "title": "Rückgabe von Laptop",
-      "location": "",
+      "service": "",
       "category": "Auftrag -> Außerbetriebnahme",
       "keywords": [
         "Laptop",
@@ -653,7 +653,7 @@
     ],
     "ticket": {
       "title": "Mein Rechner ist besessen",
-      "location": "",
+      "service": "",
       "category": "Störung -> Notebook",
       "keywords": [
         "Laptop"
@@ -676,7 +676,7 @@
     ],
     "ticket": {
       "title": "Passwortzurücksetzung erforderlich",
-      "location": "",
+      "service": "",
       "category": "Auftrag -> Passwort",
       "keywords": [
         "Passwort",
@@ -700,7 +700,7 @@
     ],
     "ticket": {
       "title": "Festplatte korrupiert",
-      "location": "",
+      "service": "",
       "category": "Störung -> Notebook",
       "keywords": [
         "Festplatte",
@@ -724,7 +724,7 @@
     ],
     "ticket": {
       "title": "WLAN-Verbindung spinnt",
-      "location": "",
+      "service": "",
       "category": "Störung -> WLAN",
       "keywords": [
         "WLAN",
@@ -747,7 +747,7 @@
     ],
     "ticket": {
       "title": "WLAN-Passwort vergessen",
-      "location": "",
+      "service": "",
       "category": "Auftrag -> Passwort",
       "keywords": [
         "WLAN",
@@ -771,7 +771,7 @@
     ],
     "ticket": {
       "title": "Verbindungsprobleme trotz vollem WLAN-Signal",
-      "location": "",
+      "service": "",
       "category": "Störung -> WLAN",
       "keywords": [
         "WLAN",
@@ -796,7 +796,7 @@
     ],
     "ticket": {
       "title": "Langsame WLAN-Geschwindigkeit",
-      "location": "",
+      "service": "",
       "category": "Störung -> WLAN",
       "keywords": [
         "WLAN",
@@ -821,7 +821,7 @@
       ],
       "ticket": {
         "title": "WLAN-Verbindung im Arsch nach Updates",
-        "location": "",
+        "service": "",
         "category": "Störung -> WLAN",
         "keywords": [
           "WLAN",
@@ -846,7 +846,7 @@
       ],
       "ticket": {
         "title": "Notebook-Probleme nach Update",
-        "location": "",
+        "service": "",
         "category": "Störung -> Notebook",
         "keywords": [
           "Notebook",
@@ -870,7 +870,7 @@
       ],
       "ticket": {
         "title": "Notebook stürzt ständig ab",
-        "location": "",
+        "service": "",
         "category": "Störung -> Notebook",
         "keywords": [
           "Notebook",
@@ -894,7 +894,7 @@
       ],
       "ticket": {
         "title": "WLAN-Verbindungsprobleme am Notebook",
-        "location": "",
+        "service": "",
         "category": "Störung -> Notebook",
         "keywords": [
           "Notebook",
@@ -919,7 +919,7 @@
       ],
       "ticket": {
         "title": "Notebook friert ein",
-        "location": "",
+        "service": "",
         "category": "Störung -> Notebook",
         "keywords": [
           "Notebook",
@@ -943,7 +943,7 @@
       ],
       "ticket": {
         "title": "Defektes Display am Notebook",
-        "location": "",
+        "service": "",
         "category": "Störung -> Notebook",
         "keywords": [
           "Notebook",
