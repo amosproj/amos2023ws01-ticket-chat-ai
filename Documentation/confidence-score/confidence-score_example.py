@@ -4,14 +4,16 @@
 import torch
 from transformers import T5ForConditionalGeneration, T5Tokenizer, pipeline
 
-model = T5ForConditionalGeneration.from_pretrained('t5-base')
-tokenizer = T5Tokenizer.from_pretrained('t5-base')
+model = T5ForConditionalGeneration.from_pretrained("t5-base")
+tokenizer = T5Tokenizer.from_pretrained("t5-base")
 
 # input text
-input_text = ("Find the solution: Hey, I'm David. I've encountered an issue with my company laptop's audio. "
-              "There's no sound, and I've tried adjusting the volume settings, but it hasn't helped. It's affecting "
-              "my ability to participate in virtual meetings. Can you please assist me in resolving this audio "
-              "problem?")
+input_text = (
+    "Find the solution: Hey, I'm David. I've encountered an issue with my company laptop's audio. "
+    "There's no sound, and I've tried adjusting the volume settings, but it hasn't helped. It's affecting "
+    "my ability to participate in virtual meetings. Can you please assist me in resolving this audio "
+    "problem?"
+)
 
 # Tokenize and convert to tensor
 input_ids = tokenizer(text=input_text, return_tensors="pt").input_ids
@@ -26,7 +28,7 @@ output = model.generate(
     top_p=0.95,
     temperature=0.7,
     output_scores=True,
-    return_dict_in_generate=True
+    return_dict_in_generate=True,
 )
 
 response = tokenizer.decode(output[0][0], skip_special_tokens=True)
@@ -36,7 +38,7 @@ print("RESPONSE: ", response)
 
 # only use id's that were generated
 # gen_sequences has shape [3, 15]
-gen_sequences = output.sequences[:, input_ids.shape[1]:]
+gen_sequences = output.sequences[:, input_ids.shape[1] :]
 
 # let's stack the logits generated at each step to a tensor and transform
 # logits to probs
