@@ -23,7 +23,8 @@
           "customerPriority": "Störung kann nicht arbeiten",
           "affectedPerson": "Schmidt, Julia",
           "description": "Schwierigkeiten bei der Installation der Buchhaltungssoftware auf dem Laptop. Fehlermeldung 'Fehler 404: Datei nicht gefunden' tritt bei 50% der Installation auf.",
-          "priority": "Hoch"
+          "priority": "Hoch",
+          "requestType": "Incident"
         }
       },
       {
@@ -50,7 +51,8 @@
           "customerPriority": "Störung mehrere können nicht arbeiten",
           "affectedPerson": "Klein, Tobias",
           "description": "Totalausfall des Bürodruckers (Modell XYZ123), keine Fehlermeldung, Neustart erfolglos.",
-          "priority": "Hoch"
+          "priority": "Hoch",
+          "requestType": "Incident"
         }
       },
       {
@@ -76,7 +78,8 @@
           "customerPriority": "Störung kann nicht arbeiten",
           "affectedPerson": "Weber, Anna",
           "description": "Probleme beim Senden und Empfangen von E-Mails, vermutlich Serverproblem.",
-          "priority": "Mittel"
+          "priority": "Mittel",
+          "requestType": "Incident"
         }
       },
       {
@@ -102,7 +105,8 @@
           "customerPriority": "Störung kann nicht arbeiten",
           "affectedPerson": "Braun, Markus",
           "description": "VPN-Verbindung schlägt fehl, Fehlermeldung 'Authentifizierung gescheitert'.",
-          "priority": "Mittel"
+          "priority": "Mittel",
+          "requestType": "Incident"
         }
       },
       {
@@ -128,7 +132,8 @@
           "customerPriority": "Störung Abteilung kann nicht arbeiten",
           "affectedPerson": "Neumann, Laura",
           "description": "Absturz der CRM-Software beim Öffnen bestimmter Kundenprofile nach letztem Update.",
-          "priority": "Sehr Hoch"
+          "priority": "Sehr Hoch",
+          "requestType": "Incident"
         }
       },
       {
@@ -154,7 +159,8 @@
           "customerPriority": "Störung Abteilung kann nicht arbeiten",
           "affectedPerson": "Fischer, Jan",
           "description": "Plötzlicher Ausfall in Produktionslinie 3, Steuerungssoftware zeigt Fehlercode 'E-101'.",
-          "priority": "Sehr Hoch"
+          "priority": "Sehr Hoch",
+          "requestType": "Incident"
         }
       },
       {
@@ -180,7 +186,8 @@
           "customerPriority": "Störung aber kann arbeiten",
           "affectedPerson": "Meyer, Stefan",
           "description": "Roboterarm R12 zeigt unerwartete Bewegungen, möglicherweise ein Sensorproblem.",
-          "priority": "Mittel"
+          "priority": "Mittel",
+          "requestType": "Incident"
         }
       },
       {
@@ -206,7 +213,8 @@
           "customerPriority": "Störung Abteilung kann nicht arbeiten",
           "affectedPerson": "Hoffmann, Claudia",
           "description": "Kritisches Alarm im Kühlsystem der Anlage A5, Temperatur steigt über den zulässigen Bereich.",
-          "priority": "Sehr Hoch"
+          "priority": "Sehr Hoch",
+          "requestType": "Incident"
         }
       },
       {
@@ -232,7 +240,8 @@
           "customerPriority": "Störung mehrere können nicht arbeiten",
           "affectedPerson": "Schulz, Lars",
           "description": "Fehlfunktionen in Verpackungsmaschine V5, führt zu fehlerhafter Verpackung und Produktionsverzögerungen.",
-          "priority": "Hoch"
+          "priority": "Hoch",
+          "requestType": "Incident"
         }
       },
       {
@@ -258,7 +267,8 @@
           "customerPriority": "Störung Abteilung kann nicht arbeiten",
           "affectedPerson": "Wagner, Petra",
           "description": "Förderband F2 steht komplett still, keine sichtbaren Beschädigungen, Produktionsablauf gestört.",
-          "priority": "Sehr Hoch"
+          "priority": "Sehr Hoch",
+          "requestType": "Incident"
         }
       },
       {
@@ -284,7 +294,8 @@
           "customerPriority": "Störung kann nicht arbeiten",
           "affectedPerson": "Neumann, Sarah",
           "description": "Fehler beim Import von Kundendaten in die Steuerberatungssoftware, Fehlermeldung 'Ungültiges Format im Datensatz 345'.",
-          "priority": "Hoch"
+          "priority": "Hoch",
+          "requestType": "Incident"
         }
       },
       {
@@ -309,7 +320,8 @@
           "customerPriority": "Störung aber kann arbeiten",
           "affectedPerson": "Bauer, Maximilian",
           "description": "Leistungsprobleme mit der Steuerberatungssoftware nach dem letzten Update, beeinträchtigt Arbeitseffizienz.",
-          "priority": "Mittel"
+          "priority": "Mittel",
+          "requestType": "Incident"
         }
       },
       {
@@ -335,7 +347,8 @@
           "customerPriority": "Störung kann nicht arbeiten",
           "affectedPerson": "Weber, Christina",
           "description": "Lizenzierungsfehler in Steuerberatungssoftware, trotz kürzlich erneuerter Lizenz.",
-          "priority": "Hoch"
+          "priority": "Hoch",
+          "requestType": "Incident"
         }
       },
       {
@@ -360,7 +373,8 @@
           "customerPriority": "Störung kann nicht arbeiten",
           "affectedPerson": "Müller, Andreas",
           "description": "Probleme in verschiedenen Modulen der Steuerberatungssoftware nach dem letzten Update.",
-          "priority": "Hoch"
+          "priority": "Hoch",
+          "requestType": "Incident"
         }
       },
       {
@@ -386,7 +400,8 @@
           "customerPriority": "Störung mehrere können nicht arbeiten",
           "affectedPerson": "Schwarz, Julia",
           "description": "Probleme mit der Schnittstelle zu externen Datenquellen, Synchronisationsfehler und Dateninkonsistenzen.",
-          "priority": "Hoch"
+          "priority": "Hoch",
+          "requestType": "Incident"
         }
       },
       {
@@ -411,7 +426,8 @@
           "customerPriority": "Störung Abteilung kann nicht arbeiten",
           "affectedPerson": "Berg, Michael",
           "description": "Kompletter Ausfall eines Hauptservers, beeinträchtigt kritische Anwendungen und Dienste.",
-          "priority": "Sehr Hoch"
+          "priority": "Sehr Hoch",
+          "requestType": "Incident"
         }
       },
       {
@@ -436,7 +452,8 @@
           "customerPriority": "Störung mehrere können nicht arbeiten",
           "affectedPerson": "Schmidt, Andrea",
           "description": "Anzeichen einer Netzwerksicherheitsverletzung durch ungewöhnlichen Datenverkehr.",
-          "priority": "Sehr Hoch"
+          "priority": "Sehr Hoch",
+          "requestType": "Incident"
         }
       },
       {
@@ -462,7 +479,8 @@
           "customerPriority": "Störung kann nicht arbeiten",
           "affectedPerson": "Braun, Lukas",
           "description": "Mehrere Fehler in der neuesten Version der Entwicklungssoftware, insbesondere bei Datenbankintegration.",
-          "priority": "Hoch"
+          "priority": "Hoch",
+          "requestType": "Incident"
         }
       },
       {
@@ -487,7 +505,8 @@
           "customerPriority": "Störung Abteilung kann nicht arbeiten",
           "affectedPerson": "Wagner, Julia",
           "description": "Cloud-Speicherdienst nicht erreichbar, beeinträchtigt Speicherung und Zugriff auf Daten.",
-          "priority": "Sehr Hoch"
+          "priority": "Sehr Hoch",
+          "requestType": "Incident"
         }
       },
       {
@@ -513,7 +532,8 @@
           "customerPriority": "Störung aber kann arbeiten",
           "affectedPerson": "Meyer, Tobias",
           "description": "Mehrere Benutzeroberflächenfehler in der Anwendungssoftware, einschließlich nicht reagierender Schaltflächen und Darstellungsfehler.",
-          "priority": "Mittel"
+          "priority": "Mittel",
+          "requestType": "Incident"
         }
       },
       {
@@ -538,7 +558,8 @@
           "customerPriority": "Störung kann nicht arbeiten",
           "affectedPerson": "Vogt, Lena",
           "description": "Kein Zugriff auf freigegebene Netzlaufwerke möglich, Fehlermeldung 'Zugriff verweigert'.",
-          "priority": "Mittel"
+          "priority": "Mittel",
+          "requestType": "Incident"
         }
       },
       {
@@ -563,7 +584,8 @@
           "customerPriority": "Störung Abteilung kann nicht arbeiten",
           "affectedPerson": "Schwarz, Peter",
           "description": "Zentrale Datenbankanwendung startet nicht, bleibt im Ladebildschirm stecken.",
-          "priority": "Sehr Hoch"
+          "priority": "Sehr Hoch",
+          "requestType": "Incident"
         }
       },
       {
@@ -588,7 +610,8 @@
           "customerPriority": "Störung kann nicht arbeiten",
           "affectedPerson": "Lehmann, Sarah",
           "description": "Videokonferenz-Tool zeigt schwarzen Bildschirm, Audio funktioniert, Video nicht.",
-          "priority": "Mittel"
+          "priority": "Mittel",
+          "requestType": "Incident"
         }
       },
       {
@@ -613,7 +636,8 @@
           "customerPriority": "Störung kann nicht arbeiten",
           "affectedPerson": "Becker, Tim",
           "description": "Ständige Verbindungsabbrüche im Home Office, trotz starkem WLAN-Signal.",
-          "priority": "Mittel"
+          "priority": "Mittel",
+          "requestType": "Incident"
         }
       },
       {
@@ -639,7 +663,8 @@
           "customerPriority": "Störung Abteilung kann nicht arbeiten",
           "affectedPerson": "Fischer, Klaus",
           "description": "Komplettausfall der Telefonanlage, keine Anrufe möglich.",
-          "priority": "Sehr Hoch"
+          "priority": "Sehr Hoch",
+          "requestType": "Incident"
         }
       },
       {
@@ -664,7 +689,8 @@
           "customerPriority": "Störung Abteilung kann nicht arbeiten",
           "affectedPerson": "Berger, Stefan",
           "description": "Kritische Überhitzung im Serverraum, Gefahr von Serverausfällen.",
-          "priority": "Sehr Hoch"
+          "priority": "Sehr Hoch",
+          "requestType": "Incident"
         }
       },
       {
@@ -689,7 +715,8 @@
           "customerPriority": "Störung kann nicht arbeiten",
           "affectedPerson": "Richter, Maria",
           "description": "Wichtige Projektdateien aus Cloud-Speicher verschwunden, vermutlich gelöscht.",
-          "priority": "Hoch"
+          "priority": "Hoch",
+          "requestType": "Incident"
         }
       },
       {
@@ -714,7 +741,8 @@
           "customerPriority": "Störung kann nicht arbeiten",
           "affectedPerson": "Richter, Maria",
           "description": "Wichtige Projektdateien aus Cloud-Speicher verschwunden, vermutlich gelöscht.",
-          "priority": "Hoch"
+          "priority": "Hoch",
+          "requestType": "Incident"
         }
       },
       {
@@ -740,7 +768,8 @@
           "customerPriority": "Störung Abteilung kann nicht arbeiten",
           "affectedPerson": "Wolf, Andreas",
           "description": "Kompletter Ausfall des internen Netzwerks, keine Zugriffsmöglichkeiten.",
-          "priority": "Sehr Hoch"
+          "priority": "Sehr Hoch",
+          "requestType": "Incident"
         }
       },
       {
@@ -766,7 +795,8 @@
           "customerPriority": "Störung kann nicht arbeiten",
           "affectedPerson": "Fischer, Laura",
           "description": "Ständige Fehlermeldungen und Nichtstarten von Modulen in der Sicherheitssoftware nach Update.",
-          "priority": "Hoch"
+          "priority": "Hoch",
+          "requestType": "Incident"
         }
       },
       {
@@ -791,7 +821,8 @@
           "customerPriority": "Störung mehrere können nicht arbeiten",
           "affectedPerson": "Meyer, Thomas",
           "description": "Erhebliche Verlangsamung der Netzwerkgeschwindigkeit, betrifft Internet und interne Anwendungen.",
-          "priority": "Mittel"
+          "priority": "Mittel",
+          "requestType": "Incident"
         }
       },
       {
@@ -816,7 +847,8 @@
           "customerPriority": "Störung kann nicht arbeiten",
           "affectedPerson": "Schneider, Jan",
           "description": "Wiederholte Abstürze der CAD-Software beim Laden großer Baupläne.",
-          "priority": "Hoch"
+          "priority": "Hoch",
+          "requestType": "Incident"
         }
       },
       {
@@ -841,7 +873,8 @@
           "customerPriority": "Störung mehrere können nicht arbeiten",
           "affectedPerson": "Hofmann, Michael",
           "description": "CNC-Steuerungssoftware reagiert nicht auf Eingaben, Beeinträchtigung der Fertigungsprozesse.",
-          "priority": "Sehr Hoch"
+          "priority": "Sehr Hoch",
+          "requestType": "Incident"
         }
       },
       {
@@ -867,7 +900,8 @@
           "customerPriority": "Störung Abteilung kann nicht arbeiten",
           "affectedPerson": "Lang, Sabine",
           "description": "Komplettausfall des Lagerverwaltungssystems, keine Prüfung von Materialbeständen oder Bestellerfassung möglich.",
-          "priority": "Sehr Hoch"
+          "priority": "Sehr Hoch",
+          "requestType": "Incident"
         }
       },
       {
@@ -893,7 +927,8 @@
           "customerPriority": "Störung mehrere können nicht arbeiten",
           "affectedPerson": "Werner, Frank",
           "description": "Erhebliche Netzwerkprobleme in der Produktionshalle, führen zu Verbindungsabbrüchen bei Maschinen und Computern.",
-          "priority": "Hoch"
+          "priority": "Hoch",
+          "requestType": "Incident"
         }
       },
       {
@@ -918,7 +953,8 @@
           "customerPriority": "Störung kann nicht arbeiten",
           "affectedPerson": "Krüger, Thomas",
           "description": "Sicherheitsbedenken bei Remote-Zugriff auf Unternehmenssysteme, Berichte über ungewöhnliche Aktivitäten auf Nutzerkonten.",
-          "priority": "Hoch"
+          "priority": "Hoch",
+          "requestType": "Incident"
         }
       },
       {
@@ -940,7 +976,8 @@
           "customerPriority": "Störung kann nicht arbeiten",
           "affectedPerson": "Schmidt, Anna",
           "description": "Mein E-Mail-Konto wurde gesperrt, und ich kann keine E-Mails senden oder empfangen. Bitte helfen Sie mir, mein Konto zu entsperren, da ich beruflich darauf angewiesen bin.",
-          "priority": "Hoch"
+          "priority": "Hoch",
+          "requestType": "Incident"
         }
       },
       {
@@ -962,7 +999,8 @@
           "customerPriority": "Störung kann arbeiten",
           "affectedPerson": "Müller, Peter",
           "description": "Ich habe Schwierigkeiten bei der Installation eines wichtigen Software-Updates, das für meine Arbeit unerlässlich ist. Bitte helfen Sie mir, das Problem zu beheben.",
-          "priority": "Mittel"
+          "priority": "Mittel",
+          "requestType": "Incident"
         }
       },
       {
@@ -984,7 +1022,8 @@
           "customerPriority": "Störung Abteilung kann nicht arbeiten",
           "affectedPerson": "XYZ GmbH",
           "description": "Unser Büro-Drucker funktioniert nicht mehr, und wir können keine Dokumente ausdrucken. Bitte schicken Sie einen Techniker, um das Problem so schnell wie möglich zu beheben.",
-          "priority": "Hoch"
+          "priority": "Hoch",
+          "requestType": "Incident"
         }
       },
       {
@@ -1006,7 +1045,8 @@
           "customerPriority": "Störung kann nicht arbeiten",
           "affectedPerson": "Müller, Thomas",
           "description": "Ich habe mein Passwort für meinen Firmen-Account vergessen und kann mich nicht mehr anmelden. Bitte helfen Sie mir, mein Passwort zurückzusetzen, damit ich wieder auf meine Daten zugreifen kann.",
-          "priority": "Mittel"
+          "priority": "Mittel",
+          "requestType": "Incident"
         }
       },
       {
@@ -1028,7 +1068,8 @@
           "customerPriority": "Störung Abteilung kann nicht arbeiten",
           "affectedPerson": "ABC AG",
           "description": "Unser Server ist ausgefallen, und wir haben keinen Zugriff auf unsere Daten und Anwendungen. Bitte dringend um Unterstützung, um den Server wiederherzustellen.",
-          "priority": "Sehr Hoch"
+          "priority": "Sehr Hoch",
+          "requestType": "Incident"
         }
       },
       {
@@ -1049,7 +1090,8 @@
           "customerPriority": "Störung kann nicht arbeiten",
           "affectedPerson": "Meier, Julia",
           "description": "Ich habe Schwierigkeiten, mich mit dem WLAN-Netzwerk im Büro zu verbinden. Bitte helfen Sie mir, dieses Problem zu beheben, da ich meine Arbeit nicht fortsetzen kann.",
-          "priority": "Mittel"
+          "priority": "Mittel",
+          "requestType": "Incident"
         }
       },
       {
@@ -1070,7 +1112,8 @@
           "customerPriority": "Störung kann nicht arbeiten",
           "affectedPerson": "Becker, Thomas",
           "description": "Die Software stürzt jedes Mal ab, wenn ich versuche, eine Datei zu öffnen. Bitte helfen Sie mir, dieses Problem zu lösen, da ich wichtige Dokumente bearbeiten muss.",
-          "priority": "Hoch"
+          "priority": "Hoch",
+          "requestType": "Incident"
         }
       },
       {
@@ -1091,7 +1134,8 @@
           "customerPriority": "Störung Abteilung kann nicht arbeiten",
           "affectedPerson": "XYZ Druckerei",
           "description": "Unsere gedruckten Dokumente haben in letzter Zeit eine schlechte Druckqualität. Bitte senden Sie einen Techniker, um das Problem zu beheben, da dies unsere Arbeit beeinträchtigt.",
-          "priority": "Hoch"
+          "priority": "Hoch",
+          "requestType": "Incident"
         }
       },
       {
@@ -1112,7 +1156,8 @@
           "customerPriority": "Störung kann nicht arbeiten",
           "affectedPerson": "Schneider, Martin",
           "description": "Ich kann nicht auf das gemeinsame Laufwerk zugreifen, um wichtige Dateien abzurufen. Bitte helfen Sie mir, dieses Zugriffsproblem zu lösen, da ich meine Aufgaben nicht erledigen kann.",
-          "priority": "Mittel"
+          "priority": "Mittel",
+          "requestType": "Incident"
         }
       },
       {
@@ -1133,7 +1178,8 @@
           "customerPriority": "Störung kann nicht arbeiten",
           "affectedPerson": "Müller, Sabine",
           "description": "Beim Versuch, eine neue Software zu installieren, erhalte ich eine Fehlermeldung. Bitte helfen Sie mir, diesen Fehler zu beheben, damit ich die Software nutzen kann.",
-          "priority": "Mittel"
+          "priority": "Mittel",
+          "requestType": "Incident"
         }
       },
       {
@@ -1154,7 +1200,8 @@
           "customerPriority": "Störung Abteilung kann nicht arbeiten",
           "affectedPerson": "CreativeDesigns",
           "description": "Unsere Grafikdesign-Software stürzt ständig ab, und unsere Designer können nicht produktiv arbeiten. Bitte helfen Sie uns, das Problem zu lösen, da unsere Arbeit davon abhängt.",
-          "priority": "Hoch"
+          "priority": "Hoch",
+          "requestType": "Incident"
         }
       },
       {
@@ -1175,7 +1222,8 @@
           "customerPriority": "Störung Abteilung kann nicht arbeiten",
           "affectedPerson": "PixelArt",
           "description": "Unsere Drucker im Designbüro funktionieren nicht ordnungsgemäß, und unsere Ausdrucke sind von schlechter Qualität. Bitte schicken Sie einen Techniker, um die Druckerprobleme zu beheben, da unsere Designer hochwertige Ausdrucke benötigen.",
-          "priority": "Hoch"
+          "priority": "Hoch",
+          "requestType": "Incident"
         }
       },
       {
@@ -1196,7 +1244,8 @@
           "customerPriority": "Störung Abteilung kann nicht arbeiten",
           "affectedPerson": "DesignTech",
           "description": "Unsere Grafiktabletts funktionieren nicht wie erwartet und reagieren ungenau. Bitte helfen Sie uns, die Grafiktabletts unserer Designer zu optimieren, da unsere Arbeit davon abhängt.",
-          "priority": "Hoch"
+          "priority": "Hoch",
+          "requestType": "Incident"
         }
       },
       {
@@ -1217,7 +1266,8 @@
           "customerPriority": "Störung Abteilung kann nicht arbeiten",
           "affectedPerson": "CreativeSolutions",
           "description": "Unsere Designsoftware benötigt dringend ein Update, um mit den neuesten Funktionen kompatibel zu sein. Bitte helfen Sie uns bei der Aktualisierung, da unsere Designer die neuen Funktionen benötigen.",
-          "priority": "Mittel"
+          "priority": "Mittel",
+          "requestType": "Incident"
         }
       },
       {
@@ -1238,7 +1288,8 @@
           "customerPriority": "Störung Abteilung kann nicht arbeiten",
           "affectedPerson": "ColorVision",
           "description": "Unsere Monitore zeigen unterschiedliche Farben, und die Farbgenauigkeit ist nicht zufriedenstellend. Bitte senden Sie einen Techniker, um die Farbkalibrierung unserer Monitore zu verbessern, da unsere Designer auf genaue Farbdarstellung angewiesen sind.",
-          "priority": "Hoch"
+          "priority": "Hoch",
+          "requestType": "Incident"
         }
       },
       {
@@ -1259,7 +1310,8 @@
           "customerPriority": "Störung Abteilung kann nicht arbeiten",
           "affectedPerson": "PixelPerfect GmbH",
           "description": "Wir haben Schwierigkeiten mit unserer Design-Software-Lizenz, und einige unserer Designer können nicht arbeiten. Bitte helfen Sie uns, das Lizenzproblem so schnell wie möglich zu lösen.",
-          "priority": "Hoch"
+          "priority": "Hoch",
+          "requestType": "Incident"
         }
       },
       {
@@ -1280,7 +1332,8 @@
           "customerPriority": "Störung Abteilung kann nicht arbeiten",
           "affectedPerson": "ArtWorx AG",
           "description": "Wir haben Schwierigkeiten beim Konvertieren von Grafikdateien in verschiedene Formate. Bitte unterstützen Sie uns bei der Lösung dieses Problems, da wir dringend verschiedene Dateiformate benötigen.",
-          "priority": "Mittel"
+          "priority": "Mittel",
+          "requestType": "Incident"
         }
       },
       {
@@ -1301,7 +1354,8 @@
           "customerPriority": "Störung Abteilung kann nicht arbeiten",
           "affectedPerson": "WebArt Solutions",
           "description": "Wir benötigen dringend Anpassungen an unserer Firmenwebsite, um das Design zu verbessern. Bitte setzen Sie sich mit uns in Verbindung, um die notwendigen Änderungen vorzunehmen.",
-          "priority": "Hoch"
+          "priority": "Hoch",
+          "requestType": "Incident"
         }
       },
       {
@@ -1322,7 +1376,8 @@
           "customerPriority": "Störung Abteilung kann nicht arbeiten",
           "affectedPerson": "CreativeHub",
           "description": "Unser Design-Server ist offline, und unsere Designer können nicht auf ihre Projekte zugreifen. Bitte senden Sie dringend einen Techniker, um den Server wieder online zu bringen.",
-          "priority": "Sehr Hoch"
+          "priority": "Sehr Hoch",
+          "requestType": "Incident"
         }
       },
       {
@@ -1343,7 +1398,8 @@
           "customerPriority": "Störung Abteilung kann nicht arbeiten",
           "affectedPerson": "ColorMasters GmbH",
           "description": "Wir haben Schwierigkeiten mit dem Farbmanagement in unserer Design-Software, und die Farbdarstellung ist inkonsistent. Bitte helfen Sie uns, das Farbmanagement zu optimieren, da die Genauigkeit für unsere Designer von großer Bedeutung ist.",
-          "priority": "Hoch"
+          "priority": "Hoch",
+          "requestType": "Incident"
         }
       }
 ]
