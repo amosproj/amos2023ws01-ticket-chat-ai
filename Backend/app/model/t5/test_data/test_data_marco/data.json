@@ -21,7 +21,8 @@
       "customerPriority": "Störung kann nicht arbeiten",
       "affectedPerson": "Meier, Thomas",
       "description": "Unsere Produktionsmaschine in Halle 3 steht still. Das Bedienfeld zeigt eine Fehlermeldung 'Verbindungsfehler zum Steuerungssystem'. Wir benötigen dringend Unterstützung, um die Maschine wieder in Betrieb zu nehmen.",
-      "priority": "Hoch"
+      "priority": "Hoch",
+      "requestType": "Incident"
     }
   },
   {
@@ -46,7 +47,8 @@
       "customerPriority": "Störung kann nicht arbeiten",
       "affectedPerson": "Fischer, Sabine",
       "description": "Wir haben ein Problem mit der Temperaturregelung in unserem Produktionsprozess. Die Temperatur in einem Ofen schwankt unkontrolliert, was die Qualität unserer Produkte beeinträchtigt. Bitte helfen Sie uns, dieses Problem so schnell wie möglich zu lösen.",
-      "priority": "Hoch"
+      "priority": "Hoch",
+      "requestType": "Incident"
     }
   },
   {
@@ -71,7 +73,8 @@
       "customerPriority": "Störung kann nicht arbeiten",
       "affectedPerson": "Schneider, Andreas",
       "description": "Wir haben Schwierigkeiten mit unserer CNC-Maschine. Die Steuerung reagiert nicht wie erwartet, und wir können keine präzisen Bearbeitungen durchführen. Bitte prüfen Sie das Problem und helfen Sie uns, die CNC-Steuerung wieder ordnungsgemäß zu betreiben.",
-      "priority": "Hoch"
+      "priority": "Hoch",
+      "requestType": "Service Request"
     }
   },
   {
@@ -96,7 +99,8 @@
       "customerPriority": "Störung kann nicht arbeiten",
       "affectedPerson": "Müller, Klaus",
       "description": "Wir haben ein Problem mit der Steuerung unseres Roboters in der Montageabteilung. Der Roboter führt unerklärliche Bewegungen aus und gefährdet die Sicherheit der Mitarbeiter. Bitte überprüfen Sie die Steuerung und unterstützen Sie uns bei der Behebung des Problems.",
-      "priority": "Hoch"
+      "priority": "Hoch",
+      "requestType": "Service Request"
     }
   },
   {
@@ -121,7 +125,8 @@
       "customerPriority": "Störung kann nicht arbeiten",
       "affectedPerson": "Wagner, Peter",
       "description": "Unsere gesamte Produktionslinie ist ausgefallen, und wir können keine Aufträge bearbeiten. Der Fehler scheint in der Steuerung der Förderbänder zu liegen. Bitte senden Sie einen Techniker, um das Problem zu untersuchen und zu beheben.",
-      "priority": "Sehr Hoch"
+      "priority": "Sehr Hoch",
+      "requestType": "Incident"
     }
   },
   {
@@ -146,7 +151,8 @@
       "customerPriority": "Störung kann nicht arbeiten",
       "affectedPerson": "Lehmann, Anna",
       "description": "Unsere Druckmaschine in der Druckerei funktioniert nicht ordnungsgemäß. Die Druckqualität ist stark beeinträchtigt, und wir müssen dringend Aufträge erledigen. Bitte prüfen Sie die Druckmaschine und helfen Sie uns bei der Behebung des Problems.",
-      "priority": "Hoch"
+      "priority": "Hoch",
+      "requestType": "Service Request"
     }
   },
   {
@@ -171,7 +177,8 @@
       "customerPriority": "Störung kann nicht arbeiten",
       "affectedPerson": "Becker, Julia",
       "description": "Wir haben Schwierigkeiten mit unserer Produktionssoftware. Es treten unerklärliche Fehler auf, die die Effizienz unserer Fertigungsprozesse beeinträchtigen. Bitte unterstützen Sie uns bei der Analyse und Behebung dieser Softwareprobleme.",
-      "priority": "Hoch"
+      "priority": "Hoch",
+      "requestType": "Service Request"
     }
   },
   {
@@ -196,7 +203,8 @@
       "customerPriority": "Störung kann nicht arbeiten",
       "affectedPerson": "Schulz, Markus",
       "description": "Wir haben ein Problem in der Qualitätskontrollabteilung. Die Prüfgeräte zeigen falsche Messwerte, und wir können die Qualität unserer Produkte nicht sicherstellen. Bitte senden Sie einen Techniker, um die Geräte zu überprüfen und das Problem zu beheben.",
-      "priority": "Sehr Hoch"
+      "priority": "Sehr Hoch",
+      "requestType": "Service Request"
     }
   },
   {
@@ -221,7 +229,8 @@
       "customerPriority": "Störung kann nicht arbeiten",
       "affectedPerson": "Hartmann, Sabrina",
       "description": "In unserer Produktionshalle ist die Klimaanlage ausgefallen. Die Temperaturen steigen rapide an, was die Arbeit der Mitarbeiter beeinträchtigt. Bitte kümmern Sie sich um eine schnelle Reparatur der Klimaanlage.",
-      "priority": "Hoch"
+      "priority": "Hoch",
+      "requestType": "Service Request"
     }
   },
   {
@@ -246,7 +255,8 @@
       "customerPriority": "Störung kann nicht arbeiten",
       "affectedPerson": "Weber, Dominik",
       "description": "Wir haben ein Problem mit unserer Schweißroboter-Anlage. Die Schweißnähte sind nicht mehr präzise, und wir befürchten Produktionsausfälle. Bitte schicken Sie einen Techniker, um die Anlage zu überprüfen und zu reparieren.",
-      "priority": "Hoch"
+      "priority": "Hoch",
+      "requestType": "Service Request"
     }
   },
   {
@@ -271,7 +281,8 @@
       "customerPriority": "Störung kann nicht arbeiten",
       "affectedPerson": "Schneider, Anja",
       "description": "Wir haben Schwierigkeiten mit dem Drucker im Verwaltungsbereich. Die Ausdrucke sind verschmiert, und es ist nicht mehr möglich, klare Kopien zu erhalten. Bitte überprüfen Sie den Drucker und beheben Sie das Problem.",
-      "priority": "Mittel"
+      "priority": "Mittel",
+      "requestType": "Service Request"
     }
   },
   {
@@ -296,7 +307,8 @@
       "customerPriority": "Störung kann arbeiten",
       "affectedPerson": "Fischer, Markus",
       "description": "Ich habe Probleme mit der Synchronisation meines Outlook-Kalenders. Termine, die ich auf meinem Laptop hinzufüge, erscheinen nicht auf meinem Smartphone. Bitte helfen Sie mir, die Synchronisationsprobleme zu lösen.",
-      "priority": "Mittel"
+      "priority": "Mittel",
+      "requestType": "Service Request"
     }
   },
   {
@@ -321,7 +333,8 @@
       "customerPriority": "Störung kann nicht arbeiten",
       "affectedPerson": "Braun, Laura",
       "description": "Wir haben Probleme mit der WLAN-Verbindung im Büro. Mitarbeiter können sich nicht stabil mit dem Netzwerk verbinden, was die Arbeit beeinträchtigt. Bitte überprüfen Sie das WLAN-Netzwerk und beheben Sie die Verbindungsprobleme.",
-      "priority": "Hoch"
+      "priority": "Hoch",
+      "requestType": "Service Request"
     }
   },
   {
@@ -346,7 +359,8 @@
       "customerPriority": "Störung kann nicht arbeiten",
       "affectedPerson": "Becker, Daniel",
       "description": "Wir haben Schwierigkeiten mit unserem Videokonferenzsystem. Die Verbindung ist instabil, und es kommt zu Audio- und Videoausfällen während der Besprechungen. Bitte überprüfen Sie das System und beheben Sie die Probleme.",
-      "priority": "Hoch"
+      "priority": "Hoch",
+      "requestType": "Service Request"
     }
   },
   {
@@ -371,7 +385,8 @@
       "customerPriority": "Störung kann arbeiten",
       "affectedPerson": "Müller, Simone",
       "description": "Mein Arbeitsrechner reagiert sehr langsam, was meine Produktivität beeinträchtigt. Es dauert lange, bis Anwendungen geöffnet werden, und die allgemeine Performance ist schlecht. Bitte unterstützen Sie mich bei der Analyse und Verbesserung der Rechnerleistung.",
-      "priority": "Mittel"
+      "priority": "Mittel",
+      "requestType": "Service Request"
     }
   },
   {
@@ -396,7 +411,8 @@
       "customerPriority": "Störung kann nicht arbeiten",
       "affectedPerson": "Schmidt, Nico",
       "description": "Die Zeiterfassungssoftware funktioniert nicht wie erwartet. Einige Mitarbeiter können sich nicht korrekt einloggen, und es gibt Unstimmigkeiten bei den erfassten Arbeitsstunden. Bitte überprüfen Sie die Software und beheben Sie die Fehler.",
-      "priority": "Hoch"
+      "priority": "Hoch",
+      "requestType": "Service Request"
     }
   },
   {
@@ -421,7 +437,8 @@
       "customerPriority": "Störung kann nicht arbeiten",
       "affectedPerson": "Wagner, Julian",
       "description": "Ich habe Schwierigkeiten, mich ins Intranet einzuloggen. Der Zugang wird verweigert, obwohl meine Zugangsdaten korrekt sind. Bitte überprüfen Sie mein Benutzerkonto und beheben Sie das Problem.",
-      "priority": "Mittel"
+      "priority": "Mittel",
+      "requestType": "Service Request"
     }
   },
   {
@@ -446,7 +463,8 @@
       "customerPriority": "Störung kann nicht arbeiten",
       "affectedPerson": "Lehmann, Christine",
       "description": "Wir haben Probleme mit dem Buchhaltungssystem. Es treten Fehler beim Buchen von Rechnungen auf, und die Datenbank reagiert langsam. Bitte überprüfen Sie das System und beheben Sie die auftretenden Fehler.",
-      "priority": "Hoch"
+      "priority": "Hoch",
+      "requestType": "Service Request"
     }
   },
   {
@@ -471,7 +489,8 @@
       "customerPriority": "Störung kann nicht arbeiten",
       "affectedPerson": "Richter, Andreas",
       "description": "Die Projektmanagementsoftware zeigt unerwartete Fehlermeldungen an. Die Zuordnung von Aufgaben und die Verfolgung des Projektfortschritts sind beeinträchtigt. Bitte überprüfen Sie die Software und beheben Sie die auftretenden Probleme.",
-      "priority": "Hoch"
+      "priority": "Hoch",
+      "requestType": "Service Request"
     }
   },
   {
@@ -496,7 +515,8 @@
       "customerPriority": "Störung kann nicht arbeiten",
       "affectedPerson": "Koch, Sarah",
       "description": "Wir haben Probleme mit dem Konferenzraum-Belegungssystem. Buchungen werden nicht korrekt angezeigt, und es kommt zu Doppelbelegungen. Bitte überprüfen Sie das System und beheben Sie die Belegungsprobleme.",
-      "priority": "Mittel"
+      "priority": "Mittel",
+      "requestType": "Service Request"
     }
   },
   {
@@ -521,7 +541,8 @@
       "customerPriority": "Störung kann nicht arbeiten",
       "affectedPerson": "Schneider, Jürgen",
       "description": "Wir haben einen Fehler in der SPS-Steuerung unserer Fertigungsstraße. Einige Sensoren reagieren nicht richtig, was zu Produktionsausfällen führt. Bitte überprüfen Sie die SPS-Steuerung und beheben Sie das Problem.",
-      "priority": "Hoch"
+      "priority": "Hoch",
+      "requestType": "Incident"
     }
   },
   {
@@ -546,7 +567,8 @@
       "customerPriority": "Störung kann nicht arbeiten",
       "affectedPerson": "Becker, Marina",
       "description": "Unser Verpackungsroboter ist ausgefallen und führt keine Verpackungsprozesse mehr durch. Es scheint ein Problem mit den Antrieben zu geben. Bitte senden Sie einen Techniker, um den Roboter zu überprüfen und zu reparieren.",
-      "priority": "Sehr Hoch"
+      "priority": "Sehr Hoch",
+      "requestType": "Incident"
     }
   },
   {
@@ -571,7 +593,8 @@
       "customerPriority": "Störung kann nicht arbeiten",
       "affectedPerson": "Müller, Stefan",
       "description": "Wir haben eine Störung in der Prozessleittechnik unserer chemischen Anlage. Einige Sensoren liefern falsche Messwerte, was zu unkontrollierten Prozessen führt. Bitte überprüfen Sie die Prozessleittechnik und beheben Sie die Störung.",
-      "priority": "Hoch"
+      "priority": "Hoch",
+      "requestType": "Incident"
     }
   },
   {
@@ -596,7 +619,8 @@
       "customerPriority": "Störung kann nicht arbeiten",
       "affectedPerson": "Zimmermann, Sabine",
       "description": "Wir erleben Kommunikationsprobleme zwischen mehreren Produktionsrobotern. Die Synchronisation der Bewegungen funktioniert nicht richtig, was zu Kollisionen führt. Bitte überprüfen Sie die Kommunikationsverbindung und beheben Sie das Problem.",
-      "priority": "Hoch"
+      "priority": "Hoch",
+      "requestType": "Incident"
     }
   },
   {
@@ -621,7 +645,8 @@
       "customerPriority": "Störung kann nicht arbeiten",
       "affectedPerson": "Berger, Carsten",
       "description": "Wir haben einen Fehler im CNC-Steuerungssystem unserer Fräsmaschine. Die Positionierung der Frässpindel ist ungenau, und es kommt zu Qualitätsproblemen. Bitte überprüfen Sie das Steuerungssystem und beheben Sie das Problem.",
-      "priority": "Hoch"
+      "priority": "Hoch",
+      "requestType": "Service Request"
     }
   },
   {
@@ -646,7 +671,8 @@
       "customerPriority": "Störung kann nicht arbeiten",
       "affectedPerson": "Hoffmann, Michaela",
       "description": "Wir haben Probleme mit dem Lagerverwaltungssystem in unserem automatischen Lager. Einige Regale werden nicht korrekt angesteuert, und die Lagerbestände stimmen nicht mehr überein. Bitte überprüfen Sie das Lagerverwaltungssystem und beheben Sie die Probleme.",
-      "priority": "Hoch"
+      "priority": "Hoch",
+      "requestType": "Service Request"
     }
   },
   {
@@ -671,7 +697,8 @@
       "customerPriority": "Störung kann nicht arbeiten",
       "affectedPerson": "Wagner, Julia",
       "description": "Wir stellen Temperaturabweichungen in unserem Industrieofen fest. Die gewünschten Temperaturen werden nicht erreicht, was die Produktionsprozesse beeinträchtigt. Bitte überprüfen Sie das Ofensteuerungssystem und beheben Sie das Problem.",
-      "priority": "Hoch"
+      "priority": "Hoch",
+      "requestType": "Service Request"
     }
   },
   {
@@ -696,7 +723,8 @@
       "customerPriority": "Störung kann nicht arbeiten",
       "affectedPerson": "Weber, Dennis",
       "description": "Wir haben Kommunikationsprobleme zwischen mehreren automatisierten Förderbändern. Die reibungslose Warenbeförderung ist beeinträchtigt, und es kommt zu Verzögerungen. Bitte überprüfen Sie die Kommunikationsverbindung der Förderbänder und beheben Sie das Problem.",
-      "priority": "Hoch"
+      "priority": "Hoch",
+      "requestType": "Service Request"
     }
   },
   {
@@ -721,7 +749,8 @@
       "customerPriority": "Störung kann nicht arbeiten",
       "affectedPerson": "Müller, Nicole",
       "description": "Wir haben einen Fehler in der Steuerung unseres Industrieroboters. Die Bewegungen sind unkoordiniert, und der Roboter erkennt Objekte nicht richtig. Bitte überprüfen Sie die Steuerung und beheben Sie das Problem.",
-      "priority": "Sehr Hoch"
+      "priority": "Sehr Hoch",
+      "requestType": "Incident"
     }
   },
   {
@@ -744,7 +773,8 @@
       "customerPriority": "Störung kann nicht arbeiten",
       "affectedPerson": "Müller, Michael",
       "description": "Ich habe mein Passwort vergessen und kann mich nicht mehr anmelden. Mein Benutzername lautet 'mmueller'.",
-      "priority": "Mittel"
+      "priority": "Mittel",
+      "requestType": "Service Request"
     }
   },
   {
@@ -767,7 +797,8 @@
       "customerPriority": "Störung kann nicht arbeiten",
       "affectedPerson": "Schmidt, Anna",
       "description": "Ich benötige Zugriff auf die freigegebenen Dateien für das Projekt 'Finanzbericht'.",
-      "priority": "Mittel"
+      "priority": "Mittel",
+      "requestType": "Service Request"
     }
   },
   {
@@ -790,7 +821,8 @@
       "customerPriority": "Störung Abteilung kann nicht arbeiten",
       "affectedPerson": "Fischer, Sabine",
       "description": "Wir haben neue Mitarbeiter im Verwaltungsbereich, die Zugriff auf die internen Systeme benötigen. Die Namen der Mitarbeiter lauten: Müller, Lisa und Schneider, Thomas.",
-      "priority": "Hoch"
+      "priority": "Hoch",
+      "requestType": "Service Request"
     }
   },
   {
@@ -813,7 +845,8 @@
       "customerPriority": "Störung kann nicht arbeiten",
       "affectedPerson": "Schuster, Thomas",
       "description": "Wir haben Probleme mit dem Drucker im Verwaltungsbüro. Die Ausdrucke sind unleserlich.",
-      "priority": "Mittel"
+      "priority": "Mittel",
+      "requestType": "Service Request"
     }
   },
   {
@@ -836,7 +869,8 @@
       "customerPriority": "Störung kann nicht arbeiten",
       "affectedPerson": "Weber, Julia",
       "description": "Es gibt einen Fehler bei der Gehaltsabrechnung für die Mitarbeiter im letzten Monat. Bitte überprüfen und korrigieren Sie dies umgehend.",
-      "priority": "Hoch"
+      "priority": "Hoch",
+      "requestType": "Incident"
     }
   },
   {
@@ -859,7 +893,8 @@
       "customerPriority": "Störung kann nicht arbeiten",
       "affectedPerson": "Wagner, Markus",
       "description": "Ich benötige erweiterte Zugriffsrechte für den Projektordner 'Neues Produkt'.",
-      "priority": "Mittel"
+      "priority": "Mittel",
+      "requestType": "Service Request"
     }
   },
   {
@@ -881,7 +916,8 @@
       "customerPriority": "Störung kann nicht arbeiten",
       "affectedPerson": "Becker, Andreas",
       "description": "Wir benötigen ein dringendes Software-Update für unser Buchhaltungssystem.",
-      "priority": "Hoch"
+      "priority": "Hoch",
+      "requestType": "Service Request"
     }
   },
   {
@@ -904,7 +940,8 @@
       "customerPriority": "Störung kann nicht arbeiten",
       "affectedPerson": "Schneider, Martina",
       "description": "Ich benötige eine Genehmigung für eine Dienstreise nach München.",
-      "priority": "Mittel"
+      "priority": "Mittel",
+      "requestType": "Service Request"
     }
   },
   {
@@ -926,7 +963,8 @@
       "customerPriority": "Störung Abteilung kann nicht arbeiten",
       "affectedPerson": "Müller, Christian",
       "description": "Wir planen Schulungstermine für unsere Mitarbeiter. Bitte unterstützen Sie uns bei der Koordination.",
-      "priority": "Hoch"
+      "priority": "Hoch",
+      "requestType": "Service Request"
     }
   },
   {
@@ -950,7 +988,8 @@
       "customerPriority": "Störung kann nicht arbeiten",
       "affectedPerson": "Berger, Matthias",
       "description": "Die Maschinen in unserer Produktionsstraße sind fehlerhaft kalibriert, und wir vermuten ein Problem mit der Softwareansteuerung. Bitte umgehend um technische Überprüfung.",
-      "priority": "Hoch"
+      "priority": "Hoch",
+      "requestType": "Incident"
     }
   },
   {
@@ -974,7 +1013,8 @@
       "customerPriority": "Störung kann nicht arbeiten",
       "affectedPerson": "Schneider, Laura",
       "description": "Einer unserer Produktionsroboter reagiert nicht mehr auf die Steuerung. Es könnte ein Softwareproblem vorliegen. Wir benötigen dringend Ihre Unterstützung.",
-      "priority": "Sehr Hoch"
+      "priority": "Sehr Hoch",
+      "requestType": "Incident"
     }
   },
   {
@@ -997,7 +1037,8 @@
       "customerPriority": "Störung kann nicht arbeiten",
       "affectedPerson": "Richter, Hans",
       "description": "Die automatisierte Qualitätsprüfung in unserer Produktionslinie funktioniert nicht wie erwartet. Bitte überprüfen Sie die Softwaresteuerung.",
-      "priority": "Hoch"
+      "priority": "Hoch",
+      "requestType": "Service Request"
     }
   },
   {
@@ -1020,7 +1061,8 @@
       "customerPriority": "Störung kann nicht arbeiten",
       "affectedPerson": "Schmidt, Marina",
       "description": "Wir haben Schwierigkeiten mit der Datenübertragung zwischen den Produktionsmaschinen. Es scheint, als ob die Software die Daten nicht korrekt weiterleitet.",
-      "priority": "Hoch"
+      "priority": "Hoch",
+      "requestType": "Service Request"
     }
   },
   {
@@ -1044,7 +1086,8 @@
       "customerPriority": "Störung kann nicht arbeiten",
       "affectedPerson": "Meier, Thomas",
       "description": "Die Produktionsgeschwindigkeit in unserer Anlage ist unerklärlich langsam. Es könnte ein Softwareproblem vorliegen. Benötigen dringend Hilfe zur Fehleranalyse.",
-      "priority": "Hoch"
+      "priority": "Hoch",
+      "requestType": "Service Request"
     }
   },
   {
@@ -1068,7 +1111,8 @@
       "customerPriority": "Störung kann nicht arbeiten",
       "affectedPerson": "Klein, Jennifer",
       "description": "Unsere Produktkennzeichnung ist fehlerhaft, und wir vermuten ein Problem mit der Softwaresteuerung in der Produktionslinie. Bitte prüfen Sie dies schnellstmöglich.",
-      "priority": "Hoch"
+      "priority": "Hoch",
+      "requestType": "Service Request"
     }
   },
   {
@@ -1092,7 +1136,8 @@
       "customerPriority": "Störung kann nicht arbeiten",
       "affectedPerson": "Hofmann, Daniel",
       "description": "Wir haben einen unerwarteten Maschinenstopp in unserer Produktionsstraße. Die Automatisierungssoftware scheint nicht mehr zu reagieren. Dringend um Unterstützung gebeten.",
-      "priority": "Sehr Hoch"
+      "priority": "Sehr Hoch",
+      "requestType": "Incident"
     }
   },
   {
@@ -1116,7 +1161,8 @@
       "customerPriority": "Störung kann nicht arbeiten",
       "affectedPerson": "Lehmann, Andreas",
       "description": "Wir können keine Faxe versenden, obwohl die Nummern korrekt eingegeben sind. Es könnte ein Problem mit der Faxsoftware geben. Bitte um Überprüfung und Behebung des Problems.",
-      "priority": "Mittel"
+      "priority": "Mittel",
+      "requestType": "Service Request"
     }
   },
   {
@@ -1139,7 +1185,8 @@
       "customerPriority": "Störung kann nicht arbeiten",
       "affectedPerson": "Fischer, Kevin",
       "description": "Wir haben keinen Zugriff auf unsere interne Chatplattform. Es scheint, als ob die Verbindung unterbrochen ist. Bitte um schnelle Lösung.",
-      "priority": "Hoch"
+      "priority": "Hoch",
+      "requestType": "Service Request"
     }
   },
   {
@@ -1162,7 +1209,8 @@
       "customerPriority": "Störung kann nicht arbeiten",
       "affectedPerson": "Müller, Sabine",
       "description": "Wir können keine E-Mails senden oder empfangen, da der E-Mail-Server nicht erreichbar ist. Möglicherweise liegt ein Server- oder Konfigurationsproblem vor.",
-      "priority": "Sehr Hoch"
+      "priority": "Sehr Hoch",
+      "requestType": "Incident"
     }
   },
   {
@@ -1186,7 +1234,8 @@
       "customerPriority": "Störung kann nicht arbeiten",
       "affectedPerson": "Schmidt, Alexander",
       "description": "Wir haben Schwierigkeiten, eine Verbindung zu unserer Videokonferenz aufzubauen. Es könnte ein Netzwerk- oder Softwareproblem vorliegen. Benötigen dringend Hilfe zur Fehlerbehebung.",
-      "priority": "Hoch"
+      "priority": "Hoch",
+      "requestType": "Service Request"
     }
   },
   {
@@ -1210,7 +1259,8 @@
       "customerPriority": "Störung kann nicht arbeiten",
       "affectedPerson": "Weber, Nicole",
       "description": "Unsere Telefonanlage ist ausgefallen, und wir können weder Anrufe tätigen noch empfangen. Es könnte ein Problem mit der Systemsoftware vorliegen. Dringend um schnelle Lösung gebeten.",
-      "priority": "Sehr Hoch"
+      "priority": "Sehr Hoch",
+      "requestType": "Incident"
     }
   }
 ]
