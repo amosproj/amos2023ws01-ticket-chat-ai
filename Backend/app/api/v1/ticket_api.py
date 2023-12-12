@@ -2,6 +2,8 @@ from bson import ObjectId
 from fastapi import APIRouter, HTTPException, UploadFile
 from fastapi.params import Depends, File, Path, Body
 from starlette import status
+from app.service.email_service import EmailService
+from app.dependency.email_service import get_email_service
 
 from app.api.dto.text_input import TextInput
 from app.api.dto.ticket import Ticket
@@ -19,6 +21,7 @@ async def process_text(
     input: TextInput = Body(default=TextInput()),
     trained_t5_model: TrainedT5Model = Depends(get_trained_t5_model),
     ticket_db_service: TicketDBService = Depends(get_ticket_db_service),
+    email_service: EmailService = Depends(get_email_service),
 ):
     """
     Receive Text from the Frontend
@@ -53,6 +56,17 @@ async def process_text(
     logger.info(
         f"Ticket created and saved successfully. Ticket ID: {created_ticket.id}"
     )
+
+    # send email with ticket as content
+    if input.email:
+        subject_text = (
+            "Support Ticket Created - "
+            + created_ticket.title
+            + ". TicketID: "
+            + created_ticket.id
+        )
+        print(created_ticket.id)
+        email_service.send_email(input.email, subject_text, str(created_ticket))
 
     return created_ticket
 

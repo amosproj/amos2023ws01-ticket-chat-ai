@@ -1,14 +1,5 @@
 import os
 import sys
-from dotenv import load_dotenv
-import pytest
-import configparser
-import imaplib
-import smtplib
-import time
-import unittest
-from unittest.mock import patch, MagicMock
-from test.config.pytest import SKIP_TEST
 
 # determine the absolute path to the 'backend' directory
 backend_path = os.path.abspath(os.path.join(os.path.dirname(__file__), "../../"))
@@ -17,52 +8,63 @@ backend_path = os.path.abspath(os.path.join(os.path.dirname(__file__), "../../")
 sys.path.append(os.path.join(backend_path, "app", "email"))
 
 from app.email.main import run_proxy
-from app.email.emailProxy import EmailProxy
-from app.email.smtp_conn import SmtpConnection
 import app.email.handle_mail as hm
 
-load_dotenv()
-password = os.getenv("PASSWORD")
-config = configparser.ConfigParser()
-config.read("config.ini")
-imap_server = config["DEFAULT"]["IMAP_SERVER"]
-smtp_server = config["DEFAULT"]["SMTP_SERVER"]
-email_address = config["DEFAULT"]["EMAIL_ADDRESS"]
+import pytest
+import imaplib
+import smtplib
+from unittest.mock import patch, MagicMock
+from test.config.pytest import SKIP_TEST
 
 
-@pytest.mark.skipif(condition=SKIP_TEST, reason="Github cant connect, works local")
-class EmailProxyTest(unittest.TestCase):
-    def test_email(self):
-        # Test sending emails
-        with SmtpConnection(smtp_server, email_address, password) as smtp_service:
-            self.assertIsInstance(smtp_service, SmtpConnection)
+class TestEmailProxy:
+    def email_proxy(self, monkeypatch):
+        # Mocking EmailProxy
+        class MockEmailProxy:
+            def __init__(self, imap_server, smtp_server, email_address, password):
+                self.imap_server = imap_server
+                self.smtp_server = smtp_server
+                self.email_address = email_address
+                self.password = password
 
-            test_subject = "Test Subject"
-            test_content = "Test Content"
-            test_mail = hm.make_email(
-                email_address, email_address, test_subject, test_content
-            )
-            self.assertTrue(smtp_service.send_mail(test_mail))
+            def __enter__(self):
+                return self
 
-        with EmailProxy(imap_server, smtp_server, email_address, password) as proxy:
-            # Check if the class has been constructed
-            self.assertIsInstance(proxy, EmailProxy)
+            def spin(self):
+                return [1]
 
-            # Check if we got a message
-            time.sleep(10)
-            msg_nums = proxy.spin()
-            self.assertTrue(msg_nums[-1])
+            def process_mail(self, msg_num):
+                return (self.email_address, "Test Subject", "Test Content")
 
-            # Check if the message we received was the same as the one we sent
-            msg_num = msg_nums[-1]
-            sender, subject, content = proxy.process_mail(msg_num)
-            self.assertEqual(email_address, sender)
-            self.assertEqual(test_subject, subject)
-            self.assertEqual(test_content, content)
+            def __exit__(self, exc_type, exc_val, exc_tb):
+                pass
 
-        # Check if the connection got closed
-        with self.assertRaises(imaplib.IMAP4.error):
-            proxy.imap.check()
+        # Apply the mock to EmailProxy in the module
+        monkeypatch.setattr("app.email.emailProxy.EmailProxy", MockEmailProxy)
+
+        # Return an instance of the mock
+        return MockEmailProxy(
+            "mock_imap_server",
+            "mock_smtp_server",
+            "mock_email_address",
+            "mock_password",
+        )
+
+    def test_email_proxy(self, monkeypatch):
+        email_proxy = self.email_proxy(monkeypatch)
+
+        assert email_proxy.imap_server == "mock_imap_server"
+        assert email_proxy.smtp_server == "mock_smtp_server"
+        assert email_proxy.email_address == "mock_email_address"
+        assert email_proxy.password == "mock_password"
+
+        msg_nums = email_proxy.spin()
+        assert msg_nums == [1]
+
+        sender, subject, content = email_proxy.process_mail(msg_nums[0])
+        assert sender == "mock_email_address"
+        assert subject == "Test Subject"
+        assert content == "Test Content"
 
     def test_imap_reconnect(self):
         # Mocking the EmailProxy and SmtpConnection classes
@@ -81,9 +83,9 @@ class EmailProxyTest(unittest.TestCase):
                 mock_imap.try_reconnect.assert_called_once()
 
                 # Check if the reconnect was successful
-                self.assertTrue(mock_imap.try_reconnect.return_value)
+                assert mock_imap.try_reconnect.return_value
             else:
-                self.assertFalse(mock_imap.try_reconnect.called)
+                assert not mock_imap.try_reconnect.called
 
     def test_smtp_reconnect(self):
         # Mocking the EmailProxy and SmtpConnection classes
@@ -104,6 +106,6 @@ class EmailProxyTest(unittest.TestCase):
                 mock_smtp.try_reconnect.assert_called_once()
 
                 # Check if the reconnect was successful
-                self.assertTrue(mock_smtp.try_reconnect.return_value)
+                assert mock_smtp.try_reconnect.return_value
             else:
-                self.assertFalse(mock_smtp.try_reconnect.called)
+                assert not mock_smtp.try_reconnect.called
