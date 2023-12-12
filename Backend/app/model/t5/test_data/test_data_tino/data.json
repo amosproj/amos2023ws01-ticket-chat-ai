@@ -1401,5 +1401,641 @@
           "priority": "Hoch",
           "requestType": "Incident"
         }
+      },
+      {
+        "text": [
+          "Betreff: Dringend: Serverausfall in der Produktion",
+          "Hallo Support Team,",
+          "unsere Produktionsanlagen sind ausgefallen, weil der Server nicht mehr reagiert.",
+          "Dies beeinträchtigt unsere Fertigung erheblich.",
+          "Wir benötigen dringend Hilfe, um den Server wieder zum Laufen zu bringen.",
+          "Mit freundlichen Grüßen,",
+          "Thomas Schmidt"
+        ],
+        "ticket": {
+          "title": "Serverausfall in der Produktion",
+          "service": "",
+          "category": "Serverprobleme",
+          "keywords": [
+            "Serverausfall",
+            "Produktion",
+            "Fertigung"
+          ],
+          "customerPriority": "Störung kann nicht arbeiten",
+          "affectedPerson": "Schmidt, Thomas",
+          "description": "Die Produktionsanlagen sind aufgrund eines Serverausfalls nicht mehr funktionsfähig. Dringend Unterstützung benötigt.",
+          "priority": "Hoch",
+          "requestType": "Incident"
+        }
+      },
+      {
+        "text": [
+          "Betreff: Anforderung von neuen Arbeitsplatzrechnern",
+          "Hallo Support Team,",
+          "wir benötigen dringend neue Arbeitsplatzrechner für unsere Entwicklungsabteilung.",
+          "Die aktuellen Rechner sind veraltet und beeinträchtigen die Produktivität.",
+          "Bitte organisieren Sie die Beschaffung und Installation der neuen Rechner.",
+          "Mit freundlichen Grüßen,",
+          "Sabrina Meier"
+        ],
+        "ticket": {
+          "title": "Neue Arbeitsplatzrechner für Entwicklungsabteilung",
+          "service": "",
+          "category": "Hardware-Beschaffung",
+          "keywords": [
+            "Arbeitsplatzrechner",
+            "Beschaffung",
+            "Entwicklungsabteilung"
+          ],
+          "customerPriority": "Störung Abteilung kann nicht arbeiten",
+          "affectedPerson": "Meier, Sabrina",
+          "description": "Die veralteten Arbeitsplatzrechner in der Entwicklungsabteilung beeinträchtigen die Produktivität. Neue Rechner werden dringend benötigt.",
+          "priority": "Hoch",
+          "requestType": "Service Request"
+        }
+      },
+      {
+        "text": [
+          "Betreff: Probleme mit dem Fahrzeugdiagnosesystem",
+          "Hallo Support Team,",
+          "wir haben Schwierigkeiten mit dem Fahrzeugdiagnosesystem in unserer Werkstatt.",
+          "Es zeigt fehlerhafte Ergebnisse und behindert die Reparaturarbeiten.",
+          "Bitte überprüfen Sie das System und beheben Sie die Probleme.",
+          "Mit freundlichen Grüßen,",
+          "Andreas Müller"
+        ],
+        "ticket": {
+          "title": "Probleme mit Fahrzeugdiagnosesystem in der Werkstatt",
+          "service": "",
+          "category": "Softwareprobleme",
+          "keywords": [
+            "Fahrzeugdiagnose",
+            "Werkstatt",
+            "Reparatur"
+          ],
+          "customerPriority": "Störung kann nicht arbeiten",
+          "affectedPerson": "Müller, Andreas",
+          "description": "Das Fahrzeugdiagnosesystem in unserer Werkstatt liefert fehlerhafte Ergebnisse und behindert die Reparaturarbeiten. Dringend Unterstützung erforderlich.",
+          "priority": "Hoch",
+          "requestType": "Incident"
+        }
+      },
+      {
+        "text": [
+          "Betreff: Passwort zurücksetzen für Werkstatt-PC",
+          "Hallo Support Team,",
+          "ich habe mein Passwort für den Werkstatt-PC vergessen und kann nicht auf meine Daten zugreifen.",
+          "Bitte setzen Sie mein Passwort zurück, damit ich meine Arbeit fortsetzen kann.",
+          "Mit freundlichen Grüßen,",
+          "Peter Wagner"
+        ],
+        "ticket": {
+          "title": "Passwort zurücksetzen für Werkstatt-PC",
+          "service": "",
+          "category": "Passwortprobleme",
+          "keywords": [
+            "Passwort",
+            "Werkstatt-PC",
+            "Zugriff"
+          ],
+          "customerPriority": "Störung kann nicht arbeiten",
+          "affectedPerson": "Wagner, Peter",
+          "description": "Ich habe mein Passwort für den Werkstatt-PC vergessen und benötige dringend eine Zurücksetzung, um meine Arbeit fortsetzen zu können.",
+          "priority": "Mittel",
+          "requestType": "Incident"
+        }
+      },
+      {
+        "text": [
+          "Betreff: Anforderung von Schulung für Fahrzeugsoftware",
+          "Hallo Support Team,",
+          "unsere Mitarbeiter benötigen Schulungen zur neuen Fahrzeugsoftware.",
+          "Die aktuellen Kenntnisse reichen nicht aus, um die Software effektiv zu nutzen.",
+          "Bitte organisieren Sie Schulungen für unser Team.",
+          "Mit freundlichen Grüßen,",
+          "Julia Becker"
+        ],
+        "ticket": {
+          "title": "Schulungsanforderung für Fahrzeugsoftware",
+          "service": "",
+          "category": "Schulungsanforderung",
+          "keywords": [
+            "Schulung",
+            "Fahrzeugsoftware",
+            "Mitarbeiter"
+          ],
+          "customerPriority": "Störung mehrere können nicht arbeiten",
+          "affectedPerson": "Becker, Julia",
+          "description": "Unsere Mitarbeiter benötigen Schulungen zur neuen Fahrzeugsoftware, da ihre aktuellen Kenntnisse nicht ausreichen. Bitte organisieren Sie Schulungen für unser Team.",
+          "priority": "Mittel",
+          "requestType": "Service Request"
+        }
+      },
+      {
+        "text": [
+          "Betreff: Probleme mit dem Fließbandsteuerungssystem",
+          "Hallo Support Team,",
+          "wir haben Probleme mit dem Fließbandsteuerungssystem in unserer Fabrik.",
+          "Die Produktion ist gestoppt, und wir benötigen dringend Unterstützung, um das System wieder zum Laufen zu bringen.",
+          "Mit freundlichen Grüßen,",
+          "Markus Weber"
+        ],
+        "ticket": {
+          "title": "Fließbandsteuerungssystem-Probleme",
+          "service": "",
+          "category": "Produktionssysteme",
+          "keywords": [
+            "Fließbandsteuerung",
+            "Produktionsstopp",
+            "Fabrik"
+          ],
+          "customerPriority": "Störung kann nicht arbeiten",
+          "affectedPerson": "Weber, Markus",
+          "description": "Das Fließbandsteuerungssystem in unserer Fabrik ist ausgefallen, und die Produktion steht still. Dringende Hilfe erforderlich.",
+          "priority": "Hoch",
+          "requestType": "Incident"
+        }
+      },
+      {
+        "text": [
+          "Betreff: Anforderung von neuen Dienstwagen",
+          "Hallo Support Team,",
+          "unsere Mitarbeiter benötigen dringend neue Dienstwagen, da die aktuellen Fahrzeuge in einem schlechten Zustand sind.",
+          "Bitte organisieren Sie die Beschaffung von neuen Dienstwagen für unser Team.",
+          "Mit freundlichen Grüßen,",
+          "Laura Schneider"
+        ],
+        "ticket": {
+          "title": "Beschaffung von neuen Dienstwagen",
+          "service": "",
+          "category": "Fahrzeugbeschaffung",
+          "keywords": [
+            "Dienstwagen",
+            "Beschaffung",
+            "Mitarbeiter"
+          ],
+          "customerPriority": "Service Request",
+          "affectedPerson": "Schneider, Laura",
+          "description": "Unsere Mitarbeiter benötigen dringend neue Dienstwagen aufgrund des schlechten Zustands der aktuellen Fahrzeuge. Bitte organisieren Sie die Beschaffung.",
+          "priority": "Mittel",
+          "requestType": "Service Request"
+        }
+      },
+      {
+        "text": [
+          "Betreff: Software-Update für das Navigationssystem",
+          "Hallo Support Team,",
+          "wir benötigen ein dringendes Software-Update für das Navigationssystem unserer Fahrzeuge.",
+          "Die aktuellen Karten sind veraltet, und unsere Kunden haben Schwierigkeiten bei der Navigation.",
+          "Bitte organisieren Sie das Update.",
+          "Mit freundlichen Grüßen,",
+          "Thomas Meier"
+        ],
+        "ticket": {
+          "title": "Software-Update für Navigationssystem",
+          "service": "",
+          "category": "Software-Update",
+          "keywords": [
+            "Navigationssystem",
+            "Software",
+            "Kartenupdate"
+          ],
+          "customerPriority": "Störung kann nicht arbeiten",
+          "affectedPerson": "Meier, Thomas",
+          "description": "Das Navigationssystem in unseren Fahrzeugen benötigt ein dringendes Software-Update aufgrund veralteter Karten. Kunden haben Schwierigkeiten bei der Navigation.",
+          "priority": "Hoch",
+          "requestType": "Incident"
+        }
+      },
+      {
+        "text": [
+          "Betreff: Probleme mit der Fahrzeugdiagnosesoftware",
+          "Hallo Support Team,",
+          "wir haben Schwierigkeiten mit der Fahrzeugdiagnosesoftware in unserer Werkstatt.",
+          "Sie zeigt fehlerhafte Ergebnisse an, was zu ungenauen Reparaturen führt.",
+          "Bitte überprüfen und beheben Sie das Problem.",
+          "Mit freundlichen Grüßen,",
+          "Julia Becker"
+        ],
+        "ticket": {
+          "title": "Probleme mit Fahrzeugdiagnosesoftware in der Werkstatt",
+          "service": "",
+          "category": "Softwareprobleme",
+          "keywords": [
+            "Fahrzeugdiagnose",
+            "Werkstatt",
+            "Reparaturen"
+          ],
+          "customerPriority": "Störung kann nicht arbeiten",
+          "affectedPerson": "Becker, Julia",
+          "description": "Die Fahrzeugdiagnosesoftware in unserer Werkstatt liefert fehlerhafte Ergebnisse, was zu ungenauen Reparaturen führt. Bitte überprüfen und beheben Sie das Problem.",
+          "priority": "Hoch",
+          "requestType": "Incident"
+        }
+      },
+      {
+        "text": [
+          "Betreff: Schulungsanforderung für neue Fahrzeugtechnologien",
+          "Hallo Support Team,",
+          "wir benötigen Schulungen für unser Serviceteam, um mit den neuen Fahrzeugtechnologien und -systemen umzugehen.",
+          "Unsere Mitarbeiter sind nicht ausreichend geschult, um effektiv Reparaturen durchzuführen.",
+          "Bitte organisieren Sie entsprechende Schulungen.",
+          "Mit freundlichen Grüßen,",
+          "Michael Fischer"
+        ],
+        "ticket": {
+          "title": "Schulungsanforderung für neue Fahrzeugtechnologien",
+          "service": "",
+          "category": "Schulungsanforderung",
+          "keywords": [
+            "Schulung",
+            "Fahrzeugtechnologien",
+            "Reparaturen"
+          ],
+          "customerPriority": "Störung mehrere können nicht arbeiten",
+          "affectedPerson": "Fischer, Michael",
+          "description": "Unser Serviceteam benötigt Schulungen, um effektiv mit den neuen Fahrzeugtechnologien und -systemen umzugehen. Bitte organisieren Sie die Schulungen.",
+          "priority": "Mittel",
+          "requestType": "Service Request"
+        }
+      },
+      {
+        "text": [
+          "Betreff: Stromausfall in unserem Bürogebäude",
+          "Hallo Support Team,",
+          "wir haben einen Stromausfall in unserem Bürogebäude und können nicht arbeiten.",
+          "Bitte überprüfen Sie die Ursache und beheben Sie das Problem so schnell wie möglich.",
+          "Mit freundlichen Grüßen,",
+          "Peter Müller"
+        ],
+        "ticket": {
+          "title": "Stromausfall im Bürogebäude",
+          "service": "",
+          "category": "Stromausfall",
+          "keywords": [
+            "Stromausfall",
+            "Bürogebäude",
+            "Arbeitsunterbrechung"
+          ],
+          "customerPriority": "Störung kann nicht arbeiten",
+          "affectedPerson": "Müller, Peter",
+          "description": "Unser Bürogebäude hat einen Stromausfall, der unsere Arbeit beeinträchtigt. Bitte beheben Sie das Problem dringend.",
+          "priority": "Hoch",
+          "requestType": "Incident"
+        }
+      },
+      {
+        "text": [
+          "Betreff: Anforderung von neuen IT-Ressourcen für das Energieprojekt",
+          "Hallo Support Team,",
+          "wir starten ein neues Energieprojekt und benötigen zusätzliche IT-Ressourcen, einschließlich Server und Software.",
+          "Bitte unterstützen Sie uns bei der Bereitstellung dieser Ressourcen.",
+          "Mit freundlichen Grüßen,",
+          "Anna Schmidt"
+        ],
+        "ticket": {
+          "title": "Anforderung von IT-Ressourcen für Energieprojekt",
+          "service": "",
+          "category": "IT-Ressourcen",
+          "keywords": [
+            "IT-Ressourcen",
+            "Energieprojekt",
+            "Server"
+          ],
+          "customerPriority": "Service Request",
+          "affectedPerson": "Schmidt, Anna",
+          "description": "Für unser neues Energieprojekt benötigen wir zusätzliche IT-Ressourcen, darunter Server und Software. Bitte unterstützen Sie uns bei der Bereitstellung.",
+          "priority": "Mittel",
+          "requestType": "Service Request"
+        }
+      },
+      {
+        "text": [
+          "Betreff: Probleme mit der Energiemonitoring-Software",
+          "Hallo Support Team,",
+          "unsere Energiemonitoring-Software funktioniert nicht wie erwartet.",
+          "Wir erhalten inkorrekte Daten und benötigen dringend Unterstützung, um das Problem zu lösen.",
+          "Mit freundlichen Grüßen,",
+          "Hans Wagner"
+        ],
+        "ticket": {
+          "title": "Probleme mit Energiemonitoring-Software",
+          "service": "",
+          "category": "Softwareprobleme",
+          "keywords": [
+            "Energiemonitoring",
+            "Software",
+            "Datenprobleme"
+          ],
+          "customerPriority": "Störung kann nicht arbeiten",
+          "affectedPerson": "Wagner, Hans",
+          "description": "Unsere Energiemonitoring-Software liefert inkorrekte Daten, was unsere Arbeit beeinträchtigt. Bitte helfen Sie uns, das Problem zu lösen.",
+          "priority": "Hoch",
+          "requestType": "Incident"
+        }
+      },
+      {
+        "text": [
+          "Betreff: Netzwerkprobleme in unseren Energieanlagen",
+          "Hallo Support Team,",
+          "wir haben Probleme mit unserem Netzwerk in den Energieanlagen.",
+          "Die Verbindung ist instabil, was zu Ausfällen führt.",
+          "Bitte überprüfen Sie das Netzwerk und beheben Sie die Probleme.",
+          "Mit freundlichen Grüßen,",
+          "Sophia Mayer"
+        ],
+        "ticket": {
+          "title": "Netzwerkprobleme in Energieanlagen",
+          "service": "",
+          "category": "Netzwerkprobleme",
+          "keywords": [
+            "Netzwerk",
+            "Energieanlagen",
+            "Verbindungsprobleme"
+          ],
+          "customerPriority": "Störung kann nicht arbeiten",
+          "affectedPerson": "Mayer, Sophia",
+          "description": "In unseren Energieanlagen gibt es Netzwerkprobleme, die zu Ausfällen führen. Bitte überprüfen und beheben Sie die Probleme.",
+          "priority": "Hoch",
+          "requestType": "Incident"
+        }
+      },
+      {
+        "text": [
+          "Betreff: Anforderung von Schulungen für erneuerbare Energietechnologien",
+          "Hallo Support Team,",
+          "unsere Mitarbeiter benötigen Schulungen für erneuerbare Energietechnologien, um mit den neuesten Entwicklungen Schritt zu halten.",
+          "Bitte organisieren Sie entsprechende Schulungen für unser Team.",
+          "Mit freundlichen Grüßen,",
+          "Jan Schneider"
+        ],
+        "ticket": {
+          "title": "Schulungsanforderung für erneuerbare Energietechnologien",
+          "service": "",
+          "category": "Schulungsanforderung",
+          "keywords": [
+            "Schulung",
+            "erneuerbare Energien",
+            "Mitarbeiter"
+          ],
+          "customerPriority": "Störung mehrere können nicht arbeiten",
+          "affectedPerson": "Schneider, Jan",
+          "description": "Unsere Mitarbeiter benötigen Schulungen, um mit den neuesten Entwicklungen im Bereich erneuerbare Energietechnologien Schritt zu halten. Bitte organisieren Sie die Schulungen.",
+          "priority": "Mittel",
+          "requestType": "Service Request"
+        }
+      },
+      {
+        "text": [
+          "Betreff: Dringend: Serverausfall in der Produktion",
+          "Hallo IT-Support Team,",
+          "wir haben einen Serverausfall in unserer Produktionsanlage, und die gesamte Fertigung ist zum Erliegen gekommen.",
+          "Bitte überprüfen Sie den Server und beheben Sie das Problem umgehend.",
+          "Mit freundlichen Grüßen,",
+          "Julia Schneider"
+        ],
+        "ticket": {
+          "title": "Serverausfall in der Produktion",
+          "service": "",
+          "category": "Serverprobleme",
+          "keywords": [
+            "Serverausfall",
+            "Produktion",
+            "Fertigung"
+          ],
+          "customerPriority": "Störung kann nicht arbeiten",
+          "affectedPerson": "Schneider, Julia",
+          "description": "Unser Server in der Produktionsanlage ist ausgefallen, was zu einem Produktionsstopp führt. Bitte beheben Sie das Problem dringend.",
+          "priority": "Hoch",
+          "requestType": "Incident"
+        }
+      },
+      {
+        "text": [
+          "Betreff: Anforderung von neuen Softwarelizenzen",
+          "Hallo IT-Support Team,",
+          "wir benötigen zusätzliche Softwarelizenzen für unsere Entwicklungsabteilung, da wir neue Projekte starten.",
+          "Bitte organisieren Sie die Beschaffung und Bereitstellung der Lizenzen.",
+          "Mit freundlichen Grüßen,",
+          "Max Mustermann"
+        ],
+        "ticket": {
+          "title": "Beschaffung von Softwarelizenzen",
+          "service": "",
+          "category": "Softwarebeschaffung",
+          "keywords": [
+            "Softwarelizenzen",
+            "Beschaffung",
+            "Entwicklungsabteilung"
+          ],
+          "customerPriority": "Service Request",
+          "affectedPerson": "Mustermann, Max",
+          "description": "Unsere Entwicklungsabteilung benötigt zusätzliche Softwarelizenzen für neue Projekte. Bitte organisieren Sie die Beschaffung.",
+          "priority": "Mittel",
+          "requestType": "Service Request"
+        }
+      },
+      {
+        "text": [
+          "Betreff: Probleme mit der IoT-Plattform",
+          "Hallo IT-Support Team,",
+          "wir haben Schwierigkeiten mit unserer IoT-Plattform, da sie Verbindungsprobleme aufweist.",
+          "Dies beeinträchtigt unsere Überwachungssysteme erheblich.",
+          "Bitte überprüfen Sie die Plattform und beheben Sie die Verbindungsprobleme.",
+          "Mit freundlichen Grüßen,",
+          "Andreas Müller"
+        ],
+        "ticket": {
+          "title": "Probleme mit IoT-Plattform",
+          "service": "",
+          "category": "IoT-Plattform",
+          "keywords": [
+            "IoT",
+            "Verbindungsprobleme",
+            "Überwachungssysteme"
+          ],
+          "customerPriority": "Störung kann nicht arbeiten",
+          "affectedPerson": "Müller, Andreas",
+          "description": "Unsere IoT-Plattform hat Verbindungsprobleme, die unsere Überwachungssysteme beeinträchtigen. Bitte beheben Sie das Problem.",
+          "priority": "Hoch",
+          "requestType": "Incident"
+        }
+      },
+      {
+        "text": [
+          "Betreff: Passwort zurücksetzen für Benutzerkonto",
+          "Hallo IT-Support Team,",
+          "ein Mitarbeiter hat sein Passwort vergessen und kann nicht auf sein Benutzerkonto zugreifen.",
+          "Bitte setzen Sie sein Passwort zurück, damit er wieder arbeiten kann.",
+          "Mit freundlichen Grüßen,",
+          "Laura Fischer"
+        ],
+        "ticket": {
+          "title": "Passwort zurücksetzen für Benutzerkonto",
+          "service": "",
+          "category": "Passwortprobleme",
+          "keywords": [
+            "Passwort",
+            "Benutzerkonto",
+            "Zugriff"
+          ],
+          "customerPriority": "Störung kann nicht arbeiten",
+          "affectedPerson": "Fischer, Laura",
+          "description": "Ein Mitarbeiter hat sein Passwort vergessen und benötigt eine Zurücksetzung, um auf sein Benutzerkonto zugreifen zu können. Bitte führen Sie die Zurücksetzung durch.",
+          "priority": "Mittel",
+          "requestType": "Incident"
+        }
+      },
+      {
+        "text": [
+          "Betreff: Anforderung von Schulungen für KI-Entwicklung",
+          "Hallo IT-Support Team,",
+          "unsere Entwicklungsabteilung benötigt Schulungen im Bereich künstliche Intelligenz, um unsere Fähigkeiten in der digitalen Industrie zu erweitern.",
+          "Bitte organisieren Sie entsprechende Schulungen für unser Team.",
+          "Mit freundlichen Grüßen,",
+          "Sarah Becker"
+        ],
+        "ticket": {
+          "title": "Schulungsanforderung für KI-Entwicklung",
+          "service": "",
+          "category": "Schulungsanforderung",
+          "keywords": [
+            "Schulung",
+            "künstliche Intelligenz",
+            "Entwicklungsabteilung"
+          ],
+          "customerPriority": "Service Request",
+          "affectedPerson": "Becker, Sarah",
+          "description": "Unsere Entwicklungsabteilung benötigt Schulungen im Bereich künstliche Intelligenz, um unsere Fähigkeiten in der digitalen Industrie zu erweitern. Bitte organisieren Sie die Schulungen.",
+          "priority": "Mittel",
+          "requestType": "Service Request"
+        }
+      },
+      {
+        "text": [
+          "Betreff: Dringend: Ausfall der Gebäudeautomation",
+          "Hallo IT-Support Team,",
+          "die Gebäudeautomation in unserem Bürokomplex ist ausgefallen, und wir haben keine Kontrolle mehr über die Beleuchtung und Klimatisierung.",
+          "Dies beeinträchtigt den Arbeitsbetrieb erheblich. Bitte überprüfen und beheben Sie das Problem umgehend.",
+          "Mit freundlichen Grüßen,",
+          "Thomas Müller"
+        ],
+        "ticket": {
+          "title": "Gebäudeautomation-Ausfall",
+          "service": "",
+          "category": "Smart Infrastructure",
+          "keywords": [
+            "Gebäudeautomation",
+            "Ausfall",
+            "Beleuchtung",
+            "Klimatisierung"
+          ],
+          "customerPriority": "Störung kann nicht arbeiten",
+          "affectedPerson": "Müller, Thomas",
+          "description": "Die Gebäudeautomation in unserem Bürokomplex ist ausgefallen und beeinträchtigt den Arbeitsbetrieb. Bitte beheben Sie das Problem dringend.",
+          "priority": "Hoch",
+          "requestType": "Incident"
+        }
+      },
+      {
+        "text": [
+          "Betreff: Anforderung von neuen IoT-Sensoren für die Energieüberwachung",
+          "Hallo IT-Support Team,",
+          "wir benötigen zusätzliche IoT-Sensoren für die Energieüberwachung in unseren Anlagen, um unseren Energieverbrauch besser zu steuern.",
+          "Bitte organisieren Sie die Beschaffung und Installation der Sensoren.",
+          "Mit freundlichen Grüßen,",
+          "Laura Schneider"
+        ],
+        "ticket": {
+          "title": "Beschaffung von IoT-Sensoren für Energieüberwachung",
+          "service": "",
+          "category": "IoT-Sensoren",
+          "keywords": [
+            "IoT-Sensoren",
+            "Energieüberwachung",
+            "Beschaffung"
+          ],
+          "customerPriority": "Service Request",
+          "affectedPerson": "Schneider, Laura",
+          "description": "Wir benötigen zusätzliche IoT-Sensoren für die Energieüberwachung in unseren Anlagen, um den Energieverbrauch besser zu steuern. Bitte organisieren Sie die Beschaffung.",
+          "priority": "Mittel",
+          "requestType": "Service Request"
+        }
+      },
+      {
+        "text": [
+          "Betreff: Probleme mit dem intelligenten Beleuchtungssystem",
+          "Hallo IT-Support Team,",
+          "unser intelligentes Beleuchtungssystem funktioniert nicht wie erwartet.",
+          "Die Lichtsteuerung ist unzuverlässig, was zu unerwünschten Ausfällen führt.",
+          "Bitte überprüfen Sie das System und beheben Sie die Probleme.",
+          "Mit freundlichen Grüßen,",
+          "Andreas Fischer"
+        ],
+        "ticket": {
+          "title": "Probleme mit intelligentem Beleuchtungssystem",
+          "service": "",
+          "category": "Beleuchtungssystem",
+          "keywords": [
+            "intelligentes Beleuchtungssystem",
+            "Lichtsteuerung",
+            "Ausfälle"
+          ],
+          "customerPriority": "Störung kann nicht arbeiten",
+          "affectedPerson": "Fischer, Andreas",
+          "description": "Unser intelligentes Beleuchtungssystem funktioniert unzuverlässig, was zu unerwünschten Ausfällen führt. Bitte überprüfen Sie das System und beheben Sie die Probleme.",
+          "priority": "Hoch",
+          "requestType": "Incident"
+        }
+      },
+      {
+        "text": [
+          "Betreff: Netzwerkprobleme in unseren intelligenten Anlagen",
+          "Hallo IT-Support Team,",
+          "wir haben Netzwerkprobleme in unseren intelligenten Anlagen, was zu Datenverlust und Unterbrechungen führt.",
+          "Bitte überprüfen Sie das Netzwerk und beheben Sie die Probleme so schnell wie möglich.",
+          "Mit freundlichen Grüßen,",
+          "Sophia Meier"
+        ],
+        "ticket": {
+          "title": "Netzwerkprobleme in intelligenten Anlagen",
+          "service": "",
+          "category": "Netzwerkprobleme",
+          "keywords": [
+            "Netzwerkprobleme",
+            "intelligente Anlagen",
+            "Datenverlust"
+          ],
+          "customerPriority": "Störung kann nicht arbeiten",
+          "affectedPerson": "Meier, Sophia",
+          "description": "In unseren intelligenten Anlagen treten Netzwerkprobleme auf, die zu Datenverlust und Unterbrechungen führen. Bitte überprüfen und beheben Sie das Problem.",
+          "priority": "Hoch",
+          "requestType": "Incident"
+        }
+      },
+      {
+        "text": [
+          "Betreff: Anforderung von Schulungen für Smart Infrastructure-Technologien",
+          "Hallo IT-Support Team,",
+          "unsere Mitarbeiter benötigen Schulungen im Bereich Smart Infrastructure-Technologien, um die Systeme effektiver zu nutzen.",
+          "Bitte organisieren Sie entsprechende Schulungen für unser Team.",
+          "Mit freundlichen Grüßen,",
+          "Jan Weber"
+        ],
+        "ticket": {
+          "title": "Schulungsanforderung für Smart Infrastructure-Technologien",
+          "service": "",
+          "category": "Schulungsanforderung",
+          "keywords": [
+            "Schulung",
+            "Smart Infrastructure",
+            "Technologien"
+          ],
+          "customerPriority": "Service Request",
+          "affectedPerson": "Weber, Jan",
+          "description": "Unsere Mitarbeiter benötigen Schulungen im Bereich Smart Infrastructure-Technologien, um die Systeme effektiver zu nutzen. Bitte organisieren Sie die Schulungen.",
+          "priority": "Mittel",
+          "requestType": "Service Request"
+        }
       }
 ]
