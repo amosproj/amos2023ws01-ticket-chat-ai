@@ -53,7 +53,7 @@ prompt_path = os.path.join(root_directory, "prompt.txt")
 
 # Create datasets
 custom_dataset = CustomDataset(tokenizer, data_paths, prompt_path)
-train_set, val_set = torch.utils.data.random_split(custom_dataset, [0.9, 0.1])
+train_set, val_set = torch.utils.data.random_split(custom_dataset, [int(len(custom_dataset) * 0.9), len(custom_dataset) - int(len(custom_dataset) * 0.9)])
 
 # Define data loaders
 train_loader = DataLoader(train_set, batch_size=args.batch_size, shuffle=True)
