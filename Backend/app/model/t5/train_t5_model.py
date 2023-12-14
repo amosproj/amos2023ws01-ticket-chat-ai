@@ -61,7 +61,7 @@ tokenizer = T5Tokenizer.from_pretrained(model_name)
 
 root_directory = os.path.dirname(__file__)
 
-test_dir = os.path.join(root_directory, "test_data")
+test_dir = os.path.join(root_directory, "..", "test_data")
 data_paths = [
     os.path.join(test_dir, "test_data_garvin", "data.json"),
     os.path.join(test_dir, "test_data_irild", "data.json"),
