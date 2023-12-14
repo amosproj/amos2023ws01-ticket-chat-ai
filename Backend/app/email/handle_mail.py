@@ -40,10 +40,17 @@ def process(message: Message):
 
     for part in message.walk():
         print(f"Message-Part Contenttype={part.get_content_type()}")
-        if part.get_content_type() == "text/plain":
+        content_disposition = str(part.get("Content-Disposition"))
+        if (
+            part.get_content_type() == "text/plain"
+            and "attachment" not in content_disposition
+        ):
             content += part.as_string()
             content += "\n"
-        elif part.get_content_maintype() in ["image", "application"]:
+        elif (
+            part.get_content_maintype() in ["image", "application", "text"]
+            and "attachment" in content_disposition
+        ):
             filename = part.get_filename()
             if filename:
                 attachments.append(
