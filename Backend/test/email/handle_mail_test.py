@@ -55,3 +55,17 @@ class HandleMailTest(TestCase):
             )
             self.assertFalse(not content)
             self.assertEqual(2, len(attachments))
+
+    def test_process_with_mail_with_text_plain_MIMEtype_attachment(self):
+        file_path = os.path.join(
+            os.path.dirname(__file__), "test_mails/b'366'_text_plain_attachment.pkl"
+        )
+        with open(file_path, "rb") as inp:
+            message = pickle.load(inp)
+            # Act
+            sender, subject, content, attachments = process(message)
+            # Expect
+            self.assertEqual("Garvin Konopka <konopkagarvin@gmail.com>", sender)
+            self.assertEqual("TestMail mit .txt Attachment", subject)
+            self.assertFalse(not content)
+            self.assertEqual(1, len(attachments))
