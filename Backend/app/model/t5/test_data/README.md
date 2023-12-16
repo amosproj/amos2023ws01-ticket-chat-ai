@@ -58,13 +58,13 @@ Zusätzlich soll unter "ticket" ein entsprechendes Support-Ticket mit den folgen
 - Das Attribut "customerPriority" beschreibt die Auswirkungen des Problems und kann eines der folgenden sein: "Störung aber kann arbeiten", "Störung kann nicht arbeiten", "Störung mehrere können nicht arbeiten", "Störung Abteilung kann nicht arbeiten".
 - Das Attribut "affectedPerson" repräsentiert den Namen der betroffenen Person im Format "Nachname, Vorname(n)".
 - Das Attribut "description" enthält eine detaillierte Beschreibung des mit dem Ticket verbundenen Problems.
-- Das Attribut "priority" klassifiziert die Relevanz des Tickets mit Werten wie "Niedrig", "Mittel", "Hoch", "Sehr Hoch".
+- Das Attribut "priority" klassifiziert die Relevanz des Tickets mit Werten wie "Niedrig", "Mittel", "Hoch", "Sehr Hoch"
 - Das Attribut "requestType" klassifiziert den Tickettyp als "Incident" oder "Service Request". "Incident" steht für ein Problem oder eine ähnliche Herausforderung, mit der der Benutzer konfrontiert ist, während "Service Request" für ein Ticket steht, in dem der Benutzer einen Service bestellt.
 
 Bitte liefere 5 Beispiele, die sich auf Folgendes konzentrieren:
 1. Ein Problem im Zusammenhang mit Adobe
 2. Ein Problem im Zusammenhang mit Atlassian
-3. Eine standortbasierte Anfrage (München)
+3. Eine standortbasierte Anfrage (Füge einen der Orte (Fürth, Nürnberg, Berlin, Frankfurt, München) hinzu)
 4. Ein Problem im Bereich Reporting
 5. Eine Anfrage im Zusammenhang mit Salesforce
 ```
