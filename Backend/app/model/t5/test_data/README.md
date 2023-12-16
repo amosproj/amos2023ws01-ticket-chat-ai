@@ -45,23 +45,28 @@
 Prompt:
 
 ```text
-Bitte erstelle mir einen Datensatz für Support-Anfragen und -Tickets in deutscher Sprache nach dem folgenden JSON Format:
+Bitte erstelle einen Datensatz für Support-Anfragen und Tickets auf Deutsch im angegebenen JSON-Format:
 
 <paste in the format>
 
-Dabei soll unter "text" der Betreff und der Inhalt einer Email-Anfrage an einen Kunden-Support für technische Belange als Zeilen in einem Array aufgelistet sein.
-Außerdem soll unter "ticket" ein zur Email passendes Support-Ticket mit den folgenden Attributen vorhanden sein.
-Das Attribut "title" beinhaltet den Titel des Tickets, welcher möglichst kurz und im Nominalstil verfasst sein soll.
-Das Attribut "service" ist immer ein leerer String.
-Das Attribut "category" klassifiziert das Problem möglichst knapp.
-Das Attribut "keywords" ist ein Array mit 1 bis 4 verschiedenen Schlagworten, die den Inhalt des Tickets betreffen.
-Das Attribut "customerPriority" beschreibt die Auswirkung des Problems auf den Kunden und kann die Werte "Störung aber kann arbeiten", "Störung kann nicht arbeiten", "Störung mehrere können nicht arbeiten" und "Störung Abteilung kann nicht arbeiten" annehmen.
-Das Attribut "affectedPerson" ist der Name der betroffenen Person, d.h. oftmals der Verfasser der Email, im Format "Nachname, Vorname(n)".
-Das Attribut "description" beinhaltet eine detaillierte Beschreibung des Problems, auf das sich das Ticket bezieht.
-Das Attribut "priority" klassifiziert die Relevanz des Tickets mit den Werten "Niedrig", "Mittel", "Hoch" und "Sehr Hoch".
-Das Attribut "requestType" klassifiziert den Typ des Tickets mit den Werten "Incident" oder “Service Request”. Incident beschreibt ein Ticket Falls der user ein Problem oder ähnliches hat und Service Request beschreibt ein Ticket mit dem der User Service bestellt.
+Unter "text" sollen der Betreff und der Inhalt einer E-Mail-Anfrage an den technischen Kundensupport als Zeilen in einem Array aufgeführt werden.
+Zusätzlich soll unter "ticket" ein entsprechendes Support-Ticket mit den folgenden Attributen vorhanden sein:
+- Das Attribut "title" enthält einen prägnanten Titel im Nominalstil für das Ticket.
+- Das Attribut "service" spiegelt einen relevanten Service aus der Liste wider: Adobe, Atlassian, München, Reporting, Salesforce oder ein Ort (Fürth, Nürnberg, Berlin, Frankfurt, München).
+- Das Attribut "category" klassifiziert das Problem prägnant.
+- Das Attribut "keywords" ist ein Array mit 1 bis 4 relevanten Schlagworten, die mit dem Ticketinhalt zusammenhängen.
+- Das Attribut "customerPriority" beschreibt die Auswirkungen des Problems und kann eines der folgenden sein: "Störung aber kann arbeiten", "Störung kann nicht arbeiten", "Störung mehrere können nicht arbeiten", "Störung Abteilung kann nicht arbeiten".
+- Das Attribut "affectedPerson" repräsentiert den Namen der betroffenen Person im Format "Nachname, Vorname(n)".
+- Das Attribut "description" enthält eine detaillierte Beschreibung des mit dem Ticket verbundenen Problems.
+- Das Attribut "priority" klassifiziert die Relevanz des Tickets mit Werten wie "Niedrig", "Mittel", "Hoch", "Sehr Hoch".
+- Das Attribut "requestType" klassifiziert den Tickettyp als "Incident" oder "Service Request". "Incident" steht für ein Problem oder eine ähnliche Herausforderung, mit der der Benutzer konfrontiert ist, während "Service Request" für ein Ticket steht, in dem der Benutzer einen Service bestellt.
 
-Bitte gib mir 5 Beispiele mit Fokus auf <insert a varying focus for the 5 examples>.
+Bitte liefere 5 Beispiele, die sich auf Folgendes konzentrieren:
+1. Ein Problem im Zusammenhang mit Adobe
+2. Ein Problem im Zusammenhang mit Atlassian
+3. Eine standortbasierte Anfrage (München)
+4. Ein Problem im Bereich Reporting
+5. Eine Anfrage im Zusammenhang mit Salesforce
 ```
 
 Copy the results to your own JSON file under `./test_data_<your name>/data.json` with the following structure:
