@@ -127,7 +127,8 @@ class HandleMailTest(TestCase):
             self.assertEqual("Test web de mail", subject)
             self.assertEqual(
                 "Dies ist ein test. --Diese Nachricht wurde von meinem Android Mobiltelefon "
-                "mit WEB.DE Mail gesendet.", content
+                "mit WEB.DE Mail gesendet.",
+                content,
             )
 
     def test_process_gmail_app_apple(self):
@@ -155,5 +156,6 @@ class HandleMailTest(TestCase):
             self.assertEqual(
                 "---------- Forwarded message ---------From: irild hoxhallari "
                 "<ihoxhallari@gmail.com>Date: Sat, 16 Dec 2023 at 12:57Subject: Weiterleiten TästTo:  "
-                "<irhox100@gmail.com>Hallo,\ndas ist ein Test,\nGrüße", content
+                "<irhox100@gmail.com>Hallo,\ndas ist ein Test,\nGrüße",
+                content,
             )
