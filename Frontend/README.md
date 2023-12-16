@@ -10,7 +10,7 @@ This project was generated with [Angular CLI](https://github.com/angular/angular
    sudo apt install npm
    ```
    ```bash
-   nmp install -g n
+   npm install -g n
    ```
    ```bash
    n lts

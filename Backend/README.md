@@ -49,9 +49,39 @@
     pip install -r requirements.txt
     ```
 
-4. **Set environment Variables for the EmailProxy:**
+6. **Set environment Variables for the EmailProxy:**
 
    Navigate into `./backend` directory. Rename .env_example to .env and set your Email Password inside the .env
+
+7. **Initialise and starting .exe (only tested for windows right now)**
+
+   `start_only.py` starts Backend, Frontend, Proxy and MongoDB. (MongoDB has to be installed on the standard path).
+
+   `start.oy` starts Backend, Frontend, Proxy and MongoDB and installs all dependencies for frontend and backend. (MongoDB has to be installed on the standard path).
+
+   Navigate into `./backend` directory. 
+
+   In Windows run:
+
+   When everything is setted up and only .exe is needed.
+
+   ```bash
+   pyinstaller --hidden-import uvicorn --onefile start_only.py
+   ```
+
+   For the first time, when no dependencies have been installed, and only Python, Node.js, and MongoDB have been installed:
+
+   ```bash
+   pyinstaller --hidden-import uvicorn --onefile start.py
+   ```
+
+   After that, 3 things will be created:
+      
+      backend/start.spec   (dont track it, keep it local)
+      backend/build        (dont track it, keep it local)
+      backend/dist         (dont track it, keep it local)
+   
+   In the dist folder, there is a file `start.exe`. Drag it into the root level, where the backend and frontend folders are. You can then execute the file there.
 
 ## Running and Testing the Project
 

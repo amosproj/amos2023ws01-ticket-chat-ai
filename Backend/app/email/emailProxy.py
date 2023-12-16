@@ -2,6 +2,9 @@ import email
 import imaplib
 import time
 
+import os
+import signal
+
 import handle_mail as hm
 import smtp_conn as sm
 from logger import logger
@@ -104,4 +107,5 @@ class EmailProxy:
         self.imap.logout()
         self.smtp.smtp.quit()
         logger.info("Connection closed")
+        os.kill(os.getpid(), signal.SIGINT)
         return True
