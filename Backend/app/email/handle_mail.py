@@ -27,6 +27,7 @@ def replace_special_chars(text):
     text = text.replace("=\n", "")
     return text
 
+
 def can_be_processed(message):
     """
     should return false if the email was automatically generated or is from blocked user, will be implemented in later sprint

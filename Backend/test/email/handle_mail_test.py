@@ -51,9 +51,7 @@ class HandleMailTest(TestCase):
             sender, subject, content, attachments = process(message)
             # Expect
             self.assertEqual('"Fabian Weber" <webef98@zedat.fu-berlin.de>', sender)
-            self.assertEqual(
-                "Test mit mehreren Anhängen", subject
-            )
+            self.assertEqual("Test mit mehreren Anhängen", subject)
             self.assertFalse(not content)
             self.assertEqual(2, len(attachments))
 
@@ -127,8 +125,10 @@ class HandleMailTest(TestCase):
             sender, subject, content, attachments = process(message)
             # Expect
             self.assertEqual("Test web de mail", subject)
-            self.assertEqual("Dies ist ein test. --Diese Nachricht wurde von meinem Android Mobiltelefon "
-                             "mit WEB.DE Mail gesendet.", content)
+            self.assertEqual(
+                "Dies ist ein test. --Diese Nachricht wurde von meinem Android Mobiltelefon "
+                "mit WEB.DE Mail gesendet.", content
+            )
 
     def test_process_gmail_app_apple(self):
         file_path = os.path.join(
@@ -152,6 +152,8 @@ class HandleMailTest(TestCase):
             sender, subject, content, attachments = process(message)
             # Expect
             self.assertEqual("Fwd: Weiterleiten Täst", subject)
-            self.assertEqual("---------- Forwarded message ---------From: irild hoxhallari "
-                             "<ihoxhallari@gmail.com>Date: Sat, 16 Dec 2023 at 12:57Subject: Weiterleiten TästTo:  "
-                             "<irhox100@gmail.com>Hallo,\ndas ist ein Test,\nGrüße", content)
+            self.assertEqual(
+                "---------- Forwarded message ---------From: irild hoxhallari "
+                "<ihoxhallari@gmail.com>Date: Sat, 16 Dec 2023 at 12:57Subject: Weiterleiten TästTo:  "
+                "<irhox100@gmail.com>Hallo,\ndas ist ein Test,\nGrüße", content
+            )
