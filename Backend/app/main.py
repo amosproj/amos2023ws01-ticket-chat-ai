@@ -26,11 +26,14 @@ app.add_middleware(
 # Include the router from the text_endpoint module
 app.include_router(ticket_api.router, prefix="/api/v1")
 
-print("starting routine")
-collection = get_user_collection()
-user_repo_service: UserRepository = get_user_repository(collection)
-user_db_routine_service = UserDBRoutineService(user_repo_service)
-user_db_routine_service.start_routine()
+
+@app.on_event("startup")
+async def startup_event():
+    collection = get_user_collection()
+    user_repo_service: UserRepository = get_user_repository(collection)
+    user_db_routine_service = UserDBRoutineService(user_repo_service)
+    user_db_routine_service.start_routine()
+
 
 if __name__ == "__main__":
     import uvicorn
