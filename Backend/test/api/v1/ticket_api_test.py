@@ -14,6 +14,7 @@ from app.enum.customer_prio import CustomerPrio
 from app.enum.prio import Prio
 from app.main import app
 from app.repository.entity.ticket_entity import TicketEntity
+from app.repository.entity.user_entity import UserEntity
 
 
 class TicketAPIIntegrationTest(TestCase):
