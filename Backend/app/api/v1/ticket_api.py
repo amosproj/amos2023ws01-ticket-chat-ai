@@ -52,9 +52,6 @@ async def process_text(
     received_dict = trained_t5_model.run_model(input.text)
     logger.info("Model execution complete. Result: %s", received_dict)
 
-    # Extract user_id from received_dict if available
-    user_id = received_dict.get("user_id")
-
     # Set service based on user's location
     if input.email:
         user = user_db_service.get_user_by_email(input.email)
