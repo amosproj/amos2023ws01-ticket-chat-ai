@@ -7,7 +7,7 @@ from app.dependency.email_service import get_email_service
 
 from app.api.dto.text_input import TextInput
 from app.api.dto.ticket import Ticket
-from app.dependency.ticket_db_service import get_ticket_db_service
+from app.dependency.db_service import get_ticket_db_service
 from app.dependency.trained_t5_model import get_trained_t5_model
 from app.model.t5.use_trained_t5_model import TrainedT5Model
 from app.service.ticket_db_service import TicketDBService
