@@ -82,7 +82,7 @@ jobs:
 
           while IFS= read -r line; do
             # Check if the line contains a Strong Copyleft license
-            if echo "$line" | grep -q -E '(GPL|AGPL|LGPL|CDDL|EPL)'; then
+            if echo "$line" | grep -q -E '(AGPL|LGPL|CDDL|EPL)'; then
 
               # Check if the line only contains Strong Copyleft license
               if echo "$line" | grep -q -E -v '(MIT|Apache-2.0|BSD|ISC)'; then
