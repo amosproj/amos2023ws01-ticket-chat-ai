@@ -7,10 +7,11 @@ from app.dependency.email_service import get_email_service
 
 from app.api.dto.text_input import TextInput
 from app.api.dto.ticket import Ticket
-from app.dependency.db_service import get_ticket_db_service
+from app.dependency.db_service import get_ticket_db_service, get_user_db_service
 from app.dependency.trained_t5_model import get_trained_t5_model
 from app.model.t5.use_trained_t5_model import TrainedT5Model
 from app.service.ticket_db_service import TicketDBService
+from app.service.user_db_service import UserDBService
 from app.util.logger import logger
 
 router = APIRouter()
@@ -22,6 +23,7 @@ async def process_text(
     trained_t5_model: TrainedT5Model = Depends(get_trained_t5_model),
     ticket_db_service: TicketDBService = Depends(get_ticket_db_service),
     email_service: EmailService = Depends(get_email_service),
+    user_db_service: UserDBService = Depends(get_user_db_service),
 ):
     """
     Receive Text from the Frontend
@@ -49,6 +51,16 @@ async def process_text(
     logger.info("Running the model...")
     received_dict = trained_t5_model.run_model(input.text)
     logger.info("Model execution complete. Result: %s", received_dict)
+
+    # Extract user_id from received_dict if available
+    user_id = received_dict.get('user_id')
+
+    # Set service based on user's location
+    if user_id:
+        user = user_db_service.get_user_by_id(user_id)
+        if user and user.location:
+            if not received_dict.get('service') or received_dict['service'] == 'no_service':
+                received_dict['service'] = user.location
 
     # Save the ticket to the database using the TicketDBService
     logger.info("Saving ticket to the database...")
