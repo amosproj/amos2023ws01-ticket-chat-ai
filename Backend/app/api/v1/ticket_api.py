@@ -56,8 +56,8 @@ async def process_text(
     if input.email:
         user = user_db_service.get_user_by_email(input.email)
         if user and user.location:
-            if not received_dict.get("service") or received_dict["service"] == "":
-                received_dict["service"] = user.location
+            if not received_dict.get("location") or received_dict["location"] == "":
+                received_dict["location"] = user.location
 
     # Save the ticket to the database using the TicketDBService
     logger.info("Saving ticket to the database...")

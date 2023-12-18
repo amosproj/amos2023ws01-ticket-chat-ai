@@ -30,4 +30,5 @@ class UserRepository:
 
     def read_users_by_email(self, email: str) -> list[UserEntity]:
         logger.info(f"Reading user(s) with email {email} from the database...")
-        return list(self.collection.find({"email_address": email}))
+        users = list(self.collection.find({"email_address": email}))
+        return users if users else []
