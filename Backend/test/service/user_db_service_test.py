@@ -113,7 +113,9 @@ class UserDBServiceUnitTest(TestCase):
         self.user_repository_mock.read_users_by_email.return_value = [user_entity]
 
         # Act
-        retrieved_user = self.user_db_service.get_user_by_email("mocked.user@example.com")
+        retrieved_user = self.user_db_service.get_user_by_email(
+            "mocked.user@example.com"
+        )
 
         # Assert
         self.assertEqual(retrieved_user.first_name, "Mocked")
