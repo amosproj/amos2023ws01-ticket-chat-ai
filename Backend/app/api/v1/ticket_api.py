@@ -53,14 +53,14 @@ async def process_text(
     logger.info("Model execution complete. Result: %s", received_dict)
 
     # Extract user_id from received_dict if available
-    user_id = received_dict.get('user_id')
+    user_id = received_dict.get("user_id")
 
     # Set service based on user's location
-    if user_id:
-        user = user_db_service.get_user_by_id(user_id)
+    if input.email:
+        user = user_db_service.get_user_by_email(input.email)
         if user and user.location:
-            if not received_dict.get('service') or received_dict['service'] == 'no_service':
-                received_dict['service'] = user.location
+            if not received_dict.get("service") or received_dict["service"] == "":
+                received_dict["service"] = user.location
 
     # Save the ticket to the database using the TicketDBService
     logger.info("Saving ticket to the database...")
