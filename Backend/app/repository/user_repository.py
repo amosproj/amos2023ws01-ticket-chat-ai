@@ -27,3 +27,8 @@ class UserRepository:
     def delete_user(self, user_id: ObjectId) -> DeleteResult:
         logger.info(f"Deleting user {user_id} from the database...")
         return self.collection.delete_one(filter={"_id": user_id})
+
+    def read_users_by_email(self, email: str) -> list[UserEntity]:
+        logger.info(f"Reading user(s) with email {email} from the database...")
+        users = list(self.collection.find({"email_address": email}))
+        return users if users else []

@@ -61,6 +61,16 @@ class UserRepositoryUnitTest(unittest.TestCase):
             filter={"_id": self.user_id}
         )
 
+    def test_read_users_by_email(self):
+        email = "test@example.com"
+        user_list_exp = [self.user]
+        self.collection_mock.find.return_value = user_list_exp
+        result_act = self.user_repository.read_users_by_email(email)
+        self.assertEqual(
+            user_list_exp, result_act, "wrong result of read_users_by_email()"
+        )
+        self.collection_mock.find.assert_called_once_with({"email_address": email})
+
 
 @pytest.mark.skipif(condition=SKIP_TEST, reason="Database is missing")
 class UserRepositoryIntegrationTest(unittest.TestCase):

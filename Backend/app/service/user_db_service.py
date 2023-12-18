@@ -45,6 +45,15 @@ class UserDBService:
             )
         return self._map_user(user_entity)
 
+    def get_user_by_email(self, email: str) -> User:
+        logger.info("Retrieving user by email...")
+        user_entities = self.user_repository.read_users_by_email(email)
+        if not user_entities:
+            self._throw_internal_server_error(f"user with email {email} not found.")
+
+        user_entity = user_entities[0]
+        return self._map_user(user_entity)
+
     @staticmethod
     def _map_user(user_entity: UserEntity) -> User:
         user = User.parse_obj(user_entity)

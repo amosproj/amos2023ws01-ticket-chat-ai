@@ -95,3 +95,33 @@ class UserDBServiceUnitTest(TestCase):
         self.assertEqual(exp_user.dict(), act_user.dict())  # Compare as dictionaries
         self.user_repository_mock.read_users.assert_called_once()
         self.user_repository_mock.update_user.assert_called_once()
+
+    def test_get_user_by_email_success(self):
+        # Define
+        mocked_user = {
+            "_id": ObjectId("5f50c31e8a88c832bc32f2f1"),
+            "first_name": "Mocked",
+            "family_name": "User",
+            "email_address": "mocked.user@example.com",
+            "location": "Mockville",
+            "password": "mocked_password",
+            "ticket_ids": [],
+        }
+        user_entity = UserEntity(**mocked_user)
+
+        # Mock
+        self.user_repository_mock.read_users_by_email.return_value = [user_entity]
+
+        # Act
+        retrieved_user = self.user_db_service.get_user_by_email(
+            "mocked.user@example.com"
+        )
+
+        # Assert
+        self.assertEqual(retrieved_user.first_name, "Mocked")
+        self.assertEqual(retrieved_user.email_address, "mocked.user@example.com")
+        # Add other assertions for remaining attributes as needed
+
+        self.user_repository_mock.read_users_by_email.assert_called_once_with(
+            "mocked.user@example.com"
+        )
