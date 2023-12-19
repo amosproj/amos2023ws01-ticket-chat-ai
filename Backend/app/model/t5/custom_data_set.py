@@ -9,7 +9,7 @@ class CustomDataset(Dataset):
         self.data_paths = data_paths
         self.prompt_path = prompt_path
         self.data_set = []
-        self.prompt = ''
+        self.prompt = ""
 
         print(self.prompt_path)
         # read prompt
@@ -23,10 +23,8 @@ class CustomDataset(Dataset):
         return len(self.data_set)
 
     def __getitem__(self, idx):
-        text_description = '\n'.join(self.data_set[idx]["text"])
-        target_json = json.dumps(
-            self.data_set[idx]["ticket"]
-        )
+        text_description = "\n".join(self.data_set[idx]["text"])
+        target_json = json.dumps(self.data_set[idx]["ticket"])
 
         inputs = self.tokenizer.encode_plus(
             self.prompt + text_description,
