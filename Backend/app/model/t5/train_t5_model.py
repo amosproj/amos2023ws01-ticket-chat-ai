@@ -1,115 +1,109 @@
-import json
-import pandas as pd
+import argparse
+import os
+import time
+
 import torch
-from torch.utils.data import DataLoader, Dataset
+from torch.optim import AdamW
+from torch.utils.data import DataLoader
+from tqdm import tqdm
 from transformers import (
-    AdamW,
     get_linear_schedule_with_warmup,
     T5ForConditionalGeneration,
     T5Tokenizer,
 )
-from tqdm import tqdm
-import time
-
 
 # Define your CustomDataset class
-class CustomDataset(Dataset):
-    def __init__(self, text_descriptions, target_jsons, tokenizer, max_length=512):
-        self.text_descriptions = text_descriptions
-        self.target_jsons = target_jsons
-        self.tokenizer = tokenizer
-        self.max_length = max_length
-
-    def __len__(self):
-        return len(self.text_descriptions)
-
-    def __getitem__(self, idx):
-        text_description = self.text_descriptions[idx]
-        target_json = json.dumps(
-            self.target_jsons[idx]
-        )  # Convert the dictionary to a JSON string
-
-        inputs = self.tokenizer.encode_plus(
-            "translate text to JSON: " + text_description,
-            None,
-            add_special_tokens=True,
-            max_length=self.max_length,
-            padding="max_length",
-            return_token_type_ids=False,
-            truncation=True,
-            return_attention_mask=True,
-            return_tensors="pt",
-        )
-
-        targets = self.tokenizer.encode_plus(
-            target_json,
-            None,
-            add_special_tokens=True,
-            max_length=self.max_length,
-            padding="max_length",
-            return_token_type_ids=False,
-            truncation=True,
-            return_attention_mask=True,
-            return_tensors="pt",
-        )
-
-        return {
-            "input_ids": inputs.input_ids.flatten(),
-            "attention_mask": inputs.attention_mask.flatten(),
-            "labels": targets.input_ids.flatten(),
-        }
-
-
 # Load the T5 model and tokenizer
+from custom_data_set import CustomDataset
+
+
+def parse_args():
+    parser = argparse.ArgumentParser(
+        description="Train a neural network to diffuse images"
+    )
+    parser.add_argument(
+        "--batch_size",
+        type=int,
+        default=4,
+        help="input batch size for training (default: 64)",
+    )
+    parser.add_argument(
+        "--epochs", type=int, default=4, help="number of epochs to train (default: 5)"
+    )
+    parser.add_argument(
+        "--lr", type=float, default=2e-5, help="learning rate (default: 0.003)"
+    )
+    # parser.add_argument('--momentum', type=float, default=0.9, help='SGD momentum (default: 0.9)')
+    parser.add_argument(
+        "--no_cuda", action="store_true", default=False, help="disables CUDA training"
+    )
+    # parser.add_argument('--seed', type=int, default=1, help='random seed (default: 1)')
+    parser.add_argument(
+        "--log_interval",
+        type=int,
+        default=100,
+        help="how many batches to wait before logging training status",
+    )
+    parser.add_argument(
+        "--save_model",
+        action="store_true",
+        default=False,
+        help="For Saving the current Model",
+    )
+    return parser.parse_args()
+
+
+args = parse_args()
+
 model_name = "t5-small"
 model = T5ForConditionalGeneration.from_pretrained(model_name)
 tokenizer = T5Tokenizer.from_pretrained(model_name)
 
-# Load prepared dataset
-# Example: Replace this with your actual data loading
-text_df = pd.read_csv("text.csv")
-text_descriptions = text_df["text_description"].tolist()
-target_jsons = [{"dummy": "data"}] * len(
-    text_descriptions
-)  # Replace with your actual target data
+root_directory = os.path.dirname(__file__)
+
+test_dir = os.path.join(root_directory, "..", "test_data")
+data_paths = [
+    os.path.join(test_dir, "test_data_garvin", "data.json"),
+    os.path.join(test_dir, "test_data_irild", "data.json"),
+    os.path.join(test_dir, "test_data_marco", "data.json"),
+    os.path.join(test_dir, "test_data_sajjad", "data.json"),
+    os.path.join(test_dir, "test_data_tino", "data.json"),
+]
+
+prompt_path = os.path.join(root_directory, "prompt.txt")
 
 # Create datasets
-train_dataset = CustomDataset(text_descriptions, target_jsons, tokenizer)
-valid_dataset = CustomDataset(
-    text_descriptions, target_jsons, tokenizer
-)  # Replace with actual validation data
+custom_dataset = CustomDataset(tokenizer, data_paths, prompt_path)
+train_set, val_set = torch.utils.data.random_split(
+    custom_dataset,
+    [
+        int(len(custom_dataset) * 0.9),
+        len(custom_dataset) - int(len(custom_dataset) * 0.9),
+    ],
+)
 
 # Define data loaders
-batch_size = 4
-train_loader = DataLoader(train_dataset, batch_size=batch_size, shuffle=True)
-valid_loader = DataLoader(valid_dataset, batch_size=batch_size, shuffle=False)
-
-# Hyperparameters
-learning_rate = 1e-4
-num_epochs = 4
+train_loader = DataLoader(train_set, batch_size=args.batch_size, shuffle=True)
+valid_loader = DataLoader(val_set, batch_size=args.batch_size, shuffle=False)
 
 # Optimizer and scheduler
-optimizer = AdamW(model.parameters(), lr=learning_rate)
+optimizer = AdamW(model.parameters(), lr=args.lr)
 scheduler = get_linear_schedule_with_warmup(
-    optimizer, num_warmup_steps=0, num_training_steps=len(train_loader) * num_epochs
+    optimizer, num_warmup_steps=0, num_training_steps=len(train_loader) * args.epochs
 )
 
 # Check GPU availability
-device = torch.device("cuda")
+device = "cuda" if not args.no_cuda and torch.cuda.is_available() else "cpu"
 model.to(device)
-if device.type == "cuda":
-    print(f"Using GPU: {torch.cuda.get_device_name(0)}")
-else:
-    print("Using CPU")
 
 # Training loop
-for epoch in range(num_epochs):
+for epoch in range(args.epochs):
     model.train()
     total_loss = 0
     start_time = time.time()
 
     for batch in tqdm(
-        train_loader, desc=f"Epoch {epoch + 1}/{num_epochs}", unit="batch"
+        train_loader, desc=f"Epoch {epoch + 1}/{args.epochs}", unit="batch"
     ):
         optimizer.zero_grad()
 
@@ -134,16 +128,25 @@ for epoch in range(num_epochs):
     total_accuracy = 0
     with torch.no_grad():
         for batch in valid_loader:
-            # Add your validation logic here
-            pass  # Replace this with actual accuracy calculation
+            # input_ids = batch["input_ids"].to(device)
+            # attention_mask = batch["attention_mask"].to(device)
+            # labels = batch["labels"].to(device)
+            #
+            # outputs = model(
+            #     input_ids=input_ids, attention_mask=attention_mask, labels=labels
+            # )
+            # # Add your validation logic here
+            # total_accuracy += outputs.eq(labels).sum().item()  # Replace this with actual accuracy calculation
+            pass
 
     average_accuracy = total_accuracy / len(valid_loader)
     print(
-        f"Epoch: {((epoch + 1) / num_epochs) * 100:.0f}% | {epoch + 1}/{num_epochs} [{epoch_time:.2f}s/epoch]"
+        f"Epoch: {((epoch + 1) / args.epochs) * 100:.0f}% | {epoch + 1}/{args.epochs} [{epoch_time:.2f}s/epoch]"
     )
     print(f"Train Loss: {average_loss}")
     print(f"Validation Accuracy: {average_accuracy}")
 
 # Save the fine-tuned model
-model.save_pretrained("fine_tuned_t5_model")
-tokenizer.save_pretrained("fine_tuned_t5_model")
+if args.save_model:
+    model.save_pretrained("fine_tuned_t5_model")
+    tokenizer.save_pretrained("fine_tuned_t5_model")
