@@ -1,0 +1,72 @@
+[
+  {
+    "first_name": "Heinrich",
+    "family_name": "Müller",
+    "email_address": "heinrich.mueller.talktix@gmail.com",
+    "location": "Fürth",
+    "password": "Talktix1!"
+  },
+  {
+    "first_name": "Markus",
+    "family_name": "Wagner",
+    "email_address": "markus.wagner.talktix@gmail.com",
+    "location": "Nürnberg",
+    "password": "Talktix2!"
+  },
+  {
+    "first_name": "Florian",
+    "family_name": "Becker",
+    "email_address": "florian.becker.talktix@gmail.com",
+    "location": "München",
+    "password": "Talktix3!"
+  },
+  {
+    "first_name": "Leon",
+    "family_name": "Schmidt",
+    "email_address": "leon.schmidt.talktix@gmail.com",
+    "location": "Berlin",
+    "password": "Talktix4!"
+  },
+  {
+    "first_name": "Felix",
+    "family_name": "Weber",
+    "email_address": "felix.weber.talktix@gmail.com",
+    "location": "Frankfurt",
+    "password": "Talktix5!"
+  },
+  {
+    "first_name": "Anna",
+    "family_name": "Schneider",
+    "email_address": "anna.schneider.talktix@gmail.com",
+    "location": "Fürth",
+    "password": "Talktix6!"
+  },
+  {
+    "first_name": "Sophie",
+    "family_name": "Richter",
+    "email_address": "sophie.richter.talktix@gmail.com",
+    "location": "Nürnberg",
+    "password": "Talktix7!"
+  },
+  {
+    "first_name": "Emma",
+    "family_name": "Fischer",
+    "email_address": "emma.fischer.talktix@gmail.com",
+    "location": "München",
+    "password": "Talktix8!"
+  },
+  {
+    "first_name": "Lara",
+    "family_name": "Schmidt",
+    "email_address": "lara.schmidt.talktix@gmail.com",
+    "location": "Berlin",
+    "password": "Talktix9!"
+  },
+  {
+    "first_name": "Amelie",
+    "family_name": "Wagner",
+    "email_address": "amelie.wagner.talktix@gmail.com",
+    "location": "Frankfurt",
+    "password": "Talktix10!"
+  }
+]
