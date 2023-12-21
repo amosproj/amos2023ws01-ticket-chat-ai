@@ -59,6 +59,8 @@
 
    `start.oy` starts Backend, Frontend, Proxy and MongoDB and installs all dependencies for frontend and backend. (MongoDB has to be installed on the standard path).
 
+   Put locally `pyinstaller==6.3` into your `requirements.txt` and run step 5. again. Keep this locally, since our dependency check, can`t handle that. 
+
    Navigate into `./backend` directory. 
 
    In Windows run:
