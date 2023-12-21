@@ -49,7 +49,8 @@ class UserDBService:
         logger.info("Retrieving user by email...")
         user_entities = self.user_repository.read_users_by_email(email)
         if not user_entities:
-            self._throw_internal_server_error(f"user with email {email} not found.")
+            logger.error(f"user with email {email} not found.")
+            return None
 
         user_entity = user_entities[0]
         return self._map_user(user_entity)
