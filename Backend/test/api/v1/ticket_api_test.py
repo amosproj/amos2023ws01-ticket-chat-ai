@@ -36,7 +36,7 @@ class TicketAPIIntegrationTest(TestCase):
         ticket_entity = TicketEntity(
             _id=self.ticket_id,
             title="Test Ticket",
-            location="Test the test ticket",
+            service="Test the test ticket",
             category="",
             keywords=[],
             customerPriority=CustomerPrio.can_work,
@@ -52,7 +52,7 @@ class TicketAPIIntegrationTest(TestCase):
         exp_ticket = Ticket(
             id=str(self.ticket_id),
             title="Test Ticket",
-            location="Test the test ticket",
+            service="Test the test ticket",
             category="",
             keywords=[],
             customerPriority=CustomerPrio.can_work,
@@ -96,7 +96,7 @@ class TicketAPIIntegrationTest(TestCase):
         ticket_entity = TicketEntity(
             _id=self.ticket_id,
             title="Test Ticket",
-            location="Test the test ticket",
+            service="Test the test ticket",
             category="",
             keywords=[],
             customerPriority=CustomerPrio.can_work,
@@ -109,7 +109,7 @@ class TicketAPIIntegrationTest(TestCase):
         exp_ticket = Ticket(
             id=str(self.ticket_id),
             title="Test Ticket",
-            location="Test the test ticket",
+            service="Test the test ticket",
             category="",
             keywords=[],
             customerPriority=CustomerPrio.can_work,

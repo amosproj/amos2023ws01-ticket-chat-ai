@@ -23,7 +23,7 @@ class TicketDBServiceUnitTest(TestCase):
         self.ticket_entity_empty_attachments = TicketEntity(
             _id=self.ticket_id,
             title="Test Ticket",
-            location="Test the test ticket",
+            service="Test the test ticket",
             category="",
             keywords=[],
             customerPriority=CustomerPrio.can_work,
@@ -34,7 +34,7 @@ class TicketDBServiceUnitTest(TestCase):
         )
         self.input_ticket = {
             "title": "Test Ticket",
-            "location": "Test the test ticket",
+            "service": "Test the test ticket",
             "category": "",
             "keywords": [],
             "customerPriority": CustomerPrio.can_work,
@@ -55,7 +55,7 @@ class TicketDBServiceUnitTest(TestCase):
         exp_ticket = Ticket(
             id=str(self.ticket_id),
             title="Test Ticket",
-            location="Test the test ticket",
+            service="Test the test ticket",
             category="",
             keywords=[],
             customerPriority=CustomerPrio.can_work,
@@ -129,7 +129,7 @@ class TicketDBServiceUnitTest(TestCase):
         exp_ticket = Ticket(
             id=str(self.ticket_id),
             title="Test Ticket",
-            location="Test the test ticket",
+            service="Test the test ticket",
             category="",
             keywords=[],
             customerPriority=CustomerPrio.can_work,
