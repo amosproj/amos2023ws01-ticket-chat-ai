@@ -40,17 +40,20 @@ def fill_text(df: pd.DataFrame) -> pd.DataFrame:
 
 def fill_ticket(df: pd.DataFrame) -> pd.DataFrame:
     df["ticket"] = pd.Series(
-        [{
-            "title": row["Ticket Subject"],
-            "service": "",
-            "category": "",
-            "keywords": [],
-            "customerPriority": "",
-            "affectedPerson": row["Customer Name"],
-            "description": row["Ticket Description"],
-            "priority": row["Ticket Priority"],
-            "requestType": row["Ticket Type"],
-        } for _, row in df.iterrows()]
+        [
+            {
+                "title": row["Ticket Subject"],
+                "service": "",
+                "category": "",
+                "keywords": [],
+                "customerPriority": "",
+                "affectedPerson": row["Customer Name"],
+                "description": row["Ticket Description"],
+                "priority": row["Ticket Priority"],
+                "requestType": row["Ticket Type"],
+            }
+            for _, row in df.iterrows()
+        ]
     )
     return df
 
