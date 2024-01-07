@@ -1,8 +1,10 @@
 import configparser
+import os
 import unittest
 from unittest.mock import MagicMock
 import pytest
 from bson import ObjectId
+from dotenv import load_dotenv
 from pymongo import MongoClient
 from pymongo.results import InsertOneResult, UpdateResult, DeleteResult
 
@@ -75,9 +77,8 @@ class UserRepositoryUnitTest(unittest.TestCase):
 @pytest.mark.skipif(condition=SKIP_TEST, reason="Database is missing")
 class UserRepositoryIntegrationTest(unittest.TestCase):
     def setUp(self):
-        config = configparser.ConfigParser()
-        config.read("config.ini")
-        mongodb_url = config["DEFAULT"]["MONGODB_URL"]
+        load_dotenv()
+        mongodb_url = os.getenv("MONGODB_URL")
         client = MongoClient(mongodb_url)
         db = client.talktix
         collection = db.user

@@ -1,11 +1,12 @@
 import configparser
+import os
 
+from dotenv import load_dotenv
 from pymongo import MongoClient
 from pymongo.collection import Collection
 
-config = configparser.ConfigParser()
-config.read("config.ini")
-mongodb_url = config["DEFAULT"]["MONGODB_URL"]
+load_dotenv()
+mongodb_url = os.getenv("MONGODB_URL")
 client = MongoClient(mongodb_url)  # Use your actual MongoDB connection string
 db = client.get_database("talktix")  # Use the 'talktix' database
 

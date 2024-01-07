@@ -4,5 +4,6 @@ __pycache__/
 venv
 app/email/.env
 .env
+.env_prod
 backend.log
 app/model/data
