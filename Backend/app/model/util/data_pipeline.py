@@ -7,12 +7,34 @@ BASE_PATH = os.path.dirname(__file__)
 READ_FILE_PATH = os.path.join(BASE_PATH, "..", "data", "customer_support_tickets.csv")
 WRITE_FILE_PATH = os.path.join(BASE_PATH, "..", "data", "text_and_tickets.csv")
 GREETING_PHRASES = (
-    "Hello,\n",
-    "Hello Support Team,\n\n",
+    "Hello,",
+    "Hello Support Team,",
+    "Dear Support Team,",
+    "Hi,",
+    "Greetings Support Team,",
+    "Support Team,",
+    "To whom it may concern,",
+    "Attention: Support Team,",
+    "TalkTix Team,",
+    "Hey TalkTix Team,",
 )
 GOODBYE_PHRASES = (
-    "\n\nKind regards\n",
-    "\nBest regards\n",
+    "Best regards,",
+    "Sincerely,",
+    "Yours truly,",
+    "Kind regards,",
+    "Regards,",
+    "Best wishes,",
+    "Thank you,",
+    "Yours sincerely,",
+    "Warm regards,",
+    "Best,",
+)
+BLANK_CHARS = (
+    " ",
+    "\n",
+    "\n\n",
+    "\n\n\n",
 )
 
 
@@ -31,8 +53,11 @@ def fill_text(df: pd.DataFrame) -> pd.DataFrame:
     df_sub = df[df["Ticket Channel"] == "Email"]
     df["text"][df["Ticket Channel"] == "Email"] = (
         pd.Series(random.choices(GREETING_PHRASES, k=df_sub.shape[0]))
+        + pd.Series(random.choices(BLANK_CHARS, k=df_sub.shape[0]))
         + df_sub["Ticket Description"]
+        + pd.Series(random.choices(BLANK_CHARS, k=df_sub.shape[0]))
         + pd.Series(random.choices(GOODBYE_PHRASES, k=df_sub.shape[0]))
+        + pd.Series(random.choices(BLANK_CHARS, k=df_sub.shape[0]))
         + df_sub["Customer Name"]
     )
     return df
