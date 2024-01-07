@@ -5,3 +5,4 @@ venv
 app/email/.env
 .env
 backend.log
+app/model/data
