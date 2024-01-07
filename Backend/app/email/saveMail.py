@@ -13,7 +13,7 @@ def save_mail():
     password = os.getenv("PASSWORD")
 
     config = configparser.ConfigParser()
-    config.read("../../config.ini")
+    config.read(os.path.join(os.path.dirname(__file__), "..", "..", "config.ini"))
     imap_server = config["DEFAULT"]["IMAP_SERVER"]
     email_address = config["DEFAULT"]["EMAIL_ADDRESS"]
     smtp_server = config["DEFAULT"]["SMTP_SERVER"]
