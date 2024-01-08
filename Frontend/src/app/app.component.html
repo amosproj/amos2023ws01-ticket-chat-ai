@@ -33,7 +33,7 @@
         </mat-form-field>
         
         <button mat-raised-button color="warn" (click)="startSpeechRecognition()">
-          <i class="fas fa-microphone"></i> Speak
+          <i class="fas fa-microphone"></i> {{ recordingState === 'idle' ? 'Sprechen' : 'Aufnahme beenden' }}
         </button><br>
 
         <button
