@@ -1,6 +1,7 @@
 import os
 import sys
 
+
 # determine the absolute path to the 'backend' directory
 backend_path = os.path.abspath(os.path.join(os.path.dirname(__file__), "../../"))
 
@@ -9,7 +10,8 @@ sys.path.append(os.path.join(backend_path, "app", "email"))
 
 from app.email.main import run_proxy
 import app.email.handle_mail as hm
-
+from emailProxy import EmailProxy
+from smtp_conn import SmtpConnection
 import pytest
 import imaplib
 import smtplib
@@ -66,46 +68,48 @@ class TestEmailProxy:
         assert subject == "Test Subject"
         assert content == "Test Content"
 
-    def test_imap_reconnect(self):
-        # Mocking the EmailProxy and SmtpConnection classes
-        with patch("app.email.emailProxy.EmailProxy") as mock_email_proxy:
-            # Mocking the IMAP connection to raise an exception on the first attempt
-            mock_imap = MagicMock()
-            mock_imap.search.side_effect = imaplib.IMAP4.abort()
-            mock_email_proxy.return_value = mock_imap
+    @pytest.fixture
+    def mock_imap(self):
+        with patch("imaplib.IMAP4_SSL") as mock:
+            instance = mock.return_value
+            instance.login.return_value = "OK"
+            instance.select.return_value = "OK"
+            # Simulate a connection drop and successful reconnection
+            instance.search.side_effect = [imaplib.IMAP4.abort(), ("OK", ["1"])]
+            instance.fetch.return_value = ("OK", [b"Email data"])
+            yield instance
 
-            # Running the run_proxy function
-            with pytest.raises(Exception) as e:
-                run_proxy()
+    @pytest.fixture
+    def mock_smtp(self):
+        with patch("smtplib.SMTP") as mock:
+            instance = mock.return_value
+            # Simulate a connection drop and successful reconnection
+            instance.send_message.side_effect = [smtplib.SMTPServerDisconnected(), None]
+            instance.login.return_value = "OK"
+            instance.starttls.return_value = "OK"
+            yield instance
 
-            # Verifying that try_reconnect was called only if the initial connection was successful
-            if mock_imap.start_connection.called:
-                mock_imap.try_reconnect.assert_called_once()
+    def test_imap_reconnect(self, mock_imap, mock_smtp):
+        # Create an instance of EmailProxy
+        proxy = EmailProxy(
+            "imap.example.com", "smtp.example.com", "test@example.com", "password"
+        )
 
-                # Check if the reconnect was successful
-                assert mock_imap.try_reconnect.return_value
-            else:
-                assert not mock_imap.try_reconnect.called
+        with proxy:
+            # Spin the proxy to process emails
+            msg_nums = proxy.spin()
+            # Check if IMAP login was called twice due to reconnect
+            assert msg_nums == ["1"]
+            assert mock_imap.login.call_count == 2
 
-    def test_smtp_reconnect(self):
-        # Mocking the EmailProxy and SmtpConnection classes
-        with patch("app.email.smtp_conn.SmtpConnection") as mock_smtp_conn:
-            # Mocking the SMTP connection to raise an exception on the first attempt
-            mock_smtp = MagicMock()
-            mock_smtp.send_mail.side_effect = smtplib.SMTPServerDisconnected(
-                "Connection lost"
-            )
-            mock_smtp_conn.return_value = mock_smtp
+    def test_smtp_reconnect(self, mock_smtp):
+        # Create an instance of SmtpConnection
+        connection = SmtpConnection(
+            "smtp.example.com", "test@example.com", "password", MagicMock()
+        )
 
-            # Running the run_proxy function
-            with pytest.raises(Exception) as e:
-                run_proxy()
-
-            # Verifying that try_reconnect was called only if the initial connection was successful
-            if mock_smtp.start_connection.called:
-                mock_smtp.try_reconnect.assert_called_once()
-
-                # Check if the reconnect was successful
-                assert mock_smtp.try_reconnect.return_value
-            else:
-                assert not mock_smtp.try_reconnect.called
+        with connection:
+            # Send a message to test reconnect functionality
+            connection.send_mail(MagicMock())
+            # Check if SMTP login was called twice due to reconnect
+            assert mock_smtp.login.call_count == 2

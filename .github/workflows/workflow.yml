@@ -143,6 +143,7 @@ jobs:
         env:
           TEST_STAGE: "ci"
           PASSWORD: ${{ secrets.PASSWORD }}
+          MONGODB_URL: mongodb://localhost:27017/
       ################################
       # Install Node and its Dependencies #
       ################################
