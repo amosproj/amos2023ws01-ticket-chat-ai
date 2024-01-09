@@ -77,5 +77,39 @@ describe('AppComponent', () => {
     expect(ticketService.send).toHaveBeenCalledWith(testMessage, emailInput);
   }));
 
+  it('should display the correct text on the recording button depending on state', async () => {
+
+    const recordButton = fixture.debugElement.nativeElement.querySelector('.record-button');
+
+    recordButton.click();
+    fixture.detectChanges();
+    expect(recordButton.textContent.trim()).toEqual('Aufnahme beenden');
+
+    recordButton.click();
+    fixture.detectChanges();
+    expect(recordButton.textContent.trim()).toEqual('Sprechen');
+
+  })
+
+  it('should call the right method after click the recording button', () => {
+    const startRecordingSpy = spyOn(app, 'startRecording');
+
+    const recordButton = fixture.debugElement.nativeElement.querySelector('.record-button');
+
+    recordButton.click();
+    expect(startRecordingSpy).toHaveBeenCalledWith();
+  })
+
+  it('should call the right method after click the recording button twice', () => {
+    const stopRecordingSpy = spyOn(app, 'stopRecording');
+
+    const recordButton = fixture.debugElement.nativeElement.querySelector('.record-button');
+
+    recordButton.click();
+    recordButton.click();
+
+    expect(stopRecordingSpy).toHaveBeenCalledWith();
+  })
+
   // Add more tests as needed for the updated functionality
 });
