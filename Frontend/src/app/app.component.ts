@@ -126,37 +126,42 @@ export class AppComponent implements OnInit {
       this.stopRecording();
     }
   }
-  
+
   startRecording() {
     if ('SpeechRecognition' in window || 'webkitSpeechRecognition' in window) {
       this.recognition = new ((window as any).SpeechRecognition || (window as any).webkitSpeechRecognition)();
       this.recognition.lang = 'de-DE';
       this.recognition.interimResults = false;
       this.recognition.maxAlternatives = 1;
-  
+      this.recognition.continuous = true;
+
+      this.recognition.start();
+
       this.recognition.onresult = (event: any) => {
-        this.chatInput = event.results[0][0].transcript;
+        this.chatInput = "";
+        for (let i = 0; i < event.results.length; i++) {
+          this.chatInput += event.results[i][0].transcript;
+        }
         this.resetRecognitionTimeout();
       };
-  
+
       this.recognition.onerror = (event: any) => {
         this.handleError('Leider ist ein Fehler aufgetreten. Versuche es erneut oder später noch einmal, wir bitten um Entschuldigung');
       };
-  
-      this.recognition.start();
+
       this.recordingState = 'recording';
       this.setRecognitionTimeout();
     } else {
       this.handleError('Speech Recognition API is not supported in this browser. Try using Chrome or Edge');
     }
   }
-  
+
   stopRecording() {
     this.recognition.stop();
     clearTimeout(this.recognitionTimeout);
     this.recordingState = 'idle';
   }
-  
+
   setRecognitionTimeout() {
     this.recognitionTimeout = setTimeout(() => {
       if (this.recordingState === 'recording') {
@@ -165,16 +170,16 @@ export class AppComponent implements OnInit {
       }
     }, 30000);
   }
-  
+
   resetRecognitionTimeout() {
     clearTimeout(this.recognitionTimeout);
     if (this.recordingState === 'recording') {
       this.setRecognitionTimeout();
     }
   }
-  
+
   handleError(errorMessage: string) {
     this.errorMessage = errorMessage;
     this.logger.error(errorMessage);
-  }  
+  }
 }
