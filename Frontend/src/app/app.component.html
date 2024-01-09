@@ -20,7 +20,7 @@
       <div *ngIf="errorMessage" class="error-message">
         {{ errorMessage }}
       </div>
-      
+
       <div class="text-field-div">
         <mat-form-field>
           <mat-label>E-Mail</mat-label>
@@ -31,9 +31,9 @@
           <mat-label [class.hide-label]="chatInput !== ''">Problem beschreiben</mat-label>
           <textarea matInput [(ngModel)]="chatInput"></textarea>
         </mat-form-field>
-        
-        <button mat-raised-button color="warn" (click)="startSpeechRecognition()">
-          <i class="fas fa-microphone"></i> Speak
+
+        <button class="record-button" mat-raised-button color="warn" (click)="startSpeechRecognition()">
+          {{ recordingState === 'idle' ? 'Sprechen' : 'Aufnahme beenden' }}
         </button><br>
 
         <button
