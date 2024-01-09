@@ -1,30 +1,31 @@
 import json
 from torch.utils.data import Dataset
+import pandas as pd
 
 
 class CustomDataset(Dataset):
-    def __init__(self, tokenizer, data_paths, prompt_path, max_length=512):
+    def __init__(self, tokenizer, data_path, prompt_path, max_length=1024):
         self.tokenizer = tokenizer
         self.max_length = max_length
-        self.data_paths = data_paths
+        self.data_path = data_path
         self.prompt_path = prompt_path
         self.data_set = []
         self.prompt = ""
 
-        print(self.prompt_path)
         # read prompt
         with open(self.prompt_path, "r") as prompt:
             self.prompt = prompt.read()
 
-        # load data from files
-        self.load_json()
+        # load data from CSV file
+        self.load_csv()
 
     def __len__(self):
         return len(self.data_set)
 
     def __getitem__(self, idx):
-        text_description = "\n".join(self.data_set[idx]["text"])
-        target_json = json.dumps(self.data_set[idx]["ticket"])
+        text_description = "\n".join(self.data_set[idx]["text"].split("\n"))
+        target_json = self.data_set[idx]["ticket"]
+        print(target_json)
 
         inputs = self.tokenizer.encode_plus(
             self.prompt + text_description,
@@ -56,7 +57,5 @@ class CustomDataset(Dataset):
             "labels": targets.input_ids.flatten(),
         }
 
-    def load_json(self):
-        for data_path in self.data_paths:
-            with open(data_path) as file:
-                self.data_set += json.load(file)
+    def load_csv(self):
+        self.data_set = pd.read_csv(self.data_path).to_dict(orient="records")
