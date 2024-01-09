@@ -8,7 +8,7 @@ WORKDIR /app
 COPY requirements.txt .
 
 # Install Python dependencies
-RUN pip install --no-cache-dir -r requirements.txt -q
+RUN pip install --no-cache-dir --default-timeout=100 -r requirements.txt -q
 
 # Copy the rest of the application source code into the container
 COPY app app

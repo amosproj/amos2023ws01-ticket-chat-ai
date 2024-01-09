@@ -1,0 +1,150 @@
+2024-01-09 13:45:43,920 - logger - INFO - IMAP connection established
+2024-01-09 13:45:45,118 - logger - INFO - SMTP connection established
+2024-01-09 13:49:05,532 - logger - ERROR - IMAP error: command: SEARCH => socket error: EOF
+Traceback (most recent call last):
+  File "C:\Users\konop\AppData\Local\Programs\Python\Python311\Lib\imaplib.py", line 1047, in _command_complete
+    typ, data = self._get_tagged_response(tag, expect_bye=logout)
+                ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\konop\AppData\Local\Programs\Python\Python311\Lib\imaplib.py", line 1173, in _get_tagged_response
+    self._get_response()
+  File "C:\Users\konop\AppData\Local\Programs\Python\Python311\Lib\imaplib.py", line 1075, in _get_response
+    resp = self._get_line()
+           ^^^^^^^^^^^^^^^^
+  File "C:\Users\konop\AppData\Local\Programs\Python\Python311\Lib\imaplib.py", line 1185, in _get_line
+    raise self.abort('socket error: EOF')
+imaplib.IMAP4.abort: socket error: EOF
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "c:\Users\konop\Documents\Studium\AMOS\Github_repo\amos2023ws01-ticket-chat-ai\Backend\app\email\emailProxy.py", line 67, in spin
+    _, msg_nums = self.imap.search(None, "UNSEEN")
+                  ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\konop\AppData\Local\Programs\Python\Python311\Lib\imaplib.py", line 734, in search
+    typ, dat = self._simple_command(name, *criteria)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\konop\AppData\Local\Programs\Python\Python311\Lib\imaplib.py", line 1230, in _simple_command
+    return self._command_complete(name, self._command(name, *args))
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\konop\AppData\Local\Programs\Python\Python311\Lib\imaplib.py", line 1049, in _command_complete
+    raise self.abort('command: %s => %s' % (name, val))
+imaplib.IMAP4.abort: command: SEARCH => socket error: EOF
+2024-01-09 13:49:05,545 - logger - WARNING - Lost connection to the IMAP server
+2024-01-09 13:49:05,545 - logger - WARNING - Trying to reconnect IMAP in 5s
+2024-01-09 13:49:05,546 - logger - WARNING - Trying to reconnect IMAP in 5s
+2024-01-09 13:49:10,547 - logger - WARNING - Trying to reconnect IMAP in 5s
+2024-01-09 13:49:15,549 - logger - WARNING - Trying to reconnect IMAP in 5s
+2024-01-09 13:49:20,550 - logger - WARNING - Trying to reconnect IMAP in 5s
+2024-01-09 13:49:25,979 - logger - INFO - IMAP reconnection successful
+2024-01-09 13:58:47,592 - logger - ERROR - IMAP error: command: SEARCH => socket error: EOF
+Traceback (most recent call last):
+  File "C:\Users\konop\AppData\Local\Programs\Python\Python311\Lib\imaplib.py", line 1047, in _command_complete
+    typ, data = self._get_tagged_response(tag, expect_bye=logout)
+                ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\konop\AppData\Local\Programs\Python\Python311\Lib\imaplib.py", line 1173, in _get_tagged_response
+    self._get_response()
+  File "C:\Users\konop\AppData\Local\Programs\Python\Python311\Lib\imaplib.py", line 1075, in _get_response
+    resp = self._get_line()
+           ^^^^^^^^^^^^^^^^
+  File "C:\Users\konop\AppData\Local\Programs\Python\Python311\Lib\imaplib.py", line 1185, in _get_line
+    raise self.abort('socket error: EOF')
+imaplib.IMAP4.abort: socket error: EOF
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "c:\Users\konop\Documents\Studium\AMOS\Github_repo\amos2023ws01-ticket-chat-ai\Backend\app\email\emailProxy.py", line 67, in spin
+    _, msg_nums = self.imap.search(None, "UNSEEN")
+                  ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\konop\AppData\Local\Programs\Python\Python311\Lib\imaplib.py", line 734, in search
+    typ, dat = self._simple_command(name, *criteria)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\konop\AppData\Local\Programs\Python\Python311\Lib\imaplib.py", line 1230, in _simple_command
+    return self._command_complete(name, self._command(name, *args))
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\konop\AppData\Local\Programs\Python\Python311\Lib\imaplib.py", line 1049, in _command_complete
+    raise self.abort('command: %s => %s' % (name, val))
+imaplib.IMAP4.abort: command: SEARCH => socket error: EOF
+2024-01-09 13:58:47,595 - logger - WARNING - Lost connection to the IMAP server
+2024-01-09 13:58:47,595 - logger - WARNING - Trying to reconnect IMAP in 5s
+2024-01-09 13:58:58,639 - logger - WARNING - Trying to reconnect IMAP in 5s
+2024-01-09 13:59:03,641 - logger - WARNING - Trying to reconnect IMAP in 5s
+2024-01-09 13:59:19,693 - logger - WARNING - Trying to reconnect IMAP in 5s
+2024-01-09 13:59:24,694 - logger - WARNING - Trying to reconnect IMAP in 5s
+2024-01-09 13:59:40,736 - logger - WARNING - Trying to reconnect IMAP in 5s
+2024-01-09 13:59:45,738 - logger - WARNING - Trying to reconnect IMAP in 5s
+2024-01-09 13:59:50,739 - logger - WARNING - Trying to reconnect IMAP in 5s
+2024-01-09 14:00:06,796 - logger - WARNING - Trying to reconnect IMAP in 5s
+2024-01-09 14:00:11,797 - logger - WARNING - Trying to reconnect IMAP in 5s
+2024-01-09 14:00:16,798 - logger - WARNING - Trying to reconnect IMAP in 5s
+2024-01-09 14:00:22,857 - logger - WARNING - Trying to reconnect IMAP in 5s
+2024-01-09 14:00:27,858 - logger - WARNING - Trying to reconnect IMAP in 5s
+2024-01-09 14:00:32,859 - logger - WARNING - Trying to reconnect IMAP in 5s
+2024-01-09 14:00:37,860 - logger - WARNING - Trying to reconnect IMAP in 5s
+2024-01-09 14:00:42,861 - logger - WARNING - Trying to reconnect IMAP in 5s
+2024-01-09 14:00:58,920 - logger - WARNING - Trying to reconnect IMAP in 5s
+2024-01-09 14:01:03,922 - logger - WARNING - Trying to reconnect IMAP in 5s
+2024-01-09 14:01:08,923 - logger - WARNING - Trying to reconnect IMAP in 5s
+2024-01-09 14:01:24,977 - logger - WARNING - Trying to reconnect IMAP in 5s
+2024-01-09 14:01:29,978 - logger - WARNING - Trying to reconnect IMAP in 5s
+2024-01-09 14:01:34,979 - logger - WARNING - Trying to reconnect IMAP in 5s
+2024-01-09 14:01:39,980 - logger - WARNING - Trying to reconnect IMAP in 5s
+2024-01-09 14:01:46,051 - logger - WARNING - Trying to reconnect IMAP in 5s
+2024-01-09 14:01:51,052 - logger - WARNING - Trying to reconnect IMAP in 5s
+2024-01-09 14:01:56,053 - logger - WARNING - Trying to reconnect IMAP in 5s
+2024-01-09 14:02:01,054 - logger - WARNING - Trying to reconnect IMAP in 5s
+2024-01-09 14:02:17,127 - logger - WARNING - Trying to reconnect IMAP in 5s
+2024-01-09 14:02:22,128 - logger - WARNING - Trying to reconnect IMAP in 5s
+2024-01-09 14:02:38,197 - logger - WARNING - Trying to reconnect IMAP in 5s
+2024-01-09 14:02:43,198 - logger - WARNING - Trying to reconnect IMAP in 5s
+2024-01-09 14:02:59,253 - logger - WARNING - Trying to reconnect IMAP in 5s
+2024-01-09 14:03:04,255 - logger - WARNING - Trying to reconnect IMAP in 5s
+2024-01-09 14:03:15,324 - logger - WARNING - Trying to reconnect IMAP in 5s
+2024-01-09 14:03:20,326 - logger - WARNING - Trying to reconnect IMAP in 5s
+2024-01-09 14:03:31,390 - logger - WARNING - Trying to reconnect IMAP in 5s
+2024-01-09 14:03:36,391 - logger - WARNING - Trying to reconnect IMAP in 5s
+2024-01-09 14:03:41,392 - logger - WARNING - Trying to reconnect IMAP in 5s
+2024-01-09 14:03:46,394 - logger - WARNING - Trying to reconnect IMAP in 5s
+2024-01-09 14:04:02,455 - logger - WARNING - Trying to reconnect IMAP in 5s
+2024-01-09 14:04:07,457 - logger - WARNING - Trying to reconnect IMAP in 5s
+2024-01-09 14:04:23,519 - logger - WARNING - Trying to reconnect IMAP in 5s
+2024-01-09 14:04:28,520 - logger - WARNING - Trying to reconnect IMAP in 5s
+2024-01-09 14:04:33,521 - logger - WARNING - Trying to reconnect IMAP in 5s
+2024-01-09 14:04:38,522 - logger - WARNING - Trying to reconnect IMAP in 5s
+2024-01-09 14:04:43,523 - logger - WARNING - Trying to reconnect IMAP in 5s
+2024-01-09 14:04:59,605 - logger - WARNING - Trying to reconnect IMAP in 5s
+2024-01-09 14:05:04,606 - logger - WARNING - Trying to reconnect IMAP in 5s
+2024-01-09 14:05:09,608 - logger - WARNING - Trying to reconnect IMAP in 5s
+2024-01-09 14:05:20,678 - logger - WARNING - Trying to reconnect IMAP in 5s
+2024-01-09 14:05:25,679 - logger - WARNING - Trying to reconnect IMAP in 5s
+2024-01-09 14:05:30,681 - logger - WARNING - Trying to reconnect IMAP in 5s
+2024-01-09 14:05:46,749 - logger - WARNING - Trying to reconnect IMAP in 5s
+2024-01-09 14:05:51,750 - logger - WARNING - Trying to reconnect IMAP in 5s
+2024-01-09 14:05:56,752 - logger - WARNING - Trying to reconnect IMAP in 5s
+2024-01-09 14:06:01,753 - logger - WARNING - Trying to reconnect IMAP in 5s
+2024-01-09 14:06:06,755 - logger - WARNING - Trying to reconnect IMAP in 5s
+2024-01-09 14:06:11,756 - logger - WARNING - Trying to reconnect IMAP in 5s
+2024-01-09 14:06:16,757 - logger - WARNING - Trying to reconnect IMAP in 5s
+2024-01-09 14:06:21,758 - logger - WARNING - Trying to reconnect IMAP in 5s
+2024-01-09 14:06:37,821 - logger - WARNING - Trying to reconnect IMAP in 5s
+2024-01-09 14:06:42,823 - logger - WARNING - Trying to reconnect IMAP in 5s
+2024-01-09 14:06:47,824 - logger - WARNING - Trying to reconnect IMAP in 5s
+2024-01-09 14:06:52,825 - logger - WARNING - Trying to reconnect IMAP in 5s
+2024-01-09 14:07:08,876 - logger - WARNING - Trying to reconnect IMAP in 5s
+2024-01-09 14:07:13,878 - logger - WARNING - Trying to reconnect IMAP in 5s
+2024-01-09 14:07:18,879 - logger - WARNING - Trying to reconnect IMAP in 5s
+2024-01-09 14:07:34,949 - logger - WARNING - Trying to reconnect IMAP in 5s
+2024-01-09 14:07:39,950 - logger - WARNING - Trying to reconnect IMAP in 5s
+2024-01-09 14:07:44,951 - logger - WARNING - Trying to reconnect IMAP in 5s
+2024-01-09 14:07:49,953 - logger - WARNING - Trying to reconnect IMAP in 5s
+2024-01-09 14:08:06,022 - logger - WARNING - Trying to reconnect IMAP in 5s
+2024-01-09 14:08:11,023 - logger - WARNING - Trying to reconnect IMAP in 5s
+2024-01-09 14:08:27,070 - logger - WARNING - Trying to reconnect IMAP in 5s
+2024-01-09 14:08:32,071 - logger - WARNING - Trying to reconnect IMAP in 5s
+2024-01-09 14:08:37,073 - logger - WARNING - Trying to reconnect IMAP in 5s
+2024-01-09 14:08:53,146 - logger - WARNING - Trying to reconnect IMAP in 5s
+2024-01-09 14:08:58,148 - logger - WARNING - Trying to reconnect IMAP in 5s
+2024-01-09 14:09:14,214 - logger - WARNING - Trying to reconnect IMAP in 5s
+2024-01-09 14:09:19,216 - logger - WARNING - Trying to reconnect IMAP in 5s
+2024-01-09 14:09:35,272 - logger - WARNING - Trying to reconnect IMAP in 5s
+2024-01-09 14:09:40,924 - logger - INFO - IMAP reconnection successful

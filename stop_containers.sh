@@ -1,2 +1,2 @@
-podman compose down
-podman image prune -f -a
+docker-compose down
+docker image prune -f -a
