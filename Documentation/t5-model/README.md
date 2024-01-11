@@ -75,3 +75,22 @@
     - Is it necessary, and should we use it?
 - Investigate how to use Monitoring:
     - How can it be utilized for our training.
+
+
+## NEW AI Strategy:
+- Title will be generated via "czearing/article-title-generator" model from Hugging Face.
+  - https://huggingface.co/czearing/article-title-generator
+    ![img.png](arcticle_title_generator.png)
+
+- AffectedPerson will be generated via "dslim/bert-base-NER" model from Hugging Face.
+  - https://huggingface.co/dslim/bert-base-NER
+    ![img.png](dslim_bert_base_NER.png)
+
+- Keywords will be generated via "ml6team/keyphrase-extraction-kbir-inspec" model from Hugging Face.
+  - ![img.png](keyphrase_extraction_kbir_inspec.png)
+
+- Description will be the Problem description text (input text), where Subject and signatur is cut out.
+
+- Service & requestType will be our main focus for training: For that will fine tune a text classification model.
+- Category & priority will be our second focus: For that will fine tune a text classification model.
+- CustomerPriority: For that will also fine tune a text classification model.
