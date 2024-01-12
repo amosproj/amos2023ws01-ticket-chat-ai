@@ -52,6 +52,9 @@ async def process_text(
     received_dict = trained_t5_model.run_model(input.text)
     logger.info("Model execution complete. Result: %s", received_dict)
 
+    if not input.requestType:
+        return {"prompt": "Please choose the correct RequestType", "choices": ["Issue", "ServiceRequest"]}
+
     # Set service based on user's location
     if input.email:
         user = user_db_service.get_user_by_email(input.email)

@@ -35,6 +35,7 @@ export class AppComponent implements OnInit {
   errorMessage: string = '';
   recordingState: 'idle' | 'recording' = 'idle';
   recognitionTimeout: any;
+  selectedRequestType: string = '';
 
   @ViewChild("fileDropRef", { static: true }) fileDropEl!: ElementRef;
   @ViewChild(DragAndDropComponent) dragAndDropComponent!: DragAndDropComponent;
@@ -61,6 +62,14 @@ export class AppComponent implements OnInit {
   clearFiles() {
     this.dragAndDropComponent.clearFiles();
     this.files = [];
+  }
+
+  chooseRequestType(requestType: string) {
+    this.selectedRequestType = requestType;
+    const thankYouMessage = `Vielen Dank! Ich habe Dein Ticket erfolgreich angelegt. [dead link behind ticket] RequestType: ${requestType}`;
+    this.chatMessages.push({ messageText: thankYouMessage, isUser: false, files: [] });
+    this.clearFiles();
+    this.waitingServerResponse = false;
   }
 
   sendAttachmentsToServer(response: any) {
