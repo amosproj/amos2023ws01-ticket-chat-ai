@@ -1,0 +1,2100 @@
+[
+  {
+    "text": [
+      "Subject: Issues with Email Authorization",
+      "Hello Support Team,",
+      "I am experiencing difficulties with email authorization.",
+      "After updating my password, I am unable to log in to my email account.",
+      "The message 'Authorization failed' is displayed.",
+      "Could you please help me resolve this issue?",
+      "Best regards,",
+      "Sophie Schmidt"
+    ],
+    "ticket": {
+      "title": "Authorization Issue",
+      "service": "",
+      "category": "Authorization -> Email",
+      "keywords": [
+        "Password",
+        "Email",
+        "Authorization"
+      ],
+      "customerPriority": "Disruption, cannot work",
+      "affectedPerson": "Schmidt, Sophie",
+      "description": "After updating my password, I am unable to log in to my email account. The message 'Authorization failed' is displayed.",
+      "priority": "High",
+      "requestType": "Incident"
+    }
+  },
+  {
+    "text": [
+      "Subject: Urgent: Email Authorization Required",
+      "Hello Support Team,",
+      "We urgently need assistance with email authorization.",
+      "Our employee Müller, Peter (peter.mueller@example.com) is unable to access his emails.",
+      "There seems to be an issue with authorization.",
+      "Please investigate this promptly.",
+      "Best regards,",
+      "Anna Mayer"
+    ],
+    "ticket": {
+      "title": "Urgent: Email Authorization",
+      "service": "",
+      "category": "Authorization -> Email",
+      "keywords": [
+        "Email",
+        "Authorization",
+        "Access"
+      ],
+      "customerPriority": "Disruption, several unable to work",
+      "affectedPerson": "Müller, Peter",
+      "description": "Our employee Müller, Peter, is unable to access his emails. There seems to be an issue with authorization.",
+      "priority": "Very High",
+      "requestType": "Incident"
+    }
+  },
+  {
+    "text": [
+      "Subject: Email Authorization Not Working",
+      "Hello Support Team,",
+      "I am experiencing difficulties with email authorization.",
+      "Despite entering the correct password, I receive the message 'Incorrect Authorization'.",
+      "Could you please check what the problem might be?",
+      "Thank you very much and best regards,",
+      "Markus Becker"
+    ],
+    "ticket": {
+      "title": "Email Authorization Error",
+      "service": "",
+      "category": "Authorization -> Email",
+      "keywords": [
+        "Password",
+        "Email",
+        "Authorization"
+      ],
+      "customerPriority": "Disruption, cannot work",
+      "affectedPerson": "Becker, Markus",
+      "description": "Despite entering the correct password, I receive the message 'Incorrect Authorization'. Please check what the problem might be.",
+      "priority": "High",
+      "requestType": "Incident"
+    }
+  },
+  {
+    "text": [
+      "Subject: Issues with Email Authorization after Update",
+      "Hello Support Team,",
+      "After the latest update, I am unable to log in to my email account.",
+      "Authorization seems to no longer be functioning.",
+      "Could you please help me solve this problem?",
+      "Best regards,",
+      "Thomas Wagner"
+    ],
+    "ticket": {
+      "title": "Email Authorization Problem after Update",
+      "service": "",
+      "category": "Authorization -> Email",
+      "keywords": [
+        "Update",
+        "Email",
+        "Authorization"
+      ],
+      "customerPriority": "Disruption, cannot work",
+      "affectedPerson": "Wagner, Thomas",
+      "description": "After the latest update, I am unable to log in to my email account. Authorization seems to no longer be functioning.",
+      "priority": "Medium",
+      "requestType": "Incident"
+    }
+  },
+  {
+    "text": [
+      "Subject: Urgent: Email Authorization for New Employee",
+      "Hello Support Team,",
+      "We have a new employee, Müller, Lisa (lisa.mueller@company.com), who urgently needs email authorization.",
+      "Please set up access for her so that she can start her work.",
+      "Thank you in advance!",
+      "Best regards,",
+      "Hans Schneider"
+    ],
+    "ticket": {
+      "title": "Urgent: Email Authorization for New Employee",
+      "service": "",
+      "category": "Authorization -> Email",
+      "keywords": [
+        "Email",
+        "Authorization",
+        "New Employee"
+      ],
+      "customerPriority": "Disruption, several unable to work",
+      "affectedPerson": "Müller, Lisa",
+      "description": "We have a new employee, Müller, Lisa, who urgently needs email authorization. Please set up access for her so that she can start her work.",
+      "priority": "Very High",
+      "requestType": "Service Request"
+    }
+  },
+  {
+    "text": [
+      "Subject: Laptop Not Starting Anymore",
+      "Hello Support Team,",
+      "My laptop suddenly refuses to start.",
+      "I have already tried all the usual steps, but it remains unresponsive.",
+      "Could you please help me with this hardware problem as soon as possible?",
+      "Thank you very much and best regards,",
+      "Julia Meyer"
+    ],
+    "ticket": {
+      "title": "Laptop Startup Issues",
+      "service": "",
+      "category": "Hardware -> Laptop",
+      "keywords": [
+        "Startup Issues",
+        "Laptop",
+        "Hardware"
+      ],
+      "customerPriority": "Disruption, cannot work",
+      "affectedPerson": "Meyer, Julia",
+      "description": "My laptop suddenly refuses to start. Despite all attempts, it remains unresponsive. Please help me as soon as possible with this hardware problem.",
+      "priority": "High",
+      "requestType": "Incident"
+    }
+  },
+  {
+    "text": [
+      "Subject: Laptop Overheating and Shutting Down",
+      "Hello Support Team,",
+      "My laptop has been overheating very quickly lately and then automatically shutting down.",
+      "I suspect it's a hardware problem. Could you please check and suggest a solution?",
+      "Thank you in advance!",
+      "Best regards,",
+      "Michael Braun"
+    ],
+    "ticket": {
+      "title": "Laptop Overheating Issue",
+      "service": "",
+      "category": "Hardware -> Laptop",
+      "keywords": [
+        "Overheating",
+        "Laptop",
+        "Automatic Shutdown"
+      ],
+      "customerPriority": "Disruption, can work",
+      "affectedPerson": "Braun, Michael",
+      "description": "My laptop has been overheating very quickly lately and then automatically shutting down. I suspect it's a hardware problem. Could you please check and suggest a solution?",
+      "priority": "Medium",
+      "requestType": "Incident"
+    }
+  },
+  {
+    "text": [
+      "Subject: Defective Laptop Screen",
+      "Hello Support Team,",
+      "I have noticed a defective screen on my laptop.",
+      "There are strange lines and spots visible on it.",
+      "Could you please tell me how to resolve this issue?",
+      "Thank you very much and best regards,",
+      "Andreas Zimmermann"
+    ],
+    "ticket": {
+      "title": "Defective Laptop Screen",
+      "service": "",
+      "category": "Hardware -> Laptop",
+      "keywords": [
+        "Screen",
+        "Laptop",
+        "Defect"
+      ],
+      "customerPriority": "Disruption, cannot work",
+      "affectedPerson": "Zimmermann, Andreas",
+      "description": "I have noticed a defective screen on my laptop. There are strange lines and spots visible on it. Could you please tell me how to resolve this issue?",
+      "priority": "High",
+      "requestType": "Incident"
+    }
+  },
+  {
+    "text": [
+      "Subject: Unresponsive Laptop Keyboard",
+      "Hello Support Team,",
+      "Since yesterday, the keyboard of my laptop has stopped responding.",
+      "I tried restarting it, but it didn't help.",
+      "Could you please assist me with this hardware problem?",
+      "Best regards,",
+      "Sarah Fischer"
+    ],
+    "ticket": {
+      "title": "Unresponsive Laptop Keyboard",
+      "service": "",
+      "category": "Hardware -> Laptop",
+      "keywords": [
+        "Keyboard",
+        "Laptop",
+        "Not Responding"
+      ],
+      "customerPriority": "Disruption, cannot work",
+      "affectedPerson": "Fischer, Sarah",
+      "description": "Since yesterday, the keyboard of my laptop has stopped responding. I tried restarting it, but it didn't help. Could you please assist me with this hardware problem?",
+      "priority": "High",
+      "requestType": "Incident"
+    }
+  },
+  {
+    "text": [
+      "Subject: Issues with Laptop Ports",
+      "Hello Support Team,",
+      "I am experiencing difficulties with the ports on my laptop.",
+      "Neither the USB ports nor the HDMI ports are functioning correctly.",
+      "Could you please provide instructions on how to resolve this hardware problem?",
+      "Thank you very much and best regards,",
+      "Stefan Richter"
+    ],
+    "ticket": {
+      "title": "Problems with Laptop Ports",
+      "service": "",
+      "category": "Hardware -> Laptop",
+      "keywords": [
+        "Ports",
+        "Laptop",
+        "USB",
+        "HDMI"
+      ],
+      "customerPriority": "Disruption, cannot work",
+      "affectedPerson": "Richter, Stefan",
+      "description": "I am experiencing difficulties with the ports on my laptop. Neither the USB ports nor the HDMI ports are functioning correctly. Could you please provide instructions on how to resolve this hardware problem?",
+      "priority": "Medium",
+      "requestType": "Incident"
+    }
+  },
+  {
+    "text": [
+      "Subject: Error with Software Update",
+      "Hello Support Team,",
+      "I am receiving an error message when attempting to perform the latest software update.",
+      "The message reads: 'Update could not be completed. Error code: 0x800F081F'.",
+      "Could you please help me resolve this software update issue?",
+      "Thank you very much and best regards,",
+      "Paula Schneider"
+    ],
+    "ticket": {
+      "title": "Error with Software Update",
+      "service": "",
+      "category": "Software Update",
+      "keywords": [
+        "Error",
+        "Software Update",
+        "Error Code"
+      ],
+      "customerPriority": "Disruption, cannot work",
+      "affectedPerson": "Schneider, Paula",
+      "description": "I am receiving an error message when attempting to perform the latest software update. The message reads: 'Update could not be completed. Error code: 0x800F081F'. Could you please help me resolve this software update issue?",
+      "priority": "High",
+      "requestType": "Incident"
+    }
+  },
+  {
+    "text": [
+      "Subject: Software Update Stuck",
+      "Hello Support Team,",
+      "My system has been stuck on a software update for hours.",
+      "The progress bar is not moving, and there are no visible changes.",
+      "How can I resolve this software update issue?",
+      "Best regards,",
+      "Sebastian Müller"
+    ],
+    "ticket": {
+      "title": "Software Update Stuck",
+      "service": "",
+      "category": "Software Update",
+      "keywords": [
+        "Stuck",
+        "Software Update",
+        "Progress Bar"
+      ],
+      "customerPriority": "Disruption, cannot work",
+      "affectedPerson": "Müller, Sebastian",
+      "description": "My system has been stuck on a software update for hours. The progress bar is not moving, and there are no visible changes. How can I resolve this software update issue?",
+      "priority": "High",
+      "requestType": "Incident"
+    }
+  },
+  {
+    "text": [
+      "Subject: Errors After Software Update",
+      "Hello Support Team,",
+      "After the latest software update, some applications are not functioning correctly.",
+      "I am receiving error messages like 'Application could not be started' and 'DLL error'.",
+      "Could you please help me resolve these software update errors?",
+      "Thank you very much and best regards,",
+      "Laura Fischer"
+    ],
+    "ticket": {
+      "title": "Errors After Software Update",
+      "service": "",
+      "category": "Software Update",
+      "keywords": [
+        "Errors",
+        "Software Update",
+        "Applications",
+        "DLL"
+      ],
+      "customerPriority": "Disruption, cannot work",
+      "affectedPerson": "Fischer, Laura",
+      "description": "After the latest software update, some applications are not functioning correctly. I am receiving error messages like 'Application could not be started' and 'DLL error'. Could you please help me resolve these software update errors?",
+      "priority": "High",
+      "requestType": "Incident"
+    }
+  },
+  {
+    "text": [
+      "Subject: Issues After Software Update",
+      "Hello Support Team,",
+      "After the latest software update, I have noticed that my laptop has become slower.",
+      "Applications respond with delays, and the overall system startup takes longer.",
+      "Could you please provide advice on how to resolve these performance issues after the software update?",
+      "Thank you in advance!",
+      "Best regards,",
+      "Maximilian Schmidt"
+    ],
+    "ticket": {
+      "title": "Performance Issues After Software Update",
+      "service": "",
+      "category": "Software Update",
+      "keywords": [
+        "Slow",
+        "Software Update",
+        "Performance Issues"
+      ],
+      "customerPriority": "Disruption, can work",
+      "affectedPerson": "Schmidt, Maximilian",
+      "description": "After the latest software update, I have noticed that my laptop has become slower. Applications respond with delays, and the overall system startup takes longer. Could you please provide advice on how to resolve these performance issues after the software update?",
+      "priority": "Medium",
+      "requestType": "Incident"
+    }
+  },
+  {
+    "text": [
+      "Subject: Software Update Not Available",
+      "Hello Support Team,",
+      "I am receiving the message that my system is up to date, even though I know that a software update should be available.",
+      "Could you please help me resolve the issue and install the pending software update?",
+      "Thank you very much and best regards,",
+      "Nina Wagner"
+    ],
+    "ticket": {
+      "title": "Software Update Not Available",
+      "service": "",
+      "category": "Software Update",
+      "keywords": [
+        "Not Available",
+        "Software Update"
+      ],
+      "customerPriority": "Disruption, can work",
+      "affectedPerson": "Wagner, Nina",
+      "description": "I am receiving the message that my system is up to date, even though I know that a software update should be available. Could you please help me resolve the issue and install the pending software update?",
+      "priority": "Medium",
+      "requestType": "Service Request"
+    }
+  },
+  {
+    "text": [
+      "Subject: Printer Only Printing Blank Pages",
+      "Hello Support Team,",
+      "Since yesterday, my printer has been printing only blank pages, despite having sufficient ink.",
+      "I have already cleaned the nozzles, but the problem persists.",
+      "Could you please help me resolve this printer issue?",
+      "Thank you very much and best regards,",
+      "Lisa Müller"
+    ],
+    "ticket": {
+      "title": "Printer Only Printing Blank Pages",
+      "service": "",
+      "category": "Printer",
+      "keywords": [
+        "Blank",
+        "Printer",
+        "Ink"
+      ],
+      "customerPriority": "Disruption, cannot work",
+      "affectedPerson": "Müller, Lisa",
+      "description": "Since yesterday, my printer has been printing only blank pages, despite having sufficient ink. I have already cleaned the nozzles, but the problem persists. Could you please help me resolve this printer issue?",
+      "priority": "High",
+      "requestType": "Service Request"
+    }
+  },
+  {
+    "text": [
+      "Subject: Paper Jam in the Printer",
+      "Hello Support Team,",
+      "I have a paper jam in my printer, and I can't remove the paper.",
+      "There are no visible obstacles, but the printer continues to display 'Paper Jam'.",
+      "Could you please provide instructions for resolving this printer issue?",
+      "Thank you in advance!",
+      "Maximilian Schmidt"
+    ],
+    "ticket": {
+      "title": "Paper Jam in the Printer",
+      "service": "",
+      "category": "Printer",
+      "keywords": [
+        "Paper Jam",
+        "Printer"
+      ],
+      "customerPriority": "Unable to work due to malfunction",
+      "affectedPerson": "Schmidt, Maximilian",
+      "description": "I have a paper jam in my printer, and I can't remove the paper. There are no visible obstacles, but the printer continues to display 'Paper Jam'. Could you please provide instructions for resolving this printer issue?",
+      "priority": "High",
+      "requestType": "Incident"
+    }
+  },
+  {
+    "text": [
+      "Subject: Printer Not Connecting to the Network",
+      "Hello Support Team,",
+      "My printer is suddenly not connecting to the network anymore.",
+      "I have checked all connections, but the printer remains offline.",
+      "Could you please help me restore the network connection for my printer?",
+      "Best regards,",
+      "Anna Wagner"
+    ],
+    "ticket": {
+      "title": "Printer Offline",
+      "service": "",
+      "category": "Printer",
+      "keywords": [
+        "Network",
+        "Offline",
+        "Printer"
+      ],
+      "customerPriority": "Unable to work due to malfunction",
+      "affectedPerson": "Wagner, Anna",
+      "description": "My printer is suddenly not connecting to the network anymore. I have checked all connections, but the printer remains offline. Could you please help me restore the network connection for my printer?",
+      "priority": "High",
+      "requestType": "Incident"
+    }
+  },
+  {
+    "text": [
+      "Subject: Printer Prints Blurry Pages",
+      "Hello Support Team,",
+      "Since the last printing process, all pages of my printer are being printed blurry.",
+      "I have checked the printer settings, but the problem persists.",
+      "Could you please help me solve this quality issue with the printer?",
+      "Thank you very much and best regards,",
+      "Markus Becker"
+    ],
+    "ticket": {
+      "title": "Blurry Print",
+      "service": "",
+      "category": "Printer",
+      "keywords": [
+        "Blurry",
+        "Printer",
+        "Print Quality"
+      ],
+      "customerPriority": "Unable to work due to malfunction",
+      "affectedPerson": "Becker, Markus",
+      "description": "Since the last printing process, all pages of my printer are being printed blurry. I have checked the printer settings, but the problem persists. Could you please help me solve this quality issue with the printer?",
+      "priority": "High",
+      "requestType": "Incident"
+    }
+  },
+  {
+    "text": [
+      "Subject: Color Printing Issues",
+      "Hello Support Team,",
+      "I am experiencing problems with the color quality when printing.",
+      "The prints appear in unusual colors and are not as they should be.",
+      "Could you please provide instructions for resolving this color issue with my printer?",
+      "Thank you in advance!",
+      "Sophie Zimmermann"
+    ],
+    "ticket": {
+      "title": "Color Printing Issues",
+      "service": "",
+      "category": "Printer",
+      "keywords": [
+        "Color Quality",
+        "Printer",
+        "Color Issues"
+      ],
+      "customerPriority": "Can work with disturbance",
+      "affectedPerson": "Zimmermann, Sophie",
+      "description": "I am experiencing problems with the color quality when printing. The prints appear in unusual colors and are not as they should be. Could you please provide instructions for resolving this color issue with my printer?",
+      "priority": "Medium",
+      "requestType": "Service Request"
+    }
+  },
+  {
+    "text": [
+      "Subject: Issues with the Installation of Software X",
+      "Hello Support Team,",
+      "I am having difficulties with the installation of Software X on my computer.",
+      "During the installation process, I receive the error message 'Error code: 0x80070643'.",
+      "Could you please help me resolve this issue with the software installation?",
+      "Thank you very much and kind regards,",
+      "Julian Müller"
+    ],
+    "ticket": {
+      "title": "Installation Error Software X",
+      "service": "",
+      "category": "Software Installation",
+      "keywords": [
+        "Installation",
+        "Software X",
+        "Error Code"
+      ],
+      "customerPriority": "Unable to work due to malfunction",
+      "affectedPerson": "Müller, Julian",
+      "description": "I am having difficulties with the installation of Software X on my computer. During the installation process, I receive the error message 'Error code: 0x80070643'. Could you please help me resolve this issue with the software installation?",
+      "priority": "High",
+      "requestType": "Incident"
+    }
+  },
+  {
+    "text": [
+      "Subject: Installation Issues with Software Y",
+      "Hello Support Team,",
+      "I am unable to successfully install Software Y. The installation process keeps aborting.",
+      "There is no specific error message; the progress bar simply stops.",
+      "Could you please assist me in resolving this installation issue with Software Y?",
+      "Best regards,",
+      "Laura Fischer"
+    ],
+    "ticket": {
+      "title": "Installation Abort Software Y",
+      "service": "",
+      "category": "Software Installation",
+      "keywords": [
+        "Installation",
+        "Software Y",
+        "Progress Bar"
+      ],
+      "customerPriority": "Unable to work due to malfunction",
+      "affectedPerson": "Fischer, Laura",
+      "description": "I am unable to successfully install Software Y. The installation process keeps aborting. There is no specific error message; the progress bar simply stops. Could you please assist me in resolving this installation issue with Software Y?",
+      "priority": "High",
+      "requestType": "Service Request"
+    }
+  },
+  {
+    "text": [
+      "Subject: Missing Files After Software Z Installation",
+      "Hello Support Team,",
+      "After the installation of Software Z, certain files are missing, and the application cannot be launched.",
+      "I have repeated the installation multiple times, but the problem persists.",
+      "Could you please assist me in identifying and resolving the missing files?",
+      "Thank you in advance!",
+      "Stefan Richter"
+    ],
+    "ticket": {
+      "title": "Missing Files After Installation Software Z",
+      "service": "",
+      "category": "Software Installation",
+      "keywords": [
+        "Installation",
+        "Software Z",
+        "Missing Files"
+      ],
+      "customerPriority": "Unable to work due to malfunction",
+      "affectedPerson": "Richter, Stefan",
+      "description": "After the installation of Software Z, certain files are missing, and the application cannot be launched. I have repeated the installation multiple times, but the problem persists. Could you please assist me in identifying and resolving the missing files?",
+      "priority": "High",
+      "requestType": "Service Request"
+    }
+  },
+  {
+    "text": [
+      "Subject: Installation Failure of Program A",
+      "Hello Support Team,",
+      "I am receiving an error message when trying to install Program A.",
+      "The message reads: 'Installation error - File could not be copied'.",
+      "Could you please help me resolve this installation issue with Program A?",
+      "Thank you very much and kind regards,",
+      "Sophie Schneider"
+    ],
+    "ticket": {
+      "title": "Installation Failure Program A",
+      "service": "",
+      "category": "Software Installation",
+      "keywords": [
+        "Installation",
+        "Program A",
+        "Error Message"
+      ],
+      "customerPriority": "Unable to work due to malfunction",
+      "affectedPerson": "Schneider, Sophie",
+      "description": "I am receiving an error message when trying to install Program A. The message reads: 'Installation error - File could not be copied'. Could you please help me resolve this installation issue with Program A?",
+      "priority": "High",
+      "requestType": "Service Request"
+    }
+  },
+  {
+    "text": [
+      "Subject: Installation Issues with Application B",
+      "Hello Support Team,",
+      "I am encountering difficulties in the installation of Application B. The installer initiates, but the process abruptly terminates without any warning.",
+      "Could you please provide steps to resolve this installation issue with Application B?",
+      "Thank you in advance!",
+      "Nina Wagner"
+    ],
+    "ticket": {
+      "title": "Installation Abort Application B",
+      "service": "",
+      "category": "Software Installation",
+      "keywords": [
+        "Installation",
+        "Application B",
+        "Abort"
+      ],
+      "customerPriority": "Unable to work due to malfunction",
+      "affectedPerson": "Wagner, Nina",
+      "description": "I am encountering difficulties in the installation of Application B. The installer initiates, but the process abruptly terminates without any warning. Could you please provide steps to resolve this installation issue with Application B?",
+      "priority": "High",
+      "requestType": "Service Request"
+    }
+  },
+  {
+    "text": [
+      "Subject: Keyboard Not Functioning",
+      "Hello Support Team,",
+      "Since this morning, my keyboard has suddenly stopped working.",
+      "I have tried restarting it, but that did not help.",
+      "Could you please assist me in resolving this issue with my keyboard?",
+      "Thank you very much and kind regards,",
+      "Maximilian Fischer"
+    ],
+    "ticket": {
+      "title": "Non-functioning Keyboard",
+      "service": "",
+      "category": "Keyboard",
+      "keywords": [
+        "Keyboard",
+        "Not Working",
+        "Restart"
+      ],
+      "customerPriority": "Unable to work due to malfunction",
+      "affectedPerson": "Fischer, Maximilian",
+      "description": "Since this morning, my keyboard has suddenly stopped working. I have tried restarting it, but that did not help. Could you please assist me in resolving this issue with my keyboard?",
+      "priority": "High",
+      "requestType": "Incident"
+    }
+  },
+  {
+    "text": [
+      "Subject: Uncontrolled Mouse Cursor Movement",
+      "Hello Support Team,",
+      "I am experiencing an issue with my mouse. The cursor is jumping uncontrollably across the screen, making operation very difficult.",
+      "I have cleaned the mouse, but the problem persists.",
+      "Could you please help me in resolving this mouse-related issue?",
+      "Best regards,",
+      "Anna Müller"
+    ],
+    "ticket": {
+      "title": "Uncontrolled Mouse Cursor",
+      "service": "",
+      "category": "Mouse",
+      "keywords": [
+        "Mouse Cursor",
+        "Jumping",
+        "Cleaning"
+      ],
+      "customerPriority": "Unable to work due to malfunction",
+      "affectedPerson": "Müller, Anna",
+      "description": "I am experiencing an issue with my mouse. The cursor is jumping uncontrollably across the screen, making operation very difficult. I have cleaned the mouse, but the problem persists. Could you please help me in resolving this mouse-related issue?",
+      "priority": "High",
+      "requestType": "Incident"
+    }
+  },
+  {
+    "text": [
+      "Subject: Keys on the Keyboard Not Responding",
+      "Hello Support Team,",
+      "I have noticed that some keys on my keyboard are not responding anymore.",
+      "It particularly affects the letters 'A', 'S', and 'E'.",
+      "Could you please advise me on how to resolve this keyboard issue?",
+      "Thank you in advance!",
+      "Sophie Wagner"
+    ],
+    "ticket": {
+      "title": "Keys Not Responding",
+      "service": "",
+      "category": "Keyboard",
+      "keywords": [
+        "Keys",
+        "Not Responding",
+        "Letters"
+      ],
+      "customerPriority": "Unable to work due to malfunction",
+      "affectedPerson": "Wagner, Sophie",
+      "description": "I have noticed that some keys on my keyboard are not responding anymore. It particularly affects the letters 'A', 'S', and 'E'. Could you please advise me on how to resolve this keyboard issue?",
+      "priority": "High",
+      "requestType": "Incident"
+    }
+  },
+  {
+    "text": [
+      "Subject: Mouse Clicks Not Recognized",
+      "Hello Support Team,",
+      "Since yesterday, the mouse clicks on my mouse are no longer being recognized.",
+      "I have checked the connection, but it has not made any difference.",
+      "Could you please help me in resolving this issue with mouse clicks?",
+      "Thank you very much and kind regards,",
+      "Nina Zimmermann"
+    ],
+    "ticket": {
+      "title": "Mouse Clicks Not Recognized",
+      "service": "",
+      "category": "Mouse",
+      "keywords": [
+        "Mouse Clicks",
+        "Not Recognized",
+        "Connection"
+      ],
+      "customerPriority": "Unable to work due to malfunction",
+      "affectedPerson": "Zimmermann, Nina",
+      "description": "Since yesterday, the mouse clicks on my mouse are no longer being recognized. I have checked the connection, but it has not made any difference. Could you please help me in resolving this issue with mouse clicks?",
+      "priority": "High",
+      "requestType": "Incident"
+    }
+  },
+  {
+    "text": [
+      "Subject: Keyboard Backlight Not Working",
+      "Hello Support Team,",
+      "The backlight on my keyboard has not been working for a few days.",
+      "I have updated the drivers, but it has not resolved the issue.",
+      "Could you please assist me in fixing this keyboard issue?",
+      "Thank you very much and kind regards,",
+      "Markus Becker"
+    ],
+    "ticket": {
+      "title": "Keyboard Backlight Malfunction",
+      "service": "",
+      "category": "Keyboard",
+      "keywords": [
+        "Keyboard Backlight",
+        "Not Working",
+        "Drivers"
+      ],
+      "customerPriority": "Can work with disturbance",
+      "affectedPerson": "Becker, Markus",
+      "description": "The backlight on my keyboard has not been working for a few days. I have updated the drivers, but it has not resolved the issue.",
+      "priority": "Low",
+      "requestType": "Service Request"
+    }
+  },
+  {
+    "text": [
+      "Subject: No Internet Connection",
+      "Hello Support Team,",
+      "Since this morning, I have had no internet connection on my computer.",
+      "I have restarted my router, but it has not resolved the issue.",
+      "Could you please help me in restoring my internet connection?",
+      "Thank you very much and kind regards,",
+      "Julia Schneider"
+    ],
+    "ticket": {
+      "title": "No Internet Connection",
+      "service": "",
+      "category": "Internet",
+      "keywords": [
+        "Internet Connection",
+        "No Internet",
+        "Router"
+      ],
+      "customerPriority": "Unable to work due to malfunction",
+      "affectedPerson": "Schneider, Julia",
+      "description": "Since this morning, I have had no internet connection on my computer. I have restarted my router, but it has not resolved the issue. Could you please help me in restoring my internet connection?",
+      "priority": "High",
+      "requestType": "Incident"
+    }
+  },
+  {
+    "text": [
+      "Subject: Slow Internet Despite High Speed",
+      "Hello Support Team,",
+      "Despite having a high-speed internet plan, my internet connection is extremely slow.",
+      "I have already restarted all devices, but it has not brought any improvement.",
+      "Could you please assist me in resolving this issue with internet speed?",
+      "Best regards,",
+      "David Meier"
+    ],
+    "ticket": {
+      "title": "Slow Internet",
+      "service": "",
+      "category": "Internet",
+      "keywords": [
+        "Slow",
+        "Internet",
+        "Speed"
+      ],
+      "customerPriority": "Can work with disturbance",
+      "affectedPerson": "Meier, David",
+      "description": "Despite having a high-speed internet plan, my internet connection is extremely slow. I have already restarted all devices, but it has not brought any improvement. Could you please assist me in resolving this issue with internet speed?",
+      "priority": "Medium",
+      "requestType": "Incident"
+    }
+  },
+  {
+    "text": [
+      "Subject: WLAN Connection Drops",
+      "Hello Support Team,",
+      "I have been experiencing frequent connection drops in my WLAN lately.",
+      "The connection is sporadically disconnected and then restored.",
+      "Could you please help me in resolving these constant connection drops in my WLAN?",
+      "Thank you very much in advance!",
+      "Laura Becker"
+    ],
+    "ticket": {
+      "title": "WLAN Connection Drops",
+      "service": "",
+      "category": "Internet",
+      "keywords": [
+        "Connection Drops",
+        "WLAN",
+        "Constant"
+      ],
+      "customerPriority": "Unable to work due to malfunction",
+      "affectedPerson": "Becker, Laura",
+      "description": "I have been experiencing frequent connection drops in my WLAN lately. The connection is sporadically disconnected and then restored. Could you please help me in resolving these constant connection drops in my WLAN?",
+      "priority": "High",
+      "requestType": "Incident"
+    }
+  },
+  {
+    "text": [
+      "Subject: Issues with IP Configuration",
+      "Hello Support Team,",
+      "I am receiving the error message 'Limited Connectivity - Problems with the IP Configuration'.",
+      "I have already attempted to assign the IP address manually, but it did not help.",
+      "Could you please assist me in resolving this issue with the IP configuration?",
+      "Thank you very much and kind regards,",
+      "Marius Zimmermann"
+    ],
+    "ticket": {
+      "title": "IP Configuration Issues",
+      "service": "",
+      "category": "Internet",
+      "keywords": [
+        "IP Configuration",
+        "Error Message",
+        "Limited Connectivity"
+      ],
+      "customerPriority": "Unable to work due to malfunction",
+      "affectedPerson": "Zimmermann, Marius",
+      "description": "I am receiving the error message 'Limited Connectivity - Problems with the IP Configuration'. I have already attempted to assign the IP address manually, but it did not help. Could you please assist me in resolving this issue with the IP configuration?",
+      "priority": "High",
+      "requestType": "Service Request"
+    }
+  },
+  {
+    "text": [
+      "Subject: DNS Problem - Unable to Reach Website",
+      "Hello Support Team,",
+      "I am unable to access certain websites, and the message 'DNS Problem' is displayed.",
+      "Other websites are functioning normally. I have already changed my DNS server, but it did not help.",
+      "Could you please assist me in resolving this DNS problem?",
+      "Thank you very much and kind regards,",
+      "Sophie Müller"
+    ],
+    "ticket": {
+      "title": "DNS Problem - Website Not Reachable",
+      "service": "",
+      "category": "Internet",
+      "keywords": [
+        "DNS Problem",
+        "Website",
+        "Accessibility"
+      ],
+      "customerPriority": "Can work with disturbance",
+      "affectedPerson": "Müller, Sophie",
+      "description": "I am unable to access certain websites, and the message 'DNS Problem' is displayed. Other websites are functioning normally. I have already changed my DNS server, but it did not help. Could you please assist me in resolving this DNS problem?",
+      "priority": "Medium",
+      "requestType": "Service Request"
+    }
+  },
+  {
+    "text": [
+      "Subject: Uncontrolled Movements of Robot Arm",
+      "Hello Support Team,",
+      "Our robot arm is suddenly moving uncontrollably and performing unpredictable movements.",
+      "We have already checked the programming, but the problem persists.",
+      "Could you please assist us in identifying and resolving this issue with the robot arm?",
+      "Thank you very much and kind regards,",
+      "Michael Schmidt, Engineering Department"
+    ],
+    "ticket": {
+      "title": "Uncontrolled Movements Robot Arm",
+      "service": "",
+      "category": "Hardware-Robotics",
+      "keywords": [
+        "Robot Arm",
+        "Movements",
+        "Uncontrolled"
+      ],
+      "customerPriority": "Unable to work due to malfunction",
+      "affectedPerson": "Schmidt, Michael",
+      "description": "Our robot arm is suddenly moving uncontrollably and performing unpredictable movements. We have already checked the programming, but the problem persists. Could you please assist us in identifying and resolving this issue with the robot arm?",
+      "priority": "High",
+      "requestType": "Incident"
+    }
+  },
+  {
+    "text": [
+      "Subject: Malfunctioning Sensors of the Robot",
+      "Hello Support Team,",
+      "The sensors of our robot seem to be malfunctioning. It no longer detects obstacles and performs tasks inaccurately.",
+      "Could you please assist us in diagnosing and resolving this issue with the robot sensors?",
+      "Thank you very much and kind regards,",
+      "Carolin Müller, Development Department"
+    ],
+    "ticket": {
+      "title": "Malfunctioning Sensors of the Robot",
+      "service": "",
+      "category": "Hardware-Robotics",
+      "keywords": [
+        "Robot",
+        "Sensors",
+        "Malfunctioning"
+      ],
+      "customerPriority": "Unable to work due to malfunction",
+      "affectedPerson": "Müller, Carolin",
+      "description": "The sensors of our robot seem to be malfunctioning. It no longer detects obstacles and performs tasks inaccurately. Could you please assist us in diagnosing and resolving this issue with the robot sensors?",
+      "priority": "High",
+      "requestType": "Incident"
+    }
+  },
+  {
+    "text": [
+      "Subject: Robot Not Responding to Commands",
+      "Hello Support Team,",
+      "Our robot is no longer responding to commands, neither manually nor automatically.",
+      "We have checked the connection and replaced the batteries, but the problem persists.",
+      "Could you please assist us in resolving this communication issue with the robot?",
+      "Thank you in advance!",
+      "Sebastian Wagner, Production"
+    ],
+    "ticket": {
+      "title": "Robot Not Responding to Commands",
+      "service": "",
+      "category": "Hardware-Robotics",
+      "keywords": [
+        "Robot",
+        "Commands",
+        "Communication Issue"
+      ],
+      "customerPriority": "Unable to work due to malfunction",
+      "affectedPerson": "Wagner, Sebastian",
+      "description": "Our robot is no longer responding to commands, neither manually nor automatically. We have checked the connection and replaced the batteries, but the problem persists. Could you please assist us in resolving this communication issue with the robot?",
+      "priority": "High",
+      "requestType": "Incident"
+    }
+  },
+  {
+    "text": [
+      "Subject: Robot Arms Blocking Each Other",
+      "Hello Support Team,",
+      "We have multiple robot arms in our production line, and they are blocking each other.",
+      "This is causing collisions and production downtime.",
+      "Could you please assist us in coordinating the robot arms and avoiding collisions?",
+      "Thank you very much!",
+      "Anna Fischer, Production Management"
+    ],
+    "ticket": {
+      "title": "Robot Arms Blocking Each Other",
+      "service": "",
+      "category": "Hardware-Robotics",
+      "keywords": [
+        "Robot Arms",
+        "Collisions",
+        "Production Downtime"
+      ],
+      "customerPriority": "Multiple unable to work",
+      "affectedPerson": "Fischer, Anna",
+      "description": "We have multiple robot arms in our production line, and they are blocking each other. This is causing collisions and production downtime. Could you please assist us in coordinating the robot arms and avoiding collisions?",
+      "priority": "High",
+      "requestType": "Incident"
+    }
+  },
+  {
+    "text": [
+      "Subject: Issues with Robot Control Unit",
+      "Hello Support Team,",
+      "The control unit of our robot is displaying error messages, and the robot cannot be controlled.",
+      "We have already checked the wiring, but it has not improved the situation.",
+      "Could you please assist us in identifying and resolving this issue with the robot control unit?",
+      "Thank you very much!",
+      "Markus Weber, Technical Support"
+    ],
+    "ticket": {
+      "title": "Faulty Robot Control Unit",
+      "service": "",
+      "category": "Hardware-Robotics",
+      "keywords": [
+        "Robot Control Unit",
+        "Error Messages",
+        "Wiring"
+      ],
+      "customerPriority": "Unable to work",
+      "affectedPerson": "Weber, Markus",
+      "description": "The control unit of our robot is displaying error messages, and the robot cannot be controlled. We have already checked the wiring, but it has not improved the situation. Could you please assist us in identifying and resolving this issue with the robot control unit?",
+      "priority": "High",
+      "requestType": "Incident"
+    }
+  },
+  {
+    "text": [
+      "Subject: Issues with Software Subscription Purchase",
+      "Dear Support Team,",
+      "I am experiencing difficulties in completing a software subscription purchase.",
+      "When attempting to acquire the license for the product 'TechSuite Pro,' I receive an error message.",
+      "Please assist me in successfully completing the subscription purchase.",
+      "Best regards,",
+      "Anna Schmidt"
+    ],
+    "ticket": {
+      "title": "Error in Software Subscription Purchase",
+      "service": "",
+      "category": "Software Subscription Purchase",
+      "keywords": [
+        "TechSuite Pro",
+        "Error Message",
+        "Subscription",
+        "Purchase"
+      ],
+      "customerPriority": "Unable to work",
+      "affectedPerson": "Schmidt, Anna",
+      "description": "When attempting to acquire the license for the product 'TechSuite Pro,' I receive an error message. Please assist me in successfully completing the subscription purchase.",
+      "priority": "High",
+      "requestType": "Incident"
+    }
+  },
+  {
+    "text": [
+      "Subject: Assistance with Software Subscription Renewal",
+      "Dear Support Team,",
+      "I need assistance with renewing my software subscription.",
+      "My license for 'DesignMaster 2023' expires in three days, and I can't find an option for renewal.",
+      "Could you please provide me with instructions on how to proceed?",
+      "Best regards,",
+      "Markus Weber"
+    ],
+    "ticket": {
+      "title": "Assistance with Subscription Renewal",
+      "service": "",
+      "category": "Software Subscription Renewal",
+      "keywords": [
+        "DesignMaster 2023",
+        "Renewal",
+        "Subscription",
+        "Assistance"
+      ],
+      "customerPriority": "Unable to work",
+      "affectedPerson": "Weber, Markus",
+      "description": "My license for 'DesignMaster 2023' expires in three days, and I can't find an option for renewal. Could you please provide me with instructions on how to proceed?",
+      "priority": "High",
+      "requestType": "Incident"
+    }
+  },
+  {
+    "text": [
+      "Subject: Inquiry Regarding Software Subscription Purchase",
+      "Dear Support Team,",
+      "I have some questions regarding the purchase of a software subscription.",
+      "Before deciding on 'DataGuard Plus,' I would like to learn more about its features and pricing.",
+      "Could you please provide me with additional information?",
+      "Best regards,",
+      "Julia Müller"
+    ],
+    "ticket": {
+      "title": "Inquiry Regarding Software Subscription Details",
+      "service": "",
+      "category": "Software Subscription Purchase",
+      "keywords": [
+        "DataGuard Plus",
+        "Questions",
+        "Information",
+        "Pricing"
+      ],
+      "customerPriority": "Issue but can work",
+      "affectedPerson": "Müller, Julia",
+      "description": "Before deciding on 'DataGuard Plus,' I would like to learn more about its features and pricing. Could you please provide me with additional information?",
+      "priority": "Medium",
+      "requestType": "Service Request"
+    }
+  },
+  {
+    "text": [
+      "Subject: Software Subscription Purchased - License Missing",
+      "Dear Support Team,",
+      "I have successfully subscribed to 'CodeMaster Pro' software,",
+      "but I have not yet received a license. Without the license, I am unable to use the software.",
+      "Please provide me with the license information as soon as possible.",
+      "Best regards,",
+      "Thomas Fischer"
+    ],
+    "ticket": {
+      "title": "Missing License after Subscription Purchase",
+      "service": "",
+      "category": "Software Subscription Purchase",
+      "keywords": [
+        "CodeMaster Pro",
+        "License",
+        "Subscription",
+        "Missing"
+      ],
+      "customerPriority": "Issue cannot work",
+      "affectedPerson": "Fischer, Thomas",
+      "description": "I have successfully subscribed to 'CodeMaster Pro' software, but I have not yet received a license. Without the license, I am unable to use the software. Please provide me with the license information as soon as possible.",
+      "priority": "High",
+      "requestType": "Incident"
+    }
+  },
+  {
+    "text": [
+      "Subject: Software Subscription Purchase Failed - Payment Issue",
+      "Dear Support Team,",
+      "I attempted to purchase a software subscription for 'OfficeSuite 2023',",
+      "but the payment was declined. I'm not sure what the issue is.",
+      "Can you help me resolve this payment problem?",
+      "Best regards,",
+      "Sophie Wagner"
+    ],
+    "ticket": {
+      "title": "Payment Issue with Subscription Purchase",
+      "service": "",
+      "category": "Software Subscription Purchase",
+      "keywords": [
+        "OfficeSuite 2023",
+        "Payment Issue",
+        "Subscription",
+        "Failed"
+      ],
+      "customerPriority": "Issue cannot work",
+      "affectedPerson": "Wagner, Sophie",
+      "description": "I attempted to purchase a software subscription for 'OfficeSuite 2023', but the payment was declined. I'm not sure what the issue is. Can you help me resolve this payment problem?",
+      "priority": "High",
+      "requestType": "Incident"
+    }
+  },
+  {
+    "text": [
+      "Subject: Defective Laptop Charger Cable",
+      "Dear Support Team,",
+      "My laptop charger cable is no longer working properly.",
+      "There is a loose connection, and the laptop is not charging.",
+      "Could you please send me a replacement cable?",
+      "Thank you in advance.",
+      "Best regards,",
+      "Dominik Becker"
+    ],
+    "ticket": {
+      "title": "Replacement for Defective Laptop Charger Cable",
+      "service": "",
+      "category": "Accessory Replacement",
+      "keywords": [
+        "Laptop Charger Cable",
+        "Defective",
+        "Replacement",
+        "Send"
+      ],
+      "customerPriority": "Issue cannot work",
+      "affectedPerson": "Becker, Dominik",
+      "description": "My laptop charger cable is no longer working properly. There is a loose connection, and the laptop is not charging. Could you please send me a replacement cable?",
+      "priority": "High",
+      "requestType": "Incident"
+    }
+  },
+  {
+    "text": [
+      "Subject: Inquiry about Replacement Parts for Mechanical Keyboard",
+      "Dear Support Team,",
+      "I own the 'MechMaster 5000' mechanical keyboard,",
+      "and unfortunately, one of the keys has broken off. Is it possible to obtain replacement parts?",
+      "Please inform me about the availability and the ordering process.",
+      "Thank you very much, and best regards,",
+      "Carina Schulz"
+    ],
+    "ticket": {
+      "title": "Inquiry about Replacement Parts for 'MechMaster 5000'",
+      "service": "",
+      "category": "Accessory Replacement",
+      "keywords": [
+        "MechMaster 5000",
+        "Keyboard",
+        "Replacement Parts",
+        "Ordering Process"
+      ],
+      "customerPriority": "Issue but can work",
+      "affectedPerson": "Schulz, Carina",
+      "description": "I own the 'MechMaster 5000' mechanical keyboard, and unfortunately, one of the keys has broken off. Is it possible to obtain replacement parts? Please inform me about the availability and the ordering process.",
+      "priority": "Medium",
+      "requestType": "Service Request"
+    }
+  },
+  {
+    "text": [
+      "Subject: Replacement for Defective Mouse - Model 'SpeedClick 300'",
+      "Dear Support Team,",
+      "My 'SpeedClick 300' mouse is defective, and I urgently need a replacement.",
+      "The right mouse button is no longer responsive.",
+      "Can you please assist me in obtaining a replacement mouse?",
+      "Kind regards,",
+      "Tom Schäfer"
+    ],
+    "ticket": {
+      "title": "Replacement for Defective 'SpeedClick 300' Mouse",
+      "service": "",
+      "category": "Accessory Replacement",
+      "keywords": [
+        "SpeedClick 300",
+        "Mouse",
+        "Defective",
+        "Replacement"
+      ],
+      "customerPriority": "Issue cannot work",
+      "affectedPerson": "Schäfer, Tom",
+      "description": "My 'SpeedClick 300' mouse is defective, and I urgently need a replacement. The right mouse button is no longer responsive. Can you please assist me in obtaining a replacement mouse?",
+      "priority": "High",
+      "requestType": "Incident"
+    }
+  },
+  {
+    "text": [
+      "Subject: Replacement for Damaged USB Cable",
+      "Dear Support Team,",
+      "The included USB cable for my 'UltraDrive 2000' external hard drive enclosure is damaged.",
+      "I urgently need a replacement cable to access my data.",
+      "Can you please send me a new USB cable?",
+      "Thank you very much,",
+      "Lena Mayer"
+    ],
+    "ticket": {
+      "title": "Replacement for Damaged USB Cable ('UltraDrive 2000')",
+      "service": "",
+      "category": "Accessory Replacement",
+      "keywords": [
+        "UltraDrive 2000",
+        "USB Cable",
+        "Damaged",
+        "Replacement"
+      ],
+      "customerPriority": "Issue cannot work",
+      "affectedPerson": "Mayer, Lena",
+      "description": "The included USB cable for my 'UltraDrive 2000' external hard drive enclosure is damaged. I urgently need a replacement cable to access my data. Can you please send me a new USB cable?",
+      "priority": "High",
+      "requestType": "Incident"
+    }
+  },
+  {
+    "text": [
+      "Subject: Replacement Battery for 'PowerBoost 5000' Power Bank",
+      "Dear Support Team,",
+      "The battery of my 'PowerBoost 5000' power bank is no longer holding an adequate charge.",
+      "I suspect it may be due to a declining battery.",
+      "Could you please provide me with information on ordering a replacement battery?",
+      "Kind regards,",
+      "Jan Meier"
+    ],
+    "ticket": {
+      "title": "Order Replacement Battery for 'PowerBoost 5000' Power Bank",
+      "service": "",
+      "category": "Accessory Replacement",
+      "keywords": [
+        "PowerBoost 5000",
+        "Battery",
+        "Replacement",
+        "Order"
+      ],
+      "customerPriority": "Issue but can work",
+      "affectedPerson": "Meier, Jan",
+      "description": "The battery of my 'PowerBoost 5000' power bank is no longer holding an adequate charge. I suspect it may be due to a declining battery. Could you please provide me with information on ordering a replacement battery?",
+      "priority": "Medium",
+      "requestType": "Service Request"
+    }
+  },
+  {
+    "text": [
+      "Subject: Malfunctioning Ear Cup on 'AudioPro 300' Headphones",
+      "Dear Support Team,",
+      "I have noticed that the left ear cup of my 'AudioPro 300' headphones is no longer functioning.",
+      "There is no sound coming from that side. Could you please assist me in resolving this issue?",
+      "Thank you very much. Best regards,",
+      "Nina Schneider"
+    ],
+    "ticket": {
+      "title": "Malfunctioning Ear Cup on 'AudioPro 300' Headphones",
+      "service": "",
+      "category": "Headphone Issues",
+      "keywords": [
+        "AudioPro 300",
+        "Ear Cup",
+        "Malfunction",
+        "Audio Issues"
+      ],
+      "customerPriority": "Issue can't work",
+      "affectedPerson": "Schneider, Nina",
+      "description": "I have noticed that the left ear cup of my 'AudioPro 300' headphones is no longer functioning. There is no sound coming from that side. Could you please assist me in resolving this issue?",
+      "priority": "High",
+      "requestType": "Incident"
+    }
+  },
+  {
+    "text": [
+      "Subject: Static Noise Issue with 'SoundIsolate 500' Headphones",
+      "Dear Support Team,",
+      "I have noticed that my 'SoundIsolate 500' headphones produce a disruptive static noise when playing music.",
+      "Could you please provide instructions on resolving this issue?",
+      "Thank you very much. Best regards,",
+      "Maximilian Wagner"
+    ],
+    "ticket": {
+      "title": "Static Noise with 'SoundIsolate 500' Headphones",
+      "service": "",
+      "category": "Headphone Issues",
+      "keywords": [
+        "SoundIsolate 500",
+        "Static Noise",
+        "Music",
+        "Audio Issues"
+      ],
+      "customerPriority": "Issue can work",
+      "affectedPerson": "Wagner, Maximilian",
+      "description": "I have noticed that my 'SoundIsolate 500' headphones produce a disruptive static noise when playing music. Could you please provide instructions on resolving this issue?",
+      "priority": "Medium",
+      "requestType": "Service Request"
+    }
+  },
+  {
+    "text": [
+      "Subject: Connectivity Issues with 'BassBoom 700' Headphones",
+      "Dear Support Team,",
+      "My 'BassBoom 700' headphones are having trouble connecting to my smartphone.",
+      "Despite several attempts, the connection remains unstable. Could you please assist me in troubleshooting this issue?",
+      "Thank you in advance. Regards,",
+      "Isabella Richter"
+    ],
+    "ticket": {
+      "title": "Connectivity Issues with 'BassBoom 700' Headphones",
+      "service": "",
+      "category": "Headphone Issues",
+      "keywords": [
+        "BassBoom 700",
+        "Connectivity Issues",
+        "Bluetooth",
+        "Troubleshooting"
+      ],
+      "customerPriority": "Issue can't work",
+      "affectedPerson": "Richter, Isabella",
+      "description": "My 'BassBoom 700' headphones are having trouble connecting to my smartphone. Despite several attempts, the connection remains unstable. Could you please assist me in troubleshooting this issue?",
+      "priority": "High",
+      "requestType": "Incident"
+    }
+  },
+  {
+    "text": [
+      "Subject: Rapid Battery Discharge on 'WireFree 9000' Headphones",
+      "Dear Support Team,",
+      "I've noticed that the battery of my 'WireFree 9000' headphones is discharging unusually quickly.",
+      "Even after a full charge, the headphones are empty again after a short period. Can you please assist me with this issue?",
+      "Best regards,",
+      "Julian Becker"
+    ],
+    "ticket": {
+      "title": "Rapid Battery Discharge on 'WireFree 9000' Headphones",
+      "service": "",
+      "category": "Headphone Issues",
+      "keywords": [
+        "WireFree 9000",
+        "Battery",
+        "Discharge",
+        "Charging"
+      ],
+      "customerPriority": "Issue can't work",
+      "affectedPerson": "Becker, Julian",
+      "description": "I've noticed that the battery of my 'WireFree 9000' headphones is discharging unusually quickly. Even after a full charge, the headphones are empty again after a short period. Can you please assist me with this issue?",
+      "priority": "High",
+      "requestType": "Incident"
+    }
+  },
+  {
+    "text": [
+      "Subject: 'NoiseBlocker 600' Headphones - Mute Function Not Working",
+      "Dear Support Team,",
+      "The mute function on my 'NoiseBlocker 600' headphones is not working anymore.",
+      "Even when I toggle the switch, the sound remains active. Can you help me resolve this issue?",
+      "Thank you in advance and regards,",
+      "Sophie Müller"
+    ],
+    "ticket": {
+      "title": "'NoiseBlocker 600' Headphones - Mute Function Not Working",
+      "service": "",
+      "category": "Headphone Issues",
+      "keywords": [
+        "NoiseBlocker 600",
+        "Mute Function",
+        "Sound Issues",
+        "Troubleshooting"
+      ],
+      "customerPriority": "Issue but can work",
+      "affectedPerson": "Müller, Sophie",
+      "description": "The mute function on my 'NoiseBlocker 600' headphones is not working anymore. Even when I toggle the switch, the sound remains active. Can you help me resolve this issue?",
+      "priority": "Medium",
+      "requestType": "Service Request"
+    }
+  },
+  {
+    "text": [
+      "Subject: Startup Issues After Windows Update",
+      "Dear Support Team,",
+      "After a recent Windows update, I am experiencing difficulties starting my computer.",
+      "The screen stays black, and it takes a long time for anything to happen.",
+      "Can you please help me resolve this startup problem?",
+      "Thank you very much and kind regards,",
+      "David Klein"
+    ],
+    "ticket": {
+      "title": "Startup Issues After Windows Update",
+      "service": "",
+      "category": "Windows Operating System",
+      "keywords": [
+        "Startup Issues",
+        "Windows Update",
+        "Black Screen",
+        "Resolution"
+      ],
+      "customerPriority": "Issue can't work",
+      "affectedPerson": "Klein, David",
+      "description": "After a recent Windows update, I am experiencing difficulties starting my computer. The screen stays black, and it takes a long time for anything to happen. Can you please help me resolve this startup problem?",
+      "priority": "High",
+      "requestType": "Incident"
+    }
+  },
+  {
+    "text": [
+      "Subject: Bluescreen with Error 'PAGE_FAULT_IN_NONPAGED_AREA' after Windows Start",
+      "Dear Support Team,",
+      "After booting up my PC, I regularly encounter a 'Bluescreen' with an error message.",
+      "The exact error message is 'PAGE_FAULT_IN_NONPAGED_AREA'.",
+      "Can you please explain how I can resolve this problem?",
+      "Kind regards,",
+      "Anna Mayer"
+    ],
+    "ticket": {
+      "title": "Bluescreen with Error 'PAGE_FAULT_IN_NONPAGED_AREA'",
+      "service": "",
+      "category": "Windows Operating System",
+      "keywords": [
+        "Bluescreen",
+        "Error Message",
+        "PAGE_FAULT_IN_NONPAGED_AREA",
+        "Troubleshooting"
+      ],
+      "customerPriority": "Issue can't work",
+      "affectedPerson": "Mayer, Anna",
+      "description": "After booting up my PC, I regularly encounter a 'Bluescreen' with an error message. The exact error message is 'PAGE_FAULT_IN_NONPAGED_AREA'. Can you please explain how I can resolve this problem?",
+      "priority": "High",
+      "requestType": "Incident"
+    }
+  },
+  {
+    "text": [
+      "Subject: Issues with Windows Update Installation",
+      "Dear Support Team,",
+      "I'm having difficulties installing Windows updates on my computer.",
+      "The installation gets stuck at a specific update every time.",
+      "Can you please provide instructions on how to resolve this update issue?",
+      "Thank you in advance and best regards,",
+      "Thomas Schuster"
+    ],
+    "ticket": {
+      "title": "Issues with Windows Update Installation",
+      "service": "",
+      "category": "Windows Operating System",
+      "keywords": [
+        "Windows Update",
+        "Installation",
+        "Update Issues",
+        "Resolution"
+      ],
+      "customerPriority": "Issue but can work",
+      "affectedPerson": "Schuster, Thomas",
+      "description": "I'm having difficulties installing Windows updates on my computer. The installation gets stuck at a specific update every time. Can you please provide instructions on how to resolve this update issue?",
+      "priority": "Medium",
+      "requestType": "Service Request"
+    }
+  },
+  {
+    "text": [
+      "Subject: 'Windows Explorer' Not Responding",
+      "Dear Support Team,",
+      "I'm facing an issue where the 'Windows Explorer' is not responding.",
+      "After starting, it crashes within a few minutes.",
+      "Can you please assist me in troubleshooting this problem?",
+      "Best regards,",
+      "Sophie Becker"
+    ],
+    "ticket": {
+      "title": "'Windows Explorer' Not Responding",
+      "service": "",
+      "category": "Windows Operating System",
+      "keywords": [
+        "Windows Explorer",
+        "Crash",
+        "Troubleshooting",
+        "Not Responding"
+      ],
+      "customerPriority": "Issue cannot work",
+      "affectedPerson": "Becker, Sophie",
+      "description": "I'm facing an issue where the 'Windows Explorer' is not responding. After starting, it crashes within a few minutes. Can you please assist me in troubleshooting this problem?",
+      "priority": "High",
+      "requestType": "Incident"
+    }
+  },
+  {
+    "text": [
+      "Subject: 'Windows 10' Activation Key Invalid",
+      "Dear Support Team,",
+      "I'm receiving a notification that my 'Windows 10' activation key is invalid.",
+      "I legally purchased and activated my operating system. Can you please help me check this key and resolve the issue?",
+      "Thank you and best regards,",
+      "Dominik Schulz"
+    ],
+    "ticket": {
+      "title": "Activation Key Issues with 'Windows 10'",
+      "service": "",
+      "category": "Windows Operating System",
+      "keywords": [
+        "Windows 10",
+        "Activation Key",
+        "Invalid",
+        "Verification"
+      ],
+      "customerPriority": "Issue cannot work",
+      "affectedPerson": "Schulz, Dominik",
+      "description": "I'm receiving a notification that my 'Windows 10' activation key is invalid. I legally purchased and activated my operating system. Can you please help me check this key and resolve the issue?",
+      "priority": "High",
+      "requestType": "Incident"
+    }
+  },
+  {
+    "text": [
+      "Subject: 'macOS Monterey' Update Fails",
+      "Dear Support Team,",
+      "I've tried to update my MacBook to 'macOS Monterey',",
+      "but the update keeps failing. An error message appears.",
+      "Can you please assist me in resolving this update issue?",
+      "Thank you and best regards,",
+      "Laura Schneider"
+    ],
+    "ticket": {
+      "title": "'macOS Monterey' Update Fails",
+      "service": "",
+      "category": "macOS Operating System",
+      "keywords": [
+        "macOS Monterey",
+        "Update Failure",
+        "Error Message",
+        "Resolution"
+      ],
+      "customerPriority": "Issue cannot work",
+      "affectedPerson": "Schneider, Laura",
+      "description": "I've tried to update my MacBook to 'macOS Monterey', but the update keeps failing. An error message appears. Can you please assist me in resolving this update issue?",
+      "priority": "High",
+      "requestType": "Incident"
+    }
+  },
+  {
+    "text": [
+      "Subject: 'Finder' Not Responding",
+      "Dear Support Team,",
+      "Recently, I've been experiencing an issue where the 'Finder' on my Mac is not responding.",
+      "I can't open or move any files. Can you assist me in troubleshooting this problem?",
+      "Thank you in advance and regards,",
+      "Benjamin Meier"
+    ],
+    "ticket": {
+      "title": "'Finder' Not Responding",
+      "service": "",
+      "category": "macOS Operating System",
+      "keywords": [
+        "Finder",
+        "Not Responding",
+        "Troubleshooting",
+        "File Management"
+      ],
+      "customerPriority": "Issue cannot work",
+      "affectedPerson": "Meier, Benjamin",
+      "description": "Recently, I've been experiencing an issue where the 'Finder' on my Mac is not responding. I can't open or move any files. Can you assist me in troubleshooting this problem?",
+      "priority": "High",
+      "requestType": "Incident"
+    }
+  },
+  {
+    "text": [
+      "Subject: WLAN Connection Issues After 'macOS Big Sur' Update",
+      "Dear Support Team,",
+      "After updating to 'macOS Big Sur,' I've been experiencing problems with my WLAN connection.",
+      "The connection is unstable and often drops. Can you assist me in resolving this issue?",
+      "Thank you very much, and best regards,",
+      "Sophie Richter"
+    ],
+    "ticket": {
+      "title": "WLAN Connection Issues After 'macOS Big Sur' Update",
+      "service": "",
+      "category": "macOS Operating System",
+      "keywords": [
+        "WLAN",
+        "Connection Issues",
+        "macOS Big Sur",
+        "Troubleshooting"
+      ],
+      "customerPriority": "Issue cannot work",
+      "affectedPerson": "Richter, Sophie",
+      "description": "After updating to 'macOS Big Sur,' I've been experiencing problems with my WLAN connection. The connection is unstable and often drops. Can you assist me in resolving this issue?",
+      "priority": "High",
+      "requestType": "Incident"
+    }
+  },
+  {
+    "text": [
+      "Subject: 'Time Machine' Backup Fails",
+      "Dear Support Team,",
+      "Recently, my 'Time Machine' backup has been failing. I receive the message 'Backup could not be completed.'",
+      "Can you please help me identify and resolve this issue?",
+      "Kind regards,",
+      "Lukas Fischer"
+    ],
+    "ticket": {
+      "title": "'Time Machine' Backup Fails",
+      "service": "",
+      "category": "macOS Operating System",
+      "keywords": [
+        "Time Machine",
+        "Backup Error",
+        "Error Message",
+        "Resolution"
+      ],
+      "customerPriority": "Issue can work",
+      "affectedPerson": "Fischer, Lukas",
+      "description": "Recently, my 'Time Machine' backup has been failing. I receive the message 'Backup could not be completed.' Can you please help me identify and resolve this issue?",
+      "priority": "Medium",
+      "requestType": "Service Request"
+    }
+  },
+  {
+    "text": [
+      "Subject: 'macOS Catalina' Startup Issues After Software Installation",
+      "Dear Support Team,",
+      "After installing new software on my MacBook, 'macOS Catalina' no longer starts correctly.",
+      "It gets stuck at the Apple logo. Can you help me troubleshoot this issue?",
+      "Thank you in advance and best regards,",
+      "Marta Schmitt"
+    ],
+    "ticket": {
+      "title": "'macOS Catalina' Startup Issues After Software Installation",
+      "service": "",
+      "category": "macOS Operating System",
+      "keywords": [
+        "macOS Catalina",
+        "Startup Issues",
+        "Software Installation",
+        "Troubleshooting"
+      ],
+      "customerPriority": "Issue can't work",
+      "affectedPerson": "Schmitt, Marta",
+      "description": "After installing new software on my MacBook, 'macOS Catalina' no longer starts correctly. It gets stuck at the Apple logo. Can you help me troubleshoot this issue?",
+      "priority": "High",
+      "requestType": "Incident"
+    }
+  },
+  {
+    "text": [
+      "Subject: 'Ubuntu 20.04' Startup Issues After Kernel Update",
+      "Dear Support Team,",
+      "After the recent kernel update on 'Ubuntu 20.04', my system no longer starts correctly.",
+      "An error message appears during the boot process. Can you please help me resolve this startup issue?",
+      "Thank you and kind regards,",
+      "Daniel Weber"
+    ],
+    "ticket": {
+      "title": "'Ubuntu 20.04' Startup Issues After Kernel Update",
+      "service": "",
+      "category": "Ubuntu Operating System",
+      "keywords": [
+        "Ubuntu 20.04",
+        "Startup Issues",
+        "Kernel Update",
+        "Troubleshooting"
+      ],
+      "customerPriority": "Issue can't work",
+      "affectedPerson": "Weber, Daniel",
+      "description": "After the recent kernel update on 'Ubuntu 20.04', my system no longer starts correctly. An error message appears during the boot process. Can you please help me resolve this startup issue?",
+      "priority": "High",
+      "requestType": "Incident"
+    }
+  },
+  {
+    "text": [
+      "Subject: 'Ubuntu 22.04' WLAN Connection Issues After Installation",
+      "Dear Support Team,",
+      "After installing 'Ubuntu 22.04', I am experiencing difficulties with my WLAN connection.",
+      "The connection is unstable and frequently drops. Can you assist me in troubleshooting this issue?",
+      "Thank you in advance,",
+      "Lena Fischer"
+    ],
+    "ticket": {
+      "title": "'Ubuntu 22.04' WLAN Connection Issues After Installation",
+      "service": "",
+      "category": "Ubuntu Operating System",
+      "keywords": [
+        "Ubuntu 22.04",
+        "WLAN",
+        "Connection Issues",
+        "Troubleshooting"
+      ],
+      "customerPriority": "Issue can't work",
+      "affectedPerson": "Fischer, Lena",
+      "description": "After the installation of 'Ubuntu 22.04', I am experiencing difficulties with my WLAN connection. The connection is unstable and frequently drops. Can you assist me in troubleshooting this issue?",
+      "priority": "High",
+      "requestType": "Incident"
+    }
+  },
+  {
+    "text": [
+      "Subject: 'Ubuntu 21.10' Graphics Driver Issues After Update",
+      "Dear Support Team,",
+      "After a recent system update to 'Ubuntu 21.10', my graphics driver is no longer functioning correctly.",
+      "The screen displays artifacts, and the resolution is incorrectly set. Can you assist me in resolving this graphics driver issue?",
+      "Thank you very much,",
+      "Michaela Richter"
+    ],
+    "ticket": {
+      "title": "'Ubuntu 21.10' Graphics Driver Issues After Update",
+      "service": "",
+      "category": "Ubuntu Operating System",
+      "keywords": [
+        "Ubuntu 21.10",
+        "Graphics Driver",
+        "Artifacts",
+        "Resolution"
+      ],
+      "customerPriority": "Issue can't work",
+      "affectedPerson": "Richter, Michaela",
+      "description": "After a recent system update to 'Ubuntu 21.10', my graphics driver is no longer functioning correctly. The screen displays artifacts, and the resolution is incorrectly set. Can you assist me in resolving this graphics driver issue?",
+      "priority": "High",
+      "requestType": "Incident"
+    }
+  },
+  {
+    "text": [
+      "Subject: 'Ubuntu 18.04' Sound Issues After Software Installation",
+      "Dear Support Team,",
+      "After installing new software on my 'Ubuntu 18.04' system, the sound is not functioning correctly.",
+      "There are disturbances and dropouts. Can you help me troubleshoot this sound issue?",
+      "Best regards,",
+      "Jan Schneider"
+    ],
+    "ticket": {
+      "title": "'Ubuntu 18.04' Sound Issues After Software Installation",
+      "service": "",
+      "category": "Ubuntu Operating System",
+      "keywords": [
+        "Ubuntu 18.04",
+        "Sound Issues",
+        "Software Installation",
+        "Troubleshooting"
+      ],
+      "customerPriority": "Issue but can work",
+      "affectedPerson": "Schneider, Jan",
+      "description": "After installing new software on my 'Ubuntu 18.04' system, the sound is not functioning correctly. There are disturbances and dropouts. Can you help me troubleshoot this sound issue?",
+      "priority": "Medium",
+      "requestType": "Service Request"
+    }
+  },
+  {
+    "text": [
+      "Subject: 'Ubuntu Server 20.04' Network Issues After Update",
+      "Dear Support Team,",
+      "After a recent update of my 'Ubuntu Server 20.04,' I am experiencing issues with the network connection.",
+      "The server is no longer reachable. Can you assist me in troubleshooting this network problem?",
+      "Thank you very much, and best regards,",
+      "Philipp Becker"
+    ],
+    "ticket": {
+      "title": "'Ubuntu Server 20.04' Network Issues After Update",
+      "service": "",
+      "category": "Ubuntu Operating System",
+      "keywords": [
+        "Ubuntu Server 20.04",
+        "Network Issues",
+        "Update",
+        "Troubleshooting"
+      ],
+      "customerPriority": "Cannot work",
+      "affectedPerson": "Becker, Philipp",
+      "description": "After a recent update of my 'Ubuntu Server 20.04,' I am experiencing issues with the network connection. The server is no longer reachable. Can you assist me in troubleshooting this network problem?",
+      "priority": "High",
+      "requestType": "Incident"
+    }
+  },
+  {
+    "text": [
+      "Subject: 'Android' Update Causes App Crashes",
+      "Dear Support Team,",
+      "After the latest 'Android' update, several apps on my smartphone are constantly crashing.",
+      "Can you please help me in resolving this issue?",
+      "Thank you very much, and best regards,",
+      "Laura Müller"
+    ],
+    "ticket": {
+      "title": "'Android' Update Causes App Crashes",
+      "service": "",
+      "category": "Mobile Software",
+      "keywords": [
+        "Android",
+        "Update",
+        "App Crashes",
+        "Troubleshooting"
+      ],
+      "customerPriority": "Cannot work",
+      "affectedPerson": "Müller, Laura",
+      "description": "After the latest 'Android' update, several apps on my smartphone are constantly crashing. Can you please help me in resolving this issue?",
+      "priority": "High",
+      "requestType": "Incident"
+    }
+  },
+  {
+    "text": [
+      "Subject: 'iOS' Update Causing Performance Issues",
+      "Dear Support Team,",
+      "After the recent 'iOS' update, the performance of my iPhone has noticeably decreased.",
+      "Apps are opening slower, and the response time has worsened.",
+      "Could you please assist me in optimizing the performance?",
+      "Best regards,",
+      "Tom Becker"
+    ],
+    "ticket": {
+      "title": "'iOS' Update Causing Performance Issues",
+      "service": "",
+      "category": "Mobile Software",
+      "keywords": [
+        "iOS",
+        "Update",
+        "Performance Issues",
+        "Optimization"
+      ],
+      "customerPriority": "Disruption, unable to work",
+      "affectedPerson": "Becker, Tom",
+      "description": "After the recent 'iOS' update, the performance of my iPhone has noticeably decreased. Apps are opening slower, and the response time has worsened. Could you please assist me in optimizing the performance?",
+      "priority": "High",
+      "requestType": "Incident"
+    }
+  },
+  {
+    "text": [
+      "Subject: 'Samsung Galaxy' Overheating Issue",
+      "Hello Support Team,",
+      "My 'Samsung Galaxy' is getting unusually hot, especially during the usage of certain apps.",
+      "Could you please provide me with tips to resolve this overheating issue?",
+      "Thank you in advance, and best regards,",
+      "Hannah Schmidt"
+    ],
+    "ticket": {
+      "title": "'Samsung Galaxy' Overheating Issue",
+      "service": "",
+      "category": "Mobile Software",
+      "keywords": [
+        "Samsung Galaxy",
+        "Overheating Issue",
+        "App Usage",
+        "Tips"
+      ],
+      "customerPriority": "Disruption, unable to work",
+      "affectedPerson": "Schmidt, Hannah",
+      "description": "My 'Samsung Galaxy' is getting unusually hot, especially during the usage of certain apps. Could you please provide me with tips to resolve this overheating issue?",
+      "priority": "High",
+      "requestType": "Incident"
+    }
+  },
+  {
+    "text": [
+      "Subject: 'Huawei' GPS Malfunction",
+      "Dear Support Team,",
+      "The GPS function of my 'Huawei' smartphone is no longer working properly.",
+      "The location determination takes a very long time, and the accuracy is poor.",
+      "Could you please assist me in resolving this GPS problem?",
+      "Best regards,",
+      "Maximilian Weber"
+    ],
+    "ticket": {
+      "title": "'Huawei' GPS Malfunction",
+      "service": "",
+      "category": "Mobile Software",
+      "keywords": [
+        "Huawei",
+        "GPS",
+        "Malfunction",
+        "Troubleshooting"
+      ],
+      "customerPriority": "Disruption, unable to work",
+      "affectedPerson": "Weber, Maximilian",
+      "description": "The GPS function of my 'Huawei' smartphone is no longer working properly. The location determination takes a very long time, and the accuracy is poor. Could you please assist me in resolving this GPS problem?",
+      "priority": "High",
+      "requestType": "Incident"
+    }
+  },
+  {
+    "text": [
+      "Subject: 'OnePlus' System Crash after App Installation",
+      "Hello Support Team,",
+      "After installing a new app on my 'OnePlus' smartphone, the system crashes regularly.",
+      "I receive an error message, and the phone restarts. Can you help me with troubleshooting?",
+      "Thank you very much, and best regards,",
+      "Sabrina Fischer"
+    ],
+    "ticket": {
+      "title": "'OnePlus' System Crash after App Installation",
+      "service": "",
+      "category": "Mobile Software",
+      "keywords": [
+        "OnePlus",
+        "System Crash",
+        "App Installation",
+        "Troubleshooting"
+      ],
+      "customerPriority": "Disruption, unable to work",
+      "affectedPerson": "Fischer, Sabrina",
+      "description": "After installing a new app on my 'OnePlus' smartphone, the system crashes regularly. I receive an error message, and the phone restarts. Can you help me with troubleshooting?",
+      "priority": "High",
+      "requestType": "Incident"
+    }
+  },
+  {
+    "text": [
+      "Subject: 'iPhone' Screen Unresponsive",
+      "Hello Support Team,",
+      "Suddenly, my 'iPhone' screen is not responding. The touch function is not working, even though the device is turned on.",
+      "Could you please help me resolve this screen issue?",
+      "Thank you very much, and kind regards,",
+      "Markus Schneider"
+    ],
+    "ticket": {
+      "title": "'iPhone' Screen Unresponsive",
+      "service": "",
+      "category": "Mobile Hardware",
+      "keywords": [
+        "iPhone",
+        "Screen",
+        "Touch Function",
+        "Troubleshooting"
+      ],
+      "customerPriority": "Disruption, unable to work",
+      "affectedPerson": "Schneider, Markus",
+      "description": "My 'iPhone' screen is not responding suddenly. The touch function is not working, even though the device is turned on. Could you please help me resolve this screen issue?",
+      "priority": "High",
+      "requestType": "Incident"
+    }
+  },
+  {
+    "text": [
+      "Subject: 'Samsung Galaxy' Charging Port Malfunction",
+      "Dear Support Team,",
+      "The charging port of my 'Samsung Galaxy' smartphone is malfunctioning. Charging the device is no longer possible.",
+      "Could you please assist me in repairing or replacing the charging port?",
+      "Best regards,",
+      "Lisa Müller"
+    ],
+    "ticket": {
+      "title": "'Samsung Galaxy' Charging Port Malfunction",
+      "service": "",
+      "category": "Mobile Hardware",
+      "keywords": [
+        "Samsung Galaxy",
+        "Charging Port",
+        "Malfunction",
+        "Repair"
+      ],
+      "customerPriority": "Disruption, unable to work",
+      "affectedPerson": "Müller, Lisa",
+      "description": "The charging port of my 'Samsung Galaxy' smartphone is malfunctioning. Charging the device is no longer possible. Could you please assist me in repairing or replacing the charging port?",
+      "priority": "High",
+      "requestType": "Incident"
+    }
+  },
+  {
+    "text": [
+      "Subject: 'OnePlus' Camera Displays Black Screen",
+      "Hello Support Team,",
+      "The camera of my 'OnePlus' smartphone only displays a black screen when I open it.",
+      "I have already performed restarts, but the problem persists. Could you please help me troubleshoot this camera issue?",
+      "Thank you in advance, and best regards,",
+      "Robert Fischer"
+    ],
+    "ticket": {
+      "title": "'OnePlus' Camera Displays Black Screen",
+      "service": "",
+      "category": "Mobile Hardware",
+      "keywords": [
+        "OnePlus",
+        "Camera",
+        "Black Screen",
+        "Troubleshooting"
+      ],
+      "customerPriority": "Disruption, unable to work",
+      "affectedPerson": "Fischer, Robert",
+      "description": "The camera of my 'OnePlus' smartphone only displays a black screen when I open it. I have already performed restarts, but the problem persists. Could you please help me troubleshoot this camera issue?",
+      "priority": "High",
+      "requestType": "Incident"
+    }
+  },
+  {
+    "text": [
+      "Subject: 'Huawei' Speaker No Longer Producing Sound",
+      "Dear Support Team,",
+      "The speaker of my 'Huawei' smartphone suddenly stopped producing any sound.",
+      "There is no sound during calls or media playback. Could you please help me troubleshoot this speaker issue?",
+      "Thank you in advance, and regards,",
+      "Sophie Richter"
+    ],
+    "ticket": {
+      "title": "'Huawei' Speaker No Longer Producing Sound",
+      "service": "",
+      "category": "Mobile Hardware",
+      "keywords": [
+        "Huawei",
+        "Speaker",
+        "Sound Issues",
+        "Troubleshooting"
+      ],
+      "customerPriority": "Disruption, unable to work",
+      "affectedPerson": "Richter, Sophie",
+      "description": "The speaker of my 'Huawei' smartphone suddenly stopped producing any sound. There is no sound during calls or media playback. Could you please help me troubleshoot this speaker issue?",
+      "priority": "High",
+      "requestType": "Incident"
+    }
+  },
+  {
+    "text": [
+      "Subject: 'Google Pixel' Battery Draining Quickly",
+      "Hello Support Team,",
+      "The battery of my 'Google Pixel' smartphone is draining unusually quickly, even with minimal usage.",
+      "Could you please provide advice on improving battery life or identify the problem?",
+      "Thank you very much, and kind regards,",
+      "Anna Schmidt"
+    ],
+    "ticket": {
+      "title": "'Google Pixel' Battery Draining Quickly",
+      "service": "",
+      "category": "Mobile Hardware",
+      "keywords": [
+        "Google Pixel",
+        "Battery",
+        "Quick Discharge",
+        "Troubleshooting"
+      ],
+      "customerPriority": "Disruption, unable to work",
+      "affectedPerson": "Schmidt, Anna",
+      "description": "The battery of my 'Google Pixel' smartphone is draining unusually quickly, even with minimal usage. Could you please provide advice on improving battery life or identify the problem?",
+      "priority": "High",
+      "requestType": "Incident"
+    }
+  }
+]
