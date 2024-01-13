@@ -35,8 +35,7 @@ def run_proxy():
                     # print(attachments)
 
                     # send message to backend
-                    email = f"Von: {sender}\nBetreff: {subject}\n {content}"
-                    json_input = {"text": email}
+                    json_input = {"text": content}
                     if content != "":
                         response = requests.post(
                             "http://localhost:8000/api/v1/ticket/text",

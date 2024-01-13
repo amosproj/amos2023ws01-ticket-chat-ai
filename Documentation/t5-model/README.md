@@ -80,14 +80,15 @@
 ## NEW AI Strategy:
 - Title will be generated via "czearing/article-title-generator" model from Hugging Face.
   - https://huggingface.co/czearing/article-title-generator
-    ![img.png](arcticle_title_generator.png)
+  ![img.png](arcticle_title_generator.png)
 
 - AffectedPerson will be generated via "dslim/bert-base-NER" model from Hugging Face.
   - https://huggingface.co/dslim/bert-base-NER
-    ![img.png](dslim_bert_base_NER.png)
+  ![img.png](dslim_bert_base_NER.png)
 
 - Keywords will be generated via "ml6team/keyphrase-extraction-kbir-inspec" model from Hugging Face.
-  - ![img.png](keyphrase_extraction_kbir_inspec.png)
+  - https://huggingface.co/ml6team/keyphrase-extraction-kbir-inspec
+  ![img.png](keyphrase_extraction_kbir_inspec.png)
 
 - Description will be the Problem description text (input text), where Subject and signatur is cut out.
 

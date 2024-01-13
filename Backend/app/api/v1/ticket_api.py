@@ -1,18 +1,17 @@
+from app.api.dto.text_input import TextInput
+from app.api.dto.ticket import Ticket
+from app.dependency.ai_service import get_ai_ticket_service
+from app.dependency.db_service import get_ticket_db_service, get_user_db_service
+from app.dependency.email_service import get_email_service
+from app.model.ai_service.ai_ticket_service import AITicketService
+from app.service.email_service import EmailService
+from app.service.ticket_db_service import TicketDBService
+from app.service.user_db_service import UserDBService
+from app.util.logger import logger
 from bson import ObjectId
 from fastapi import APIRouter, HTTPException, UploadFile
 from fastapi.params import Depends, File, Path, Body
 from starlette import status
-from app.service.email_service import EmailService
-from app.dependency.email_service import get_email_service
-
-from app.api.dto.text_input import TextInput
-from app.api.dto.ticket import Ticket
-from app.dependency.db_service import get_ticket_db_service, get_user_db_service
-from app.dependency.trained_t5_model import get_trained_t5_model
-from app.model.t5.use_trained_t5_model import TrainedT5Model
-from app.service.ticket_db_service import TicketDBService
-from app.service.user_db_service import UserDBService
-from app.util.logger import logger
 
 router = APIRouter()
 
@@ -20,10 +19,10 @@ router = APIRouter()
 @router.post("/ticket/text", status_code=status.HTTP_201_CREATED, response_model=Ticket)
 async def process_text(
     input: TextInput = Body(default=TextInput()),
-    trained_t5_model: TrainedT5Model = Depends(get_trained_t5_model),
     ticket_db_service: TicketDBService = Depends(get_ticket_db_service),
     email_service: EmailService = Depends(get_email_service),
     user_db_service: UserDBService = Depends(get_user_db_service),
+    ticket_service: AITicketService = Depends(get_ai_ticket_service),
 ):
     """
     Receive Text from the Frontend
@@ -49,7 +48,7 @@ async def process_text(
 
     # Run the model to process the input text
     logger.info("Running the model...")
-    received_dict = trained_t5_model.run_model(input.text)
+    received_dict = ticket_service.create_ticket(input.text)
     logger.info("Model execution complete. Result: %s", received_dict)
 
     # Set service based on user's location
@@ -57,6 +56,7 @@ async def process_text(
         user = user_db_service.get_user_by_email(input.email)
         if user and user.location:
             if not received_dict.get("location") or received_dict["location"] == "":
+                logger.info("Setting ticket's service to user's location...")
                 received_dict["location"] = user.location
 
     # Save the ticket to the database using the TicketDBService
