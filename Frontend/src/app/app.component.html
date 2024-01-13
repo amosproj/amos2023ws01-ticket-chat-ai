@@ -32,11 +32,6 @@
           <textarea matInput [(ngModel)]="chatInput"></textarea>
         </mat-form-field>
 
-        <div class="button-container">
-          <button mat-raised-button class="request-type-button" color="primary" (click)="chooseRequestType('Issue')">Issue</button>
-          <button mat-raised-button class="request-type-button" color="primary" (click)="chooseRequestType('ServiceRequest')">Service Request</button>
-        </div>
-
         <button class="record-button" mat-raised-button color="warn" (click)="startSpeechRecognition()">
           {{ recordingState === 'idle' ? 'Sprechen' : 'Aufnahme beenden' }}
         </button><br>

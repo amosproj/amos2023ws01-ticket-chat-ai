@@ -50,7 +50,7 @@ class TrainedT5Model:
             "description": "",
             "priority": Prio.low,
             "attachments": [],
-            "requestType": ""
+            "requestType": "",
         }
 
         response["title"] = self.extract_value(text, "title")

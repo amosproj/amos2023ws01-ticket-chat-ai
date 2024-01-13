@@ -4,6 +4,8 @@ import { LogService } from './service/logging.service';
 import { DragAndDropComponent } from './drag-and-drop/drag-and-drop.component';
 import {Ticket} from "./entities/ticket.dto";
 import {tick} from "@angular/core/testing";
+import { MatDialog } from '@angular/material/dialog';
+import { RequestTypeDialogComponent } from './request-type-dialog/request-type-dialog.component';
 
 interface ChatMessages {
   messageText: string;
@@ -42,7 +44,7 @@ export class AppComponent implements OnInit {
   @ViewChild("fileDropRef", { static: true }) fileDropEl!: ElementRef;
   @ViewChild(DragAndDropComponent) dragAndDropComponent!: DragAndDropComponent;
 
-  constructor(private ticketService: TicketService, private logger: LogService, private changeDetector: ChangeDetectorRef) {}
+  constructor(private ticketService: TicketService, private logger: LogService, private changeDetector: ChangeDetectorRef, private dialog: MatDialog,) {}
 
   ngOnInit() {}
 
@@ -66,12 +68,14 @@ export class AppComponent implements OnInit {
     this.files = [];
   }
 
-  chooseRequestType(requestType: string) {
-    this.selectedRequestType = requestType;
-    const thankYouMessage = `Vielen Dank! Ich habe Dein Ticket erfolgreich angelegt. [dead link behind ticket] RequestType: ${requestType}`;
-    this.chatMessages.push({ messageText: thankYouMessage, isUser: false, files: [] });
-    this.clearFiles();
-    this.waitingServerResponse = false;
+  chooseRequestType() {
+    const dialogRef = this.dialog.open(RequestTypeDialogComponent);
+    dialogRef.afterClosed().subscribe(result => {
+      if (result) {
+        this.selectedRequestType = result;
+        // Handle the selected request type
+      }
+    });
   }
 
   updateTicketAttributes(response: any) {
@@ -121,6 +125,15 @@ export class AppComponent implements OnInit {
 
         this.changeDetector.detectChanges();
 
+        console.log('Backend Response:', response);
+
+        if (response && (!response.requestType || response.requestType.trim() === '')) {
+          console.log('Bedingung klappt');
+          this.chooseRequestType();
+        } else {
+          console.log('Bedingung wurde nicht erreicht');
+        }
+  
         if (this.files.length !== 0) {
           this.sendAttachmentsToServer(response);
         } else {

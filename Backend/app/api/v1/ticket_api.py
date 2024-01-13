@@ -79,17 +79,17 @@ async def process_text(
 
     return created_ticket
 
+
 @router.put(
     "/tickets/{ticket_id}/update",
     status_code=status.HTTP_200_OK,
     response_model=Ticket,
 )
 async def update_ticket_attributes(
-        ticket_id: str = Path(default=""),
-        updated_ticket: Ticket = Body(default=Ticket),
-        ticket_db_service: TicketDBService = Depends(get_ticket_db_service),
+    ticket_id: str = Path(default=""),
+    updated_ticket: Ticket = Body(default=Ticket),
+    ticket_db_service: TicketDBService = Depends(get_ticket_db_service),
 ):
-
     logger.info("Updating ticket attributes...")
 
     # Check if the 'ticket_id' field is empty or invalid
@@ -103,7 +103,9 @@ async def update_ticket_attributes(
 
     # Update the ticket attributes in the database using the TicketDBService
     logger.info("Updating ticket attributes in the database...")
-    updated_ticket = ticket_db_service.update_ticket_attributes(ticket_id, updated_ticket)
+    updated_ticket = ticket_db_service.update_ticket_attributes(
+        ticket_id, updated_ticket
+    )
 
     # Prepare response
     logger.info("Preparing response...")
