@@ -2,6 +2,8 @@ import { Component, OnInit, ViewChild, ElementRef, ChangeDetectorRef } from '@an
 import { TicketService } from './service/ticket.service';
 import { LogService } from './service/logging.service';
 import { DragAndDropComponent } from './drag-and-drop/drag-and-drop.component';
+import {Ticket} from "./entities/ticket.dto";
+import {tick} from "@angular/core/testing";
 
 interface ChatMessages {
   messageText: string;
@@ -70,6 +72,15 @@ export class AppComponent implements OnInit {
     this.chatMessages.push({ messageText: thankYouMessage, isUser: false, files: [] });
     this.clearFiles();
     this.waitingServerResponse = false;
+  }
+
+  updateTicketAttributes(response: any) {
+    const updatedTicket = new Ticket(response);
+    this.ticketService.updateTicket(updatedTicket, response.id).subscribe((ticket) => {
+      this.logger.log("Ticket update was done successfully: " + ticket);
+      const messageText = JSON.stringify(ticket);
+      this.chatMessages.push({ messageText, isUser: false, files: []});
+    });
   }
 
   sendAttachmentsToServer(response: any) {

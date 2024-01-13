@@ -4,6 +4,7 @@ import { catchError } from "rxjs/operators";
 import { Observable, throwError } from "rxjs";
 import { environment } from "../../environments/environment";
 import { LogService } from './logging.service';
+import {Ticket} from "../entities/ticket.dto";
 
 @Injectable({
   providedIn: "root"
@@ -31,6 +32,23 @@ export class TicketService {
       catchError((error) => {
         this.logger.log('Error sending message:' + error);
         return throwError('Leider ist ein Fehler aufgetreten. Versuche es erneut oder später noch einmal, wir bitten um Entschuldigung.');
+      })
+    );
+  }
+
+  updateTicket(updatedTicket: Ticket, ticket_id: string): Observable<any> {
+    const url = environment.apiUrl + 'api/v1/ticket/' + ticket_id + '/update';
+
+        // define headers
+    const headers = new HttpHeaders({
+      'Accept': 'application/json',
+      'Content-Type': 'application/json',
+    });
+
+    return this.http.put(url, updatedTicket, { headers }).pipe(
+      catchError((error) => {
+        this.logger.log('Error while updating ticket: ' + error);
+        return throwError('An Error occurred. Please try again later.');
       })
     );
   }
