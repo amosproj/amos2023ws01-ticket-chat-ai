@@ -10,6 +10,7 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { of } from 'rxjs';
 import { TicketService } from './service/ticket.service'; // Update the path
 import { DragAndDropComponent } from './drag-and-drop/drag-and-drop.component';
+import { MatDialogModule } from "@angular/material/dialog";
 
 describe('AppComponent', () => {
   let fixture: ComponentFixture<AppComponent>;
@@ -24,7 +25,8 @@ describe('AppComponent', () => {
         FormsModule,
         MatInputModule,
         MatCardModule,
-        BrowserAnimationsModule
+        BrowserAnimationsModule,
+        MatDialogModule
       ],
       declarations: [
         AppComponent,
