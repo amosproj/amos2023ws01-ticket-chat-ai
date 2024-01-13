@@ -81,7 +81,7 @@ async def process_text(
 
 
 @router.put(
-    "/tickets/{ticket_id}/update",
+    "/ticket/{ticket_id}/update",
     status_code=status.HTTP_200_OK,
     response_model=Ticket,
 )

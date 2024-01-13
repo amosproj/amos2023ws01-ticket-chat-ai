@@ -41,15 +41,15 @@ class TicketDBService:
                 f"Ticket with id {str(ticket_id)} not found."
             )
         ticket_entity = found_tickets[0]
-        ticket_entity["title"] = updated_ticket["title"]
-        ticket_entity["location"] = updated_ticket["location"]
-        ticket_entity["category"] = updated_ticket["category"]
-        ticket_entity["keywords"] = updated_ticket["keywords"]
-        ticket_entity["customerPriority"] = updated_ticket["customerPriority"]
-        ticket_entity["affectedPerson"] = updated_ticket["affectedPerson"]
-        ticket_entity["description"] = updated_ticket["description"]
-        ticket_entity["priority"] = updated_ticket["priority"]
-        ticket_entity["requestType"] = updated_ticket["requestType"]
+        ticket_entity["title"] = updated_ticket.title
+        ticket_entity["location"] = updated_ticket.location
+        ticket_entity["category"] = updated_ticket.category
+        ticket_entity["keywords"] = updated_ticket.keywords
+        ticket_entity["customerPriority"] = updated_ticket.customerPriority
+        ticket_entity["affectedPerson"] = updated_ticket.affectedPerson
+        ticket_entity["description"] = updated_ticket.description
+        ticket_entity["priority"] = updated_ticket.priority
+        ticket_entity["requestType"] = updated_ticket.requestType
 
         update_result = self.ticket_repository.update_ticket(ticket_id, ticket_entity)
         if not update_result.acknowledged:
