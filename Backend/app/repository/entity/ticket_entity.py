@@ -18,3 +18,4 @@ class TicketEntity(TypedDict):
     description: str
     priority: Prio
     attachments: list[AttachmentEntity]
+    requestType: str

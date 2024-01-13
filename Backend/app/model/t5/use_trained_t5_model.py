@@ -50,6 +50,7 @@ class TrainedT5Model:
             "description": "",
             "priority": Prio.low,
             "attachments": [],
+            "requestType": ""
         }
 
         response["title"] = self.extract_value(text, "title")
@@ -58,6 +59,7 @@ class TrainedT5Model:
         response["keywords"] = self.extract_value(text, "keywords")
         response["affectedPerson"] = self.extract_value(text, "affectedPerson")
         response["description"] = self.extract_value(text, "description")
+        response["requestType"] = self.extract_value(text, "requestType")
 
         prio = self.extract_value(text, "priority")
 
