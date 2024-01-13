@@ -3,7 +3,6 @@ import { TicketService } from './service/ticket.service';
 import { LogService } from './service/logging.service';
 import { DragAndDropComponent } from './drag-and-drop/drag-and-drop.component';
 import {Ticket} from "./entities/ticket.dto";
-import {tick} from "@angular/core/testing";
 import { MatDialog } from '@angular/material/dialog';
 import { RequestTypeDialogComponent } from './request-type-dialog/request-type-dialog.component';
 
@@ -40,6 +39,7 @@ export class AppComponent implements OnInit {
   recordingState: 'idle' | 'recording' = 'idle';
   recognitionTimeout: any;
   selectedRequestType: string = '';
+  createdTicket: Ticket | undefined;
 
   @ViewChild("fileDropRef", { static: true }) fileDropEl!: ElementRef;
   @ViewChild(DragAndDropComponent) dragAndDropComponent!: DragAndDropComponent;
@@ -73,14 +73,17 @@ export class AppComponent implements OnInit {
     dialogRef.afterClosed().subscribe(result => {
       if (result) {
         this.selectedRequestType = result;
+        // @ts-ignore
+        this.createdTicket.requestType = this.selectedRequestType;
+        // @ts-ignore
+        this.updateTicketAttributes(this.createdTicket);
         // Handle the selected request type
       }
     });
   }
 
-  updateTicketAttributes(response: any) {
-    const updatedTicket = new Ticket(response);
-    this.ticketService.updateTicket(updatedTicket, response.id).subscribe((ticket) => {
+  updateTicketAttributes(updatedTicket: Ticket) {
+    this.ticketService.updateTicket(updatedTicket, updatedTicket.id).subscribe((ticket) => {
       this.logger.log("Ticket update was done successfully: " + ticket);
       const messageText = JSON.stringify(ticket);
       this.chatMessages.push({ messageText, isUser: false, files: []});
@@ -126,6 +129,7 @@ export class AppComponent implements OnInit {
         this.changeDetector.detectChanges();
 
         console.log('Backend Response:', response);
+        this.createdTicket = new Ticket(response);
 
         if (response && (!response.requestType || response.requestType.trim() === '')) {
           console.log('Bedingung klappt');
@@ -133,7 +137,7 @@ export class AppComponent implements OnInit {
         } else {
           console.log('Bedingung wurde nicht erreicht');
         }
-  
+
         if (this.files.length !== 0) {
           this.sendAttachmentsToServer(response);
         } else {
