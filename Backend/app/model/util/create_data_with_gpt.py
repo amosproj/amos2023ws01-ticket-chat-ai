@@ -1,0 +1,46 @@
+from openai import OpenAI
+
+client = OpenAI(
+    api_key="",
+)
+
+
+response = client.chat.completions.create(
+    model="gpt-3.5-turbo",
+    response_format={"type": "json_object"},
+    messages=[
+        {"role": "system", "content": "You are a helpful assistant."},
+        {"role": "user", "content": '''
+            JSON Format:
+            {
+                "title": "",
+                "service": "",
+                "category": "",
+                "keywords": [],
+                "customerPriority": "",
+                "affectedPerson": "",
+                "description": "",
+                "priority": "",
+                "requestType": ""
+            }
+            
+            The "text" section should list the subject and content of an email inquiry to customer support for technical matters as lines in an array.
+            Furthermore, under "ticket," there should be a support ticket matching the email with the following attributes.
+            The "title" attribute contains the ticket title, which should be as short as possible and in nominal style.
+            The "service" attribute is always an empty string.
+            The "category" attribute classifies the problem as concisely as possible.
+            The "keywords" attribute is an array with 1 to 4 different keywords related to the ticket content.
+            The "customerPriority" attribute describes the impact of the problem on the customer and can take the values "Disruption but can work," "Disruption cannot work," "Disruption several cannot work," and "Disruption department cannot work."
+            The "affectedPerson" attribute is the name of the affected person, often the author of the email, in the format "Last name, First name(s)".
+            The "description" attribute contains a detailed description of the problem to which the ticket refers.
+            The "priority" attribute classifies the relevance of the ticket with the values "Low," "Medium," "High," and "Very High".
+            The "requestType" attribute classifies the type of ticket with the values "Incident" or "Service Request." Incident describes a ticket if the user has a problem or similar, and Service Request describes a ticket with which the user orders a service.
+            
+            Please create a ticket in the specified JSON format for the following support request:
+        '''},
+    ],
+)
+
+
+print(response.dict())
+print(response.choices[0].message.content)
