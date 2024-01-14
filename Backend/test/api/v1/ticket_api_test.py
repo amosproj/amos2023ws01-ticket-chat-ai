@@ -44,6 +44,7 @@ class TicketAPIIntegrationTest(TestCase):
             description="",
             priority=Prio.low,
             attachments=[],
+            requestType="",
         )
         insert_one_result = InsertOneResult(
             inserted_id=self.ticket_id, acknowledged=True
@@ -60,6 +61,7 @@ class TicketAPIIntegrationTest(TestCase):
             description="",
             priority=Prio.low,
             attachmentNames=[],
+            requestType="",
         )
 
         # Define mock behavior
@@ -104,6 +106,7 @@ class TicketAPIIntegrationTest(TestCase):
             description="",
             priority=Prio.low,
             attachments=[],
+            requestType="",
         )
         update_result = UpdateResult(raw_result=ticket_entity, acknowledged=True)
         exp_ticket = Ticket(
@@ -117,6 +120,7 @@ class TicketAPIIntegrationTest(TestCase):
             description="",
             priority=Prio.low,
             attachmentNames=[self.file_name],
+            requestType="",
         )
 
         # Define mock behavior

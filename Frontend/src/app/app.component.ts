@@ -128,14 +128,14 @@ export class AppComponent implements OnInit {
 
         this.changeDetector.detectChanges();
 
-        console.log('Backend Response:', response);
         this.createdTicket = new Ticket(response);
 
         if (response && (!response.requestType || response.requestType.trim() === '')) {
-          console.log('Bedingung klappt');
+          this.logger.log('RequestType missing. Choosing.');
           this.chooseRequestType();
+          this.logger.log('RequestType updated.');
         } else {
-          console.log('Bedingung wurde nicht erreicht');
+          this.logger.log('RequestType exists.');
         }
 
         if (this.files.length !== 0) {
