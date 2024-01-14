@@ -160,10 +160,9 @@ class TicketAPIIntegrationTest(TestCase):
             priority=Prio.low,
             attachments=[],
             requestType="",
-
         )
         update_result = UpdateResult(raw_result=ticket_entity, acknowledged=True)
-        
+
         updated_ticket_json = {
             "id": "6554b34d82161e93bff08df6",
             "title": "Test Ticket",
@@ -197,7 +196,9 @@ class TicketAPIIntegrationTest(TestCase):
         self.collection_mock.replace_one.return_value = update_result
 
         # Act
-        response = self._run_update_ticket_attributes(ticket_id=str(self.ticket_id), updated_ticket=updated_ticket_json)
+        response = self._run_update_ticket_attributes(
+            ticket_id=str(self.ticket_id), updated_ticket=updated_ticket_json
+        )
 
         # Assert
         # Mocks
@@ -210,7 +211,9 @@ class TicketAPIIntegrationTest(TestCase):
     def test_update_ticket_attributes_invalid_ticket_id(self):
         exp_json = {"detail": "Received empty or invalid ticket id of type ObjectId!"}
 
-        response = self._run_update_ticket_attributes(ticket_id="-", updated_ticket=None)
+        response = self._run_update_ticket_attributes(
+            ticket_id="-", updated_ticket=None
+        )
 
         self.assertEqual(status.HTTP_400_BAD_REQUEST, response.status_code)
         self.assertEqual(exp_json, response.json())
