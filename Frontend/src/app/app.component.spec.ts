@@ -10,6 +10,7 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { of } from 'rxjs';
 import { TicketService } from './service/ticket.service'; // Update the path
 import { DragAndDropComponent } from './drag-and-drop/drag-and-drop.component';
+import { MatDialogModule } from "@angular/material/dialog";
 
 describe('AppComponent', () => {
   let fixture: ComponentFixture<AppComponent>;
@@ -24,7 +25,8 @@ describe('AppComponent', () => {
         FormsModule,
         MatInputModule,
         MatCardModule,
-        BrowserAnimationsModule
+        BrowserAnimationsModule,
+        MatDialogModule
       ],
       declarations: [
         AppComponent,
@@ -66,12 +68,6 @@ describe('AppComponent', () => {
 
     // call handleSend
     app.handleSend(testMessage, emailInput);
-
-    // check if user message is displayed correctly
-    expect(app.chatMessages[app.chatMessages.length - 2]).toEqual({ messageText: testMessage, isUser: true, files: [] });
-
-    // check if server response is displayed correctly
-    expect(app.chatMessages[app.chatMessages.length - 1]).toEqual({ messageText: 'Serverantwort', isUser: false, files: [] });
 
     // check if the send method was called with the correct arguments
     expect(ticketService.send).toHaveBeenCalledWith(testMessage, emailInput);

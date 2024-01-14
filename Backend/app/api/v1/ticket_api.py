@@ -81,6 +81,49 @@ async def process_text(
 
 
 @router.put(
+    "/ticket/{ticket_id}/update",
+    status_code=status.HTTP_200_OK,
+    response_model=Ticket,
+)
+async def update_ticket_attributes(
+    ticket_id: str = Path(default=""),
+    updated_ticket: Ticket = Body(default=Ticket),
+    ticket_db_service: TicketDBService = Depends(get_ticket_db_service),
+):
+    logger.info("Updating ticket attributes...")
+
+    # Check if the 'ticket_id' field is empty or invalid
+    if not ticket_id or not ObjectId.is_valid(ticket_id):
+        logger.error("Received empty or invalid ticket id of type ObjectId!")
+        raise HTTPException(
+            status_code=status.HTTP_400_BAD_REQUEST,
+            detail="Received empty or invalid ticket id of type ObjectId!",
+        )
+    logger.info(f"Received ticket_id: {ticket_id}")
+
+    # Update the ticket attributes in the database using the TicketDBService
+    logger.info("Updating ticket attributes in the database...")
+    updated_ticket = ticket_db_service.update_ticket_attributes(
+        ticket_id, updated_ticket
+    )
+
+    # Prepare response
+    logger.info("Preparing response...")
+    if updated_ticket:
+        logger.info(
+            f"Ticket attributes updated and saved successfully. Ticket ID: {updated_ticket.id}"
+        )
+    else:
+        logger.error("Ticket attributes update failed.")
+        raise HTTPException(
+            status_code=status.HTTP_500_INTERNAL_SERVER_ERROR,
+            detail="Ticket attributes update failed.",
+        )
+
+    return updated_ticket
+
+
+@router.put(
     "/ticket/{ticket_id}/attachments",
     status_code=status.HTTP_200_OK,
     response_model=Ticket,

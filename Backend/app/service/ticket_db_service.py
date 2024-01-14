@@ -30,6 +30,34 @@ class TicketDBService:
         ticket_entity = found_tickets[0]
         return self._map_ticket(ticket_entity)
 
+    def update_ticket_attributes(
+        self, ticket_id: str, updated_ticket: TicketEntity | dict
+    ) -> Ticket:
+        logger.info("Updating ticket attributes...")
+        ticket_id = ObjectId(ticket_id)
+        found_tickets = self.ticket_repository.read_tickets(ticket_id)
+        if len(found_tickets) != 1:
+            self._throw_internal_server_error(
+                f"Ticket with id {str(ticket_id)} not found."
+            )
+        ticket_entity = found_tickets[0]
+        ticket_entity["title"] = updated_ticket.title
+        ticket_entity["location"] = updated_ticket.location
+        ticket_entity["category"] = updated_ticket.category
+        ticket_entity["keywords"] = updated_ticket.keywords
+        ticket_entity["customerPriority"] = updated_ticket.customerPriority
+        ticket_entity["affectedPerson"] = updated_ticket.affectedPerson
+        ticket_entity["description"] = updated_ticket.description
+        ticket_entity["priority"] = updated_ticket.priority
+        ticket_entity["requestType"] = updated_ticket.requestType
+
+        update_result = self.ticket_repository.update_ticket(ticket_id, ticket_entity)
+        if not update_result.acknowledged:
+            self._throw_internal_server_error(
+                f"Ticket with id {str(ticket_id)} not updated."
+            )
+        return self._map_ticket(ticket_entity)
+
     def update_ticket_attachments(
         self, ticket_id: str, files: list[UploadFile]
     ) -> Ticket:

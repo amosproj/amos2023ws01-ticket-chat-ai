@@ -31,6 +31,7 @@ class TicketDBServiceUnitTest(TestCase):
             description="",
             priority=Prio.low,
             attachments=[],
+            requestType="",
         )
         self.input_ticket = {
             "title": "Test Ticket",
@@ -63,6 +64,7 @@ class TicketDBServiceUnitTest(TestCase):
             description="",
             priority=Prio.low,
             attachmentNames=[],
+            requestType="",
         )
 
         # Mock
@@ -139,6 +141,7 @@ class TicketDBServiceUnitTest(TestCase):
             attachmentNames=[
                 self.image_name,
             ],
+            requestType="",
         )
 
         # Mock

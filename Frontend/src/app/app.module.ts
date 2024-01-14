@@ -9,11 +9,13 @@ import {MatButtonModule} from "@angular/material/button";
 import {MatInputModule} from "@angular/material/input";
 import { DragAndDropModule } from './drag-and-drop/drag-and-drop.module';
 import { MatCardModule } from '@angular/material/card';
-
+import { MatDialogModule } from '@angular/material/dialog';
+import { RequestTypeDialogComponent } from './request-type-dialog/request-type-dialog.component';
 
 @NgModule({
   declarations: [
     AppComponent,
+    RequestTypeDialogComponent
   ],
   imports: [
     BrowserModule,
@@ -25,6 +27,7 @@ import { MatCardModule } from '@angular/material/card';
     MatInputModule,
     DragAndDropModule,
     MatCardModule,
+    MatDialogModule
   ],
   providers: [],
   bootstrap: [AppComponent]

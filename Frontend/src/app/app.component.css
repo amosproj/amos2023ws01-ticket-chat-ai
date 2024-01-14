@@ -181,3 +181,21 @@
   color: red;
   margin-top: 10px;
 }
+
+.button-container {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 10px;
+}
+
+.request-type-button {
+  flex-grow: 1;
+  margin-right: 10px; 
+  font-size: 16px;
+  padding: 10px 20px;
+  text-transform: capitalize; 
+}
+
+.request-type-button:hover {
+  background-color: #10ddd3;
+}

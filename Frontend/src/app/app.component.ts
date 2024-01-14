@@ -2,6 +2,9 @@ import { Component, OnInit, ViewChild, ElementRef, ChangeDetectorRef } from '@an
 import { TicketService } from './service/ticket.service';
 import { LogService } from './service/logging.service';
 import { DragAndDropComponent } from './drag-and-drop/drag-and-drop.component';
+import {Ticket} from "./entities/ticket.dto";
+import { MatDialog } from '@angular/material/dialog';
+import { RequestTypeDialogComponent } from './request-type-dialog/request-type-dialog.component';
 
 interface ChatMessages {
   messageText: string;
@@ -35,11 +38,13 @@ export class AppComponent implements OnInit {
   errorMessage: string = '';
   recordingState: 'idle' | 'recording' = 'idle';
   recognitionTimeout: any;
+  selectedRequestType: string = '';
+  createdTicket: Ticket | undefined;
 
   @ViewChild("fileDropRef", { static: true }) fileDropEl!: ElementRef;
   @ViewChild(DragAndDropComponent) dragAndDropComponent!: DragAndDropComponent;
 
-  constructor(private ticketService: TicketService, private logger: LogService, private changeDetector: ChangeDetectorRef) {}
+  constructor(private ticketService: TicketService, private logger: LogService, private changeDetector: ChangeDetectorRef, private dialog: MatDialog,) {}
 
   ngOnInit() {}
 
@@ -61,6 +66,49 @@ export class AppComponent implements OnInit {
   clearFiles() {
     this.dragAndDropComponent.clearFiles();
     this.files = [];
+  } 
+
+  chooseRequestType() {
+    const dialogRef = this.dialog.open(RequestTypeDialogComponent);
+    dialogRef.afterClosed().subscribe(result => {
+      if (result) {
+        this.selectedRequestType = result;
+        // @ts-ignore
+        this.createdTicket.requestType = this.selectedRequestType;
+        // @ts-ignore
+        this.updateTicketAttributes(this.createdTicket);
+        // Handle the selected request type
+      }
+    });
+  }
+
+  updateTicketAttributes(updatedTicket: Ticket) {
+    this.ticketService.updateTicket(updatedTicket, updatedTicket.id).subscribe((ticket) => {
+      this.logger.log("Ticket update was done successfully: " + ticket);
+  
+      const existingMessageIndex = this.chatMessages.findIndex(msg => msg.messageText.includes(ticket.id));
+  
+      if (ticket.requestType && ticket.requestType.trim() !== '') {
+        const messageText = JSON.stringify(ticket);
+
+        if (existingMessageIndex !== -1) {
+          // Send attachments if they exist
+          if (this.files.length !== 0) {
+            this.sendAttachmentsToServer(ticket);
+          }
+          this.chatMessages[existingMessageIndex] = { messageText, isUser: false, files: [] };
+        } else {
+          if (this.files.length !== 0) {
+            this.sendAttachmentsToServer(ticket);
+          } else{
+          this.chatMessages.push({ messageText, isUser: false, files: [] });
+            }
+        }
+        
+      } else {
+        this.logger.log('RequestType is empty. Skipping display in UI.');
+      }
+    });
   }
 
   sendAttachmentsToServer(response: any) {
@@ -81,30 +129,49 @@ export class AppComponent implements OnInit {
 
   handleSend(value: string, emailInput: string) {
     this.errorMessage = "";
+  
     if (!value) {
       this.errorMessage = 'Bitte verfasse eine Nachricht oder hinterlasse eine Sprachnachricht.';
       return;
     }
-
+  
     this.chatMessages.push({ messageText: value, isUser: true, files: this.files });
     this.logger.log('Trying to send message to backend server: ' + value);
-
+  
     this.ticketService.send(value, emailInput).subscribe(
       (response: any) => {
         let messageText = '';
-
+  
         if (typeof response === 'object') {
           messageText = JSON.stringify(response);
         } else {
           messageText = response;
         }
-
+  
         this.changeDetector.detectChanges();
 
-        if (this.files.length !== 0) {
-          this.sendAttachmentsToServer(response);
+        this.createdTicket = new Ticket(response);
+  
+        if (response && (!response.requestType || response.requestType.trim() === '')) {
+          this.logger.log('RequestType missing. Choosing.');
+          this.chooseRequestType();
+          this.logger.log('RequestType updated.');
         } else {
-          this.chatMessages.push({ messageText, isUser: false, files: [] });
+          this.logger.log('RequestType exists.');
+          // Only show the latest response in the UI
+          this.chatMessages.pop(); // Remove the user message
+        }
+  
+        if (response.requestType) {
+          // Only handle the response if requestType is present
+          if (this.files.length !== 0) {
+            this.sendAttachmentsToServer(response);
+          } else {
+            this.chatMessages.push({ messageText, isUser: false, files: [] });
+          }
+        } else {
+          // RequestType is empty, do not display the response
+          this.logger.log('RequestType is empty. Not displaying the response.');
         }
 
         this.logger.log('Received response from backend server: ' + response);
@@ -114,10 +181,10 @@ export class AppComponent implements OnInit {
         this.handleError('Leider ist ein Fehler aufgetreten. Versuche es erneut oder später noch einmal, wir bitten um Entschuldigung');
       }
     );
-
+  
     this.chatInput = "";
     this.waitingServerResponse = true;
-  }
+  }  
 
   startSpeechRecognition() {
     if (this.recordingState === 'idle') {

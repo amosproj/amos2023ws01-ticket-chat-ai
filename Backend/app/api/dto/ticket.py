@@ -16,3 +16,4 @@ class Ticket(BaseModel):
     description: str
     priority: Prio
     attachmentNames: list[str] = []
+    requestType: str
