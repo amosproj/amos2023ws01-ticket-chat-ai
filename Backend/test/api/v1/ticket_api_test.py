@@ -146,6 +146,60 @@ class TicketAPIIntegrationTest(TestCase):
         self.assertEqual(status.HTTP_400_BAD_REQUEST, response.status_code)
         self.assertEqual(exp_json, response.json())
 
+    # def test_update_ticket_attributes_success(self):
+    #     # Define
+    #     ticket_entity = TicketEntity(
+    #         _id=self.ticket_id,
+    #         title="Test Ticket",
+    #         location="Test the test ticket",
+    #         category="",
+    #         keywords=[],
+    #         customerPriority=CustomerPrio.can_work,
+    #         affectedPerson="",
+    #         description="",
+    #         priority=Prio.low,
+    #         attachments=[],
+    #         requestType="",
+    #
+    #     )
+    #     update_result = UpdateResult(raw_result=ticket_entity, acknowledged=True)
+    #     exp_ticket = Ticket(
+    #         id=str(self.ticket_id),
+    #         title="Test Ticket",
+    #         location="Test the test ticket",
+    #         category="",
+    #         keywords=[],
+    #         customerPriority=CustomerPrio.can_work,
+    #         affectedPerson="",
+    #         description="",
+    #         priority=Prio.low,
+    #         attachmentNames=[],
+    #         requestType="Incident",
+    #     )
+    #
+    #     # Define mock behavior
+    #     self.collection_mock.find.return_value = [ticket_entity]
+    #     self.collection_mock.replace_one.return_value = update_result
+    #
+    #     # Act
+    #     response = self._run_update_ticket_attributes(ticket_id=str(self.ticket_id), updated_ticket=exp_ticket)
+    #
+    #     # Assert
+    #     # Mocks
+    #     self.collection_mock.find.assert_called_once()
+    #     self.collection_mock.replace_one.assert_called_once()
+    #     # Response
+    #     self.assertEqual(status.HTTP_200_OK, response.status_code)
+    #     self.assertEqual(exp_ticket, Ticket.parse_obj(response.json()))
+
+    def test_update_ticket_attributes_invalid_ticket_id(self):
+        exp_json = {"detail": "Received empty or invalid ticket id of type ObjectId!"}
+
+        response = self._run_update_ticket_attributes(ticket_id="-", updated_ticket=None)
+
+        self.assertEqual(status.HTTP_400_BAD_REQUEST, response.status_code)
+        self.assertEqual(exp_json, response.json())
+
     def _run_process_text_endpoint(self, text_input: dict):
         return self.client.post(
             "/api/v1/ticket/text",
@@ -159,4 +213,10 @@ class TicketAPIIntegrationTest(TestCase):
             files=[
                 ("files", open(self.file_path, "rb")),
             ],
+        )
+
+    def _run_update_ticket_attributes(self, ticket_id: str, updated_ticket):
+        return self.client.put(
+            f"/api/v1/ticket/{ticket_id}/update",
+            data=updated_ticket,
         )
