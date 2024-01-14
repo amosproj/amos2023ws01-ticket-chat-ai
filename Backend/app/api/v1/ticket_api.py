@@ -3,7 +3,7 @@ from app.api.dto.ticket import Ticket
 from app.dependency.ai_service import get_ai_ticket_service
 from app.dependency.db_service import get_ticket_db_service, get_user_db_service
 from app.dependency.email_service import get_email_service
-from app.model.ai_service.ai_ticket_service import AITicketService
+from app.model.ai_ticket_service.ai_ticket_service import AITicketService
 from app.service.email_service import EmailService
 from app.service.ticket_db_service import TicketDBService
 from app.service.user_db_service import UserDBService
