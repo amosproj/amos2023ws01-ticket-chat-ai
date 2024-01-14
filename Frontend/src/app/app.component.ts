@@ -85,10 +85,24 @@ export class AppComponent implements OnInit {
   updateTicketAttributes(updatedTicket: Ticket) {
     this.ticketService.updateTicket(updatedTicket, updatedTicket.id).subscribe((ticket) => {
       this.logger.log("Ticket update was done successfully: " + ticket);
-      const messageText = JSON.stringify(ticket);
-      this.chatMessages.push({ messageText, isUser: false, files: []});
+  
+      const existingMessageIndex = this.chatMessages.findIndex(msg => msg.messageText.includes(ticket.id));
+  
+      if (ticket.requestType && ticket.requestType.trim() !== '') {
+        const messageText = JSON.stringify(ticket);
+  
+        if (existingMessageIndex !== -1) {
+          this.chatMessages[existingMessageIndex] = { messageText, isUser: false, files: [] };
+        } else {
+          this.chatMessages.push({ messageText, isUser: false, files: [] });
+        }
+      } else {
+        this.logger.log('RequestType is empty. Skipping display in UI.');
+      }
     });
   }
+  
+  
 
   sendAttachmentsToServer(response: any) {
     this.ticketService.sendFiles(this.files, response.id).subscribe(
@@ -108,40 +122,49 @@ export class AppComponent implements OnInit {
 
   handleSend(value: string, emailInput: string) {
     this.errorMessage = "";
+  
     if (!value) {
       this.errorMessage = 'Bitte verfasse eine Nachricht oder hinterlasse eine Sprachnachricht.';
       return;
     }
-
+  
     this.chatMessages.push({ messageText: value, isUser: true, files: this.files });
     this.logger.log('Trying to send message to backend server: ' + value);
-
+  
     this.ticketService.send(value, emailInput).subscribe(
       (response: any) => {
         let messageText = '';
-
+  
         if (typeof response === 'object') {
           messageText = JSON.stringify(response);
         } else {
           messageText = response;
         }
-
+  
         this.changeDetector.detectChanges();
 
         this.createdTicket = new Ticket(response);
-
+  
         if (response && (!response.requestType || response.requestType.trim() === '')) {
           this.logger.log('RequestType missing. Choosing.');
           this.chooseRequestType();
           this.logger.log('RequestType updated.');
         } else {
           this.logger.log('RequestType exists.');
+          // Only show the latest response in the UI
+          this.chatMessages.pop(); // Remove the user message
         }
-
-        if (this.files.length !== 0) {
-          this.sendAttachmentsToServer(response);
+  
+        if (response.requestType) {
+          // Only handle the response if requestType is present
+          if (this.files.length !== 0) {
+            this.sendAttachmentsToServer(response);
+          } else {
+            this.chatMessages.push({ messageText, isUser: false, files: [] });
+          }
         } else {
-          this.chatMessages.push({ messageText, isUser: false, files: [] });
+          // RequestType is empty, do not display the response
+          this.logger.log('RequestType is empty. Not displaying the response.');
         }
 
         this.logger.log('Received response from backend server: ' + response);
@@ -151,10 +174,10 @@ export class AppComponent implements OnInit {
         this.handleError('Leider ist ein Fehler aufgetreten. Versuche es erneut oder später noch einmal, wir bitten um Entschuldigung');
       }
     );
-
+  
     this.chatInput = "";
     this.waitingServerResponse = true;
-  }
+  }  
 
   startSpeechRecognition() {
     if (this.recordingState === 'idle') {
