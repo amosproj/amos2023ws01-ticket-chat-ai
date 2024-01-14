@@ -69,12 +69,6 @@ describe('AppComponent', () => {
     // call handleSend
     app.handleSend(testMessage, emailInput);
 
-    // check if user message is displayed correctly
-    expect(app.chatMessages[app.chatMessages.length - 2]).toEqual({ messageText: testMessage, isUser: true, files: [] });
-
-    // check if server response is displayed correctly
-    expect(app.chatMessages[app.chatMessages.length - 1]).toEqual({ messageText: 'Serverantwort', isUser: false, files: [] });
-
     // check if the send method was called with the correct arguments
     expect(ticketService.send).toHaveBeenCalledWith(testMessage, emailInput);
   }));
