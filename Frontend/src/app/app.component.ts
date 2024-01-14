@@ -66,7 +66,7 @@ export class AppComponent implements OnInit {
   clearFiles() {
     this.dragAndDropComponent.clearFiles();
     this.files = [];
-  }
+  } 
 
   chooseRequestType() {
     const dialogRef = this.dialog.open(RequestTypeDialogComponent);
@@ -90,19 +90,26 @@ export class AppComponent implements OnInit {
   
       if (ticket.requestType && ticket.requestType.trim() !== '') {
         const messageText = JSON.stringify(ticket);
-  
+
         if (existingMessageIndex !== -1) {
+          // Send attachments if they exist
+          if (this.files.length !== 0) {
+            this.sendAttachmentsToServer(ticket);
+          }
           this.chatMessages[existingMessageIndex] = { messageText, isUser: false, files: [] };
         } else {
+          if (this.files.length !== 0) {
+            this.sendAttachmentsToServer(ticket);
+          } else{
           this.chatMessages.push({ messageText, isUser: false, files: [] });
+            }
         }
+        
       } else {
         this.logger.log('RequestType is empty. Skipping display in UI.');
       }
     });
   }
-  
-  
 
   sendAttachmentsToServer(response: any) {
     this.ticketService.sendFiles(this.files, response.id).subscribe(
