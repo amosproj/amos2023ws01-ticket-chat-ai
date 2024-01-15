@@ -2,12 +2,12 @@ from openai import OpenAI
 import json
 
 client = OpenAI(
-    api_key="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",
+    api_key="APIKEY",
 )
 
 tickets = []
 
-for _ in range(100):
+for _ in range(1):
     try:
         response = client.chat.completions.create(
             model="gpt-3.5-turbo",
@@ -85,7 +85,7 @@ for _ in range(100):
     except Exception as e:
         print(f"An error occurred: {e}")
 
-with open("data_1.json", "w") as file:
+with open("data_2.json", "w") as file:
     json.dump(tickets, file, indent=4)
 
 response_dict = response.dict()
