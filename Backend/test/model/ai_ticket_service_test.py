@@ -23,7 +23,9 @@ class TestAITicketService(unittest.TestCase):
         # Arrange
         input_text = "Sample input text"
         service = AITicketService()
-        mock_pipeline.return_value = Mock(return_value=[{"generated_text": "Generated Title"}])
+        mock_pipeline.return_value = Mock(
+            return_value=[{"generated_text": "Generated Title"}]
+        )
 
         # Act
         generated_title = service.generate_title(input_text)
@@ -36,7 +38,9 @@ class TestAITicketService(unittest.TestCase):
         # Arrange
         input_text = "Sample input text"
         service = AITicketService()
-        mock_pipeline.return_value = Mock(return_value=[{"entity": "B-PER", "word": "John"}])
+        mock_pipeline.return_value = Mock(
+            return_value=[{"entity": "B-PER", "word": "John"}]
+        )
 
         # Act
         generated_person = service.generate_affected_person(input_text)
@@ -49,7 +53,9 @@ class TestAITicketService(unittest.TestCase):
         # Arrange
         input_text = "Sample input text"
         service = AITicketService()
-        mock_pipeline.return_value = Mock(return_value=[{"entity": "KEY", "word": "Keyword"}])
+        mock_pipeline.return_value = Mock(
+            return_value=[{"entity": "KEY", "word": "Keyword"}]
+        )
 
         # Act
         generated_keywords = service.generate_keywords(input_text)

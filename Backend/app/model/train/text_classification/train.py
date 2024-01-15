@@ -1,16 +1,15 @@
 import argparse
 import os
 import time
-
 import torch
 from torch.optim import AdamW
 from torch.utils.data import DataLoader
 from tqdm import tqdm
-from transformers import (
-    get_linear_schedule_with_warmup,
-    RobertaForSequenceClassification,
-    RobertaTokenizer,
-)
+from transformers import RobertaForSequenceClassification, RobertaTokenizer
+from transformers import get_linear_schedule_with_warmup
+from sklearn.metrics import confusion_matrix
+import seaborn as sns
+import matplotlib.pyplot as plt
 
 from custom_data_set import CustomDataset
 
@@ -45,7 +44,7 @@ def parse_args():
     parser.add_argument(
         "--save_model",
         action="store_true",
-        default=False,
+        default=True,
         help="For Saving the current Model",
     )
     return parser.parse_args()
@@ -63,15 +62,17 @@ test_dir = os.path.join(root_directory, "..", "test_data")
 data_paths = [
     os.path.join(test_dir, "test_data_garvin", "data_translated.json"),
     os.path.join(test_dir, "test_data_irild", "data_translated.json"),
-    os.path.join(test_dir, "test_data_marco", "data_translated.json"),
+    os.path.join(test_dir, "test_data_fabian", "data_translated.json"),
     os.path.join(test_dir, "test_data_sajjad", "data_translated.json"),
+    os.path.join(test_dir, "test_data_marco", "data_translated.json"),
     os.path.join(test_dir, "test_data_tino", "data_translated.json"),
+    os.path.join(test_dir, "test_data_with_gpt", "data_1.json"),
+    os.path.join(test_dir, "test_data_with_gpt", "data_2.json"),
+    os.path.join(test_dir, "test_data_with_gpt", "test_data.json"),
 ]
 
-prompt_path = os.path.join(root_directory, "prompt.txt")
-
 # Create datasets
-custom_dataset = CustomDataset(tokenizer, data_paths, prompt_path, "requestType")
+custom_dataset = CustomDataset(tokenizer, data_paths, "requestType")
 train_set, val_set = torch.utils.data.random_split(
     custom_dataset,
     [
@@ -122,30 +123,44 @@ for epoch in range(args.epochs):
     average_loss = total_loss / len(train_loader)
     epoch_time = time.time() - start_time
 
-    # Validation
+    # Validation with Confusion Matrix
     model.eval()
-    total_accuracy = 0
+    val_true_labels = []
+    val_predictions = []
+
     with torch.no_grad():
         for batch in valid_loader:
-            # input_ids = batch["input_ids"].to(device)
-            # attention_mask = batch["attention_mask"].to(device)
-            # labels = batch["labels"].to(device)
-            #
-            # outputs = model(
-            #     input_ids=input_ids, attention_mask=attention_mask, labels=labels
-            # )
-            # # Add your validation logic here
-            # total_accuracy += outputs.eq(labels).sum().item()  # Replace this with actual accuracy calculation
-            pass
+            input_ids = batch["input_ids"].to(device)
+            attention_mask = batch["attention_mask"].to(device)
+            labels = batch["labels"].to(device)
 
-    average_accuracy = total_accuracy / len(valid_loader)
+            outputs = model(input_ids=input_ids, attention_mask=attention_mask)
+            logits = outputs.logits
+            preds = torch.argmax(logits, dim=1)
+
+            val_true_labels.extend(labels.cpu().numpy())
+            val_predictions.extend(preds.cpu().numpy())
+
+    conf_matrix = confusion_matrix(val_true_labels, val_predictions)
+    ax = sns.heatmap(conf_matrix, annot=True, cmap="Blues")
+
+    ax.set_title("Confusion Matrix\n")
+    ax.set_xlabel("\nPredicted Values")
+    ax.set_ylabel("Actual Values ")
+
+    ax.xaxis.set_ticklabels(["False", "True"])
+    ax.yaxis.set_ticklabels(["False", "True"])
+
+    # Save the confusion matrix plot as a PNG file
+    plt.savefig(f"confusion_matrix_epoch_{epoch + 1}.png", bbox_inches="tight")
+    plt.close()
+
     print(
         f"Epoch: {((epoch + 1) / args.epochs) * 100:.0f}% | {epoch + 1}/{args.epochs} [{epoch_time:.2f}s/epoch]"
     )
     print(f"Train Loss: {average_loss}")
-    print(f"Validation Accuracy: {average_accuracy}")
 
 # Save the fine-tuned model
 if args.save_model:
-    model.save_pretrained("fine_tuned_t5_model")
-    tokenizer.save_pretrained("fine_tuned_t5_model")
+    model.save_pretrained("fine_tuned_roberta_model")
+    tokenizer.save_pretrained("fine_tuned_roberta_model")
