@@ -16,9 +16,13 @@ class ServiceRepository:
 
     def read_services(self, service_id: ObjectId = None) -> list[ServiceEntity]:
         logger.info("Reading service(s) from the database...")
-        return list(self.collection.find(filter={"_id": service_id} if service_id else None))
+        return list(
+            self.collection.find(filter={"_id": service_id} if service_id else None)
+        )
 
-    def update_service(self, service_id: ObjectId, service: ServiceEntity | dict) -> UpdateResult:
+    def update_service(
+            self, service_id: ObjectId, service: ServiceEntity | dict
+    ) -> UpdateResult:
         logger.info(f"Updating service {service_id} in the database...")
         return self.collection.replace_one(
             filter={"_id": service_id}, replacement=service, upsert=True
