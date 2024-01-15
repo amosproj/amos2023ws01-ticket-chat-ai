@@ -4,7 +4,7 @@ from pymongo.collection import Collection
 from app.dependency.collection import (
     get_ticket_collection,
     get_user_collection,
-    get_service_collection
+    get_service_collection,
 )
 from app.repository.ticket_repository import TicketRepository
 from app.repository.user_repository import UserRepository

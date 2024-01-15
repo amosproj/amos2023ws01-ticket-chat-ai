@@ -21,7 +21,7 @@ class ServiceRepository:
         )
 
     def update_service(
-            self, service_id: ObjectId, service: ServiceEntity | dict
+        self, service_id: ObjectId, service: ServiceEntity | dict
     ) -> UpdateResult:
         logger.info(f"Updating service {service_id} in the database...")
         return self.collection.replace_one(
