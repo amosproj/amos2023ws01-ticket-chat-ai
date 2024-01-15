@@ -9,6 +9,7 @@ from starlette import status
 from app.api.dto.ticket import Ticket
 from app.enum.customer_prio import CustomerPrio
 from app.enum.prio import Prio
+from app.enum.location import Location
 from app.repository.entity.ticket_entity import TicketEntity
 from app.service.ticket_db_service import TicketDBService
 
@@ -23,7 +24,7 @@ class TicketDBServiceUnitTest(TestCase):
         self.ticket_entity_empty_attachments = TicketEntity(
             _id=self.ticket_id,
             title="Test Ticket",
-            location="Test the test ticket",
+            location=Location.fuerth,
             category="",
             keywords=[],
             customerPriority=CustomerPrio.can_work,
@@ -35,7 +36,7 @@ class TicketDBServiceUnitTest(TestCase):
         )
         self.input_ticket = {
             "title": "Test Ticket",
-            "location": "Test the test ticket",
+            "location": Location.fuerth,
             "category": "",
             "keywords": [],
             "customerPriority": CustomerPrio.can_work,
@@ -56,7 +57,7 @@ class TicketDBServiceUnitTest(TestCase):
         exp_ticket = Ticket(
             id=str(self.ticket_id),
             title="Test Ticket",
-            location="Test the test ticket",
+            location=Location.fuerth,
             category="",
             keywords=[],
             customerPriority=CustomerPrio.can_work,
@@ -131,7 +132,7 @@ class TicketDBServiceUnitTest(TestCase):
         exp_ticket = Ticket(
             id=str(self.ticket_id),
             title="Test Ticket",
-            location="Test the test ticket",
+            location=Location.fuerth,
             category="",
             keywords=[],
             customerPriority=CustomerPrio.can_work,
