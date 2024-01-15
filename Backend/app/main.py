@@ -2,10 +2,13 @@ from fastapi import FastAPI
 from fastapi.middleware.cors import CORSMiddleware
 
 from app.api.v1 import ticket_api
-from app.dependency.collection import get_user_collection
-from app.dependency.repository import get_user_repository
+from app.dependency.collection import get_user_collection, get_service_collection
+from app.dependency.repository import get_user_repository, get_service_repository
 from app.repository.user_repository import UserRepository
+from app.repository.service_repository import ServiceRepository
 from app.service.user_db_routine_service import UserDBRoutineService
+from app.service.service_entity_db_routine_service import ServiceDBRoutineService
+
 from config import AppConfig
 
 app = FastAPI()
@@ -29,10 +32,15 @@ app.include_router(ticket_api.router, prefix="/api/v1")
 
 @app.on_event("startup")
 async def startup_event():
-    collection = get_user_collection()
-    user_repo_service: UserRepository = get_user_repository(collection)
+    user_collection = get_user_collection()
+    user_repo_service: UserRepository = get_user_repository(user_collection)
     user_db_routine_service = UserDBRoutineService(user_repo_service)
     user_db_routine_service.start_routine()
+
+    service_collection = get_service_collection()
+    service_repo_service: ServiceRepository = get_service_repository(service_collection)
+    service_entity_db_routine_service = ServiceDBRoutineService(service_repo_service)
+    service_entity_db_routine_service.start_routine()
 
 
 if __name__ == "__main__":

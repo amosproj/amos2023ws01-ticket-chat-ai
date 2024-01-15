@@ -1,0 +1,47 @@
+[
+  {
+    "service_name": "SAP ERP",
+    "safe_keywords": ["4HANA", "HANA", "Business One"],
+    "hint_keywords": []
+  },
+  {
+    "service_name": "Atlassian",
+    "safe_keywords": ["Jira", "Sourcetree", "Opsgenie", "Trello", "Confluence", "Bitbucket"],
+    "hint_keywords": ["roadmaps", "marketplace"]
+  },
+  {
+    "service_name": "Adobe",
+    "safe_keywords": ["Illustrator", "Photoshop", "InDesign", "Premiere", "After Effects", "Acrobat", "Dreamweaver", "Spark"],
+    "hint_keywords": ["design"]
+  },
+  {
+    "service_name": "Salesforce",
+    "safe_keywords": ["Apex", "Trailhead", "Visualforce", "Sales Cloud", "Marketing Cloud"],
+    "hint_keywords": ["CRM"]
+  },
+  {
+    "service_name": "Reporting",
+    "safe_keywords": ["Tableau", "Microsoft PowerBI", "Datenquelle", "DataFlow", "Semantic Model", "Report", "Visuals", "Graph", "PowerBI Desktop", "Tableau Desktop"],
+    "hint_keywords": ["report", "visuals", "graph", "workspace"]
+  },
+  {
+    "service_name": "Microsoft Power Platform",
+    "safe_keywords": ["Microsoft Power Apps", "Microsoft Power BI", "Microsoft Power Pages Automate"],
+    "hint_keywords": ["Flow", "Action"]
+  },
+  {
+    "service_name": "Microsoft SharePoint",
+    "safe_keywords": ["Microsoft SharePoint", "SharePoint", "SharePoint Liste", "SharePoint Document Library", "SharePoint Site"],
+    "hint_keywords": ["Liste", "Document Library"]
+  },
+  {
+    "service_name": "Snowflake",
+    "safe_keywords": ["Snowflake", "SnowSQL"],
+    "hint_keywords": ["Table", "Datawarehouse", "Database", "View"]
+  },
+  {
+    "service_name": "Microsoft Office",
+    "safe_keywords": ["Microsoft Office", "Microsoft Word", "Microsoft Excel", "Excel", "Microsoft PowerPoint", "PowerPoint", "Slide", "Word Document", "Excel Sheet", "Excel Workbook"],
+    "hint_keywords": ["Word"]
+  }
+]
