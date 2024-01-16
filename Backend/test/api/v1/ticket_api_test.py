@@ -233,7 +233,9 @@ class TicketAPIIntegrationTest(TestCase):
             ],
         )
 
-    def _run_update_ticket_attributes(self, ticket_id: str, updated_ticket: dict | None):
+    def _run_update_ticket_attributes(
+        self, ticket_id: str, updated_ticket: dict | None
+    ):
         return self.client.put(
             f"/api/v1/ticket/{ticket_id}/update",
             json=updated_ticket,
