@@ -42,7 +42,7 @@ class TrainedT5Model:
         # dictionary representing ticket structure
         response = {
             "title": "",
-            "location": "",
+            "service": "",
             "category": "",
             "keywords": [],
             "customerPriority": CustomerPrio.can_work,
@@ -54,7 +54,7 @@ class TrainedT5Model:
         }
 
         response["title"] = self.extract_value(text, "title")
-        response["location"] = self.extract_value(text, "location")
+        response["service"] = self.extract_value(text, "service")
         response["category"] = self.extract_value(text, "category")
         response["keywords"] = self.extract_value(text, "keywords")
         response["affectedPerson"] = self.extract_value(text, "affectedPerson")

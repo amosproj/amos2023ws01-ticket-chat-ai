@@ -10,7 +10,7 @@ from app.enum.service import ServiceEnum
 class Ticket(BaseModel):
     id: str = ""
     title: str
-    location: Location | ServiceEnum
+    service: Location | ServiceEnum
     category: str
     keywords: list
     customerPriority: CustomerPrio

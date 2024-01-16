@@ -12,7 +12,7 @@ from app.enum.service import ServiceEnum
 class TicketEntity(TypedDict):
     _id: ObjectId
     title: str
-    location: Location | ServiceEnum
+    service: Location | ServiceEnum
     category: str
     keywords: list
     customerPriority: CustomerPrio

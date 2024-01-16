@@ -37,7 +37,7 @@ class TicketAPIIntegrationTest(TestCase):
         ticket_entity = TicketEntity(
             _id=self.ticket_id,
             title="Test Ticket",
-            location=Location.fuerth,
+            service=Location.fuerth,
             category="",
             keywords=[],
             customerPriority=CustomerPrio.can_work,
@@ -54,7 +54,7 @@ class TicketAPIIntegrationTest(TestCase):
         exp_ticket = Ticket(
             id=str(self.ticket_id),
             title="Test Ticket",
-            location=Location.fuerth,
+            service=Location.fuerth,
             category="",
             keywords=[],
             customerPriority=CustomerPrio.can_work,
@@ -99,7 +99,7 @@ class TicketAPIIntegrationTest(TestCase):
         ticket_entity = TicketEntity(
             _id=self.ticket_id,
             title="Test Ticket",
-            location=Location.fuerth,
+            service=Location.fuerth,
             category="",
             keywords=[],
             customerPriority=CustomerPrio.can_work,
@@ -113,7 +113,7 @@ class TicketAPIIntegrationTest(TestCase):
         exp_ticket = Ticket(
             id=str(self.ticket_id),
             title="Test Ticket",
-            location=Location.fuerth,
+            service=Location.fuerth,
             category="",
             keywords=[],
             customerPriority=CustomerPrio.can_work,
@@ -152,7 +152,7 @@ class TicketAPIIntegrationTest(TestCase):
         ticket_entity = TicketEntity(
             _id=self.ticket_id,
             title="Test Ticket",
-            location=Location.fuerth,
+            service=Location.fuerth,
             category="",
             keywords=[],
             customerPriority=CustomerPrio.can_work,
@@ -167,7 +167,7 @@ class TicketAPIIntegrationTest(TestCase):
         updated_ticket_json = {
             "id": "6554b34d82161e93bff08df6",
             "title": "Test Ticket",
-            "location": "Fürth",
+            "service": "Fürth",
             "category": "",
             "keywords": [],
             "customerPriority": "Stoerung aber kann arbeiten",
@@ -181,7 +181,7 @@ class TicketAPIIntegrationTest(TestCase):
         exp_ticket = Ticket(
             id=str(self.ticket_id),
             title="Test Ticket",
-            location=Location.fuerth,
+            service=Location.fuerth,
             category="",
             keywords=[],
             customerPriority=CustomerPrio.can_work,
