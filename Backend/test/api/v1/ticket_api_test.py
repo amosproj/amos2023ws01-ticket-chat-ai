@@ -151,7 +151,7 @@ class TicketAPIIntegrationTest(TestCase):
         ticket_entity = TicketEntity(
             _id=self.ticket_id,
             title="Test Ticket",
-            location="Test the test ticket",
+            service="Test the test ticket",
             category="",
             keywords=[],
             customerPriority=CustomerPrio.can_work,
@@ -166,7 +166,7 @@ class TicketAPIIntegrationTest(TestCase):
         updated_ticket_json = {
             "id": "6554b34d82161e93bff08df6",
             "title": "Test Ticket",
-            "location": "Test the test ticket",
+            "service": "Test the test ticket",
             "category": "",
             "keywords": [],
             "customerPriority": "Stoerung aber kann arbeiten",
@@ -180,7 +180,7 @@ class TicketAPIIntegrationTest(TestCase):
         exp_ticket = Ticket(
             id=str(self.ticket_id),
             title="Test Ticket",
-            location="Test the test ticket",
+            service="Test the test ticket",
             category="",
             keywords=[],
             customerPriority=CustomerPrio.can_work,
@@ -233,7 +233,9 @@ class TicketAPIIntegrationTest(TestCase):
             ],
         )
 
-    def _run_update_ticket_attributes(self, ticket_id: str, updated_ticket: Ticket):
+    def _run_update_ticket_attributes(
+        self, ticket_id: str, updated_ticket: dict | None
+    ):
         return self.client.put(
             f"/api/v1/ticket/{ticket_id}/update",
             json=updated_ticket,
