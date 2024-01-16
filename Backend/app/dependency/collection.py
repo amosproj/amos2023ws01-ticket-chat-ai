@@ -17,3 +17,7 @@ def get_ticket_collection() -> Collection:
 
 def get_user_collection() -> Collection:
     return db.get_collection("user")
+
+
+def get_service_collection() -> Collection:
+    return db.get_collection("service")

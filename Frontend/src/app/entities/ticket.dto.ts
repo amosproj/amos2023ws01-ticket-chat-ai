@@ -4,7 +4,7 @@ import {Prio} from "./prio.enum";
 export class Ticket{
     id: string = ""
     title: string = ""
-    location: string = ""
+    service: string = ""
     category: string = ""
     keywords = []
     customerPriority: CustomerPrio = CustomerPrio.can_work
@@ -16,7 +16,7 @@ export class Ticket{
   constructor(obj: any) {
     this.id = obj.id;
     this.title = obj.title;
-    this.location = obj.location;
+    this.service = obj.service;
     this.category = obj.category;
     this.keywords = obj.keywords;
     this.customerPriority = obj.customerPriority;
