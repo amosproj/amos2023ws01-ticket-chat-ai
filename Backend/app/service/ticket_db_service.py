@@ -42,7 +42,7 @@ class TicketDBService:
             )
         ticket_entity = found_tickets[0]
         ticket_entity["title"] = updated_ticket.title
-        ticket_entity["location"] = updated_ticket.location
+        ticket_entity["service"] = updated_ticket.service
         ticket_entity["category"] = updated_ticket.category
         ticket_entity["keywords"] = updated_ticket.keywords
         ticket_entity["customerPriority"] = updated_ticket.customerPriority
