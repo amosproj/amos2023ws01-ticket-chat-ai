@@ -25,7 +25,7 @@ class TicketRepositoryUnitTest(unittest.TestCase):
         self.ticket = TicketEntity(
             _id=self.ticket_id,
             title="Test Ticket",
-            location="Test the test ticket",
+            service="Test the test ticket",
             category="",
             keywords=[],
             customerPriority=CustomerPrio.can_work,
@@ -90,7 +90,7 @@ class TicketRepositoryIntegrationTest(unittest.TestCase):
         self.ticket_repository = TicketRepository(collection)
         self.ticket = {
             "title": "Test Ticket",
-            "location": "Test the test ticket",
+            "service": "Test the test ticket",
             "category": "",
             "keywords": [],
             "customerPriority": CustomerPrio.can_work,

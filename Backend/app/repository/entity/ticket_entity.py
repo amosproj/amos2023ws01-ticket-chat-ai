@@ -10,7 +10,7 @@ from app.enum.prio import Prio
 class TicketEntity(TypedDict):
     _id: ObjectId
     title: str
-    location: str
+    service: str
     category: str
     keywords: list
     customerPriority: CustomerPrio
