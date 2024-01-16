@@ -20,7 +20,7 @@ class ServiceDBRoutineService:
                 os.path.dirname(__file__),
                 "..",
                 "repository",
-                "entity",
+                "resources",
                 "default_services.json",
             )
             with open(default_services) as services_file:
