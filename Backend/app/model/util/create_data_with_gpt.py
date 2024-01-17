@@ -5,8 +5,8 @@ client = OpenAI(
     api_key="APIKEY",
 )
 
-for _ in range(1):
-    with open("../test_data/test_data_with_gpt/data_2.json", "r") as file:
+for _ in range(5):
+    with open("../test_data/test_data_with_gpt/data_4.json", "r") as file:
         tickets = json.load(file)
 
     for _ in range(100):
@@ -68,7 +68,7 @@ for _ in range(1):
                         The 'priority' attribute classifies the relevance of the ticket with the values 'Low', 'Medium', 'High' and 'Very High'
                         The 'requestType' attribute classifies the type of ticket with the values "Incident" or 'Service Request'. Incident describes a ticket if the user has a problem or similar, and Service Request describes a ticket with which the user orders a service.
                         
-                        Please create 10 tickets in the specified JSON format. The ticket should be versitiled.
+                        Please create 10 tickets in the specified JSON format. The ticket should be realy versatile.
                         Your output should only contain the JSON format.
                     """,
                     },
@@ -87,5 +87,5 @@ for _ in range(1):
         except Exception as e:
             print(f"An error occurred: {e}")
 
-    with open("../test_data/test_data_with_gpt/data_1.json", "w") as file:
+    with open("../test_data/test_data_with_gpt/data_4.json", "w") as file:
         json.dump(tickets, file, indent=4)
