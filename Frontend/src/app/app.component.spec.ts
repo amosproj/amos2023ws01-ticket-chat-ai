@@ -79,11 +79,11 @@ describe('AppComponent', () => {
 
     recordButton.click();
     fixture.detectChanges();
-    expect(recordButton.textContent.trim()).toEqual('Aufnahme beenden');
+    expect(recordButton.textContent.trim()).toEqual('Stop recording speech');
 
     recordButton.click();
     fixture.detectChanges();
-    expect(recordButton.textContent.trim()).toEqual('Sprechen');
+    expect(recordButton.textContent.trim()).toEqual('Start recording speech');
 
   })
 
