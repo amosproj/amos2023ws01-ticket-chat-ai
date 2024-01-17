@@ -26,17 +26,17 @@
 
       <div class="text-field-div">
         <mat-form-field>
-          <mat-label>E-Mail</mat-label>
+          <mat-label>E-mail</mat-label>
           <input matInput type="email" [(ngModel)]="emailInput" />
         </mat-form-field>
 
         <mat-form-field>
-          <mat-label [class.hide-label]="chatInput !== ''">Problem beschreiben</mat-label>
+          <mat-label [class.hide-label]="chatInput !== ''">Problem description</mat-label>
           <textarea matInput [(ngModel)]="chatInput"></textarea>
         </mat-form-field>
 
         <button class="record-button" mat-raised-button color="warn" (click)="startSpeechRecognition()">
-          {{ recordingState === 'idle' ? 'Sprechen' : 'Aufnahme beenden' }}
+          {{ recordingState === 'idle' ? 'Start recording speech' : 'Stop recording speech' }}
         </button><br>
 
         <button
@@ -44,7 +44,7 @@
           color="primary"
           (click)="handleSend(chatInput, emailInput)"
         >
-          Senden
+          Submit
         </button>
       </div>
 
@@ -52,10 +52,10 @@
     </mat-card>
 
     <mat-card class="history-div">
-      <h2>Nachrichtenverlauf</h2>
+      <h2>Message history</h2>
       <!-- Check if there are any chat messages -->
       <div *ngIf="chatMessages.length === 0" class="default-message">
-        <p>Keine Nachrichten vorhanden</p>
+        <p>No messages available</p>
       </div>
 
       <!-- Display messages if there are any -->
