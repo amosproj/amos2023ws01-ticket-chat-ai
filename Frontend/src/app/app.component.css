@@ -1,3 +1,9 @@
+.login-container {
+  position: absolute;
+  top: 30px; /* Passen Sie diesen Wert an, um den gewünschten Abstand zu erreichen */
+  right: 35px;
+}
+
 .cards-container {
   display: flex;
   justify-content: space-between;

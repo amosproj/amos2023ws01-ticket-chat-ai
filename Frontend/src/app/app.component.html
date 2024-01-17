@@ -14,7 +14,10 @@
   >
     {{ title }}
   </h1>
-
+  <div class="login-container">
+    <button 
+    mat-raised-button color="primary" (click)="openLoginDialog()">Login</button>
+  </div>
   <div class="cards-container">
     <mat-card class="history-div">
       <div *ngIf="errorMessage" class="error-message">

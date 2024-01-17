@@ -5,6 +5,7 @@ import { DragAndDropComponent } from './drag-and-drop/drag-and-drop.component';
 import {Ticket} from "./entities/ticket.dto";
 import { MatDialog } from '@angular/material/dialog';
 import { RequestTypeDialogComponent } from './request-type-dialog/request-type-dialog.component';
+import { LoginDialogComponent } from './login-dialog/login-dialog.component';
 
 interface ChatMessages {
   messageText: string;
@@ -67,6 +68,13 @@ export class AppComponent implements OnInit {
     this.dragAndDropComponent.clearFiles();
     this.files = [];
   } 
+
+  openLoginDialog() {
+    const dialogRef = this.dialog.open(LoginDialogComponent);
+    dialogRef.afterClosed().subscribe(result => {
+      // logic after closing dialog
+    });
+  }
 
   chooseRequestType() {
     const dialogRef = this.dialog.open(RequestTypeDialogComponent);
