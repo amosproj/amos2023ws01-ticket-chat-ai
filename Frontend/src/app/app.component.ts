@@ -66,7 +66,7 @@ export class AppComponent implements OnInit {
   clearFiles() {
     this.dragAndDropComponent.clearFiles();
     this.files = [];
-  } 
+  }
 
   chooseRequestType() {
     const dialogRef = this.dialog.open(RequestTypeDialogComponent);
@@ -85,9 +85,9 @@ export class AppComponent implements OnInit {
   updateTicketAttributes(updatedTicket: Ticket) {
     this.ticketService.updateTicket(updatedTicket, updatedTicket.id).subscribe((ticket) => {
       this.logger.log("Ticket update was done successfully: " + ticket);
-  
+
       const existingMessageIndex = this.chatMessages.findIndex(msg => msg.messageText.includes(ticket.id));
-  
+
       if (ticket.requestType && ticket.requestType.trim() !== '') {
         const messageText = JSON.stringify(ticket);
 
@@ -104,7 +104,7 @@ export class AppComponent implements OnInit {
           this.chatMessages.push({ messageText, isUser: false, files: [] });
             }
         }
-        
+
       } else {
         this.logger.log('RequestType is empty. Skipping display in UI.');
       }
@@ -122,36 +122,36 @@ export class AppComponent implements OnInit {
         this.waitingServerResponse = false;
       },
       (error: any) => {
-        this.handleError('Leider ist ein Fehler aufgetreten. Versuche es erneut oder später noch einmal, wir bitten um Entschuldigung');
+        this.handleError('Unfortunately an error has occurred. Please try again or try again later, we apologize.');
       }
     );
   }
 
   handleSend(value: string, emailInput: string) {
     this.errorMessage = "";
-  
+
     if (!value) {
-      this.errorMessage = 'Bitte verfasse eine Nachricht oder hinterlasse eine Sprachnachricht.';
+      this.errorMessage = 'Please write a message or leave a voice message.';
       return;
     }
-  
+
     this.chatMessages.push({ messageText: value, isUser: true, files: this.files });
     this.logger.log('Trying to send message to backend server: ' + value);
-  
+
     this.ticketService.send(value, emailInput).subscribe(
       (response: any) => {
         let messageText = '';
-  
+
         if (typeof response === 'object') {
           messageText = JSON.stringify(response);
         } else {
           messageText = response;
         }
-  
+
         this.changeDetector.detectChanges();
 
         this.createdTicket = new Ticket(response);
-  
+
         if (response && (!response.requestType || response.requestType.trim() === '')) {
           this.logger.log('RequestType missing. Choosing.');
           this.chooseRequestType();
@@ -161,7 +161,7 @@ export class AppComponent implements OnInit {
           // Only show the latest response in the UI
           this.chatMessages.pop(); // Remove the user message
         }
-  
+
         if (response.requestType) {
           // Only handle the response if requestType is present
           if (this.files.length !== 0) {
@@ -178,13 +178,13 @@ export class AppComponent implements OnInit {
         this.waitingServerResponse = false;
       },
       (error) => {
-        this.handleError('Leider ist ein Fehler aufgetreten. Versuche es erneut oder später noch einmal, wir bitten um Entschuldigung');
+        this.handleError('Unfortunately an error has occurred. Please try again or try again later, we apologize.');
       }
     );
-  
+
     this.chatInput = "";
     this.waitingServerResponse = true;
-  }  
+  }
 
   startSpeechRecognition() {
     if (this.recordingState === 'idle') {
@@ -197,7 +197,7 @@ export class AppComponent implements OnInit {
   startRecording() {
     if ('SpeechRecognition' in window || 'webkitSpeechRecognition' in window) {
       this.recognition = new ((window as any).SpeechRecognition || (window as any).webkitSpeechRecognition)();
-      this.recognition.lang = 'de-DE';
+      this.recognition.lang = 'en-EN';
       this.recognition.interimResults = false;
       this.recognition.maxAlternatives = 1;
       this.recognition.continuous = true;
@@ -213,7 +213,7 @@ export class AppComponent implements OnInit {
       };
 
       this.recognition.onerror = (event: any) => {
-        this.handleError('Leider ist ein Fehler aufgetreten. Versuche es erneut oder später noch einmal, wir bitten um Entschuldigung');
+        this.handleError('Unfortunately an error has occurred. Please try again or try again later, we apologize.');
       };
 
       this.recordingState = 'recording';
