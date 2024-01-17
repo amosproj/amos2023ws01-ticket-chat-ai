@@ -8,11 +8,17 @@ from logger import logger
 
 def can_be_processed(message):
     """
-    should return false if the email was automatically generated or is from blocked user, will be implemented in later sprint
-    :param message:
-    :return boolean:
+    Returns False if the email is from Microsoft service.
+    :param message: Email message object
+    :return: bool
     """
     logger.info("Checking if email can be processed...")
+
+    sender = message.get("From", "").lower()
+    if "microsoft.com" in sender or "outlook.com" in sender:
+        logger.warning("Ignoring Microsoft service email.")
+        return False
+
     return True
 
 
