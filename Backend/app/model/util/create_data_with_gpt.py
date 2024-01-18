@@ -5,11 +5,11 @@ client = OpenAI(
     api_key="APIKEY",
 )
 
-for _ in range(5):
-    with open("../test_data/test_data_with_gpt/data_4.json", "r") as file:
+for _ in range(1):
+    with open("../test_data/test_data_with_gpt/data_6.json", "r") as file:
         tickets = json.load(file)
 
-    for _ in range(100):
+    for _ in range(1):
         try:
             response = client.chat.completions.create(
                 model="gpt-3.5-turbo",
@@ -31,7 +31,7 @@ for _ in range(5):
                             "requestType": ""
                         }
                         
-                        The 'text' should contain a detailed problem description whith implicit information about the fields and should be listed as lines in an array.
+                        The 'text' should contain a detailed problem description whith implicit information about only one category.
                         The 'text' should be randomly between 3 to 10 lines
                         Furthermore, under 'ticket', there should be a support ticket matching the email with the following attributes.
                         The 'service' attribute classifies the service of the ticket with the values 'SAP ERP', 'Atlassian', 'Adobe', 'Salesforce', 'Reporting', 'Microsoft Power Platform', 'Microsoft SharePoint', 'Snowflake', 'Microsoft Office'.
@@ -82,7 +82,7 @@ for _ in range(5):
                         The 'priority' attribute classifies the relevance of the ticket with the values 'Low', 'Medium', 'High' and 'Very High'
                         The 'requestType' attribute classifies the type of ticket with the values "Incident" or 'Service Request'. Incident describes a ticket if the user has a problem or similar, and Service Request describes a ticket with which the user orders a service.
                         
-                        Please create 10 tickets in the specified JSON format. The ticket should be really versatile.
+                        Please create 2 tickets in the specified JSON format. The ticket should be really versatile.
                         Your output should only contain the JSON format.
                     """,
                     },
@@ -101,5 +101,5 @@ for _ in range(5):
         except Exception as e:
             print(f"An error occurred: {e}")
 
-    with open("../test_data/test_data_with_gpt/data_4.json", "w") as file:
+    with open("../test_data/test_data_with_gpt/data_6.json", "w") as file:
         json.dump(tickets, file, indent=4)
