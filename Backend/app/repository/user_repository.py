@@ -32,3 +32,8 @@ class UserRepository:
         logger.info(f"Reading user(s) with email {email} from the database...")
         users = list(self.collection.find({"email_address": email}))
         return users if users else []
+
+    def authenticate_user(self, email: str, password: str) -> bool:
+        logger.info(f"Authenticating user with email {email}...")
+        user = self.collection.find_one({"email_address": email, "password": password})
+        return user is not None
