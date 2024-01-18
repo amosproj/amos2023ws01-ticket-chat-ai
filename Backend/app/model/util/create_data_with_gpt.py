@@ -6,7 +6,7 @@ client = OpenAI(
 )
 
 for _ in range(5):
-    with open("../test_data/test_data_with_gpt/data_6.json", "r") as file:
+    with open("../test_data/test_data_with_gpt/data_7.json", "r") as file:
         tickets = json.load(file)
 
     for _ in range(100):
