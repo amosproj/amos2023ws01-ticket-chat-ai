@@ -55,4 +55,4 @@ async def login_for_access_token(
         data={"sub": user["email_address"]}, expires_delta=access_token_expires
     )
     response.set_cookie(key="access_token", value=access_token, httponly=True)
-    return {"access_token": access_token, "token_type": "bearer"}
+    return {"access_token": access_token, "token_type": "bearer", "success": True}

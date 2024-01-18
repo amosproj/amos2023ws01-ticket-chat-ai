@@ -66,11 +66,11 @@ import { AuthService } from '../service/auth.service';
       display: flex;
       flex-direction: column;
     }
-    
+
     .mat-form-field {
-      margin-bottom: 20px; 
+      margin-bottom: 20px;
     }
-    
+
     .close-button {
       position: absolute;
       top: 10px;
