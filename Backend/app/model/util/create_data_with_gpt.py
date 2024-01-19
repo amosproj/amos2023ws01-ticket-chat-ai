@@ -101,5 +101,5 @@ for _ in range(5):
         except Exception as e:
             print(f"An error occurred: {e}")
 
-    with open("../test_data/test_data_with_gpt/data_6.json", "w") as file:
+    with open("../test_data/test_data_with_gpt/data_7.json", "w") as file:
         json.dump(tickets, file, indent=4)
