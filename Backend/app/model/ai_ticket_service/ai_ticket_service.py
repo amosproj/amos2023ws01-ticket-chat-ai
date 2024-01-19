@@ -15,11 +15,15 @@ class AITicketService:
         self.keywords_generation_pipe = pipeline(
             "token-classification", model="ml6team/keyphrase-extraction-kbir-inspec"
         )
+        self.request_type_generation_pipe = pipeline(
+            "text-classification", model="TalkTix/roberta-base-request-type"
+        )
 
     def create_ticket(self, input_text) -> dict:
         title = self.generate_title(input_text)
         keywords = self.generate_keywords(input_text)
         affected_person = self.generate_affected_person(input_text)
+        request_type = self.generate_request_type(input_text)
 
         ticket_dict = {
             "title": title,
@@ -30,7 +34,7 @@ class AITicketService:
             "affectedPerson": affected_person,
             "description": input_text,
             "priority": Prio.low,
-            "requestType": "",
+            "requestType": request_type,
             "attachments": [],
         }
 
@@ -67,8 +71,24 @@ class AITicketService:
             ]
             return keywords
         else:
-            logger.error("AI: Could not generate keywords")
+            logger.info("AI: Could not generate keywords")
             return []
+
+    def generate_request_type(self, input_text) -> str:
+        generated_output = self.request_type_generation_pipe(input_text)
+        request_type_values = ["Incident", "Service Request"]
+        print(generated_output)
+
+        if len(generated_output) > 0:
+            prediction_score = max(generated_output['score'])
+            if prediction_score < 0:
+                logger.info("AI: Request type prediction is to worse")
+                return ""
+        else:
+            logger.info("AI: Could not generate request type")
+            return ""
+
+
 
     # def remove_email_signature(self, email_content) -> str:
     #     parsed_email = EmailReplyParser.parse_reply(email_content)
