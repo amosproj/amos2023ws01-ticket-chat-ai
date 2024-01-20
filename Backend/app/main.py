@@ -57,12 +57,16 @@ async def startup_event():
     service_entity_db_routine_service.start_routine()
 
     location_collection = get_location_collection()
-    location_repo_service: LocationRepository = get_location_repository(location_collection)
+    location_repo_service: LocationRepository = get_location_repository(
+        location_collection
+    )
     location_db_routine_service = LocationDBRoutineService(location_repo_service)
     location_db_routine_service.start_routine()
 
     category_collection = get_category_collection()
-    category_repo_service: CategoryRepository = get_category_repository(category_collection)
+    category_repo_service: CategoryRepository = get_category_repository(
+        category_collection
+    )
     category_db_routine_service = CategoryDBRoutineService(category_repo_service)
     category_db_routine_service.start_routine()
 
