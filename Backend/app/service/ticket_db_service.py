@@ -17,8 +17,6 @@ class TicketDBService:
 
     def create_ticket(self, ticket_entity: TicketEntity | dict) -> Ticket:
         logger.info("Creating ticket...")
-        # temporary implementation so it doesn't create an error
-        ticket_entity["service"] = "Fürth"
         insert_one_result = self.ticket_repository.create_ticket(ticket_entity)
         if not insert_one_result.acknowledged:
             self._throw_internal_server_error("Ticket creation failed.")

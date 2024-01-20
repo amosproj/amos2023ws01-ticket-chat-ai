@@ -21,3 +21,11 @@ def get_user_collection() -> Collection:
 
 def get_service_collection() -> Collection:
     return db.get_collection("service")
+
+
+def get_category_collection() -> Collection:
+    return db.get_collection("category")
+
+
+def get_location_collection() -> Collection:
+    return db.get_collection("location")
