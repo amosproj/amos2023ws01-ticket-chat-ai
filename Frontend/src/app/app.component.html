@@ -14,9 +14,13 @@
   >
     {{ title }}
   </h1>
-  <div class="login-container">
-    <button 
+  <div class="login-container" *ngIf="!isLoggedIn">
+    <button
     mat-raised-button color="primary" (click)="openLoginDialog()">Login</button>
+  </div>
+  <div class="login-container" *ngIf="isLoggedIn">
+    <button
+    mat-raised-button color="primary" (click)="logout()">Logout</button>
   </div>
   <div class="cards-container">
     <mat-card class="history-div">
