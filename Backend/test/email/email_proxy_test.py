@@ -24,12 +24,12 @@ class TestEmailProxy:
         # Mocking EmailProxy
         class MockEmailProxy:
             def __init__(
-                    self,
-                    imap_server,
-                    smtp_server,
-                    email_address,
-                    password,
-                    blacklisted_emails,
+                self,
+                imap_server,
+                smtp_server,
+                email_address,
+                password,
+                blacklisted_emails,
             ):
                 self.imap_server = imap_server
                 self.smtp_server = smtp_server
