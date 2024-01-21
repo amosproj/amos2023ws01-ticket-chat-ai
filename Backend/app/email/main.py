@@ -21,49 +21,58 @@ def run_proxy():
     email_address = config["DEFAULT"]["EMAIL_ADDRESS"]
     sleep_timer = int(config["DEFAULT"]["SLEEP_TIMER"])
 
+    # Define a list of email addresses or domains to be ignored
+    blacklisted_emails = [
+        "MicrosoftExchange329e71ec88ae4615bbc36ab6ce41109e@sct-15-20-4755-11-msonline-outlook-0fa01.templateTenant",
+        "no-reply@microsoft.com",
+    ]
+
     try:
         with Proxy.EmailProxy(
-            imap_server, smtp_server, email_address, password
+            imap_server, smtp_server, email_address, password, blacklisted_emails
         ) as proxy:
             while True:
                 msg_nums = proxy.spin()
                 for msgNum in msg_nums[0].split():
                     (sender, subject, content, attachments) = proxy.process_mail(msgNum)
-                    print(f"Sender={sender}")
-                    print(f"Subject={subject}")
-                    print(f"Content={content}")
-                    # print(attachments)
+                    if sender is None:
+                        continue
+                    else:
+                        print(f"Sender={sender}")
+                        print(f"Subject={subject}")
+                        print(f"Content={content}")
+                        # print(attachments)
 
-                    # send message to backend
-                    email = f"Von: {sender}\nBetreff: {subject}\n {content}"
-                    json_input = {"text": email}
-                    if content != "":
-                        response = requests.post(
-                            "http://localhost:8000/api/v1/ticket/text",
-                            data=json.dumps(json_input),
-                        )
-                        ticket = json.loads(response.text)
-                        logger.info("Received ticket: " + ticket["id"])
-                        if attachments:
-                            response = requests.put(
-                                "http://localhost:8000/api/v1/ticket/"
-                                + ticket["id"]
-                                + "/attachments",
-                                files=[
-                                    ("files", attachment) for attachment in attachments
-                                ],
+                        # send message to backend
+                        email = f"Von: {sender}\nBetreff: {subject}\n {content}"
+                        json_input = {"text": email}
+                        if content != "":
+                            response = requests.post(
+                                "http://localhost:8000/api/v1/ticket/text",
+                                data=json.dumps(json_input),
                             )
-                            logger.info(
-                                "Attachments for ticket: "
-                                + ticket["id"]
-                                + " are sent to the API"
-                            )
+                            ticket = json.loads(response.text)
+                            logger.info("Received ticket: " + ticket["id"])
+                            if attachments:
+                                response = requests.put(
+                                    "http://localhost:8000/api/v1/ticket/"
+                                    + ticket["id"]
+                                    + "/attachments",
+                                    files=[
+                                        ("files", attachment) for attachment in attachments
+                                    ],
+                                )
+                                logger.info(
+                                    "Attachments for ticket: "
+                                    + ticket["id"]
+                                    + " are sent to the API"
+                                )
 
-                        # send response
-                        new_email = hm.make_email(
-                            email_address, sender, "RE:" + subject, response.text
-                        )
-                        proxy.smtp.send_mail(new_email)
+                            # send response
+                            new_email = hm.make_email(
+                                email_address, sender, "RE:" + subject, response.text
+                            )
+                            proxy.smtp.send_mail(new_email)
                 time.sleep(sleep_timer)
 
     except Exception as e:

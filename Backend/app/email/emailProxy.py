@@ -11,11 +11,12 @@ class EmailProxy:
     imap = None
     smtp = None
 
-    def __init__(self, imap_server, smtp_server, email_address, email_password):
+    def __init__(self, imap_server, smtp_server, email_address, email_password, blacklisted_emails):
         self.imap_server = imap_server
         self.email_address = email_address
         self.email_password = email_password
         self.smtp_server = smtp_server
+        self.blacklisted_emails = blacklisted_emails
 
     def __enter__(self):
         self.start_connection()
@@ -84,8 +85,11 @@ class EmailProxy:
             _, data = self.imap.fetch(msgNum, "(RFC822)")
 
             message = email.message_from_bytes(data[0][1])
-            # specific processing
-            return hm.process(message)
+            if hm.can_be_processed(message, self.blacklisted_emails):
+                # specific processing
+                return hm.process(message)
+            else:
+                return None, None, None, None
         except imaplib.IMAP4.abort:
             self.try_reconnect()
             return self.process_mail(self, msgNum)

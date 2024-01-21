@@ -5,11 +5,8 @@ from bs4 import BeautifulSoup
 
 from logger import logger
 
-# Define a list of email addresses or domains to be ignored
-BLACKLIST = ["xyz@microsoft.com"]
 
-
-def can_be_processed(message):
+def can_be_processed(message, blacklisted_emails):
     """
     Returns False if the email is in the blacklist.
     :param message: Email message object
@@ -21,7 +18,7 @@ def can_be_processed(message):
     sender = message.get("From", "").lower()
 
     # Check if the sender is in the blacklist
-    if any(blacklisted_email in sender for blacklisted_email in BLACKLIST):
+    if any(blacklisted_email in sender for blacklisted_email in blacklisted_emails):
         logger.warning(f"Ignoring email from the blacklist: {sender}")
         return False
 

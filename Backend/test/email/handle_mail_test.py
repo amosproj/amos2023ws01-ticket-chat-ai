@@ -10,6 +10,7 @@ backend_path = os.path.abspath(os.path.join(os.path.dirname(__file__), "../../")
 sys.path.append(os.path.join(backend_path, "app", "email"))
 
 from app.email.handle_mail import process
+from app.email.handle_mail import can_be_processed
 
 
 class HandleMailTest(TestCase):
@@ -159,3 +160,14 @@ class HandleMailTest(TestCase):
                 "<irhox100@gmail.com>Hallo,\ndas ist ein Test,\nGrüße",
                 content,
             )
+
+    def test_blacklisted_emails(self):
+        file_path = os.path.join(
+            os.path.dirname(__file__), "test_mails/b'410'_blacklisted-email.pkl"
+        )
+        with open(file_path, "rb") as inp:
+            message = pickle.load(inp)
+            # Act
+            not_blacklisted = can_be_processed(message, blacklisted_emails=["dev.talktix@gmail.com"])
+            # Expect
+            self.assertFalse(not_blacklisted)
