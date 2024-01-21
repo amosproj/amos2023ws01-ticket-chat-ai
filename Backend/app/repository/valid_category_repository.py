@@ -14,7 +14,9 @@ class ValidCategoryRepository:
         logger.info("Creating valid category in the database...")
         return self.collection.insert_one(document=category)
 
-    def read_categories(self, category_id: ObjectId = None) -> list[ValidCategoryEntity]:
+    def read_categories(
+        self, category_id: ObjectId = None
+    ) -> list[ValidCategoryEntity]:
         logger.info("Reading valid category/(ies) from the database...")
         return list(
             self.collection.find(filter={"_id": category_id} if category_id else None)

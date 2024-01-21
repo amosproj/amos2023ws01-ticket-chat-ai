@@ -75,8 +75,8 @@ async def startup_event():
     category_db_routine_service.start_routine()
 
     valid_category_collection = get_valid_category_collection()
-    valid_category_repo_service: ValidCategoryRepository = get_valid_category_repository(
-        valid_category_collection
+    valid_category_repo_service: ValidCategoryRepository = (
+        get_valid_category_repository(valid_category_collection)
     )
     valid_category_db_routine_service = ValidCategoryDBRoutineService(
         valid_category_repo_service

@@ -39,10 +39,12 @@ class ValidCategoryDBRoutineService:
                     for category in categories:
                         for service in services:
                             for service_keyword in service["safe_keywords"]:
-                                valid_category = service_keyword + "->" + category["name"]
-                                valid_category_dict = {
-                                    "name": valid_category
-                                }
-                                self.valid_category_repository.create_category(valid_category_dict)
+                                valid_category = (
+                                    service_keyword + "->" + category["name"]
+                                )
+                                valid_category_dict = {"name": valid_category}
+                                self.valid_category_repository.create_category(
+                                    valid_category_dict
+                                )
 
             logger.info("Valid categories added")
