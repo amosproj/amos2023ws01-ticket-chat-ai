@@ -5,9 +5,11 @@ from fastapi.security import OAuth2PasswordBearer, OAuth2PasswordRequestForm
 from app.repository.user_repository import UserRepository
 from app.dependency.repository import get_user_repository
 from datetime import datetime, timedelta
-from jose import jwt
+from jose import JWTError, jwt
 
 router = APIRouter()
+oauth2_scheme = OAuth2PasswordBearer(tokenUrl="token")
+
 load_dotenv()
 SECRET_KEY = os.getenv("SECRET_KEY")
 ALGORITHM = "HS256"
@@ -56,3 +58,15 @@ async def login_for_access_token(
     )
     response.set_cookie(key="access_token", value=access_token, httponly=True)
     return {"access_token": access_token, "token_type": "bearer", "success": True}
+
+
+@router.get("/verify-token")
+async def verify_token(token: str = Depends(oauth2_scheme)):
+    try:
+        payload = jwt.decode(token, SECRET_KEY, algorithms=[ALGORITHM])
+        email = payload.get("sub")
+        if email is None:
+            raise HTTPException(status_code=401, detail="Invalid token")
+        return {"email": email}
+    except JWTError:
+        raise HTTPException(status_code=401, detail="Invalid token")

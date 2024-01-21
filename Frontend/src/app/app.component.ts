@@ -1,12 +1,15 @@
-import { Component, OnInit, ViewChild, ElementRef, ChangeDetectorRef } from '@angular/core';
-import { TicketService } from './service/ticket.service';
-import { LogService } from './service/logging.service';
-import { DragAndDropComponent } from './drag-and-drop/drag-and-drop.component';
+import {Component, OnInit, ViewChild, ElementRef, ChangeDetectorRef} from '@angular/core';
+import {TicketService} from './service/ticket.service';
+import {LogService} from './service/logging.service';
+import {DragAndDropComponent} from './drag-and-drop/drag-and-drop.component';
 import {Ticket} from "./entities/ticket.dto";
-import { MatDialog } from '@angular/material/dialog';
-import { RequestTypeDialogComponent } from './request-type-dialog/request-type-dialog.component';
-import { LoginDialogComponent } from './login-dialog/login-dialog.component';
+import {MatDialog} from '@angular/material/dialog';
+import {RequestTypeDialogComponent} from './request-type-dialog/request-type-dialog.component';
+import {LoginDialogComponent} from './login-dialog/login-dialog.component';
 import {jwtDecode} from "jwt-decode";
+import {HttpClient} from '@angular/common/http';
+import { AuthService } from './service/auth.service';
+
 
 interface ChatMessages {
   messageText: string;
@@ -48,9 +51,17 @@ export class AppComponent implements OnInit {
   @ViewChild("fileDropRef", { static: true }) fileDropEl!: ElementRef;
   @ViewChild(DragAndDropComponent) dragAndDropComponent!: DragAndDropComponent;
 
-  constructor(private ticketService: TicketService, private logger: LogService, private changeDetector: ChangeDetectorRef, private dialog: MatDialog,) {}
+  constructor(
+    private ticketService: TicketService,
+    private logger: LogService,
+    private changeDetector: ChangeDetectorRef,
+    private dialog: MatDialog,
+    private http: HttpClient,
+    private authService: AuthService,
+    ) {}
 
   ngOnInit() {
+    this.authService.checkTokenValidity();
     this.accessToken = localStorage.getItem("access_token") ? localStorage.getItem("access_token") : null;
     if (this.accessToken != null) {
       this.isLoggedIn = true;
@@ -148,6 +159,16 @@ export class AppComponent implements OnInit {
   }
 
   handleSend(value: string, emailInput: string) {
+    this.authService.checkTokenValidity();
+    this.accessToken = localStorage.getItem("access_token") ? localStorage.getItem("access_token") : null;
+    if (this.accessToken != null) {
+      this.isLoggedIn = true;
+      let email = jwtDecode(this.accessToken).sub;
+      this.emailInput = email ? email : '';
+    }else{
+      this.logout()
+    }
+
     this.errorMessage = "";
 
     if (!value) {
