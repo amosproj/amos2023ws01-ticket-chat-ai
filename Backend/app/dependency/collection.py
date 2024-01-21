@@ -27,5 +27,9 @@ def get_category_collection() -> Collection:
     return db.get_collection("category")
 
 
+def get_valid_category_collection() -> Collection:
+    return db.get_collection("valid_category")
+
+
 def get_location_collection() -> Collection:
     return db.get_collection("location")
