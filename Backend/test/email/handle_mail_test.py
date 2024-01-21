@@ -168,6 +168,9 @@ class HandleMailTest(TestCase):
         with open(file_path, "rb") as inp:
             message = pickle.load(inp)
             # Act
-            not_blacklisted = can_be_processed(message, blacklisted_emails=["dev.talktix@gmail.com"])
+            not_blacklisted = can_be_processed(
+                message,
+                blacklisted_emails=["dev.talktix@gmail.com"],
+            )
             # Expect
             self.assertFalse(not_blacklisted)

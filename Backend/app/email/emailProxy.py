@@ -11,7 +11,14 @@ class EmailProxy:
     imap = None
     smtp = None
 
-    def __init__(self, imap_server, smtp_server, email_address, email_password, blacklisted_emails):
+    def __init__(
+            self,
+            imap_server,
+            smtp_server,
+            email_address,
+            email_password,
+            blacklisted_emails,
+    ):
         self.imap_server = imap_server
         self.email_address = email_address
         self.email_password = email_password

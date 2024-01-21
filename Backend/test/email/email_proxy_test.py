@@ -23,7 +23,14 @@ class TestEmailProxy:
     def email_proxy(self, monkeypatch):
         # Mocking EmailProxy
         class MockEmailProxy:
-            def __init__(self, imap_server, smtp_server, email_address, password, blacklisted_emails):
+            def __init__(
+                    self,
+                    imap_server,
+                    smtp_server,
+                    email_address,
+                    password,
+                    blacklisted_emails,
+            ):
                 self.imap_server = imap_server
                 self.smtp_server = smtp_server
                 self.email_address = email_address
@@ -51,7 +58,7 @@ class TestEmailProxy:
             "mock_smtp_server",
             "mock_email_address",
             "mock_password",
-            []
+            [],
         )
 
     def test_email_proxy(self, monkeypatch):

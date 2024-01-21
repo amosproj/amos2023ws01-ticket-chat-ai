@@ -59,7 +59,8 @@ def run_proxy():
                                     + ticket["id"]
                                     + "/attachments",
                                     files=[
-                                        ("files", attachment) for attachment in attachments
+                                        ("files", attachment)
+                                        for attachment in attachments
                                     ],
                                 )
                                 logger.info(
