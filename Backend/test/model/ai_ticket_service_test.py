@@ -10,13 +10,13 @@ class TestAITicketService(unittest.TestCase):
 
         self.mock_title_pipeline = MagicMock()
         self.mock_title_pipeline.return_value = [{"generated_text": "Mocked Title"}]
-        self.ai_ticket_service.title_generation_pipe = self.mock_title_pipeline
+        self.ai_ticket_service.title_generator_pipe = self.mock_title_pipeline
 
         self.mock_affected_person_pipeline = MagicMock()
         self.mock_affected_person_pipeline.return_value = [
             {"entity": "B-PER", "word": "John"}
         ]
-        self.ai_ticket_service.affected_person_generation_pipe = (
+        self.ai_ticket_service.affected_person_generator_pipe = (
             self.mock_affected_person_pipeline
         )
 
@@ -37,7 +37,7 @@ class TestAITicketService(unittest.TestCase):
         # Assert
         self.assertIsInstance(ticket_dict, dict)
         self.assertIn("title", ticket_dict)
-        self.assertIn("location", ticket_dict)
+        self.assertIn("service", ticket_dict)
 
     def test_generate_title(self):
         # Arrange

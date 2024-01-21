@@ -8,11 +8,12 @@ from app.enum.prio import Prio
 class Ticket(BaseModel):
     id: str = ""
     title: str
-    location: str
+    service: str
     category: str
     keywords: list
     customerPriority: CustomerPrio
     affectedPerson: str
     description: str
     priority: Prio
+    requestType: str
     attachmentNames: list[str] = []

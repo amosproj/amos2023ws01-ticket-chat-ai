@@ -1,10 +1,12 @@
 import torch
 from transformers import RobertaForSequenceClassification, RobertaTokenizer
 
+
 def load_model(model_path):
     model = RobertaForSequenceClassification.from_pretrained(model_path)
     tokenizer = RobertaTokenizer.from_pretrained(model_path)
     return model, tokenizer
+
 
 def prepare_data(tokenizer, text, max_length=512):
     inputs = tokenizer(
@@ -16,6 +18,7 @@ def prepare_data(tokenizer, text, max_length=512):
         truncation=True,
     )
     return inputs
+
 
 def predict(model, tokenizer, text, device):
     model.to(device)
@@ -33,6 +36,7 @@ def predict(model, tokenizer, text, device):
 
     preds = torch.argmax(logits, dim=1)
     return preds
+
 
 # Pfad zum gespeicherten Modell
 model_path = "./fine_tuned_roberta_model_request_type"

@@ -21,7 +21,7 @@ class CustomDataset(Dataset):
 
     def load_json(self):
         for data_path in self.data_paths:
-            with open(data_path, 'r') as file:
+            with open(data_path, "r") as file:
                 data = json.load(file)
                 for item in data:
                     if item["ticket"][self.output_field] in self.label_encoder.classes_:
@@ -36,8 +36,8 @@ class CustomDataset(Dataset):
         item = self.data_set[idx]
 
         # Check whether 'text' key is present in the item
-        if 'text' in item:
-            text_description = "\n".join(item['text'])
+        if "text" in item:
+            text_description = "\n".join(item["text"])
         else:
             text_description = ""
 
