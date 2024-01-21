@@ -15,7 +15,7 @@ def can_be_processed(message, blacklisted_emails):
     logger.info("Checking if email can be processed...")
 
     # Extract sender's email address
-    sender = message.get("From", "").lower()
+    sender = message.get("From", "")
 
     # Check if the sender is in the blacklist
     if any(blacklisted_email in sender for blacklisted_email in blacklisted_emails):
