@@ -1,5 +1,5 @@
 from pydantic import BaseModel
 
 
-class Category(BaseModel):
+class Department(BaseModel):
     name: str

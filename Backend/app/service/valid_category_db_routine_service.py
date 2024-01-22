@@ -23,7 +23,7 @@ class ValidCategoryDBRoutineService:
                 "..",
                 "repository",
                 "resources",
-                "default_categories.json",
+                "default_departments.json",
             )
             default_services = os.path.join(
                 os.path.dirname(__file__),

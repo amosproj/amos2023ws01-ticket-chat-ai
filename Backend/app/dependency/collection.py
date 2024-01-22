@@ -23,8 +23,8 @@ def get_service_collection() -> Collection:
     return db.get_collection("service")
 
 
-def get_category_collection() -> Collection:
-    return db.get_collection("category")
+def get_department_collection() -> Collection:
+    return db.get_collection("department")
 
 
 def get_valid_category_collection() -> Collection:

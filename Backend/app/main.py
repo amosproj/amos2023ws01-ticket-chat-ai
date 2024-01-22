@@ -5,23 +5,23 @@ from app.api.v1 import ticket_api
 from app.dependency.collection import (
     get_user_collection,
     get_service_collection,
-    get_category_collection,
+    get_department_collection,
     get_valid_category_collection,
     get_location_collection,
 )
 from app.dependency.repository import (
     get_user_repository,
     get_service_repository,
-    get_category_repository,
+    get_department_repository,
     get_valid_category_repository,
     get_location_repository,
 )
 from app.repository.user_repository import UserRepository
 from app.repository.service_repository import ServiceRepository
 from app.repository.location_repository import LocationRepository
-from app.repository.category_repository import CategoryRepository
+from app.repository.department_repository import DepartmentRepository
 from app.repository.valid_category_repository import ValidCategoryRepository
-from app.service.category_db_routine_service import CategoryDBRoutineService
+from app.service.department_db_routine_service import DepartmentDBRoutineService
 from app.service.valid_category_db_routine_service import ValidCategoryDBRoutineService
 from app.service.location_db_routine_service import LocationDBRoutineService
 from app.service.user_db_routine_service import UserDBRoutineService
@@ -67,12 +67,12 @@ async def startup_event():
     location_db_routine_service = LocationDBRoutineService(location_repo_service)
     location_db_routine_service.start_routine()
 
-    category_collection = get_category_collection()
-    category_repo_service: CategoryRepository = get_category_repository(
-        category_collection
+    department_collection = get_department_collection()
+    department_repo_service: DepartmentRepository = get_department_repository(
+        department_collection
     )
-    category_db_routine_service = CategoryDBRoutineService(category_repo_service)
-    category_db_routine_service.start_routine()
+    department_db_routine_service = DepartmentDBRoutineService(department_repo_service)
+    department_db_routine_service.start_routine()
 
     valid_category_collection = get_valid_category_collection()
     valid_category_repo_service: ValidCategoryRepository = (
