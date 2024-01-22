@@ -6,7 +6,7 @@ from app.dependency.collection import (
     get_user_collection,
     get_service_collection,
     get_department_collection,
-    get_valid_category_collection,
+    get_category_collection,
     get_location_collection,
 )
 from app.repository.ticket_repository import TicketRepository
@@ -14,7 +14,7 @@ from app.repository.user_repository import UserRepository
 from app.repository.service_repository import ServiceRepository
 from app.repository.location_repository import LocationRepository
 from app.repository.department_repository import DepartmentRepository
-from app.repository.valid_category_repository import ValidCategoryRepository
+from app.repository.category_repository import CategoryRepository
 
 
 def get_ticket_repository(
@@ -47,7 +47,7 @@ def get_department_repository(
     return DepartmentRepository(collection=collection)
 
 
-def get_valid_category_repository(
-    collection: Collection = Depends(get_valid_category_collection),
-) -> ValidCategoryRepository:
-    return ValidCategoryRepository(collection=collection)
+def get_category_repository(
+    collection: Collection = Depends(get_category_collection),
+) -> CategoryRepository:
+    return CategoryRepository(collection=collection)
