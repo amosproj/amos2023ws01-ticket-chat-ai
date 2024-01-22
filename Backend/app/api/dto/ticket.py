@@ -9,13 +9,13 @@ from app.enum.service import ServiceEnum
 
 class Ticket(BaseModel):
     id: str = ""
-    title: str
-    service: Location | ServiceEnum
-    category: str
+    title: str | None
+    service: Location | ServiceEnum | None
+    category: str | None
     keywords: list
-    customerPriority: CustomerPrio
+    customerPriority: CustomerPrio | None
     affectedPerson: str
     description: str
-    priority: Prio
-    requestType: str
+    priority: Prio | None
+    requestType: str | None
     attachmentNames: list[str] = []

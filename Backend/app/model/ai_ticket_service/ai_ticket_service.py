@@ -312,7 +312,7 @@ class AITicketService:
 
     def generate_prediction(self, input_text, pipe, field, field_values) -> str:
         generated_output = pipe(input_text)
-        prediction = ""
+        prediction = None
 
         if len(generated_output) > 0:
             prediction_score = generated_output[0]["score"]
