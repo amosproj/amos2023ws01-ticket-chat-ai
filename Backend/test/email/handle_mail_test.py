@@ -174,3 +174,17 @@ class HandleMailTest(TestCase):
             )
             # Expect
             self.assertFalse(not_blacklisted)
+
+    def test_not_blacklisted_emails(self):
+        file_path = os.path.join(
+            os.path.dirname(__file__), "test_mails/b'263'_no_attachment.pkl"
+        )
+        with open(file_path, "rb") as inp:
+            message = pickle.load(inp)
+            # Act
+            not_blacklisted = can_be_processed(
+                message,
+                blacklisted_emails=["dev.talktix@gmail.com"],
+            )
+            # Expect
+            self.assertTrue(not_blacklisted)
