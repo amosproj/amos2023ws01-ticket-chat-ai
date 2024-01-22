@@ -33,8 +33,15 @@ class AITicketService:
             model="TalkTix/roberta-base-service-type-generator-28k",
         )
 
+        self.customer_priority_generator_pipe = pipeline(
+            "text-classification",
+            model="TalkTix/roberta-base-customer-priority-type-generator-28k",
+        )
+
         # Possible Field values
-        self.request_type_values = ["Incident", " 'Service Request"]
+        self.request_type_values = ["Incident", "Service Request"]
+        self.request_type_values.sort()
+
         self.service_values = [
             "SAP ERP",
             "Atlassian",
@@ -46,6 +53,8 @@ class AITicketService:
             "Snowflake",
             "Microsoft Office",
         ]
+        self.service_values.sort()
+
         self.category_values = [
             "HANA -> Technical Issues",
             "HANA -> Billing & Payment",
@@ -203,6 +212,15 @@ class AITicketService:
             "Microsoft PowerPoint -> Account Management",
             "Microsoft PowerPoint -> Policy Questions",
         ]
+        self.category_values.sort()
+
+        self.customer_priority_values = [
+            "Disruption but can work",
+            "Disruption cannot work",
+            "Disruption several cannot work",
+            "Disruption department cannot work",
+        ]
+        self.customer_priority_values.sort()
 
     def create_ticket(self, input_text) -> dict:
         # generate prediction for each field
@@ -222,13 +240,20 @@ class AITicketService:
             input_text, self.service_generator_pipe, "service", self.service_values
         )
 
+        customer_priority = self.generate_prediction(
+            input_text,
+            self.customer_priority_generator_pipe,
+            "customerPriority",
+            self.customer_priority_values,
+        )
+
         # Create Ticket
         ticket_dict = {
             "title": title,
             "service": service,
             "category": category,
             "keywords": keywords,
-            "customerPriority": CustomerPrio.can_work,
+            "customerPriority": customer_priority,
             "affectedPerson": affected_person,
             "description": input_text,
             "priority": Prio.low,
@@ -288,10 +313,6 @@ class AITicketService:
     def generate_prediction(self, input_text, pipe, field, field_values) -> str:
         generated_output = pipe(input_text)
         prediction = ""
-
-        print("=======================================================")
-        print("generated_output: " + field + " ", generated_output)
-        print("=======================================================")
 
         if len(generated_output) > 0:
             prediction_score = generated_output[0]["score"]
