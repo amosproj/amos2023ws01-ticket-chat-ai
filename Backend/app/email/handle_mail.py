@@ -51,13 +51,28 @@ def process(message: Message):
             and "attachment" not in content_disposition
         ):
             charset = part.get_content_charset()
-            content = part.get_payload(decode=True).decode(charset)
+
+            # if charset is none we fallback to default UTF-8,
+            # if it fails because of an unknown different charset we fallback to part.as_string()
+            if charset:
+                content = part.get_payload(decode=True).decode(charset)
+            else:
+                try:
+                    content = part.get_payload(decode=True).decode()
+                except UnicodeDecodeError:
+                    content = part.as_string()
         elif (
             part.get_content_type() == "text/html"
             and "attachment" not in content_disposition
         ):
             charset = part.get_content_charset()
-            soup = BeautifulSoup(part.get_payload(decode=True).decode(charset))
+            if charset:
+                soup = BeautifulSoup(part.get_payload(decode=True).decode(charset))
+            else:
+                try:
+                    soup = BeautifulSoup(part.get_payload(decode=True).decode())
+                except UnicodeDecodeError:
+                    soup = BeautifulSoup(part.as_string())
             content = soup.get_text()
         elif (
             part.get_content_maintype() in ["image", "application", "text"]

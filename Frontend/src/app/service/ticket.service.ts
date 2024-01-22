@@ -1,9 +1,10 @@
-import { Injectable } from "@angular/core";
-import { HttpClient, HttpHeaders } from "@angular/common/http";
-import { catchError } from "rxjs/operators";
-import { Observable, throwError } from "rxjs";
-import { environment } from "../../environments/environment";
-import { LogService } from './logging.service';
+import {Injectable} from "@angular/core";
+import {HttpClient, HttpHeaders} from "@angular/common/http";
+import {catchError} from "rxjs/operators";
+import {Observable, throwError} from "rxjs";
+import {environment} from "../../environments/environment";
+import {LogService} from './logging.service';
+import {Ticket} from "../entities/ticket.dto";
 
 @Injectable({
   providedIn: "root"
@@ -11,14 +12,15 @@ import { LogService } from './logging.service';
 export class TicketService {
   private apiUrl = environment.apiUrl + 'api/v1/ticket/text';
 
-  constructor(private http: HttpClient, private logger: LogService) { }
+  constructor(private http: HttpClient, private logger: LogService) {
+  }
 
   send(message: string, email: string): Observable<any> {
     if (!message) {
-      return throwError('Bitte verfasse eine Nachricht oder hinterlasse eine Sprachnachricht.');
+      return throwError('Please write a message or leave a voice message.');
     }
 
-    const data = { text: message, email: email };
+    const data = {text: message, email: email};
 
     // define headers
     const headers = new HttpHeaders({
@@ -27,10 +29,27 @@ export class TicketService {
     });
 
     // send post request and handle error
-    return this.http.post(this.apiUrl, data, { headers }).pipe(
+    return this.http.post(this.apiUrl, data, {headers}).pipe(
       catchError((error) => {
         this.logger.log('Error sending message:' + error);
-        return throwError('Leider ist ein Fehler aufgetreten. Versuche es erneut oder später noch einmal, wir bitten um Entschuldigung.');
+        return throwError('Unfortunately an error has occurred. Please try again or try again later, we apologize.');
+      })
+    );
+  }
+
+  updateTicket(updatedTicket: Ticket, ticket_id: string): Observable<any> {
+    const url = environment.apiUrl + 'api/v1/ticket/' + ticket_id + '/update';
+
+    // define headers
+    const headers = new HttpHeaders({
+      'Accept': 'application/json',
+      'Content-Type': 'application/json',
+    });
+
+    return this.http.put(url, updatedTicket, {headers}).pipe(
+      catchError((error) => {
+        this.logger.log('Error while updating ticket: ' + error);
+        return throwError('An Error occurred. Please try again later.');
       })
     );
   }
@@ -53,10 +72,10 @@ export class TicketService {
     const url = environment.apiUrl + 'api/v1/ticket/' + ticket_id + '/attachments';
 
     // Send POST request with formData and handle error
-    return this.http.put(url, formData, { headers }).pipe(
+    return this.http.put(url, formData, {headers}).pipe(
       catchError((error) => {
         this.logger.log('Error sending files:' + error);
-        return throwError('Leider ist ein Fehler aufgetreten. Versuche es erneut oder später noch einmal, wir bitten um Entschuldigung.');
+        return throwError('Unfortunately an error has occurred. Please try again or try again later, we apologize.');
       })
     );
   }

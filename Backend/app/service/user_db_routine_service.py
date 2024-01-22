@@ -20,7 +20,7 @@ class UserDBRoutineService:
                 os.path.dirname(__file__),
                 "..",
                 "repository",
-                "entity",
+                "resources",
                 "default_users.json",
             )
             with open(default_users) as users_file:
