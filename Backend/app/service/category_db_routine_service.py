@@ -39,12 +39,8 @@ class CategoryDBRoutineService:
                     for department in departments:
                         for service in services:
                             for service_keyword in service["safe_keywords"]:
-                                category = (
-                                    service_keyword + "->" + department["name"]
-                                )
+                                category = service_keyword + "->" + department["name"]
                                 category_dict = {"name": category}
-                                self.category_repository.create_category(
-                                    category_dict
-                                )
+                                self.category_repository.create_category(category_dict)
 
             logger.info("Categories added")
