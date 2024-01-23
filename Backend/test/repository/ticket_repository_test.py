@@ -33,6 +33,7 @@ class TicketRepositoryUnitTest(unittest.TestCase):
             description="",
             priority=Prio.low,
             attachments=[],
+            requestType="",
         )
 
     def test_create_ticket(self):
@@ -98,6 +99,7 @@ class TicketRepositoryIntegrationTest(unittest.TestCase):
             "description": "",
             "priority": Prio.low,
             "attachments": [],
+            "requestType": "",
         }
 
     def test_crud(self):
