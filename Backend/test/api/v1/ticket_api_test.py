@@ -167,13 +167,13 @@ class TicketAPIIntegrationTest(TestCase):
         updated_ticket_json = {
             "id": "6554b34d82161e93bff08df6",
             "title": "Test Ticket",
-            "service": "Fürth",
+            "service": Location.fuerth,
             "category": "",
             "keywords": [],
-            "customerPriority": "Stoerung aber kann arbeiten",
+            "customerPriority": CustomerPrio.can_work,
             "affectedPerson": "",
             "description": "",
-            "priority": "Niedrig",
+            "priority": Prio.low,
             "attachments": [],
             "requestType": "Incident",
         }
