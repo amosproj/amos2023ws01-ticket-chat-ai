@@ -180,7 +180,7 @@ class TicketAPIIntegrationTest(TestCase):
         exp_ticket = Ticket(
             id=str(self.ticket_id),
             title="Test Ticket",
-            service="Fürth",
+            service="",
             category="",
             keywords=[],
             customerPriority=CustomerPrio.can_work,
