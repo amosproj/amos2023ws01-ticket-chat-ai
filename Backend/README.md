@@ -100,7 +100,7 @@
 2. Train the model by running the following command:
 
    ```bash
-   python train_t5_model.py
+   python train.py
    ```
 
 3. Test the trained model by running the following command:
@@ -112,7 +112,7 @@
 4. Test the untrained T5 model by running the following command:
 
    ```bash
-   python train_t5_model.py
+   python train.py
    ```
 
 ## Run the Email Proxy

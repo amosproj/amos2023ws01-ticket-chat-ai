@@ -1,0 +1,523 @@
+[
+  {
+    "text": [
+      "Betreff: WLAN-Verbindungsprobleme im Büro",
+      "Hallo Support Team,",
+      "seit heute Morgen habe ich Schwierigkeiten, mich mit dem WLAN im Büro zu verbinden.",
+      "Andere Kollegen haben scheinbar keine Probleme. Mein Laptop findet das Netzwerk, aber die Verbindung ist instabil.",
+      "Könnten Sie bitte überprüfen, was das Problem sein könnte?",
+      "Mit freundlichen Grüßen,",
+      "Anna Schmidt"
+    ],
+    "ticket": {
+      "title": "Störung -> WLAN",
+      "service": "",
+      "category": "Störung -> WLAN",
+      "keywords": [
+        "WLAN",
+        "Verbindungsprobleme"
+      ],
+      "customerPriority": "Störung aber kann arbeiten",
+      "affectedPerson": "Schmidt, Anna",
+      "description": "Seit heute Morgen habe ich Schwierigkeiten, mich mit dem WLAN im Büro zu verbinden. Mein Laptop findet das Netzwerk, aber die Verbindung ist instabil.",
+      "priority": "Mittel",
+      "requestType": "Incident"
+    }
+  },
+  {
+    "text": [
+      "Betreff: Keine WLAN-Verbindung nach Passwortänderung",
+      "Hallo Support Team,",
+      "ich habe mein WLAN-Passwort geändert, und seitdem kann ich mich nicht mehr verbinden.",
+      "Andere Geräte haben kein Problem. Könnten Sie mir bitte bei der Lösung helfen?",
+      "Mit freundlichen Grüßen,",
+      "Markus Becker"
+    ],
+    "ticket": {
+      "title": "Störung -> WLAN",
+      "service": "",
+      "category": "Störung -> WLAN",
+      "keywords": [
+        "WLAN",
+        "Passwortänderung"
+      ],
+      "customerPriority": "Störung aber kann arbeiten",
+      "affectedPerson": "Becker, Markus",
+      "description": "Nach der Änderung meines WLAN-Passworts kann ich mich nicht mehr verbinden. Andere Geräte haben kein Problem. Bitte um Unterstützung.",
+      "priority": "Mittel",
+      "requestType": "Incident"
+    }
+  },
+  {
+    "text": [
+      "Betreff: WLAN-Verbindungsabbrüche seit gestern",
+      "Hallo Support Team,",
+      "seit gestern Abend brechen meine WLAN-Verbindungen ständig ab.",
+      "Ich habe bereits meinen Router neu gestartet, aber das Problem besteht weiterhin.",
+      "Könnten Sie das bitte überprüfen?",
+      "Mit freundlichen Grüßen,",
+      "Julia Mayer"
+    ],
+    "ticket": {
+      "title": "Störung -> WLAN",
+      "service": "",
+      "category": "Störung -> WLAN",
+      "keywords": [
+        "WLAN",
+        "Verbindungsabbrüche"
+      ],
+      "customerPriority": "Störung aber kann arbeiten",
+      "affectedPerson": "Mayer, Julia",
+      "description": "Seit gestern Abend brechen meine WLAN-Verbindungen ständig ab, trotz Neustart des Routers. Bitte überprüfen Sie das Problem.",
+      "priority": "Mittel",
+      "requestType": "Incident"
+    }
+  },
+  {
+    "text": [
+      "Betreff: WLAN-Geschwindigkeitsprobleme im Konferenzraum",
+      "Hallo Support Team,",
+      "wir haben im Konferenzraum Probleme mit der WLAN-Geschwindigkeit.",
+      "Die Verbindung ist sehr langsam, und dies beeinträchtigt unsere Online-Meetings.",
+      "Könnten Sie bitte die Ursache herausfinden und beheben?",
+      "Mit freundlichen Grüßen,",
+      "Stefan Wagner"
+    ],
+    "ticket": {
+      "title": "Störung -> WLAN",
+      "service": "",
+      "category": "Störung -> WLAN",
+      "keywords": [
+        "WLAN",
+        "Geschwindigkeitsprobleme"
+      ],
+      "customerPriority": "Störung kann nicht arbeiten",
+      "affectedPerson": "Wagner, Stefan",
+      "description": "Im Konferenzraum haben wir Probleme mit der WLAN-Geschwindigkeit. Die Verbindung ist sehr langsam, beeinträchtigt unsere Online-Meetings. Bitte dringend beheben.",
+      "priority": "Hoch",
+      "requestType": "Incident"
+    }
+  },
+  {
+    "text": [
+      "Betreff: WLAN-Verbindungsprobleme seit letztem Update",
+      "Hallo Support Team,",
+      "nach dem letzten automatischen Update habe ich Schwierigkeiten, mich mit dem WLAN zu verbinden.",
+      "Andere Geräte im Haus haben kein Problem. Könnten Sie mir bitte helfen?",
+      "Mit freundlichen Grüßen,",
+      "Sophie Müller"
+    ],
+    "ticket": {
+      "title": "Störung -> WLAN",
+      "service": "",
+      "category": "Störung -> WLAN",
+      "keywords": [
+        "WLAN",
+        "Verbindungsprobleme",
+        "Update"
+      ],
+      "customerPriority": "Störung aber kann arbeiten",
+      "affectedPerson": "Müller, Sophie",
+      "description": "Nach dem letzten automatischen Update habe ich Schwierigkeiten, mich mit dem WLAN zu verbinden. Andere Geräte im Haus haben kein Problem. Bitte um Unterstützung.",
+      "priority": "Mittel",
+      "requestType": "Incident"
+    }
+  },
+  {
+    "text": [
+      "Betreff: WLAN-Netzwerk nicht sichtbar",
+      "Hallo Support Team,",
+      "ich kann das WLAN-Netzwerk in meiner Liste nicht mehr sehen.",
+      "Andere Netzwerke werden angezeigt. Könnten Sie mir bitte dabei helfen?",
+      "Mit freundlichen Grüßen,",
+      "Nina Fischer"
+    ],
+    "ticket": {
+      "title": "Störung -> WLAN",
+      "service": "",
+      "category": "Störung -> WLAN",
+      "keywords": [
+        "WLAN",
+        "Netzwerk nicht sichtbar"
+      ],
+      "customerPriority": "Störung aber kann arbeiten",
+      "affectedPerson": "Fischer, Nina",
+      "description": "Ich kann das WLAN-Netzwerk in meiner Liste nicht mehr sehen, obwohl andere Netzwerke angezeigt werden. Bitte um Unterstützung.",
+      "priority": "Mittel",
+      "requestType": "Incident"
+    }
+  },
+  {
+    "text": [
+      "Betreff: WLAN-Netzwerk nicht sichtbar",
+      "Hallo Support Team,",
+      "ich kann das WLAN-Netzwerk in meiner Liste nicht mehr sehen.",
+      "Andere Netzwerke werden angezeigt. Könnten Sie mir bitte dabei helfen?",
+      "Mit freundlichen Grüßen,",
+      "Nina Fischer"
+    ],
+    "ticket": {
+      "title": "Störung -> WLAN",
+      "service": "",
+      "category": "Störung -> WLAN",
+      "keywords": [
+        "WLAN",
+        "Netzwerk nicht sichtbar"
+      ],
+      "customerPriority": "Störung aber kann arbeiten",
+      "affectedPerson": "Fischer, Nina",
+      "description": "Ich kann das WLAN-Netzwerk in meiner Liste nicht mehr sehen, obwohl andere Netzwerke angezeigt werden. Bitte um Unterstützung.",
+      "priority": "Mittel",
+      "requestType": "Incident"
+    }
+  },
+  {
+    "text": [
+      "Betreff: Verbindungsabbrüche im Homeoffice",
+      "Hallo Support Team,",
+      "seit einigen Tagen habe ich ständige WLAN-Verbindungsabbrüche im Homeoffice.",
+      "Das beeinträchtigt meine Arbeit erheblich. Könnten Sie das bitte überprüfen?",
+      "Mit freundlichen Grüßen,",
+      "Thomas Richter"
+    ],
+    "ticket": {
+      "title": "Störung -> WLAN",
+      "service": "",
+      "category": "Störung -> WLAN",
+      "keywords": [
+        "WLAN",
+        "Verbindungsabbrüche",
+        "Homeoffice"
+      ],
+      "customerPriority": "Störung kann nicht arbeiten",
+      "affectedPerson": "Richter, Thomas",
+      "description": "Seit einigen Tagen habe ich ständige WLAN-Verbindungsabbrüche im Homeoffice, was meine Arbeit erheblich beeinträchtigt. Bitte dringend überprüfen.",
+      "priority": "Hoch",
+      "requestType": "Incident"
+    }
+  },
+  {
+    "text": [
+      "Betreff: WLAN-Passwort vergessen",
+      "Hallo Support Team,",
+      "ich habe mein WLAN-Passwort vergessen und kann mich nicht mehr verbinden.",
+      "Könnten Sie mir bitte das Passwort zurücksetzen oder mir eine Anleitung geben?",
+      "Mit freundlichen Grüßen,",
+      "Andreas Schneider"
+    ],
+    "ticket": {
+      "title": "Service Request -> WLAN",
+      "service": "",
+      "category": "Service Request -> WLAN",
+      "keywords": [
+        "WLAN",
+        "Passwort vergessen"
+      ],
+      "customerPriority": "Störung aber kann arbeiten",
+      "affectedPerson": "Schneider, Andreas",
+      "description": "Ich habe mein WLAN-Passwort vergessen und kann mich nicht mehr verbinden. Bitte um Unterstützung, entweder durch Zurücksetzen des Passworts oder Bereitstellung einer Anleitung.",
+      "priority": "Mittel",
+      "requestType": "Service Request"
+    }
+  },
+  {
+    "text": [
+      "Betreff: WLAN-Signal zu schwach im Besprechungsraum",
+      "Hallo Support Team,",
+      "wir haben im Besprechungsraum ein schwaches WLAN-Signal, besonders in den hinteren Ecken.",
+      "Könnten Sie die Signalstärke verbessern?",
+      "Mit freundlichen Grüßen,",
+      "Laura Meier"
+    ],
+    "ticket": {
+      "title": "Störung -> WLAN",
+      "service": "",
+      "category": "Störung -> WLAN",
+      "keywords": [
+        "WLAN",
+        "Signalstärke",
+        "Besprechungsraum"
+      ],
+      "customerPriority": "Störung kann nicht arbeiten",
+      "affectedPerson": "Meier, Laura",
+      "description": "Im Besprechungsraum haben wir ein schwaches WLAN-Signal, besonders in den hinteren Ecken. Bitte verbessern Sie die Signalstärke.",
+      "priority": "Hoch",
+      "requestType": "Incident"
+    }
+  },
+  {
+    "text": [
+      "Betreff: WLAN-Verbindung bricht bei Videokonferenzen ab",
+      "Hallo Support Team,",
+      "ich habe das Problem, dass meine WLAN-Verbindung während Videokonferenzen ständig abbricht.",
+      "Das ist besonders störend. Könnten Sie das bitte dringend überprüfen?",
+      "Mit freundlichen Grüßen,",
+      "Patrick Weber"
+    ],
+    "ticket": {
+      "title": "Störung -> WLAN",
+      "service": "",
+      "category": "Störung -> WLAN",
+      "keywords": [
+        "WLAN",
+        "Verbindungsabbrüche",
+        "Videokonferenzen"
+      ],
+      "customerPriority": "Störung kann nicht arbeiten",
+      "affectedPerson": "Weber, Patrick",
+      "description": "Während Videokonferenzen bricht meine WLAN-Verbindung ständig ab. Das ist besonders störend. Bitte dringend überprüfen.",
+      "priority": "Hoch",
+      "requestType": "Incident"
+    }
+  },
+  {
+    "text": [
+      "Betreff: Verdächtige Aktivität im Benutzerkonto",
+      "Hallo Support Team,",
+      "ich habe eine E-Mail erhalten, die auf verdächtige Aktivitäten in meinem Benutzerkonto hinweist.",
+      "Bitte überprüfen Sie umgehend und ergreifen Sie Maßnahmen, falls erforderlich.",
+      "Mit freundlichen Grüßen,",
+      "Laura Schneider"
+    ],
+    "ticket": {
+      "title": "Incident -> Sicherheitsvorfall",
+      "service": "",
+      "category": "Incident -> Sicherheitsvorfall",
+      "keywords": [
+        "Sicherheit",
+        "Benutzerkonto",
+        "Verdächtige Aktivität"
+      ],
+      "customerPriority": "Störung kann nicht arbeiten",
+      "affectedPerson": "Schneider, Laura",
+      "description": "Erhalt einer E-Mail über verdächtige Aktivitäten im Benutzerkonto. Bitte sofort überprüfen und notwendige Maßnahmen ergreifen.",
+      "priority": "Hoch",
+      "requestType": "Incident"
+    }
+  },
+  {
+    "text": [
+      "Betreff: Unautorisierte Zugriffsversuche auf das Netzwerk",
+      "Hallo Support Team,",
+      "wir haben mehrere unautorisierte Zugriffsversuche auf unser Netzwerk festgestellt.",
+      "Bitte unternehmen Sie Schritte, um die Sicherheit zu erhöhen und weitere Zugriffe zu verhindern.",
+      "Mit freundlichen Grüßen,",
+      "Jan Becker"
+    ],
+    "ticket": {
+      "title": "Incident -> Sicherheitsvorfall",
+      "service": "",
+      "category": "Incident -> Sicherheitsvorfall",
+      "keywords": [
+        "Sicherheit",
+        "Netzwerk",
+        "Unautorisierter Zugriff"
+      ],
+      "customerPriority": "Störung kann nicht arbeiten",
+      "affectedPerson": "Becker, Jan",
+      "description": "Mehrere unautorisierte Zugriffsversuche auf das Netzwerk wurden festgestellt. Bitte erhöhen Sie die Sicherheitsmaßnahmen und verhindern Sie weitere Zugriffe.",
+      "priority": "Sehr Hoch",
+      "requestType": "Incident"
+    }
+  },
+  {
+    "text": [
+      "Betreff: Malware-Infektion auf meinem Computer",
+      "Hallo Support Team,",
+      "mein Antivirenprogramm hat eine Malware-Infektion auf meinem Computer gemeldet.",
+      "Bitte unterstützen Sie mich bei der Bereinigung und Stärkung der Sicherheitsvorkehrungen.",
+      "Mit freundlichen Grüßen,",
+      "Max Mustermann"
+    ],
+    "ticket": {
+      "title": "Incident -> Sicherheitsvorfall",
+      "service": "",
+      "category": "Incident -> Sicherheitsvorfall",
+      "keywords": [
+        "Sicherheit",
+        "Malware",
+        "Infektion"
+      ],
+      "customerPriority": "Störung kann nicht arbeiten",
+      "affectedPerson": "Mustermann, Max",
+      "description": "Mein Antivirenprogramm hat eine Malware-Infektion auf meinem Computer gemeldet. Bitte unterstützen Sie mich bei der Bereinigung und Stärkung der Sicherheitsvorkehrungen.",
+      "priority": "Hoch",
+      "requestType": "Incident"
+    }
+  },
+  {
+    "text": [
+      "Betreff: Phishing-Versuch über Firmen-E-Mail",
+      "Hallo Support Team,",
+      "ich habe eine verdächtige E-Mail erhalten, die nach einem Phishing-Versuch aussieht.",
+      "Bitte überprüfen Sie die E-Mail und ergreifen Sie die notwendigen Maßnahmen.",
+      "Mit freundlichen Grüßen,",
+      "Sabine Müller"
+    ],
+    "ticket": {
+      "title": "Incident -> Sicherheitsvorfall",
+      "service": "",
+      "category": "Incident -> Sicherheitsvorfall",
+      "keywords": [
+        "Sicherheit",
+        "Phishing",
+        "E-Mail"
+      ],
+      "customerPriority": "Störung kann nicht arbeiten",
+      "affectedPerson": "Müller, Sabine",
+      "description": "Erhalt einer verdächtigen E-Mail, die nach einem Phishing-Versuch aussieht. Bitte überprüfen Sie die E-Mail und ergreifen Sie die notwendigen Maßnahmen.",
+      "priority": "Hoch",
+      "requestType": "Incident"
+    }
+  },
+  {
+    "text": [
+      "Betreff: Unberechtigter Zugriff auf vertrauliche Dateien",
+      "Hallo Support Team,",
+      "ich habe festgestellt, dass es einen unberechtigten Zugriff auf einige meiner vertraulichen Dateien gegeben hat.",
+      "Bitte helfen Sie mir, die Sicherheitslücke zu schließen und den Vorfall zu untersuchen.",
+      "Mit freundlichen Grüßen,",
+      "Andreas Schmidt"
+    ],
+    "ticket": {
+      "title": "Incident -> Sicherheitsvorfall",
+      "service": "",
+      "category": "Incident -> Sicherheitsvorfall",
+      "keywords": [
+        "Sicherheit",
+        "Unberechtigter Zugriff",
+        "Dateien"
+      ],
+      "customerPriority": "Störung kann nicht arbeiten",
+      "affectedPerson": "Schmidt, Andreas",
+      "description": "Feststellung eines unberechtigten Zugriffs auf einige meiner vertraulichen Dateien. Bitte helfen Sie mir, die Sicherheitslücke zu schließen und den Vorfall zu untersuchen.",
+      "priority": "Sehr Hoch",
+      "requestType": "Incident"
+    }
+  },
+  {
+    "text": [
+      "Betreff: Verdächtige Anmeldeaktivität auf meinem Konto",
+      "Hallo Support Team,",
+      "ich habe Benachrichtigungen über verdächtige Anmeldeaktivitäten auf meinem Konto erhalten.",
+      "Bitte überprüfen Sie die Sicherheitslogs und ergreifen Sie Maßnahmen.",
+      "Mit freundlichen Grüßen,",
+      "Nina Wagner"
+    ],
+    "ticket": {
+      "title": "Incident -> Sicherheitsvorfall",
+      "service": "",
+      "category": "Incident -> Sicherheitsvorfall",
+      "keywords": [
+        "Sicherheit",
+        "Anmeldeaktivität",
+        "Konto"
+      ],
+      "customerPriority": "Störung kann nicht arbeiten",
+      "affectedPerson": "Wagner, Nina",
+      "description": "Benachrichtigungen über verdächtige Anmeldeaktivitäten auf meinem Konto erhalten. Bitte überprüfen Sie die Sicherheitslogs und ergreifen Sie Maßnahmen.",
+      "priority": "Hoch",
+      "requestType": "Incident"
+    }
+  },
+  {
+    "text": [
+      "Betreff: Firewall-Alarm wegen ungewöhnlicher Aktivität",
+      "Hallo Support Team,",
+      "die Firewall hat einen Alarm wegen ungewöhnlicher Aktivität festgestellt.",
+      "Bitte untersuchen Sie den Vorfall und verbessern Sie die Firewall-Einstellungen.",
+      "Mit freundlichen Grüßen,",
+      "David Klein"
+    ],
+    "ticket": {
+      "title": "Incident -> Sicherheitsvorfall",
+      "service": "",
+      "category": "Incident -> Sicherheitsvorfall",
+      "keywords": [
+        "Sicherheit",
+        "Firewall",
+        "Alarm"
+      ],
+      "customerPriority": "Störung kann nicht arbeiten",
+      "affectedPerson": "Klein, David",
+      "description": "Die Firewall hat einen Alarm wegen ungewöhnlicher Aktivität festgestellt. Bitte untersuchen Sie den Vorfall und verbessern Sie die Firewall-Einstellungen.",
+      "priority": "Sehr Hoch",
+      "requestType": "Incident"
+    }
+  },
+  {
+    "text": [
+      "Betreff: Verlust von Zugangsdaten für geschäftskritische Systeme",
+      "Hallo Support Team,",
+      "ich habe meine Zugangsdaten für einige geschäftskritische Systeme verloren.",
+      "Bitte helfen Sie mir, die Zugangsdaten zurückzusetzen und die Sicherheit wiederherzustellen.",
+      "Mit freundlichen Grüßen,",
+      "Hanna Mayer"
+    ],
+    "ticket": {
+      "title": "Incident -> Sicherheitsvorfall",
+      "service": "",
+      "category": "Incident -> Sicherheitsvorfall",
+      "keywords": [
+        "Sicherheit",
+        "Zugangsdaten",
+        "Verlust"
+      ],
+      "customerPriority": "Störung kann nicht arbeiten",
+      "affectedPerson": "Mayer, Hanna",
+      "description": "Verlust meiner Zugangsdaten für einige geschäftskritische Systeme. Bitte helfen Sie mir, die Zugangsdaten zurückzusetzen und die Sicherheit wiederherzustellen.",
+      "priority": "Hoch",
+      "requestType": "Incident"
+    }
+  },
+  {
+    "text": [
+      "Betreff: Datenleck entdeckt - Sofortige Untersuchung erforderlich",
+      "Hallo Support Team,",
+      "wir haben ein potentielles Datenleck entdeckt und benötigen eine sofortige Untersuchung.",
+      "Bitte starten Sie die Untersuchung und ergreifen Sie Maßnahmen zur Schließung der Sicherheitslücke.",
+      "Mit freundlichen Grüßen,",
+      "Sophie Weber"
+    ],
+    "ticket": {
+      "title": "Incident -> Sicherheitsvorfall",
+      "service": "",
+      "category": "Incident -> Sicherheitsvorfall",
+      "keywords": [
+        "Sicherheit",
+        "Datenleck",
+        "Untersuchung"
+      ],
+      "customerPriority": "Störung kann nicht arbeiten",
+      "affectedPerson": "Weber, Sophie",
+      "description": "Potentielles Datenleck entdeckt, sofortige Untersuchung erforderlich. Bitte starten Sie die Untersuchung und ergreifen Sie Maßnahmen zur Schließung der Sicherheitslücke.",
+      "priority": "Sehr Hoch",
+      "requestType": "Incident"
+    }
+  },
+  {
+    "text": [
+      "Betreff: Ransomware-Angriff auf Unternehmenssysteme",
+      "Hallo Support Team,",
+      "unsere Unternehmenssysteme sind von einem Ransomware-Angriff betroffen.",
+      "Es wird sofortige Unterstützung benötigt, um die Auswirkungen zu minimieren und die Sicherheit wiederherzustellen.",
+      "Mit freundlichen Grüßen,",
+      "Tim Schneider"
+    ],
+    "ticket": {
+      "title": "Incident -> Sicherheitsvorfall",
+      "service": "",
+      "category": "Incident -> Sicherheitsvorfall",
+      "keywords": [
+        "Sicherheit",
+        "Ransomware",
+        "Angriff"
+      ],
+      "customerPriority": "Störung kann nicht arbeiten",
+      "affectedPerson": "Schneider, Tim",
+      "description": "Unsere Unternehmenssysteme sind von einem Ransomware-Angriff betroffen. Es wird sofortige Unterstützung benötigt, um die Auswirkungen zu minimieren und die Sicherheit wiederherzustellen.",
+      "priority": "Sehr Hoch",
+      "requestType": "Incident"
+    }
+  }
+]

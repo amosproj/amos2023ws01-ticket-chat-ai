@@ -199,8 +199,6 @@ export class AppComponent implements OnInit {
           this.logger.log('RequestType updated.');
         } else {
           this.logger.log('RequestType exists.');
-          // Only show the latest response in the UI
-          this.chatMessages.pop(); // Remove the user message
         }
 
         if (response.requestType) {

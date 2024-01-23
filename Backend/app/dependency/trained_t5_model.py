@@ -5,7 +5,7 @@ from app.dependency.t5_for_conditional_generation import (
     get_t5_for_conditional_generation,
 )
 from app.dependency.t5_tokenizer import get_t5_tokenizer
-from app.model.t5.use_trained_t5_model import TrainedT5Model
+from app.model.ai_service.t5.use_trained_t5_model import TrainedT5Model
 
 
 def get_trained_t5_model(

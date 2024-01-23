@@ -1,0 +1,489 @@
+[
+    {
+      "text": [
+        "Subject: Wi-Fi Connection Problems in the Office",
+        "Hello Support Team,",
+        "Since this morning, I have been experiencing difficulties connecting to the Wi-Fi in the office.",
+        "Other colleagues apparently have no problems. My laptop finds the network, but the connection is unstable.",
+        "Could you please check what the problem might be?",
+        "Best regards,",
+        "Anna Schmidt"
+      ],
+      "ticket": {
+        "title": "Disruption -> Wi-Fi",
+        "service": "",
+        "category": "Disruption -> Wi-Fi",
+        "keywords": [
+          "Wi-Fi",
+          "Connection Problems"
+        ],
+        "customerPriority": "Disruption but can work",
+        "affectedPerson": "Schmidt, Anna",
+        "description": "Since this morning, I have been experiencing difficulties connecting to the Wi-Fi in the office. My laptop finds the network, but the connection is unstable.",
+        "priority": "Medium",
+        "requestType": "Incident"
+      }
+    },
+    {
+      "text": [
+        "Subject: No Wi-Fi Connection After Password Change",
+        "Hello Support Team,",
+        "I changed my Wi-Fi password, and since then I can no longer connect.",
+        "Other devices have no problem. Could you please help me solve this?",
+        "Best regards,",
+        "Markus Becker"
+      ],
+      "ticket": {
+        "title": "Disruption -> Wi-Fi",
+        "service": "",
+        "category": "Disruption -> Wi-Fi",
+        "keywords": [
+          "Wi-Fi",
+          "Password Change"
+        ],
+        "customerPriority": "Disruption but can work",
+        "affectedPerson": "Becker, Markus",
+        "description": "After changing my Wi-Fi password, I can no longer connect. Other devices have no problem. Please assist.",
+        "priority": "Medium",
+        "requestType": "Incident"
+      }
+    },
+    {
+        "text": [
+          "Subject: Network Not Visible",
+          "Hello Support Team,",
+          "I can't see our company's Wi-Fi network on my laptop.",
+          "It was working fine until yesterday. Other networks are visible. What could be the problem?",
+          "Thank you,",
+          "Laura Müller"
+        ],
+        "ticket": {
+          "title": "Disruption -> Network Visibility",
+          "service": "",
+          "category": "Disruption -> Network",
+          "keywords": [
+            "Network",
+            "Visibility"
+          ],
+          "customerPriority": "Disruption but can work",
+          "affectedPerson": "Müller, Laura",
+          "description": "Cannot see the company's Wi-Fi network on the laptop, although other networks are visible.",
+          "priority": "Medium",
+          "requestType": "Incident"
+        }
+      },
+      {
+        "text": [
+          "Subject: Suspected Malware Infection",
+          "Hello Support Team,",
+          "I suspect my computer has been infected with malware. It has become very slow and shows unusual pop-ups.",
+          "Please advise on what steps I should take.",
+          "Best regards,",
+          "Jürgen Hoffmann"
+        ],
+        "ticket": {
+          "title": "Security Incident -> Malware",
+          "service": "",
+          "category": "Security Incident",
+          "keywords": [
+            "Malware",
+            "Computer Slow",
+            "Unusual Pop-ups"
+          ],
+          "customerPriority": "Urgent",
+          "affectedPerson": "Hoffmann, Jürgen",
+          "description": "Computer showing symptoms of malware infection - slow performance and unusual pop-ups.",
+          "priority": "High",
+          "requestType": "Incident"
+        }
+      },
+      {
+        "text": [
+          "Subject: Unauthorized Access Detected",
+          "Hello Support Team,",
+          "I received a notification about an unauthorized access attempt on my account.",
+          "I have not shared my credentials with anyone. Could this be a security breach?",
+          "Please investigate this matter urgently.",
+          "Best regards,",
+          "Sophie Wagner"
+        ],
+        "ticket": {
+          "title": "Security Incident -> Unauthorized Access",
+          "service": "",
+          "category": "Security Incident",
+          "keywords": [
+            "Unauthorized Access",
+            "Security Breach"
+          ],
+          "customerPriority": "Urgent",
+          "affectedPerson": "Wagner, Sophie",
+          "description": "Received a notification about an unauthorized access attempt on the account.",
+          "priority": "High",
+          "requestType": "Incident"
+        }
+      },
+      {
+        "text": [
+          "Subject: Phishing Email Received",
+          "Hello Support Team,",
+          "I received an email that looks like a phishing attempt. It asks for sensitive information.",
+          "I haven't clicked on any links. What should I do?",
+          "Best regards,",
+          "Michael Bauer"
+        ],
+        "ticket": {
+          "title": "Security Incident -> Phishing",
+          "service": "",
+          "category": "Security Incident",
+          "keywords": [
+            "Phishing",
+            "Suspicious Email"
+          ],
+          "customerPriority": "High",
+          "affectedPerson": "Bauer, Michael",
+          "description": "Received an email that appears to be a phishing attempt, asking for sensitive information.",
+          "priority": "High",
+          "requestType": "Incident"
+        }
+      },
+      {
+        "text": [
+          "Subject: Potential Data Breach",
+          "Hello Support Team,",
+          "I have noticed some unusual activity in our database. There might be a potential data breach.",
+          "Can you please look into this and ensure our data is secure?",
+          "Thank you,",
+          "Thomas König"
+        ],
+        "ticket": {
+          "title": "Security Incident -> Data Breach",
+          "service": "",
+          "category": "Security Incident",
+          "keywords": [
+            "Data Breach",
+            "Unusual Activity"
+          ],
+          "customerPriority": "Urgent",
+          "affectedPerson": "König, Thomas",
+          "description": "Noticed unusual activity in the database, raising concerns about a potential data breach.",
+          "priority": "High",
+          "requestType": "Incident"
+        }
+      },
+      {
+        "text": [
+          "Subject: Slow Internet Speed",
+          "Hello Support Team,",
+          "I am experiencing very slow internet speeds on my device. This issue is affecting my work.",
+          "Could you please check the network?",
+          "Best regards,",
+          "Petra Klein"
+        ],
+        "ticket": {
+          "title": "Disruption -> Internet Speed",
+          "service": "",
+          "category": "Disruption -> Network",
+          "keywords": [
+            "Slow Internet",
+            "Network Issue"
+          ],
+          "customerPriority": "Medium",
+          "affectedPerson": "Klein, Petra",
+          "description": "Experiencing slow internet speeds, affecting work productivity.",
+          "priority": "Medium",
+          "requestType": "Incident"
+        }
+      },
+      {
+        "text": [
+          "Subject: Email Account Locked",
+          "Hello Support Team,",
+          "My email account has been locked due to multiple failed login attempts.",
+          "I need access for urgent work emails. Can you help me unlock it?",
+          "Thanks,",
+          "Lukas Neumann"
+        ],
+        "ticket": {
+          "title": "Service Request -> Account Unlock",
+          "service": "",
+          "category": "Service Request",
+          "keywords": [
+            "Email Account",
+            "Locked",
+            "Failed Login Attempts"
+          ],
+          "customerPriority": "High",
+          "affectedPerson": "Neumann, Lukas",
+          "description": "Email account locked after multiple failed login attempts, urgent need for access.",
+          "priority": "High",
+          "requestType": "Service Request"
+        }
+      },
+      {
+        "text": [
+          "Subject: Printer Connection Issue",
+          "Hello Support Team,",
+          "I'm unable to connect to the office printer from my computer.",
+          "It was working fine yesterday. Can you please assist?",
+          "Best regards,",
+          "Sabine Weber"
+        ],
+        "ticket": {
+          "title": "Disruption -> Printer Connection",
+          "service": "",
+          "category": "Disruption -> Hardware",
+          "keywords": [
+            "Printer",
+            "Connection Issue"
+          ],
+          "customerPriority": "Medium",
+          "affectedPerson": "Weber, Sabine",
+          "description": "Cannot connect to the office printer from the computer, no changes made since it last worked.",
+          "priority": "Medium",
+          "requestType": "Incident"
+        }
+      },
+      {
+        "text": [
+          "Subject: VPN Connection Problems",
+          "Hello Support Team,",
+          "I'm having trouble connecting to the VPN from home.",
+          "I followed all the setup instructions but still can't connect.",
+          "Please help,",
+          "Stefan Meyer"
+        ],
+        "ticket": {
+          "title": "Disruption -> VPN",
+          "service": "",
+          "category": "Disruption -> Network",
+          "keywords": [
+            "VPN",
+            "Connection Problems"
+          ],
+          "customerPriority": "Medium",
+          "affectedPerson": "Meyer, Stefan",
+          "description": "Trouble connecting to the VPN from home despite following setup instructions.",
+          "priority": "Medium",
+          "requestType": "Incident"
+        }
+      },
+      {
+        "text": [
+          "Subject: Unable to Access Shared Drive",
+          "Hello Support Team,",
+          "I'm having issues accessing the shared drive from my computer.",
+          "This is critical for my team's collaboration. Please provide assistance.",
+          "Regards,",
+          "Christian Schmidt"
+        ],
+        "ticket": {
+          "title": "Disruption -> Shared Drive Access",
+          "service": "",
+          "category": "Disruption -> Network",
+          "keywords": [
+            "Shared Drive",
+            "Access Issue"
+          ],
+          "customerPriority": "High",
+          "affectedPerson": "Schmidt, Christian",
+          "description": "Issues accessing the shared drive, which is critical for team collaboration.",
+          "priority": "High",
+          "requestType": "Incident"
+        }
+      },
+      {
+        "text": [
+          "Subject: Software Installation Request",
+          "Hello Support Team,",
+          "I need to have a specific software installed on my workstation for a new project.",
+          "Could you assist with this?",
+          "Thanks,",
+          "Julia Fischer"
+        ],
+        "ticket": {
+          "title": "Service Request -> Software Installation",
+          "service": "",
+          "category": "Service Request",
+          "keywords": [
+            "Software Installation",
+            "Workstation"
+          ],
+          "customerPriority": "Medium",
+          "affectedPerson": "Fischer, Julia",
+          "description": "Request for installation of specific software on a workstation for a new project.",
+          "priority": "Medium",
+          "requestType": "Service Request"
+        }
+      },
+      {
+        "text": [
+          "Subject: Update Required for Security Software",
+          "Hello Support Team,",
+          "Our security software seems outdated and may need an update.",
+          "This could be a potential security risk. Can you handle the update?",
+          "Best regards,",
+          "Andreas Vogel"
+        ],
+        "ticket": {
+          "title": "Service Request -> Software Update",
+          "service": "",
+          "category": "Service Request",
+          "keywords": [
+            "Security Software",
+            "Update"
+          ],
+          "customerPriority": "Medium",
+          "affectedPerson": "Vogel, Andreas",
+          "description": "Security software appears outdated and needs an update to mitigate potential risks.",
+          "priority": "Medium",
+          "requestType": "Service Request"
+        }
+      },
+      {
+        "text": [
+          "Subject: Laptop Battery Issue",
+          "Hello Support Team,",
+          "My laptop battery drains much faster than usual.",
+          "This is hindering my mobility for work. Can you check it?",
+          "Thanks,",
+          "Martina Hoffmann"
+        ],
+        "ticket": {
+          "title": "Disruption -> Hardware",
+          "service": "",
+          "category": "Disruption -> Hardware",
+          "keywords": [
+            "Laptop",
+            "Battery Issue"
+          ],
+          "customerPriority": "Medium",
+          "affectedPerson": "Hoffmann, Martina",
+          "description": "Laptop battery draining faster than usual, affecting work mobility.",
+          "priority": "Medium",
+          "requestType": "Incident"
+        }
+    },
+    {
+        "text": [
+          "Subject: Issue with Email Synchronization",
+          "Hello Support Team,",
+          "I'm experiencing problems with my email synchronization on multiple devices.",
+          "This is causing delays in communication. Can you provide a solution?",
+          "Thanks,",
+          "Frank Berger"
+        ],
+        "ticket": {
+          "title": "Disruption -> Email Synchronization",
+          "service": "",
+          "category": "Disruption -> Software",
+          "keywords": [
+            "Email",
+            "Synchronization Issue"
+          ],
+          "customerPriority": "Medium",
+          "affectedPerson": "Berger, Frank",
+          "description": "Problems with email synchronization across devices, leading to communication delays.",
+          "priority": "Medium",
+          "requestType": "Incident"
+        }
+      },
+      {
+        "text": [
+          "Subject: Computer Overheating Problem",
+          "Hello Support Team,",
+          "My computer is overheating rapidly even with minimal use.",
+          "This is concerning for hardware safety. Can you look into it?",
+          "Regards,",
+          "Monika Schwarz"
+        ],
+        "ticket": {
+          "title": "Disruption -> Hardware",
+          "service": "",
+          "category": "Disruption -> Hardware",
+          "keywords": [
+            "Computer",
+            "Overheating"
+          ],
+          "customerPriority": "High",
+          "affectedPerson": "Schwarz, Monika",
+          "description": "Computer overheating quickly even with minimal usage, posing a safety concern.",
+          "priority": "High",
+          "requestType": "Incident"
+        }
+      },
+      {
+        "text": [
+          "Subject: Missing Files on the Network Drive",
+          "Hello Support Team,",
+          "Some important files are missing from my folder on the network drive.",
+          "I suspect accidental deletion or a syncing issue. Can you help recover them?",
+          "Best regards,",
+          "Nicole Bauer"
+        ],
+        "ticket": {
+          "title": "Service Request -> File Recovery",
+          "service": "",
+          "category": "Service Request",
+          "keywords": [
+            "Network Drive",
+            "Missing Files"
+          ],
+          "customerPriority": "High",
+          "affectedPerson": "Bauer, Nicole",
+          "description": "Important files missing from a folder on the network drive, possibly due to deletion or syncing issues.",
+          "priority": "High",
+          "requestType": "Service Request"
+        }
+      },
+      {
+        "text": [
+          "Subject: Update Network Access Permissions",
+          "Hello Support Team,",
+          "I need an update to my network access permissions for a new project role.",
+          "This is urgent to ensure smooth project progress.",
+          "Thank you,",
+          "Oliver Wagner"
+        ],
+        "ticket": {
+          "title": "Service Request -> Access Update",
+          "service": "",
+          "category": "Service Request",
+          "keywords": [
+            "Network Access",
+            "Permission Update"
+          ],
+          "customerPriority": "High",
+          "affectedPerson": "Wagner, Oliver",
+          "description": "Requires an update to network access permissions due to a new project role.",
+          "priority": "High",
+          "requestType": "Service Request"
+        }
+      },
+      {
+        "text": [
+          "Subject: Ransomware Attack on Company Systems",
+          "Hello Support Team,",
+          "Our company systems have been affected by a ransomware attack.",
+          "Immediate assistance is needed to minimize the impact and restore security.",
+          "Best regards,",
+          "Tim Schneider"
+        ],
+        "ticket": {
+          "title": "Incident -> Security Incident",
+          "service": "",
+          "category": "Incident -> Security Incident",
+          "keywords": [
+            "Security",
+            "Ransomware",
+            "Attack"
+          ],
+          "customerPriority": "Cannot work due to disruption",
+          "affectedPerson": "Schneider, Tim",
+          "description": "Our company systems have been affected by a ransomware attack. Immediate assistance is required to minimize the impact and restore security.",
+          "priority": "Very High",
+          "requestType": "Incident"
+        }
+      }
+
+  ]
+  
