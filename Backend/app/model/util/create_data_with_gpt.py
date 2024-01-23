@@ -1,9 +1,7 @@
 from openai import OpenAI
 import json
 
-client = OpenAI(
-    api_key="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"
-)
+client = OpenAI(api_key="<APIKEY>")
 
 for _ in range(1):
     with open("../test_data/test_data_with_gpt/data_9.json", "r") as file:
@@ -11,9 +9,6 @@ for _ in range(1):
 
     for _ in range(100):
         try:
-
-
-
             response = client.chat.completions.create(
                 model="gpt-3.5-turbo",
                 messages=[
