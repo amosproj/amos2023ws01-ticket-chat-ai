@@ -38,6 +38,11 @@ class AITicketService:
             model="TalkTix/roberta-base-customer-priority-type-generator-28k",
         )
 
+        self.priority_generator_pipe = pipeline(
+            "text-classification",
+            model="TalkTix/roberta-base-priority-type-generator-28k",
+        )
+
         # Possible Field values
         self.request_type_values = ["Incident", "Service Request"]
         self.request_type_values.sort()
@@ -222,6 +227,9 @@ class AITicketService:
         ]
         self.customer_priority_values.sort()
 
+        self.priority_values = ["Low", "Medium", "High", "Very High"]
+        self.priority_values.sort()
+
     def create_ticket(self, input_text) -> dict:
         # generate prediction for each field
         title = self.generate_title(input_text)
@@ -247,6 +255,10 @@ class AITicketService:
             self.customer_priority_values,
         )
 
+        priority = self.generate_prediction(
+            input_text, self.priority_generator_pipe, "priority", self.priority_values
+        )
+
         # Create Ticket
         ticket_dict = {
             "title": title,
@@ -256,7 +268,7 @@ class AITicketService:
             "customerPriority": customer_priority,
             "affectedPerson": affected_person,
             "description": input_text,
-            "priority": Prio.low,
+            "priority": priority,
             "requestType": request_type,
             "attachments": [],
         }
