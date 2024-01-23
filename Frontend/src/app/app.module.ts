@@ -5,17 +5,20 @@ import { AppComponent } from './app.component';
 import { FormsModule } from '@angular/forms';
 import { HttpClientModule } from '@angular/common/http';
 import { NoopAnimationsModule } from '@angular/platform-browser/animations';
-import {MatButtonModule} from "@angular/material/button";
-import {MatInputModule} from "@angular/material/input";
+import { MatButtonModule } from "@angular/material/button";
+import { MatInputModule } from "@angular/material/input";
+import { MatIconModule } from '@angular/material/icon';
 import { DragAndDropModule } from './drag-and-drop/drag-and-drop.module';
 import { MatCardModule } from '@angular/material/card';
 import { MatDialogModule } from '@angular/material/dialog';
 import { RequestTypeDialogComponent } from './request-type-dialog/request-type-dialog.component';
+import { LoginDialogComponent } from './login-dialog/login-dialog.component';
 
 @NgModule({
   declarations: [
     AppComponent,
-    RequestTypeDialogComponent
+    RequestTypeDialogComponent,
+    LoginDialogComponent
   ],
   imports: [
     BrowserModule,
@@ -27,7 +30,9 @@ import { RequestTypeDialogComponent } from './request-type-dialog/request-type-d
     MatInputModule,
     DragAndDropModule,
     MatCardModule,
-    MatDialogModule
+    MatDialogModule,
+    MatInputModule,
+    MatIconModule,
   ],
   providers: [],
   bootstrap: [AppComponent]
