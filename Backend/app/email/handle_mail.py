@@ -6,13 +6,22 @@ from bs4 import BeautifulSoup
 from logger import logger
 
 
-def can_be_processed(message):
+def can_be_processed(message, blacklisted_emails):
     """
-    should return false if the email was automatically generated or is from blocked user, will be implemented in later sprint
-    :param message:
-    :return boolean:
+    Returns False if the email is in the blacklist.
+    :param message: Email message object
+    :return: bool
     """
     logger.info("Checking if email can be processed...")
+
+    # Extract sender's email address
+    sender = message.get("From", "")
+
+    # Check if the sender is in the blacklist
+    if any(blacklisted_email in sender for blacklisted_email in blacklisted_emails):
+        logger.warning(f"Ignoring email from the blacklist: {sender}")
+        return False
+
     return True
 
 
