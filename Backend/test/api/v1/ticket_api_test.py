@@ -151,7 +151,7 @@ class TicketAPIIntegrationTest(TestCase):
         ticket_entity = TicketEntity(
             _id=self.ticket_id,
             title="Test Ticket",
-            service="Fürth",
+            service="",
             category="",
             keywords=[],
             customerPriority=CustomerPrio.can_work,
@@ -166,7 +166,7 @@ class TicketAPIIntegrationTest(TestCase):
         updated_ticket_json = {
             "id": "6554b34d82161e93bff08df6",
             "title": "Test Ticket",
-            "service": Location.fuerth,
+            "service": "",
             "category": "",
             "keywords": [],
             "customerPriority": CustomerPrio.can_work,

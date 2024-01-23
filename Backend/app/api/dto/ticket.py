@@ -8,7 +8,7 @@ from app.enum.prio import Prio
 class Ticket(BaseModel):
     id: str = ""
     title: str | None
-    service: Location | ServiceEnum | None
+    service: str | None
     category: str | None
     keywords: list
     customerPriority: CustomerPrio | None
