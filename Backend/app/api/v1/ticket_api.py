@@ -87,7 +87,7 @@ async def process_text(
 )
 async def update_ticket_attributes(
     ticket_id: str = Path(default=""),
-    updated_ticket: Ticket = Body(default=Ticket),
+    updated_ticket: Ticket = Body(default=None),
     ticket_db_service: TicketDBService = Depends(get_ticket_db_service),
 ):
     logger.info("Updating ticket attributes...")

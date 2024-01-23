@@ -11,7 +11,6 @@ from starlette import status
 from app.api.dto.ticket import Ticket
 from app.dependency.collection import get_ticket_collection
 from app.enum.customer_prio import CustomerPrio
-from app.enum.location import Location
 from app.enum.prio import Prio
 from app.main import app
 from app.repository.entity.ticket_entity import TicketEntity
@@ -37,7 +36,7 @@ class TicketAPIIntegrationTest(TestCase):
         ticket_entity = TicketEntity(
             _id=self.ticket_id,
             title="Test Ticket",
-            service=Location.fuerth,
+            service="Fürth",
             category="",
             keywords=[],
             customerPriority=CustomerPrio.can_work,
@@ -54,7 +53,7 @@ class TicketAPIIntegrationTest(TestCase):
         exp_ticket = Ticket(
             id=str(self.ticket_id),
             title="Test Ticket",
-            service=Location.fuerth,
+            service="Fürth",
             category="",
             keywords=[],
             customerPriority=CustomerPrio.can_work,
@@ -99,7 +98,7 @@ class TicketAPIIntegrationTest(TestCase):
         ticket_entity = TicketEntity(
             _id=self.ticket_id,
             title="Test Ticket",
-            service=Location.fuerth,
+            service="Fürth",
             category="",
             keywords=[],
             customerPriority=CustomerPrio.can_work,
@@ -113,7 +112,7 @@ class TicketAPIIntegrationTest(TestCase):
         exp_ticket = Ticket(
             id=str(self.ticket_id),
             title="Test Ticket",
-            service=Location.fuerth,
+            service="Fürth",
             category="",
             keywords=[],
             customerPriority=CustomerPrio.can_work,
@@ -152,7 +151,7 @@ class TicketAPIIntegrationTest(TestCase):
         ticket_entity = TicketEntity(
             _id=self.ticket_id,
             title="Test Ticket",
-            service=Location.fuerth,
+            service="Fürth",
             category="",
             keywords=[],
             customerPriority=CustomerPrio.can_work,
@@ -181,7 +180,7 @@ class TicketAPIIntegrationTest(TestCase):
         exp_ticket = Ticket(
             id=str(self.ticket_id),
             title="Test Ticket",
-            service=Location.fuerth,
+            service="Fürth",
             category="",
             keywords=[],
             customerPriority=CustomerPrio.can_work,
