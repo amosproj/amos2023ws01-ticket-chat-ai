@@ -15,5 +15,5 @@ class Ticket(BaseModel):
     affectedPerson: str
     description: str
     priority: Prio | None
-    requestType: str | None
     attachmentNames: list[str] = []
+    requestType: str | None
