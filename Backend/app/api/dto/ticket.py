@@ -3,14 +3,12 @@ from pydantic import BaseModel
 
 from app.enum.customer_prio import CustomerPrio
 from app.enum.prio import Prio
-from app.enum.location import Location
-from app.enum.service import ServiceEnum
 
 
 class Ticket(BaseModel):
     id: str = ""
     title: str
-    service: Location | ServiceEnum
+    service: str
     category: str
     keywords: list
     customerPriority: CustomerPrio
