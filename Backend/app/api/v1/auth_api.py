@@ -38,14 +38,14 @@ async def login_for_access_token(
     )
     if not is_authenticated:
         raise HTTPException(
-            status_code=400,
+            status_code=402,
             detail="Incorrect email or password",
             headers={"WWW-Authenticate": "Bearer"},
         )
     # read user data
     user_data = user_repo.read_users_by_email(email=form_data.username)
     if not user_data:
-        raise HTTPException(status_code=400, detail="User not found")
+        raise HTTPException(status_code=404, detail="User not found")
 
     # take first element, because email_adresse should be unique
     user = user_data[0]

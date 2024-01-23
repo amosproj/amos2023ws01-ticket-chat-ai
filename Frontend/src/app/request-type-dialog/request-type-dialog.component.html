@@ -1,0 +1,8 @@
+<body style="--main-bg-color: #313131; --accent-color: #10ddd3; --hover-color: #00828f; --text-color: #fff; background-color: var(--main-bg-color); overflow-y: auto">
+    <h1 mat-dialog-title class="dialog-title">Please choose a request type</h1>
+    <mat-dialog-content class="dialog-content">
+      <p class="dialog-message">We couldn't automatically detect the request type from your message. Please select the appropriate request type:</p>
+      <button mat-button class="request-type-button" (click)="selectType('Incident')">Incident</button>
+      <button mat-button class="request-type-button" (click)="selectType('Service Request')">Service Request</button>
+    </mat-dialog-content>
+</body>

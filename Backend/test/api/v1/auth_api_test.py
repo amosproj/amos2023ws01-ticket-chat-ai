@@ -55,7 +55,7 @@ class TestAPI:
             "/api/v1/token",
             data={"username": "wrong@example.com", "password": "wrongpassword"},
         )
-        assert response.status_code == 400
+        assert response.status_code == 402
 
     def test_verify_token_success(self, client):
         valid_token = generate_valid_token()

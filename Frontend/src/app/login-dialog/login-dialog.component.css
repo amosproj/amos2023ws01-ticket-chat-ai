@@ -1,0 +1,66 @@
+:host {
+    --main-bg-color: #313131;
+    --accent-color: #10ddd3;
+    --hover-color: #00828f;
+    --text-color: #fff;
+  }
+
+  .dialog-title{
+    background-color: var(--main-bg-color);
+    text-align: center;
+  }
+
+  .dialog-content {
+    background-color: var(--main-bg-color);
+    text-align: center;
+    width: 400px;
+  }
+
+  .dialog-title {
+    font-size: 24px;
+    color: var(--accent-color);
+    margin-bottom: 20px;
+  }
+
+  .error-message {
+    font-size: 16px;
+    color: red;
+    margin: 15px;
+  }
+
+  .dialog-message {
+    font-size: 16px;
+    color: var(--text-color);
+  }
+
+  mat-dialog-content {
+    display: flex;
+    flex-direction: column;
+  }
+
+  .mat-form-field {
+    margin-bottom: 20px;
+  }
+
+  .close-button {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    color: white; /* oder die Farbe Ihrer Wahl */
+  }
+
+  .login-button {
+    background-color: var(--accent-color);
+    color: var(--text-color);
+    font-size: 18px;
+    text-transform: capitalize;
+    padding: 10px 20px;
+    margin: 10px;
+    margin-top: 20px;
+    cursor: pointer;
+    transition: background-color 0.3s ease-in-out;
+  }
+
+  .login-button:hover {
+    background-color: var(--hover-color);
+  }
