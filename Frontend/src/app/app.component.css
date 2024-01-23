@@ -1,7 +1,11 @@
+body{
+  display: flex;
+  flex-direction: column;
+}
+
 .login-container {
-  position: absolute;
-  top: 30px; /* Passen Sie diesen Wert an, um den gewünschten Abstand zu erreichen */
-  right: 35px;
+  align-self: flex-end;  
+  margin-right: 20px; 
 }
 
 .cards-container {
