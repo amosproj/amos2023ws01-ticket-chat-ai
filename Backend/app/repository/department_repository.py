@@ -14,10 +14,14 @@ class DepartmentRepository:
         logger.info("Creating department in the database...")
         return self.collection.insert_one(document=department)
 
-    def read_departments(self, department_id: ObjectId = None) -> list[DepartmentEntity]:
+    def read_departments(
+        self, department_id: ObjectId = None
+    ) -> list[DepartmentEntity]:
         logger.info("Reading department/s from the database...")
         return list(
-            self.collection.find(filter={"_id": department_id} if department_id else None)
+            self.collection.find(
+                filter={"_id": department_id} if department_id else None
+            )
         )
 
     def update_department(
