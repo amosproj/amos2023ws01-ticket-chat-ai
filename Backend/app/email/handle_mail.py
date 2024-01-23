@@ -6,13 +6,22 @@ from bs4 import BeautifulSoup
 from logger import logger
 
 
-def can_be_processed(message):
+def can_be_processed(message, blacklisted_emails):
     """
-    should return false if the email was automatically generated or is from blocked user, will be implemented in later sprint
-    :param message:
-    :return boolean:
+    Returns False if the email is in the blacklist.
+    :param message: Email message object
+    :return: bool
     """
     logger.info("Checking if email can be processed...")
+
+    # Extract sender's email address
+    sender = message.get("From", "")
+
+    # Check if the sender is in the blacklist
+    if any(blacklisted_email in sender for blacklisted_email in blacklisted_emails):
+        logger.warning(f"Ignoring email from the blacklist: {sender}")
+        return False
+
     return True
 
 
@@ -51,13 +60,28 @@ def process(message: Message):
             and "attachment" not in content_disposition
         ):
             charset = part.get_content_charset()
-            content = part.get_payload(decode=True).decode(charset)
+
+            # if charset is none we fallback to default UTF-8,
+            # if it fails because of an unknown different charset we fallback to part.as_string()
+            if charset:
+                content = part.get_payload(decode=True).decode(charset)
+            else:
+                try:
+                    content = part.get_payload(decode=True).decode()
+                except UnicodeDecodeError:
+                    content = part.as_string()
         elif (
             part.get_content_type() == "text/html"
             and "attachment" not in content_disposition
         ):
             charset = part.get_content_charset()
-            soup = BeautifulSoup(part.get_payload(decode=True).decode(charset))
+            if charset:
+                soup = BeautifulSoup(part.get_payload(decode=True).decode(charset))
+            else:
+                try:
+                    soup = BeautifulSoup(part.get_payload(decode=True).decode())
+                except UnicodeDecodeError:
+                    soup = BeautifulSoup(part.as_string())
             content = soup.get_text()
         elif (
             part.get_content_maintype() in ["image", "application", "text"]

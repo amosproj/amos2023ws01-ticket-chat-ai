@@ -19,7 +19,7 @@ def save_mail():
     smtp_server = config["DEFAULT"]["SMTP_SERVER"]
     try:
         with Proxy.EmailProxy(
-            imap_server, smtp_server, email_address, password
+            imap_server, smtp_server, email_address, password, []
         ) as proxy:
             msg_nums = proxy.spin()
             print("spun")

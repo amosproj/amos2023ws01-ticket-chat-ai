@@ -1,0 +1,1930 @@
+[
+      {
+         "text":[
+            "I am experiencing technical issues with SAP ERP. I am unable to access certain functions in the system."
+         ],
+         "ticket":{
+            "title":"Technical Issues with SAP ERP",
+            "service":"SAP ERP",
+            "category":"4HANA -> Technical Issues",
+            "keywords":[
+               "technical",
+               "issues",
+               "SAP ERP"
+            ],
+            "customerPriority":"Disruption but can work",
+            "affectedPerson":"Doe, John",
+            "description":"I am experiencing technical issues with SAP ERP. I am unable to access certain functions in the system.",
+            "priority":"Medium",
+            "requestType":"Incident"
+         }
+      },
+      {
+         "text":[
+            "I am having trouble with my Salesforce Apex integration. The integration is not functioning as expected."
+         ],
+         "ticket":{
+            "title":"Trouble with Salesforce Apex integration",
+            "service":"Salesforce",
+            "category":"Apex -> Technical Issues",
+            "keywords":[
+               "trouble",
+               "Salesforce",
+               "Apex"
+            ],
+            "customerPriority":"Disruption cannot work",
+            "affectedPerson":"Smith, Emily",
+            "description":"I am having trouble with my Salesforce Apex integration. The integration is not functioning as expected.",
+            "priority":"High",
+            "requestType":"Incident"
+         }
+      },
+      {
+         "text":[
+            "I need assistance with Microsoft Power Apps. I am unable to create a new app using the platform."
+         ],
+         "ticket":{
+            "title":"Assistance with Microsoft Power Apps",
+            "service":"Microsoft Power Platform",
+            "category":"Microsoft Power Apps -> Technical Issues",
+            "keywords":[
+               "assistance",
+               "Microsoft Power Apps"
+            ],
+            "customerPriority":"Disruption several cannot work",
+            "affectedPerson":"Johnson, Michael",
+            "description":"I need assistance with Microsoft Power Apps. I am unable to create a new app using the platform.",
+            "priority":"Very High",
+            "requestType":"Incident"
+         }
+      },
+      {
+         "text":[
+            "I have a question regarding Tableau reporting. How can I create a custom report in Tableau?"
+         ],
+         "ticket":{
+            "title":"Question about Tableau reporting",
+            "service":"Reporting",
+            "category":"Tableau -> Product Inquiries",
+            "keywords":[
+               "question",
+               "Tableau",
+               "reporting"
+            ],
+            "customerPriority":"Disruption but can work",
+            "affectedPerson":"Brown, Jessica",
+            "description":"I have a question regarding Tableau reporting. How can I create a custom report in Tableau?",
+            "priority":"Medium",
+            "requestType":"Service Request"
+         }
+      },
+      {
+         "text":[
+            "I am facing technical issues with Microsoft Power BI. The software is crashing frequently."
+         ],
+         "ticket":{
+            "title":"Technical Issues with Microsoft Power BI",
+            "service":"Microsoft Power Platform",
+            "category":"Microsoft Power BI -> Technical Issues",
+            "keywords":[
+               "technical",
+               "issues",
+               "Microsoft Power BI"
+            ],
+            "customerPriority":"Disruption cannot work",
+            "affectedPerson":"Wilson, David",
+            "description":"I am facing technical issues with Microsoft Power BI. The software is crashing frequently.",
+            "priority":"High",
+            "requestType":"Incident"
+         }
+      },
+      {
+         "text":[
+            "I need help with Microsoft SharePoint. I am unable to upload files to a specific document library."
+         ],
+         "ticket":{
+            "title":"Need help with Microsoft SharePoint",
+            "service":"Microsoft Power Platform",
+            "category":"Microsoft SharePoint -> Technical Issues",
+            "keywords":[
+               "help",
+               "Microsoft SharePoint"
+            ],
+            "customerPriority":"Disruption but can work",
+            "affectedPerson":"Jones, Sarah",
+            "description":"I need help with Microsoft SharePoint. I am unable to upload files to a specific document library.",
+            "priority":"Medium",
+            "requestType":"Incident"
+         }
+      },
+      {
+         "text":[
+            "I am encountering technical issues with Snowflake. The database queries are returning incorrect results."
+         ],
+         "ticket":{
+            "title":"Technical Issues with Snowflake",
+            "service":"Snowflake",
+            "category":"Snowflake -> Technical Issues",
+            "keywords":[
+               "technical",
+               "issues",
+               "Snowflake"
+            ],
+            "customerPriority":"Disruption cannot work",
+            "affectedPerson":"Taylor, Andrew",
+            "description":"I am encountering technical issues with Snowflake. The database queries are returning incorrect results.",
+            "priority":"High",
+            "requestType":"Incident"
+         }
+      },
+      {
+         "text":[
+            "I have a question about Microsoft Word. How can I add page numbers to my document?"
+         ],
+         "ticket":{
+            "title":"Question about Microsoft Word",
+            "service":"Microsoft Office",
+            "category":"Microsoft Word -> Product Inquiries",
+            "keywords":[
+               "question",
+               "Microsoft Word"
+            ],
+            "customerPriority":"Disruption but can work",
+            "affectedPerson":"Miller, Christopher",
+            "description":"I have a question about Microsoft Word. How can I add page numbers to my document?",
+            "priority":"Medium",
+            "requestType":"Service Request"
+         }
+      },
+      {
+         "text":[
+            "I am experiencing technical issues with SAP ERP. The system is not displaying the correct pricing for products."
+         ],
+         "ticket":{
+            "title":"Technical Issues with SAP ERP",
+            "service":"SAP ERP",
+            "category":"4HANA -> Billing & Payment",
+            "keywords":[
+               "technical",
+               "issues",
+               "SAP ERP"
+            ],
+            "customerPriority":"Disruption but can work",
+            "affectedPerson":"Anderson, Linda",
+            "description":"I am experiencing technical issues with SAP ERP. The system is not displaying the correct pricing for products.",
+            "priority":"Medium",
+            "requestType":"Incident"
+         }
+      },
+      {
+         "text":[
+            "I need help with Adobe Illustrator. I am unable to save my file in the desired format."
+         ],
+         "ticket":{
+            "title":"Need help with Adobe Illustrator",
+            "service":"Adobe",
+            "category":"Illustrator -> Technical Issues",
+            "keywords":[
+               "help",
+               "Adobe Illustrator"
+            ],
+            "customerPriority":"Disruption but can work",
+            "affectedPerson":"Harris, Olivia",
+            "description":"I need help with Adobe Illustrator. I am unable to save my file in the desired format.",
+            "priority":"Medium",
+            "requestType":"Incident"
+         }
+      },
+      {
+         "text":[
+            "I am facing technical issues with Atlassian Jira. I am unable to create a new project in Jira."
+         ],
+         "ticket":{
+            "title":"Technical Issues with Jira",
+            "service":"Atlassian",
+            "category":"Jira -> Technical Issues",
+            "keywords":[
+               "technical",
+               "issues",
+               "Atlassian Jira"
+            ],
+            "customerPriority":"Disruption cannot work",
+            "affectedPerson":"Clark, William",
+            "description":"I am facing technical issues with Atlassian Jira. I am unable to create a new project in Jira.",
+            "priority":"High",
+            "requestType":"Incident"
+         }
+      },
+      {
+         "text":[
+            "I have a question about Salesforce Trailhead. How can I access the training videos?"
+         ],
+         "ticket":{
+            "title":"Question about Salesforce Trailhead",
+            "service":"Salesforce",
+            "category":"Trailhead -> Product Inquiries",
+            "keywords":[
+               "question",
+               "Salesforce Trailhead"
+            ],
+            "customerPriority":"Disruption but can work",
+            "affectedPerson":"Turner, Elizabeth",
+            "description":"I have a question about Salesforce Trailhead. How can I access the training videos?",
+            "priority":"Medium",
+            "requestType":"Service Request"
+         }
+      },
+      {
+         "text":[
+            "I need assistance with Adobe Photoshop. How can I remove the background from an image?"
+         ],
+         "ticket":{
+            "title":"Assistance with Adobe Photoshop",
+            "service":"Adobe",
+            "category":"Photoshop -> Product Inquiries",
+            "keywords":[
+               "assistance",
+               "Adobe Photoshop"
+            ],
+            "customerPriority":"Disruption but can work",
+            "affectedPerson":"Ward, Daniel",
+            "description":"I need assistance with Adobe Photoshop. How can I remove the background from an image?",
+            "priority":"Medium",
+            "requestType":"Service Request"
+         }
+      },
+      {
+         "text":[
+            "I am encountering technical issues with SnowSQL. I am unable to connect to the Snowflake database."
+         ],
+         "ticket":{
+            "title":"Technical Issues with SnowSQL",
+            "service":"Snowflake",
+            "category":"SnowSQL -> Technical Issues",
+            "keywords":[
+               "technical",
+               "issues",
+               "SnowSQL"
+            ],
+            "customerPriority":"Disruption cannot work",
+            "affectedPerson":"Young, Jennifer",
+            "description":"I am encountering technical issues with SnowSQL. I am unable to connect to the Snowflake database.",
+            "priority":"High",
+            "requestType":"Incident"
+         }
+      },
+      {
+         "text":[
+            "I need help with Microsoft Office. How can I recover a document that I accidentally deleted?"
+         ],
+         "ticket":{
+            "title":"Need help with Microsoft Office",
+            "service":"Microsoft Office",
+            "category":"Microsoft Office -> Product Inquiries",
+            "keywords":[
+               "help",
+               "Microsoft Office"
+            ],
+            "customerPriority":"Disruption but can work",
+            "affectedPerson":"Lee, Jennifer",
+            "category":"Microsoft Office -> Product Inquiries",
+            "keywords":[
+               "help",
+               "Microsoft Office"
+            ],
+            "customerPriority":"Disruption but can work",
+            "affectedPerson":"Lee, Jennifer",
+            "description":"I need help with Microsoft Office. How can I recover a document that I accidentally deleted?",
+            "priority":"Medium",
+            "requestType":"Service Request"
+         }
+      },
+   {
+    "text": [
+      "I am unable to access the SAP ERP system. It gives me an error message stating 'Connection failed'."
+    ],
+    "ticket": {
+      "title": "Unable to access SAP ERP",
+      "service": "SAP ERP",
+      "category": "4HANA -> Technical Issues",
+      "keywords": ["connection", "failed", "access"],
+      "customerPriority": "Disruption but can work",
+      "affectedPerson": "Doe, John",
+      "description": "I am experiencing issues while trying to access the SAP ERP system. Every time I try to log in, I receive an error message stating 'Connection failed'. Please assist.",
+      "priority": "High",
+      "requestType": "Incident"
+    }
+  },
+  {
+    "text": [
+      "I am having trouble with billing and payment in SAP ERP 4HANA. The invoices are not being generated correctly."
+    ],
+    "ticket": {
+      "title": "Billing and payment issue in SAP ERP 4HANA",
+      "service": "SAP ERP",
+      "category": "4HANA -> Billing & Payment",
+      "keywords": ["billing", "payment", "invoices"],
+      "customerPriority": "Disruption cannot work",
+      "affectedPerson": "Smith, Emily",
+      "description": "I am facing difficulties with the billing and payment process in SAP ERP 4HANA. The generated invoices do not contain accurate information and the payment system is not functioning properly. This is causing significant disruptions in our financial processes. Urgent assistance is required.",
+      "priority": "Very High",
+      "requestType": "Incident"
+    }
+  },
+  {
+    "text": [
+      "I have a product inquiry regarding SAP ERP 4HANA. I need information about the latest product features and updates."
+    ],
+    "ticket": {
+      "title": "Product inquiry for SAP ERP 4HANA",
+      "service": "SAP ERP",
+      "category": "4HANA -> Product Inquiries",
+      "keywords": ["product", "inquiry", "features", "updates"],
+      "customerPriority": "Disruption but can work",
+      "affectedPerson": "Johnson, Michael",
+      "description": "I would like to inquire about the latest features and updates available in SAP ERP 4HANA. Please provide me with information regarding the enhancements and improvements in the system.",
+      "priority": "Medium",
+      "requestType": "Service Request"
+    }
+  },
+  {
+    "text": [
+      "I have a question regarding account management in SAP ERP 4HANA. How can I update my personal information?"
+    ],
+    "ticket": {
+      "title": "Question about account management in SAP ERP 4HANA",
+      "service": "SAP ERP",
+      "category": "4HANA -> Account Management",
+      "keywords": ["question", "account", "management", "personal information"],
+      "customerPriority": "Disruption but can work",
+      "affectedPerson": "Brown, Sarah",
+      "description": "I need assistance with updating my personal information in the SAP ERP 4HANA system. I have recently changed my address and contact details and would like to ensure that the system reflects these changes. Please guide me on how to update my account information.",
+      "priority": "Low",
+      "requestType": "Service Request"
+    }
+  },
+  {
+    "text": [
+      "I have policy-related questions regarding SAP ERP 4HANA. Can you provide me with details about the system's data retention policy?"
+    ],
+    "ticket": {
+      "title": "Policy questions for SAP ERP 4HANA",
+      "service": "SAP ERP",
+      "category": "4HANA -> Policy Questions",
+      "keywords": ["policy", "questions", "data retention"],
+      "customerPriority": "Disruption but can work",
+      "affectedPerson": "Jones, Lisa",
+      "description": "I have a few questions regarding the data retention policy of SAP ERP 4HANA. Could you please provide me with information regarding how long the system retains different types of data? I need this information for compliance and auditing purposes.",
+      "priority": "Medium",
+      "requestType": "Service Request"
+    }
+  },
+  {
+    "text": [
+      "I am experiencing technical issues with SAP ERP HANA. The system is frequently crashing and causing delays in our business processes."
+    ],
+    "ticket": {
+      "title": "Technical issues with SAP ERP HANA",
+      "service": "SAP ERP",
+      "category": "HANA -> Technical Issues",
+      "keywords": ["technical issues", "crashing", "delays"],
+      "customerPriority": "Disruption cannot work",
+      "affectedPerson": "Wilson, Robert",
+      "description": "We are facing consistent technical issues with SAP ERP HANA. The system crashes frequently, leading to significant delays in our business processes. This disruption is severely impacting our productivity. Urgent resolution is required.",
+      "priority": "Very High",
+      "requestType": "Incident"
+    }
+  },
+  {
+    "text": [
+      "There seems to be an issue with billing and payment in SAP ERP HANA. The invoices are not being generated accurately."
+    ],
+    "ticket": {
+      "title": "Billing and payment issue in SAP ERP HANA",
+      "service": "SAP ERP",
+      "category": "HANA -> Billing & Payment",
+      "keywords": ["billing", "payment", "invoices"],
+      "customerPriority": "Disruption cannot work",
+      "affectedPerson": "Taylor, Jessica",
+      "description": "We are facing problems with the billing and payment process in SAP ERP HANA. The invoices generated do not contain accurate information, and this is causing discrepancies in our financial records. Urgent resolution is required as this is impacting our financial reporting and reconciliation processes.",
+      "priority": "High",
+      "requestType": "Incident"
+    }
+  },
+  {
+    "text": [
+      "I have a product inquiry regarding SAP ERP HANA. Is there any documentation available for new features and updates?"
+    ],
+    "ticket": {
+      "title": "Product inquiry for SAP ERP HANA",
+      "service": "SAP ERP",
+      "category": "HANA -> Product Inquiries",
+      "keywords": ["product", "inquiry", "documentation", "features", "updates"],
+      "customerPriority": "Disruption but can work",
+      "affectedPerson": "Miller, Christopher",
+      "description": "I would like to inquire about the availability of documentation for new features and updates in SAP ERP HANA. I need this information to understand the enhancements and improvements in the system.",
+      "priority": "Medium",
+      "requestType": "Service Request"
+    }
+  },
+  {
+    "text": [
+      "I have a question regarding account management in SAP ERP HANA. How can I update my contact details?"
+    ],
+    "ticket": {
+      "title": "Question about account management in SAP ERP HANA",
+      "service": "SAP ERP",
+      "category": "HANA -> Account Management",
+      "keywords": ["question", "account", "management", "contact details"],
+      "customerPriority": "Disruption but can work",
+      "affectedPerson": "Anderson, Jennifer",
+      "description": "I need assistance with updating my contact details in the SAP ERP HANA system. I have recently changed my phone number and email address, and it is essential that these changes are reflected accurately. Please guide me on how to update my account information.",
+      "priority": "Low",
+      "requestType": "Service Request"
+    }
+  },
+  {
+    "text": [
+      "I have policy-related questions regarding SAP ERP HANA. Can you provide me with details about the system's backup and recovery policy?"
+    ],
+    "ticket": {
+      "title": "Policy questions for SAP ERP HANA",
+      "service": "SAP ERP",
+      "category": "HANA -> Policy Questions",
+      "keywords": ["policy", "questions", "backup", "recovery"],
+      "customerPriority": "Disruption but can work",
+      "affectedPerson": "Martinez, Maria",
+      "description": "I have a few questions regarding the backup and recovery policy of SAP ERP HANA. Could you please provide me with information regarding the frequency of backups and the steps for recovery in the event of system failure? This information is essential for our disaster recovery planning.",
+      "priority": "Medium",
+      "requestType": "Service Request"
+    }
+  },
+  {
+    "text": [
+      "I am facing technical issues with Jira. The system is running slow and causing delays in our project management activities."
+    ],
+    "ticket": {
+      "title": "Technical issues with Jira",
+      "service": "Atlassian",
+      "category": "Jira -> Technical Issues",
+      "keywords": ["technical issues", "slow", "delays"],
+      "customerPriority": "Disruption cannot work",
+      "affectedPerson": "Smith, John",
+      "description": "We are encountering technical issues with Jira, which is our primary project management tool. The system's performance is significantly slow, leading to delays in our project activities. This disruption iscausing hindrances in our team's productivity. Urgent resolution is required.",
+      "priority": "High",
+      "requestType": "Incident"
+    }
+  },
+  {
+    "text": [
+      "I am experiencing difficulties with billing and payment in Jira. The invoices are not being generated correctly, and payments are not being processed."
+    ],
+    "ticket": {
+      "title": "Billing and payment issue in Jira",
+      "service": "Atlassian",
+      "category": "Jira -> Billing & Payment",
+      "keywords": ["billing", "payment", "invoices"],
+      "customerPriority": "Disruption cannot work",
+      "affectedPerson": "Johnson, Sarah",
+      "description": "We are facing problems with billing and payment in Jira. The invoices generated do not contain accurate information, and the payment processing system is not functioning correctly. This disruption is affecting our financial processes and cash flow. Urgent resolution is required.",
+      "priority": "Very High",
+      "requestType": "Incident"
+    }
+  },
+  {
+    "text": [
+      "I have a product inquiry regarding Jira. Can you provide me with information about new features and updates?"
+    ],
+    "ticket": {
+      "title": "Product inquiry for Jira",
+      "service": "Atlassian",
+      "category": "Jira -> Product Inquiries",
+      "keywords": ["product", "inquiry", "features", "updates"],
+      "customerPriority": "Disruption but can work",
+      "affectedPerson": "Brown, David",
+      "description": "I would like to inquire about the latest features and updates available in Jira. Could you please provide me with information regarding any enhancements in the system and new functionalities that we can leverage for our project management?",
+      "priority": "Medium",
+      "requestType": "Service Request"
+    }
+  },
+  {
+    "text": [
+      "I have a question regarding account management in Jira. How can I invite new team members to our projects?"
+    ],
+    "ticket": {
+      "title": "Question about account management in Jira",
+      "service": "Atlassian",
+      "category": "Jira -> Account Management",
+      "keywords": ["question", "account", "management", "team members", "projects"],
+      "customerPriority": "Disruption but can work",
+      "affectedPerson": "Williams, Jessica",
+      "description": "I need assistance with account management in Jira. Specifically, I would like guidance on how to invite new team members to our projects. We have recently onboarded new employees, and it is essential to grant them access to the relevant Jira boards and tasks. Please provide instructions on how to manage team members within Jira.",
+      "priority": "Low",
+      "requestType": "Service Request"
+    }
+  },
+  {
+    "text": [
+      "I have policy-related questions regarding Jira. Can you provide me with details about the system's data retention policy?"
+    ],
+    "ticket": {
+      "title": "Policy questions for Jira",
+      "service": "Atlassian",
+      "category": "Jira -> Policy Questions",
+      "keywords": ["policy", "questions", "data retention"],
+      "customerPriority": "Disruption but can work",
+      "affectedPerson": "Jones, Michael",
+      "description": "I have a few questions regarding the data retention policy of Jira. Could you please provide me with information regarding how long the system retains different types of data? This information is essentialfor compliance and data governance purposes.",
+      "priority": "Medium",
+      "requestType": "Service Request"
+    }
+  },
+    {
+            "text": [
+                "I am experiencing technical issues with my SAP ERP system.",
+                "I am unable to generate billing and payment reports.",
+                "I have inquiries about the products available in SAP ERP.",
+                "I need assistance with account management in SAP ERP."
+            ],
+            "ticket": {
+                "title": "SAP ERP Technical Issues",
+                "service": "SAP ERP",
+                "category": "4HANA -> Technical Issues",
+                "keywords": ["technical issues"],
+                "customerPriority": "Disruption cannot work",
+                "affectedPerson": "Doe, John",
+                "description": "I am unable to log in to my SAP ERP system and access any of the functionalities.",
+                "priority": "High",
+                "requestType": "Incident"
+            }
+        },
+        {
+            "text": [
+                "I am having trouble with the Atlassian Jira software.",
+                "I am not able to create new projects.",
+                "I have questions about the account management features in Jira.",
+                "I need assistance with billing and payment in Jira."
+            ],
+            "ticket": {
+                "title": "Atlassian Jira Troubles",
+                "service": "Atlassian",
+                "category": "Jira -> Technical Issues",
+                "keywords": ["trouble", "account management"],
+                "customerPriority": "Disruption but can work",
+                "affectedPerson": "Smith, Jessica",
+                "description": "Whenever I try to create a new project in Jira, I get an error message and the project is not created.",
+                "priority": "Medium",
+                "requestType": "Incident"
+            }
+        },
+        {
+            "text": [
+                "I am facing technical issues with Adobe Illustrator.",
+                "The software crashes every time I try to open a file.",
+                "I have inquiries about billing and payment for Adobe Illustrator.",
+                "I need help with account management in Adobe Illustrator."
+            ],
+            "ticket": {
+                "title": "Adobe Illustrator Technical Issues",
+                "service": "Adobe",
+                "category": "Illustrator -> Technical Issues",
+                "keywords": ["crashes", "billing and payment"],
+                "customerPriority": "Disruption cannot work",
+                "affectedPerson": "Brown, Emily",
+                "description": "Every time I try to open a file in Adobe Illustrator, the software crashes unexpectedly.",
+                "priority": "High",
+                "requestType": "Incident"
+            }
+        },
+        {
+            "text": [
+                "I am having trouble with Salesforce Apex.",
+                "I am unable to execute my Apex code successfully.",
+                "I have questions about product inquiries related to Salesforce Apex.",
+                "I need assistance with account management in Salesforce Apex."
+            ],
+            "ticket": {
+                "title": "Salesforce Apex Troubles",
+                "service": "Salesforce",
+                "category": "Apex -> Technical Issues",
+                "keywords": ["trouble", "product inquiries"],
+                "customerPriority": "Disruption but can work",
+                "affectedPerson": "Johnson, Michael",
+                "description": "I have been trying to execute my Apex code in Salesforce, but I keep encountering errors.",
+                "priority": "Medium",
+                "requestType": "Incident"
+            }
+        },
+        {
+            "text": [
+                "I am experiencing technical issues with Tableau for reporting.",
+                "I am unable to publish my reports.",
+                "I have inquiries about the account management options in Tableau.",
+                "I need assistance with billing and payment for Tableau."
+            ],
+            "ticket": {
+                "title": "Tableau Reporting Technical Issues",
+                "service": "Reporting",
+                "category": "Tableau -> Technical Issues",
+                "keywords": ["publish", "account management"],
+                "customerPriority": "Disruption cannot work",
+                "affectedPerson": "Taylor, David",
+                "description": "Whenever I try to publish a report in Tableau, the process fails and the report does not get published.",
+                "priority": "High",
+                "requestType": "Incident"
+            }
+        },
+        {
+            "text": [
+                "I am facing technical issues with Microsoft Power Apps.",
+                "My Power Apps are not functioning properly.",
+                "I have inquiries about billing and payment options for Microsoft Power Apps.",
+                "I need help with account management in Microsoft Power Apps."
+            ],
+            "ticket": {
+                "title": "Microsoft Power Apps Troubles",
+                "service": "Microsoft Power Platform",
+                "category": "Microsoft Power Apps -> Technical Issues",
+                "keywords": ["not functioning", "billing and payment"],
+                "customerPriority": "Disruption cannot work",
+                "affectedPerson": "Anderson, Sarah",
+                "description": "None of my Power Apps are functioning as expected and they are not responsive.",
+                "priority": "High",
+                "requestType": "Incident"
+            }
+        },
+        {
+            "text": [
+                "I am having trouble with Microsoft SharePoint.",
+                "I am unable to access certain files and folders.",
+                "I have questions about the product inquiries related to Microsoft SharePoint.",
+                "I need assistance with account management in Microsoft SharePoint."
+            ],
+            "ticket": {
+                "title": "Microsoft SharePoint Troubles",
+                "service": "Microsoft Power Platform",
+                "category": "Microsoft SharePoint -> Technical Issues",
+                "keywords": ["trouble", "product inquiries"],
+                "customerPriority": "Disruption but can work",
+                "affectedPerson": "Wilson, Robert",
+                "description": "I am unable to access specific files and folders in Microsoft SharePoint, even though I have proper permissions.",
+                "priority": "Medium",
+                "requestType": "Incident"
+            }
+        },
+        {
+            "text": [
+                "I am experiencing technical issues with Snowflake.",
+                "Queries in Snowflake are not returning results as expected.",
+                "I have inquiries about billing and payment for Snowflake.",
+                "I need help with account management in Snowflake."
+            ],
+            "ticket": {
+                "title": "Snowflake Technical Issues",
+                "service": "Snowflake",
+                "category": "Snowflake -> Technical Issues",
+                "keywords": ["queries", "billing and payment"],
+                "customerPriority": "Disruption cannot work",
+                "affectedPerson": "Miller, James",
+                "description": "The SQL queries I execute in Snowflake do not return any results, even though they should.",
+                "priority": "High",
+                "requestType": "Incident"
+            }
+        },
+        {
+            "text": [
+                "I am having trouble with Microsoft Word in the Microsoft Office suite.",
+                "The application freezes whenever I try to write a long document.",
+                "I have questions about billing and payment for Microsoft Office.",
+                "I need assistance with account management in Microsoft Office."
+            ],
+            "ticket": {
+                "title": "Microsoft Word Freezing",
+                "service": "Microsoft Office",
+                "category": "Microsoft Word -> Technical Issues",
+                "keywords": ["freezes", "billing and payment"],
+                "customerPriority": "Disruption but can work",
+                "affectedPerson": "Clark, Elizabeth",
+                "description": "Whenever I try to write a long document in Microsoft Word, the application freezes and becomes unresponsive.",
+                "priority": "Medium",
+                "requestType": "Incident"
+            }
+        },
+        {
+            "text": [
+                "I need help with installing Adobe Photoshop.",
+                "The installation process keeps failing.",
+                "I have inquiries about the account management features in Adobe Photoshop.",
+                "I need assistance with billing and payment for Adobe Photoshop."
+            ],
+            "ticket": {
+                "title": "Adobe Photoshop Installation",
+                "service": "Adobe",
+                "category": "Photoshop -> Technical Issues",
+                "keywords": ["installation", "account management"],
+                "customerPriority": "Disruption but can work",
+                "affectedPerson": "Walker, Andrew",
+                "description": "I have been trying to install Adobe Photoshop on my computer, but the installation process keeps failing.",
+                "priority": "Medium",
+                "requestType": "Incident"
+            }
+        },
+  {
+      "text": [
+        "Subject: Issue with SAP ERP",
+        "Description: I am experiencing technical issues with SAP ERP. The system is running very slowly and I am unable to access certain functions."
+      ],
+      "ticket": {
+        "service": "SAP ERP",
+        "category": "4HANA -> Technical Issues",
+        "customerPriority": "Disruption but can work",
+        "priority": "High",
+        "requestType": "Incident"
+      }
+    },
+    {
+      "text": [
+        "Subject: Problem with Atlassian Jira",
+        "Description: I am having trouble logging in to Atlassian Jira. Whenever I enter my credentials, I receive an error message."
+      ],
+      "ticket": {
+        "service": "Atlassian",
+        "category": "Jira -> Technical Issues",
+        "customerPriority": "Disruption cannot work",
+        "priority": "Medium",
+        "requestType": "Incident"
+      }
+    },
+    {
+      "text": [
+        "Subject: Adobe Illustrator - Payment Issues",
+        "Description: I have been trying to make a payment for Adobe Illustrator, but the payment is not going through. Please assist."
+      ],
+      "ticket": {
+        "service": "Adobe",
+        "category": "Illustrator -> Billing & Payment",
+        "customerPriority": "Disruption several cannot work",
+        "priority": "High",
+        "requestType": "Service Request"
+      }
+    },
+    {
+      "text": [
+        "Subject: Salesforce Apex - Product Inquiry",
+        "Description: I have a question regarding the Apex feature in Salesforce. I would like to know how to customize certain functionalities."
+      ],
+      "ticket": {
+        "service": "Salesforce",
+        "category": "Apex -> Product Inquiries",
+        "customerPriority": "Disruption but can work",
+        "priority": "Medium",
+        "requestType": "Service Request"
+      }
+    },
+    {
+      "text": [
+        "Subject: Reporting with Tableau",
+        "Description: I am having trouble generating reports using Tableau. The data is not being displayed correctly and I am getting error messages."
+      ],
+      "ticket": {
+        "service": "Reporting",
+        "category": "Tableau -> Technical Issues",
+        "customerPriority": "Disruption cannot work",
+        "priority": "High",
+        "requestType": "Incident"
+      }
+    },
+    {
+      "text": [
+        "Subject: Microsoft Power Apps - Account Management",
+        "Description: I need assistance with managing user access in Microsoft Power Apps. I am unsure how to assign roles and permissions."
+      ],
+      "ticket": {
+        "service": "Microsoft Power Platform",
+        "category": "Microsoft Power Apps -> Account Management",
+        "customerPriority": "Disruption but can work",
+        "priority": "Medium",
+        "requestType": "Service Request"
+      }
+    },
+    {
+      "text": [
+        "Subject: Issues with Microsoft SharePoint",
+        "Description: I am encountering technical issues with Microsoft SharePoint. The site is not loading properly and I am unable to access certain documents."
+      ],
+      "ticket": {
+        "service": "Microsoft Power Platform",
+        "category": "Microsoft SharePoint -> Technical Issues",
+        "customerPriority": "Disruption several cannot work",
+        "priority": "High",
+        "requestType": "Incident"
+      }
+    },
+    {
+      "text": [
+        "Subject: Snowflake - Policy Questions",
+        "Description: I have some questions regarding the data retention policies in Snowflake. I would like to understand the limitations and options available."
+      ],
+      "ticket": {
+        "service": "Snowflake",
+        "category": "Snowflake -> Policy Questions",
+        "customerPriority": "Disruption but can work",
+        "priority": "Medium",
+        "requestType": "Service Request"
+      }
+    },
+    {
+      "text": [
+        "Subject: Microsoft Office - Technical Issues",
+        "Description: I am experiencing technical issues with Microsoft Office. Certain features are not functioning properly and I am getting error messages."
+      ],
+      "ticket": {
+        "service": "Microsoft Office",
+        "category": "Microsoft Office -> Technical Issues",
+        "customerPriority": "Disruption cannot work",
+        "priority": "High",
+        "requestType": "Incident"
+      }
+    },
+    {
+      "text": [
+        "Subject: Problem with Microsoft Word",
+        "Description: I am having trouble saving documents in Microsoft Word. Whenever I try to save, the program crashes and I lose my work."
+      ],
+      "ticket": {
+        "service": "Microsoft Office",
+        "category": "Microsoft Word -> Technical Issues",
+        "customerPriority": "Disruption several cannot work",
+        "priority": "Medium",
+        "requestType": "Incident"
+      }
+    },
+  {
+    "text": [
+      "Subject: Issue with SAP ERP 4HANA Technical Issues",
+      "Hello Support Team,",
+      "I am facing some technical issues with SAP ERP 4HANA. The system is crashing frequently and causing disruption in our daily operations. Please assist me in resolving this issue as soon as possible. Thank you.",
+      "Best regards,",
+      "John Smith"
+    ],
+    "ticket": {
+      "service": "SAP ERP",
+      "category": "4HANA -> Technical Issues",
+      "customerPriority": "Disruption cannot work",
+      "priority": "High",
+      "requestType": "Incident"
+    }
+  },
+  {
+    "text": [
+      "Subject: Billing Inquiry for Adobe Illustrator",
+      "Hi Support Team,",
+      "I have a question regarding the billing for Adobe Illustrator. It seems that there is a discrepancy in the charges for the past month. Could you please investigate and provide clarification on this matter? Thank you.",
+      "Best regards,",
+      "Emily Johnson"
+    ],
+    "ticket": {
+      "service": "Adobe",
+      "category": "Illustrator -> Billing & Payment",
+      "customerPriority": "Disruption but can work",
+      "priority": "Medium",
+      "requestType": "Service Request"
+    }
+  },
+  {
+    "text": [
+      "Subject: Technical Issue with Atlassian Jira",
+      "Hello Support Team,",
+      "I am encountering a technical issue with Atlassian Jira. Whenever I try to create a new project, the system throws an error message. This is causing a disruption in our project management process. Kindly assist in resolving this issue. Thank you.",
+      "Regards,",
+      "Michael Brown"
+    ],
+    "ticket": {
+      "service": "Atlassian",
+      "category": "Jira -> Technical Issues",
+      "customerPriority": "Disruption cannot work",
+      "priority": "High",
+      "requestType": "Incident"
+    }
+  },
+  {
+    "text": [
+      "Subject: Service Request for Salesforce Apex",
+      "Hi Support Team,",
+      "I would like to request assistance in developing a custom Apex trigger for Salesforce. We need to automate a specific process in our organization and believe that Apex can help achieve our goals. Please let me know the next steps and how we can proceed with this service request. Thank you.",
+      "Best regards,",
+      "Sarah Davis"
+    ],
+    "ticket": {
+      "service": "Salesforce",
+      "category": "Apex -> Product Inquiries",
+      "customerPriority": "Disruption but can work",
+      "priority": "Medium",
+      "requestType": "Service Request"
+    }
+  },
+  {
+    "text": [
+      "Subject: Technical Issue with Microsoft Power Apps",
+      "Hello Support Team,",
+      "I am facing a technical issue with Microsoft Power Apps. Every time I try to save my changes in the app builder, it throws an error and the changes are not saved. This is causing delays in the development process. Pleaseassist in resolving this issue at the earliest convenience. Thank you.",
+      "Regards,",
+      "Daniel Wilson"
+    ],
+    "ticket": {
+      "service": "Microsoft Power Platform",
+      "category": "Microsoft Power Apps -> Technical Issues",
+      "customerPriority": "Disruption cannot work",
+      "priority": "High",
+      "requestType": "Incident"
+    }
+  },
+  {
+    "text": [
+      "Subject: Billing Inquiry for Tableau",
+      "Hi Support Team,",
+      "I have noticed some discrepancies in the billing for Tableau. The charges seem to be higher than expected for the past month. Could you please review the billing records and provide clarification on this matter? Thank you.",
+      "Best regards,",
+      "Jennifer Lee"
+    ],
+    "ticket": {
+      "service": "Reporting",
+      "category": "Tableau -> Billing & Payment",
+      "customerPriority": "Disruption but can work",
+      "priority": "Medium",
+      "requestType": "Service Request"
+    }
+  },
+  {
+    "text": [
+      "Subject: Technical Issue with Adobe Photoshop",
+      "Hello Support Team,",
+      "I am experiencing a technical issue with Adobe Photoshop. Whenever I try to open large image files, the software crashes. This is causing disruptions in our design workflow. Please provide a solution or workaround for this issue. Thank you.",
+      "Regards,",
+      "Robert Johnson"
+    ],
+    "ticket": {
+      "service": "Adobe",
+      "category": "Photoshop -> Technical Issues",
+      "customerPriority": "Disruption cannot work",
+      "priority": "High",
+      "requestType": "Incident"
+    }
+  },
+  {
+    "text": [
+      "Subject: Service Request for Microsoft SharePoint",
+      "Hi Support Team,",
+      "We would like to request assistance in setting up document libraries and permissions in Microsoft SharePoint. Our team is new to the platform and needs guidance on best practices for organizing and securing our documents. lease let us know how we can proceed with this service request. Thank you.",
+      "Best regards,",
+      "Jonathan Smith"
+    ],
+    "ticket": {
+      "service": "Microsoft Power Platform",
+      "category": "Microsoft SharePoint -> Account Management",
+      "customerPriority": "Disruption but can work",
+      "priority": "Medium",
+      "requestType": "Service Request"
+    }
+  },
+  {
+    "text": [
+      "Subject: Technical Issue with SnowSQL",
+      "Hello Support Team,",
+      "I am having trouble connecting to our Snowflake database using SnowSQL. Every time I try to run a query, it returns an error message. This is affecting our data analysis capabilities. Please assist in resolving this technical issue as soon as possible. Thank you.",
+      "Regards,",
+      "Alice Brown"
+    ],
+    "ticket": {
+      "service": "Snowflake",
+      "category": "SnowSQL -> Technical Issues",
+      "customerPriority": "Disruption cannot work",
+      "priority": "High",
+      "requestType": "Incident"
+    }
+  },
+  {
+    "text": [
+      "Subject: Billing Inquiry for Microsoft Word",
+      "Hi Support Team,",
+      "There seems to be an issue with the billing for Microsoft Word. We have been charged for a license that was not supposed to be renewed. Kindly review our account and rectify this billing discrepancy. Thank you.",
+      "Best regards,",
+      "Thomas Wilson"
+    ],
+    "ticket": {
+      "service": "Microsoft Office",
+      "category": "Microsoft Word -> Billing & Payment",
+      "customerPriority": "Disruption but can work",
+      "priority": "Medium",
+      "requestType": "Service Request"
+    }
+  },
+  {
+    "text": [
+      "I am experiencing technical issues with SAP ERP. I am unable to access certain features."
+    ],
+    "ticket": {
+      "service": "SAP ERP",
+      "category": "4HANA -> Technical Issues",
+      "customerPriority": "Disruption but can work",
+      "priority": "Medium",
+      "requestType": "Incident"
+    }
+  },
+  {
+    "text": [
+      "I need assistance with billing and payment in SAP ERP. I am having trouble processing invoices."
+    ],
+    "ticket": {
+      "service": "SAP ERP",
+      "category": "4HANA -> Billing & Payment",
+      "customerPriority": "Disruption cannot work",
+      "priority": "High",
+      "requestType": "Incident"
+    }
+  },
+  {
+    "text": [
+      "I have a product inquiry regarding SAP ERP. I would like to know how to customize certain modules."
+    ],
+    "ticket": {
+      "service": "SAP ERP",
+      "category": "4HANA -> Product Inquiries",
+      "customerPriority": "Disruption but can work",
+      "priority": "Low",
+      "requestType": "Service Request"
+    }
+  },
+  {
+    "text": [
+      "I need assistance with account management in SAP ERP. I am having trouble updating my contact information."
+    ],
+    "ticket": {
+      "service": "SAP ERP",
+      "category": "4HANA -> Account Management",
+      "customerPriority": "Disruption several cannot work",
+      "priority": "Very High",
+      "requestType": "Incident"
+    }
+  },
+  {
+    "text": [
+      "I have a policy question related to SAP ERP. I would like to know the data retention policies."
+    ],
+    "ticket": {
+      "service": "SAP ERP",
+      "category": "4HANA -> Policy Questions",
+      "customerPriority": "Disruption department cannot work",
+      "priority": "Medium",
+      "requestType": "Service Request"
+    }
+  },
+  {
+    "text": [
+      "I am experiencing technical issues with Adobe Illustrator. The program keeps crashing."
+    ],
+    "ticket": {
+      "service": "Adobe",
+      "category": "Illustrator -> Technical Issues",
+      "customerPriority": "Disruption cannot work",
+      "priority": "High",
+      "requestType": "Incident"
+    }
+  },
+  {
+    "text": [
+      "I need help with billing and payment in Adobe Photoshop. My credit card is not being accepted."
+    ],
+    "ticket": {
+      "service": "Adobe",
+      "category": "Photoshop -> Billing & Payment",
+      "customerPriority": "Disruption several cannot work",
+      "priority": "Very High",
+      "requestType": "Incident"
+    }
+  },
+  {
+    "text": [
+      "I have a product inquiry regarding Salesforce Apex. I would like to know the supported data types."
+    ],
+    "ticket": {
+      "service": "Salesforce",
+      "category": "Apex -> Product Inquiries",
+      "customerPriority": "Disruption cannot work",
+      "priority": "Low",
+      "requestType": "Service Request"
+    }
+  },
+  {
+    "text": [
+      "I need assistance with account management in Salesforce Trailhead. I am unable to reset my password."
+    ],
+    "ticket": {
+      "service": "Salesforce",
+      "category": "Trailhead -> Account Management",
+      "customerPriority": "Disruption department cannot work",
+      "priority": "Medium",
+      "requestType": "Incident"
+    }
+  },
+  {
+    "text": [
+      "I have a policy question related to Reporting Tableau. I would like to know the data privacy measures."
+    ],
+    "ticket": {
+      "service": "Reporting",
+      "category": "Tableau -> Policy Questions",
+      "customerPriority": "Disruption but can work",
+      "priority": "Low",
+      "requestType": "Service Request"
+    }
+  },
+  {
+    "text": [
+      "I am experiencing technical issues with SAP ERP. I am unable to access certain features.",
+      "I have tried troubleshooting on my end, but the problem persists.",
+      "This issue is preventing me from completing important tasks.",
+      "Please assist me in resolving this problem as soon as possible."
+    ],
+    "ticket": {
+      "service": "SAP ERP",
+      "category": "4HANA -> Technical Issues",
+      "customerPriority": "Disruption cannot work",
+      "priority": "High",
+      "requestType": "Incident"
+    }
+  },
+  {
+    "text": [
+      "I have a billing inquiry regarding my Atlassian subscription.",
+      "I received an incorrect invoice and need clarification on the charges.",
+      "I have already reached out to the billing team, but have not received a response.",
+      "Please address this billing issue at your earliest convenience."
+    ],
+    "ticket": {
+      "service": "Atlassian",
+      "category": "Jira -> Billing & Payment",
+      "customerPriority": "Disruption but can work",
+      "priority": "Medium",
+      "requestType": "Service Request"
+    }
+  },
+  {
+    "text": [
+      "I am encountering technical difficulties with Adobe Illustrator.",
+      "The software crashes every time I attempt to open a file.",
+      "I have tried reinstalling the application, but the issue persists.",
+      "Please provide instructions on how to resolve this problem."
+    ],
+    "ticket": {
+      "service": "Adobe",
+      "category": "Illustrator -> Technical Issues",
+      "customerPriority": "Disruption several cannot work",
+      "priority": "Very High",
+      "requestType": "Incident"
+    }
+  },
+  {
+    "text": [
+      "I need assistance with Salesforce Apex development.",
+      "I am encountering errors while writing Apex code.",
+      "I have reviewed the documentation, but I'm still unable to identify the issue.",
+      "Please guide me in debugging and resolving this problem."
+    ],
+    "ticket": {
+      "service": "Salesforce",
+      "category": "Apex -> Technical Issues",
+      "customerPriority": "Disruption department cannot work",
+      "priority": "High",
+      "requestType": "Incident"
+    }
+  },
+  {
+    "text": [
+      "I require support for Tableau reporting.",
+      "I am having trouble creating a complex visualization.",
+      "I have explored various online resources, but I'm unable to achieve the desired result.",
+      "Please provide assistance in designing this report correctly."
+    ],
+    "ticket": {
+      "service": "Reporting",
+      "category": "Tableau -> Technical Issues",
+      "customerPriority": "Disruption cannot work",
+      "priority": "Medium",
+      "requestType": "Service Request"
+    }
+  },
+  {
+    "text": [
+      "I am facing difficulties with Microsoft Power Apps.",
+      "Authentication is failing when attempting to log in to the application.",
+      "I have ensured correct credentials, but the issue persists.",
+      "Please help me troubleshoot and resolve this problem."
+    ],
+    "ticket": {
+      "service": "Microsoft Power Platform",
+      "category": "Microsoft Power Apps -> Technical Issues",
+      "customerPriority": "Disruption but can work",
+      "priority": "High",
+      "requestType": "Incident"
+    }
+  },
+  {
+    "text": [
+      "I need assistance with Microsoft SharePoint.",
+      "I am unable to upload files to a specific document library.",
+      "I have sufficient permissions, but I receive an error message.",
+      "Please guide me through the process of resolving this issue."
+    ],
+    "ticket": {
+      "service": "Microsoft Power Platform",
+      "category": "Microsoft SharePoint -> Technical Issues",
+      "customerPriority": "Disruption several cannot work",
+      "priority": "Very High",
+      "requestType": "Incident"
+    }
+  },
+  {
+    "text": [
+      "I am encountering technical issues with Snowflake.",
+      "Queries are running slower than expected in my Snowflake environment.",
+      "I have tried optimizing my SQL statements, but performance remains poor.",
+      "Please provide guidance in improving the query execution time."
+    ],
+    "ticket": {
+      "service": "Snowflake",
+      "category": "Snowflake -> Technical Issues",
+      "customerPriority": "Disruption cannot work",
+      "priority": "Medium",
+      "requestType": "Service Request"
+    }
+  },
+  {
+    "text": [
+      "I have a technical problem with Microsoft Word.",
+      "The application frequently crashes when editing large documents.",
+      "I have installed the latest updates, but the stability issue continues.",
+      "Please advise on how to resolve this recurring problem."
+    ],
+    "ticket": {
+      "service": "Microsoft Office",
+      "category": "Microsoft Word -> Technical Issues",
+      "customerPriority": "Disruption but can work",
+      "priority": "High",
+      "requestType": "Incident"
+    }
+  },
+  {
+    "text": [
+      "I need assistance with Microsoft Office billing and payment.",
+      "I have been erroneously charged for services I did not subscribe to.",
+      "I have contacted the billing team, but the issue has not been resolved.",
+      "Please address this billing discrepancy urgently."
+    ],
+    "ticket": {
+      "service": "Microsoft Office",
+      "category": "Microsoft Office -> Billing & Payment",
+      "customerPriority": "Disruption department cannot work",
+      "priority": "Very High",
+      "requestType": "Incident"
+    }
+  },
+  {
+        "text": [
+            "I am experiencing technical issues with SAP ERP. The system keeps crashing and I cannot access any of the modules.",
+            "This is causing a disruption in my work as I rely on SAP ERP for important tasks.",
+            "I have tried restarting my computer and clearing the cache, but the issue persists.",
+            "Please let me know how I can resolve this problem as soon as possible.",
+            "Thank you for your assistance.",
+            "Best regards,"
+        ],
+        "ticket": {
+            "service": "SAP ERP",
+            "category": "4HANA -> Technical Issues",
+            "customerPriority": "Disruption cannot work",
+            "priority": "High",
+            "requestType": "Incident"
+        }
+    },
+    {
+        "text": [
+            "I am having trouble with Atlassian Sourcetree. Whenever I try to commit my changes, I receive an error message.",
+            "This is preventing me from pushing my code to the repository and collaborating with my team.",
+            "I have checked my internet connection and made sure Sourcetree is up to date, but the issue persists.",
+            "Please provide assistance on how to resolve this problem.",
+            "Thank you for your attention to this matter.",
+            "Kind regards,"
+        ],
+        "ticket": {
+            "service": "Atlassian",
+            "category": "Sourcetree -> Technical Issues",
+            "customerPriority": "Disruption but can work",
+            "priority": "Medium",
+            "requestType": "Incident"
+        }
+    },
+    {
+        "text": [
+            "I need help with Adobe Photoshop. Whenever I try to open the application, it crashes immediately.",
+            "I have important design projects that I need to work on, but I am unable to access Photoshop.",
+            "I have tried reinstalling the software and updating my graphics drivers, but the issue persists.",
+            "Please assist me in resolving this issue as soon as possible.",
+            "Thank you for your prompt attention to this matter.",
+            "Best regards,"
+        ],
+        "ticket": {
+            "service": "Adobe",
+            "category": "Photoshop -> Technical Issues",
+            "customerPriority": "Disruption cannot work",
+            "priority": "High",
+            "requestType": "Incident"
+        }
+    },
+    {
+        "text": [
+            "I am encountering an issue with Salesforce Apex. Whenever I try to save changes to my code, I receive an error message.",
+            "This is hindering my ability to develop and deploy new functionalities for our Salesforce implementation.",
+            "I have checked the documentation and verified my code syntax, but the issue persists.",
+            "Please provide guidance on how to resolve this problem.",
+            "Thank you for your assistance.",
+            "Kind regards,"
+        ],
+        "ticket": {
+            "service": "Salesforce",
+            "category": "Apex -> Technical Issues",
+            "customerPriority": "Disruption several cannot work",
+            "priority": "High",
+            "requestType": "Incident"
+        }
+    },
+    {
+        "text": [
+            "I need assistance with Tableau reporting. When I try to refresh the data source, it takes an unusually long time and eventually times out.",
+            "As a result, the reports are not up to date and I cannot analyze the latest data.",
+            "I have checked the network connectivity and optimized the data source, but the issue persists.",
+            "Please help me find a solution to this problem.",
+            "Thank you for your attention to this matter.",
+            "Best regards,"
+        ],
+        "ticket": {
+            "service": "Reporting",
+            "category": "Tableau -> Technical Issues",
+            "customerPriority": "Disruption but can work",
+            "priority": "Medium",
+            "requestType": "Incident"
+        }
+    },
+    {
+        "text": [
+            "I am facing a problem with Microsoft Power Apps. The app I created is not functioning correctly and the formulas are not working as intended.",
+            "This is affecting the usability and functionality of the app for our internal users.",
+            "I have double-checked the formulas and reviewed the app settings, but the issue persists.",
+            "Please provide guidance on how to resolve this issue.",
+            "Thank you for your prompt attention to this matter.",
+            "Kind regards,"
+        ],
+        "ticket": {
+            "service": "Microsoft Power Platform",
+            "category": "Microsoft Power Apps -> Technical Issues",
+            "customerPriority": "Disruption but can work",
+            "priority": "Medium",
+            "requestType": "Incident"
+        }
+    },
+    {
+        "text": [
+            "I need help with Microsoft SharePoint. I have set up a new subsite, but I am unable to grant access permissions to specific users.",
+            "This is preventing us from collaborating efficiently and managing access to sensitive information.",
+            "I have followed the documentation and verified my administrator privileges, but the issue persists.",
+            "Please assist me in resolving this problem as soon as possible.",
+            "Thank you for your assistance.",
+            "Best regards,"
+        ],
+        "ticket": {
+            "service": "Microsoft Power Platform",
+            "category": "Microsoft SharePoint -> Technical Issues",
+            "customerPriority": "Disruption but can work",
+            "priority": "Medium",
+            "requestType": "Incident"
+        }
+    },
+    {
+        "text": [
+            "I am experiencing technical issues with Snowflake. The SQL queries that I am executing are taking a very long time to complete.",
+            "This is impacting my data analysis and report generation tasks.",
+            "I have optimized the queries and reviewed the indexes, but the issue persists.",
+            "Please provide guidance on how to improve the query performance.",
+            "Thank you for your attention to this matter.",
+            "Kind regards,"
+        ],
+        "ticket": {
+            "service": "Snowflake",
+            "category": "Snowflake -> Technical Issues",
+            "customerPriority": "Disruption several cannot work",
+            "priority": "High",
+            "requestType": "Incident"
+        }
+    },
+    {
+        "text": [
+            "I need assistance with Microsoft Office. Whenever I try to open Microsoft Word, I receive an error message and the application crashes.",
+            "This is preventing me from editing and creating important documents for my work.",
+            "I have repaired the Office installation and updated to the latest version, but the issue persists.",
+            "Please assist me in resolving this issue as soon as possible.",
+            "Thank you for your prompt attention to this matter.",
+            "Best regards,"
+        ],
+        "ticket": {
+            "service": "Microsoft Office",
+            "category": "Microsoft Word -> Technical Issues",
+            "customerPriority": "Disruption cannot work",
+            "priority": "High",
+            "requestType": "Incident"
+        }
+    },
+    {
+        "text": [
+            "I have a service request related to Adobe Illustrator. I would like to upgrade my current license to a Creative Cloud subscription.",
+            "Please provide information on the available subscription plans and the process for upgrading.",
+            "Thank you for your assistance.",
+            "Kind regards,"
+        ],
+        "ticket": {
+            "service": "Adobe",
+            "category": "Illustrator -> Product Inquiries",
+            "customerPriority": "",
+            "priority": "Medium",
+            "requestType": "Service Request"
+        }
+    },
+  {
+        "text": [
+            "I am experiencing technical issues with SAP ERP. The system keeps crashing and I cannot access any of the modules.",
+            "This is causing a disruption in my work as I rely on SAP ERP for important tasks.",
+            "I have tried restarting my computer and clearing the cache, but the issue persists.",
+            "Please let me know how I can resolve this problem as soon as possible.",
+            "Thank you for your assistance.",
+            "Best regards,"
+        ],
+        "ticket": {
+            "service": "SAP ERP",
+            "category": "4HANA -> Technical Issues",
+            "customerPriority": "Disruption cannot work",
+            "priority": "High",
+            "requestType": "Incident"
+        }
+    },
+    {
+        "text": [
+            "I am having trouble with Atlassian Sourcetree. Whenever I try to commit my changes, I receive an error message.",
+            "This is preventing me from pushing my code to the repository and collaborating with my team.",
+            "I have checked my internet connection and made sure Sourcetree is up to date, but the issue persists.",
+            "Please provide assistance on how to resolve this problem.",
+            "Thank you for your attention to this matter.",
+            "Kind regards,"
+        ],
+        "ticket": {
+            "service": "Atlassian",
+            "category": "Sourcetree -> Technical Issues",
+            "customerPriority": "Disruption but can work",
+            "priority": "Medium",
+            "requestType": "Incident"
+        }
+    },
+    {
+        "text": [
+            "I need help with Adobe Photoshop. Whenever I try to open the application, it crashes immediately.",
+            "I have important design projects that I need to work on, but I am unable to access Photoshop.",
+            "I have tried reinstalling the software and updating my graphics drivers, but the issue persists.",
+            "Please assist me in resolving this issue as soon as possible.",
+            "Thank you for your prompt attention to this matter.",
+            "Best regards,"
+        ],
+        "ticket": {
+            "service": "Adobe",
+            "category": "Photoshop -> Technical Issues",
+            "customerPriority": "Disruption cannot work",
+            "priority": "High",
+            "requestType": "Incident"
+        }
+    },
+    {
+        "text": [
+            "I am encountering an issue with Salesforce Apex. Whenever I try to save changes to my code, I receive an error message.",
+            "This is hindering my ability to develop and deploy new functionalities for our Salesforce implementation.",
+            "I have checked the documentation and verified my code syntax, but the issue persists.",
+            "Please provide guidance on how to resolve this problem.",
+            "Thank you for your assistance.",
+            "Kind regards,"
+        ],
+        "ticket": {
+            "service": "Salesforce",
+            "category": "Apex -> Technical Issues",
+            "customerPriority": "Disruption several cannot work",
+            "priority": "High",
+            "requestType": "Incident"
+        }
+    },
+    {
+        "text": [
+            "I need assistance with Tableau reporting. When I try to refresh the data source, it takes an unusually long time and eventually times out.",
+            "As a result, the reports are not up to date and I cannot analyze the latest data.",
+            "I have checked the network connectivity and optimized the data source, but the issue persists.",
+            "Please help me find a solution to this problem.",
+            "Thank you for your attention to this matter.",
+            "Best regards,"
+        ],
+        "ticket": {
+            "service": "Reporting",
+            "category": "Tableau -> Technical Issues",
+            "customerPriority": "Disruption but can work",
+            "priority": "Medium",
+            "requestType": "Incident"
+        }
+    },
+    {
+        "text": [
+            "I am facing a problem with Microsoft Power Apps. The app I created is not functioning correctly and the formulas are not working as intended.",
+            "This is affecting the usability and functionality of the app for our internal users.",
+            "I have double-checked the formulas and reviewed the app settings, but the issue persists.",
+            "Please provide guidance on how to resolve this issue.",
+            "Thank you for your prompt attention to this matter.",
+            "Kind regards,"
+        ],
+        "ticket": {
+            "service": "Microsoft Power Platform",
+            "category": "Microsoft Power Apps -> Technical Issues",
+            "customerPriority": "Disruption but can work",
+            "priority": "Medium",
+            "requestType": "Incident"
+        }
+    },
+    {
+        "text": [
+            "I need help with Microsoft SharePoint. I have set up a new subsite, but I am unable to grant access permissions to specific users.",
+            "This is preventing us from collaborating efficiently and managing access to sensitive information.",
+            "I have followed the documentation and verified my administrator privileges, but the issue persists.",
+            "Please assist me in resolving this problem as soon as possible.",
+            "Thank you for your assistance.",
+            "Best regards,"
+        ],
+        "ticket": {
+            "service": "Microsoft Power Platform",
+            "category": "Microsoft SharePoint -> Technical Issues",
+            "customerPriority": "Disruption but can work",
+            "priority": "Medium",
+            "requestType": "Incident"
+        }
+    },
+    {
+        "text": [
+            "I am experiencing technical issues with Snowflake. The SQL queries that I am executing are taking a very long time to complete.",
+            "This is impacting my data analysis and report generation tasks.",
+            "I have optimized the queries and reviewed the indexes, but the issue persists.",
+            "Please provide guidance on how to improve the query performance.",
+            "Thank you for your attention to this matter.",
+            "Kind regards,"
+        ],
+        "ticket": {
+            "service": "Snowflake",
+            "category": "Snowflake -> Technical Issues",
+            "customerPriority": "Disruption several cannot work",
+            "priority": "High",
+            "requestType": "Incident"
+        }
+    },
+    {
+        "text": [
+            "I need assistance with Microsoft Office. Whenever I try to open Microsoft Word, I receive an error message and the application crashes.",
+            "This is preventing me from editing and creating important documents for my work.",
+            "I have repaired the Office installation and updated to the latest version, but the issue persists.",
+            "Please assist me in resolving this issue as soon as possible.",
+            "Thank you for your prompt attention to this matter.",
+            "Best regards,"
+        ],
+        "ticket": {
+            "service": "Microsoft Office",
+            "category": "Microsoft Word -> Technical Issues",
+            "customerPriority": "Disruption cannot work",
+            "priority": "High",
+            "requestType": "Incident"
+        }
+    },
+    {
+        "text": [
+            "I have a service request related to Adobe Illustrator. I would like to upgrade my current license to a Creative Cloud subscription.",
+            "Please provide information on the available subscription plans and the process for upgrading.",
+            "Thank you for your assistance.",
+            "Kind regards,"
+        ],
+        "ticket": {
+            "service": "Adobe",
+            "category": "Illustrator -> Product Inquiries",
+            "customerPriority": "",
+            "priority": "Medium",
+            "requestType": "Service Request"
+        }
+    },
+  {
+    "text": [
+      "I am having trouble accessing my SAP ERP account.",
+      "I am unable to login and receive an error message.",
+      "This issue is preventing me from completing my tasks."
+    ],
+    "ticket": {
+      "service": "SAP ERP",
+      "category": "4HANA -> Technical Issues",
+      "customerPriority": "Disruption cannot work",
+      "priority": "High",
+      "requestType": "Incident"
+    }
+  },
+  {
+    "text": [
+      "I need assistance with configuring Jira for my team.",
+      "I am having trouble setting up project workflows.",
+      "I would like guidance on best practices for using Jira."
+    ],
+    "ticket": {
+      "service": "Atlassian",
+      "category": "Jira -> Account Management",
+      "customerPriority": "Disruption but can work",
+      "priority": "Medium",
+      "requestType": "Service Request"
+    }
+  },
+  {
+    "text": [
+      "I am experiencing frequent crashes in Adobe Illustrator.",
+      "The software freezes when I try to open large files.",
+      "This issue is impacting my productivity."
+    ],
+    "ticket": {
+      "service": "Adobe",
+      "category": "Illustrator -> Technical Issues",
+      "customerPriority": "Disruption several cannot work",
+      "priority": "Very High",
+      "requestType": "Incident"
+    }
+  },
+  {
+    "text": [
+      "I need help troubleshooting an Apex code error in Salesforce.",
+      "The code is throwing an unexpected exception.",
+      "I am unable to deploy my changes to production."
+    ],
+    "ticket": {
+      "service": "Salesforce",
+      "category": "Apex -> Technical Issues",
+      "customerPriority": "Disruption but can work",
+      "priority": "Medium",
+      "requestType": "Incident"
+    }
+  },
+  {
+    "text": [
+      "I am unable to access my Tableau reports.",
+      "The login page keeps refreshing and not loading the reports.",
+      "This issue is affecting multiple users in my organization."
+    ],
+    "ticket": {
+      "service": "Reporting",
+      "category": "Tableau -> Technical Issues",
+      "customerPriority": "Disruption department cannot work",
+      "priority": "High",
+      "requestType": "Incident"
+    }
+  },
+  {
+    "text": [
+      "I need assistance with creating a Microsoft Power App.",
+      "I am new to the platform and need step-by-step guidance.",
+      "I would like to integrate the app with SharePoint."
+    ],
+    "ticket": {
+      "service": "Microsoft Power Platform",
+      "category": "Microsoft Power Apps -> Product Inquiries",
+      "customerPriority": "Disruption but can work",
+      "priority": "Medium",
+      "requestType": "Service Request"
+    }
+  },
+  {
+    "text": [
+      "I am experiencing performance issues in Snowflake.",
+      "Queries are taking too long to execute.",
+      "This issue is impacting our data analytics process."
+    ],
+    "ticket": {
+      "service": "Snowflake",
+      "category": "Snowflake -> Technical Issues",
+      "customerPriority": "Disruption cannot work",
+      "priority": "High",
+      "requestType": "Incident"
+    }
+  },
+  {
+    "text": [
+      "I need assistance with Microsoft Office licensing.",
+      "I am unsure about which plan to choose for my organization.",
+      "I would like to upgrade to the latest version of Microsoft Word."
+    ],
+    "ticket": {
+      "service": "Microsoft Office",
+      "category": "Microsoft Office -> Product Inquiries",
+      "customerPriority": "Disruption but can work",
+      "priority": "Medium",
+      "requestType": "Service Request"
+    }
+  },
+  {
+    "text": [
+      "I am having trouble accessing my SharePoint site.",
+      "The site is showing an 'Access Denied' error.",
+      "This issue is preventing me from collaborating with my team."
+    ],
+    "ticket": {
+      "service": "Microsoft Power Platform",
+      "category": "Microsoft SharePoint -> Technical Issues",
+      "customerPriority": "Disruption cannot work",
+      "priority": "High",
+      "requestType": "Incident"
+    }
+  },
+  {
+    "text": [
+      "I am experiencing formatting issues in Microsoft Word.",
+      "The document layout is not rendering correctly.",
+      "This issue is impacting my document editing workflow."
+    ],
+    "ticket": {
+      "service": "Microsoft Office",
+      "category": "Microsoft Word -> Technical Issues",
+      "customerPriority": "Disruption but can work",
+      "priority": "Medium",
+      "requestType": "Incident"
+    }
+  },
+  {
+    "text": [
+      "I am experiencing technical issues with my SAP ERP system.",
+      "I need assistance regarding billing and payment in SAP ERP.",
+      "I have a product inquiry related to SAP ERP.",
+      "I need help with account management in SAP ERP.",
+      "I have some policy questions regarding SAP ERP."
+    ],
+    "ticket": {
+      "service": "SAP ERP",
+      "category": "4HANA -> Technical Issues",
+      "customerPriority": "Disruption but can work",
+      "priority": "High",
+      "requestType": "Incident"
+    }
+  },
+  {
+    "text": [
+      "I am having problems with HANA in my SAP ERP system.",
+      "I need assistance with billing and payment in HANA.",
+      "I have a product inquiry related to HANA in SAP ERP.",
+      "I need help with account management in HANA.",
+      "I have some policy questions regarding HANA in SAP ERP."
+    ],
+    "ticket": {
+      "service": "SAP ERP",
+      "category": "HANA -> Billing & Payment",
+      "customerPriority": "Disruption cannot work",
+      "priority": "Medium",
+      "requestType": "Incident"
+    }
+  },
+  {
+    "text": [
+      "I am encountering technical issues with Jira.",
+      "I need assistance regarding billing and payment in Jira.",
+      "I have a product inquiry related to Jira.",
+      "I need help with account management in Jira.",
+      "I have some policy questions regarding Jira."
+    ],
+    "ticket": {
+      "service": "Atlassian",
+      "category": "Jira -> Technical Issues",
+      "customerPriority": "Disruption cannot work",
+      "priority": "High",
+      "requestType": "Incident"
+    }
+  },
+  {
+    "text": [
+      "I am facing technical issues with Sourcetree.",
+      "I need assistance regarding billing and payment in Sourcetree.",
+      "I have a product inquiry related to Sourcetree.",
+      "I need help with account management in Sourcetree.",
+      "I have some policy questions regarding Sourcetree."
+    ],
+    "ticket": {
+      "service": "Atlassian",
+      "category": "Sourcetree -> Billing & Payment",
+      "customerPriority": "Disruption several cannot work",
+      "priority": "Very High",
+      "requestType": "Incident"
+    }
+  },
+  {
+    "text": [
+      "I am encountering technical issues with Adobe Illustrator.",
+      "I need assistance regarding billing and payment in Illustrator.",
+      "I have a product inquiry related to Illustrator.",
+      "I need help with account management in Illustrator.",
+      "I have some policy questions regarding Illustrator."
+    ],
+    "ticket": {
+      "service": "Adobe",
+      "category": "Illustrator -> Technical Issues",
+      "customerPriority": "Disruption but can work",
+      "priority": "Medium",
+      "requestType": "Incident"
+    }
+  },
+  {
+    "text": [
+      "I am facing technical issues with Adobe Photoshop.",
+      "I need assistance regarding billing and payment in Photoshop.",
+      "I have a product inquiry related to Photoshop.",
+      "I need help with account management in Photoshop.",
+      "I have some policy questions regarding Photoshop."
+    ],
+    "ticket": {
+      "service": "Adobe",
+      "category": "Photoshop -> Billing & Payment",
+      "customerPriority": "Disruption department cannot work",
+      "priority": "High",
+      "requestType": "Incident"
+    }
+  },
+  {
+    "text": [
+      "I am experiencing technical issues with Salesforce Apex.",
+      "I need assistance regarding billing and payment in Apex.",
+      "I have a product inquiry related to Apex.",
+      "I need help with account management in Apex.",
+      "I have some policy questions regarding Apex."
+    ],
+    "ticket": {
+      "service": "Salesforce",
+      "category": "Apex -> Technical Issues",
+      "customerPriority": "Disruption cannot work",
+      "priority": "Low",
+      "requestType": "Service Request"
+    }
+  },
+  {
+    "text": [
+      "I am encountering technical issues with Salesforce Trailhead.",
+      "I need assistance regarding billing and payment in Trailhead.",
+      "I have a product inquiry related to Trailhead.",
+      "I need help with account management in Trailhead.",
+      "I have some policy questions regarding Trailhead."
+    ],
+    "ticket": {
+      "service": "Salesforce",
+      "category": "Trailhead -> Billing & Payment",
+      "customerPriority": "Disruption several cannot work",
+      "priority": "Very High",
+      "requestType": "Incident"
+    }
+  },
+  {
+    "text": [
+      "I am facing technical issues with Tableau reporting.",
+      "I need assistance regarding billing and payment in Tableau.",
+      "I have a product inquiry related to Tableau.",
+      "I need help with account management in Tableau.",
+      "I have some policy questions regarding Tableau."
+    ],
+    "ticket": {
+      "service": "Reporting",
+      "category": "Tableau -> Technical Issues",
+      "customerPriority": "Disruption cannot work",
+      "priority": "Medium",
+      "requestType": "Incident"
+    }
+  },
+  {
+    "text": [
+      "I am experiencing technical issues with Microsoft PowerApps.",
+      "I need assistance regarding billing and payment in Microsoft PowerApps.",
+      "I have a product inquiry related to Microsoft PowerApps.",
+      "I need help with account management in Microsoft PowerApps.",
+      "I have some policy questions regarding Microsoft PowerApps."
+    ],
+    "ticket": {
+      "service": "Microsoft Power Platform",
+      "category": "Microsoft Power Apps -> Technical Issues",
+      "customerPriority": "Disruption department cannot work",
+      "priority": "High",
+      "requestType": "Incident"
+    }
+  }
+
+
+]
