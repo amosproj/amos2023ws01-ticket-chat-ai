@@ -23,6 +23,6 @@ export class SignupDialogComponent {
   }
 
   signup() {
-    // Implement your signup logic here
+    console.log('signup');
   }
 }
