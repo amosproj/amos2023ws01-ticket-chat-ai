@@ -38,7 +38,7 @@ def generate_valid_token():
     return jwt.encode(to_encode, SECRET_KEY, algorithm=ALGORITHM)
 
 
-# @pytest.mark.skipif(condition=SKIP_TEST, reason=".env on git")
+@pytest.mark.skipif(condition=SKIP_TEST, reason=".env on git")
 class TestAPI:
     def test_login_for_access_token_success(self, client):
         response = client.post(
