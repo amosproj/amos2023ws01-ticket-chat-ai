@@ -13,12 +13,14 @@ import { MatCardModule } from '@angular/material/card';
 import { MatDialogModule } from '@angular/material/dialog';
 import { RequestTypeDialogComponent } from './request-type-dialog/request-type-dialog.component';
 import { LoginDialogComponent } from './login-dialog/login-dialog.component';
+import { SignupDialogComponent } from './signup-dialog/signup-dialog.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     RequestTypeDialogComponent,
-    LoginDialogComponent
+    LoginDialogComponent,
+    SignupDialogComponent
   ],
   imports: [
     BrowserModule,
