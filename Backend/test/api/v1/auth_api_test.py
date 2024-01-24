@@ -73,6 +73,7 @@ class TestAPI:
         assert response.status_code == 401
 
     def test_signup_user_success(self, client, mock_user_repository):
+        # Configure the mock with now existing user
         mock_user_repository.read_users_by_email.return_value = []
         response = client.post(
             "/api/v1/signup",
@@ -87,7 +88,7 @@ class TestAPI:
         assert response.status_code == 200
 
     def test_signup_user_email_exists(self, client, mock_user_repository):
-        # Konfiguriere den Mock, um anzuzeigen, dass die E-Mail bereits vorhanden ist
+        # Configure the mock to show that the email already exists
         mock_user_repository.read_users_by_email.return_value = [
             {"email_address": "existing@example.com"}
         ]
