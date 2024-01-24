@@ -17,6 +17,7 @@
     background-color: var(--main-bg-color);
     text-align: center;
     width: 400px;
+    height: 100%;
 }
 
 .error-message {

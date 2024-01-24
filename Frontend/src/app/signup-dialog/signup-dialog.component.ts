@@ -10,7 +10,9 @@ import { AuthService } from '../service/auth.service';
 export class SignupDialogComponent {
   email: string = '';
   password: string = '';
-  name: string = '';
+  confirmpassword: string = '';
+  firstname: string = '';
+  lastname:string = '';
   officeLocation: string = '';
   errorMessage: string = '';
 
@@ -23,6 +25,26 @@ export class SignupDialogComponent {
   }
 
   signup() {
-    console.log('signup');
-  }
+    if (this.password !== this.confirmpassword) {
+      this.errorMessage = "Passwords do not match.";
+      return;
+    }
+    if (!this.email || !this.password || !this.officeLocation) {
+      this.errorMessage = "Required field missing";
+      return;
+    }
+  
+    // Send data to the backend if validation is successful
+    this.authService.signup(this.firstname, this.lastname, this.email, this.password, this.officeLocation)
+      .subscribe({
+        next: (response) => {
+          // Handle successful signup
+          this.dialogRef.close();
+        },
+        error: (errorMessage) => {
+          this.errorMessage = errorMessage;
+          }
+        }
+    );
+  } 
 }

@@ -14,6 +14,7 @@ import { MatDialogModule } from '@angular/material/dialog';
 import { RequestTypeDialogComponent } from './request-type-dialog/request-type-dialog.component';
 import { LoginDialogComponent } from './login-dialog/login-dialog.component';
 import { SignupDialogComponent } from './signup-dialog/signup-dialog.component';
+import { MatSelectModule } from '@angular/material/select';
 
 @NgModule({
   declarations: [
@@ -35,6 +36,7 @@ import { SignupDialogComponent } from './signup-dialog/signup-dialog.component';
     MatDialogModule,
     MatInputModule,
     MatIconModule,
+    MatSelectModule,
   ],
   providers: [],
   bootstrap: [AppComponent]

@@ -38,7 +38,7 @@ def generate_valid_token():
     return jwt.encode(to_encode, SECRET_KEY, algorithm=ALGORITHM)
 
 
-@pytest.mark.skipif(condition=SKIP_TEST, reason=".env on git")
+# @pytest.mark.skipif(condition=SKIP_TEST, reason=".env on git")
 class TestAPI:
     def test_login_for_access_token_success(self, client):
         response = client.post(
@@ -71,3 +71,34 @@ class TestAPI:
             "/api/v1/verify-token", headers={"Authorization": f"Bearer {valid_token}"}
         )
         assert response.status_code == 401
+
+    def test_signup_user_success(self, client, mock_user_repository):
+        mock_user_repository.read_users_by_email.return_value = []
+        response = client.post(
+            "/api/v1/signup",
+            json={
+                "firstname": "Test",
+                "lastname": "User",
+                "email": "newuser@example.com",
+                "password": "password",
+                "officeLocation": "Berlin",
+            },
+        )
+        assert response.status_code == 200
+
+    def test_signup_user_email_exists(self, client, mock_user_repository):
+        # Konfiguriere den Mock, um anzuzeigen, dass die E-Mail bereits vorhanden ist
+        mock_user_repository.read_users_by_email.return_value = [
+            {"email_address": "existing@example.com"}
+        ]
+        response = client.post(
+            "/api/v1/signup",
+            json={
+                "firstname": "Existing",
+                "lastname": "User",
+                "email": "existing@example.com",
+                "password": "password",
+                "officeLocation": "Berlin",
+            },
+        )
+        assert response.status_code == 405

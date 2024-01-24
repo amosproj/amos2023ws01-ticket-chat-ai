@@ -104,7 +104,7 @@ export class AppComponent implements OnInit {
     const dialogRef = this.dialog.open(SignupDialogComponent);
   
     dialogRef.afterClosed().subscribe(result => {
-      console.log('hello sign-up')
+      this.chatMessages.push({ messageText: "You have successfully signed up.", isUser: false, files: this.files });
     });
   }
 

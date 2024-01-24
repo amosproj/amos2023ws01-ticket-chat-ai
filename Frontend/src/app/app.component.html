@@ -18,7 +18,7 @@
   <div class="login-container" *ngIf="!isLoggedIn">
     <button
     mat-raised-button color="primary" (click)="openLoginDialog()">Login</button>
-    <button mat-button class="signup-button" (click)="openSignupDialog()">Sign Up</button>
+    <button mat-raised-button class="signup-button" (click)="openSignupDialog()">Sign Up</button>
   </div>
   <div class="login-container" *ngIf="isLoggedIn">
     <button

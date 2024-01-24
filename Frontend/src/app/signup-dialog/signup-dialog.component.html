@@ -7,21 +7,41 @@
       <div *ngIf="errorMessage" class="error-message">
         {{ errorMessage }}
       </div>
+
+      <mat-form-field appearance="fill">
+        <mat-label>Firstname</mat-label>
+        <input matInput type="text" [(ngModel)]="firstname">
+      </mat-form-field>
+
+      <mat-form-field appearance="fill">
+        <mat-label>Lastname</mat-label>
+        <input matInput type="text" [(ngModel)]="lastname">
+      </mat-form-field>
+
       <mat-form-field appearance="fill">
         <mat-label>E-Mail</mat-label>
         <input matInput type="email" [(ngModel)]="email">
       </mat-form-field>
+
       <mat-form-field appearance="fill">
         <mat-label>Password</mat-label>
         <input matInput type="password" [(ngModel)]="password">
       </mat-form-field>
+
       <mat-form-field appearance="fill">
-        <mat-label>Name</mat-label>
-        <input matInput type="text" [(ngModel)]="name">
+        <mat-label>Confirm password</mat-label>
+        <input matInput type="password" [(ngModel)]="confirmpassword">
       </mat-form-field>
-      <mat-form-field appearance="fill">
+
+      <mat-form-field>
         <mat-label>Office Location</mat-label>
-        <input matInput type="text" [(ngModel)]="officeLocation">
+        <mat-select [(ngModel)]="officeLocation">
+          <mat-option value="Berlin">Berlin</mat-option>
+          <mat-option value="Frankfurt">Frankfurt</mat-option>
+          <mat-option value="Fürth">Fürth</mat-option>
+          <mat-option value="München">München</mat-option>
+          <mat-option value="Nürnberg">Nürnberg</mat-option>
+        </mat-select>
       </mat-form-field>
       <button mat-button class="signup-button" (click)="signup()">Sign Up</button>
     </mat-dialog-content>
