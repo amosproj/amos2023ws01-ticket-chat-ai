@@ -27,7 +27,7 @@ export class LoginDialogComponent {
 
         this.loading = false;
         if (response.success) {
-          this.dialogRef.close({ email: this.email });
+          this.dialogRef.close({loginSuccess: true, email: this.email });
         } else {
           this.errorMessage = 'Login data not correct.';
         }

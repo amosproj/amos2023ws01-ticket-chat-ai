@@ -39,12 +39,27 @@ export class SignupDialogComponent {
       .subscribe({
         next: (response) => {
           // Handle successful signup
-          this.dialogRef.close();
+          this.performLogin(this.email, this.password);
         },
         error: (errorMessage) => {
           this.errorMessage = errorMessage;
           }
         }
     );
-  } 
+  }
+
+  performLogin(email: string, password: string) {
+    this.authService.login(email, password).subscribe({
+      next: (response) => {
+        if (response.success) {
+          this.dialogRef.close({ signupSuccess: true, email: email});
+        } else {
+          this.errorMessage = 'Login failed.';
+        }
+      },
+      error: (error) => {
+        this.errorMessage = 'An error occurred during login.';
+      }
+    });
+  }
 }
