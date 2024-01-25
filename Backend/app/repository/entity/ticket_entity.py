@@ -19,3 +19,4 @@ class TicketEntity(TypedDict):
     priority: Prio
     attachments: list[AttachmentEntity]
     requestType: str
+    draftMode: bool

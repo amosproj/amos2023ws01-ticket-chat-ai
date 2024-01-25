@@ -59,6 +59,11 @@ async def process_text(
                 logger.info("Setting ticket's service to user's location...")
                 received_dict["service"] = user.location
 
+    if not input.email or received_dict["requestType"]:
+        received_dict["draftMode"] = False
+    else:
+        received_dict["draftMode"] = True
+
     # Save the ticket to the database using the TicketDBService
     logger.info("Saving ticket to the database...")
     created_ticket = ticket_db_service.create_ticket(received_dict)

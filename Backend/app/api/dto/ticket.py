@@ -17,3 +17,4 @@ class Ticket(BaseModel):
     priority: Prio | None
     attachmentNames: list[str] = []
     requestType: str | None
+    draftMode: bool = True
