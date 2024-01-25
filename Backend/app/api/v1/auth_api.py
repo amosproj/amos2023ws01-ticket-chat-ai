@@ -106,3 +106,55 @@ async def signup_user(
     user_repo.create_user(user_data)
     logger.info("User inserted into database..")
     return {"message": "User created successfully"}
+
+
+@router.post("/edit")
+async def edit_user(
+    edit_data: OAuth2PasswordRequestForm = Depends(),
+    user_repo: UserRepository = Depends(get_user_repository),
+):
+    is_authenticated = user_repo.authenticate_user(
+        email=edit_data.username, password=edit_data.password
+    )
+    if not is_authenticated:
+        raise HTTPException(
+            status_code=402,
+            detail="Incorrect email or password",
+            headers={"WWW-Authenticate": "Bearer"},
+        )
+
+    scope_list = edit_data.scopes
+    firstname = scope_list[0]
+    lastname = scope_list[1]
+    email = scope_list[2]
+    password = scope_list[3]
+    officeLocation = scope_list[4]
+    """
+    logger.info("Extracting User data..")
+    old_password = edit_data.get("old_password")
+    old_email = edit_data.get("old_email")
+    firstname = edit_data.get("firstname")
+    lastname = edit_data.get("lastname")
+    email = edit_data.get("email")
+    password = edit_data.get("password")
+    officeLocation = edit_data.get("officeLocation")
+    """
+    logger.info("Verifying if new Email is already in use..")
+    if user_repo.read_users_by_email(email):
+        raise HTTPException(status_code=405, detail="Email already in use")
+    logger.info("Email is valid..")
+
+    user_data = {
+        "firstname": firstname,
+        "lastname": lastname,
+        "email_address": email,
+        "password": password,
+        "officeLocation": officeLocation,
+    }
+
+    user = user_repo.read_users_by_email(edit_data.username)[-1]
+    user_id = user["_id"]
+
+    user_repo.update_user(user_id, user_data)
+    logger.info("User updated into database..")
+    return {"message": "User updated successfully"}
