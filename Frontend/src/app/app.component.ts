@@ -94,17 +94,24 @@ export class AppComponent implements OnInit {
   openLoginDialog() {
     const dialogRef = this.dialog.open(LoginDialogComponent);
     dialogRef.afterClosed().subscribe(result => {
-      // logic after closing dialog
-      this.emailInput = result.email;
-      this.isLoggedIn = true;
+      if (result?.loginSuccess){ 
+        // logic after closing dialog
+        this.emailInput = result.email;
+        this.isLoggedIn = true;
+        this.chatMessages.push({ messageText: "You have successfully logged in.", isUser: false, files: this.files });
+      }  
     });
   }
 
   openSignupDialog() {
     const dialogRef = this.dialog.open(SignupDialogComponent);
-  
+
     dialogRef.afterClosed().subscribe(result => {
-      this.chatMessages.push({ messageText: "You have successfully signed up.", isUser: false, files: this.files });
+      if (result?.signupSuccess){
+        this.emailInput = result.email;
+        this.isLoggedIn = true;
+        this.chatMessages.push({ messageText: "You have successfully signed up and logged in.", isUser: false, files: this.files });
+      }
     });
   }
 
