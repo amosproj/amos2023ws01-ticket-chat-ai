@@ -1,5 +1,5 @@
 import {Injectable} from '@angular/core';
-import {HttpClient} from '@angular/common/http';
+import {HttpClient, HttpErrorResponse} from '@angular/common/http';
 import {Observable, throwError} from 'rxjs';
 import {tap, catchError} from 'rxjs/operators';
 import {LogService} from './logging.service';
@@ -12,6 +12,7 @@ import {of} from 'rxjs';
 export class AuthService {
   private apiUrl = environment.apiUrl + 'api/v1/token';
   private apiUrl1 = environment.apiUrl + 'api/v1/verify-token';
+  private apiUrl2 = environment.apiUrl + 'api/v1/signup';
 
   constructor(private http: HttpClient, private logger: LogService) {}
 
@@ -38,6 +39,36 @@ export class AuthService {
         })
       );
   }
+
+  signup(firstname: string, lastname: string, email: string, password: string, officeLocation: string): Observable<any> {
+    return this.http.post<any>(this.apiUrl2, { firstname, lastname, email, password, officeLocation })
+      .pipe(
+        catchError(this.handleError)
+      );
+  }
+
+  private handleError(error: any) {
+    let errorMessage = 'An unknown error occurred during signup.';
+    if (error.error instanceof ErrorEvent) {
+      // Client and Server Error
+      errorMessage = `Error: ${error.error.message}`;
+    } else {
+      // Backend Error report
+      switch (error.status) {
+        case 405:
+          errorMessage = "Email is already in use.";
+          break;
+        // maybe mor cases
+        default:
+          if (error.error.detail) {
+            errorMessage = `Error Code: ${error.status}\nMessage: ${error.error.detail}`;
+          }
+          break;
+      }
+    }
+    return throwError(errorMessage);
+  }
+
 
   checkLoginStatus(): void {
     const token = localStorage.getItem('access_token');

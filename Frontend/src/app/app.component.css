@@ -8,6 +8,10 @@ body{
   margin-right: 20px; 
 }
 
+.signup-button{
+  margin-left: 5px; 
+}
+
 .cards-container {
   display: flex;
   justify-content: space-between;
@@ -196,6 +200,7 @@ body{
   display: flex;
   justify-content: space-between;
   margin-bottom: 10px;
+  margin-right: 20px;
 }
 
 .request-type-button {

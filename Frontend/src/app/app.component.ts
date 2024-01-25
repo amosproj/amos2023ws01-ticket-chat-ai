@@ -6,6 +6,7 @@ import {Ticket} from "./entities/ticket.dto";
 import {MatDialog} from '@angular/material/dialog';
 import {RequestTypeDialogComponent} from './request-type-dialog/request-type-dialog.component';
 import {LoginDialogComponent} from './login-dialog/login-dialog.component';
+import {SignupDialogComponent} from './signup-dialog/signup-dialog.component';
 import {jwtDecode} from "jwt-decode";
 import {HttpClient} from '@angular/common/http';
 import { AuthService } from './service/auth.service';
@@ -96,6 +97,14 @@ export class AppComponent implements OnInit {
       // logic after closing dialog
       this.emailInput = result.email;
       this.isLoggedIn = true;
+    });
+  }
+
+  openSignupDialog() {
+    const dialogRef = this.dialog.open(SignupDialogComponent);
+  
+    dialogRef.afterClosed().subscribe(result => {
+      this.chatMessages.push({ messageText: "You have successfully signed up.", isUser: false, files: this.files });
     });
   }
 

@@ -1,0 +1,58 @@
+:host {
+    --main-bg-color: #313131;
+    --accent-color: #ff69b4;
+    --hover-color: #ff1493;
+    --text-color: #fff;
+}
+
+.dialog-title {
+    background-color: var(--main-bg-color);
+    text-align: center;
+    font-size: 24px;
+    color: var(--accent-color);
+    margin-bottom: 20px;
+}
+
+.dialog-content {
+    background-color: var(--main-bg-color);
+    text-align: center;
+    width: 400px;
+    height: 100%;
+}
+
+.error-message {
+    font-size: 16px;
+    color: red;
+    margin: 15px;
+}
+
+mat-dialog-content {
+    display: flex;
+    flex-direction: column;
+}
+
+.mat-form-field {
+    margin-bottom: 20px;
+}
+
+.close-button {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    color: white;
+}
+
+.signup-button {
+    background-color: var(--accent-color);
+    color: var(--text-color);
+    font-size: 18px;
+    text-transform: capitalize;
+    padding: 10px 20px;
+    margin: 10px 0;
+    cursor: pointer;
+    transition: background-color 0.3s ease-in-out;
+}
+
+.signup-button:hover {
+    background-color: var(--hover-color);
+}
