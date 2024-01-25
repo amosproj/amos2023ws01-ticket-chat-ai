@@ -23,6 +23,7 @@
   <div class="login-container" *ngIf="isLoggedIn">
     <button
     mat-raised-button color="primary" (click)="logout()">Logout</button>
+    <button mat-raised-button class="signup-button" (click)="openEditDialog()">Edit User</button>
   </div>
 
   <div class="cards-container">

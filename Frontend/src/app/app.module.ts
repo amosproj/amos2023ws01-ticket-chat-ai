@@ -14,6 +14,7 @@ import { MatDialogModule } from '@angular/material/dialog';
 import { RequestTypeDialogComponent } from './request-type-dialog/request-type-dialog.component';
 import { LoginDialogComponent } from './login-dialog/login-dialog.component';
 import { SignupDialogComponent } from './signup-dialog/signup-dialog.component';
+import { EditDialogComponent } from './edit-dialog/edit-dialog.component';
 import { MatSelectModule } from '@angular/material/select';
 
 @NgModule({
@@ -21,7 +22,8 @@ import { MatSelectModule } from '@angular/material/select';
     AppComponent,
     RequestTypeDialogComponent,
     LoginDialogComponent,
-    SignupDialogComponent
+    SignupDialogComponent,
+    EditDialogComponent
   ],
   imports: [
     BrowserModule,

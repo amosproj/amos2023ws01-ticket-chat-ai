@@ -14,6 +14,7 @@ export class AuthService {
   private apiUrl1 = environment.apiUrl + 'api/v1/verify-token';
   private apiUrl2 = environment.apiUrl + 'api/v1/signup';
   private apiUrl3 = environment.apiUrl + 'api/v1/edit';
+  private apiUrl4 = environment.apiUrl + 'api/v1/getuserinfo';
 
   constructor(private http: HttpClient, private logger: LogService) {}
 
@@ -49,13 +50,14 @@ export class AuthService {
   }
 
   edit(old_email: string, old_password: string, firstname: string, lastname: string, email: string, password: string, officeLocation: string): Observable<any> {
-    const userData = new FormData();
-    userData.append('username', email);
-    userData.append('password', password);
-    scope = [firstname, lastname, email, password, officeLocation];
-    userData.append('scopes', scope);
+    return this.http.post<any>(this.apiUrl3, { old_email, old_password, firstname, lastname, email, password, officeLocation })
+      .pipe(
+        catchError(this.handleError)
+      );
+  }
 
-    return this.http.post<any>(this.apiUrl3, userData)
+  getuserinfo(email: string): Observable<any> {
+    return this.http.post<any>(this.apiUrl4, { email })
       .pipe(
         catchError(this.handleError)
       );

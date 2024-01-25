@@ -7,6 +7,7 @@ import {MatDialog} from '@angular/material/dialog';
 import {RequestTypeDialogComponent} from './request-type-dialog/request-type-dialog.component';
 import {LoginDialogComponent} from './login-dialog/login-dialog.component';
 import {SignupDialogComponent} from './signup-dialog/signup-dialog.component';
+import {EditDialogComponent} from './edit-dialog/edit-dialog.component';
 import {jwtDecode} from "jwt-decode";
 import {HttpClient} from '@angular/common/http';
 import { AuthService } from './service/auth.service';
@@ -94,12 +95,12 @@ export class AppComponent implements OnInit {
   openLoginDialog() {
     const dialogRef = this.dialog.open(LoginDialogComponent);
     dialogRef.afterClosed().subscribe(result => {
-      if (result?.loginSuccess){ 
+      if (result?.loginSuccess){
         // logic after closing dialog
         this.emailInput = result.email;
         this.isLoggedIn = true;
         this.chatMessages.push({ messageText: "You have successfully logged in.", isUser: false, files: this.files });
-      }  
+      }
     });
   }
 
@@ -111,6 +112,37 @@ export class AppComponent implements OnInit {
         this.emailInput = result.email;
         this.isLoggedIn = true;
         this.chatMessages.push({ messageText: "You have successfully signed up and logged in.", isUser: false, files: this.files });
+      }
+    });
+  }
+
+  openEditDialog() {
+    const dialogRef = this.dialog.open(EditDialogComponent);
+    this.authService.getuserinfo(this.emailInput).subscribe(
+          response => {
+          dialogRef.componentInstance.firstname = response.firstname;
+          dialogRef.componentInstance.lastname = response.lastname;
+          dialogRef.componentInstance.officeLocation = response.officeLocation;
+        },
+        error => {
+          this.errorMessage = 'User not found.';
+        });
+    dialogRef.componentInstance.old_email = this.emailInput ;
+    dialogRef.componentInstance.email = this.emailInput ;
+
+    dialogRef.afterClosed().subscribe(result => {
+      if (result?.editSuccess){
+        this.logout();
+        this.authService.login(result.email, result.password).subscribe(
+          response => {
+          this.isLoggedIn = true;
+          this.emailInput = result.email;
+        },
+        error => {
+          this.errorMessage = 'An error occurred during login.';
+        }
+        );
+        this.chatMessages.push({ messageText: "You have successfully edited your data!", isUser: false, files: this.files });
       }
     });
   }

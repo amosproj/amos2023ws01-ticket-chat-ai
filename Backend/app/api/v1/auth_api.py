@@ -36,6 +36,8 @@ async def login_for_access_token(
     user_repo: UserRepository = Depends(get_user_repository),
 ):
     # check userdata
+    print(form_data.username)
+    print(form_data.password)
     is_authenticated = user_repo.authenticate_user(
         email=form_data.username, password=form_data.password
     )
@@ -110,26 +112,9 @@ async def signup_user(
 
 @router.post("/edit")
 async def edit_user(
-    edit_data: OAuth2PasswordRequestForm = Depends(),
+    edit_data: dict = Body(...),  # Using Body to accept a JSON object
     user_repo: UserRepository = Depends(get_user_repository),
 ):
-    is_authenticated = user_repo.authenticate_user(
-        email=edit_data.username, password=edit_data.password
-    )
-    if not is_authenticated:
-        raise HTTPException(
-            status_code=402,
-            detail="Incorrect email or password",
-            headers={"WWW-Authenticate": "Bearer"},
-        )
-
-    scope_list = edit_data.scopes
-    firstname = scope_list[0]
-    lastname = scope_list[1]
-    email = scope_list[2]
-    password = scope_list[3]
-    officeLocation = scope_list[4]
-    """
     logger.info("Extracting User data..")
     old_password = edit_data.get("old_password")
     old_email = edit_data.get("old_email")
@@ -138,11 +123,22 @@ async def edit_user(
     email = edit_data.get("email")
     password = edit_data.get("password")
     officeLocation = edit_data.get("officeLocation")
-    """
-    logger.info("Verifying if new Email is already in use..")
-    if user_repo.read_users_by_email(email):
-        raise HTTPException(status_code=405, detail="Email already in use")
-    logger.info("Email is valid..")
+
+    is_authenticated = user_repo.authenticate_user(
+        email=old_email, password=old_password
+    )
+    if not is_authenticated:
+        raise HTTPException(
+            status_code=402,
+            detail="Incorrect email or password",
+            headers={"WWW-Authenticate": "Bearer"},
+        )
+
+    if old_email != email:
+        logger.info("Verifying if new Email is already in use..")
+        if user_repo.read_users_by_email(email):
+            raise HTTPException(status_code=405, detail="Email already in use")
+        logger.info("Email is valid..")
 
     user_data = {
         "firstname": firstname,
@@ -152,9 +148,27 @@ async def edit_user(
         "officeLocation": officeLocation,
     }
 
-    user = user_repo.read_users_by_email(edit_data.username)[-1]
+    user = user_repo.read_users_by_email(old_email)[-1]
     user_id = user["_id"]
 
     user_repo.update_user(user_id, user_data)
     logger.info("User updated into database..")
     return {"message": "User updated successfully"}
+
+
+@router.post("/getuserinfo")
+async def get_user_info(
+    edit_data: dict = Body(...),  # Using Body to accept a JSON object
+    user_repo: UserRepository = Depends(get_user_repository),
+):
+    logger.info("Searching User")
+    email = edit_data.get("email")
+    user = user_repo.read_users_by_email(email)[-1]
+    user_firstname = user["firstname"]
+    user_lastname = user["lastname"]
+    user_officeLocation = user["officeLocation"]
+    return {
+        "firstname": user_firstname,
+        "lastname": user_lastname,
+        "officeLocation": user_officeLocation,
+    }
