@@ -160,6 +160,7 @@ class TicketAPIIntegrationTest(TestCase):
             priority=Prio.low,
             attachments=[],
             requestType="",
+            draftMode=True,
         )
         update_result = UpdateResult(raw_result=ticket_entity, acknowledged=True)
 
@@ -175,6 +176,7 @@ class TicketAPIIntegrationTest(TestCase):
             "priority": Prio.low,
             "attachments": [],
             "requestType": "Incident",
+            "draftMode": False,
         }
 
         exp_ticket = Ticket(
@@ -189,6 +191,7 @@ class TicketAPIIntegrationTest(TestCase):
             priority=Prio.low,
             attachmentNames=[],
             requestType="Incident",
+            draftMode=False,
         )
 
         # Define mock behavior
