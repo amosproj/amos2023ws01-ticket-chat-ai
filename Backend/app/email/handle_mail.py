@@ -1,15 +1,17 @@
 import email
 from email.message import Message
 from email.header import decode_header
+from email.mime.text import MIMEText
+from email.mime.multipart import MIMEMultipart
 from bs4 import BeautifulSoup
 
-from logger import logger
 
-
-def can_be_processed(message, blacklisted_emails):
+def can_be_processed(message, blacklisted_emails, logger):
     """
     Returns False if the email is in the blacklist.
     :param message: Email message object
+    :param blacklisted_emails: list of email addresses
+    :param logger: logger
     :return: bool
     """
     logger.info("Checking if email can be processed...")
@@ -34,12 +36,84 @@ def make_email(from_address, to_address, subject, message):
     :param message:
     :return email:
     """
-    logger.info("Creating email message...")
     msg = email.message.EmailMessage()
     msg["from"] = from_address
     msg["to"] = to_address
     msg["Subject"] = subject
     msg.set_content(message)
+    return msg
+
+
+def make_email_with_html(from_address, to_address, ticket, logger):
+    """
+    creates email type with an html part
+    :param from_address:
+    :param to_address:
+    :param ticket: ticket object as defined in app/api/dto/ticket.py
+    :param logger: logger
+    :return email:
+    """
+    logger.info("Creating html message...")
+    msg = MIMEMultipart("alternative")
+    msg["from"] = from_address
+    msg["to"] = to_address
+    subject = "Support ticket created (" + ticket.id + ")"
+    msg["Subject"] = subject
+
+    html_head = (
+        '<head><style type="text/css">'
+        ".tg  {border-collapse:collapse;border-spacing:0;}"
+        ".tg td{border-color:black;border-style:solid;border-width:1px;font-family:Arial, sans-serif;font-size:14px;"
+        "overflow:hidden;padding:10px 5px;word-break:normal;}"
+        ".tg th{border-color:black;border-style:solid;border-width:1px;font-family:Arial, sans-serif;"
+        "font-size:14px;font-weight:normal;overflow:hidden;padding:10px 5px;word-break:normal;}"
+        ".tg .tg-1wig{font-weight:bold;text-align:left;vertical-align:top}"
+        ".tg .tg-0lax{text-align:left;vertical-align:top}</style></head>"
+    )
+
+    table_elements = [
+        ("ID:", ticket.id),
+        ("Title:", ticket.title),
+        ("Service:", ticket.service or ""),
+        ("Category:", ticket.category or ""),
+        ("Keywords:", str(ticket.keywords or "")),
+        ("Customer priority:", ticket.customerPriority or ""),
+        ("Affected Person:", ticket.affectedPerson or ""),
+        ("Describtion:", ticket.description),
+        ("Priority:", ticket.priority or ""),
+        ("Attachments:", str(ticket.attachmentNames or "")),
+        ("Request type::", ticket.requestType or ""),
+    ]
+
+    table = '<table class="tg">'
+    for i in table_elements:
+        table += (
+            '<tr><td class="tg-1wig">'
+            + i[0]
+            + '</td><td class="tg-0lax">'
+            + i[1]
+            + "</td></tr>"
+        )
+    table += "</table>"
+
+    salutation = (
+        "Hello " + ticket.affectedPerson + ",<br> your ticket was created successfully."
+    )
+
+    text = (
+        "Hello "
+        + ticket.affectedPerson
+        + ",\n your ticket was created successfully and your ticket number is:"
+        + ticket.id
+        + "."
+    )
+    html = "<html>" + html_head + "<body>" + salutation + table + "</body></html>"
+
+    part1 = MIMEText(text, "plain")
+    part2 = MIMEText(html, "html")
+    msg.attach(part1)
+    msg.attach(part2)
+
     return msg
 
 

@@ -75,7 +75,7 @@ async def process_text(
             + created_ticket.id
         )
         print(created_ticket.id)
-        email_service.send_email(input.email, subject_text, str(created_ticket))
+        email_service.send_email(input.email, created_ticket)
 
     return created_ticket
 

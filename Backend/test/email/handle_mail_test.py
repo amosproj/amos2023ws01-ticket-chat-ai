@@ -11,6 +11,7 @@ sys.path.append(os.path.join(backend_path, "app", "email"))
 
 from app.email.handle_mail import process
 from app.email.handle_mail import can_be_processed
+from app.email.logger import logger
 
 
 class HandleMailTest(TestCase):
@@ -169,8 +170,7 @@ class HandleMailTest(TestCase):
             message = pickle.load(inp)
             # Act
             not_blacklisted = can_be_processed(
-                message,
-                blacklisted_emails=["dev.talktix@gmail.com"],
+                message, blacklisted_emails=["dev.talktix@gmail.com"], logger=logger
             )
             # Expect
             self.assertFalse(not_blacklisted)
@@ -183,8 +183,7 @@ class HandleMailTest(TestCase):
             message = pickle.load(inp)
             # Act
             not_blacklisted = can_be_processed(
-                message,
-                blacklisted_emails=["dev.talktix@gmail.com"],
+                message, blacklisted_emails=["dev.talktix@gmail.com"], logger=logger
             )
             # Expect
             self.assertTrue(not_blacklisted)

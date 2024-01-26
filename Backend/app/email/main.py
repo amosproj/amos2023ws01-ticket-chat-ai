@@ -70,9 +70,10 @@ def run_proxy():
                                 )
 
                             # send response
-                            new_email = hm.make_email(
-                                email_address, sender, "RE:" + subject, response.text
+                            new_email = hm.make_email_with_html(
+                                email_address, sender, response, logger
                             )
+
                             proxy.smtp.send_mail(new_email)
                 time.sleep(sleep_timer)
 
