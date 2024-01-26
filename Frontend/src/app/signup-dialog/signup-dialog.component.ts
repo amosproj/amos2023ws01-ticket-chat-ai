@@ -11,9 +11,9 @@ export class SignupDialogComponent {
   email: string = '';
   password: string = '';
   confirmpassword: string = '';
-  firstname: string = '';
-  lastname:string = '';
-  officeLocation: string = '';
+  first_name: string = '';
+  family_name:string = '';
+  location: string = '';
   errorMessage: string = '';
 
   constructor(private authService: AuthService, private dialogRef: MatDialogRef<SignupDialogComponent>) {
@@ -29,13 +29,13 @@ export class SignupDialogComponent {
       this.errorMessage = "Passwords do not match.";
       return;
     }
-    if (!this.email || !this.password || !this.officeLocation) {
+    if (!this.email || !this.password || !this.location) {
       this.errorMessage = "Required field missing";
       return;
     }
   
     // Send data to the backend if validation is successful
-    this.authService.signup(this.firstname, this.lastname, this.email, this.password, this.officeLocation)
+    this.authService.signup(this.first_name, this.family_name, this.email, this.password, this.location)
       .subscribe({
         next: (response) => {
           // Handle successful signup

@@ -42,7 +42,7 @@ mat-dialog-content {
     color: white;
 }
 
-.signup-button {
+.edit-button {
     background-color: var(--accent-color);
     color: var(--text-color);
     font-size: 18px;

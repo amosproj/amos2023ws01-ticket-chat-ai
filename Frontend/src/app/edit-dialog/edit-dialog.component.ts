@@ -13,9 +13,9 @@ export class EditDialogComponent {
   email: string = '';
   password: string = '';
   confirmpassword: string = '';
-  firstname: string = '';
-  lastname:string = '';
-  officeLocation: string = '';
+  first_name: string = '';
+  family_name:string = '';
+  location: string = '';
   errorMessage: string = '';
 
   constructor(private authService: AuthService, private dialogRef: MatDialogRef<EditDialogComponent>) {
@@ -31,7 +31,7 @@ export class EditDialogComponent {
       this.errorMessage = "New passwords do not match.";
       return;
     }
-    if (!this.email || !this.old_password || !this.officeLocation) {
+    if (!this.email || !this.old_password || !this.location) {
       this.errorMessage = "Required field missing";
       return;
     }
@@ -40,7 +40,7 @@ export class EditDialogComponent {
     }
 
     // Send data to the backend if validation is successful
-    this.authService.edit(this.old_email, this.old_password, this.firstname, this.lastname, this.email, this.password, this.officeLocation)
+    this.authService.edit(this.old_email, this.old_password, this.first_name, this.family_name, this.email, this.password, this.location)
       .subscribe({
         next: (response) => {
           this.dialogRef.close({ editSuccess: true, email: this.email, password: this.password});

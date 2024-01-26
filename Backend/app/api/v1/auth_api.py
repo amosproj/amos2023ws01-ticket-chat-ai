@@ -86,11 +86,12 @@ async def signup_user(
     user_repo: UserRepository = Depends(get_user_repository),
 ):
     logger.info("Extracting User data..")
-    firstname = signup_data.get("firstname")
-    lastname = signup_data.get("lastname")
+    first_name = signup_data.get("first_name")
+    family_name = signup_data.get("family_name")
     email = signup_data.get("email")
+    location = signup_data.get("location")
     password = signup_data.get("password")
-    officeLocation = signup_data.get("officeLocation")
+    
 
     logger.info("Verifying if Email is already in use..")
     if user_repo.read_users_by_email(email):
@@ -98,11 +99,11 @@ async def signup_user(
     logger.info("Email is valid..")
 
     user_data = {
-        "firstname": firstname,
-        "lastname": lastname,
+        "first_name": first_name,
+        "family_name": family_name,
         "email_address": email,
+        "location": location,
         "password": password,
-        "officeLocation": officeLocation,
     }
 
     user_repo.create_user(user_data)
@@ -118,12 +119,12 @@ async def edit_user(
     logger.info("Extracting User data..")
     old_password = edit_data.get("old_password")
     old_email = edit_data.get("old_email")
-    firstname = edit_data.get("firstname")
-    lastname = edit_data.get("lastname")
+    first_name = edit_data.get("first_name")
+    family_name = edit_data.get("family_name")
     email = edit_data.get("email")
+    officeLocation = edit_data.get("location")
     password = edit_data.get("password")
-    officeLocation = edit_data.get("officeLocation")
-
+    
     is_authenticated = user_repo.authenticate_user(
         email=old_email, password=old_password
     )
@@ -141,11 +142,11 @@ async def edit_user(
         logger.info("Email is valid..")
 
     user_data = {
-        "firstname": firstname,
-        "lastname": lastname,
+        "first_name": first_name,
+        "family_name": family_name,
         "email_address": email,
+        "location": officeLocation,
         "password": password,
-        "officeLocation": officeLocation,
     }
 
     user = user_repo.read_users_by_email(old_email)[-1]
@@ -164,11 +165,11 @@ async def get_user_info(
     logger.info("Searching User")
     email = edit_data.get("email")
     user = user_repo.read_users_by_email(email)[-1]
-    user_firstname = user["firstname"]
-    user_lastname = user["lastname"]
-    user_officeLocation = user["officeLocation"]
+    user_first_name = user["first_name"]
+    user_family_name = user["family_name"]
+    user_location = user["location"]
     return {
-        "firstname": user_firstname,
-        "lastname": user_lastname,
-        "officeLocation": user_officeLocation,
+        "first_name": user_first_name,
+        "family_name": user_family_name,
+        "location": user_location,
     }

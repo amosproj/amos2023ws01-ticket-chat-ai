@@ -103,3 +103,59 @@ class TestAPI:
             },
         )
         assert response.status_code == 405
+
+    def test_edit_user_success(self, client, mock_user_repository):
+        # Configure the mock for successful authentication and non-existence of the new email
+        mock_user_repository.authenticate_user.return_value = True
+        mock_user_repository.read_users_by_email.side_effect = [[],[{"_id": "123", "email_address": "old@example.com"}]]
+        response = client.post("/api/v1/edit", json={
+            "old_password": "oldpassword",
+            "old_email": "old@example.com",
+            "first_name": "NewFirstName",
+            "family_name": "NewLastName",
+            "email": "new@example.com",
+            "password": "newpassword",
+            "location": "NewOffice"
+        })
+        assert response.status_code == 200
+
+    def test_edit_user_failed_authentication(self, client, mock_user_repository):
+        # Konfigurieren des Mocks für fehlgeschlagene Authentifizierung
+        mock_user_repository.authenticate_user.return_value = False
+        response = client.post("/api/v1/edit", json={
+            "old_password": "oldpassword",
+            "old_email": "old@example.com",
+            "first_name": "NewFirstName",
+            "family_name": "NewLastName",
+            "email": "new@example.com",
+            "password": "newpassword",
+            "location": "NewOffice"
+        })
+        assert response.status_code == 402
+
+    def test_edit_user_email_already_in_use(self, client, mock_user_repository):
+        # Konfigurieren des Mocks für bestehende E-Mail
+        mock_user_repository.authenticate_user.return_value = True
+        mock_user_repository.read_users_by_email.return_value = [{"email_address": "new@example.com"}]
+        response = client.post("/api/v1/edit", json={
+            "old_password": "oldpassword",
+            "old_email": "old@example.com",
+            "first_name": "NewFirstName",
+            "family_name": "NewLastName",
+            "email": "new@example.com",
+            "password": "newpassword",
+            "location": "NewOffice"
+        })
+        assert response.status_code == 405
+
+    def test_get_user_info_success(self, client, mock_user_repository):
+        # Konfigurieren des Mocks für Benutzerabfrage
+        mock_user_repository.read_users_by_email.return_value = [{"first_name": "Test", "family_name": "User", "location": "TestOffice"}]
+        response = client.post("/api/v1/getuserinfo", json={"email": "test@example.com"})
+        assert response.status_code == 200
+        assert response.json() == {
+            "first_name": "Test",
+            "family_name": "User",
+            "location": "TestOffice"
+        }
+

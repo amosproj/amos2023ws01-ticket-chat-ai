@@ -42,15 +42,15 @@ export class AuthService {
       );
   }
 
-  signup(firstname: string, lastname: string, email: string, password: string, officeLocation: string): Observable<any> {
-    return this.http.post<any>(this.apiUrl2, { firstname, lastname, email, password, officeLocation })
+  signup(firstname: string, family_name: string, email: string, password: string, location: string): Observable<any> {
+    return this.http.post<any>(this.apiUrl2, { firstname, family_name, email, password, location })
       .pipe(
         catchError(this.handleError)
       );
   }
 
-  edit(old_email: string, old_password: string, firstname: string, lastname: string, email: string, password: string, officeLocation: string): Observable<any> {
-    return this.http.post<any>(this.apiUrl3, { old_email, old_password, firstname, lastname, email, password, officeLocation })
+  edit(old_email: string, old_password: string, first_name: string, family_name: string, email: string, password: string, location: string): Observable<any> {
+    return this.http.post<any>(this.apiUrl3, { old_email, old_password, first_name, family_name, email, password, location })
       .pipe(
         catchError(this.handleError)
       );

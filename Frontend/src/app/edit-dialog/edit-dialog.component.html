@@ -10,12 +10,12 @@
 
       <mat-form-field appearance="fill">
         <mat-label>Firstname (optional)</mat-label>
-        <input matInput type="text" [(ngModel)]="firstname">
+        <input matInput type="text" [(ngModel)]="first_name">
       </mat-form-field>
 
       <mat-form-field appearance="fill">
         <mat-label>Lastname (optional)</mat-label>
-        <input matInput type="text" [(ngModel)]="lastname">
+        <input matInput type="text" [(ngModel)]="family_name">
       </mat-form-field>
 
       <mat-form-field appearance="fill">
@@ -40,7 +40,7 @@
 
       <mat-form-field>
         <mat-label>Office location (required)</mat-label>
-        <mat-select [(ngModel)]="officeLocation">
+        <mat-select [(ngModel)]="location">
           <mat-option value="Berlin">Berlin</mat-option>
           <mat-option value="Frankfurt">Frankfurt</mat-option>
           <mat-option value="Fürth">Fürth</mat-option>

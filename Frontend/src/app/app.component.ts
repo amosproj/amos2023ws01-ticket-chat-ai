@@ -120,9 +120,9 @@ export class AppComponent implements OnInit {
     const dialogRef = this.dialog.open(EditDialogComponent);
     this.authService.getuserinfo(this.emailInput).subscribe(
           response => {
-          dialogRef.componentInstance.firstname = response.firstname;
-          dialogRef.componentInstance.lastname = response.lastname;
-          dialogRef.componentInstance.officeLocation = response.officeLocation;
+          dialogRef.componentInstance.first_name = response.first_name;
+          dialogRef.componentInstance.family_name = response.family_name;
+          dialogRef.componentInstance.location = response.location;
         },
         error => {
           this.errorMessage = 'User not found.';
