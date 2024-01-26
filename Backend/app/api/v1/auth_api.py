@@ -91,7 +91,6 @@ async def signup_user(
     email = signup_data.get("email")
     location = signup_data.get("location")
     password = signup_data.get("password")
-    
 
     logger.info("Verifying if Email is already in use..")
     if user_repo.read_users_by_email(email):
@@ -124,7 +123,7 @@ async def edit_user(
     email = edit_data.get("email")
     officeLocation = edit_data.get("location")
     password = edit_data.get("password")
-    
+
     is_authenticated = user_repo.authenticate_user(
         email=old_email, password=old_password
     )
