@@ -49,15 +49,41 @@ def make_email_with_html(from_address, to_address, ticket, logger):
     creates email type with an html part
     :param from_address:
     :param to_address:
-    :param ticket: ticket object as defined in app/api/dto/ticket.py
+    :param ticket: ticket object as defined in app/api/dto/ticket.py or dictionary
     :param logger: logger
     :return email:
     """
+
+    if isinstance(ticket, dict):
+        ticket_id = ticket["id"]
+        ticket_title = ticket["title"]
+        ticket_service = ticket["service"]
+        ticket_category = ticket["category"]
+        ticket_keywords = ticket["keywords"]
+        ticket_customerPriority = ticket["customerPriority"]
+        ticket_affectedPerson = ticket["affectedPerson"]
+        ticket_description = ticket["description"]
+        ticket_priority = ticket["priority"]
+        ticket_attachmentNames = ticket["attachmentNames"]
+        ticket_requestType = ticket["requestType"]
+    else:
+        ticket_id = ticket.id
+        ticket_title = ticket.title
+        ticket_service = ticket.service
+        ticket_category = ticket.category
+        ticket_keywords = ticket.keywords
+        ticket_customerPriority = ticket.customerPriority
+        ticket_affectedPerson = ticket.affectedPerson
+        ticket_description = ticket.description
+        ticket_priority = ticket.priority
+        ticket_attachmentNames = ticket.attachmentNames
+        ticket_requestType = ticket.requestType
+
     logger.info("Creating html message...")
     msg = MIMEMultipart("alternative")
     msg["from"] = from_address
     msg["to"] = to_address
-    subject = "Support ticket created (" + ticket.id + ")"
+    subject = "Support ticket created (" + ticket_id + ")"
     msg["Subject"] = subject
 
     html_head = (
@@ -72,17 +98,17 @@ def make_email_with_html(from_address, to_address, ticket, logger):
     )
 
     table_elements = [
-        ("ID:", ticket.id),
-        ("Title:", ticket.title),
-        ("Service:", ticket.service or ""),
-        ("Category:", ticket.category or ""),
-        ("Keywords:", str(ticket.keywords or "")),
-        ("Customer priority:", ticket.customerPriority or ""),
-        ("Affected Person:", ticket.affectedPerson or ""),
-        ("Describtion:", ticket.description),
-        ("Priority:", ticket.priority or ""),
-        ("Attachments:", str(ticket.attachmentNames or "")),
-        ("Request type::", ticket.requestType or ""),
+        ("ID:", ticket_id),
+        ("Title:", ticket_title),
+        ("Service:", ticket_service or ""),
+        ("Category:", ticket_category or ""),
+        ("Keywords:", str(ticket_keywords or "")),
+        ("Customer priority:", ticket_customerPriority or ""),
+        ("Affected Person:", ticket_affectedPerson or ""),
+        ("Describtion:", ticket_description),
+        ("Priority:", ticket_priority or ""),
+        ("Attachments:", str(ticket_attachmentNames or "")),
+        ("Request type:", ticket_requestType or ""),
     ]
 
     table = '<table class="tg">'
@@ -96,15 +122,11 @@ def make_email_with_html(from_address, to_address, ticket, logger):
         )
     table += "</table>"
 
-    salutation = (
-        "Hello " + ticket.affectedPerson + ",<br> your ticket was created successfully."
-    )
+    salutation = "Hello,<br> your ticket was created successfully.<br>"
 
     text = (
-        "Hello "
-        + ticket.affectedPerson
-        + ",\n your ticket was created successfully and your ticket number is:"
-        + ticket.id
+        "Hello,\n your ticket was created successfully and your ticket number is:"
+        + ticket_id
         + "."
     )
     html = "<html>" + html_head + "<body>" + salutation + table + "</body></html>"

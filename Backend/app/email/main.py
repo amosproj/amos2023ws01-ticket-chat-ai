@@ -46,35 +46,56 @@ def run_proxy():
                         # send message to backend
                         email = f"Von: {sender}\nBetreff: {subject}\n {content}"
                         json_input = {"text": email}
+                        success = True
+
                         if content != "":
-                            response = requests.post(
-                                "http://localhost:8000/api/v1/ticket/text",
-                                data=json.dumps(json_input),
-                            )
-                            ticket = json.loads(response.text)
-                            logger.info("Received ticket: " + ticket["id"])
-                            if attachments:
-                                response = requests.put(
-                                    "http://localhost:8000/api/v1/ticket/"
-                                    + ticket["id"]
-                                    + "/attachments",
-                                    files=[
-                                        ("files", attachment)
-                                        for attachment in attachments
-                                    ],
+                            try:
+                                response = requests.post(
+                                    "http://localhost:8000/api/v1/ticket/text",
+                                    data=json.dumps(json_input),
                                 )
-                                logger.info(
-                                    "Attachments for ticket: "
-                                    + ticket["id"]
-                                    + " are sent to the API"
+                                if attachments:
+                                    response = requests.put(
+                                        "http://localhost:8000/api/v1/ticket/"
+                                        + ticket["id"]
+                                        + "/attachments",
+                                        files=[
+                                            ("files", attachment)
+                                            for attachment in attachments
+                                        ],
+                                    )
+                                    logger.info(
+                                        "Attachments for ticket: "
+                                        + ticket["id"]
+                                        + " are sent to the API"
+                                    )
+                                ticket = json.loads(response.text)
+                                print("Ticket:" + str(ticket))
+                                logger.info("Received ticket: " + ticket["id"])
+                            except Exception as e:
+                                logger.error(
+                                    f"Didnt receive the ticket from backend: {e}"
+                                )
+                                success = False
+
+                            if success:
+                                try:
+                                    new_email = hm.make_email_with_html(
+                                        email_address, sender, ticket, logger
+                                    )
+                                except Exception as e:
+                                    logger.error(f"Something went wrong: {e}")
+                            else:
+                                new_email = hm.make_email(
+                                    email_address,
+                                    sender,
+                                    "Ticket could not be created",
+                                    "Hello,\nunfortunately your support ticket couldnt be created, try it out later again.",
                                 )
 
-                            # send response
-                            new_email = hm.make_email_with_html(
-                                email_address, sender, response, logger
-                            )
-
+                            logger.info("time to send the mail")
                             proxy.smtp.send_mail(new_email)
+                            logger.info("email sent")
                 time.sleep(sleep_timer)
 
     except Exception as e:
