@@ -46,6 +46,7 @@ class TicketAPIIntegrationTest(TestCase):
             priority=Prio.low,
             attachments=[],
             requestType="",
+            state=State.draft
         )
         insert_one_result = InsertOneResult(
             inserted_id=self.ticket_id, acknowledged=True
@@ -63,6 +64,7 @@ class TicketAPIIntegrationTest(TestCase):
             priority=Prio.low,
             attachmentNames=[],
             requestType="",
+            state=State.draft
         )
 
         # Define mock behavior
