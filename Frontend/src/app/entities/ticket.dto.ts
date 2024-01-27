@@ -1,5 +1,6 @@
 import {CustomerPrio} from "./customerPrio.enum";
 import {Prio} from "./prio.enum";
+import {State} from "./state.enum";
 
 export class Ticket{
     id: string = ""
@@ -12,6 +13,7 @@ export class Ticket{
     description: string = ""
     priority: Prio = Prio.medium
     requestType: string = ""
+    state: State.draft
 
   constructor(obj: any) {
     this.id = obj.id;
@@ -24,6 +26,7 @@ export class Ticket{
     this.description = obj.description;
     this.priority = obj.priority;
     this.requestType = obj.requestType;
+    this.state = obj.state;
   }
 
 }
