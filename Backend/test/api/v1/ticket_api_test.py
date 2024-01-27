@@ -14,9 +14,8 @@ from app.enum.customer_prio import CustomerPrio
 from app.enum.prio import Prio
 from app.main import app
 from app.repository.entity.ticket_entity import TicketEntity
-from app.repository.entity.user_entity import UserEntity
 
-from Backend.app.enum.state import State
+from app.enum.state import State
 
 
 class TicketAPIIntegrationTest(TestCase):
@@ -166,19 +165,22 @@ class TicketAPIIntegrationTest(TestCase):
         )
         update_result = UpdateResult(raw_result=ticket_entity, acknowledged=True)
 
-        updated_ticket_json = {
-            "id": "6554b34d82161e93bff08df6",
-            "title": "Test Ticket",
-            "service": "",
-            "category": "",
-            "keywords": [],
-            "customerPriority": CustomerPrio.can_work,
-            "affectedPerson": "",
-            "description": "",
-            "priority": Prio.low,
-            "attachments": [],
-            "requestType": "Incident",
-            "state": State.accepted
+        wrapped_ticket_json = {
+            "email": "testEmail@talxTix.com",
+            "ticket": {
+                "id": "6554b34d82161e93bff08df6",
+                "title": "Test Ticket",
+                "service": "",
+                "category": "",
+                "keywords": [],
+                "customerPriority": CustomerPrio.can_work,
+                "affectedPerson": "",
+                "description": "",
+                "priority": Prio.low,
+                "attachments": [],
+                "requestType": "Incident",
+                "state": State.accepted,
+            },
         }
 
         exp_ticket = Ticket(
@@ -202,7 +204,7 @@ class TicketAPIIntegrationTest(TestCase):
 
         # Act
         response = self._run_update_ticket_attributes(
-            ticket_id=str(self.ticket_id), updated_ticket=updated_ticket_json
+            ticket_id=str(self.ticket_id), wrapped_ticket=wrapped_ticket_json
         )
 
         # Assert
@@ -217,7 +219,7 @@ class TicketAPIIntegrationTest(TestCase):
         exp_json = {"detail": "Received empty or invalid ticket id of type ObjectId!"}
 
         response = self._run_update_ticket_attributes(
-            ticket_id="-", updated_ticket=None
+            ticket_id="-", wrapped_ticket=None
         )
 
         self.assertEqual(status.HTTP_400_BAD_REQUEST, response.status_code)
@@ -239,10 +241,10 @@ class TicketAPIIntegrationTest(TestCase):
         )
 
     def _run_update_ticket_attributes(
-        self, ticket_id: str, updated_ticket: dict | None
+        self, ticket_id: str, wrapped_ticket: dict | None
     ):
         return self.client.put(
             f"/api/v1/ticket/{ticket_id}/update",
-            json=updated_ticket,
+            json=wrapped_ticket,
             headers={"Content-Type": "application/json"},
         )

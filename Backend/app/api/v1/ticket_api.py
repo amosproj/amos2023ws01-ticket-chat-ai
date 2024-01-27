@@ -13,18 +13,18 @@ from fastapi import APIRouter, HTTPException, UploadFile
 from fastapi.params import Depends, File, Path, Body
 from starlette import status
 
-from Backend.app.api.dto.wrapped_ticket import WrappedTicket
-from Backend.app.enum.state import State
+from app.api.dto.wrapped_ticket import WrappedTicket
+from app.enum.state import State
 
 router = APIRouter()
 
 
 @router.post("/ticket/text", status_code=status.HTTP_201_CREATED, response_model=Ticket)
 async def process_text(
-        input: TextInput = Body(default=TextInput()),
-        ticket_db_service: TicketDBService = Depends(get_ticket_db_service),
-        user_db_service: UserDBService = Depends(get_user_db_service),
-        ticket_service: AITicketService = Depends(get_ai_ticket_service),
+    input: TextInput = Body(default=TextInput()),
+    ticket_db_service: TicketDBService = Depends(get_ticket_db_service),
+    user_db_service: UserDBService = Depends(get_user_db_service),
+    ticket_service: AITicketService = Depends(get_ai_ticket_service),
 ):
     """
     Receive Text from the Frontend
@@ -79,10 +79,10 @@ async def process_text(
     response_model=Ticket,
 )
 async def update_ticket_attributes(
-        ticket_id: str = Path(default=""),
-        wrapped_ticket: WrappedTicket = Body(default=None),
-        email_service: EmailService = Depends(get_email_service),
-        ticket_db_service: TicketDBService = Depends(get_ticket_db_service),
+    ticket_id: str = Path(default=""),
+    wrapped_ticket: WrappedTicket = Body(default=None),
+    email_service: EmailService = Depends(get_email_service),
+    ticket_db_service: TicketDBService = Depends(get_ticket_db_service),
 ):
     logger.info("Updating ticket attributes...")
 
@@ -104,12 +104,14 @@ async def update_ticket_attributes(
     # send email with ticket as content
     if wrapped_ticket.email:
         subject_text = (
-                "Support Ticket Created - "
-                + updated_ticket.title
-                + ". TicketID: "
-                + updated_ticket.id
+            "Support Ticket Created - "
+            + updated_ticket.title
+            + ". TicketID: "
+            + updated_ticket.id
         )
-        email_service.send_email(wrapped_ticket.email, subject_text, str(updated_ticket))
+        email_service.send_email(
+            wrapped_ticket.email, subject_text, str(updated_ticket)
+        )
 
     # Prepare response
     logger.info("Preparing response...")
@@ -133,9 +135,9 @@ async def update_ticket_attributes(
     response_model=Ticket,
 )
 async def update_ticket_attachments(
-        ticket_id: str = Path(default=""),
-        files: list[UploadFile] = File(default=[]),
-        ticket_db_service: TicketDBService = Depends(get_ticket_db_service),
+    ticket_id: str = Path(default=""),
+    files: list[UploadFile] = File(default=[]),
+    ticket_db_service: TicketDBService = Depends(get_ticket_db_service),
 ):
     """
     Receive Attachments from the Frontend
