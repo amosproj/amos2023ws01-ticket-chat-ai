@@ -16,6 +16,8 @@ from app.main import app
 from app.repository.entity.ticket_entity import TicketEntity
 from app.repository.entity.user_entity import UserEntity
 
+from Backend.app.enum.state import State
+
 
 class TicketAPIIntegrationTest(TestCase):
     def override_get_ticket_collection(self):
@@ -160,7 +162,7 @@ class TicketAPIIntegrationTest(TestCase):
             priority=Prio.low,
             attachments=[],
             requestType="",
-            draftMode=True,
+            state=State.draft,
         )
         update_result = UpdateResult(raw_result=ticket_entity, acknowledged=True)
 
@@ -176,7 +178,7 @@ class TicketAPIIntegrationTest(TestCase):
             "priority": Prio.low,
             "attachments": [],
             "requestType": "Incident",
-            "draftMode": False,
+            "state": State.accepted
         }
 
         exp_ticket = Ticket(
@@ -191,7 +193,7 @@ class TicketAPIIntegrationTest(TestCase):
             priority=Prio.low,
             attachmentNames=[],
             requestType="Incident",
-            draftMode=False,
+            state=State.accepted,
         )
 
         # Define mock behavior

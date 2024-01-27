@@ -50,7 +50,7 @@ class TicketDBService:
         ticket_entity["description"] = updated_ticket.description
         ticket_entity["priority"] = updated_ticket.priority
         ticket_entity["requestType"] = updated_ticket.requestType
-        ticket_entity["draftMode"] = False
+        ticket_entity["state"] = updated_ticket.state
 
         update_result = self.ticket_repository.update_ticket(ticket_id, ticket_entity)
         if not update_result.acknowledged:
