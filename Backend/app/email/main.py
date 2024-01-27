@@ -38,13 +38,13 @@ def run_proxy():
                     if sender is None:
                         continue
                     else:
-                        print(f"Sender={sender}")
-                        print(f"Subject={subject}")
-                        print(f"Content={content}")
+                        # print(f"Sender={sender}")
+                        # print(f"Subject={subject}")
+                        # print(f"Content={content}")
                         # print(attachments)
 
                         # send message to backend
-                        email = f"Von: {sender}\nBetreff: {subject}\n {content}"
+                        email = f"From: {sender}\nSubject: {subject}\n {content}"
                         json_input = {"text": email}
                         success = True
 
@@ -74,17 +74,14 @@ def run_proxy():
                                 logger.info("Received ticket: " + ticket["id"])
                             except Exception as e:
                                 logger.error(
-                                    f"Didnt receive the ticket from backend: {e}"
+                                    f"Didn't receive the ticket from backend: {e}"
                                 )
                                 success = False
 
                             if success:
-                                try:
-                                    new_email = hm.make_email_with_html(
-                                        email_address, sender, ticket, logger
-                                    )
-                                except Exception as e:
-                                    logger.error(f"Something went wrong: {e}")
+                                new_email = hm.make_email_with_html(
+                                    email_address, sender, ticket, logger
+                                )
                             else:
                                 new_email = hm.make_email(
                                     email_address,
@@ -93,9 +90,8 @@ def run_proxy():
                                     "Hello,\nunfortunately your support ticket couldnt be created, try it out later again.",
                                 )
 
-                            logger.info("time to send the mail")
+                            logger.info("Sending the email")
                             proxy.smtp.send_mail(new_email)
-                            logger.info("email sent")
                 time.sleep(sleep_timer)
 
     except Exception as e:
