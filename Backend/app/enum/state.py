@@ -2,5 +2,5 @@ from enum import Enum
 
 
 class State(str, Enum):
-    draft = "draft",
+    draft = ("draft",)
     accepted = "accepted"
