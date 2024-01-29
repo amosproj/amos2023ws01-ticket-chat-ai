@@ -37,7 +37,7 @@ export class AppComponent implements OnInit {
   title: string = "TalkTix";
   chatInput: string = "";
   emailInput: string = "";
-  chatMessages: ChatMessages[] = [];
+  chatMessages: ChatMessages[] = [{ messageText: "Hi there! Enter your concern and I will create a ticket for you.", isUser: false, files: [] }];
   files: any[] = [];
   waitingServerResponse: boolean = false;
   recognition: any;
@@ -94,12 +94,12 @@ export class AppComponent implements OnInit {
   openLoginDialog() {
     const dialogRef = this.dialog.open(LoginDialogComponent);
     dialogRef.afterClosed().subscribe(result => {
-      if (result?.loginSuccess){ 
+      if (result?.loginSuccess){
         // logic after closing dialog
         this.emailInput = result.email;
         this.isLoggedIn = true;
         this.chatMessages.push({ messageText: "You have successfully logged in.", isUser: false, files: this.files });
-      }  
+      }
     });
   }
 
