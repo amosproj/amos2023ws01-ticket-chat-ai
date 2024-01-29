@@ -70,17 +70,6 @@ async def process_text(
         f"Ticket created and saved successfully. Ticket ID: {created_ticket.id}"
     )
 
-    # send email with ticket as content
-    if input.email:
-        subject_text = (
-            "Support Ticket Created - "
-            + created_ticket.title
-            + ". TicketID: "
-            + created_ticket.id
-        )
-        print(created_ticket.id)
-        email_service.send_email(input.email, created_ticket)
-
     return created_ticket
 
 
@@ -114,15 +103,7 @@ async def update_ticket_attributes(
 
     # send email with ticket as content
     if wrapped_ticket.email:
-        subject_text = (
-            "Support Ticket Created - "
-            + updated_ticket.title
-            + ". TicketID: "
-            + updated_ticket.id
-        )
-        email_service.send_email(
-            wrapped_ticket.email, subject_text, str(updated_ticket)
-        )
+        email_service.send_email(wrapped_ticket.email, updated_ticket)
 
     # Prepare response
     logger.info("Preparing response...")
