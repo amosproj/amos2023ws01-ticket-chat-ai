@@ -29,4 +29,3 @@ class CategoryDBRoutineService:
                     self.category_repository.create_category(category)
 
             logger.info("Default categories added")
-

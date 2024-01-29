@@ -12,7 +12,9 @@ router = APIRouter()
 
 
 @router.get("/services", status_code=status.HTTP_200_OK, response_model=list[str])
-async def get_services(service_repository: ServiceRepository = Depends(get_service_repository)):
+async def get_services(
+    service_repository: ServiceRepository = Depends(get_service_repository)
+):
     """
     Retrieve all services from the database
 
@@ -21,13 +23,15 @@ async def get_services(service_repository: ServiceRepository = Depends(get_servi
     """
     logger.info("Fetching all services from the database...")
     services = service_repository.read_services()
-    service_names = [service['service_name'] for service in services]
+    service_names = [service["service_name"] for service in services]
 
     return service_names
 
 
 @router.get("/categories", status_code=status.HTTP_200_OK, response_model=list[str])
-async def get_categories(category_repository: CategoryRepository = Depends(get_category_repository)):
+async def get_categories(
+    category_repository: CategoryRepository = Depends(get_category_repository)
+):
     """
     Retrieve all categories from the database
 
@@ -36,6 +40,6 @@ async def get_categories(category_repository: CategoryRepository = Depends(get_c
     """
     logger.info("Fetching all categories from the database...")
     categories = category_repository.read_categories()
-    categories_names = [category['name'] for category in categories]
+    categories_names = [category["name"] for category in categories]
 
     return categories_names
