@@ -1,7 +1,7 @@
 from openai import OpenAI
 import json
 
-client = OpenAI(api_key="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")
+client = OpenAI(api_key="<APIKEY>")
 
 for _ in range(1):
     with open("../test_data/test_data_with_gpt/data_11.json", "r") as file:
