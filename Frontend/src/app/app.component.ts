@@ -11,10 +11,6 @@ import {jwtDecode} from "jwt-decode";
 import {HttpClient} from '@angular/common/http';
 import {AuthService} from './service/auth.service';
 import {WrappedTicket} from "./entities/wrappedTicket.dto";
-import {Prio} from "./entities/prio.enum";
-import {RequestType} from "./entities/request-type";
-import {CustomerPrio} from "./entities/customerPrio.enum";
-import {State} from "./entities/state.enum";
 
 
 interface ChatMessage {
@@ -43,27 +39,28 @@ export class AppComponent implements OnInit {
   title: string = "TalkTix";
   chatInput: string = "";
   emailInput: string = "";
-  chatMessages: ChatMessage[] = [{
-    messageContent: "message content",
-    isUser: false,
-    wrappedTicket: {
-      email: "abc@abc.de",
-      ticket: {
-        id: "123",
-        title: "abc",
-        keywords: [],
-        category: "",
-        service: "",
-        priority: Prio.low,
-        requestType: RequestType.incident,
-        customerPriority: CustomerPrio.can_not_work,
-        state: State.draft,
-        affectedPerson: "",
-        description: "",
-      } as Ticket
-    } as WrappedTicket,
-    files: []
-  }];
+  chatMessages: ChatMessage[] = []
+  //chatMessages: ChatMessage[] = [{
+  //  messageContent: "message content",
+  //  isUser: false,
+  //  wrappedTicket: {
+  //    email: "abc@abc.de",
+  //    ticket: {
+  //      id: "123",
+  //      title: "abc",
+  //      keywords: [],
+  //      category: "",
+  //      service: "",
+  //      priority: Prio.low,
+  //      requestType: RequestType.incident,
+  //      customerPriority: CustomerPrio.can_not_work,
+  //      state: State.draft,
+  //      affectedPerson: "",
+  //      description: "",
+  //    } as Ticket
+  //  } as WrappedTicket,
+  //  files: []
+  //}];
   files: any[] = [];
   waitingServerResponse: boolean = false;
   recognition: any;
@@ -125,7 +122,12 @@ export class AppComponent implements OnInit {
         // logic after closing dialog
         this.emailInput = result.email;
         this.isLoggedIn = true;
-        this.chatMessages.push({messageContent: "You have successfully logged in.", isUser: false, wrappedTicket: null, files: this.files});
+        this.chatMessages.push({
+          messageContent: "You have successfully logged in.",
+          isUser: false,
+          wrappedTicket: null,
+          files: this.files
+        });
       }
     });
   }
@@ -177,7 +179,12 @@ export class AppComponent implements OnInit {
           if (this.files.length !== 0) {
             this.sendAttachmentsToServer(ticket);
           }
-          this.chatMessages[existingMessageIndex] = {messageContent: messageText, isUser: false, wrappedTicket: null, files: []};
+          this.chatMessages[existingMessageIndex] = {
+            messageContent: messageText,
+            isUser: false,
+            wrappedTicket: null,
+            files: []
+          };
         } else {
           if (this.files.length !== 0) {
             this.sendAttachmentsToServer(ticket);
@@ -256,7 +263,12 @@ export class AppComponent implements OnInit {
           if (this.files.length !== 0) {
             this.sendAttachmentsToServer(response);
           } else {
-            this.chatMessages.push({messageContent: messageText, isUser: false, wrappedTicket: null, files: []});
+            this.chatMessages.push({
+              messageContent: messageText,
+              isUser: false,
+              wrappedTicket: {email: emailInput, ticket: this.createdTicket},
+              files: []
+            });
           }
         } else {
           // RequestType is empty, do not display the response
