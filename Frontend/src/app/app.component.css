@@ -4,12 +4,12 @@ body{
 }
 
 .login-container {
-  align-self: flex-end;  
-  margin-right: 20px; 
+  align-self: flex-end;
+  margin-right: 20px;
 }
 
 .signup-button{
-  margin-left: 5px; 
+  margin-left: 5px;
 }
 
 .cards-container {
@@ -205,10 +205,10 @@ body{
 
 .request-type-button {
   flex-grow: 1;
-  margin-right: 10px; 
+  margin-right: 10px;
   font-size: 16px;
   padding: 10px 20px;
-  text-transform: capitalize; 
+  text-transform: capitalize;
 }
 
 .request-type-button:hover {

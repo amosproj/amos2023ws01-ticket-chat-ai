@@ -1,7 +1,7 @@
 <router-outlet></router-outlet>
 <body style="background-color: #313131; overflow-y: auto">
-  <h1
-    style="
+<h1
+  style="
       font-family: 'Impact', sans-serif;
       color: #10ddd3;
       text-align: center;
@@ -11,97 +11,99 @@
       margin-right: 80px;
       size: 45px;
     "
-  >
-    {{ title }}
-  </h1>
+>
+  {{ title }}
+</h1>
 
-  <div class="login-container" *ngIf="!isLoggedIn">
-    <button
-    mat-raised-button color="primary" (click)="openLoginDialog()">Login</button>
-    <button mat-raised-button class="signup-button" (click)="openSignupDialog()">Sign Up</button>
-  </div>
-  <div class="login-container" *ngIf="isLoggedIn">
-    <button
-    mat-raised-button color="primary" (click)="logout()">Logout</button>
-  </div>
+<div class="login-container" *ngIf="!isLoggedIn">
+  <button
+    mat-raised-button color="primary" (click)="openLoginDialog()">Login
+  </button>
+  <button mat-raised-button class="signup-button" (click)="openSignupDialog()">Sign Up</button>
+</div>
+<div class="login-container" *ngIf="isLoggedIn">
+  <button
+    mat-raised-button color="primary" (click)="logout()">Logout
+  </button>
+</div>
 
-  <div class="cards-container">
-    <mat-card class="history-div">
-      <div *ngIf="errorMessage" class="error-message">
-        {{ errorMessage }}
-      </div>
+<div class="cards-container">
+  <mat-card class="history-div">
+    <div *ngIf="errorMessage" class="error-message">
+      {{ errorMessage }}
+    </div>
 
-      <div class="text-field-div">
-        <mat-form-field>
-          <mat-label>E-mail</mat-label>
-          <input matInput type="email" [(ngModel)]="emailInput" />
-        </mat-form-field>
+    <div class="text-field-div">
+      <mat-form-field>
+        <mat-label>E-mail</mat-label>
+        <input matInput type="email" [(ngModel)]="emailInput"/>
+      </mat-form-field>
 
-        <mat-form-field>
-          <mat-label [class.hide-label]="chatInput !== ''">Problem description</mat-label>
-          <textarea matInput [(ngModel)]="chatInput"></textarea>
-        </mat-form-field>
+      <mat-form-field>
+        <mat-label [class.hide-label]="chatInput !== ''">Problem description</mat-label>
+        <textarea matInput [(ngModel)]="chatInput"></textarea>
+      </mat-form-field>
 
-        <button class="record-button" mat-raised-button color="warn" (click)="startSpeechRecognition()">
-          {{ recordingState === 'idle' ? 'Start recording speech' : 'Stop recording speech' }}
-        </button><br>
+      <button class="record-button" mat-raised-button color="warn" (click)="startSpeechRecognition()">
+        {{ recordingState === 'idle' ? 'Start recording speech' : 'Stop recording speech' }}
+      </button>
+      <br>
 
-        <button
-          mat-raised-button
-          color="primary"
-          (click)="handleSend(chatInput, emailInput)"
-        >
-          Submit
-        </button>
-      </div>
+      <button
+        mat-raised-button
+        color="primary"
+        (click)="handleSend(chatInput, emailInput)"
+      >
+        Submit
+      </button>
+    </div>
 
-      <app-drag-and-drop (filesEvent)="getFiles($event)"></app-drag-and-drop>
-    </mat-card>
+    <app-drag-and-drop (filesEvent)="getFiles($event)"></app-drag-and-drop>
+  </mat-card>
 
-    <mat-card class="history-div">
-      <h2>Message history</h2>
-      <!-- Check if there are any chat messages -->
-      <div *ngIf="chatMessages.length === 0" class="default-message">
-        <p>No messages available</p>
-      </div>
+  <mat-card class="history-div">
+    <h2>Message history</h2>
+    <!-- Check if there are any chat messages -->
+    <div *ngIf="chatMessages.length === 0" class="default-message">
+      <p>No messages available</p>
+    </div>
 
-      <!-- Display messages if there are any -->
-      <div
-        *ngFor="let chatMessage of chatMessages"
-        class="message"
-        [ngClass]="{
+    <!-- Display messages if there are any -->
+    <div
+      *ngFor="let chatMessage of chatMessages"
+      class="message"
+      [ngClass]="{
           'user-message': chatMessage.isUser,
           'other-message': !chatMessage.isUser
         }"
-      >
-        <div class="message-content">
-          {{ chatMessage.messageText }}
-          <div *ngIf="chatMessage.isUser">
-            <div
-              class="single-file"
-              *ngFor="let file of chatMessage.files; let i = index"
-            >
-              <img src="assets/img/dnd/ic-file.svg" width="45px" alt="file" />
-              <div class="info">
-                <h4 class="name">
-                  {{ file?.name }}
-                </h4>
-                <p class="size">
-                  {{ formatBytes(file?.size) }}
-                </p>
-              </div>
-            </div>
+    >
+      <p *ngIf="chatMessage.messageContent">{{ chatMessage.messageContent }}</p>
+      <app-ticket-form *ngIf="chatMessage.wrappedTicket" [wrappedTicket]="chatMessage.wrappedTicket"></app-ticket-form>
+      <div *ngIf="chatMessage.isUser">
+        <div
+          class="single-file"
+          *ngFor="let file of chatMessage.files; let i = index"
+        >
+          <img src="assets/img/dnd/ic-file.svg" width="45px" alt="file"/>
+          <div class="info">
+            <h4 class="name">
+              {{ file?.name }}
+            </h4>
+            <p class="size">
+              {{ formatBytes(file?.size) }}
+            </p>
           </div>
         </div>
       </div>
-      <!-- Display loading dots as other-message -->
-      <div *ngIf="waitingServerResponse" class="message other-message">
-        <div class="loading-dots">
-          <span></span>
-          <span></span>
-          <span></span>
-        </div>
+    </div>
+    <!-- Display loading dots as other-message -->
+    <div *ngIf="waitingServerResponse" class="message other-message">
+      <div class="loading-dots">
+        <span></span>
+        <span></span>
+        <span></span>
       </div>
-    </mat-card>
-  </div>
+    </div>
+  </mat-card>
+</div>
 </body>
