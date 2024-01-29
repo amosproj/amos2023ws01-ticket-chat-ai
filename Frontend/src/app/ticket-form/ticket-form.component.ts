@@ -7,6 +7,7 @@ import {MatChipEditedEvent, MatChipInputEvent} from "@angular/material/chips";
 import {COMMA, ENTER} from "@angular/cdk/keycodes";
 import {DbService} from "../service/db.service";
 import {TicketService} from "../service/ticket.service";
+import {State} from "../entities/state.enum";
 
 @Component({
   selector: 'app-ticket-form',
@@ -18,8 +19,9 @@ export class TicketFormComponent implements OnInit {
 
   ticketFormGroup: FormGroup | undefined;
 
-  serviceValues = ["Atlassian", "Adobe"]
-  categoryValues = ["Technical Issues", "Billing & Payment"]
+  serviceValues: string[] = [];
+  categoryValues: string[] = [];
+  isFormDisabled: boolean = false;
 
   constructor(private readonly dbService: DbService, private readonly ticketService: TicketService) {
   }
@@ -29,13 +31,13 @@ export class TicketFormComponent implements OnInit {
     this.dbService.getServices().subscribe(services => this.serviceValues = services);
     this.dbService.getCategories().subscribe(categories => this.categoryValues = categories);
     this.ticketFormGroup = new FormGroup({
-      title: new FormControl(ticket.title),
-      description: new FormControl(ticket.description),
+      title: new FormControl(ticket.title, [Validators.required]),
+      description: new FormControl(ticket.description, [Validators.required]),
       keywords: new FormControl(ticket.keywords),
       service: new FormControl(ticket.service, [Validators.required]),
-      category: new FormControl(ticket.category),
-      requestType: new FormControl(ticket.requestType),
-      priority: new FormControl(ticket.priority),
+      category: new FormControl(ticket.category, [Validators.required]),
+      requestType: new FormControl(ticket.requestType, [Validators.required]),
+      priority: new FormControl(ticket.priority, [Validators.required]),
     });
   }
 
@@ -49,8 +51,12 @@ export class TicketFormComponent implements OnInit {
     ticket.service = this.ticketFormGroup!.value.service!;
     ticket.requestType = this.ticketFormGroup!.value.requestType!;
     ticket.priority = this.ticketFormGroup!.value.priority!;
+    ticket.state = State.accepted;
 
     this.ticketService.updateTicket(this.wrappedTicket!, ticket.id).subscribe();
+    this.ticketFormGroup?.disable();
+    this.isFormDisabled = true;
+
   }
 
   protected readonly Prio = Prio;
@@ -76,4 +82,10 @@ export class TicketFormComponent implements OnInit {
 
   protected readonly COMMA = COMMA;
   protected readonly ENTER = ENTER;
+
+  onCancelTicket() {
+    this.ticketService.deleteTicket(this.wrappedTicket?.ticket?.id!).subscribe();
+    this.ticketFormGroup?.disable();
+    this.isFormDisabled = true;
+  }
 }

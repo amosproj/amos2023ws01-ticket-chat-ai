@@ -30,6 +30,18 @@ class TicketDBService:
         ticket_entity = found_tickets[0]
         return self._map_ticket(ticket_entity)
 
+    def delete_ticket(self, ticket_id: str):
+        logger.info("Deleting ticket...")
+        ticket_id = ObjectId(ticket_id)
+        result = self.ticket_repository.delete_ticket(ticket_id)
+        if not result.acknowledged:
+            if len(self.ticket_repository.read_tickets(ticket_id)) == 1:
+                self._throw_internal_server_error("Ticket deletion failed.")
+            else:
+                self._throw_client_error("Ticket id doesn't exist!")
+
+
+
     def update_ticket_attributes(
         self, ticket_id: str, updated_ticket: TicketEntity | dict
     ) -> Ticket:
@@ -103,5 +115,13 @@ class TicketDBService:
         logger.error(message)
         raise HTTPException(
             status_code=status.HTTP_500_INTERNAL_SERVER_ERROR,
+            detail=message,
+        )
+
+    @staticmethod
+    def _throw_client_error(message: str):
+        logger.error(message)
+        raise HTTPException(
+            status_code=status.HTTP_400_BAD_REQUEST,
             detail=message,
         )

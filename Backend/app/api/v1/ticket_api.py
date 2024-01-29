@@ -181,3 +181,16 @@ async def update_ticket_attachments(
         )
 
     return updated_ticket
+
+
+@router.delete(
+    "/ticket/{ticket_id}/delete",
+    status_code=status.HTTP_200_OK,
+    response_model=Ticket,
+)
+async def delete_ticket(
+        ticket_id: str = Path(default=""),
+        ticket_db_service: TicketDBService = Depends(get_ticket_db_service),
+):
+    logger.info(f"Deleting ticket with id: {ticket_id}")
+    ticket_db_service.delete_ticket(ticket_id)

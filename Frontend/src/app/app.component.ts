@@ -263,8 +263,22 @@ export class AppComponent implements OnInit {
           if (this.files.length !== 0) {
             this.sendAttachmentsToServer(response);
           } else {
+            this.chatMessages.push(
+              {
+                messageContent: "Your ticket has been created successfully! " +
+                  "Take a look if the printed information accurately captures your concerns. " +
+                  "If you are happy with the details, use the \"Submit\" button to submit it. " +
+                  "Otherwise you can edit your ticket directly by clicking on the corresponding fields " +
+                  "and confirm your changes by pressing the \"Submit\" button. " +
+                  "In case you want to start again or the ticket is no longer required, " +
+                  "you can end the process with the \"Cancel\" button.",
+                isUser: false,
+                wrappedTicket: null,
+                files: []
+              }
+            )
             this.chatMessages.push({
-              messageContent: messageText,
+              messageContent: '',
               isUser: false,
               wrappedTicket: {email: emailInput, ticket: this.createdTicket},
               files: []

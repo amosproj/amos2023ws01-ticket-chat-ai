@@ -77,21 +77,24 @@
           'other-message': !chatMessage.isUser
         }"
     >
-      <p *ngIf="chatMessage.messageContent">{{ chatMessage.messageContent }}</p>
-      <app-ticket-form *ngIf="chatMessage.wrappedTicket" [wrappedTicket]="chatMessage.wrappedTicket"></app-ticket-form>
-      <div *ngIf="chatMessage.isUser">
-        <div
-          class="single-file"
-          *ngFor="let file of chatMessage.files; let i = index"
-        >
-          <img src="assets/img/dnd/ic-file.svg" width="45px" alt="file"/>
-          <div class="info">
-            <h4 class="name">
-              {{ file?.name }}
-            </h4>
-            <p class="size">
-              {{ formatBytes(file?.size) }}
-            </p>
+      <div class="message-content">
+        <p *ngIf="chatMessage.messageContent">{{ chatMessage.messageContent }}</p>
+        <app-ticket-form *ngIf="chatMessage.wrappedTicket"
+                         [wrappedTicket]="chatMessage.wrappedTicket"></app-ticket-form>
+        <div *ngIf="chatMessage.isUser">
+          <div
+            class="single-file"
+            *ngFor="let file of chatMessage.files; let i = index"
+          >
+            <img src="assets/img/dnd/ic-file.svg" width="45px" alt="file"/>
+            <div class="info">
+              <h4 class="name">
+                {{ file?.name }}
+              </h4>
+              <p class="size">
+                {{ formatBytes(file?.size) }}
+              </p>
+            </div>
           </div>
         </div>
       </div>
