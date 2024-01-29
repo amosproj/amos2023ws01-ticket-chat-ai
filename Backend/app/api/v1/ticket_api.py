@@ -101,8 +101,8 @@ async def update_ticket_attributes(
         ticket_id, wrapped_ticket.ticket
     )
 
-    # send email with ticket as content
-    if wrapped_ticket.email:
+    # send email with ticket as content if ticket accepted
+    if wrapped_ticket.email and updated_ticket.state == State.accepted:
         subject_text = (
             "Support Ticket Created - "
             + updated_ticket.title
