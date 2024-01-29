@@ -1,6 +1,7 @@
 import email
 from fastapi import Depends
 from app.email.smtp_conn import SmtpConnection
+from app.email.handle_mail import make_email_with_html
 from app.dependency.smtp_connection import get_smtp_connection
 from app.util.logger import logger
 
@@ -11,23 +12,6 @@ class EmailService:
         self.smtp_conn.start_connection()
         self.email_address = smtp_conn.email_address
 
-    def send_email(self, sender, subject, content):
-        msg = self.make_email(sender, subject, content)
+    def send_email(self, sender, ticket_dict):
+        msg = make_email_with_html(self.email_address, sender, ticket_dict, logger)
         self.smtp_conn.send_mail(msg)
-
-    def make_email(self, to_address, subject, message):
-        """
-        creates email type with specified data
-        :param from_address:
-        :param to_address:
-        :param subject:
-        :param message:
-        :return email:
-        """
-        logger.info("Creating email message...")
-        msg = email.message.EmailMessage()
-        msg["from"] = self.email_address
-        msg["to"] = to_address
-        msg["Subject"] = subject
-        msg.set_content(message)
-        return msg

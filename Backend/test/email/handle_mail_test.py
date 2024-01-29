@@ -11,6 +11,8 @@ sys.path.append(os.path.join(backend_path, "app", "email"))
 
 from app.email.handle_mail import process
 from app.email.handle_mail import can_be_processed
+from app.email.handle_mail import make_email_with_html
+from app.email.logger import logger
 
 
 class HandleMailTest(TestCase):
@@ -169,8 +171,7 @@ class HandleMailTest(TestCase):
             message = pickle.load(inp)
             # Act
             not_blacklisted = can_be_processed(
-                message,
-                blacklisted_emails=["dev.talktix@gmail.com"],
+                message, blacklisted_emails=["dev.talktix@gmail.com"], logger=logger
             )
             # Expect
             self.assertFalse(not_blacklisted)
@@ -183,8 +184,23 @@ class HandleMailTest(TestCase):
             message = pickle.load(inp)
             # Act
             not_blacklisted = can_be_processed(
-                message,
-                blacklisted_emails=["dev.talktix@gmail.com"],
+                message, blacklisted_emails=["dev.talktix@gmail.com"], logger=logger
             )
             # Expect
             self.assertTrue(not_blacklisted)
+
+    def test_make_email_with_html(self):
+        ticket = {
+            "id": "123",
+            "title": "hey",
+            "service": "some service",
+            "category": "some category",
+            "keywords": [],
+            "customerPriority": "something",
+            "affectedPerson": None,
+            "description": "help, something went wrong",
+            "priority": "minimal",
+            "attachmentNames": [],
+            "requestType": "idk",
+        }
+        make_email_with_html("from", "to", ticket, logger)

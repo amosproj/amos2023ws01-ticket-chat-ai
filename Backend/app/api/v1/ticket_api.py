@@ -70,6 +70,17 @@ async def process_text(
         f"Ticket created and saved successfully. Ticket ID: {created_ticket.id}"
     )
 
+    # send email with ticket as content
+    if input.email:
+        subject_text = (
+            "Support Ticket Created - "
+            + created_ticket.title
+            + ". TicketID: "
+            + created_ticket.id
+        )
+        print(created_ticket.id)
+        email_service.send_email(input.email, created_ticket)
+
     return created_ticket
 
 
