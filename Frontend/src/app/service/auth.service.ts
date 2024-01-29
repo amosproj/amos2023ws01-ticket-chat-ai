@@ -42,8 +42,8 @@ export class AuthService {
       );
   }
 
-  signup(firstname: string, family_name: string, email: string, password: string, location: string): Observable<any> {
-    return this.http.post<any>(this.apiUrl2, { firstname, family_name, email, password, location })
+  signup(first_name: string, family_name: string, email: string, password: string, location: string): Observable<any> {
+    return this.http.post<any>(this.apiUrl2, { first_name, family_name, email, password, location })
       .pipe(
         catchError(this.handleError)
       );

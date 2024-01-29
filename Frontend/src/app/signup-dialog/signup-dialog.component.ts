@@ -12,7 +12,7 @@ export class SignupDialogComponent {
   password: string = '';
   confirmpassword: string = '';
   first_name: string = '';
-  family_name:string = '';
+  family_name: string = '';
   location: string = '';
   errorMessage: string = '';
 
