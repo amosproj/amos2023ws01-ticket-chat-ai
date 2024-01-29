@@ -189,8 +189,8 @@ async def update_ticket_attachments(
     response_model=Ticket,
 )
 async def delete_ticket(
-        ticket_id: str = Path(default=""),
-        ticket_db_service: TicketDBService = Depends(get_ticket_db_service),
+    ticket_id: str = Path(default=""),
+    ticket_db_service: TicketDBService = Depends(get_ticket_db_service),
 ):
     logger.info(f"Deleting ticket with id: {ticket_id}")
     ticket_db_service.delete_ticket(ticket_id)

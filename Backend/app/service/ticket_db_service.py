@@ -40,8 +40,6 @@ class TicketDBService:
             else:
                 self._throw_client_error("Ticket id doesn't exist!")
 
-
-
     def update_ticket_attributes(
         self, ticket_id: str, updated_ticket: TicketEntity | dict
     ) -> Ticket:
