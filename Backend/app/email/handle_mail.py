@@ -83,7 +83,7 @@ def make_email_with_html(from_address, to_address, ticket, logger):
     msg = MIMEMultipart("alternative")
     msg["from"] = from_address
     msg["to"] = to_address
-    subject = "Support ticket created (" + ticket_id + ")"
+    subject = "Support ticket created: " + ticket_title
     msg["Subject"] = subject
 
     html_head = (
@@ -120,16 +120,19 @@ def make_email_with_html(from_address, to_address, ticket, logger):
             + i[1]
             + "</td></tr>"
         )
-    table += "</table>"
+    table += "</table><br>"
 
-    salutation = "Hello,<br> your ticket was created successfully.<br>"
+    salutation = "Hi there!<br><br>your ticket has been created successfully. Please find below the respective details:"
+    ending = "Cheers,<br>TalkTix"
 
     text = (
-        "Hello,\n your ticket was created successfully and your ticket number is:"
+        "Hi there!\n\nyour ticket has been created successfully. Your ticket number is:"
         + ticket_id
-        + "."
+        + ".\n\nCheers,\nTalkTix"
     )
-    html = "<html>" + html_head + "<body>" + salutation + table + "</body></html>"
+    html = (
+        "<html>" + html_head + "<body>" + salutation + table + ending + "</body></html>"
+    )
 
     part1 = MIMEText(text, "plain")
     part2 = MIMEText(html, "html")
