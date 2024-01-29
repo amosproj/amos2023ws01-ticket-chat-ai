@@ -11,6 +11,7 @@ from app.email.smtp_conn import SmtpConnection
 from app.service.email_service import EmailService
 from unittest.mock import patch
 from app.util.logger import logger
+from app.api.dto.ticket import Ticket
 
 
 class TestSmtpConnection:
@@ -76,24 +77,19 @@ class TestEmailService:
         email_service = EmailService(smtp_conn=smtp_connection)
 
         sender = "test_sender@example.com"
-        subject = "Test Subject"
-        content = "Test Content"
+        ticket = Ticket
+        ticket.id = "1234"
+        ticket.title = "hello"
+        ticket.description = "hello again"
+        ticket.service = ""
+        ticket.attachmentNames = []
+        ticket.priority = ""
+        ticket.affectedPerson = ""
+        ticket.customerPriority = ""
+        ticket.keywords = []
+        ticket.requestType = ""
+        ticket.category = ""
 
-        email_service.send_email(sender, subject, content)
+        email_service.send_email(sender, ticket)
 
         assert smtp_connection.mail_sent
-
-    def test_make_email(self, monkeypatch):
-        smtp_connection = self.smtp_connection(monkeypatch)
-        email_service = EmailService(smtp_conn=smtp_connection)
-
-        to_address = "test_receiver@example.com"
-        subject = "Test Subject"
-        message = "Test Message"
-
-        email_message = email_service.make_email(to_address, subject, message)
-
-        assert email_message["from"] == smtp_connection.email_address
-        assert email_message["to"] == to_address
-        assert email_message["Subject"] == subject
-        assert email_message.get_content().replace("\r\n", "\n") == message + "\n"

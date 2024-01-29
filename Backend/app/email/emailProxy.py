@@ -92,7 +92,7 @@ class EmailProxy:
             _, data = self.imap.fetch(msgNum, "(RFC822)")
 
             message = email.message_from_bytes(data[0][1])
-            if hm.can_be_processed(message, self.blacklisted_emails):
+            if hm.can_be_processed(message, self.blacklisted_emails, logger):
                 # specific processing
                 return hm.process(message)
             else:

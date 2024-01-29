@@ -39,28 +39,7 @@ export class AppComponent implements OnInit {
   title: string = "TalkTix";
   chatInput: string = "";
   emailInput: string = "";
-  chatMessages: ChatMessage[] = []
-  //chatMessages: ChatMessage[] = [{
-  //  messageContent: "message content",
-  //  isUser: false,
-  //  wrappedTicket: {
-  //    email: "abc@abc.de",
-  //    ticket: {
-  //      id: "123",
-  //      title: "abc",
-  //      keywords: [],
-  //      category: "",
-  //      service: "",
-  //      priority: Prio.low,
-  //      requestType: RequestType.incident,
-  //      customerPriority: CustomerPrio.can_not_work,
-  //      state: State.draft,
-  //      affectedPerson: "",
-  //      description: "",
-  //    } as Ticket
-  //  } as WrappedTicket,
-  //  files: []
-  //}];
+  chatMessages: ChatMessages[] = [{ messageText: "Hi there! Enter your concern and I will create a ticket for you.", isUser: false, wrappedTicket: null, files: [] }];
   files: any[] = [];
   waitingServerResponse: boolean = false;
   recognition: any;
