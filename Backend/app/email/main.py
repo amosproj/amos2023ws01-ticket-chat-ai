@@ -38,41 +38,59 @@ def run_proxy():
                     if sender is None:
                         continue
                     else:
-                        print(f"Sender={sender}")
-                        print(f"Subject={subject}")
-                        print(f"Content={content}")
+                        # print(f"Sender={sender}")
+                        # print(f"Subject={subject}")
+                        # print(f"Content={content}")
                         # print(attachments)
 
                         # send message to backend
-                        email = f"Von: {sender}\nBetreff: {subject}\n {content}"
+                        email = f"From: {sender}\nSubject: {subject}\n {content}"
                         json_input = {"text": email}
+                        success = True
+
                         if content != "":
-                            response = requests.post(
-                                "http://localhost:8000/api/v1/ticket/text",
-                                data=json.dumps(json_input),
-                            )
-                            ticket = json.loads(response.text)
-                            logger.info("Received ticket: " + ticket["id"])
-                            if attachments:
-                                response = requests.put(
-                                    "http://localhost:8000/api/v1/ticket/"
-                                    + ticket["id"]
-                                    + "/attachments",
-                                    files=[
-                                        ("files", attachment)
-                                        for attachment in attachments
-                                    ],
+                            try:
+                                response = requests.post(
+                                    "http://localhost:8000/api/v1/ticket/text",
+                                    data=json.dumps(json_input),
                                 )
-                                logger.info(
-                                    "Attachments for ticket: "
-                                    + ticket["id"]
-                                    + " are sent to the API"
+                                if attachments:
+                                    response = requests.put(
+                                        "http://localhost:8000/api/v1/ticket/"
+                                        + ticket["id"]
+                                        + "/attachments",
+                                        files=[
+                                            ("files", attachment)
+                                            for attachment in attachments
+                                        ],
+                                    )
+                                    logger.info(
+                                        "Attachments for ticket: "
+                                        + ticket["id"]
+                                        + " are sent to the API"
+                                    )
+                                ticket = json.loads(response.text)
+                                print("Ticket:" + str(ticket))
+                                logger.info("Received ticket: " + ticket["id"])
+                            except Exception as e:
+                                logger.error(
+                                    f"Didn't receive the ticket from backend: {e}"
+                                )
+                                success = False
+
+                            if success:
+                                new_email = hm.make_email_with_html(
+                                    email_address, sender, ticket, logger
+                                )
+                            else:
+                                new_email = hm.make_email(
+                                    email_address,
+                                    sender,
+                                    "Ticket could not be created",
+                                    "Hello,\nunfortunately your support ticket couldnt be created, try it out later again.",
                                 )
 
-                            # send response
-                            new_email = hm.make_email(
-                                email_address, sender, "RE:" + subject, response.text
-                            )
+                            logger.info("Sending the email")
                             proxy.smtp.send_mail(new_email)
                 time.sleep(sleep_timer)
 
