@@ -1,10 +1,10 @@
 from openai import OpenAI
 import json
 
-client = OpenAI(api_key="<APIKEY>")
+client = OpenAI(api_key="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")
 
-for _ in range(5):
-    with open("../test_data/test_data_with_gpt/data_10.json", "r") as file:
+for _ in range(1):
+    with open("../test_data/test_data_with_gpt/data_11.json", "r") as file:
         tickets = json.load(file)
 
     for _ in range(100):
@@ -87,5 +87,5 @@ for _ in range(5):
         except Exception as e:
             print(f"An error occurred: {e}")
 
-    with open("../test_data/test_data_with_gpt/data_10.json", "w") as file:
+    with open("../test_data/test_data_with_gpt/data_11.json", "w") as file:
         json.dump(tickets, file, indent=4)
