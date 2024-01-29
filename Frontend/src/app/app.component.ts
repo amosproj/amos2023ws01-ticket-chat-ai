@@ -39,7 +39,14 @@ export class AppComponent implements OnInit {
   title: string = "TalkTix";
   chatInput: string = "";
   emailInput: string = "";
-  chatMessages: ChatMessages[] = [{ messageText: "Hi there! Enter your concern and I will create a ticket for you.", isUser: false, wrappedTicket: null, files: [] }];
+  chatMessages: ChatMessage[] = [
+    {
+      messageContent: "Hi there! Enter your concern and I will create a ticket for you.",
+      isUser: false,
+      wrappedTicket: null,
+      files: []
+    }
+  ];
   files: any[] = [];
   waitingServerResponse: boolean = false;
   recognition: any;
