@@ -15,17 +15,16 @@
   {{ title }}
 </h1>
 
-<div class="login-container" *ngIf="!isLoggedIn">
-  <button
-    mat-raised-button color="primary" (click)="openLoginDialog()">Login
-  </button>
-  <button mat-raised-button class="signup-button" (click)="openSignupDialog()">Sign Up</button>
-</div>
-<div class="login-container" *ngIf="isLoggedIn">
-  <button
-    mat-raised-button color="primary" (click)="logout()">Logout
-  </button>
-</div>
+  <div class="login-container" *ngIf="!isLoggedIn">
+    <button
+    mat-raised-button color="primary" (click)="openLoginDialog()">Login</button>
+    <button mat-raised-button class="signup-button" (click)="openSignupDialog()">Sign Up</button>
+  </div>
+  <div class="login-container" *ngIf="isLoggedIn">
+    <button
+    mat-raised-button color="primary" (click)="logout()">Logout</button>
+    <button mat-raised-button class="signup-button" (click)="openEditDialog()">Edit User</button>
+  </div>
 
 <div class="cards-container">
   <mat-card class="history-div">

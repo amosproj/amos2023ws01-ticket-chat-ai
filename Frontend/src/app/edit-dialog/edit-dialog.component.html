@@ -1,5 +1,5 @@
 <body style="--main-bg-color: #313131; --accent-color: #10ddd3; --hover-color: #00828f; --text-color: #fff; background-color: var(--main-bg-color); overflow-y: auto">
-    <h1 mat-dialog-title class="dialog-title">Sign Up</h1>
+    <h1 mat-dialog-title class="dialog-title">Edit your data</h1>
     <mat-dialog-content class="dialog-content">
       <button mat-icon-button class="close-button" (click)="closeDialog()">
         <mat-icon>close</mat-icon>
@@ -9,32 +9,37 @@
       </div>
 
       <mat-form-field appearance="fill">
-        <mat-label>Firstname</mat-label>
+        <mat-label>Firstname (optional)</mat-label>
         <input matInput type="text" [(ngModel)]="first_name">
       </mat-form-field>
 
       <mat-form-field appearance="fill">
-        <mat-label>Lastname</mat-label>
+        <mat-label>Lastname (optional)</mat-label>
         <input matInput type="text" [(ngModel)]="family_name">
       </mat-form-field>
 
       <mat-form-field appearance="fill">
-        <mat-label>E-Mail</mat-label>
+        <mat-label>E-Mail (required)</mat-label>
         <input matInput type="email" [(ngModel)]="email">
       </mat-form-field>
 
       <mat-form-field appearance="fill">
-        <mat-label>Password</mat-label>
+        <mat-label>Current password (required)</mat-label>
+        <input matInput type="password" [(ngModel)]="old_password">
+      </mat-form-field>
+
+      <mat-form-field appearance="fill">
+        <mat-label>New password (optional)</mat-label>
         <input matInput type="password" [(ngModel)]="password">
       </mat-form-field>
 
       <mat-form-field appearance="fill">
-        <mat-label>Confirm password</mat-label>
+        <mat-label>Confirm new password</mat-label>
         <input matInput type="password" [(ngModel)]="confirmpassword">
       </mat-form-field>
 
       <mat-form-field>
-        <mat-label>Office Location</mat-label>
+        <mat-label>Office location (required)</mat-label>
         <mat-select [(ngModel)]="location">
           <mat-option value="Berlin">Berlin</mat-option>
           <mat-option value="Frankfurt">Frankfurt</mat-option>
@@ -43,6 +48,6 @@
           <mat-option value="Nürnberg">Nürnberg</mat-option>
         </mat-select>
       </mat-form-field>
-      <button mat-button class="signup-button" (click)="signup()">Sign Up</button>
+      <button mat-button class="edit-button" (click)="edit()">Confirm</button>
     </mat-dialog-content>
 </body>
