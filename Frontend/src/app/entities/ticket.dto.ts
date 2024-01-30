@@ -13,7 +13,7 @@ export class Ticket{
     description: string = ""
     priority: Prio = Prio.medium
     requestType: string = ""
-    state: State.draft
+    state: State = State.draft
 
   constructor(obj: any) {
     this.id = obj.id;

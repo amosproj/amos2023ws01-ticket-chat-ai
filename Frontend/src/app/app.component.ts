@@ -1,4 +1,4 @@
-import {Component, OnInit, ViewChild, ElementRef, ChangeDetectorRef} from '@angular/core';
+import {ChangeDetectorRef, Component, ElementRef, OnInit, ViewChild} from '@angular/core';
 import {TicketService} from './service/ticket.service';
 import {LogService} from './service/logging.service';
 import {DragAndDropComponent} from './drag-and-drop/drag-and-drop.component';
@@ -10,13 +10,14 @@ import {SignupDialogComponent} from './signup-dialog/signup-dialog.component';
 import {EditDialogComponent} from './edit-dialog/edit-dialog.component';
 import {jwtDecode} from "jwt-decode";
 import {HttpClient} from '@angular/common/http';
-import { AuthService } from './service/auth.service';
+import {AuthService} from './service/auth.service';
 import {WrappedTicket} from "./entities/wrappedTicket.dto";
 
 
-interface ChatMessages {
-  messageText: string;
+interface ChatMessage {
+  messageContent: string;
   isUser: boolean;
+  wrappedTicket: WrappedTicket | null;
   files: any[];
 }
 
@@ -39,7 +40,14 @@ export class AppComponent implements OnInit {
   title: string = "TalkTix";
   chatInput: string = "";
   emailInput: string = "";
-  chatMessages: ChatMessages[] = [{ messageText: "Hi there! Enter your concern and I will create a ticket for you.", isUser: false, files: [] }];
+  chatMessages: ChatMessage[] = [
+    {
+      messageContent: "Hi there! Enter your concern and I will create a ticket for you.",
+      isUser: false,
+      wrappedTicket: null,
+      files: []
+    }
+  ];
   files: any[] = [];
   waitingServerResponse: boolean = false;
   recognition: any;
@@ -51,7 +59,7 @@ export class AppComponent implements OnInit {
   isLoggedIn: boolean = false;
   accessToken: string | null = '';
 
-  @ViewChild("fileDropRef", { static: true }) fileDropEl!: ElementRef;
+  @ViewChild("fileDropRef", {static: true}) fileDropEl!: ElementRef;
   @ViewChild(DragAndDropComponent) dragAndDropComponent!: DragAndDropComponent;
 
   constructor(
@@ -61,7 +69,8 @@ export class AppComponent implements OnInit {
     private dialog: MatDialog,
     private http: HttpClient,
     private authService: AuthService,
-    ) {}
+  ) {
+  }
 
   ngOnInit() {
     this.authService.checkTokenValidity();
@@ -96,11 +105,16 @@ export class AppComponent implements OnInit {
   openLoginDialog() {
     const dialogRef = this.dialog.open(LoginDialogComponent);
     dialogRef.afterClosed().subscribe(result => {
-      if (result?.loginSuccess){
+      if (result?.loginSuccess) {
         // logic after closing dialog
         this.emailInput = result.email;
         this.isLoggedIn = true;
-        this.chatMessages.push({ messageText: "You have successfully logged in.", isUser: false, files: this.files });
+        this.chatMessages.push({
+          messageContent: "You have successfully logged in.",
+          isUser: false,
+          wrappedTicket: null,
+          files: this.files
+        });
       }
     });
   }
@@ -109,10 +123,15 @@ export class AppComponent implements OnInit {
     const dialogRef = this.dialog.open(SignupDialogComponent);
 
     dialogRef.afterClosed().subscribe(result => {
-      if (result?.signupSuccess){
+      if (result?.signupSuccess) {
         this.emailInput = result.email;
         this.isLoggedIn = true;
-        this.chatMessages.push({ messageText: "You have successfully signed up and logged in.", isUser: false, files: this.files });
+        this.chatMessages.push({
+          messageContent: "You have successfully signed up and logged in.",
+          isUser: false,
+          wrappedTicket: null,
+          files: this.files
+        });
       }
     });
   }
@@ -143,7 +162,7 @@ export class AppComponent implements OnInit {
           this.errorMessage = 'An error occurred during login.';
         }
         );
-        this.chatMessages.push({ messageText: "You have successfully edited your data!", isUser: false, files: this.files });
+        this.chatMessages.push({ messageContent: "You have successfully edited your data!", isUser: false, wrappedTicket: null, files: this.files });
       }
     });
   }
@@ -163,12 +182,12 @@ export class AppComponent implements OnInit {
   }
 
   updateTicketAttributes(updatedTicket: Ticket) {
-    const wrappedTicket : WrappedTicket = {email: this.emailInput, ticket: updatedTicket}
+    const wrappedTicket: WrappedTicket = {email: this.emailInput, ticket: updatedTicket}
 
     this.ticketService.updateTicket(wrappedTicket, wrappedTicket.ticket!.id).subscribe((ticket) => {
       this.logger.log("Ticket update was done successfully: " + ticket);
 
-      const existingMessageIndex = this.chatMessages.findIndex(msg => msg.messageText.includes(ticket.id));
+      const existingMessageIndex = this.chatMessages.findIndex(msg => msg.messageContent.includes(ticket.id));
 
       if (ticket.requestType && ticket.requestType.trim() !== '') {
         const messageText = JSON.stringify(ticket);
@@ -178,13 +197,18 @@ export class AppComponent implements OnInit {
           if (this.files.length !== 0) {
             this.sendAttachmentsToServer(ticket);
           }
-          this.chatMessages[existingMessageIndex] = { messageText, isUser: false, files: [] };
+          this.chatMessages[existingMessageIndex] = {
+            messageContent: messageText,
+            isUser: false,
+            wrappedTicket: null,
+            files: []
+          };
         } else {
           if (this.files.length !== 0) {
             this.sendAttachmentsToServer(ticket);
-          } else{
-          this.chatMessages.push({ messageText, isUser: false, files: [] });
-            }
+          } else {
+            this.chatMessages.push({messageContent: messageText, isUser: false, wrappedTicket: null, files: []});
+          }
         }
 
       } else {
@@ -196,8 +220,26 @@ export class AppComponent implements OnInit {
   sendAttachmentsToServer(response: any) {
     this.ticketService.sendFiles(this.files, response.id).subscribe(
       (attachmentsResponse: any) => {
-        const messageText = JSON.stringify(attachmentsResponse);
-        this.chatMessages.push({ messageText, isUser: false, files: [] });
+            this.chatMessages.push(
+              {
+                messageContent: "Your ticket has been created successfully! " +
+                  "Take a look if the printed information accurately captures your concerns. " +
+                  "If you are happy with the details, use the \"Submit\" button to submit it. " +
+                  "Otherwise you can edit your ticket directly by clicking on the corresponding fields " +
+                  "and confirm your changes by pressing the \"Submit\" button. " +
+                  "In case you want to start again or the ticket is no longer required, " +
+                  "you can end the process with the \"Cancel\" button.",
+                isUser: false,
+                wrappedTicket: null,
+                files: []
+              }
+            )
+            this.chatMessages.push({
+              messageContent: '',
+              isUser: false,
+              wrappedTicket: {email: this.emailInput, ticket: this.createdTicket},
+              files: []
+            });
         this.clearFiles();
 
         this.logger.log('Attachments were sent successfully: ' + attachmentsResponse);
@@ -216,7 +258,7 @@ export class AppComponent implements OnInit {
       this.isLoggedIn = true;
       let email = jwtDecode(this.accessToken).sub;
       this.emailInput = email ? email : '';
-    }else{
+    } else {
       this.logout()
     }
 
@@ -227,7 +269,7 @@ export class AppComponent implements OnInit {
       return;
     }
 
-    this.chatMessages.push({ messageText: value, isUser: true, files: this.files });
+    this.chatMessages.push({messageContent: value, isUser: true, wrappedTicket: null, files: this.files});
     this.logger.log('Trying to send message to backend server: ' + value);
 
     this.ticketService.send(value, emailInput).subscribe(
@@ -257,7 +299,26 @@ export class AppComponent implements OnInit {
           if (this.files.length !== 0) {
             this.sendAttachmentsToServer(response);
           } else {
-            this.chatMessages.push({ messageText, isUser: false, files: [] });
+            this.chatMessages.push(
+              {
+                messageContent: "Your ticket has been created successfully! " +
+                  "Take a look if the printed information accurately captures your concerns. " +
+                  "If you are happy with the details, use the \"Submit\" button to submit it. " +
+                  "Otherwise you can edit your ticket directly by clicking on the corresponding fields " +
+                  "and confirm your changes by pressing the \"Submit\" button. " +
+                  "In case you want to start again or the ticket is no longer required, " +
+                  "you can end the process with the \"Cancel\" button.",
+                isUser: false,
+                wrappedTicket: null,
+                files: []
+              }
+            )
+            this.chatMessages.push({
+              messageContent: '',
+              isUser: false,
+              wrappedTicket: {email: emailInput, ticket: this.createdTicket},
+              files: []
+            });
           }
         } else {
           // RequestType is empty, do not display the response
@@ -345,4 +406,6 @@ export class AppComponent implements OnInit {
     this.isLoggedIn = false;
     this.emailInput = '';
   }
+
+  protected readonly WrappedTicket = WrappedTicket;
 }

@@ -3,6 +3,7 @@ from fastapi.middleware.cors import CORSMiddleware
 
 from app.api.v1 import ticket_api
 from app.api.v1 import auth_api
+from app.api.v1 import db_api
 
 from app.dependency.collection import (
     get_user_collection,
@@ -52,6 +53,9 @@ app.include_router(ticket_api.router, prefix="/api/v1")
 
 # Include the router from the auth_endpoint module
 app.include_router(auth_api.router, prefix="/api/v1")
+
+# Include the router from the db_endpoint module
+app.include_router(db_api.router, prefix="/api/v1")
 
 
 @app.on_event("startup")

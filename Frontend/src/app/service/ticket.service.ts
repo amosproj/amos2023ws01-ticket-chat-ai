@@ -55,6 +55,17 @@ export class TicketService {
     );
   }
 
+  deleteTicket(ticket_id: string): Observable<any> {
+    const url = environment.apiUrl + 'api/v1/ticket/' + ticket_id + '/delete';
+
+    return this.http.delete(url).pipe(
+      catchError((error) => {
+        this.logger.log('Error sending message:' + error);
+        return throwError('Unfortunately an error has occurred. Please try again or try again later, we apologize.');
+      })
+    );
+  }
+
   sendFiles(files: File[], ticket_id: string): Observable<any> {
     // Create a FormData object
     const formData = new FormData();

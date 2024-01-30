@@ -1,0 +1,100 @@
+<form [formGroup]="ticketFormGroup!">
+  <div class="grid grid-cols-2 gap-4">
+    <div class="col-span-2">
+      <mat-form-field appearance="fill">
+        <mat-label>Title</mat-label>
+        <input matInput id="title" type="text" formControlName="title">
+        <mat-error *ngIf="ticketFormGroup!.hasError('required', 'title')">Title is <strong>required</strong>
+        </mat-error>
+      </mat-form-field>
+    </div>
+
+    <div class="col-span-2">
+      <mat-form-field appearance="fill">
+        <mat-label>Description</mat-label>
+        <textarea matInput id="description" type="text" formControlName="description"></textarea>
+        <mat-error *ngIf="ticketFormGroup!.hasError('required', 'description')">Description is <strong>required</strong>
+        </mat-error>
+      </mat-form-field>
+    </div>
+
+    <div class="col-span-2">
+      <mat-form-field>
+        <mat-label>Keywords</mat-label>
+        <mat-chip-grid #chipGrid aria-label="Enter keywords" [disabled]="isFormDisabled">
+          <mat-chip-row *ngFor="let keyword of ticketFormGroup!.value.keywords"
+                        (removed)="removeKeyword(keyword)"
+                        [editable]="!isFormDisabled"
+                        (edited)="editKeyword(keyword, $event)"
+                        [aria-description]="'press enter to edit ' + keyword"
+                        [disabled]="isFormDisabled">
+            {{ keyword }}
+            <button matChipRemove [attr.aria-label]="'remove ' + keyword" [disabled]="isFormDisabled">
+              <mat-icon>cancel</mat-icon>
+            </button>
+          </mat-chip-row>
+
+          <input placeholder="New Keyword..."
+                 [matChipInputFor]="chipGrid"
+                 [matChipInputSeparatorKeyCodes]="[ENTER, COMMA]"
+                 [matChipInputAddOnBlur]="false"
+                 (matChipInputTokenEnd)="addKeyword($event)" [disabled]="isFormDisabled"/>
+        </mat-chip-grid>
+      </mat-form-field>
+    </div>
+
+    <div class="col-start-1 col-span-1">
+      <mat-form-field>
+        <mat-label>Service</mat-label>
+        <mat-select id="service" formControlName="service">
+          <mat-option *ngFor="let service of serviceValues" [value]="service">{{ service }}</mat-option>
+        </mat-select>
+        <mat-error *ngIf="ticketFormGroup!.hasError('required', 'service')">Service is <strong>required</strong>
+        </mat-error>
+      </mat-form-field>
+    </div>
+
+    <div class="col-start-2 col-span-1">
+      <mat-form-field>
+        <mat-label>Category</mat-label>
+        <mat-select id="category" formControlName="category">
+          <mat-option *ngFor="let category of categoryValues" [value]="category">{{ category }}</mat-option>
+        </mat-select>
+        <mat-error *ngIf="ticketFormGroup!.hasError('required', 'category')">Category is <strong>required</strong>
+        </mat-error>
+      </mat-form-field>
+    </div>
+
+    <div class="col-start-1 col-span-1">
+      <mat-form-field>
+        <mat-label>Request type</mat-label>
+        <mat-select id="requestType" formControlName="requestType">
+          <mat-option *ngFor="let requestType of RequestType | keyvalue"
+                      [value]="requestType.value">{{ requestType.value }}
+          </mat-option>
+        </mat-select>
+        <mat-error *ngIf="ticketFormGroup!.hasError('required', 'requestType')">Request Type is <strong>required</strong>
+        </mat-error>
+      </mat-form-field>
+    </div>
+
+    <div class="col-start-2 col-span-1">
+      <mat-form-field>
+        <mat-label>Priority</mat-label>
+        <mat-select id="priority" formControlName="priority">
+          <mat-option *ngFor="let prio of Prio | keyvalue" [value]="prio.value">{{ prio.value }}</mat-option>
+        </mat-select>
+        <mat-error *ngIf="ticketFormGroup!.hasError('required', 'priority')">Priority is <strong>required</strong>
+        </mat-error>
+      </mat-form-field>
+    </div>
+    <div class="col-start-1 col-span-1">
+      <button mat-raised-button type="submit" color="primary" (click)="submitTicket()" [disabled]="isFormDisabled">
+        Submit
+      </button>
+    </div>
+    <div class="col-start-2 col-span-1">
+      <button mat-raised-button (click)="onCancelTicket()" color="warn" [disabled]="isFormDisabled">Cancel</button>
+    </div>
+  </div>
+</form>

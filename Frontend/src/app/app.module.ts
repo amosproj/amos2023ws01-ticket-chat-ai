@@ -2,7 +2,7 @@ import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
-import { FormsModule } from '@angular/forms';
+import {FormsModule, ReactiveFormsModule} from '@angular/forms';
 import { HttpClientModule } from '@angular/common/http';
 import { NoopAnimationsModule } from '@angular/platform-browser/animations';
 import { MatButtonModule } from "@angular/material/button";
@@ -16,6 +16,8 @@ import { LoginDialogComponent } from './login-dialog/login-dialog.component';
 import { SignupDialogComponent } from './signup-dialog/signup-dialog.component';
 import { EditDialogComponent } from './edit-dialog/edit-dialog.component';
 import { MatSelectModule } from '@angular/material/select';
+import { TicketFormComponent } from './ticket-form/ticket-form.component';
+import {MatChipsModule} from "@angular/material/chips";
 
 @NgModule({
   declarations: [
@@ -23,7 +25,8 @@ import { MatSelectModule } from '@angular/material/select';
     RequestTypeDialogComponent,
     LoginDialogComponent,
     SignupDialogComponent,
-    EditDialogComponent
+    TicketFormComponent,
+    EditDialogComponent,
   ],
   imports: [
     BrowserModule,
@@ -39,6 +42,8 @@ import { MatSelectModule } from '@angular/material/select';
     MatInputModule,
     MatIconModule,
     MatSelectModule,
+    ReactiveFormsModule,
+    MatChipsModule,
   ],
   providers: [],
   bootstrap: [AppComponent]
