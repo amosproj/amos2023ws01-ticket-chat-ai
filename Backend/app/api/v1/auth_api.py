@@ -36,6 +36,8 @@ async def login_for_access_token(
     user_repo: UserRepository = Depends(get_user_repository),
 ):
     # check userdata
+    print(form_data.username)
+    print(form_data.password)
     is_authenticated = user_repo.authenticate_user(
         email=form_data.username, password=form_data.password
     )
@@ -84,11 +86,11 @@ async def signup_user(
     user_repo: UserRepository = Depends(get_user_repository),
 ):
     logger.info("Extracting User data..")
-    firstname = signup_data.get("firstname")
-    lastname = signup_data.get("lastname")
+    first_name = signup_data.get("first_name")
+    family_name = signup_data.get("family_name")
     email = signup_data.get("email")
+    location = signup_data.get("location")
     password = signup_data.get("password")
-    officeLocation = signup_data.get("officeLocation")
 
     logger.info("Verifying if Email is already in use..")
     if user_repo.read_users_by_email(email):
@@ -96,13 +98,77 @@ async def signup_user(
     logger.info("Email is valid..")
 
     user_data = {
-        "firstname": firstname,
-        "lastname": lastname,
+        "first_name": first_name,
+        "family_name": family_name,
         "email_address": email,
+        "location": location,
         "password": password,
-        "officeLocation": officeLocation,
     }
 
     user_repo.create_user(user_data)
     logger.info("User inserted into database..")
     return {"message": "User created successfully"}
+
+
+@router.post("/edit")
+async def edit_user(
+    edit_data: dict = Body(...),  # Using Body to accept a JSON object
+    user_repo: UserRepository = Depends(get_user_repository),
+):
+    logger.info("Extracting User data..")
+    old_password = edit_data.get("old_password")
+    old_email = edit_data.get("old_email")
+    first_name = edit_data.get("first_name")
+    family_name = edit_data.get("family_name")
+    email = edit_data.get("email")
+    officeLocation = edit_data.get("location")
+    password = edit_data.get("password")
+
+    is_authenticated = user_repo.authenticate_user(
+        email=old_email, password=old_password
+    )
+    if not is_authenticated:
+        raise HTTPException(
+            status_code=402,
+            detail="Incorrect email or password",
+            headers={"WWW-Authenticate": "Bearer"},
+        )
+
+    if old_email != email:
+        logger.info("Verifying if new Email is already in use..")
+        if user_repo.read_users_by_email(email):
+            raise HTTPException(status_code=405, detail="Email already in use")
+        logger.info("Email is valid..")
+
+    user_data = {
+        "first_name": first_name,
+        "family_name": family_name,
+        "email_address": email,
+        "location": officeLocation,
+        "password": password,
+    }
+
+    user = user_repo.read_users_by_email(old_email)[-1]
+    user_id = user["_id"]
+
+    user_repo.update_user(user_id, user_data)
+    logger.info("User updated into database..")
+    return {"message": "User updated successfully"}
+
+
+@router.post("/getuserinfo")
+async def get_user_info(
+    edit_data: dict = Body(...),  # Using Body to accept a JSON object
+    user_repo: UserRepository = Depends(get_user_repository),
+):
+    logger.info("Searching User")
+    email = edit_data.get("email")
+    user = user_repo.read_users_by_email(email)[-1]
+    user_first_name = user["first_name"]
+    user_family_name = user["family_name"]
+    user_location = user["location"]
+    return {
+        "first_name": user_first_name,
+        "family_name": user_family_name,
+        "location": user_location,
+    }

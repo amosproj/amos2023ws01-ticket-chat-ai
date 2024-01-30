@@ -13,6 +13,8 @@ export class AuthService {
   private apiUrl = environment.apiUrl + 'api/v1/token';
   private apiUrl1 = environment.apiUrl + 'api/v1/verify-token';
   private apiUrl2 = environment.apiUrl + 'api/v1/signup';
+  private apiUrl3 = environment.apiUrl + 'api/v1/edit';
+  private apiUrl4 = environment.apiUrl + 'api/v1/getuserinfo';
 
   constructor(private http: HttpClient, private logger: LogService) {}
 
@@ -40,8 +42,22 @@ export class AuthService {
       );
   }
 
-  signup(firstname: string, lastname: string, email: string, password: string, officeLocation: string): Observable<any> {
-    return this.http.post<any>(this.apiUrl2, { firstname, lastname, email, password, officeLocation })
+  signup(first_name: string, family_name: string, email: string, password: string, location: string): Observable<any> {
+    return this.http.post<any>(this.apiUrl2, { first_name, family_name, email, password, location })
+      .pipe(
+        catchError(this.handleError)
+      );
+  }
+
+  edit(old_email: string, old_password: string, first_name: string, family_name: string, email: string, password: string, location: string): Observable<any> {
+    return this.http.post<any>(this.apiUrl3, { old_email, old_password, first_name, family_name, email, password, location })
+      .pipe(
+        catchError(this.handleError)
+      );
+  }
+
+  getuserinfo(email: string): Observable<any> {
+    return this.http.post<any>(this.apiUrl4, { email })
       .pipe(
         catchError(this.handleError)
       );
@@ -81,7 +97,7 @@ export class AuthService {
   checkTokenValidity(): void {
     const accessToken = localStorage.getItem('access_token');
     if (accessToken) {
-      
+
       this.http.get<{ email: string }>(this.apiUrl1, {
         headers: { Authorization: `Bearer ${accessToken}` }
       }).subscribe({
