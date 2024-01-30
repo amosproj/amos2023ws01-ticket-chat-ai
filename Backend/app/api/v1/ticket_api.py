@@ -18,7 +18,7 @@ router = APIRouter()
 
 
 @router.post("/ticket/text", status_code=status.HTTP_201_CREATED, response_model=Ticket)
-async def process_text(
+async def process_text(branch
     input: TextInput = Body(default=TextInput()),
     trained_t5_model: TrainedT5Model = Depends(get_trained_t5_model),
     ticket_db_service: TicketDBService = Depends(get_ticket_db_service),

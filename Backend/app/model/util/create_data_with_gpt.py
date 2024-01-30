@@ -3,7 +3,7 @@ import json
 
 client = OpenAI(api_key="<APIKEY>")
 
-for _ in range(1):
+for _ in range(5):
     with open("../test_data/test_data_with_gpt/data_11.json", "r") as file:
         tickets = json.load(file)
 
