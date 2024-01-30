@@ -4,6 +4,8 @@ from pydantic import BaseModel
 from app.enum.customer_prio import CustomerPrio
 from app.enum.prio import Prio
 
+from app.enum.state import State
+
 
 class Ticket(BaseModel):
     id: str = ""
@@ -17,3 +19,4 @@ class Ticket(BaseModel):
     priority: Prio | None
     attachmentNames: list[str] = []
     requestType: str | None
+    state = State.draft

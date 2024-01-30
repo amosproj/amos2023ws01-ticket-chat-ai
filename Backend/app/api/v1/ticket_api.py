@@ -13,6 +13,9 @@ from fastapi import APIRouter, HTTPException, UploadFile
 from fastapi.params import Depends, File, Path, Body
 from starlette import status
 
+from app.api.dto.wrapped_ticket import WrappedTicket
+from app.enum.state import State
+
 router = APIRouter()
 
 
@@ -20,7 +23,6 @@ router = APIRouter()
 async def process_text(
     input: TextInput = Body(default=TextInput()),
     ticket_db_service: TicketDBService = Depends(get_ticket_db_service),
-    email_service: EmailService = Depends(get_email_service),
     user_db_service: UserDBService = Depends(get_user_db_service),
     ticket_service: AITicketService = Depends(get_ai_ticket_service),
 ):
@@ -59,23 +61,14 @@ async def process_text(
                 logger.info("Setting ticket's service to user's location...")
                 received_dict["service"] = user.location
 
+    received_dict["state"] = State.draft
+
     # Save the ticket to the database using the TicketDBService
     logger.info("Saving ticket to the database...")
     created_ticket = ticket_db_service.create_ticket(received_dict)
     logger.info(
         f"Ticket created and saved successfully. Ticket ID: {created_ticket.id}"
     )
-
-    # send email with ticket as content
-    if input.email:
-        subject_text = (
-            "Support Ticket Created - "
-            + created_ticket.title
-            + ". TicketID: "
-            + created_ticket.id
-        )
-        print(created_ticket.id)
-        email_service.send_email(input.email, created_ticket)
 
     return created_ticket
 
@@ -87,7 +80,8 @@ async def process_text(
 )
 async def update_ticket_attributes(
     ticket_id: str = Path(default=""),
-    updated_ticket: Ticket = Body(default=None),
+    wrapped_ticket: WrappedTicket = Body(default=None),
+    email_service: EmailService = Depends(get_email_service),
     ticket_db_service: TicketDBService = Depends(get_ticket_db_service),
 ):
     logger.info("Updating ticket attributes...")
@@ -104,8 +98,12 @@ async def update_ticket_attributes(
     # Update the ticket attributes in the database using the TicketDBService
     logger.info("Updating ticket attributes in the database...")
     updated_ticket = ticket_db_service.update_ticket_attributes(
-        ticket_id, updated_ticket
+        ticket_id, wrapped_ticket.ticket
     )
+
+    # send email with ticket as content
+    if wrapped_ticket.email:
+        email_service.send_email(wrapped_ticket.email, updated_ticket)
 
     # Prepare response
     logger.info("Preparing response...")

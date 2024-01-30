@@ -6,6 +6,8 @@ from app.repository.entity.attachment_entity import AttachmentEntity
 from app.enum.customer_prio import CustomerPrio
 from app.enum.prio import Prio
 
+from app.enum.state import State
+
 
 class TicketEntity(TypedDict):
     _id: ObjectId
@@ -19,3 +21,4 @@ class TicketEntity(TypedDict):
     priority: Prio
     attachments: list[AttachmentEntity]
     requestType: str
+    state: State

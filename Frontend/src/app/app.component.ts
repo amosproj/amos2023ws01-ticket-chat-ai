@@ -11,6 +11,7 @@ import {EditDialogComponent} from './edit-dialog/edit-dialog.component';
 import {jwtDecode} from "jwt-decode";
 import {HttpClient} from '@angular/common/http';
 import { AuthService } from './service/auth.service';
+import {WrappedTicket} from "./entities/wrappedTicket.dto";
 
 
 interface ChatMessages {
@@ -162,7 +163,9 @@ export class AppComponent implements OnInit {
   }
 
   updateTicketAttributes(updatedTicket: Ticket) {
-    this.ticketService.updateTicket(updatedTicket, updatedTicket.id).subscribe((ticket) => {
+    const wrappedTicket : WrappedTicket = {email: this.emailInput, ticket: updatedTicket}
+
+    this.ticketService.updateTicket(wrappedTicket, wrappedTicket.ticket!.id).subscribe((ticket) => {
       this.logger.log("Ticket update was done successfully: " + ticket);
 
       const existingMessageIndex = this.chatMessages.findIndex(msg => msg.messageText.includes(ticket.id));

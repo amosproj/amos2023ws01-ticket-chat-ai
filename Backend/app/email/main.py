@@ -24,6 +24,8 @@ def run_proxy():
     # Define a list of email addresses or domains to be ignored
     blacklisted_emails = [
         "MicrosoftExchange329e71ec88ae4615bbc36ab6ce41109e@sct-15-20-4755-11-msonline-outlook-0fa01.templateTenant",
+        "microsoftexchange",
+        ".templatetenant",
         "no-reply@microsoft.com",
     ]
 

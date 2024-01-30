@@ -5,6 +5,7 @@ import {Observable, throwError} from "rxjs";
 import {environment} from "../../environments/environment";
 import {LogService} from './logging.service';
 import {Ticket} from "../entities/ticket.dto";
+import {WrappedTicket} from "../entities/wrappedTicket.dto";
 
 @Injectable({
   providedIn: "root"
@@ -37,7 +38,7 @@ export class TicketService {
     );
   }
 
-  updateTicket(updatedTicket: Ticket, ticket_id: string): Observable<any> {
+  updateTicket(wrappedTicket: WrappedTicket, ticket_id: string): Observable<any> {
     const url = environment.apiUrl + 'api/v1/ticket/' + ticket_id + '/update';
 
     // define headers
@@ -46,7 +47,7 @@ export class TicketService {
       'Content-Type': 'application/json',
     });
 
-    return this.http.put(url, updatedTicket, {headers}).pipe(
+    return this.http.put(url, wrappedTicket, {headers}).pipe(
       catchError((error) => {
         this.logger.log('Error while updating ticket: ' + error);
         return throwError('An Error occurred. Please try again later.');
