@@ -86,6 +86,7 @@ export class TicketFormComponent implements OnInit {
   onCancelTicket() {
     this.ticketService.deleteTicket(this.wrappedTicket?.ticket?.id!).subscribe();
     this.ticketFormGroup?.disable();
+    this.ticketFormGroup?.reset();
     this.isFormDisabled = true;
   }
 }
