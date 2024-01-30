@@ -105,7 +105,7 @@ def make_email_with_html(from_address, to_address, ticket, logger):
         ("Keywords:", str(ticket_keywords or "")),
         ("Customer priority:", ticket_customerPriority or ""),
         ("Affected Person:", ticket_affectedPerson or ""),
-        ("Describtion:", ticket_description),
+        ("Description:", ticket_description),
         ("Priority:", ticket_priority or ""),
         ("Attachments:", str(ticket_attachmentNames or "")),
         ("Request type:", ticket_requestType or ""),
