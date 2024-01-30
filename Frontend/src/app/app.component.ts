@@ -162,7 +162,7 @@ export class AppComponent implements OnInit {
           this.errorMessage = 'An error occurred during login.';
         }
         );
-        this.chatMessages.push({ messageText: "You have successfully edited your data!", isUser: false, files: this.files });
+        this.chatMessages.push({ messageContent: "You have successfully edited your data!", isUser: false, wrappedTicket: null, files: this.files });
       }
     });
   }

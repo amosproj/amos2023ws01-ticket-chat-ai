@@ -25,8 +25,8 @@ import {MatChipsModule} from "@angular/material/chips";
     RequestTypeDialogComponent,
     LoginDialogComponent,
     SignupDialogComponent,
-    TicketFormComponent
-    EditDialogComponent
+    TicketFormComponent,
+    EditDialogComponent,
   ],
   imports: [
     BrowserModule,
