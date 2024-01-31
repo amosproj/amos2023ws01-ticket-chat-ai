@@ -1,6 +1,7 @@
 import email
 import imaplib
 import time
+import traceback
 
 import handle_mail as hm
 import smtp_conn as sm
@@ -106,11 +107,16 @@ class EmailProxy:
     def __exit__(self, exc_type, exc_val, exc_tb):
         """
         close the connection to the imap server
-        :param exc_type:
-        :param exc_val:
-        :param exc_tb:
+        :param exc_type: exception_type
+        :param exc_val: exception_value
+        :param exc_tb: traceback
         :return:
         """
+        if exc_type:
+            if exc_type != KeyboardInterrupt:
+                logger.error("Error: ", exc_info=(exc_type, exc_val, exc_tb))
+            else:
+                logger.info("Keyboard Interrupt, Application is shutting down")
         self.imap.close()
         self.imap.logout()
         self.smtp.smtp.quit()
