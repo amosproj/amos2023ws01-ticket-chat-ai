@@ -3,6 +3,10 @@ body{
   flex-direction: column;
 }
 
+.white {
+  color: white;
+}
+
 .login-container {
   align-self: flex-end;
   margin-right: 20px;

@@ -49,6 +49,7 @@ export class AppComponent implements OnInit {
     }
   ];
   files: any[] = [];
+  accountName: string = "";
   waitingServerResponse: boolean = false;
   recognition: any;
   errorMessage: string = '';
@@ -78,6 +79,7 @@ export class AppComponent implements OnInit {
     if (this.accessToken != null) {
       this.isLoggedIn = true;
       let email = jwtDecode(this.accessToken).sub;
+      this.accountName = email ? email.substring(0, email.indexOf("@")) : '';
       this.emailInput = email ? email : '';
     }
   }
@@ -108,6 +110,7 @@ export class AppComponent implements OnInit {
       if (result?.loginSuccess) {
         // logic after closing dialog
         this.emailInput = result.email;
+        this.accountName = result.email.substring(0, result.email.indexOf("@"));
         this.isLoggedIn = true;
         this.chatMessages.push({
           messageContent: "You have successfully logged in.",
