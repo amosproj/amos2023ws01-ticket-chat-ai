@@ -1,0 +1,42 @@
+.shared-dialog-styles {
+  --main-bg-color: #313131;
+  --accent-color: #10ddd3;
+  --hover-color: #00828f;
+  --text-color: #fff;
+}
+
+.shared-dialog-container {
+  background-color: var(--main-bg-color);
+  color: var(--accent-color);
+  text-align: center;
+  max-width: 400px;
+  margin: 50px auto;
+  border-radius: 8px;
+  overflow: hidden;
+}
+
+.shared-dialog-content {
+  color: #10ddd3; /* Set the color to #10ddd3 */
+  font-size: 16px;
+  font-weight: bold; /* Make the text bold */
+  padding: 20px;
+}
+
+.shared-dialog-actions {
+  margin-top: 20px;
+}
+
+.shared-dialog-styles .ok-button {
+  margin-top: 20px;
+  background-color: var(--hover-color);
+  color: var(--text-color);
+  font-size: 18px;
+  font-weight: bold;
+  text-transform: capitalize;
+  cursor: pointer;
+  transition: background-color 0.3s ease-in-out;
+}
+
+.shared-dialog-styles .ok-button:hover {
+  background-color: var(--hover-color);
+}

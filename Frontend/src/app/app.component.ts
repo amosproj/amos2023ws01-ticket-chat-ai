@@ -12,7 +12,7 @@ import {jwtDecode} from "jwt-decode";
 import {HttpClient} from '@angular/common/http';
 import {AuthService} from './service/auth.service';
 import {WrappedTicket} from "./entities/wrappedTicket.dto";
-
+import { SessionExpiredDialogComponent } from './session-expired-dialog/session-expired-dialog.component';
 
 interface ChatMessage {
   messageContent: string;
@@ -253,13 +253,15 @@ export class AppComponent implements OnInit {
 
   handleSend(value: string, emailInput: string) {
     this.authService.checkTokenValidity();
-    this.accessToken = localStorage.getItem("access_token") ? localStorage.getItem("access_token") : null;
-    if (this.accessToken != null) {
+    this.accessToken = localStorage.getItem("access_token") || null;
+    
+    if (this.accessToken !== null) {
       this.isLoggedIn = true;
       let email = jwtDecode(this.accessToken).sub;
-      this.emailInput = email ? email : '';
+      this.emailInput = email || '';
     } else {
-      this.logout()
+      this.logout();
+      return;
     }
 
     this.errorMessage = "";
@@ -330,12 +332,34 @@ export class AppComponent implements OnInit {
       },
       (error) => {
         this.handleError('Unfortunately an error has occurred. Please try again or try again later, we apologize.');
+        if (error.status === 401) {
+          this.logout();
+        }
       }
     );
 
     this.chatInput = "";
     this.waitingServerResponse = true;
   }
+
+
+  clearChatHistory() {
+    this.chatMessages = [];
+  }
+
+  showSessionExpiredDialog() {
+    const dialogRef = this.dialog.open(SessionExpiredDialogComponent, {
+      width: '400px',
+      data: { message: 'Your session has expired. Please log in again.' },
+    });
+
+    dialogRef.afterClosed().subscribe(result => {
+      this.clearChatHistory();
+
+      console.log('The dialog was closed');
+    });
+  }
+
 
   startSpeechRecognition() {
     if (this.recordingState === 'idle') {
@@ -405,6 +429,7 @@ export class AppComponent implements OnInit {
     localStorage.removeItem("access_token");
     this.isLoggedIn = false;
     this.emailInput = '';
+    this.showSessionExpiredDialog();
   }
 
   protected readonly WrappedTicket = WrappedTicket;
