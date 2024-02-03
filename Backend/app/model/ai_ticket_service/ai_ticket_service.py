@@ -307,7 +307,7 @@ class AITicketService:
 
         if len(generated_output) > 0:
             keywords = [
-                entity["word"]
+                entity["word"].replace("Ġ", "")
                 for entity in generated_output
                 if "KEY" in entity["entity"]
             ]
