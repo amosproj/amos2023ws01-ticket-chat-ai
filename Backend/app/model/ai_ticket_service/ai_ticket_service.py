@@ -1,8 +1,13 @@
+import time
+
 from transformers import pipeline
 from app.util.logger import logger
 from app.enum.customer_prio import CustomerPrio
 from app.enum.prio import Prio
 from sklearn.preprocessing import LabelEncoder
+import threading
+from multiprocessing import Pool
+from concurrent.futures import ThreadPoolExecutor, as_completed
 
 
 class AITicketService:
@@ -230,56 +235,135 @@ class AITicketService:
         self.priority_values = ["Low", "Medium", "High", "Very High"]
         self.priority_values.sort()
 
+    # def create_ticket(self, input_text) -> dict:
+    #
+    #     ticket_dict = {
+    #         "description": input_text,
+    #         "attachments": [],
+    #     }
+    #
+    #     title_event = threading.Event()
+    #     keywords_event = threading.Event()
+    #     affected_person_event = threading.Event()
+    #     request_type_event = threading.Event()
+    #     category_event = threading.Event()
+    #     service_event = threading.Event()
+    #     customer_priority_event = threading.Event()
+    #     priority_event = threading.Event()
+    #
+    #     title_thread = threading.Thread(target=self.generate_title, args=(input_text, title_event, ticket_dict))
+    #     keywords_thread = threading.Thread(target=self.generate_keywords,
+    #                                        args=(input_text, keywords_event, ticket_dict))
+    #     affected_person_thread = threading.Thread(target=self.generate_affected_person,
+    #                                               args=(input_text, affected_person_event, ticket_dict))
+    #     request_type_thread = threading.Thread(target=self.generate_prediction, args=(
+    #         input_text,
+    #         self.request_type_generator_pipe,
+    #         "requestType",
+    #         self.request_type_values,
+    #         request_type_event,
+    #         ticket_dict
+    #     ))
+    #     category_thread = threading.Thread(target=self.generate_prediction, args=(
+    #         input_text,
+    #         self.category_generator_pipe,
+    #         "category",
+    #         self.category_values,
+    #         category_event,
+    #         ticket_dict
+    #     ))
+    #     service_thread = threading.Thread(target=self.generate_prediction, args=(
+    #         input_text,
+    #         self.service_generator_pipe,
+    #         "service",
+    #         self.service_values,
+    #         service_event,
+    #         ticket_dict
+    #     ))
+    #     customer_priority_thread = threading.Thread(target=self.generate_prediction, args=(
+    #         input_text,
+    #         self.customer_priority_generator_pipe,
+    #         "customerPriority",
+    #         self.customer_priority_values,
+    #         customer_priority_event,
+    #         ticket_dict
+    #     ))
+    #     priority_thread = threading.Thread(target=self.generate_prediction, args=(
+    #         input_text,
+    #         self.priority_generator_pipe,
+    #         "priority",
+    #         self.priority_values,
+    #         priority_event,
+    #         ticket_dict
+    #     ))
+    #
+    #     title_thread.start()
+    #     keywords_thread.start()
+    #     service_thread.start()
+    #     customer_priority_thread.start()
+    #     priority_thread.start()
+    #     affected_person_thread.start()
+    #     request_type_thread.start()
+    #     category_thread.start()
+    #
+    #     start_time = time.time()
+    #     title_event.wait()
+    #     print(f"title {time.time() - start_time}")
+    #     keywords_event.wait()
+    #     print(f"keywords {time.time() - start_time}")
+    #     affected_person_event.wait()
+    #     print(f"affected_person {time.time() - start_time}")
+    #     request_type_event.wait()
+    #     print(f"request_type {time.time() - start_time}")
+    #     category_event.wait()
+    #     print(f"category {time.time() - start_time}")
+    #     service_event.wait()
+    #     print(f"service {time.time() - start_time}")
+    #     customer_priority_event.wait()
+    #     print(f"customer {time.time() - start_time}")
+    #     priority_event.wait()
+    #     print(f"customer {time.time() - start_time}")
+    #
+    #     return ticket_dict
+
     def create_ticket(self, input_text) -> dict:
-        # generate prediction for each field
-        title = self.generate_title(input_text)
-        keywords = self.generate_keywords(input_text)
-        affected_person = self.generate_affected_person(input_text)
-        request_type = self.generate_prediction(
-            input_text,
-            self.request_type_generator_pipe,
-            "requestType",
-            self.request_type_values,
-        )
-        category = self.generate_prediction(
-            input_text, self.category_generator_pipe, "category", self.category_values
-        )
-        service = self.generate_prediction(
-            input_text, self.service_generator_pipe, "service", self.service_values
-        )
-
-        customer_priority = self.generate_prediction(
-            input_text,
-            self.customer_priority_generator_pipe,
-            "customerPriority",
-            self.customer_priority_values,
-        )
-
-        priority = self.generate_prediction(
-            input_text, self.priority_generator_pipe, "priority", self.priority_values
-        )
-
-        # Create Ticket
         ticket_dict = {
-            "title": title,
-            "service": service,
-            "category": category,
-            "keywords": keywords,
-            "customerPriority": customer_priority,
-            "affectedPerson": affected_person,
             "description": input_text,
-            "priority": priority,
-            "requestType": request_type,
             "attachments": [],
         }
 
+        with ThreadPoolExecutor(max_workers=8) as executor:
+            futures = []
+
+            futures.append(executor.submit(self.generate_title, input_text, ticket_dict))
+            futures.append(executor.submit(self.generate_keywords, input_text, ticket_dict))
+            futures.append(executor.submit(self.generate_affected_person, input_text, ticket_dict))
+            futures.append(
+                executor.submit(self.generate_prediction, input_text, self.request_type_generator_pipe, "requestType",
+                                self.request_type_values, ticket_dict))
+            futures.append(
+                executor.submit(self.generate_prediction, input_text, self.category_generator_pipe, "category",
+                                self.category_values, ticket_dict))
+            futures.append(executor.submit(self.generate_prediction, input_text, self.service_generator_pipe, "service",
+                                           self.service_values, ticket_dict))
+            futures.append(executor.submit(self.generate_prediction, input_text, self.customer_priority_generator_pipe,
+                                           "customerPriority", self.customer_priority_values, ticket_dict))
+            futures.append(
+                executor.submit(self.generate_prediction, input_text, self.priority_generator_pipe, "priority",
+                                self.priority_values, ticket_dict))
+
+            print(f"start-time {time.time()}")
+            start_time = time.time()
+            for future in as_completed(futures):
+                print(f"{future.result()} {time.time() - start_time}")
+            print(f"start-time {time.time() - start_time}")
+
         return ticket_dict
 
-    def generate_title(self, input_text) -> str:
-        generated_title = self.title_generator_pipe(input_text)[0]["generated_text"]
-        return generated_title
+    def generate_title(self, input_text, ticket_dict):
+        ticket_dict['title'] = self.title_generator_pipe(input_text)[0]["generated_text"]
 
-    def generate_affected_person(self, input_text) -> str:
+    def generate_affected_person(self, input_text, ticket_dict):
         generated_output = self.affected_person_generator_pipe(input_text)
 
         if len(generated_output) > 0:
@@ -295,14 +379,15 @@ class AITicketService:
                     "affectedPerson", generated_affected_person
                 )
             )
-            return generated_affected_person
         else:
             logger.info(
                 "[AI] Could not generate prediction for Affected Person. Generated output is empty"
             )
-            return ""
+            generated_affected_person = ""
 
-    def generate_keywords(self, input_text) -> list:
+        ticket_dict['affectedPerson'] = generated_affected_person
+
+    def generate_keywords(self, input_text, ticket_dict):
         generated_output = self.keywords_generator_pipe(input_text)
 
         if len(generated_output) > 0:
@@ -317,12 +402,13 @@ class AITicketService:
                     "keywords", keywords
                 )
             )
-            return keywords
         else:
             logger.info("[AI] Could not generate keywords. Generated output is empty.")
-            return []
+            keywords = []
 
-    def generate_prediction(self, input_text, pipe, field, field_values) -> str:
+        ticket_dict['keywords'] = keywords
+
+    def generate_prediction(self, input_text, pipe, field, field_values, ticket_dict):
         generated_output = pipe(input_text)
         prediction = None
 
@@ -334,7 +420,6 @@ class AITicketService:
                         field
                     )
                 )
-                return prediction
             else:
                 prediction = self.map_label_to_class(
                     generated_output[0]["label"], field_values
@@ -344,20 +429,16 @@ class AITicketService:
                         field, prediction
                     )
                 )
-                return prediction
+
         else:
             logger.info(
                 "[AI] Could not generate prediction for {}. Generated output is empty".format(
                     field
                 )
             )
-            return prediction
+
+        ticket_dict[field] = prediction
 
     def map_label_to_class(self, label, classes) -> str:
         index = int(label[-1])
         return classes[index]
-
-    # def remove_email_signature(self, email_content) -> str:
-    #     parsed_email = EmailReplyParser.parse_reply(email_content)
-    #     print("Generated parsed_email:", parsed_email)
-    #     return parsed_email
