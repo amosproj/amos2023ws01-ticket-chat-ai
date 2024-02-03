@@ -160,4 +160,6 @@ jobs:
       ################################
       - name: Run Frontend Tests
         working-directory: "./Frontend"
-        run: npm run test:prod
+        run: |
+          npm run build:prod 
+          npm run test:prod
