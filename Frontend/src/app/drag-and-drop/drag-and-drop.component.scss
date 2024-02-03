@@ -7,6 +7,8 @@
   border: dashed 1px #979797;
   position: relative;
   margin: 0 auto;
+  display: flex;
+  flex-direction: row;
 
   input {
     opacity: 0;
