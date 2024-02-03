@@ -23,7 +23,10 @@ class AITicketService:
             "text-classification", model="TalkTix/roberta-base-request-type"
         )
 
-        self.category_generator_pipe = pipeline("text-classification", model="TalkTix/roberta-base-category-type-generator-53k")
+        self.category_generator_pipe = pipeline(
+            "text-classification",
+            model="TalkTix/roberta-base-category-type-generator-53k",
+        )
 
         self.service_generator_pipe = pipeline(
             "text-classification",
@@ -62,7 +65,7 @@ class AITicketService:
             "Billing & Payment",
             "Product Inquiries",
             "Account Management",
-            "Policy Questions"
+            "Policy Questions",
         ]
         self.category_values.sort()
 
