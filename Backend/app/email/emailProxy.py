@@ -1,7 +1,6 @@
 import email
 import imaplib
 import time
-import traceback
 
 import handle_mail as hm
 import smtp_conn as sm

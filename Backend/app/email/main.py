@@ -20,14 +20,11 @@ def run_proxy():
     smtp_server = config["DEFAULT"]["SMTP_SERVER"]
     email_address = config["DEFAULT"]["EMAIL_ADDRESS"]
     sleep_timer = int(config["DEFAULT"]["SLEEP_TIMER"])
-
-    # Define a list of email addresses or domains to be ignored
-    blacklisted_emails = [
-        "MicrosoftExchange329e71ec88ae4615bbc36ab6ce41109e@sct-15-20-4755-11-msonline-outlook-0fa01.templateTenant",
-        "microsoftexchange",
-        ".templatetenant",
-        "no-reply@microsoft.com",
-    ]
+    blacklisted_emails = list(
+        filter(
+            None, [e.strip() for e in config.get("DEFAULT", "BLACKLIST").split("\n")]
+        )
+    )
 
     try:
         with Proxy.EmailProxy(
@@ -40,11 +37,6 @@ def run_proxy():
                     if sender is None:
                         continue
                     else:
-                        # print(f"Sender={sender}")
-                        # print(f"Subject={subject}")
-                        # print(f"Content={content}")
-                        # print(attachments)
-
                         # send message to backend
                         email = f"From: {sender}\nSubject: {subject}\n {content}"
                         json_input = {"text": email}
