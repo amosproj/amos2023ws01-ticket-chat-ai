@@ -269,6 +269,41 @@ export class AppComponent implements OnInit {
       return;
     }
 
+    // checking if email address is valid
+    var at = false; // email address needs an @
+    var dot = false; // email address needs a . after the @
+    var chars_after_dot = 0; // top level domain has to be at least 2 chars long
+    for (let i = 0; i < emailInput.length; i++) {
+      if (at) {
+        if ('.'== emailInput.charAt(i)) {
+          dot = true;
+          chars_after_dot = 0;
+        } else {
+          chars_after_dot += 1;
+        }
+        if (!(/[0-9a-zA-Z\.-]/.test(emailInput.charAt(i)))) { // we can only have alphanumeric chars, . and - in the domain part
+          this.errorMessage = 'Please use a valid email address.';
+          return;
+        }
+      } else {
+        if ('@'== emailInput.charAt(i)) {
+          at = true;
+        }
+      }
+    }
+    if (!(at && dot && (chars_after_dot > 1))) {
+      this.errorMessage = 'Please use a valid email address.';
+      return;
+    }
+    if (/[\W_][\W_]/.test(emailInput)) { // we cant have two special chars in a row
+      this.errorMessage = 'Please use a valid email address.';
+      return;
+    }
+    if (/[\W_]/.test(emailInput.charAt(0))) { // we cant start with a special char
+      this.errorMessage = 'Please use a valid email address.';
+      return;
+    }
+
     this.chatMessages.push({messageContent: value, isUser: true, wrappedTicket: null, files: this.files});
     this.logger.log('Trying to send message to backend server: ' + value);
 
