@@ -1,14 +1,13 @@
 import base64
 
-from bson import ObjectId
-from fastapi import UploadFile, HTTPException
-from starlette import status
-
 from app.api.dto.ticket import Ticket
-from app.util.logger import logger
 from app.repository.entity.attachment_entity import AttachmentEntity
 from app.repository.entity.ticket_entity import TicketEntity
 from app.repository.ticket_repository import TicketRepository
+from app.util.logger import logger
+from bson import ObjectId
+from fastapi import UploadFile, HTTPException
+from starlette import status
 
 
 class TicketDBService:
@@ -51,16 +50,16 @@ class TicketDBService:
                 f"Ticket with id {str(ticket_id)} not found."
             )
         ticket_entity = found_tickets[0]
-        ticket_entity["title"] = updated_ticket.title
-        ticket_entity["service"] = updated_ticket.service
-        ticket_entity["category"] = updated_ticket.category
-        ticket_entity["keywords"] = updated_ticket.keywords
-        ticket_entity["customerPriority"] = updated_ticket.customerPriority
-        ticket_entity["affectedPerson"] = updated_ticket.affectedPerson
-        ticket_entity["description"] = updated_ticket.description
-        ticket_entity["priority"] = updated_ticket.priority
-        ticket_entity["requestType"] = updated_ticket.requestType
-        ticket_entity["state"] = updated_ticket.state
+        ticket_entity["title"] = updated_ticket["title"]
+        ticket_entity["service"] = updated_ticket["service"]
+        ticket_entity["category"] = updated_ticket["category"]
+        ticket_entity["keywords"] = updated_ticket["keywords"]
+        ticket_entity["customerPriority"] = updated_ticket["customerPriority"]
+        ticket_entity["affectedPerson"] = updated_ticket["affectedPerson"]
+        ticket_entity["description"] = updated_ticket["description"]
+        ticket_entity["priority"] = updated_ticket["priority"]
+        ticket_entity["requestType"] = updated_ticket["requestType"]
+        ticket_entity["state"] = updated_ticket["state"]
 
         update_result = self.ticket_repository.update_ticket(ticket_id, ticket_entity)
         if not update_result.acknowledged:

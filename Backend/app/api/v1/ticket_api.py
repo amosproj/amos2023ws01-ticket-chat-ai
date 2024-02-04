@@ -98,7 +98,7 @@ async def update_ticket_attributes(
     # Update the ticket attributes in the database using the TicketDBService
     logger.info("Updating ticket attributes in the database...")
     updated_ticket = ticket_db_service.update_ticket_attributes(
-        ticket_id, wrapped_ticket.ticket
+        ticket_id, wrapped_ticket.ticket.dict()
     )
 
     # send email with ticket as content if ticket accepted
@@ -107,16 +107,9 @@ async def update_ticket_attributes(
 
     # Prepare response
     logger.info("Preparing response...")
-    if updated_ticket:
-        logger.info(
-            f"Ticket attributes updated and saved successfully. Ticket ID: {updated_ticket.id}"
-        )
-    else:
-        logger.error("Ticket attributes update failed.")
-        raise HTTPException(
-            status_code=status.HTTP_500_INTERNAL_SERVER_ERROR,
-            detail="Ticket attributes update failed.",
-        )
+    logger.info(
+        f"Ticket attributes updated and saved successfully. Ticket ID: {updated_ticket.id}"
+    )
 
     return updated_ticket
 
