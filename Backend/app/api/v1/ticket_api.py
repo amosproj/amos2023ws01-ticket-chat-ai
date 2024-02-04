@@ -1,10 +1,8 @@
 from app.api.dto.text_input import TextInput
 from app.api.dto.ticket import Ticket
-from app.api.dto.wrapped_ticket import WrappedTicket
 from app.dependency.ai_service import get_ai_ticket_service
 from app.dependency.db_service import get_ticket_db_service, get_user_db_service
 from app.dependency.email_service import get_email_service
-from app.enum.state import State
 from app.model.ai_ticket_service.ai_ticket_service import AITicketService
 from app.service.email_service import EmailService
 from app.service.ticket_db_service import TicketDBService
@@ -14,6 +12,9 @@ from bson import ObjectId
 from fastapi import APIRouter, HTTPException, UploadFile
 from fastapi.params import Depends, File, Path, Body
 from starlette import status
+
+from app.api.dto.wrapped_ticket import WrappedTicket
+from app.enum.state import State
 
 router = APIRouter()
 
@@ -49,16 +50,28 @@ async def process_text(
 
     # Run the model to process the input text
     logger.info("Running the model...")
-    received_dict = ticket_service.create_ticket(input.text)
+    received_dict = ticket_service.create_ticket(input.text, input.email)
     logger.info("Model execution complete. Result: %s", received_dict)
 
-    # Set service based on user's location
-    if not received_dict.get("service") or received_dict["service"] == "":
-        if input.email:
-            user = user_db_service.get_user_by_email(input.email)
-            if user and user.location:
-                logger.info("Setting ticket's service to user's location...")
-                received_dict["service"] = user.location
+    # Set service based on user's location and set user's name
+    if input.email:
+        user = user_db_service.get_user_by_email(input.email)
+        if user:
+            # Set service based on user's location
+            if user.location:
+                if not received_dict.get("service") or received_dict["service"] is None:
+                    logger.info("Setting ticket's service to user's location...")
+                    received_dict["service"] = user.location
+
+            # Set affectedPerson based on available name information
+            if user.first_name and user.family_name:
+                received_dict["affectedPerson"] = (
+                    user.first_name + " " + user.family_name
+                )
+            elif user.first_name:
+                received_dict["affectedPerson"] = user.first_name
+            elif user.family_name:
+                received_dict["affectedPerson"] = user.family_name
 
     received_dict["state"] = State.draft
 
