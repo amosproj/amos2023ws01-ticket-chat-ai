@@ -40,14 +40,8 @@ def run_proxy():
                     if sender is None:
                         continue
                     else:
-                        # print(f"Sender={sender}")
-                        # print(f"Subject={subject}")
-                        # print(f"Content={content}")
-                        # print(attachments)
-
                         # send message to backend
-                        email = f"From: {sender}\nSubject: {subject}\n {content}"
-                        json_input = {"text": email}
+                        json_input = {"text": content, "email": sender}
                         success = True
 
                         if content != "":

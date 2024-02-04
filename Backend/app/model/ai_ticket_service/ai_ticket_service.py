@@ -237,7 +237,7 @@ class AITicketService:
     def __del__(self):
         self.executor.shutdown()
 
-    def create_ticket(self, input_text) -> dict:
+    def create_ticket(self, input_text, email) -> dict:
         ticket_dict = {
             "description": input_text,
             "attachments": [],
@@ -252,7 +252,9 @@ class AITicketService:
             self.executor.submit(self.generate_keywords, input_text, ticket_dict)
         )
         futures.append(
-            self.executor.submit(self.generate_affected_person, input_text, ticket_dict)
+            self.executor.submit(
+                self.generate_affected_person, input_text, email, ticket_dict
+            )
         )
         futures.append(
             self.executor.submit(
@@ -317,7 +319,11 @@ class AITicketService:
             "generated_text"
         ]
 
-    def generate_affected_person(self, input_text, ticket_dict):
+    def generate_affected_person(self, input_text, email, ticket_dict):
+        if email:
+            ticket_dict["affectedPerson"] = email
+            return
+
         generated_output = self.affected_person_generator_pipe(input_text)
 
         if len(generated_output) > 0:

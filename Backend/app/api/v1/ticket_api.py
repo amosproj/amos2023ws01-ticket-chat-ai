@@ -50,14 +50,14 @@ async def process_text(
 
     # Run the model to process the input text
     logger.info("Running the model...")
-    received_dict = ticket_service.create_ticket(input.text)
+    received_dict = ticket_service.create_ticket(input.text, input.email)
     logger.info("Model execution complete. Result: %s", received_dict)
 
     # Set service based on user's location
     if input.email:
         user = user_db_service.get_user_by_email(input.email)
         if user and user.location:
-            if not received_dict.get("service") or received_dict["service"] == "":
+            if not received_dict.get("service") or received_dict["service"] is None:
                 logger.info("Setting ticket's service to user's location...")
                 received_dict["service"] = user.location
 

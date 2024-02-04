@@ -32,7 +32,7 @@ class TestAITicketService(unittest.TestCase):
         service = AITicketService()
 
         # Act
-        ticket_dict = service.create_ticket(input_text)
+        ticket_dict = service.create_ticket(input_text, "")
 
         # Assert
         self.assertIsInstance(ticket_dict, dict)
