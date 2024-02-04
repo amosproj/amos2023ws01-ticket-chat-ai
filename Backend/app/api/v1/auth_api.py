@@ -1,13 +1,13 @@
 import os
+from datetime import datetime, timedelta
+
+from app.dependency.repository import get_user_repository
+from app.repository.user_repository import UserRepository
+from app.util.logger import logger
 from dotenv import load_dotenv
 from fastapi import APIRouter, Depends, HTTPException, Response, Body
 from fastapi.security import OAuth2PasswordBearer, OAuth2PasswordRequestForm
-from app.repository.user_repository import UserRepository
-from app.dependency.repository import get_user_repository
-from datetime import datetime, timedelta
 from jose import JWTError, jwt
-from pydantic import BaseModel
-from app.util.logger import logger
 
 router = APIRouter()
 oauth2_scheme = OAuth2PasswordBearer(tokenUrl="token")
@@ -17,12 +17,9 @@ SECRET_KEY = os.getenv("SECRET_KEY")
 ALGORITHM = "HS256"
 
 
-def create_access_token(data: dict, expires_delta: timedelta = None):
+def create_access_token(data: dict, expires_delta: timedelta):
     to_encode = data.copy()
-    if expires_delta:
-        expire = datetime.utcnow() + expires_delta
-    else:
-        expire = datetime.utcnow() + timedelta(minutes=15)
+    expire = datetime.utcnow() + expires_delta
     to_encode.update({"exp": expire})
     logger.info("Creating Token ...")
     encoded_jwt = jwt.encode(to_encode, SECRET_KEY, algorithm=ALGORITHM)
@@ -47,10 +44,9 @@ async def login_for_access_token(
             detail="Incorrect email or password",
             headers={"WWW-Authenticate": "Bearer"},
         )
+
     # read user data
     user_data = user_repo.read_users_by_email(email=form_data.username)
-    if not user_data:
-        raise HTTPException(status_code=404, detail="User not found")
 
     # take first element, because email_adresse should be unique
     user = user_data[0]
@@ -69,15 +65,15 @@ async def login_for_access_token(
 async def verify_token(token: str = Depends(oauth2_scheme)):
     try:
         payload = jwt.decode(token, SECRET_KEY, algorithms=[ALGORITHM])
-        email = payload.get("sub")
-        if email is None:
-            logger.info("Token is invalid.")
-            raise HTTPException(status_code=401, detail="Invalid token")
-        logger.info("Token is valid.")
-        return {"email": email}
     except JWTError:
-        logger.info("Token is valid.")
+        logger.info("Token is invalid.")
         raise HTTPException(status_code=401, detail="Invalid token")
+    email = payload.get("sub")
+    if email is None:
+        logger.info("Token is invalid.")
+        raise HTTPException(status_code=401, detail="Invalid token")
+    logger.info("Token is valid.")
+    return {"email": email}
 
 
 @router.post("/signup")

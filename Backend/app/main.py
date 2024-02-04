@@ -1,10 +1,6 @@
-from fastapi import FastAPI
-from fastapi.middleware.cors import CORSMiddleware
-
-from app.api.v1 import ticket_api
 from app.api.v1 import auth_api
 from app.api.v1 import db_api
-
+from app.api.v1 import ticket_api
 from app.dependency.collection import (
     get_user_collection,
     get_service_collection,
@@ -19,19 +15,19 @@ from app.dependency.repository import (
     get_category_repository,
     get_location_repository,
 )
-
-from app.repository.user_repository import UserRepository
-from app.repository.service_repository import ServiceRepository
-from app.repository.location_repository import LocationRepository
-from app.repository.department_repository import DepartmentRepository
 from app.repository.category_repository import CategoryRepository
-from app.service.department_db_routine_service import DepartmentDBRoutineService
+from app.repository.department_repository import DepartmentRepository
+from app.repository.location_repository import LocationRepository
+from app.repository.service_repository import ServiceRepository
+from app.repository.user_repository import UserRepository
 from app.service.category_db_routine_service import CategoryDBRoutineService
+from app.service.department_db_routine_service import DepartmentDBRoutineService
 from app.service.location_db_routine_service import LocationDBRoutineService
+from app.service.service_db_routine_service import ServiceDBRoutineService
 from app.service.user_db_routine_service import UserDBRoutineService
-from app.service.service_entity_db_routine_service import ServiceDBRoutineService
-
 from config import AppConfig
+from fastapi import FastAPI
+from fastapi.middleware.cors import CORSMiddleware
 
 app = FastAPI()
 

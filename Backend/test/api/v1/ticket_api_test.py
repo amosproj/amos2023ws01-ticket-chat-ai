@@ -3,36 +3,45 @@ import os
 from unittest import TestCase
 from unittest.mock import MagicMock
 
+from app.api.dto.ticket import Ticket
+from app.dependency.collection import get_ticket_collection, get_user_collection
+from app.dependency.email_service import get_email_service
+from app.enum.customer_prio import CustomerPrio
+from app.enum.prio import Prio
+from app.enum.state import State
+from app.main import app
+from app.repository.entity.ticket_entity import TicketEntity
 from bson import ObjectId
 from fastapi.testclient import TestClient
 from pymongo.results import InsertOneResult, UpdateResult
 from starlette import status
 
-from app.api.dto.ticket import Ticket
-from app.dependency.collection import get_ticket_collection
-from app.enum.customer_prio import CustomerPrio
-from app.enum.prio import Prio
-from app.main import app
-from app.repository.entity.ticket_entity import TicketEntity
-
-from app.enum.state import State
-
 
 class TicketAPIIntegrationTest(TestCase):
     def override_get_ticket_collection(self):
-        return self.collection_mock
+        return self.ticket_collection_mock
+
+    def override_get_user_collection(self):
+        return self.user_collection_mock
+
+    def override_get_email_service(self):
+        return self.email_service_mock
 
     def setUp(self):
         self.client = TestClient(app)
-        self.collection_mock = MagicMock()
+        self.ticket_collection_mock = MagicMock()
+        self.user_collection_mock = MagicMock()
+        self.email_service_mock = MagicMock()
         app.dependency_overrides = {
-            get_ticket_collection: self.override_get_ticket_collection
+            get_ticket_collection: self.override_get_ticket_collection,
+            get_user_collection: self.override_get_user_collection,
+            get_email_service: self.override_get_email_service,
         }
         self.ticket_id = ObjectId("6554b34d82161e93bff08df6")
         self.file_name = "__init__.py"
         self.file_path = os.path.join(os.path.dirname(__file__), self.file_name)
 
-    def test_process_text_success(self):
+    def test_process_text_without_email_success(self):
         # Define
         ticket_entity = TicketEntity(
             _id=self.ticket_id,
@@ -68,16 +77,16 @@ class TicketAPIIntegrationTest(TestCase):
         )
 
         # Define mock behavior
-        self.collection_mock.insert_one.return_value = insert_one_result
-        self.collection_mock.find.return_value = [ticket_entity]
+        self.ticket_collection_mock.insert_one.return_value = insert_one_result
+        self.ticket_collection_mock.find.return_value = [ticket_entity]
 
         # Act
         response = self._run_process_text_endpoint(text_input)
 
         # Assert
         # Mocks
-        self.collection_mock.insert_one.assert_called_once()
-        self.collection_mock.find.assert_called_once()
+        self.ticket_collection_mock.insert_one.assert_called_once()
+        self.ticket_collection_mock.find.assert_called_once()
         # Response
         self.assertEqual(status.HTTP_201_CREATED, response.status_code)
         self.assertEqual(exp_ticket, Ticket.parse_obj(response.json()))
@@ -127,16 +136,16 @@ class TicketAPIIntegrationTest(TestCase):
         )
 
         # Define mock behavior
-        self.collection_mock.find.return_value = [ticket_entity]
-        self.collection_mock.replace_one.return_value = update_result
+        self.ticket_collection_mock.find.return_value = [ticket_entity]
+        self.ticket_collection_mock.replace_one.return_value = update_result
 
         # Act
         response = self._run_update_ticket_attachments(ticket_id=str(self.ticket_id))
 
         # Assert
         # Mocks
-        self.collection_mock.find.assert_called_once()
-        self.collection_mock.replace_one.assert_called_once()
+        self.ticket_collection_mock.find.assert_called_once()
+        self.ticket_collection_mock.replace_one.assert_called_once()
         # Response
         self.assertEqual(status.HTTP_200_OK, response.status_code)
         self.assertEqual(exp_ticket, Ticket.parse_obj(response.json()))
@@ -149,7 +158,7 @@ class TicketAPIIntegrationTest(TestCase):
         self.assertEqual(status.HTTP_400_BAD_REQUEST, response.status_code)
         self.assertEqual(exp_json, response.json())
 
-    def test_update_ticket_attributes_success(self):
+    def test_update_ticket_attributes_state_draft_success(self):
         # Define
         ticket_entity = TicketEntity(
             _id=self.ticket_id,
@@ -164,6 +173,74 @@ class TicketAPIIntegrationTest(TestCase):
             attachments=[],
             requestType="",
             state=State.draft,
+        )
+        update_result = UpdateResult(raw_result=ticket_entity, acknowledged=True)
+
+        wrapped_ticket_json = {
+            "email": "testEmail@talxTix.com",
+            "ticket": {
+                "id": "6554b34d82161e93bff08df6",
+                "title": "Test Ticket",
+                "service": "",
+                "category": "",
+                "keywords": [],
+                "customerPriority": CustomerPrio.can_work,
+                "affectedPerson": "",
+                "description": "",
+                "priority": Prio.low,
+                "attachments": [],
+                "requestType": "Incident",
+                "state": State.draft,
+            },
+        }
+
+        exp_ticket = Ticket(
+            id=str(self.ticket_id),
+            title="Test Ticket",
+            service="",
+            category="",
+            keywords=[],
+            customerPriority=CustomerPrio.can_work,
+            affectedPerson="",
+            description="",
+            priority=Prio.low,
+            attachmentNames=[],
+            requestType="Incident",
+            state=State.draft,
+        )
+
+        # Define mock behavior
+        self.ticket_collection_mock.find.return_value = [ticket_entity]
+        self.ticket_collection_mock.replace_one.return_value = update_result
+
+        # Act
+        response = self._run_update_ticket_attributes(
+            ticket_id=str(self.ticket_id), wrapped_ticket=wrapped_ticket_json
+        )
+
+        # Assert
+        # Mocks
+        self.ticket_collection_mock.find.assert_called_once()
+        self.ticket_collection_mock.replace_one.assert_called_once()
+        # Response
+        self.assertEqual(status.HTTP_200_OK, response.status_code)
+        self.assertDictEqual(exp_ticket.dict(), response.json())
+
+    def test_update_ticket_attributes_state_accepted_success(self):
+        # Define
+        ticket_entity = TicketEntity(
+            _id=self.ticket_id,
+            title="Test Ticket",
+            service="",
+            category="",
+            keywords=[],
+            customerPriority=CustomerPrio.can_work,
+            affectedPerson="",
+            description="",
+            priority=Prio.low,
+            attachments=[],
+            requestType="",
+            state=State.accepted,
         )
         update_result = UpdateResult(raw_result=ticket_entity, acknowledged=True)
 
@@ -201,8 +278,8 @@ class TicketAPIIntegrationTest(TestCase):
         )
 
         # Define mock behavior
-        self.collection_mock.find.return_value = [ticket_entity]
-        self.collection_mock.replace_one.return_value = update_result
+        self.ticket_collection_mock.find.return_value = [ticket_entity]
+        self.ticket_collection_mock.replace_one.return_value = update_result
 
         # Act
         response = self._run_update_ticket_attributes(
@@ -211,11 +288,12 @@ class TicketAPIIntegrationTest(TestCase):
 
         # Assert
         # Mocks
-        self.collection_mock.find.assert_called_once()
-        self.collection_mock.replace_one.assert_called_once()
+        self.ticket_collection_mock.find.assert_called_once()
+        self.ticket_collection_mock.replace_one.assert_called_once()
+        self.email_service_mock.send_email.assert_called_once()
         # Response
         self.assertEqual(status.HTTP_200_OK, response.status_code)
-        self.assertEqual(exp_ticket, response.json())
+        self.assertDictEqual(exp_ticket.dict(), response.json())
 
     def test_update_ticket_attributes_invalid_ticket_id(self):
         exp_json = {"detail": "Received empty or invalid ticket id of type ObjectId!"}

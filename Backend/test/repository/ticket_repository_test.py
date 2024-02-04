@@ -1,19 +1,17 @@
-import configparser
 import os
 import unittest
 from unittest.mock import MagicMock
 
 import pytest
-from bson import ObjectId
-from dotenv import load_dotenv
-from pymongo import MongoClient
-from pymongo.results import InsertOneResult, UpdateResult, DeleteResult
-
 from app.enum.customer_prio import CustomerPrio
 from app.enum.prio import Prio
 from app.repository.entity.ticket_entity import TicketEntity
 from app.repository.ticket_repository import TicketRepository
 from app.util.database_routine import start_server, stop_server
+from bson import ObjectId
+from dotenv import load_dotenv
+from pymongo import MongoClient
+from pymongo.results import InsertOneResult, UpdateResult, DeleteResult
 from test.config.pytest import SKIP_TEST
 
 
@@ -87,7 +85,7 @@ class TicketRepositoryIntegrationTest(unittest.TestCase):
         mongodb_url = os.getenv("MONGODB_URL")
         client = MongoClient(mongodb_url)
         db = client.talktix
-        collection = db.ticket
+        collection = db.location
         self.ticket_repository = TicketRepository(collection)
         self.ticket = {
             "title": "Test Ticket",
