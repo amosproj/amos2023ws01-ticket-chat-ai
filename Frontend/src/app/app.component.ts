@@ -13,6 +13,7 @@ import {HttpClient} from '@angular/common/http';
 import {AuthService} from './service/auth.service';
 import {WrappedTicket} from "./entities/wrappedTicket.dto";
 import {SessionExpiredDialogComponent} from './session-expired-dialog/session-expired-dialog.component';
+import {LogoutDialogComponent} from './logout-dialog/logout-dialog.component';
 
 interface ChatMessage {
   messageContent: string;
@@ -73,12 +74,20 @@ export class AppComponent implements OnInit {
   }
 
   ngOnInit() {
-    this.authService.checkTokenValidity();
-    this.accessToken = localStorage.getItem("access_token") ? localStorage.getItem("access_token") : null;
-    if (this.accessToken != null) {
-      this.isLoggedIn = true;
-      let email = jwtDecode(this.accessToken).sub;
-      this.emailInput = email ? email : '';
+    const accessToken = localStorage.getItem("access_token") || null;
+    
+    if (accessToken) {
+      this.authService.checkTokenValidity().subscribe(isValid => {
+        if (!isValid) {
+          localStorage.removeItem("access_token");
+        }
+        this.accessToken = accessToken;
+        this.isLoggedIn = true;
+        let email = jwtDecode(this.accessToken).sub;
+        this.emailInput = email || '';
+      });
+    } else {
+      this.logger.log('No token found, user is not logged in.');
     }
   }
 
@@ -252,17 +261,27 @@ export class AppComponent implements OnInit {
   }
 
   handleSend(value: string, emailInput: string) {
-    this.authService.checkTokenValidity();
-    this.accessToken = localStorage.getItem("access_token") || null;
+    const accessToken = localStorage.getItem("access_token") || null;
     
-    if (this.accessToken !== null) {
-      this.isLoggedIn = true;
-      let email = jwtDecode(this.accessToken).sub;
-      this.emailInput = email || '';
+    if (accessToken) {
+      this.authService.checkTokenValidity().subscribe(isValid => {
+        if (!isValid) {
+          this.expiredlogout();
+          return;
+        }
+        this.accessToken = accessToken;
+        this.isLoggedIn = true;
+        let email = jwtDecode(this.accessToken).sub;
+        this.emailInput = email || '';
+        this.processMessage(value, emailInput);
+      });
     } else {
-      this.logout();
+      this.logger.log('No token found, user is not logged in.');
+      this.processMessage(value, emailInput);
     }
-
+  }
+  
+  processMessage(value: string, emailInput: string) {
     this.errorMessage = "";
 
     if (!value) {
@@ -341,11 +360,14 @@ export class AppComponent implements OnInit {
     this.waitingServerResponse = true;
   }
 
-
   clearChatHistory() {
-    this.chatMessages = [];
+    this.chatMessages = [{
+        messageContent: "Hi there! Enter your concern and I will create a ticket for you.",
+        isUser: false,
+        wrappedTicket: null,
+        files: []
+      }];
   }
-
 
   showSessionExpiredDialog() {
     const dialogRef = this.dialog.open(SessionExpiredDialogComponent);
@@ -357,6 +379,15 @@ export class AppComponent implements OnInit {
     });
   }
 
+  showLogoutDialog() {
+    const dialogRef = this.dialog.open(LogoutDialogComponent);
+
+    dialogRef.afterClosed().subscribe(result => {
+      this.clearChatHistory();
+
+      console.log('The dialog was closed');
+    });
+  }
 
   startSpeechRecognition() {
     if (this.recordingState === 'idle') {
@@ -430,9 +461,13 @@ export class AppComponent implements OnInit {
 
   clicklogout() {
     this.logout();
-    this.showSessionExpiredDialog();
+    this.showLogoutDialog();
   }
 
+  expiredlogout() {
+    this.logout();
+    this.showSessionExpiredDialog();
+  }
 
   protected readonly WrappedTicket = WrappedTicket;
 }

@@ -19,6 +19,7 @@ import {SessionExpiredDialogComponent} from './session-expired-dialog/session-ex
 import { MatSelectModule } from '@angular/material/select';
 import { TicketFormComponent } from './ticket-form/ticket-form.component';
 import {MatChipsModule} from "@angular/material/chips";
+import { LogoutDialogComponent } from './logout-dialog/logout-dialog.component';
 
 @NgModule({
   declarations: [
@@ -28,7 +29,8 @@ import {MatChipsModule} from "@angular/material/chips";
     SignupDialogComponent,
     TicketFormComponent,
     EditDialogComponent,
-    SessionExpiredDialogComponent
+    SessionExpiredDialogComponent,
+    LogoutDialogComponent
   ],
   imports: [
     BrowserModule,
