@@ -1,0 +1,15 @@
+[run]
+omit =
+    */__init__.py
+    app/api/dto/*
+    app/dependency/*
+    app/enum/*
+    app/model/t5/*
+    app/model/ai_ticket_service/t5/*
+    app/model/train/*
+    app/model/util/*
+    app/repository/entity/*
+    app/util/*
+    app/main.py
+    app/email/main.py
+    app/email/saveMail.py

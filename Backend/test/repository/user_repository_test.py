@@ -1,16 +1,15 @@
-import configparser
 import os
 import unittest
 from unittest.mock import MagicMock
+
 import pytest
+from app.repository.entity.user_entity import UserEntity
+from app.repository.user_repository import UserRepository
+from app.util.database_routine import start_server, stop_server
 from bson import ObjectId
 from dotenv import load_dotenv
 from pymongo import MongoClient
 from pymongo.results import InsertOneResult, UpdateResult, DeleteResult
-
-from app.repository.entity.user_entity import UserEntity
-from app.repository.user_repository import UserRepository
-from app.util.database_routine import start_server, stop_server
 from test.config.pytest import SKIP_TEST
 
 
@@ -23,7 +22,7 @@ class UserRepositoryUnitTest(unittest.TestCase):
             _id=self.user_id,
             first_name="First",
             family_name="Family",
-            email_address="First.FirstEmail@gmail.com",
+            email_address="test@example.com",
             location="Location",
             password="pass",
             ticket_ids=[],
@@ -72,6 +71,17 @@ class UserRepositoryUnitTest(unittest.TestCase):
             user_list_exp, result_act, "wrong result of read_users_by_email()"
         )
         self.collection_mock.find.assert_called_once_with({"email_address": email})
+
+    def test_authenticate_user(self):
+        email = "test@example.com"
+        password = "pass"
+        user_list = [self.user]
+        self.collection_mock.find_one.return_value = user_list
+        result_act = self.user_repository.authenticate_user(email, password)
+        self.assertEqual(True, result_act, "wrong result of authenticate_user()")
+        self.collection_mock.find_one.assert_called_once_with(
+            {"email_address": email, "password": password}
+        )
 
 
 @pytest.mark.skipif(condition=SKIP_TEST, reason="Database is missing")
