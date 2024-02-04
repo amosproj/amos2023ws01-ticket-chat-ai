@@ -75,13 +75,15 @@ export class AppComponent implements OnInit {
 
   ngOnInit() {
     const accessToken = localStorage.getItem("access_token") || null;
-    
+
     if (accessToken) {
       this.authService.checkTokenValidity().subscribe(isValid => {
         if (!isValid) {
           localStorage.removeItem("access_token");
+          this.isLoggedIn = false;
+          return;
         }
-        this.accessToken = accessToken;
+        this.accessToken  = localStorage.getItem("access_token") || '';
         this.isLoggedIn = true;
         let email = jwtDecode(this.accessToken).sub;
         this.emailInput = email || '';
@@ -262,7 +264,7 @@ export class AppComponent implements OnInit {
 
   handleSend(value: string, emailInput: string) {
     const accessToken = localStorage.getItem("access_token") || null;
-    
+
     if (accessToken) {
       this.authService.checkTokenValidity().subscribe(isValid => {
         if (!isValid) {
@@ -280,7 +282,7 @@ export class AppComponent implements OnInit {
       this.processMessage(value, emailInput);
     }
   }
-  
+
   processMessage(value: string, emailInput: string) {
     this.errorMessage = "";
 
