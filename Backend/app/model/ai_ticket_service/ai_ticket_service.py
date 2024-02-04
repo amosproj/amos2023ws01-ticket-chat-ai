@@ -238,7 +238,6 @@ class AITicketService:
         self.executor.shutdown()
 
     def create_ticket(self, input_text, email) -> dict:
-
         # Means ticket creation was sent via email
         if "Subject" in input_text:
             content_start_index = input_text.find("Content: ")
