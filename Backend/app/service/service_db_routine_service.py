@@ -7,8 +7,8 @@ from app.util.logger import logger
 
 class ServiceDBRoutineService:
     def __init__(
-            self,
-            service_repository: ServiceRepository,
+        self,
+        service_repository: ServiceRepository,
     ):
         self.service_repository = service_repository
 

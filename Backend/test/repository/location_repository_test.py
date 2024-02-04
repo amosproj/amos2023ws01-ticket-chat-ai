@@ -12,10 +12,7 @@ class LocationRepositoryUnitTest(unittest.TestCase):
         self.collection_mock = MagicMock()
         self.location_repository = LocationRepository(collection=self.collection_mock)
         self.location_id = ObjectId("6554b34d82161e93bff08df3")
-        self.location = LocationEntity(
-            _id=self.location_id,
-            name="Frankfurt"
-        )
+        self.location = LocationEntity(_id=self.location_id, name="Frankfurt")
 
     def test_create_location(self):
         result_exp = InsertOneResult(inserted_id=self.location_id, acknowledged=True)
@@ -27,7 +24,9 @@ class LocationRepositoryUnitTest(unittest.TestCase):
     def test_read_one_location(self):
         result_exp = [self.location]
         self.collection_mock.find.return_value = result_exp
-        result_act = self.location_repository.read_locations(location_id=self.location_id)
+        result_act = self.location_repository.read_locations(
+            location_id=self.location_id
+        )
         self.assertEqual(result_exp, result_act, "wrong result of read_locations()")
         self.collection_mock.find.assert_called_once_with(
             filter={"_id": self.location_id}

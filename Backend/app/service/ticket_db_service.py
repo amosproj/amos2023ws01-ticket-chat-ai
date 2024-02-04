@@ -40,7 +40,7 @@ class TicketDBService:
                 self._throw_client_error("Ticket id doesn't exist!")
 
     def update_ticket_attributes(
-            self, ticket_id: str, updated_ticket: TicketEntity | dict
+        self, ticket_id: str, updated_ticket: TicketEntity | dict
     ) -> Ticket:
         logger.info("Updating ticket attributes...")
         ticket_id = ObjectId(ticket_id)
@@ -69,7 +69,7 @@ class TicketDBService:
         return self._map_ticket(ticket_entity)
 
     def update_ticket_attachments(
-            self, ticket_id: str, files: list[UploadFile]
+        self, ticket_id: str, files: list[UploadFile]
     ) -> Ticket:
         logger.info("Updating ticket via adding attachments...")
         ticket_id = ObjectId(ticket_id)

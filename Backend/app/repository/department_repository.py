@@ -14,7 +14,7 @@ class DepartmentRepository:
         return self.collection.insert_one(document=department)
 
     def read_departments(
-            self, department_id: ObjectId = None
+        self, department_id: ObjectId = None
     ) -> list[DepartmentEntity]:
         logger.info("Reading department/s from the database...")
         return list(

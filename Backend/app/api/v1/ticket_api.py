@@ -20,10 +20,10 @@ router = APIRouter()
 
 @router.post("/ticket/text", status_code=status.HTTP_201_CREATED, response_model=Ticket)
 async def process_text(
-        input: TextInput = Body(default=TextInput()),
-        ticket_db_service: TicketDBService = Depends(get_ticket_db_service),
-        user_db_service: UserDBService = Depends(get_user_db_service),
-        ticket_service: AITicketService = Depends(get_ai_ticket_service),
+    input: TextInput = Body(default=TextInput()),
+    ticket_db_service: TicketDBService = Depends(get_ticket_db_service),
+    user_db_service: UserDBService = Depends(get_user_db_service),
+    ticket_service: AITicketService = Depends(get_ai_ticket_service),
 ):
     """
     Receive Text from the Frontend
@@ -78,10 +78,10 @@ async def process_text(
     response_model=Ticket,
 )
 async def update_ticket_attributes(
-        ticket_id: str = Path(default=""),
-        wrapped_ticket: WrappedTicket = Body(default=None),
-        email_service: EmailService = Depends(get_email_service),
-        ticket_db_service: TicketDBService = Depends(get_ticket_db_service),
+    ticket_id: str = Path(default=""),
+    wrapped_ticket: WrappedTicket = Body(default=None),
+    email_service: EmailService = Depends(get_email_service),
+    ticket_db_service: TicketDBService = Depends(get_ticket_db_service),
 ):
     logger.info("Updating ticket attributes...")
 
@@ -119,9 +119,9 @@ async def update_ticket_attributes(
     response_model=Ticket,
 )
 async def update_ticket_attachments(
-        ticket_id: str = Path(default=""),
-        files: list[UploadFile] = File(default=[]),
-        ticket_db_service: TicketDBService = Depends(get_ticket_db_service),
+    ticket_id: str = Path(default=""),
+    files: list[UploadFile] = File(default=[]),
+    ticket_db_service: TicketDBService = Depends(get_ticket_db_service),
 ):
     """
     Receive Attachments from the Frontend
@@ -173,8 +173,8 @@ async def update_ticket_attachments(
     response_model=Ticket,
 )
 async def delete_ticket(
-        ticket_id: str = Path(default=""),
-        ticket_db_service: TicketDBService = Depends(get_ticket_db_service),
+    ticket_id: str = Path(default=""),
+    ticket_db_service: TicketDBService = Depends(get_ticket_db_service),
 ):
     logger.info(f"Deleting ticket with id: {ticket_id}")
     ticket_db_service.delete_ticket(ticket_id)

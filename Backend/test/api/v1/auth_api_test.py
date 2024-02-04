@@ -46,7 +46,7 @@ class TestAPI:
         assert "access_token" in response.json()
 
     def test_login_for_access_token_wrong_password_failure(
-            self, client, mock_user_repository
+        self, client, mock_user_repository
     ):
         # Configure the mock to return False for authentication
         mock_user_repository.authenticate_user.return_value = False
@@ -57,7 +57,7 @@ class TestAPI:
         assert response.status_code == 402
 
     def test_login_for_access_token_wrong_username_failure(
-            self, client, mock_user_repository
+        self, client, mock_user_repository
     ):
         # Configure the mock to return False for authentication
         mock_user_repository.authenticate_user.return_value = False

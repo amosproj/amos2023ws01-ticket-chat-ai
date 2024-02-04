@@ -28,9 +28,9 @@ def create_access_token(data: dict, expires_delta: timedelta):
 
 @router.post("/token")
 async def login_for_access_token(
-        response: Response,
-        form_data: OAuth2PasswordRequestForm = Depends(),
-        user_repo: UserRepository = Depends(get_user_repository),
+    response: Response,
+    form_data: OAuth2PasswordRequestForm = Depends(),
+    user_repo: UserRepository = Depends(get_user_repository),
 ):
     # check userdata
     print(form_data.username)
@@ -78,8 +78,8 @@ async def verify_token(token: str = Depends(oauth2_scheme)):
 
 @router.post("/signup")
 async def signup_user(
-        signup_data: dict = Body(...),  # Using Body to accept a JSON object
-        user_repo: UserRepository = Depends(get_user_repository),
+    signup_data: dict = Body(...),  # Using Body to accept a JSON object
+    user_repo: UserRepository = Depends(get_user_repository),
 ):
     logger.info("Extracting User data..")
     first_name = signup_data.get("first_name")
@@ -108,8 +108,8 @@ async def signup_user(
 
 @router.post("/edit")
 async def edit_user(
-        edit_data: dict = Body(...),  # Using Body to accept a JSON object
-        user_repo: UserRepository = Depends(get_user_repository),
+    edit_data: dict = Body(...),  # Using Body to accept a JSON object
+    user_repo: UserRepository = Depends(get_user_repository),
 ):
     logger.info("Extracting User data..")
     old_password = edit_data.get("old_password")
@@ -154,8 +154,8 @@ async def edit_user(
 
 @router.post("/getuserinfo")
 async def get_user_info(
-        edit_data: dict = Body(...),  # Using Body to accept a JSON object
-        user_repo: UserRepository = Depends(get_user_repository),
+    edit_data: dict = Body(...),  # Using Body to accept a JSON object
+    user_repo: UserRepository = Depends(get_user_repository),
 ):
     logger.info("Searching User")
     email = edit_data.get("email")

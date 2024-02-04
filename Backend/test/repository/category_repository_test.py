@@ -12,10 +12,7 @@ class CategoryRepositoryUnitTest(unittest.TestCase):
         self.collection_mock = MagicMock()
         self.category_repository = CategoryRepository(collection=self.collection_mock)
         self.category_id = ObjectId("6554b34d82161e93bff08df3")
-        self.category = CategoryEntity(
-            _id=self.category_id,
-            name="Technical Issues"
-        )
+        self.category = CategoryEntity(_id=self.category_id, name="Technical Issues")
 
     def test_create_category(self):
         result_exp = InsertOneResult(inserted_id=self.category_id, acknowledged=True)
@@ -27,7 +24,9 @@ class CategoryRepositoryUnitTest(unittest.TestCase):
     def test_read_one_category(self):
         result_exp = [self.category]
         self.collection_mock.find.return_value = result_exp
-        result_act = self.category_repository.read_categories(category_id=self.category_id)
+        result_act = self.category_repository.read_categories(
+            category_id=self.category_id
+        )
         self.assertEqual(result_exp, result_act, "wrong result of read_categories()")
         self.collection_mock.find.assert_called_once_with(
             filter={"_id": self.category_id}
@@ -43,7 +42,9 @@ class CategoryRepositoryUnitTest(unittest.TestCase):
     def test_delete_category(self):
         result_exp = DeleteResult(raw_result=self.category, acknowledged=True)
         self.collection_mock.delete_one.return_value = result_exp
-        result_act = self.category_repository.delete_category(category_id=self.category_id)
+        result_act = self.category_repository.delete_category(
+            category_id=self.category_id
+        )
         self.assertEqual(result_exp, result_act, "wrong result of delete_category()")
         self.collection_mock.delete_one.assert_called_once_with(
             filter={"_id": self.category_id}

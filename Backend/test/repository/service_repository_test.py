@@ -15,8 +15,15 @@ class ServiceRepositoryUnitTest(unittest.TestCase):
         self.service = ServiceEntity(
             _id=self.service_id,
             service_name="Atlassian",
-            safe_keywords=["Jira", "Sourcetree", "Opsgenie", "Trello", "Confluence", "Bitbucket"],
-            hint_keywords=["roadmaps", "marketplace"]
+            safe_keywords=[
+                "Jira",
+                "Sourcetree",
+                "Opsgenie",
+                "Trello",
+                "Confluence",
+                "Bitbucket",
+            ],
+            hint_keywords=["roadmaps", "marketplace"],
         )
 
     def test_create_service(self):
