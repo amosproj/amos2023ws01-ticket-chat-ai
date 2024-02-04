@@ -12,7 +12,8 @@ import {jwtDecode} from "jwt-decode";
 import {HttpClient} from '@angular/common/http';
 import {AuthService} from './service/auth.service';
 import {WrappedTicket} from "./entities/wrappedTicket.dto";
-
+import {SessionExpiredDialogComponent} from './session-expired-dialog/session-expired-dialog.component';
+import {LogoutDialogComponent} from './logout-dialog/logout-dialog.component';
 
 interface ChatMessage {
   messageContent: string;
@@ -73,12 +74,22 @@ export class AppComponent implements OnInit {
   }
 
   ngOnInit() {
-    this.authService.checkTokenValidity();
-    this.accessToken = localStorage.getItem("access_token") ? localStorage.getItem("access_token") : null;
-    if (this.accessToken != null) {
-      this.isLoggedIn = true;
-      let email = jwtDecode(this.accessToken).sub;
-      this.emailInput = email ? email : '';
+    const accessToken = localStorage.getItem("access_token") || null;
+
+    if (accessToken) {
+      this.authService.checkTokenValidity().subscribe(isValid => {
+        if (!isValid) {
+          localStorage.removeItem("access_token");
+          this.isLoggedIn = false;
+          return;
+        }
+        this.accessToken  = localStorage.getItem("access_token") || '';
+        this.isLoggedIn = true;
+        let email = jwtDecode(this.accessToken).sub;
+        this.emailInput = email || '';
+      });
+    } else {
+      this.logger.log('No token found, user is not logged in.');
     }
   }
 
@@ -252,16 +263,27 @@ export class AppComponent implements OnInit {
   }
 
   handleSend(value: string, emailInput: string) {
-    this.authService.checkTokenValidity();
-    this.accessToken = localStorage.getItem("access_token") ? localStorage.getItem("access_token") : null;
-    if (this.accessToken != null) {
-      this.isLoggedIn = true;
-      let email = jwtDecode(this.accessToken).sub;
-      this.emailInput = email ? email : '';
-    } else {
-      this.logout()
-    }
+    const accessToken = localStorage.getItem("access_token") || null;
 
+    if (accessToken) {
+      this.authService.checkTokenValidity().subscribe(isValid => {
+        if (!isValid) {
+          this.expiredlogout();
+          return;
+        }
+        this.accessToken = accessToken;
+        this.isLoggedIn = true;
+        let email = jwtDecode(this.accessToken).sub;
+        this.emailInput = email || '';
+        this.processMessage(value, emailInput);
+      });
+    } else {
+      this.logger.log('No token found, user is not logged in.');
+      this.processMessage(value, emailInput);
+    }
+  }
+
+  processMessage(value: string, emailInput: string) {
     this.errorMessage = "";
 
     if (!value) {
@@ -330,11 +352,43 @@ export class AppComponent implements OnInit {
       },
       (error) => {
         this.handleError('Unfortunately an error has occurred. Please try again or try again later, we apologize.');
+        if (error.status === 401) {
+          this.logout();
+        }
       }
     );
 
     this.chatInput = "";
     this.waitingServerResponse = true;
+  }
+
+  clearChatHistory() {
+    this.chatMessages = [{
+        messageContent: "Hi there! Enter your concern and I will create a ticket for you.",
+        isUser: false,
+        wrappedTicket: null,
+        files: []
+      }];
+  }
+
+  showSessionExpiredDialog() {
+    const dialogRef = this.dialog.open(SessionExpiredDialogComponent);
+
+    dialogRef.afterClosed().subscribe(result => {
+      this.clearChatHistory();
+
+      console.log('The dialog was closed');
+    });
+  }
+
+  showLogoutDialog() {
+    const dialogRef = this.dialog.open(LogoutDialogComponent);
+
+    dialogRef.afterClosed().subscribe(result => {
+      this.clearChatHistory();
+
+      console.log('The dialog was closed');
+    });
   }
 
   startSpeechRecognition() {
@@ -405,6 +459,16 @@ export class AppComponent implements OnInit {
     localStorage.removeItem("access_token");
     this.isLoggedIn = false;
     this.emailInput = '';
+  }
+
+  clicklogout() {
+    this.logout();
+    this.showLogoutDialog();
+  }
+
+  expiredlogout() {
+    this.logout();
+    this.showSessionExpiredDialog();
   }
 
   protected readonly WrappedTicket = WrappedTicket;
