@@ -17,13 +17,20 @@
 
   <div class="login-container" *ngIf="!isLoggedIn">
     <button
-    mat-raised-button color="primary" (click)="openLoginDialog()">Login</button>
-    <button mat-raised-button class="signup-button" (click)="openSignupDialog()">Sign Up</button>
+    mat-button (click)="openLoginDialog()"><span class="white">Login</span></button>
+    <button mat-button class="button-border" color="primary" (click)="openSignupDialog()">
+      <span class="white">Sign Up</span>
+    </button>
   </div>
   <div class="login-container" *ngIf="isLoggedIn">
+    <button mat-button class="signup-button" (click)="openEditDialog()">
+      <span class="white">{{accountName}}</span>
+      <mat-icon class="white" iconPositionEnd>account_circle</mat-icon>
+    </button>
     <button
-    mat-raised-button color="primary" (click)="clicklogout()">Logout</button>
-    <button mat-raised-button class="signup-button" (click)="openEditDialog()">Edit User</button>
+    mat-button (click)="clicklogout()">
+      <mat-icon class="white">logout</mat-icon>
+    </button>
   </div>
 
 <div class="cards-container">

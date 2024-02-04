@@ -3,6 +3,16 @@ body{
   flex-direction: column;
 }
 
+.white {
+  color: white;
+}
+
+.button-border {
+  padding: 1rem;
+  border: 2px solid white;
+  border-radius: 8px;
+}
+
 .login-container {
   align-self: flex-end;
   margin-right: 20px;

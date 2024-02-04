@@ -50,6 +50,7 @@ export class AppComponent implements OnInit {
     }
   ];
   files: any[] = [];
+  accountName: string = "";
   waitingServerResponse: boolean = false;
   recognition: any;
   errorMessage: string = '';
@@ -87,6 +88,11 @@ export class AppComponent implements OnInit {
         this.isLoggedIn = true;
         let email = jwtDecode(this.accessToken).sub;
         this.emailInput = email || '';
+        this.authService.getuserinfo(this.emailInput).subscribe(response => {
+        this.accountName = response.first_name ?
+          response.first_name + " " + response.family_name :
+          this.emailInput.substring(0, this.emailInput.indexOf("@"))
+      })
       });
     } else {
       this.logger.log('No token found, user is not logged in.');
@@ -119,6 +125,11 @@ export class AppComponent implements OnInit {
       if (result?.loginSuccess) {
         // logic after closing dialog
         this.emailInput = result.email;
+        this.authService.getuserinfo(this.emailInput).subscribe(response => {
+          this.accountName = response.first_name ?
+            response.first_name + " " + response.family_name :
+            this.emailInput.substring(0, this.emailInput.indexOf("@"))
+        })
         this.isLoggedIn = true;
         this.chatMessages.push({
           messageContent: "You have successfully logged in.",
@@ -150,30 +161,35 @@ export class AppComponent implements OnInit {
   openEditDialog() {
     const dialogRef = this.dialog.open(EditDialogComponent);
     this.authService.getuserinfo(this.emailInput).subscribe(
-          response => {
-          dialogRef.componentInstance.first_name = response.first_name;
-          dialogRef.componentInstance.family_name = response.family_name;
-          dialogRef.componentInstance.location = response.location;
-        },
-        error => {
-          this.errorMessage = 'User not found.';
-        });
-    dialogRef.componentInstance.old_email = this.emailInput ;
-    dialogRef.componentInstance.email = this.emailInput ;
+      response => {
+        dialogRef.componentInstance.first_name = response.first_name;
+        dialogRef.componentInstance.family_name = response.family_name;
+        dialogRef.componentInstance.location = response.location;
+      },
+      error => {
+        this.errorMessage = 'User not found.';
+      });
+    dialogRef.componentInstance.old_email = this.emailInput;
+    dialogRef.componentInstance.email = this.emailInput;
 
     dialogRef.afterClosed().subscribe(result => {
-      if (result?.editSuccess){
+      if (result?.editSuccess) {
         this.logout();
         this.authService.login(result.email, result.password).subscribe(
           response => {
-          this.isLoggedIn = true;
-          this.emailInput = result.email;
-        },
-        error => {
-          this.errorMessage = 'An error occurred during login.';
-        }
+            this.isLoggedIn = true;
+            this.emailInput = result.email;
+          },
+          error => {
+            this.errorMessage = 'An error occurred during login.';
+          }
         );
-        this.chatMessages.push({ messageContent: "You have successfully edited your data!", isUser: false, wrappedTicket: null, files: this.files });
+        this.chatMessages.push({
+          messageContent: "You have successfully edited your data!",
+          isUser: false,
+          wrappedTicket: null,
+          files: this.files
+        });
       }
     });
   }
@@ -231,26 +247,26 @@ export class AppComponent implements OnInit {
   sendAttachmentsToServer(response: any) {
     this.ticketService.sendFiles(this.files, response.id).subscribe(
       (attachmentsResponse: any) => {
-            this.chatMessages.push(
-              {
-                messageContent: "Your ticket has been created successfully! " +
-                  "Take a look if the printed information accurately captures your concerns. " +
-                  "If you are happy with the details, use the \"Submit\" button to submit it. " +
-                  "Otherwise you can edit your ticket directly by clicking on the corresponding fields " +
-                  "and confirm your changes by pressing the \"Submit\" button. " +
-                  "In case you want to start again or the ticket is no longer required, " +
-                  "you can end the process with the \"Cancel\" button.",
-                isUser: false,
-                wrappedTicket: null,
-                files: []
-              }
-            )
-            this.chatMessages.push({
-              messageContent: '',
-              isUser: false,
-              wrappedTicket: {email: this.emailInput, ticket: this.createdTicket},
-              files: []
-            });
+        this.chatMessages.push(
+          {
+            messageContent: "Your ticket has been created successfully! " +
+              "Take a look if the printed information accurately captures your concerns. " +
+              "If you are happy with the details, use the \"Submit\" button to submit it. " +
+              "Otherwise you can edit your ticket directly by clicking on the corresponding fields " +
+              "and confirm your changes by pressing the \"Submit\" button. " +
+              "In case you want to start again or the ticket is no longer required, " +
+              "you can end the process with the \"Cancel\" button.",
+            isUser: false,
+            wrappedTicket: null,
+            files: []
+          }
+        )
+        this.chatMessages.push({
+          messageContent: '',
+          isUser: false,
+          wrappedTicket: {email: this.emailInput, ticket: this.createdTicket},
+          files: []
+        });
         this.clearFiles();
 
         this.logger.log('Attachments were sent successfully: ' + attachmentsResponse);
