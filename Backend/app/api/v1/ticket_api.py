@@ -1,8 +1,10 @@
 from app.api.dto.text_input import TextInput
 from app.api.dto.ticket import Ticket
+from app.api.dto.wrapped_ticket import WrappedTicket
 from app.dependency.ai_service import get_ai_ticket_service
 from app.dependency.db_service import get_ticket_db_service, get_user_db_service
 from app.dependency.email_service import get_email_service
+from app.enum.state import State
 from app.model.ai_ticket_service.ai_ticket_service import AITicketService
 from app.service.email_service import EmailService
 from app.service.ticket_db_service import TicketDBService
@@ -12,9 +14,6 @@ from bson import ObjectId
 from fastapi import APIRouter, HTTPException, UploadFile
 from fastapi.params import Depends, File, Path, Body
 from starlette import status
-
-from app.api.dto.wrapped_ticket import WrappedTicket
-from app.enum.state import State
 
 router = APIRouter()
 
@@ -54,10 +53,10 @@ async def process_text(
     logger.info("Model execution complete. Result: %s", received_dict)
 
     # Set service based on user's location
-    if input.email:
-        user = user_db_service.get_user_by_email(input.email)
-        if user and user.location:
-            if not received_dict.get("service") or received_dict["service"] == "":
+    if not received_dict.get("service") or received_dict["service"] == "":
+        if input.email:
+            user = user_db_service.get_user_by_email(input.email)
+            if user and user.location:
                 logger.info("Setting ticket's service to user's location...")
                 received_dict["service"] = user.location
 
@@ -98,7 +97,7 @@ async def update_ticket_attributes(
     # Update the ticket attributes in the database using the TicketDBService
     logger.info("Updating ticket attributes in the database...")
     updated_ticket = ticket_db_service.update_ticket_attributes(
-        ticket_id, wrapped_ticket.ticket
+        ticket_id, wrapped_ticket.ticket.dict()
     )
 
     # send email with ticket as content if ticket accepted
@@ -107,16 +106,9 @@ async def update_ticket_attributes(
 
     # Prepare response
     logger.info("Preparing response...")
-    if updated_ticket:
-        logger.info(
-            f"Ticket attributes updated and saved successfully. Ticket ID: {updated_ticket.id}"
-        )
-    else:
-        logger.error("Ticket attributes update failed.")
-        raise HTTPException(
-            status_code=status.HTTP_500_INTERNAL_SERVER_ERROR,
-            detail="Ticket attributes update failed.",
-        )
+    logger.info(
+        f"Ticket attributes updated and saved successfully. Ticket ID: {updated_ticket.id}"
+    )
 
     return updated_ticket
 

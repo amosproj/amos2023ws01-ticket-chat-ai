@@ -1,9 +1,8 @@
-from bson import ObjectId
-from pymongo.collection import Collection
-from pymongo.results import InsertOneResult, UpdateResult, DeleteResult
-
 from app.repository.entity.location_entity import LocationEntity
 from app.util.logger import logger
+from bson import ObjectId
+from pymongo.collection import Collection
+from pymongo.results import InsertOneResult
 
 
 class LocationRepository:
@@ -19,15 +18,3 @@ class LocationRepository:
         return list(
             self.collection.find(filter={"_id": location_id} if location_id else None)
         )
-
-    def update_location(
-        self, location_id: ObjectId, location: LocationEntity | dict
-    ) -> UpdateResult:
-        logger.info(f"Updating location {location_id} in the database...")
-        return self.collection.replace_one(
-            filter={"_id": location_id}, replacement=location, upsert=True
-        )
-
-    def delete_location(self, location_id: ObjectId) -> DeleteResult:
-        logger.info(f"Deleting location {location_id} from the database...")
-        return self.collection.delete_one(filter={"_id": location_id})

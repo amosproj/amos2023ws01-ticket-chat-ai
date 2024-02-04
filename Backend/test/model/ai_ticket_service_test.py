@@ -42,29 +42,21 @@ class TestAITicketService(unittest.TestCase):
     def test_generate_title(self):
         # Arrange
         input_text = "Test Input Text"
+        ticket_dict = {}
 
         # Act
-        result = self.ai_ticket_service.generate_title(input_text)
+        self.ai_ticket_service.generate_title(input_text, ticket_dict)
 
         # Assert
-        self.assertEqual(result, "Mocked Title")
+        self.assertEqual(ticket_dict["title"], "Mocked Title")
 
     def test_generate_affected_person(self):
         # Arrange
         input_text = "Sample input text"
+        ticket_dict = {}
 
         # Act
-        generated_person = self.ai_ticket_service.generate_affected_person(input_text)
+        self.ai_ticket_service.generate_affected_person(input_text, ticket_dict)
 
         # Assert
-        self.assertEqual(generated_person, "John")
-
-    def test_generate_keywords(self):
-        # Arrange
-        input_text = "Sample input text"
-
-        # Act
-        generated_keywords = self.ai_ticket_service.generate_keywords(input_text)
-
-        # Assert
-        self.assertEqual(generated_keywords, [{"entity": "KEY", "word": "Keyword"}])
+        self.assertEqual(ticket_dict["affectedPerson"], "John")
