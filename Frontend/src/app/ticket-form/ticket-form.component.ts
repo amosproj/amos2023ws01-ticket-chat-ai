@@ -28,7 +28,10 @@ export class TicketFormComponent implements OnInit {
 
   ngOnInit(): void {
     const ticket = this.wrappedTicket!.ticket!;
-    this.dbService.getServices().subscribe(services => this.serviceValues = services);
+    this.dbService.getServices().subscribe(services => {
+      this.serviceValues = services;
+      this.serviceValues.push(ticket.service);
+    });
     this.dbService.getCategories().subscribe(categories => this.categoryValues = categories);
     this.ticketFormGroup = new FormGroup({
       title: new FormControl(ticket.title, [Validators.required]),
