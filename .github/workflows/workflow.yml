@@ -156,9 +156,6 @@ jobs:
       - name: Install Node Dependencies
         working-directory: "./Frontend"
         run: sudo npm install
-      - name: Rebuild the Project
-        working-directory: "./Frontend"
-        run: sudo npm rebuild
       ################################
       # Run Frontend tests #
       ################################
