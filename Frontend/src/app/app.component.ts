@@ -12,7 +12,7 @@ import {jwtDecode} from "jwt-decode";
 import {HttpClient} from '@angular/common/http';
 import {AuthService} from './service/auth.service';
 import {WrappedTicket} from "./entities/wrappedTicket.dto";
-import { SessionExpiredDialogComponent } from './session-expired-dialog/session-expired-dialog.component';
+import {SessionExpiredDialogComponent} from './session-expired-dialog/session-expired-dialog.component';
 
 interface ChatMessage {
   messageContent: string;
@@ -261,7 +261,6 @@ export class AppComponent implements OnInit {
       this.emailInput = email || '';
     } else {
       this.logout();
-      return;
     }
 
     this.errorMessage = "";
@@ -347,11 +346,9 @@ export class AppComponent implements OnInit {
     this.chatMessages = [];
   }
 
+
   showSessionExpiredDialog() {
-    const dialogRef = this.dialog.open(SessionExpiredDialogComponent, {
-      width: '400px',
-      data: { message: 'Your session has expired. Please log in again.' },
-    });
+    const dialogRef = this.dialog.open(SessionExpiredDialogComponent);
 
     dialogRef.afterClosed().subscribe(result => {
       this.clearChatHistory();
@@ -429,8 +426,13 @@ export class AppComponent implements OnInit {
     localStorage.removeItem("access_token");
     this.isLoggedIn = false;
     this.emailInput = '';
+  }
+
+  clicklogout() {
+    this.logout();
     this.showSessionExpiredDialog();
   }
+
 
   protected readonly WrappedTicket = WrappedTicket;
 }
