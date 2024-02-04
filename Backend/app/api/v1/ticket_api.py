@@ -1,8 +1,10 @@
 from app.api.dto.text_input import TextInput
 from app.api.dto.ticket import Ticket
+from app.api.dto.wrapped_ticket import WrappedTicket
 from app.dependency.ai_service import get_ai_ticket_service
 from app.dependency.db_service import get_ticket_db_service, get_user_db_service
 from app.dependency.email_service import get_email_service
+from app.enum.state import State
 from app.model.ai_ticket_service.ai_ticket_service import AITicketService
 from app.service.email_service import EmailService
 from app.service.ticket_db_service import TicketDBService
@@ -13,18 +15,15 @@ from fastapi import APIRouter, HTTPException, UploadFile
 from fastapi.params import Depends, File, Path, Body
 from starlette import status
 
-from app.api.dto.wrapped_ticket import WrappedTicket
-from app.enum.state import State
-
 router = APIRouter()
 
 
 @router.post("/ticket/text", status_code=status.HTTP_201_CREATED, response_model=Ticket)
 async def process_text(
-    input: TextInput = Body(default=TextInput()),
-    ticket_db_service: TicketDBService = Depends(get_ticket_db_service),
-    user_db_service: UserDBService = Depends(get_user_db_service),
-    ticket_service: AITicketService = Depends(get_ai_ticket_service),
+        input: TextInput = Body(default=TextInput()),
+        ticket_db_service: TicketDBService = Depends(get_ticket_db_service),
+        user_db_service: UserDBService = Depends(get_user_db_service),
+        ticket_service: AITicketService = Depends(get_ai_ticket_service),
 ):
     """
     Receive Text from the Frontend
@@ -54,10 +53,10 @@ async def process_text(
     logger.info("Model execution complete. Result: %s", received_dict)
 
     # Set service based on user's location
-    if input.email:
-        user = user_db_service.get_user_by_email(input.email)
-        if user and user.location:
-            if not received_dict.get("service") or received_dict["service"] == "":
+    if not received_dict.get("service") or received_dict["service"] == "":
+        if input.email:
+            user = user_db_service.get_user_by_email(input.email)
+            if user and user.location:
                 logger.info("Setting ticket's service to user's location...")
                 received_dict["service"] = user.location
 
@@ -79,10 +78,10 @@ async def process_text(
     response_model=Ticket,
 )
 async def update_ticket_attributes(
-    ticket_id: str = Path(default=""),
-    wrapped_ticket: WrappedTicket = Body(default=None),
-    email_service: EmailService = Depends(get_email_service),
-    ticket_db_service: TicketDBService = Depends(get_ticket_db_service),
+        ticket_id: str = Path(default=""),
+        wrapped_ticket: WrappedTicket = Body(default=None),
+        email_service: EmailService = Depends(get_email_service),
+        ticket_db_service: TicketDBService = Depends(get_ticket_db_service),
 ):
     logger.info("Updating ticket attributes...")
 
@@ -98,7 +97,7 @@ async def update_ticket_attributes(
     # Update the ticket attributes in the database using the TicketDBService
     logger.info("Updating ticket attributes in the database...")
     updated_ticket = ticket_db_service.update_ticket_attributes(
-        ticket_id, wrapped_ticket.ticket
+        ticket_id, wrapped_ticket.ticket.dict()
     )
 
     # send email with ticket as content if ticket accepted
@@ -107,16 +106,9 @@ async def update_ticket_attributes(
 
     # Prepare response
     logger.info("Preparing response...")
-    if updated_ticket:
-        logger.info(
-            f"Ticket attributes updated and saved successfully. Ticket ID: {updated_ticket.id}"
-        )
-    else:
-        logger.error("Ticket attributes update failed.")
-        raise HTTPException(
-            status_code=status.HTTP_500_INTERNAL_SERVER_ERROR,
-            detail="Ticket attributes update failed.",
-        )
+    logger.info(
+        f"Ticket attributes updated and saved successfully. Ticket ID: {updated_ticket.id}"
+    )
 
     return updated_ticket
 
@@ -127,9 +119,9 @@ async def update_ticket_attributes(
     response_model=Ticket,
 )
 async def update_ticket_attachments(
-    ticket_id: str = Path(default=""),
-    files: list[UploadFile] = File(default=[]),
-    ticket_db_service: TicketDBService = Depends(get_ticket_db_service),
+        ticket_id: str = Path(default=""),
+        files: list[UploadFile] = File(default=[]),
+        ticket_db_service: TicketDBService = Depends(get_ticket_db_service),
 ):
     """
     Receive Attachments from the Frontend
@@ -181,8 +173,8 @@ async def update_ticket_attachments(
     response_model=Ticket,
 )
 async def delete_ticket(
-    ticket_id: str = Path(default=""),
-    ticket_db_service: TicketDBService = Depends(get_ticket_db_service),
+        ticket_id: str = Path(default=""),
+        ticket_db_service: TicketDBService = Depends(get_ticket_db_service),
 ):
     logger.info(f"Deleting ticket with id: {ticket_id}")
     ticket_db_service.delete_ticket(ticket_id)

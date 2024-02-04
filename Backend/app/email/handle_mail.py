@@ -1,8 +1,9 @@
 import email
-from email.message import Message
 from email.header import decode_header
-from email.mime.text import MIMEText
+from email.message import Message
 from email.mime.multipart import MIMEMultipart
+from email.mime.text import MIMEText
+
 from bs4 import BeautifulSoup
 
 
@@ -114,11 +115,11 @@ def make_email_with_html(from_address, to_address, ticket, logger):
     table = '<table class="tg">'
     for i in table_elements:
         table += (
-            '<tr><td class="tg-1wig">'
-            + i[0]
-            + '</td><td class="tg-0lax">'
-            + i[1]
-            + "</td></tr>"
+                '<tr><td class="tg-1wig">'
+                + i[0]
+                + '</td><td class="tg-0lax">'
+                + i[1]
+                + "</td></tr>"
         )
     table += "</table><br>"
 
@@ -126,12 +127,12 @@ def make_email_with_html(from_address, to_address, ticket, logger):
     ending = "Cheers,<br>TalkTix"
 
     text = (
-        "Hi there!\n\nyour ticket has been created successfully. Your ticket number is:"
-        + ticket_id
-        + ".\n\nCheers,\nTalkTix"
+            "Hi there!\n\nyour ticket has been created successfully. Your ticket number is:"
+            + ticket_id
+            + ".\n\nCheers,\nTalkTix"
     )
     html = (
-        "<html>" + html_head + "<body>" + salutation + table + ending + "</body></html>"
+            "<html>" + html_head + "<body>" + salutation + table + ending + "</body></html>"
     )
 
     part1 = MIMEText(text, "plain")
@@ -155,8 +156,8 @@ def process(message: Message):
     for part in message.walk():
         content_disposition = str(part.get("Content-Disposition"))
         if (
-            part.get_content_type() == "text/plain"
-            and "attachment" not in content_disposition
+                part.get_content_type() == "text/plain"
+                and "attachment" not in content_disposition
         ):
             charset = part.get_content_charset()
 
@@ -170,8 +171,8 @@ def process(message: Message):
                 except UnicodeDecodeError:
                     content = part.as_string()
         elif (
-            part.get_content_type() == "text/html"
-            and "attachment" not in content_disposition
+                part.get_content_type() == "text/html"
+                and "attachment" not in content_disposition
         ):
             charset = part.get_content_charset()
             if charset:
@@ -183,8 +184,8 @@ def process(message: Message):
                     soup = BeautifulSoup(part.as_string())
             content = soup.get_text()
         elif (
-            part.get_content_maintype() in ["image", "application", "text"]
-            and "attachment" in content_disposition
+                part.get_content_maintype() in ["image", "application", "text"]
+                and "attachment" in content_disposition
         ):
             filename = part.get_filename()
             if filename:
