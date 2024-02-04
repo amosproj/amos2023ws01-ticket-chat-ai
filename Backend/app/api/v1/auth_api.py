@@ -51,7 +51,7 @@ async def login_for_access_token(
     # take first element, because email_adresse should be unique
     user = user_data[0]
 
-    access_token_expires = timedelta(minutes=60)
+    access_token_expires = timedelta(days=365)
     access_token = create_access_token(
         data={"sub": user["email_address"]}, expires_delta=access_token_expires
     )

@@ -15,9 +15,11 @@ import { RequestTypeDialogComponent } from './request-type-dialog/request-type-d
 import { LoginDialogComponent } from './login-dialog/login-dialog.component';
 import { SignupDialogComponent } from './signup-dialog/signup-dialog.component';
 import { EditDialogComponent } from './edit-dialog/edit-dialog.component';
+import {SessionExpiredDialogComponent} from './session-expired-dialog/session-expired-dialog.component';
 import { MatSelectModule } from '@angular/material/select';
 import { TicketFormComponent } from './ticket-form/ticket-form.component';
 import {MatChipsModule} from "@angular/material/chips";
+import { LogoutDialogComponent } from './logout-dialog/logout-dialog.component';
 
 @NgModule({
   declarations: [
@@ -27,6 +29,8 @@ import {MatChipsModule} from "@angular/material/chips";
     SignupDialogComponent,
     TicketFormComponent,
     EditDialogComponent,
+    SessionExpiredDialogComponent,
+    LogoutDialogComponent
   ],
   imports: [
     BrowserModule,
@@ -35,7 +39,6 @@ import {MatChipsModule} from "@angular/material/chips";
     HttpClientModule,
     NoopAnimationsModule,
     MatButtonModule,
-    MatInputModule,
     DragAndDropModule,
     MatCardModule,
     MatDialogModule,
