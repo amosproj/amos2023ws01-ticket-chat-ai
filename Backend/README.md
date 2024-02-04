@@ -90,7 +90,7 @@
 4. **Run the tests**:
     - Only tests:
       ```bash
-      pytest --no-cov test/
+      pytest test/
       ```
     - Tests with code coverage:
       ```bash

@@ -139,7 +139,7 @@ jobs:
       ################################
       - name: Run Backend Tests
         working-directory: "./Backend"
-        run: pytest test
+        run: pytest --cov=app --cov-branch test
         env:
           TEST_STAGE: "ci"
           PASSWORD: ${{ secrets.PASSWORD }}
@@ -156,6 +156,9 @@ jobs:
       - name: Install Node Dependencies
         working-directory: "./Frontend"
         run: sudo npm install
+      - name: Rebuild the Project
+        working-directory: "./Frontend"
+        run: sudo npm rebuild
       ################################
       # Run Frontend tests #
       ################################
