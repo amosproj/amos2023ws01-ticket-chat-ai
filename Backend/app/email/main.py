@@ -64,7 +64,6 @@ def run_proxy():
                                         + " are sent to the API"
                                     )
                                 ticket = json.loads(response.text)
-                                print("Ticket:" + str(ticket))
                                 logger.info("Received ticket: " + ticket["id"])
                             except Exception as e:
                                 logger.error(
@@ -89,7 +88,7 @@ def run_proxy():
                 time.sleep(sleep_timer)
 
     except Exception as e:
-        print(f"Error: {e}")
+        logger.error(f"Error: {e}")
 
 
 if __name__ == "__main__":
