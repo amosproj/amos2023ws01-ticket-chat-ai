@@ -5,6 +5,7 @@ venv
 app/email/.env
 .env
 .env_prod
+.coverage
 backend.log
 app/model/data
 app/email/b*_example.pkl

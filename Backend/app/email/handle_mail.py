@@ -1,8 +1,9 @@
 import email
-from email.message import Message
 from email.header import decode_header
-from email.mime.text import MIMEText
+from email.message import Message
 from email.mime.multipart import MIMEMultipart
+from email.mime.text import MIMEText
+
 from bs4 import BeautifulSoup
 
 

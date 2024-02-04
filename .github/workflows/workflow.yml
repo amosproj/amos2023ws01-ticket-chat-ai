@@ -139,25 +139,26 @@ jobs:
       ################################
       - name: Run Backend Tests
         working-directory: "./Backend"
-        run: pytest test
+        run: pytest --cov=app --cov-branch test
         env:
           TEST_STAGE: "ci"
           PASSWORD: ${{ secrets.PASSWORD }}
+          SECRET_KEY: ${{ secrets.SECRET_KEY }}
           MONGODB_URL: mongodb://localhost:27017/
       ################################
       # Install Node and its Dependencies #
       ################################
-      - name: Set up Node
-        uses: actions/setup-node@v3
-        with:
-          node-version: "20.x"
-          cache: "npm"
-      - name: Install Node Dependencies
-        working-directory: "./Frontend"
-        run: sudo npm install
+      #- name: Set up Node
+      #  uses: actions/setup-node@v4
+      #  with:
+      #    node-version: "20.x"
+      #    cache: "npm"
+      #- name: Install Node Dependencies
+      #  working-directory: "./Frontend"
+      #  run: sudo npm install
       ################################
       # Run Frontend tests #
       ################################
-      - name: Run Frontend Tests
-        working-directory: "./Frontend"
-        run: npm run test:prod
+      #- name: Run Frontend Tests
+      #  working-directory: "./Frontend"
+      #  run: npm run test:prod

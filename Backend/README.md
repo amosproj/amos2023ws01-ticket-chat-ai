@@ -65,12 +65,12 @@
       elevate -w net start MongoDB
       ```
       Alternative:
-      1. Add the path to `mongod.exe` to the environment variables in order to use it globally.
-      2. Create a storage directory at any location, for example, `...\data\db`, if you have not already done so.
-      3. Run `mongod` with path to storage location for example:
-         ```bash
-         mongod --dbpath E:\workspace\Uni\ws23-24\AMOS\data\db
-         ```
+        1. Add the path to `mongod.exe` to the environment variables in order to use it globally.
+        2. Create a storage directory at any location, for example, `...\data\db`, if you have not already done so.
+        3. Run `mongod` with path to storage location for example:
+           ```bash
+           mongod --dbpath E:\workspace\Uni\ws23-24\AMOS\data\db
+           ```
     - Linux:
       ```bash
       sudo systemctl start mongod
@@ -88,10 +88,14 @@
     - Example of how to test endpoint with postman (Model is automatically run when we run the endpoint).
       ![Example of how to test endpoint with postman](images/endpoint_example.png)
 4. **Run the tests**:
-
-    ```bash
-    pytest test/
-    ```
+    - Only tests:
+      ```bash
+      pytest test/
+      ```
+    - Tests with code coverage:
+      ```bash
+      pytest --cov=app --cov-branch test/
+      ```
 
 ## Run Test Model
 
