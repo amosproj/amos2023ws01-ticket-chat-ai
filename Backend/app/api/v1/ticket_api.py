@@ -53,13 +53,25 @@ async def process_text(
     received_dict = ticket_service.create_ticket(input.text, input.email)
     logger.info("Model execution complete. Result: %s", received_dict)
 
-    # Set service based on user's location
+    # Set service based on user's location and set user's name
     if input.email:
         user = user_db_service.get_user_by_email(input.email)
-        if user and user.location:
-            if not received_dict.get("service") or received_dict["service"] is None:
-                logger.info("Setting ticket's service to user's location...")
-                received_dict["service"] = user.location
+        if user:
+            # Set service based on user's location
+            if user.location:
+                if not received_dict.get("service") or received_dict["service"] is None:
+                    logger.info("Setting ticket's service to user's location...")
+                    received_dict["service"] = user.location
+
+            # Set affectedPerson based on available name information
+            if user.first_name and user.family_name:
+                received_dict["affectedPerson"] = (
+                    user.first_name + " " + user.family_name
+                )
+            elif user.first_name:
+                received_dict["affectedPerson"] = user.first_name
+            elif user.family_name:
+                received_dict["affectedPerson"] = user.family_name
 
     received_dict["state"] = State.draft
 
