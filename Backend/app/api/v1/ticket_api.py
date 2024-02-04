@@ -50,16 +50,28 @@ async def process_text(
 
     # Run the model to process the input text
     logger.info("Running the model...")
-    received_dict = ticket_service.create_ticket(input.text)
+    received_dict = ticket_service.create_ticket(input.text, input.email)
     logger.info("Model execution complete. Result: %s", received_dict)
 
-    # Set service based on user's location
+    # Set service based on user's location and set user's name
     if input.email:
         user = user_db_service.get_user_by_email(input.email)
-        if user and user.location:
-            if not received_dict.get("service") or received_dict["service"] == "":
-                logger.info("Setting ticket's service to user's location...")
-                received_dict["service"] = user.location
+        if user:
+            # Set service based on user's location
+            if user.location:
+                if not received_dict.get("service") or received_dict["service"] is None:
+                    logger.info("Setting ticket's service to user's location...")
+                    received_dict["service"] = user.location
+
+            # Set affectedPerson based on available name information
+            if user.first_name and user.family_name:
+                received_dict["affectedPerson"] = (
+                    user.first_name + " " + user.family_name
+                )
+            elif user.first_name:
+                received_dict["affectedPerson"] = user.first_name
+            elif user.family_name:
+                received_dict["affectedPerson"] = user.family_name
 
     received_dict["state"] = State.draft
 
@@ -98,7 +110,7 @@ async def update_ticket_attributes(
     # Update the ticket attributes in the database using the TicketDBService
     logger.info("Updating ticket attributes in the database...")
     updated_ticket = ticket_db_service.update_ticket_attributes(
-        ticket_id, wrapped_ticket.ticket
+        ticket_id, wrapped_ticket.ticket.dict()
     )
 
     # send email with ticket as content if ticket accepted
@@ -107,16 +119,9 @@ async def update_ticket_attributes(
 
     # Prepare response
     logger.info("Preparing response...")
-    if updated_ticket:
-        logger.info(
-            f"Ticket attributes updated and saved successfully. Ticket ID: {updated_ticket.id}"
-        )
-    else:
-        logger.error("Ticket attributes update failed.")
-        raise HTTPException(
-            status_code=status.HTTP_500_INTERNAL_SERVER_ERROR,
-            detail="Ticket attributes update failed.",
-        )
+    logger.info(
+        f"Ticket attributes updated and saved successfully. Ticket ID: {updated_ticket.id}"
+    )
 
     return updated_ticket
 

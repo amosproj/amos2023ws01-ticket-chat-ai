@@ -1,5 +1,4 @@
-import { Component, ViewChild, ElementRef, EventEmitter, Output } from "@angular/core";
-import { AppComponent } from "../app.component";
+import {Component, ViewChild, ElementRef, EventEmitter, Output} from "@angular/core";
 
 @Component({
   selector: "app-drag-and-drop",
@@ -7,7 +6,7 @@ import { AppComponent } from "../app.component";
   styleUrls: ["./drag-and-drop.component.scss"],
 })
 export class DragAndDropComponent {
-  @ViewChild("fileDropRef", { static: true }) fileDropEl!: ElementRef;
+  @ViewChild("fileDropRef", {static: true}) fileDropEl!: ElementRef;
   files: any[] = [];
 
   @Output() filesEvent = new EventEmitter<any[]>();
@@ -17,7 +16,7 @@ export class DragAndDropComponent {
   }
 
   /**
-   * clear files in the UI 
+   * clear files in the UI
    */
   clearFiles() {
     this.files = [];
