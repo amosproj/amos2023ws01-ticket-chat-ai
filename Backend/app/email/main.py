@@ -38,8 +38,10 @@ def run_proxy():
                         continue
                     else:
                         # send message to backend
-                        email = f"From: {sender}\nSubject: {subject}\n {content}"
-                        json_input = {"text": email}
+                        json_input = {
+                            "text": f"Subject: {subject}\n Content: {content}",
+                            "email": sender,
+                        }
                         success = True
 
                         if content != "":

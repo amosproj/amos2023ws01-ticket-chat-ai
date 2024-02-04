@@ -32,7 +32,7 @@ class TestAITicketService(unittest.TestCase):
         service = AITicketService()
 
         # Act
-        ticket_dict = service.create_ticket(input_text)
+        ticket_dict = service.create_ticket(input_text, "")
 
         # Assert
         self.assertIsInstance(ticket_dict, dict)
@@ -54,9 +54,10 @@ class TestAITicketService(unittest.TestCase):
         # Arrange
         input_text = "Sample input text"
         ticket_dict = {}
+        email = ""
 
         # Act
-        self.ai_ticket_service.generate_affected_person(input_text, ticket_dict)
+        self.ai_ticket_service.generate_affected_person(input_text, email, ticket_dict)
 
         # Assert
         self.assertEqual(ticket_dict["affectedPerson"], "John")
