@@ -242,6 +242,11 @@ class AITicketService:
                         field
                     )
                 )
+                if field is "priority":
+                    prediction = "Medium"
+
+                if field is "customerPriority":
+                    prediction = "Disruption but can work"
             else:
                 prediction = self.map_label_to_class(
                     generated_output[0]["label"], field_values

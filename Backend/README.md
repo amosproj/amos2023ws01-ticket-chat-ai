@@ -99,25 +99,49 @@
 
 ## Run Test Model
 
-1. Navigate into `./backend/app/models/t5` directory.
+### T5
 
-2. Train the model by running the following command:
+1. Train the model by navigating to `./backend/app/models/train/text_generation_t5` and running the following command:
 
    ```bash
    python train.py
    ```
 
-3. Test the trained model by running the following command:
+2. Test our trained model which is hosted on hugging face by navigating to `./backend/app/models/ai_ticket_service/t5` and running the following command:
 
    ```bash
    python use_trained_t5_model.py
    ```
 
-4. Test the untrained T5 model by running the following command:
+3. Test the untrained T5 model by navigating to `./backend/app/models/ai_ticket_service/t5` and running the following command:
 
    ```bash
-   python train.py
+   python use_untrained_t5_model.py
    ```
+   
+### Text Classification (Roberta)
+1. To train the model, you first need to navigate to the training script's directory:
+
+   ```bash
+   cd ./backend/app/models/train/text_classification
+   ```
+2. Prepare a JSON-formatted string for both your classes and data paths. For example, if you have three classes "Class1", "Class2", "Class3" and your data is located at "path/to/data1.json" and "path/to/data2.json", your JSON strings would look like:
+ - Classes: '["Class1", "Class2", "Class3"]'
+ - Data Paths: '["path/to/data1.json", "path/to/data2.json"]'
+
+3. Run the training command with the necessary arguments. Here's an example command that includes arguments for classes, ticket field, and data paths:
+
+   ```bash
+   python train.py --batch_size 4 --epochs 4 --lr 2e-5 --no_cuda --save_model --classes '["Class1", "Class2", "Class3"]' --ticket_field "service" --data_paths '["path/to/data1.json", "path/to/data2.json"]'
+   ```
+ - `--batch_size`: The number of training samples to work through before the model's internal parameters are updated.
+ - `--epochs`: The number of complete passes through the training dataset.
+ - `--lr`: The learning rate used by the optimizer.
+ - `--no_cuda`: Add this flag if you do not wish to use CUDA for training even if it's available.
+ - `--save_model`: Add this flag if you wish to save the model after training.
+ - `--classes`: The list of classes for the classifier in a JSON-formatted string.
+ - `--ticket_field`: The field name for ticket classification.
+ - `--data_paths`: The list of paths to your training data files in a JSON-formatted string.
 
 ## Run the Email Proxy
 
