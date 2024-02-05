@@ -1,10 +1,9 @@
 import {Injectable} from '@angular/core';
 import {HttpClient, HttpErrorResponse} from '@angular/common/http';
-import {Observable, throwError} from 'rxjs';
-import {tap, catchError} from 'rxjs/operators';
+import {Observable, throwError, of} from 'rxjs';
+import {tap, catchError, map} from 'rxjs/operators';
 import {LogService} from './logging.service';
 import {environment} from "../../environments/environment";
-import {of} from 'rxjs';
 
 @Injectable({
   providedIn: 'root'
@@ -94,23 +93,25 @@ export class AuthService {
       this.logger.log('No token found, user is not logged in.');
     }
   }
-  checkTokenValidity(): void {
+  checkTokenValidity(): Observable<boolean> {
     const accessToken = localStorage.getItem('access_token');
     if (accessToken) {
-
-      this.http.get<{ email: string }>(this.apiUrl1, {
+      return this.http.get<{ email: string }>(this.apiUrl1, {
         headers: { Authorization: `Bearer ${accessToken}` }
-      }).subscribe({
-        next: (response) => {
+      }).pipe(
+        map(response => {
           this.logger.log('Token is valid. Logged in as: ' + response.email);
-        },
-        error: (error) => {
+          return true;
+        }),
+        catchError((error) => {
           localStorage.removeItem('access_token');
           this.logger.log('Token is invalid or expired. Logged out.');
-        }
-      });
+          return of(false);
+        })
+      );
     } else {
       this.logger.log('No token found, user is not logged in.');
+      return of(false);
     }
   }
 }
