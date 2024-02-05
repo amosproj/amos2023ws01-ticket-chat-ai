@@ -43,10 +43,6 @@ export class EditDialogComponent {
     if (!this.password) {
       this.password = this.old_password
     }
-    if (!checkEmailAddress(this.email)) {
-      this.errorMessage = 'Please use a valid email address.';
-      return;
-    }
 
     // Send data to the backend if validation is successful
     this.authService.edit(this.old_email, this.old_password, this.first_name, this.family_name, this.email, this.password, this.location)
