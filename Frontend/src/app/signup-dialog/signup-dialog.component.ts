@@ -1,6 +1,7 @@
 import { Component } from '@angular/core';
 import { MatDialogRef } from '@angular/material/dialog';
 import { AuthService } from '../service/auth.service';
+import { checkEmailAddress } from "../service/checkemail.service";
 
 @Component({
   selector: 'app-signup-dialog',
@@ -33,7 +34,11 @@ export class SignupDialogComponent {
       this.errorMessage = "Required field missing";
       return;
     }
-  
+    if (!checkEmailAddress(this.email)) {
+      this.errorMessage = 'Please use a valid email address.';
+      return;
+    }
+
     // Send data to the backend if validation is successful
     this.authService.signup(this.first_name, this.family_name, this.email, this.password, this.location)
       .subscribe({
