@@ -29,5 +29,5 @@ export function checkEmailAddress(emailInput: string): boolean {
   if (/[\W_]/.test(emailInput.charAt(0))) { // we cant start with a special char
     return false;
   }
-  return true
+  return true;
 }
