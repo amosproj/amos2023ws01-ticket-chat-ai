@@ -50,17 +50,17 @@
         <textarea matInput [(ngModel)]="chatInput"></textarea>
       </mat-form-field>
 
-      <button class="record-button" mat-raised-button color="warn" (click)="startSpeechRecognition()">
-        {{ recordingState === 'idle' ? 'Start recording speech' : 'Stop recording speech' }}
+      <button class="record-button" mat-button (click)="startSpeechRecognition()">
+        {{ recordingState === 'idle' ? 'Record voice message' : 'Stop recording voice message' }}
       </button>
       <br>
 
       <button
-        mat-raised-button
-        color="primary"
+        mat-button
+        class="gen-ticket"
         (click)="handleSend(chatInput, emailInput)"
       >
-        Submit
+        Generate Ticket
       </button>
     </div>
 
@@ -86,7 +86,9 @@
       <div class="message-content">
         <p *ngIf="chatMessage.messageContent">{{ chatMessage.messageContent }}</p>
         <app-ticket-form *ngIf="chatMessage.wrappedTicket"
-                         [wrappedTicket]="chatMessage.wrappedTicket"></app-ticket-form>
+                         [wrappedTicket]="chatMessage.wrappedTicket"
+                         (msgAfterButtonClick)="setMessageAfterticketSubmission($event)"
+        ></app-ticket-form>
         <div *ngIf="chatMessage.isUser">
           <div
             class="single-file"

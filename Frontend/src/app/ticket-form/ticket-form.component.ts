@@ -1,4 +1,4 @@
-import {Component, Input, OnInit} from '@angular/core';
+import {Component, EventEmitter, Input, OnInit, Output} from '@angular/core';
 import {FormControl, FormGroup, Validators} from "@angular/forms";
 import {WrappedTicket} from "../entities/wrappedTicket.dto";
 import {Prio} from "../entities/prio.enum";
@@ -16,6 +16,7 @@ import {State} from "../entities/state.enum";
 })
 export class TicketFormComponent implements OnInit {
   @Input() wrappedTicket: WrappedTicket | undefined;
+  @Output() msgAfterButtonClick = new EventEmitter<string>();
 
   ticketFormGroup: FormGroup | undefined;
 
@@ -59,7 +60,7 @@ export class TicketFormComponent implements OnInit {
     this.ticketService.updateTicket(this.wrappedTicket!, ticket.id).subscribe();
     this.ticketFormGroup?.disable();
     this.isFormDisabled = true;
-
+    this.msgAfterButtonClick.emit("Great, I've created your ticket! You will also receive a confirmation to the e-mail address you provided.");
   }
 
   protected readonly Prio = Prio;
@@ -91,5 +92,6 @@ export class TicketFormComponent implements OnInit {
     this.ticketFormGroup?.disable();
     this.ticketFormGroup?.reset();
     this.isFormDisabled = true;
+    this.msgAfterButtonClick.emit("All right, as you requested, the ticket has been cancelled.");
   }
 }

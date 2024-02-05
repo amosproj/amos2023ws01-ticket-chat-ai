@@ -45,6 +45,14 @@ body{
 
 }
 
+.record-button {
+  background-color: #0D9A0B;
+}
+
+.gen-ticket {
+  background-color:  #08726F;
+}
+
 /* Left Card - Make this smaller */
 .history-div:first-child {
   width: 45%; /* Smaller width for the left card */
@@ -96,6 +104,7 @@ body{
 
 .message-content {
   word-wrap: break-word;
+  text-align: start;
 }
 
 .default-message {
