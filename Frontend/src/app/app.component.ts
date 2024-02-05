@@ -12,6 +12,7 @@ import {jwtDecode} from "jwt-decode";
 import {HttpClient} from '@angular/common/http';
 import {AuthService} from './service/auth.service';
 import {WrappedTicket} from "./entities/wrappedTicket.dto";
+import {checkEmailAddress} from "./service/checkemail.service";
 import {SessionExpiredDialogComponent} from './session-expired-dialog/session-expired-dialog.component';
 import {LogoutDialogComponent} from './logout-dialog/logout-dialog.component';
 
@@ -304,6 +305,11 @@ export class AppComponent implements OnInit {
 
     if (!value) {
       this.errorMessage = 'Please write a message or leave a voice message.';
+      return;
+    }
+
+    if (!checkEmailAddress(emailInput)) {
+      this.errorMessage = 'Please use a valid email address.';
       return;
     }
 

@@ -20,14 +20,11 @@ def run_proxy():
     smtp_server = config["DEFAULT"]["SMTP_SERVER"]
     email_address = config["DEFAULT"]["EMAIL_ADDRESS"]
     sleep_timer = int(config["DEFAULT"]["SLEEP_TIMER"])
-
-    # Define a list of email addresses or domains to be ignored
-    blacklisted_emails = [
-        "MicrosoftExchange329e71ec88ae4615bbc36ab6ce41109e@sct-15-20-4755-11-msonline-outlook-0fa01.templateTenant",
-        "microsoftexchange",
-        ".templatetenant",
-        "no-reply@microsoft.com",
-    ]
+    blacklisted_emails = list(
+        filter(
+            None, [e.strip() for e in config.get("DEFAULT", "BLACKLIST").split("\n")]
+        )
+    )
 
     try:
         with Proxy.EmailProxy(
@@ -69,7 +66,6 @@ def run_proxy():
                                         + " are sent to the API"
                                     )
                                 ticket = json.loads(response.text)
-                                print("Ticket:" + str(ticket))
                                 logger.info("Received ticket: " + ticket["id"])
                             except Exception as e:
                                 logger.error(
@@ -94,7 +90,7 @@ def run_proxy():
                 time.sleep(sleep_timer)
 
     except Exception as e:
-        print(f"Error: {e}")
+        logger.error(f"Error: {e}")
 
 
 if __name__ == "__main__":

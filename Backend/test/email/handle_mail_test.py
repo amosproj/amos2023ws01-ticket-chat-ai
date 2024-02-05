@@ -189,6 +189,19 @@ class HandleMailTest(TestCase):
             # Expect
             self.assertTrue(not_blacklisted)
 
+    def test_msft_auto_response(self):
+        file_path = os.path.join(
+            os.path.dirname(__file__), "test_mails/b'451'_msft_auto_response.pkl"
+        )
+        with open(file_path, "rb") as inp:
+            message = pickle.load(inp)
+            # Act
+            not_auto_response = can_be_processed(
+                message, blacklisted_emails=["dev.talktix@gmail.com"], logger=logger
+            )
+            # Expect
+            self.assertFalse(not_auto_response)
+
     def test_make_email_with_html(self):
         ticket = {
             "id": "123",
