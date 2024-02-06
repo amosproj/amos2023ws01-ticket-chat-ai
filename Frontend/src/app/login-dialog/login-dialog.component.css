@@ -18,7 +18,7 @@
 
   .dialog-title {
     font-size: 24px;
-    color: var(--accent-color);
+    color: #10ddd3;
     margin-bottom: 20px;
   }
 
@@ -50,7 +50,7 @@
   }
 
   .login-button {
-    background-color: var(--accent-color);
+    background-color: #0D9A0B;
     color: var(--text-color);
     font-size: 18px;
     text-transform: capitalize;
@@ -59,8 +59,4 @@
     margin-top: 20px;
     cursor: pointer;
     transition: background-color 0.3s ease-in-out;
-  }
-
-  .login-button:hover {
-    background-color: var(--hover-color);
   }
