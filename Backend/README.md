@@ -127,6 +127,20 @@
     python main.py
    ```
 
+## Format the code
+
+[Black](https://black.readthedocs.io/en/stable/) is a Python code formatter that automatically formats your code.
+
+- Format a single file:
+  ```bash
+  black your_file.py
+  ```
+
+- Format multiple files or a directory:
+  ```bash
+  black file1.py file2.py directory/
+  ```
+
 ## Useful Tools
 
 - IDE: VS Code, PyCharm
