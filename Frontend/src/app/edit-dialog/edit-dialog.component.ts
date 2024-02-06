@@ -1,6 +1,7 @@
 import { Component } from '@angular/core';
 import { MatDialogRef } from '@angular/material/dialog';
 import { AuthService } from '../service/auth.service';
+import { checkEmailAddress } from "../service/checkemail.service";
 
 @Component({
   selector: 'app-edit-dialog',
@@ -33,6 +34,10 @@ export class EditDialogComponent {
     }
     if (!this.email || !this.old_password || !this.location) {
       this.errorMessage = "Required field missing";
+      return;
+    }
+    if (!checkEmailAddress(this.email)) {
+      this.errorMessage = 'Please use a valid email address.';
       return;
     }
     if (!this.password) {

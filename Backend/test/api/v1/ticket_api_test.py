@@ -4,7 +4,9 @@ from unittest import TestCase
 from unittest.mock import MagicMock
 
 from app.api.dto.ticket import Ticket
+from app.api.dto.user import User
 from app.dependency.collection import get_ticket_collection, get_user_collection
+from app.dependency.db_service import get_user_db_service
 from app.dependency.email_service import get_email_service
 from app.enum.customer_prio import CustomerPrio
 from app.enum.prio import Prio
@@ -21,8 +23,8 @@ class TicketAPIIntegrationTest(TestCase):
     def override_get_ticket_collection(self):
         return self.ticket_collection_mock
 
-    def override_get_user_collection(self):
-        return self.user_collection_mock
+    def override_get_user_db_service(self):
+        return self.user_db_service_mock
 
     def override_get_email_service(self):
         return self.email_service_mock
@@ -30,11 +32,11 @@ class TicketAPIIntegrationTest(TestCase):
     def setUp(self):
         self.client = TestClient(app)
         self.ticket_collection_mock = MagicMock()
-        self.user_collection_mock = MagicMock()
+        self.user_db_service_mock = MagicMock()
         self.email_service_mock = MagicMock()
         app.dependency_overrides = {
             get_ticket_collection: self.override_get_ticket_collection,
-            get_user_collection: self.override_get_user_collection,
+            get_user_db_service: self.override_get_user_db_service,
             get_email_service: self.override_get_email_service,
         }
         self.ticket_id = ObjectId("6554b34d82161e93bff08df6")
@@ -304,6 +306,240 @@ class TicketAPIIntegrationTest(TestCase):
 
         self.assertEqual(status.HTTP_400_BAD_REQUEST, response.status_code)
         self.assertEqual(exp_json, response.json())
+
+    def test_process_text_with_email_and_user_data_success(self):
+        # Define
+        email_input = "test@example.com"
+        user_mock = User(
+            email_address=email_input,
+            location="Test Location",
+            first_name="John",
+            family_name="Doe",
+            password="<PASSWORD>",
+        )
+        ticket_entity = TicketEntity(
+            _id=self.ticket_id,
+            title="Test Ticket",
+            service="Test Location",
+            category="",
+            keywords=[],
+            customerPriority=CustomerPrio.can_work,
+            affectedPerson="John Doe",
+            description="",
+            priority=Prio.low,
+            attachments=[],
+            requestType="",
+            state=State.draft,
+        )
+        insert_one_result = InsertOneResult(
+            inserted_id=self.ticket_id, acknowledged=True
+        )
+        text_input = {"text": "Hello from the test!", "email": email_input}
+        exp_ticket = Ticket(
+            id=str(self.ticket_id),
+            title="Test Ticket",
+            service="Test Location",
+            category="",
+            keywords=[],
+            customerPriority=CustomerPrio.can_work,
+            affectedPerson="John Doe",
+            description="",
+            priority=Prio.low,
+            attachmentNames=[],
+            requestType="",
+            state=State.draft,
+        )
+
+        # Define mocking behavior
+        self.user_db_service_mock.get_user_by_email.return_value = user_mock
+        self.ticket_collection_mock.insert_one.return_value = insert_one_result
+        self.ticket_collection_mock.find.return_value = [ticket_entity]
+
+        # Act
+        response = self._run_process_text_endpoint(text_input)
+
+        # Assert
+        # Mocks
+        self.user_db_service_mock.get_user_by_email.assert_called_with(email_input)
+        self.ticket_collection_mock.insert_one.assert_called_once()
+        self.ticket_collection_mock.find.assert_called_once()
+        # Response
+        self.assertEqual(status.HTTP_201_CREATED, response.status_code)
+        self.assertEqual(exp_ticket, Ticket.parse_obj(response.json()))
+
+    def test_process_text_with_email_and_only_first_name(self):
+        # Define
+        email_input = "test@example.com"
+        user_mock = User(
+            email_address=email_input,
+            location="Test Location",
+            first_name="John",
+            family_name="",
+            password="<PASSWORD>",
+        )
+        ticket_entity = TicketEntity(
+            _id=self.ticket_id,
+            title="Test Ticket",
+            service="Test Location",
+            category="",
+            keywords=[],
+            customerPriority=CustomerPrio.can_work,
+            affectedPerson="John",
+            description="",
+            priority=Prio.low,
+            attachments=[],
+            requestType="",
+            state=State.draft,
+        )
+        insert_one_result = InsertOneResult(
+            inserted_id=self.ticket_id, acknowledged=True
+        )
+        text_input = {"text": "Hello from the test!", "email": email_input}
+        exp_ticket = Ticket(
+            id=str(self.ticket_id),
+            title="Test Ticket",
+            service="Test Location",
+            category="",
+            keywords=[],
+            customerPriority=CustomerPrio.can_work,
+            affectedPerson="John",
+            description="",
+            priority=Prio.low,
+            attachmentNames=[],
+            requestType="",
+            state=State.draft,
+        )
+
+        # Define mocking behavior
+        self.user_db_service_mock.get_user_by_email.return_value = user_mock
+        self.ticket_collection_mock.insert_one.return_value = insert_one_result
+        self.ticket_collection_mock.find.return_value = [ticket_entity]
+
+        # Act
+        response = self._run_process_text_endpoint(text_input)
+
+        # Assert
+        self.user_db_service_mock.get_user_by_email.assert_called_with(email_input)
+        self.ticket_collection_mock.insert_one.assert_called_once()
+        self.ticket_collection_mock.find.assert_called_once()
+        self.assertEqual(status.HTTP_201_CREATED, response.status_code)
+        self.assertEqual(exp_ticket, Ticket.parse_obj(response.json()))
+
+    def test_process_text_with_email_and_only_family_name(self):
+        # Define
+        email_input = "test@example.com"
+        user_mock = User(
+            email_address=email_input,
+            location="Test Location",
+            first_name="",
+            family_name="Doe",
+            password="<PASSWORD>",
+        )
+        ticket_entity = TicketEntity(
+            _id=self.ticket_id,
+            title="Test Ticket",
+            service="",
+            category="",
+            keywords=[],
+            customerPriority=CustomerPrio.can_work,
+            affectedPerson="Doe",
+            description="",
+            priority=Prio.low,
+            attachments=[],
+            requestType="",
+            state=State.draft,
+        )
+        insert_one_result = InsertOneResult(
+            inserted_id=self.ticket_id, acknowledged=True
+        )
+        text_input = {"text": "Hello from the test!", "email": email_input}
+        exp_ticket = Ticket(
+            id=str(self.ticket_id),
+            title="Test Ticket",
+            service="",
+            category="",
+            keywords=[],
+            customerPriority=CustomerPrio.can_work,
+            affectedPerson="Doe",
+            description="",
+            priority=Prio.low,
+            attachmentNames=[],
+            requestType="",
+            state=State.draft,
+        )
+
+        # Define mocking behavior
+        self.user_db_service_mock.get_user_by_email.return_value = user_mock
+        self.ticket_collection_mock.insert_one.return_value = insert_one_result
+        self.ticket_collection_mock.find.return_value = [ticket_entity]
+
+        # Act
+        response = self._run_process_text_endpoint(text_input)
+
+        # Assert
+        self.user_db_service_mock.get_user_by_email.assert_called_with(email_input)
+        self.ticket_collection_mock.insert_one.assert_called_once()
+        self.ticket_collection_mock.find.assert_called_once()
+        self.assertEqual(status.HTTP_201_CREATED, response.status_code)
+        self.assertEqual(exp_ticket, Ticket.parse_obj(response.json()))
+
+    def test_process_text_with_email_and_no_name(self):
+        # Define
+        email_input = "test@example.com"
+        user_mock = User(
+            email_address=email_input,
+            location="Test Location",
+            first_name="",
+            family_name="",  # No name is provided
+            password="<PASSWORD>",
+        )
+        ticket_entity = TicketEntity(
+            _id=self.ticket_id,
+            title="Test Ticket",
+            service="",
+            category="",
+            keywords=[],
+            customerPriority=CustomerPrio.can_work,
+            affectedPerson="",
+            description="",
+            priority=Prio.low,
+            attachments=[],
+            requestType="",
+            state=State.draft,
+        )
+        insert_one_result = InsertOneResult(
+            inserted_id=self.ticket_id, acknowledged=True
+        )
+        text_input = {"text": "Hello from the test!", "email": email_input}
+        exp_ticket = Ticket(
+            id=str(self.ticket_id),
+            title="Test Ticket",
+            service="",
+            category="",
+            keywords=[],
+            customerPriority=CustomerPrio.can_work,
+            affectedPerson="",  # Expected to remain unset
+            description="",
+            priority=Prio.low,
+            attachmentNames=[],
+            requestType="",
+            state=State.draft,
+        )
+
+        # Define mocking behavior
+        self.user_db_service_mock.get_user_by_email.return_value = user_mock
+        self.ticket_collection_mock.insert_one.return_value = insert_one_result
+        self.ticket_collection_mock.find.return_value = [ticket_entity]
+
+        # Act
+        response = self._run_process_text_endpoint(text_input)
+
+        # Assert
+        self.user_db_service_mock.get_user_by_email.assert_called_with(email_input)
+        self.ticket_collection_mock.insert_one.assert_called_once()
+        self.ticket_collection_mock.find.assert_called_once()
+        self.assertEqual(status.HTTP_201_CREATED, response.status_code)
+        self.assertEqual(exp_ticket, Ticket.parse_obj(response.json()))
 
     def _run_process_text_endpoint(self, text_input: dict):
         return self.client.post(
