@@ -45,6 +45,14 @@ body{
 
 }
 
+.record-button {
+  background-color: #7f7f7f;
+}
+
+.gen-ticket {
+  background-color: #0D9A0B;
+}
+
 /* Left Card - Make this smaller */
 .history-div:first-child {
   width: 45%; /* Smaller width for the left card */
@@ -54,17 +62,6 @@ body{
 .history-div:last-child {
   width: 55%; /* Larger width for the right card */
 }
-
-/* Styles for the speech button */
-.speech-button {
-  background: none;
-  border: none;
-  cursor: pointer;
-  font-size: 18px;
-  color: #10ddd3;
-  margin-bottom: 20px; /* Adjust spacing as needed */
-}
-/* Existing styles for text-field-div and history-div */
 
 .text-field-div {
   margin: auto;
@@ -84,11 +81,6 @@ body{
   position: relative;
 }
 
-.user-message {
-  background-color: #008028;
-  align-self: flex-end;
-}
-
 .other-message {
   background-color: #383a3b;
   align-self: flex-start;
@@ -96,6 +88,7 @@ body{
 
 .message-content {
   word-wrap: break-word;
+  text-align: start;
 }
 
 .default-message {
@@ -182,11 +175,12 @@ body{
 }
 
 .user-message {
-  background-color: #008028;
+  background-color: #08726f;
   color: #fff;
   text-align: right;
   padding: 10px;
   margin-bottom: 5px;
+  align-self: flex-end;
 }
 
 .server-message {

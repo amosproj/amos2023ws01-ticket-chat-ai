@@ -15,23 +15,27 @@
   {{ title }}
 </h1>
 
-  <div class="login-container" *ngIf="!isLoggedIn">
-    <button
-    mat-button (click)="openLoginDialog()"><span class="white">Login</span></button>
-    <button mat-button class="button-border" color="primary" (click)="openSignupDialog()">
-      <span class="white">Sign Up</span>
-    </button>
-  </div>
-  <div class="login-container" *ngIf="isLoggedIn">
-    <button mat-button class="signup-button" (click)="openEditDialog()">
-      <span class="white">{{accountName}}</span>
+<div class="login-container flex space-x-2" *ngIf="!isLoggedIn">
+  <button mat-button (click)="openLoginDialog()">
+    <div class="white flex m-auto">Login</div>
+  </button>
+  <button mat-button class="button-border" color="primary" (click)="openSignupDialog()">
+    <div class="white flex m-auto">Sign Up</div>
+  </button>
+</div>
+<div class="login-container flex space-x-2" *ngIf="isLoggedIn">
+  <button mat-button class="signup-button" (click)="openEditDialog()">
+    <div class="flex place-content-center space-x-2">
+      <div class="white flex m-auto">{{ accountName }}</div>
       <mat-icon class="white" iconPositionEnd>account_circle</mat-icon>
-    </button>
-    <button
-    mat-button (click)="clicklogout()">
+    </div>
+  </button>
+  <button mat-button (click)="clicklogout()">
+    <div class="flex place-content-center space-x-2">
       <mat-icon class="white">logout</mat-icon>
-    </button>
-  </div>
+    </div>
+  </button>
+</div>
 
 <div class="cards-container">
   <mat-card class="history-div">
@@ -50,17 +54,18 @@
         <textarea matInput [(ngModel)]="chatInput"></textarea>
       </mat-form-field>
 
-      <button class="record-button" mat-raised-button color="warn" (click)="startSpeechRecognition()">
-        {{ recordingState === 'idle' ? 'Start recording speech' : 'Stop recording speech' }}
+      <button class="record-button" mat-button (click)="startSpeechRecognition()">
+        <span
+          class="white">{{ recordingState === 'idle' ? 'Record voice message' : 'Stop recording voice message' }}</span>
       </button>
       <br>
 
       <button
-        mat-raised-button
-        color="primary"
+        mat-button
+        class="gen-ticket"
         (click)="handleSend(chatInput, emailInput)"
       >
-        Submit
+        <span class="white">Generate Ticket</span>
       </button>
     </div>
 
@@ -83,10 +88,12 @@
           'other-message': !chatMessage.isUser
         }"
     >
-      <div class="message-content">
-        <p *ngIf="chatMessage.messageContent">{{ chatMessage.messageContent }}</p>
+      <div class="message-content m-2">
+        <span *ngIf="chatMessage.messageContent">{{ chatMessage.messageContent }}</span>
         <app-ticket-form *ngIf="chatMessage.wrappedTicket"
-                         [wrappedTicket]="chatMessage.wrappedTicket"></app-ticket-form>
+                         [wrappedTicket]="chatMessage.wrappedTicket"
+                         (msgAfterButtonClick)="setMessageAfterticketSubmission($event)"
+        ></app-ticket-form>
         <div *ngIf="chatMessage.isUser">
           <div
             class="single-file"

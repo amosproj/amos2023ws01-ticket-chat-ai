@@ -42,6 +42,7 @@ export class AppComponent implements OnInit {
   title: string = "TalkTix";
   chatInput: string = "";
   emailInput: string = "";
+  messageAfterTicketSubmission = ""
   chatMessages: ChatMessage[] = [
     {
       messageContent: "Hi there! Enter your concern and I will create a ticket for you.",
@@ -85,19 +86,28 @@ export class AppComponent implements OnInit {
           this.isLoggedIn = false;
           return;
         }
-        this.accessToken  = localStorage.getItem("access_token") || '';
+        this.accessToken = localStorage.getItem("access_token") || '';
         this.isLoggedIn = true;
         let email = jwtDecode(this.accessToken).sub;
         this.emailInput = email || '';
         this.authService.getuserinfo(this.emailInput).subscribe(response => {
-        this.accountName = response.first_name ?
-          response.first_name + " " + response.family_name :
-          this.emailInput.substring(0, this.emailInput.indexOf("@"))
-      })
+          this.accountName = response.first_name ?
+            response.first_name + " " + response.family_name :
+            this.emailInput.substring(0, this.emailInput.indexOf("@"))
+        })
       });
     } else {
       this.logger.log('No token found, user is not logged in.');
     }
+  }
+
+  setMessageAfterticketSubmission(message: string) {
+    this.chatMessages.push({
+      messageContent: message,
+      isUser: false,
+      wrappedTicket: null,
+      files: []
+    });
   }
 
   getFiles(event: any) {
@@ -386,11 +396,11 @@ export class AppComponent implements OnInit {
 
   clearChatHistory() {
     this.chatMessages = [{
-        messageContent: "Hi there! Enter your concern and I will create a ticket for you.",
-        isUser: false,
-        wrappedTicket: null,
-        files: []
-      }];
+      messageContent: "Hi there! Enter your concern and I will create a ticket for you.",
+      isUser: false,
+      wrappedTicket: null,
+      files: []
+    }];
   }
 
   showSessionExpiredDialog() {

@@ -1,7 +1,7 @@
 <form [formGroup]="ticketFormGroup!">
-  <div class="grid grid-cols-2 gap-4">
+  <div class="grid grid-cols-2 gap-2 text-center">
     <div class="col-span-2">
-      <mat-form-field appearance="fill">
+      <mat-form-field class="w-full" appearance="fill">
         <mat-label>Title</mat-label>
         <input matInput id="title" type="text" formControlName="title">
         <mat-error *ngIf="ticketFormGroup!.hasError('required', 'title')">Title is <strong>required</strong>
@@ -10,7 +10,7 @@
     </div>
 
     <div class="col-span-2">
-      <mat-form-field appearance="fill">
+      <mat-form-field class="w-full" appearance="fill">
         <mat-label>Description</mat-label>
         <textarea matInput id="description" type="text" formControlName="description"></textarea>
         <mat-error *ngIf="ticketFormGroup!.hasError('required', 'description')">Description is <strong>required</strong>
@@ -19,7 +19,7 @@
     </div>
 
     <div class="col-span-2">
-      <mat-form-field>
+      <mat-form-field class="w-full">
         <mat-label>Keywords</mat-label>
         <mat-chip-grid #chipGrid aria-label="Enter keywords" [disabled]="isFormDisabled">
           <mat-chip-row *ngFor="let keyword of ticketFormGroup!.value.keywords"
@@ -44,7 +44,7 @@
     </div>
 
     <div class="col-start-1 col-span-1">
-      <mat-form-field>
+      <mat-form-field class="w-full">
         <mat-label>Service</mat-label>
         <mat-select id="service" formControlName="service">
           <mat-option *ngFor="let service of serviceValues" [value]="service">{{ service }}</mat-option>
@@ -55,7 +55,7 @@
     </div>
 
     <div class="col-start-2 col-span-1">
-      <mat-form-field>
+      <mat-form-field class="w-full">
         <mat-label>Category</mat-label>
         <mat-select id="category" formControlName="category">
           <mat-option *ngFor="let category of categoryValues" [value]="category">{{ category }}</mat-option>
@@ -66,7 +66,7 @@
     </div>
 
     <div class="col-start-1 col-span-1">
-      <mat-form-field>
+      <mat-form-field class="w-full">
         <mat-label>Request type</mat-label>
         <mat-select id="requestType" formControlName="requestType">
           <mat-option *ngFor="let requestType of RequestType | keyvalue"
@@ -79,7 +79,7 @@
     </div>
 
     <div class="col-start-2 col-span-1">
-      <mat-form-field>
+      <mat-form-field class="w-full">
         <mat-label>Priority</mat-label>
         <mat-select id="priority" formControlName="priority">
           <mat-option *ngFor="let prio of Prio | keyvalue" [value]="prio.value">{{ prio.value }}</mat-option>
@@ -88,13 +88,13 @@
         </mat-error>
       </mat-form-field>
     </div>
-    <div class="col-start-1 col-span-1">
-      <button mat-raised-button type="submit" color="primary" (click)="submitTicket()" [disabled]="isFormDisabled">
+    <div *ngIf="!isFormDisabled" class="col-start-1 col-span-1">
+      <button class="submit-button w-full" mat-button type="submit" (click)="submitTicket()">
         Submit
       </button>
     </div>
-    <div class="col-start-2 col-span-1">
-      <button mat-raised-button (click)="onCancelTicket()" color="warn" [disabled]="isFormDisabled">Cancel</button>
+    <div *ngIf="!isFormDisabled" class="col-start-2 col-span-1">
+      <button mat-raised-button (click)="onCancelTicket()" class="cancel-button w-full">Cancel</button>
     </div>
   </div>
 </form>
